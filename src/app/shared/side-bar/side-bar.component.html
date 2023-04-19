@@ -1,8 +1,8 @@
 <aside class="main-sidebar sidebar-light-warning elevation-4">
   <!-- Brand Logo -->
   <a [routerLink]="['/']" class="brand-link navbar-warning">
-    <img src="../../assets/img/template/hco.jpg" alt="HCO Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-    <span class="brand-text font-weight-light">BE  1.0</span>
+    <img src="../../assets/img/template/hco.jpg" alt="Be" class="brand-image img-circle" style="opacity: .8">
+    <!-- <span class="brand-text font-weight-light">AdminLTE 3</span> -->
   </a>
 
   <!-- Sidebar -->
@@ -13,251 +13,106 @@
         <img src="../../assets/img/soriano.png" class="img-circle elevation-2" alt="User Image">
       </div>
       <div class="info">
-        <a href="#" class="d-block">Jose Angel Soriano </a>
+        <a href="#" class="d-block">Jose Angel Soriano</a>
       </div>
     </div>
-
-
 
     <!-- Sidebar Menu -->
     <nav class="mt-2">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
-        <li class="nav-item">
-          <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-tachometer-alt"></i>
-            <p>
-              Dashboard
-              <i class="right fas fa-angle-left"></i>
-            </p>
-          </a>
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a href="../../index.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Dashboard v1</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="../../index2.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Dashboard v2</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="../../index3.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Dashboard v3</p>
-              </a>
-            </li>
-          </ul>
-        </li>
+
+
+
+
 
         <li class="nav-item">
           <a [routerLink]="['/']" class="nav-link">
-            <i class="nav-icon fas fa-home"></i>
-            <p>
-              Home
-             <!--<span class="right badge badge-danger">New</span>-->
-            </p>
-          </a>
+          <i class="nav-icon fas fa-home"></i>
+          <p>
+            Home
+          </p>
+        </a>
         </li>
 
 
 
-        <!-- Este Menu PM-->
         <li class="nav-item">
-          <a [routerLink]="['/']" class="nav-link">
-            <i class="nav-icon fas fa-atom"></i>
+          <a [routerLink]="['/plaint']" class="nav-link">
+            <i class="nav-icon fas fa-users"></i>
             <p>
-              PM
-              <i class="right fas fa-angle-left"></i>
+              Plan Interesados
             </p>
           </a>
-
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a [routerLink]="['/']" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Gestion Interesados</p>
-              </a>
-            </ul>
-
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a [routerLink]="['/']" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Gestion Comunicaciones</p>
-                </a>
-              </ul>
-
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a [routerLink]="['/']" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Gestion Riesgos</p>
-                  </a>
-                </ul>
-
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a [routerLink]="['/']" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Plan Gestion Proyectos</p>
-                    </a>
-                  </ul>
-
-
-                  <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                      <a [routerLink]="['/']" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Gestion Lecciones Aprendidas</p>
-                      </a>
-                    </ul>
-
-                    <ul class="nav nav-treeview">
-                      <li class="nav-item">
-                        <a [routerLink]="['/']" class="nav-link">
-                          <i class="far fa-circle nav-icon"></i>
-                          <p>Gestion Capacitaciones</p>
-                        </a>
-                      </ul>
-
-
-
         </li>
 
-
-        <!-- Este Menu PMO-->
         <li class="nav-item">
-          <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-address-book"></i>
+          <a [routerLink]="['/comunicac']" class="nav-link">
+            <i class="nav-icon fas fa-th"></i>
             <p>
-              PMO
-              <i class="right fas fa-angle-left"></i>
+              Comunicaciones
             </p>
           </a>
-
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a href="../../index.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Programa Trabajo</p>
-              </a>
-            </ul>
-
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="../../index.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p> Reportes</p>
-                </a>
-              </ul>
-
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="../../index.html" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Graficas</p>
-                  </a>
-                </ul>
-
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="../../index.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Reprogramaciones</p>
-                    </a>
-                  </ul>
-
-
-                  <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                      <a href="../../index.html" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>fotografias</p>
-                      </a>
-                    </ul>
-
-                    <ul class="nav nav-treeview">
-                      <li class="nav-item">
-                        <a href="../../index.html" class="nav-link">
-                          <i class="far fa-circle nav-icon"></i>
-                          <p>Personal/Equipo</p>
-                        </a>
-                      </ul>
-
-
-
-
-
-
         </li>
 
-
-         <!-- Este Menu Administracion-->
-               <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon fas fa-ambulance"></i>
-                  <p>
-                    Admin
-                    <i class="right fas fa-angle-left"></i>
-                  </p>
-                </a>
-
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="../../index.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Empresas</p>
-                    </a>
-                  </ul>
-
-                  <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                      <a [routerLink]="['/branchs']" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p> Sucursales</p>
-                      </a>
-                    </ul>
-
-                    <ul class="nav nav-treeview">
-                      <li class="nav-item">
-                        <a href="../../index.html" class="nav-link">
-                          <i class="far fa-circle nav-icon"></i>
-                          <p>Permisos</p>
-                        </a>
-                      </ul>
-
-                      <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                          <a [routerLink]="['users']" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Users</p>
-                          </a>
-                        </ul>
-
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                              <a href="../../index.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Generales</p>
-                              </a>
-                           </ul>
-
-         </li>
-
-
-      <li class="nav-item">
-           <a class="nav-link btn text-left" (click)="logout()">
-             <i class="nav-icon fas fa-sign-out-alt"></i>
-              LogOut
-           </a>
+        <li class="nav-item">
+          <a [routerLink]="['/empresas']" class="nav-link">
+            <i class="nav-icon fas fa-address-card"></i>
+            <p>
+            Empresas
+          </p>
+        </a>
       </li>
 
 
+      <li class="nav-item">
+        <a [routerLink]="['/branchs']" class="nav-link">
+          <i class="nav-icon fas fa-address-card"></i>
+          <p>
+          Sucursales
+        </p>
+      </a>
+    </li>
+
+        <li class="nav-item">
+          <a [routerLink]="['/users']" class="nav-link">
+            <i class="nav-icon fas fa-users"></i>
+            <p>
+              Users
+            </p>
+          </a>
+        </li>
+
+
+
+        <li class="nav-item">
+          <a [routerLink]="['/categories']" class="nav-link">
+            <i class="nav-icon fas fa-list"></i>
+            <p>
+              Categories
+            </p>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a [routerLink]="['/subcategories']" class="nav-link">
+            <i class="nav-icon fas fa-th"></i>
+            <p>
+              Sub-Categories
+            </p>
+          </a>
+        </li>
+
+
+          <li class="nav-item">
+          <a class="nav-link btn text-left" (click)="logout()">
+            <i clas="nav-icon fas fa-sign-out-alt"></i>
+          <p>
+            LogOut
+          </p>
+        </a>
+      </li>
 
       </ul>
     </nav>
