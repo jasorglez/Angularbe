@@ -4,11 +4,9 @@ import { RouterModule, Routes } from '@angular/router';
 //componentes
 import { BranchsComponent } from './branchs.component';
 
-
 const routes: Routes = [
-  { path: '', component: BranchsComponent }
+	{ path: '', component: BranchsComponent}
 ];
-
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
