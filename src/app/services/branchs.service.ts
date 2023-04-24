@@ -58,7 +58,7 @@ export class BranchsService {
   getItem(id: string) {
 
 		return this.http.get(`${environment.urlFirebase}branchs/${id}.json`);
- 
+
 	}
 
 	 /*=============================================

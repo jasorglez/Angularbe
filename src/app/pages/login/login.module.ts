@@ -7,6 +7,9 @@ import { LoginComponent } from './login.component';
 //ruta
 import { LoginRoutingModule } from './login-routing.module';
 
+import { TranslateService} from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
+
 
 
 @NgModule({
@@ -14,7 +17,10 @@ import { LoginRoutingModule } from './login-routing.module';
   imports: [
     CommonModule,
     LoginRoutingModule,
-    ReactiveFormsModule
-  ]
+    ReactiveFormsModule, 
+    TranslateModule  
+  ],
+  providers: [TranslateService]
+
 })
 export class LoginModule { }

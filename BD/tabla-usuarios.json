@@ -1,0 +1,55 @@
+{
+  "-MBsfaIcfGpjg7HGqR0Y": {
+    "active":1,
+    "age": 48,
+    "country": "Mexico",
+    "displayName": "Jose Angel Soriano Gonzalez",
+    "email": "jsoriano@hco-consultores.com",
+    "iduser": 1,
+    "method": "google",
+    "phone": "+54-3006145678",
+    "picture": "https://lh3.googleusercontent.com/a-/AOh14GhEQ-zBlzmPuiA1QXOULKbJ_1pFaoYlGMQb82WY",
+     "position":"Developer",
+    "organization":"Sistemas"
+  },
+  "-MBt3fStibHmqhEr6OAe": {
+    "active":1,
+    "age": 30,
+     "country": "Mexico",
+    "displayName": "Heber Arce S",
+    "email": "harce@gmail.com",
+    "iduser": 2,
+    "method": "direct",
+     "phone": "+52-722 514 5678",
+    "picture": "9519.png",
+     "position":"Compras",
+    "organization":"Compras"    
+  },
+  "-MScqtx9ZorMPzbdxs6i": {
+    "active":1,
+    "age": 30,
+     "country": "Mexico",
+    "displayName": "Palestina Paredes Arce",
+    "email": "pparedes@gmail.com",
+    "iduser": 3,
+    "method": "direct",
+     "phone": "+52-822 514 4578",
+    "picture": "9519.png",
+     "position":"Boss",
+    "organization":"Calidad"
+    
+  },
+  "-MTl52VEGfPh8kiqMKt9": {
+"active":1,
+    "age": 55,
+     "country": "Mexico",
+    "displayName": "Jesus Montes Arce S",
+    "email": "jmontes@gmail.com",
+    "iduser": 4,
+    "method": "direct",
+     "phone": "+52-44 514 5678",
+    "picture": "9519.png",
+     "position":"Perro Grande",
+    "organization":"Construction"    
+  }
+}

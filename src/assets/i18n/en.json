@@ -1,0 +1,29 @@
+{
+  "titlelogin" : "Sign in to start your session",
+  "logout"     : "Log Out",
+  "holder": {
+    "emailloginholder" : "E-mail",
+    "passloginholder"  : "Password"
+  },
+  "menuPM":{
+    "home":"Home",
+    "gi"  :"Interested management",
+    "gc"  : "Communications management",
+    "gr"  : "Risks management",
+    "gp"  : "Projects management",
+    "ll"  : "Learned lesssons",
+    "gt"  : "Training management"
+  },
+  "menuPMO":{
+      "pt"  : "Work program",
+      "an"  : "Annexes/Projects",
+      "se"  : "Follow-up",
+      "gf"  : "Photography/Graphics"
+    },
+    "admin":{
+      "co"  : "Company",
+      "us"  : "Users",
+      "pe"  : "Permissions",
+      "ad"  : "Administrations"
+    }
+}

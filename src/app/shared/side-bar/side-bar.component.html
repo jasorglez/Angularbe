@@ -17,6 +17,8 @@
       </div>
     </div>
 
+
+
     <!-- Sidebar Menu -->
     <nav class="mt-2">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -24,95 +26,54 @@
              with font-awesome or any other icon font library -->
 
 
+ <!-- Example Code -->
 
 
+      <button type="button" class="btn btn-primary" (click)="home()">{{'menuPM.home' | translate}}</button>
 
-        <li class="nav-item">
-          <a [routerLink]="['/']" class="nav-link">
-          <i class="nav-icon fas fa-home"></i>
-          <p>
-            Home
-          </p>
-        </a>
-        </li>
-
-
-
-        <li class="nav-item">
-          <a [routerLink]="['/plaint']" class="nav-link">
-            <i class="nav-icon fas fa-users"></i>
-            <p>
-              Plan Interesados
-            </p>
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a [routerLink]="['/comunicac']" class="nav-link">
-            <i class="nav-icon fas fa-th"></i>
-            <p>
-              Comunicaciones
-            </p>
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a [routerLink]="['/empresas']" class="nav-link">
-            <i class="nav-icon fas fa-address-card"></i>
-            <p>
-            Empresas
-          </p>
-        </a>
-      </li>
+      <div class="btn-group">
+        <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+          PM
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
+                 <li><button class="dropdown-item" type="button" (click)="navigateToInterested()">{{'menuPM.gi' | translate}}</button></li>
+                 <li><button class="dropdown-item" type="button">{{'menuPM.gc' | translate}}</button></li>
+                 <li><button class="dropdown-item" type="button">{{'menuPM.gr' | translate}}</button></li>
+                 <li><button class="dropdown-item" type="button">{{'menuPM.gp' | translate}}</button></li>
+                 <li><button class="dropdown-item" type="button">{{'menuPM.ll' | translate}}</button></li>
+                 <li><button class="dropdown-item" type="button">{{'menuPM.gt' | translate}}</button></li>
+            </ul>
+        </div>
 
 
-      <li class="nav-item">
-        <a [routerLink]="['/branchs']" class="nav-link">
-          <i class="nav-icon fas fa-address-card"></i>
-          <p>
-          Sucursales
-        </p>
-      </a>
-    </li>
-
-        <li class="nav-item">
-          <a [routerLink]="['/users']" class="nav-link">
-            <i class="nav-icon fas fa-users"></i>
-            <p>
-              Users
-            </p>
-          </a>
-        </li>
+        <div class="btn-group">
+            <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+              PMO
+            </button>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
+                 <li><button class="dropdown-item" type="button">{{'menuPMO.pt' | translate}}</button></li>
+                 <li><button class="dropdown-item" type="button">{{'menuPMO.an' | translate}}</button></li>
+                 <li><button class="dropdown-item" type="button">{{'menuPMO.se' | translate}}</button></li>
+                 <li><button class="dropdown-item" type="button">{{'menuPMO.gf' | translate}}</button></li>
+              </ul>
+        </div>
 
 
+          <div class="btn-group">
+            <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+              ADMIN
+            </button>
 
-        <li class="nav-item">
-          <a [routerLink]="['/categories']" class="nav-link">
-            <i class="nav-icon fas fa-list"></i>
-            <p>
-              Categories
-            </p>
-          </a>
-        </li>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
+                <button class="dropdown-item" type="button" (click)="navigateToCompanys()"><i class="bi bi-building" ></i> {{'admin.co' | translate}}</button>
+                <button class="dropdown-item" type="button" (click)="navigateToUsers()"><i class="bi bi-people"></i> {{'admin.us' | translate}}</button>
+                <button class="dropdown-item" type="button"><i class="bi bi-shield-lock"></i> {{'admin.pe' | translate}}</button>
+                <button class="dropdown-item" type="button" (click)="navigateToBranchs()"><i class="bi bi-gear"></i>{{'admin.ad' | translate}}</button>
+            </ul>
+        </div>
 
-        <li class="nav-item">
-          <a [routerLink]="['/subcategories']" class="nav-link">
-            <i class="nav-icon fas fa-th"></i>
-            <p>
-              Sub-Categories
-            </p>
-          </a>
-        </li>
+        <button type="button"  class="btn btn-warning" (click)="logout()">{{'logout' | translate}}</button>
 
-
-          <li class="nav-item">
-          <a class="nav-link btn text-left" (click)="logout()">
-            <i clas="nav-icon fas fa-sign-out-alt"></i>
-          <p>
-            LogOut
-          </p>
-        </a>
-      </li>
 
       </ul>
     </nav>

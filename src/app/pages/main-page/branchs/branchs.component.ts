@@ -212,7 +212,7 @@ export class BranchsComponent implements OnInit {
 	función para llamar el diálogo de edición de bRANCHS
 	=============================================*/
 
-	editCategory(id:string){
+	editBranchs(id:string){
 
 		const dialogRef = this.dialog.open(EditBranchComponent,{
 

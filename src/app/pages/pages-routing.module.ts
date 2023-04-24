@@ -15,6 +15,8 @@ const routes: Routes = [
       { path: '', loadChildren: () => import('./main-page/home/home.module').then(m=>m.HomeModule)},
       { path: 'branchs', loadChildren: () => import('./main-page/branchs/branchs.module').then(m=>m.BranchsModule)},
       { path: 'users', loadChildren: () => import('./main-page/users/users.module').then( m=> m.UsersModule)},
+      { path: 'companys', loadChildren: () => import('./main-page/companys/companys.module').then( m=> m.CompanysModule)},
+      { path: 'interested', loadChildren: () => import('./main-page/interested/interested.module').then( m=> m.InterestedModule)},
       { path: '**', component: Error404Component}
     ]}
 ];

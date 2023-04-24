@@ -1,0 +1,29 @@
+{
+  "titlelogin":"Credencial para iniciar tu sesión",
+  "logout"    : "Salir",
+  "holder": {
+    "emailloginholder" : "Correo Electronico",
+    "passloginholder"  : "Contraseña"
+  },
+  "menuPM":{
+    "home":"Inicio",
+    "gi"  :"Gestion Interesados",
+    "gc"  : "Gestion Comunicaciones",
+    "gr"  : "Gestion Riesgos",
+    "gp"  : "Gestion Proyectos",
+    "ll"  : "Lecciones Aprendidas",
+    "gt"  : "Gestion Capacitaciones"
+  },
+  "menuPMO":{
+    "pt"  : "Programa Trabajo",
+    "an"  : "Anexos/Proyectos",
+    "se"  : "Seguimiento",
+    "gf"  : "Graficas/Fotografias"
+  },
+    "admin":{
+      "co"  : "Empresas",
+      "us" : "Usuarios",
+      "pe"  : "Permisos",
+      "ad"  : "Administracion"
+    }
+}

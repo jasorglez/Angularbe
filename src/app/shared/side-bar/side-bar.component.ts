@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { TraductorService} from 'src/app/services/traductor.service';
+
 
 @Component({
   selector: 'app-side-bar',
@@ -9,8 +11,33 @@ import { Router } from '@angular/router';
 })
 export class SideBarComponent implements OnInit {
 
- 
-  constructor( private router: Router) { }
+
+  constructor(public translateService: TraductorService, private router: Router) { }
+
+
+  home() {
+    this.router.navigate(['/']);
+   }
+
+
+  navigateToBranchs()  {
+
+    this.router.navigate(['/branchs']);
+
+  }
+
+
+   navigateToUsers()  {
+    this.router.navigate(['/users']);
+  }
+
+  navigateToCompanys()  {
+    this.router.navigate(['/companys']);
+  }
+
+  navigateToInterested()  {
+    this.router.navigate(['/interested']);
+  }
 
 	ngOnInit(): void  {
 

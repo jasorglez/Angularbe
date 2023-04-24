@@ -6,8 +6,10 @@
 	  <!-- /.login-logo -->
 	  <div class="card" >
 	    <div class="card-body login-card-body">
-	      <p class="login-box-msg" >Sign in to start your session</p>
-
+	      <p class="login-box-msg" > {{ 'titlelogin' | translate}} </p>
+		  
+		    
+		     
 	      <form
 	      	autocomplete="off"
 	      	[formGroup]="f"
@@ -18,7 +20,7 @@
 
 	          <input type="email"
 	          class="form-control"
-	          placeholder="Email"
+	          placeholder="{{ 'holder.emailloginholder' | translate}}"
 	          formControlName="email"
 	          [ngClass]="{'is-invalid': invalidField('email')}"
 	          >
@@ -37,7 +39,7 @@
 
 	          <input type="password"
 	          class="form-control"
-	          placeholder="Password"
+	          placeholder="{{'holder.passloginholder' | translate}}"
 	          formControlName="password"
 	          [ngClass]="{'is-invalid': invalidField('password')}">
 

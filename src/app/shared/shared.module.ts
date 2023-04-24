@@ -8,12 +8,21 @@ import { SideBarComponent } from './side-bar/side-bar.component';
 //rutas
 import { RouterModule } from '@angular/router';
 
+import {MatMenuModule} from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+
+import { TranslateService} from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
+
+
 @NgModule({
   declarations: [NavBarComponent, FooterComponent, SideBarComponent],
   exports     : [NavBarComponent, FooterComponent, SideBarComponent],
   imports: [
     CommonModule,
-    RouterModule
-  ]
+    RouterModule, MatMenuModule, MatIconModule, 
+    TranslateModule  
+  ],
+  providers: [TranslateService]
 })
 export class SharedModule { }

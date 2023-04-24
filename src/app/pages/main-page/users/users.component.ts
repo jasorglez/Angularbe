@@ -5,6 +5,10 @@ import { UsersService } from 'src/app/services/users.service';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { MatTabsModule } from '@angular/material/tabs';
+
+import { FormBuilder, FormGroup, Validators, FormsModule } from '@angular/forms';
+
 import {animate, state, style, transition, trigger} from '@angular/animations';
 
 import { environment } from 'src/environments/environment';
@@ -25,12 +29,27 @@ import { functions } from 'src/app/helpers/functions';
 })
 export class UsersComponent implements OnInit {
 
+ /*=============================================
+	Creamos grupo de controles
+	=============================================*/
+
+	public myform = this.form.group({
+
+		email: ['', [Validators.required, Validators.email]],
+		password: ['', Validators.required]
+
+	})
+
+
+
 	/*=============================================
 	Variable para nombrar las columnas de nuestra tabla en Angular Material
 	=============================================*/
-	displayedColumns: string[] = [  'position',
+	displayedColumns: string[] = [  'numberposition',
 									'email',
 									'actions'];
+
+ selectedColor = 'primary'; // Inicialmente, el color seleccionado es 'primary'
 
 	/*=============================================
 	Variable global que instancie la data que aparecerá en la Tabla
@@ -42,6 +61,7 @@ export class UsersComponent implements OnInit {
 	=============================================*/
 
 	users:Iusers[] = [];
+
 
 	/*=============================================
 	Variable global que informa a la vista cuando hay una expansión de la tabla
@@ -75,32 +95,55 @@ export class UsersComponent implements OnInit {
 	@ViewChild(MatPaginator) paginator!: MatPaginator;
 	@ViewChild(MatSort) sort!: MatSort;
 
-  	constructor(private usersService: UsersService) { }
+  	constructor(private usersService: UsersService, private form:FormBuilder) { }
 
   	ngOnInit(): void {
 
-  		this.getData();
 
-  	/*=============================================
-		Definir tamaños de pantalla
-		=============================================*/
+      		this.getData();
 
-		if(functions.screenSize(0, 767)){
+      	/*=============================================
+    		Definir tamaños de pantalla
+    		=============================================*/
 
-			this.screenSizeSM = true;
+    		if(functions.screenSize(0, 767)){
 
-		}else{
+    			this.screenSizeSM = true;
 
-			this.screenSizeSM = false;
+    		}else{
 
-			this.displayedColumns.splice(1, 0, 'displayName');
-			this.displayedColumns.splice(2, 0, 'username');
+    			this.screenSizeSM = false;
 
-		}
+    			this.displayedColumns.splice(1, 0, 'displayName');
+    			this.displayedColumns.splice(2, 0, 'position');
 
-  	}
+    		}
 
-  	/*=============================================
+ 	}
+
+
+
+   onTabSelected(event: any) {
+
+    console.log('Pestaña seleccionada:', event);
+
+    switch (event) {
+      case 0:
+        this.selectedColor = 'green'; // Color verde para la primera pestaña
+        break;
+      case 1:
+        this.selectedColor = 'accent'; // Color azul para la segunda pestaña
+        break;
+      case 2:
+        this.selectedColor = 'purple'; // Color rojo para la tercera pestaña
+        break;
+      default:
+        this.selectedColor = 'purple';
+        break;
+    }
+  }
+
+	/*=============================================
 	función para tomar la data de usuarios
 	=============================================*/
 
@@ -113,28 +156,27 @@ export class UsersComponent implements OnInit {
   			/*=============================================
 			Integrando respuesta de base de datos con la interfaz
 			=============================================*/
-  			let position = 1;
+  			let numberposition = 1;
 
   			this.users = Object.keys(resp).map(a=> ({
 
   				id:a,
-  				position:position++,
-  				address:resp[a].address,
-				city:resp[a].city,
-				country:resp[a].country,
-				country_code:resp[a].country_code,
-				displayName:resp[a].displayName,
-				email:resp[a].email,
-				idToken:resp[a].idToken,
-				method:resp[a].method,
-				phone:resp[a].phone,
-				picture:resp[a].picture,
-				username:resp[a].username,
-				wishlist:resp[a].wishlist
+  				numberposition:numberposition++,
+          active:resp[a].active,
+          age:resp[a].age,
+  			  country:resp[a].country,
+				  displayName:resp[a].displayName,
+				  email:resp[a].email,
+          iduser:resp[a].iduser,
+				  method:resp[a].method,
+				  phone:resp[a].phone,
+				  picture:resp[a].picture,
+          position:resp[a].position,
+				  organization:resp[a].organization
 
   			} as Iusers ));
 
-        console.log("this.users", this.users);
+      //  console.log("this.users", this.users);
 
   			this.dataSource = new MatTableDataSource(this.users);
 
@@ -160,5 +202,21 @@ export class UsersComponent implements OnInit {
       		this.dataSource.paginator.firstPage();
     	}
   	}
+
+
+    newUsers() {
+
+    }
+
+
+    editUsers(id:string){
+
+
+      }
+
+    prueba(){
+
+    }
+
 
 }

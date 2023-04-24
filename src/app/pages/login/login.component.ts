@@ -9,6 +9,8 @@ import { functions } from 'src/app/helpers/functions';
 import { alerts } from 'src/app/helpers/alerts';
 import { Router } from '@angular/router';
 
+import { TraductorService} from 'src/app/services/traductor.service';
+
 
 @Component({
   selector: 'app-login',
@@ -18,6 +20,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit{
 
 
+//browLan : string ='' ;
 
  /*=============================================
 	Creamos grupo de controles
@@ -38,12 +41,17 @@ export class LoginComponent implements OnInit{
 
   valorcapturado = '' ;
 
-  constructor(private form: FormBuilder, private loginService: LoginService, private empresasService : EmpresasService,
+  constructor( public translateService: TraductorService, private form: FormBuilder, private loginService: LoginService, private empresasService : EmpresasService,
     private router: Router) { }
+                          
+
+
 
   ngOnInit(): void {
 
   }
+
+  
 
 	/*=============================================
 	Función Login
