@@ -19,8 +19,7 @@ import { TranslateModule } from '@ngx-translate/core';
     LoginRoutingModule,
     ReactiveFormsModule, 
     TranslateModule  
-  ],
-  providers: [TranslateService]
+  ]
 
 })
 export class LoginModule { }

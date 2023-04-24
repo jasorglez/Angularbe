@@ -14,8 +14,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatCardModule } from '@angular/material/card';
 
-
 import { PipesModule } from 'src/app/pipes/pipes.module';
+
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { PipesModule } from 'src/app/pipes/pipes.module';
     MatIconModule,
     MatCardModule,
     ReactiveFormsModule,
-    PipesModule
+    PipesModule,
+    TranslateModule
 
   ]
 })

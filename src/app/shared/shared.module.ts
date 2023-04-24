@@ -22,7 +22,6 @@ import { TranslateModule } from '@ngx-translate/core';
     CommonModule,
     RouterModule, MatMenuModule, MatIconModule, 
     TranslateModule  
-  ],
-  providers: [TranslateService]
+  ]
 })
 export class SharedModule { }

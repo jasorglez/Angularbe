@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Iusers } from 'src/app/interface/iusers';
+
 import { UsersService } from 'src/app/services/users.service';
+import { TraductorService} from 'src/app/services/traductor.service';
 
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
@@ -95,7 +97,7 @@ export class UsersComponent implements OnInit {
 	@ViewChild(MatPaginator) paginator!: MatPaginator;
 	@ViewChild(MatSort) sort!: MatSort;
 
-  	constructor(private usersService: UsersService, private form:FormBuilder) { }
+  	constructor(public translateService: TraductorService, private usersService: UsersService, private form:FormBuilder) { }
 
   	ngOnInit(): void {
 
@@ -120,7 +122,6 @@ export class UsersComponent implements OnInit {
     		}
 
  	}
-
 
 
    onTabSelected(event: any) {
