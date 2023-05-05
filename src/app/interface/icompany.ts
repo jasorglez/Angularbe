@@ -1,4 +1,4 @@
-export interface Iempresa {
+export interface Icompany {
   idemp:number;
 	address:string;
 	city:string;

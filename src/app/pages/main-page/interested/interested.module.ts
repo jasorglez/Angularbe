@@ -10,6 +10,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 
+import { TranslateModule } from '@ngx-translate/core';
+
 
 @NgModule({
   declarations: [InterestedComponent],
@@ -18,7 +20,7 @@ import { MatSortModule } from '@angular/material/sort';
     InterestedRoutingModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule, TranslateModule
   ]
 })
 export class InterestedModule { }

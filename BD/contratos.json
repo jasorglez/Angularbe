@@ -1,0 +1,75 @@
+{
+	"28": {
+		"iId_Sucursal": "01",
+		"sContrato": "CUSTOMER CARE",
+		"sCodigo": "*",
+		"mDescripcion": "ACABADOS EN OFICINAS DE CUTOMER CARE ADVANCE AEROPUERTO",
+		"sUbicacion": "QUERETARO",
+		"sTipoObra": "PROGRAMADA",
+		"sPoliza": "*",
+		"sLicitacion": "SIN LICITACION",
+		"mComentarios": "*",
+		"iActivo": 1
+	},
+    "29": {
+		"iId_Sucursal": "02",
+		"sContrato": "CD CARMEN",
+		"sCodigo": "AUXILIAR",
+		"mDescripcion": "SUCURSAL CIUDAD DEL CARMEN, CAMPECHE",
+		"sUbicacion": "QUERETARO",
+		"sTipoObra": "PROGRAMADA",
+		"sPoliza": "*",
+		"sLicitacion": "SIN LICITACION",
+		"mComentarios": "*",
+		"iActivo": 1
+	},
+    "30": {
+		"iId_Sucursal": "5",
+		"sContrato": "XCF",
+		"sCodigo": "**",
+		"mDescripcion": "PROYECTO XCF",
+		"sUbicacion": "QUERETARO",
+		"sTipoObra": "PROGRAMADA",
+		"sPoliza": "*",
+		"sLicitacion": "SIN LICITACION",
+		"mComentarios": "*",
+		"iActivo": 1
+     },
+	 "31":{
+		"iId_Sucursal": "5",
+		"sContrato": "PIASJR CASETA",
+		"sCodigo": "*",
+		"mDescripcion": "PIASJR Caseta de Ventas (VRF)",
+		"sUbicacion": "QUERETARO",
+		"sTipoObra": "PROGRAMADA",
+		"sPoliza": "*",
+		"sLicitacion": "*",
+		"mComentarios": "*",
+		"iActivo": 1
+		},
+    "32":{
+		"iId_Sucursal": "5",
+		"sContrato": "DAY-DIT",
+		"sCodigo": "*",
+		"mDescripcion": "*",
+		"sUbicacion": "ADVANCE AEROPUERTO",
+		"sTipoObra": "PROGRAMADA",
+		"sPoliza": "*",
+		"sLicitacion": "*",
+		"mComentarios": "*",
+		"iActivo": 1	
+	},
+    "33":{
+		"iId_Sucursal": "01",
+		"sContrato": "LAFAYETTE",
+		"sCodigo": "",
+		"mDescripcion": "SUCURSAL EN LAFAYETTE, INDIANA, ESTADOS UNIDOS",
+		"sUbicacion": "",
+		"sTipoObra": "PROGRAMADA",
+		"sPoliza": "",
+		"sLicitacion": null,
+		"mComentarios": "*",
+		"iActivo": 1
+	 }
+
+}

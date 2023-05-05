@@ -4,10 +4,11 @@ import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 
 
+
 @Injectable({
   providedIn: 'root'
 })
-export class EmpresasService {
+export class CompanysService {
 
   private _idEmpresa : number ;
   public email : string = '' ;
@@ -17,7 +18,11 @@ export class EmpresasService {
     this._idEmpresa = 0 ;
    }
 
-/*-------------------------------
+
+
+
+
+   /*-------------------------------
  * aqui obtengo el email del login y lo fijo
  ------------------------------*/
 

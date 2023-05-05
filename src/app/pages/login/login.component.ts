@@ -3,7 +3,7 @@ import { FormsModule, FormBuilder, Validators } from '@angular/forms'
 
 import { Ilogin } from 'src/app/interface/ilogin';
 import { LoginService } from 'src/app/services/login.service';
-import { EmpresasService } from 'src/app/services/empresas.service';
+import { CompanysService } from 'src/app/services/companys.service';
 
 import { functions } from 'src/app/helpers/functions';
 import { alerts } from 'src/app/helpers/alerts';
@@ -41,9 +41,9 @@ export class LoginComponent implements OnInit{
 
   valorcapturado = '' ;
 
-  constructor( public translateService: TraductorService, private form: FormBuilder, private loginService: LoginService, private empresasService : EmpresasService,
+  constructor( public translateService: TraductorService, private form: FormBuilder, private loginService: LoginService, private companysService : CompanysService,
     private router: Router) { }
-                          
+
 
 
 
@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit{
 
   }
 
-  
+
 
 	/*=============================================
 	Función Login
@@ -67,7 +67,7 @@ export class LoginComponent implements OnInit{
     this.formSubmitted = true;
 
    // Atrapo la variable para enviarla al servicio
-   this.empresasService.setEmail(this.f.controls.email.value ?? '' );
+   this.companysService.setEmail(this.f.controls.email.value ?? '' );
 
     if(this.f.invalid){
 

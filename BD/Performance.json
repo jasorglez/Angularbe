@@ -1,0 +1,83 @@
+{
+	"operative_performance": "",
+	"rows":
+	[
+		{
+			"id": 1,
+			"id_typeOP": 4,
+			"id_project": 1,
+			"diameter": "1/2\" - 3\"",
+			"class": "40",
+			"objective": "Produción",
+			"time_exec": 1.46,
+			"quantity_staff": 2,
+			"active": 1
+		},
+		{
+			"id": 2,
+			"id_typeOP": 4,
+			"id_project": 1,
+			"diameter": "1/2\" - 3\"",
+			"class": "40",
+			"objective": "Produción",
+			"time_exec": 2.10,
+			"quantity_staff": 2,
+			"active": 1
+		},
+		{
+			"id": 3,
+			"id_typeOP": 4,
+			"id_project": 1,
+			"diameter": "1/2\" - 3\"",
+			"class": "40",
+			"objective": "Produción",
+			"time_exec": 2.44,
+			"quantity_staff": 2,
+			"active": 1
+		},
+		{
+			"id": 4,
+			"id_typeOP": 4,
+			"id_project": 1,
+			"diameter": "4\" - 10\"",
+			"class": "40",
+			"objective": "Produción",
+			"time_exec": 4.50,
+			"quantity_staff": 2,
+			"active": 1
+		},
+		{
+			"id": 5,
+			"id_typeOP": 4,
+			"id_project": 1,
+			"diameter": "4\" - 10\"",
+			"class": "40",
+			"objective": "Produción",
+			"time_exec": 6.40,
+			"quantity_staff": 2,
+			"active": 1
+		},
+		{
+			"id": 6,
+			"id_typeOP": 4,
+			"id_project": 1,
+			"diameter": "4\" - 10\"",
+			"class": "40",
+			"objective": "Flexibilidad Operativa",
+			"time_exec": 7.00,
+			"quantity_staff": 2,
+			"active": 1
+		},
+		{
+			"id": 7,
+			"id_typeOP": 4,
+			"id_project": 1,
+			"diameter": "12\" - 18\"",
+			"class": "40",
+			"objective": "Produción",
+			"time_exec": 12.80,
+			"quantity_staff": 2,
+			"active": 1
+		}
+	]
+}

@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Iusers } from 'src/app/interface/iusers';
 
 import { UsersService } from 'src/app/services/users.service';
+
 import { TraductorService} from 'src/app/services/traductor.service';
 
 import {MatPaginator} from '@angular/material/paginator';
@@ -15,6 +16,10 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 
 import { environment } from 'src/environments/environment';
 import { functions } from 'src/app/helpers/functions';
+
+import { db } from 'src/app/firebase.config';
+import { ref, get, onValue} from 'firebase/database';
+
 
 @Component({
 	selector: 'app-users',
@@ -31,6 +36,10 @@ import { functions } from 'src/app/helpers/functions';
 })
 export class UsersComponent implements OnInit {
 
+  userEvents: any[] = [];
+  currentIndex : number = 0 ;
+  snapshot: any;
+
  /*=============================================
 	Creamos grupo de controles
 	=============================================*/
@@ -39,7 +48,6 @@ export class UsersComponent implements OnInit {
 
 		email: ['', [Validators.required, Validators.email]],
 		password: ['', Validators.required]
-
 	})
 
 
@@ -62,7 +70,10 @@ export class UsersComponent implements OnInit {
 	Variable global que tipifica la interfaz de usuario
 	=============================================*/
 
-	users:Iusers[] = [];
+	 users:Iusers[] = [];
+
+   profile: any = {};
+
 
 
 	/*=============================================
@@ -97,12 +108,15 @@ export class UsersComponent implements OnInit {
 	@ViewChild(MatPaginator) paginator!: MatPaginator;
 	@ViewChild(MatSort) sort!: MatSort;
 
-  	constructor(public translateService: TraductorService, private usersService: UsersService, private form:FormBuilder) { }
+  	constructor(public translateService: TraductorService, private usersService: UsersService, private form:FormBuilder) {   }
 
   	ngOnInit(): void {
 
+      const email = 'jsoriano@hco-consultores.com';
 
-      		this.getData();
+
+
+  		this.getData();
 
       	/*=============================================
     		Definir tamaños de pantalla
@@ -124,33 +138,28 @@ export class UsersComponent implements OnInit {
  	}
 
 
-   onTabSelected(event: any) {
-
-    console.log('Pestaña seleccionada:', event);
-
-    switch (event) {
-      case 0:
-        this.selectedColor = 'green'; // Color verde para la primera pestaña
-        break;
-      case 1:
-        this.selectedColor = 'accent'; // Color azul para la segunda pestaña
-        break;
-      case 2:
-        this.selectedColor = 'purple'; // Color rojo para la tercera pestaña
-        break;
-      default:
-        this.selectedColor = 'purple';
-        break;
-    }
-  }
 
 	/*=============================================
 	función para tomar la data de usuarios
 	=============================================*/
 
+
+    public async getUserEventData() {
+      try {
+        const result = await this.usersService.getUserEventData();
+        console.log(result);
+      }catch (err) {
+        console.log(err);
+      }
+
+    }
+
+
+
   	getData(){
 
   		this.loadData = true;
+
 
   		this.usersService.getData().subscribe((resp:any)=>{
 
@@ -177,19 +186,30 @@ export class UsersComponent implements OnInit {
 
   			} as Iusers ));
 
-      //  console.log("this.users", this.users);
+            // Tomamos el primer registro
+        this.profile = this.users[this.currentIndex];
 
+        //console.log("this.profile", this.profile);
+
+        // Creamos el dataSource
   			this.dataSource = new MatTableDataSource(this.users);
-
   			this.dataSource.paginator = this.paginator;
-
   			this.dataSource.sort = this.sort;
-
   			this.loadData = false;
 
   		})
 
   	}
+
+
+      // Función para mostrar el perfil de un usuario
+      showProfile(user: Iusers) {
+        // Actualizamos el currentIndex y el profile
+        // console.log(`Nombre: ${user.displayName}, Email: ${user.email}, Edad: ${user.age}`);
+        this.profile = user;
+      }
+
+
 
   	/*=============================================
 	Filtro de Búsqueda
@@ -215,9 +235,7 @@ export class UsersComponent implements OnInit {
 
       }
 
-    prueba(){
 
-    }
 
 
 }

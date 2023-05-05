@@ -1,20 +1,27 @@
 {
-  "admins"    : "Administracion",
-  "actions"   : "Acciones",
-  "branchs"   : "Sucursales",
-  "company"   : "Empresas",
-  "email"     : "Correo Electronico",
-  "home"      : "Inicio",
-  "logout"    : "Salir", 
-  "name"      : "Nombre",
-  "new"       : "Nuevo",
-  "password"  : "Contraseña", 
-  "Perm"      : "Permisos",
-  "position"  : "Posicion",
-  "projects"  : "Proyectos",
-  "search"    : "Busqueda",
-  "titlelogin": "Credencial para iniciar tu sesión",
-  "user"      : "Usuarios", 
+  "admins"     : "Administracion",
+  "actions"    : "Acciones",
+  "age"        : "Edad",
+  "branchs"    : "Sucursales",
+  "company"    : "Empresas",
+  "comun"      : "Comunicaciones",
+  "country"    : "Ciudad",
+  "email"      : "Correo Electronico",
+  "home"       : "Inicio",
+  "interes"    : "Interesados",
+  "logout"     : "Salir",
+  "name"       : "Nombre",
+  "new"        : "Nuevo",
+  "organ"      : "Organizacin",
+  "password"   : "Contraseña",
+  "perm"       : "Permisos",
+  "position"   : "Posicion",
+  "phone"      : "Telefono",
+  "projects"   : "Proyectos",
+  "risk"       : "Riesgos",
+  "search"     : "Busqueda",
+  "titlelogin" : "Credencial para iniciar tu sesión",
+  "user"       : "Usuarios",
   "menuPM":{
     "gi"  :"Gestion Interesados",
     "gc"  : "Gestion Comunicaciones",
@@ -30,3 +37,6 @@
     "gf"  : "Graficas/Fotografias"
   }
 }
+
+
+

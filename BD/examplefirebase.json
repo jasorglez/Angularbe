@@ -1,0 +1,40 @@
+{
+  "usuarios": {
+  "1": {
+    "name"     : "Jose Angel",
+    "age"      : 48,
+    "Location" : "Tuxtepec, Oax"
+  },
+  "2": {
+    "name"     : "Flora",
+    "age"      : 49,
+    "Location" : "Oaxaca, Oax"
+  },
+  "3": {
+    "name"     : "Pedro",
+    "age"      : 29,
+    "Location" : "Reynosa"
+  }
+},
+  "events": {
+  "fm" : {
+    "name" : "Firebase Meet Up",
+    "date" : "10042023"
+  },
+  "fm10" : {
+    "name" : "Delphi Meet Up",
+    "date" : "20042023"
+  }
+},
+  "eventAttendees": {
+       "fm" : {
+            "1" : "Jose Angel",
+            "2" : "Flora"
+    },
+       "fm10":{
+            "1":"Jose Angel",
+            "3":"Pedro"
+    }
+  }
+ }
+

@@ -1,0 +1,35 @@
+{
+  "-sduier100": {
+    "address": "Calle 24 N 45",
+    "city": "Cd. del Carmen",
+    "country": "Mexico",
+    "state": "Veracruz",
+    "displayName": "HCO Consultores y asociados 3",
+    "email": "info@hco.com",
+    "phone": "+51-3006145678",
+    "picture": "https://www.hco-consultores.com/wp-content/uploads/2022/09/LOGO-HCO-1.1.png",
+    "rfc": "HCO785KIWL09"
+  },
+  "-hdyewq101": {
+    "address": "Calle 40 Num 100",
+    "city": "Campeche",
+    "country": "Mexico",
+    "state": "Oaxaca",
+    "displayName": "Sisteli-Code",
+    "email": "datasoft@sistelicode.com",
+    "phone": "+54-3006145678",
+    "picture": "https://github.com/jasorglez/be/blob/main/img/LogoInteliCode.png?raw=true",
+    "rfc": "INT070411GX8"
+  },
+  "-podhjwss102": {
+    "address": "Calle 520 Num 850",
+    "city": "Merida",
+    "country": "Mexico",
+    "state": "Durango",
+    "displayName": "Desarrollo Engtanes",
+    "email": "alcance@gmail.com",
+    "phone": "+52-3006145678",
+    "picture": "https://lh3.googleusercontent.com/a-/AOh14GhEQ-zBlzmPuiA1QXOULKbJ_1pFaoYlGMQb82WY",
+    "rfc": "ALC6587EWE5D33"
+  }
+}

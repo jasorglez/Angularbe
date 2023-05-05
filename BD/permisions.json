@@ -1,0 +1,34 @@
+{
+  "50": {
+    "email": "jsoriano@hco-consultores.com",
+    "id_company": "100",
+    "id_branchs": "01",
+    "id_projects": "01",
+    "id_user": "2",
+    "namecompany": "HCO CONSULTORES"
+  },
+  "51": {
+    "email": "jsoriano@hco-consultores.com",
+    "id_company": "101",
+    "id_branchs": "02",
+    "id_projects": "02",
+    "id_user": "02",
+    "namecompany": "SISTELI CODE"
+  },
+  "52": {
+    "email": "jsoriano@hco-consultores.com",
+    "id_company": "102",
+    "id_branchs": "02",
+    "id_projects": "03",
+    "id_user": "03",
+    "namecompany": "A-TECHNOLOGY"
+  },
+  "53": {
+    "email": "rsuarez@gmail.com",
+    "id_company": "100",
+    "id_branchs": "04",
+    "id_projects": "05",
+    "id_user": "01",
+    "namecompany": "HCO CONSULTORES"
+  }
+}
