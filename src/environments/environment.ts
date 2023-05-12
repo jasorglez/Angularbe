@@ -9,19 +9,19 @@ export const environment = {
 
   urlFirebase: 'https://beapp-501d1-default-rtdb.firebaseio.com/',
 
-  urlLogin: 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDxCBGKk8nT09hdW85-PyOkhw5_JPZLF1A',
+  urlLogin: 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=',
 
-  urlGetUser: 'https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=AIzaSyDxCBGKk8nT09hdW85-PyOkhw5_JPZLF1A',
+  urlGetUser: 'https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=',
 
   //urlFiles: 'http://localhost/sistemas-angular/marketplace/src/assets/img/',
 
   urlFiles :'https://github.com/jasorglez/be/blob/main/img/',
 
-  adminFiles: 'http://localhost/sistemas-angular/marketplace/src/assets/img/index.php?key=AIzaSyDxCBGKk8nT09hdW85-PyOkhw5_JPZLF1A',
+  adminFiles: 'http://localhost/sistemas-angular/marketplace/src/assets/img/index.php?key=',
 
-  deleteFiles:'http://localhost/sistemas-angular/marketplace/src/assets/img/delete.php?key=AIzaSyDxCBGKk8nT09hdW85-PyOkhw5_JPZLF1A',
+  deleteFiles:'http://localhost/sistemas-angular/marketplace/src/assets/img/delete.php?key=',
 
-  urlRefreshToken: 'https://securetoken.googleapis.com/v1/token?key=AIzaSyDxCBGKk8nT09hdW85-PyOkhw5_JPZLF1A',
+  urlRefreshToken: 'https://securetoken.googleapis.com/v1/token?key=',
 };
 
 
