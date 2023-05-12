@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 export class CompanysService {
 
   private _idEmpresa : number ;
-  public email : string = '' ;
+
 
 
   constructor( private http: HttpClient ) {
@@ -21,18 +21,11 @@ export class CompanysService {
 
 
 
-
    /*-------------------------------
  * aqui obtengo el email del login y lo fijo
  ------------------------------*/
 
- getEmail(): string {
-  return this.email;
-}
 
-setEmail(email: string): void {
-  this.email = email;
-}
 
 
 /*----------------------------------------------------------------------------------
@@ -45,6 +38,7 @@ getEmpresasxEmail(orderBy:string, equalTo:string){
  // return this.http.get(`${environment.urlFirebase}sub-categories.json?orderBy="${orderBy}"&equalTo="${equalTo}"&print=pretty`);
 
   return this.http.get(`${environment.urlFirebase}companyxusers.json?orderBy="${orderBy}"&equalTo="${equalTo}"&print=pretty`);
+  
 
 }
 
@@ -54,7 +48,7 @@ getEmpresasxEmail(orderBy:string, equalTo:string){
 	=============================================*/
     getData(){
 
-        return this.http.get(`${environment.urlFirebase}empresas.json`);
+        return this.http.get(`${environment.urlFirebase}companys.json`);
 
     }
 

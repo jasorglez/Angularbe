@@ -4,6 +4,7 @@ import { FormsModule, FormBuilder, Validators } from '@angular/forms'
 import { Ilogin } from 'src/app/interface/ilogin';
 import { LoginService } from 'src/app/services/login.service';
 import { CompanysService } from 'src/app/services/companys.service';
+import { TrackingService } from 'src/app/services/tracking.service';
 
 import { functions } from 'src/app/helpers/functions';
 import { alerts } from 'src/app/helpers/alerts';
@@ -20,7 +21,7 @@ import { TraductorService} from 'src/app/services/traductor.service';
 export class LoginComponent implements OnInit{
 
 
-//browLan : string ='' ;
+  emailcapt : string = '';
 
  /*=============================================
 	Creamos grupo de controles
@@ -41,10 +42,10 @@ export class LoginComponent implements OnInit{
 
   valorcapturado = '' ;
 
-  constructor( public translateService: TraductorService, private form: FormBuilder, private loginService: LoginService, private companysService : CompanysService,
-    private router: Router) { }
 
 
+  constructor( public translateService: TraductorService, private form: FormBuilder, private loginService: LoginService,
+    private companysService : CompanysService, private trackingService : TrackingService, private router: Router) { }
 
 
   ngOnInit(): void {
@@ -67,7 +68,9 @@ export class LoginComponent implements OnInit{
     this.formSubmitted = true;
 
    // Atrapo la variable para enviarla al servicio
-   this.companysService.setEmail(this.f.controls.email.value ?? '' );
+   this.emailcapt = this.f.get('email')?.value || '';
+
+   this.trackingService.setEmail(this.f.controls.email.value ?? '' );
 
     if(this.f.invalid){
 
@@ -89,6 +92,9 @@ export class LoginComponent implements OnInit{
 		/*=============================================
 		Ejecutamos el servicio del Login
 		=============================================*/
+
+     this.trackingService.addLog('', "Inicio del Sistema ", "Origen del Formulario Login", this.emailcapt)
+
 
 		this.loginService.login(data).subscribe(
 

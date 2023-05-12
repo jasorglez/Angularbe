@@ -1,16 +1,12 @@
+import { state } from '@angular/animations';
 export interface Icompany {
-  idemp:number;
-	address:string;
-	city:string;
-	country:string;
-	country_code:string;
-	displayName:string;
-  rfc:string;
-	email:string;
-	method:string;
-	phone:string;
-	picture:string;
-  smallname:string;
-	username:string;
-	wishlist:string;
+	address     :string;
+	city        :string;
+	country     :string;
+  displayName :string;
+	email       :string;
+	phone       :string;
+	picture     :string;
+  rfc         :string;
+  state       : string;
 }

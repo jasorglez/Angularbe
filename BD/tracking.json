@@ -1,0 +1,26 @@
+{
+  "-sduieeplkdz": {
+    "company"     :"HCO",
+    "date"        : "05/05/2023",
+    "description" : "Esto se dio de alta en la BD",
+    "origin"  : "Login",
+    "time"    : "10:00am",
+    "user"    : "jsoriano@hco-consultores.com"
+  },
+  "-lkdgfshdyewq101": {
+    "company" :"HCO",
+    "date"    : "05/05/2023",
+    "description" : "Esto se dio de alta en la BD 2",
+    "origin"  : "Login",
+    "time"    : "11:00pm",
+    "user"    : "jsoriano@hco-consultores.com"
+  },
+  "-mgqrpodhjwss102": {
+    "company"     :"HCO",
+    "date"        : "05/05/2023",
+    "description" : "Selección del Contrato [ADMON 2017] turno [A] desde la dirección [192.168.0.101]",
+    "origin"      : "Login",
+    "time"        : "11:00pm",
+    "user"        : "jsoriano@hco-consultores.com"
+  }
+}

@@ -17,10 +17,12 @@ import { MatCardModule } from '@angular/material/card';
 import { PipesModule } from 'src/app/pipes/pipes.module';
 
 import { TranslateModule } from '@ngx-translate/core';
+import { NewComponent } from './new/new.component';
+import { EditComponent } from './edit/edit.component';
 
 
 @NgModule({
-  declarations: [UsersComponent],
+  declarations: [UsersComponent, NewComponent, EditComponent],
   imports: [
     CommonModule,
     UsersRoutingModule,

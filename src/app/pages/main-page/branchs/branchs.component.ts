@@ -141,7 +141,7 @@ export class BranchsComponent implements OnInit {
           this.dataSource.sort      = this.sort ;
 
           this.loadData = false ;
-    })
+    } )
  }
 
 

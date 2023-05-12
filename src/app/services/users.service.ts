@@ -23,13 +23,8 @@ export class UsersService {
 
 constructor(private http:HttpClient ) { }
 
-
-
-  ///*** aqui empieza el codigo */
-
   public async getEvents() {
     try {
-      //const response = await axios.get(`${environment.urlFirebase}events.json?orderBy="name"&equalTo="${eventName}"`);
       const response = await axios.get(`${environment.urlFirebase}events.json`);
       return response.data;
     } catch (error) {
@@ -104,7 +99,7 @@ constructor(private http:HttpClient ) { }
 
  /* public async getUserEventData(eventName: string) {
      const events = await this.getEvents(eventName);
-     console.log('Las cias',events);
+     console.log('Las eventos',events);
 
      const result = [];
      let event: string;
@@ -145,9 +140,6 @@ constructor(private http:HttpClient ) { }
   ///***termina el codigo */
 
 
-
-
-
   /*=============================================
 	Tomar la data de la colección usuarios en Firebase
 	=============================================*/
@@ -161,8 +153,7 @@ constructor(private http:HttpClient ) { }
   //  return this.http.get<any>(`${this.url}?orderBy="permissions/${email}"&equalTo=true`);
 
 
-	getData(){
-
+	getDataUsers(){
 		return this.http.get(`${environment.urlFirebase}users.json`);
 	}
 
