@@ -19,6 +19,7 @@ import { PipesModule } from 'src/app/pipes/pipes.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { NewComponent } from './new/new.component';
 import { EditComponent } from './edit/edit.component';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -30,8 +31,8 @@ import { EditComponent } from './edit/edit.component';
     MatPaginatorModule,
     MatTabsModule,
     MatSortModule,
-    MatIconModule,
-    MatCardModule,
+    MatIconModule, 
+    MatCardModule, MatDialogModule,
     ReactiveFormsModule,
     PipesModule,
     TranslateModule

@@ -14,6 +14,7 @@ import { getDatabase, startAt, endAt, ref, child, query, orderByChild, equalTo, 
 import { app, db } from 'src/app/firebase.config';
 
 import 'firebase/compat/database';
+import { ConstantPool } from '@angular/compiler';
 
 
 @Injectable({
@@ -32,7 +33,6 @@ constructor(private http:HttpClient ) { }
       return null;
     }
   }
-
 
   public async getEventAttendees(eventId: string) {
     try {
@@ -140,6 +140,13 @@ constructor(private http:HttpClient ) { }
   ///***termina el codigo */
 
 
+
+	postData(data: Iusers, token:any){
+
+		return this.http.post(`${environment.urlFirebase}users.json?auth=${token}`, data);
+
+	}
+
   /*=============================================
 	Tomar la data de la colección usuarios en Firebase
 	=============================================*/
@@ -148,9 +155,6 @@ constructor(private http:HttpClient ) { }
 
     return this.http.get<any>(`${environment.urlFirebase}prueba.json?orderBy="permisosxemail/${email}"&equalTo=true`);
   }
-
-
-  //  return this.http.get<any>(`${this.url}?orderBy="permissions/${email}"&equalTo=true`);
 
 
 	getDataUsers(){
@@ -176,6 +180,61 @@ constructor(private http:HttpClient ) { }
       })
     );
   }
+
+  checkIfDataExists(email: string): Observable<boolean> {
+    const url = `${environment.urlFirebase}users.json?orderBy="email"&equalTo="${email}"`;
+
+    return this.http.get<any>(url).pipe(
+      map(response => {
+        // Verificar si hay datos en la respuesta
+        const dataExists = Object.keys(response).length > 0;
+        return dataExists;
+      }),
+      catchError(error => {
+          return throwError('Error en la solicitud');
+      })
+    );
+  }
+
+
+  patchData(id:string, data:object, token:any){
+		return this.http.patch(`${environment.urlFirebase}users/${id}.json?auth=${token}`, data);
+	}
+
+
+  getItem(id: string) {
+
+		return this.http.get(`${environment.urlFirebase}users/${id}.json`);
+
+	}
+
+
+  getFilterDataperm(orderBy:string, equalTo:string){
+
+    const url =`${environment.urlFirebase}permissions.json?orderBy="${orderBy}"&equalTo="${equalTo}"`;
+
+		return this.http.get(`${environment.urlFirebase}permissions.json?orderBy="${orderBy}"&equalTo="${equalTo}"`);
+
+	}
+
+  deleteUsers(id:string, token: any){
+
+    //const url =`${environment.urlFirebase}permissions.json?orderBy="${orderBy}"&equalTo="${equalTo}"`;
+		return this.http.delete(`${environment.urlFirebase}users/${id}.json?auth=${token}`);
+
+	}
+
+  getCompaniesPermission(userEmail: string): Observable<any> {
+
+    const permissionsUrl = `${environment.urlFirebase}permissions.json`;
+    const companyUrl = `${environment.urlFirebase}companys.json`;
+
+     const permissions$ = this.http.get(permissionsUrl);
+     const company$ = this.http.get(companyUrl);
+
+     return forkJoin([permissions$, company$]);
+  }
+
 
 
 }

@@ -18,12 +18,11 @@
 
 	        <div class="input-group mb-3">
 
-	          <input type="email"
-	          class="form-control"
-	          placeholder="{{ 'email' | translate}}"
-	          formControlName="email"
-	          [ngClass]="{'is-invalid': invalidField('email')}"
-	          >
+                <input type="email"
+                class="form-control"
+                placeholder="{{ 'email' | translate}}"
+                formControlName="email"
+                [ngClass]="{'is-invalid': invalidField('email')}" >
 
 	          <div class="input-group-append">
 	            <div class="input-group-text">
@@ -31,7 +30,7 @@
 	            </div>
 	          </div>
 
-	          <div class="invalid-feedback">Please fill out this field correctly.</div>
+	          <div class="invalid-feedback">Please fill out this email correctly.</div>
 
 	        </div>
 

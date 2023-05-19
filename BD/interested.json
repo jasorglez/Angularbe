@@ -1,0 +1,18 @@
+{
+  "-MBsfaIcfGpj7treR0Y": {
+    "active"       :1,
+    "avg"          : 12,
+    "email"        : "harce@hco-consultores.com",
+    "follow"       : "Reporte Diario",
+    "iduser"       : 1,
+    "interes"      : 2,
+    "influence"    : 3,
+    "name"         : "Heber Arce Sanchez",
+    "phone"        : "+54-300614567",
+    "picture"      : "https://lh3.googleusercontent.com/a-/AOh14GhEQ-zBlzmPuiA1QXOULKbJ_1pFaoYlGMQb82WY",
+    "position"     :"Developer",
+    "power"        : "4",
+    "organization" :"Sistemas",
+    "role"         : "admin"
+  }
+}

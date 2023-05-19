@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { Observable } from 'rxjs';
-
-
+import { alerts } from '../helpers/alerts';
+import { map, tap, catchError, filter } from 'rxjs/operators';
+import { Observable, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -19,13 +19,9 @@ export class CompanysService {
    }
 
 
-
-
    /*-------------------------------
  * aqui obtengo el email del login y lo fijo
  ------------------------------*/
-
-
 
 
 /*----------------------------------------------------------------------------------
@@ -35,10 +31,7 @@ export class CompanysService {
 getEmpresasxEmail(orderBy:string, equalTo:string){
 
  // return this.http.get(`${environment.urlFirebase}companyxusers.json?orderBy="email"&equalTo="jsoriano@hco-consultores.com"&print=pretty`);
- // return this.http.get(`${environment.urlFirebase}sub-categories.json?orderBy="${orderBy}"&equalTo="${equalTo}"&print=pretty`);
-
   return this.http.get(`${environment.urlFirebase}companyxusers.json?orderBy="${orderBy}"&equalTo="${equalTo}"&print=pretty`);
-  
 
 }
 
@@ -58,6 +51,37 @@ getEmpresasxEmail(orderBy:string, equalTo:string){
 
     }
 
+
+    async addpermiscompany(email: string, id_company: string, id_branchs: string, id_projects: string) {
+
+      const data = {
+        email,
+        id_company,
+        id_branchs,
+        id_projects
+      };
+
+      try {
+        const response = await this.http.post(`${environment.urlFirebase}permissions.json`, data).toPromise();
+        } catch (error) {
+        console.error('Error al crear el permiso de la empresa:', error);
+        alerts.basicAlert('error', "Error create permission for user/permission", "error")
+      }
+    }
+
+
+    searchByEmailAndCompanyId(email: string, companyId: string) {
+      const url =`${environment.urlFirebase}permissions.json?`;
+
+      const params = new HttpParams()
+        .set('orderBy', '"email"')
+        .set('equalTo', `"${email}"`)
+        .set('orderBy', '"id_company"')
+        .set('equalTo', `"${companyId}"`);
+
+      return this.http.get(url, { params });
+
+    }
 
 
   }

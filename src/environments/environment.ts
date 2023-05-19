@@ -5,23 +5,24 @@
 
 
 export const environment = {
+  
   production: false,
 
   urlFirebase: 'https://beapp-501d1-default-rtdb.firebaseio.com/',
 
-  urlLogin: 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=',
+  urlLogin: 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDxCBGKk8nT09hdW85-PyOkhw5_JPZLF1A',
 
-  urlGetUser: 'https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=',
+  urlGetUser: 'https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=AIzaSyDxCBGKk8nT09hdW85-PyOkhw5_JPZLF1A',
 
-  //urlFiles: 'http://localhost/sistemas-angular/marketplace/src/assets/img/',
+  urlFiles: 'gs://beapp-501d1.appspot.com',
 
-  urlFiles :'https://github.com/jasorglez/be/blob/main/img/',
+ // urlFiles :'https://github.com/jasorglez/be/blob/main/img/',
 
-  adminFiles: 'http://localhost/sistemas-angular/marketplace/src/assets/img/index.php?key=',
+  adminFiles: 'http://localhost/sistemas-angular/marketplace/src/assets/img/index.php?key=AIzaSyDxCBGKk8nT09hdW85-PyOkhw5_JPZLF1A',
 
-  deleteFiles:'http://localhost/sistemas-angular/marketplace/src/assets/img/delete.php?key=',
+  deleteFiles:'http://localhost/sistemas-angular/marketplace/src/assets/img/delete.php?key=AIzaSyDxCBGKk8nT09hdW85-PyOkhw5_JPZLF1A',
 
-  urlRefreshToken: 'https://securetoken.googleapis.com/v1/token?key=',
+  urlRefreshToken: 'https://securetoken.googleapis.com/v1/token?key=AIzaSyDxCBGKk8nT09hdW85-PyOkhw5_JPZLF1A',
 };
 
 

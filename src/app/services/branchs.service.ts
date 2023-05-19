@@ -46,9 +46,7 @@ export class BranchsService {
   --------------------------*/
 
   patchData(id:string, data:object, token:any){
-
 		return this.http.patch(`${environment.urlFirebase}branchs/${id}.json?auth=${token}`, data);
-    console.log("PATCH")
 	}
 
   /*---------------------------------------------

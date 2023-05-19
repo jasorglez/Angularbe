@@ -13,9 +13,13 @@ import { ProjectService } from 'src/app/services/project.service';
 import { TrackingService } from 'src/app/services/tracking.service';
 import { TraductorService} from 'src/app/services/traductor.service';
 
-import {MatPaginator} from '@angular/material/paginator';
-import {MatSort} from '@angular/material/sort';
+import { NewComponent } from './new/new.component';
+import { EditComponent } from './edit/edit.component';
+
+import { MatPaginator} from '@angular/material/paginator';
+import { MatSort} from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { MatDialog } from '@angular/material/dialog';
 
 import { FormBuilder, FormGroup, Validators, FormsModule } from '@angular/forms';
 
@@ -24,8 +28,11 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 import { environment } from 'src/environments/environment';
 import { functions } from 'src/app/helpers/functions';
 
+import { alerts } from 'src/app/helpers/alerts';
+
 import { db } from 'src/app/firebase.config';
 import { ref, get, onValue} from 'firebase/database';
+
 
 
 @Component({
@@ -45,9 +52,9 @@ import { ref, get, onValue} from 'firebase/database';
 })
 export class UsersComponent implements OnInit {
 
-
   userEvents: any[] = [];
   currentIndex : number = 0 ;
+  combinedData: any[] = [];
 
   selectedTab = 'users';
 
@@ -135,7 +142,6 @@ onTabSelected(tabName: string) {
 
 	//expandedElement!: Iusers | null;
 
-
 	/*=============================================
 	Variable global que captura la ruta de los archivos de imagen
 	=============================================*/
@@ -166,7 +172,7 @@ onTabSelected(tabName: string) {
 
   	constructor(public translateService: TraductorService, private usersService: UsersService, private companyService: CompanysService,
         private branchService: BranchsService, private projectsService: ProjectService, private trackingService : TrackingService,
-        private form:FormBuilder) {   }
+        public dialog : MatDialog, private form:FormBuilder) {   }
 
   	ngOnInit(): void {
 
@@ -193,6 +199,7 @@ onTabSelected(tabName: string) {
  	}
 
 
+
 	/*=============================================
 	función para tomar la data de usuarios
 	=============================================*/
@@ -204,49 +211,49 @@ onTabSelected(tabName: string) {
         this.profile = user;
        }
 
-      getdataUsers(){
+         getdataUsers(){
 
-  		this.loadData = true;
+          		this.loadData = true;
 
-  		this.usersService.getDataUsers().subscribe((resp:any)=>{
+          		this.usersService.getDataUsers().subscribe((resp:any)=>{
 
-  			/*=============================================
-			Integrando respuesta de base de datos con la interfaz
-			=============================================*/
-  			let numberposition = 1;
+          			/*=============================================
+        			Integrando respuesta de base de datos con la interfaz
+        			=============================================*/
+          			let numberposition = 1;
 
-  			this.users = Object.keys(resp).map(a=> ({
+          			this.users = Object.keys(resp).map(a=> ({
 
-  				id:a,
-  				numberposition:numberposition++,
-          active:resp[a].active,
-          age:resp[a].age,
-  			  country:resp[a].country,
-				  displayName:resp[a].displayName,
-				  email:resp[a].email,
-          iduser:resp[a].iduser,
-				  method:resp[a].method,
-				  phone:resp[a].phone,
-				  picture:resp[a].picture,
-          position:resp[a].position,
-				  organization:resp[a].organization
+          				id:a,
+          				numberposition:numberposition++,
+                  active:resp[a].active,
+                  age:resp[a].age,
+          			  country:resp[a].country,
+        				  displayName:resp[a].displayName,
+        				  email:resp[a].email,
+                  iduser:resp[a].iduser,
+        				  method:resp[a].method,
+        				  phone:resp[a].phone,
+        				  picture:resp[a].picture,
+                  position:resp[a].position,
+        				  organization:resp[a].organization
 
-  			} as Iusers ));
+          			} as Iusers ));
 
-            // Tomamos el primer registro
-        this.profile = this.users[this.currentIndex];
+                    // Tomamos el primer registro
+                this.profile = this.users[this.currentIndex];
 
-        //console.log("this.profile", this.profile);
+                //console.log("this.profile", this.profile);
 
-        // Creamos el dataSource
-  			this.UsersDataSource = new MatTableDataSource(this.users);
-  			this.UsersDataSource.paginator = this.paginator;
-  			this.UsersDataSource.sort = this.sort;
-  			this.loadData = false;
+                // Creamos el dataSource
+          			this.UsersDataSource = new MatTableDataSource(this.users);
+          			this.UsersDataSource.paginator = this.paginator;
+          			this.UsersDataSource.sort = this.sort;
+          			this.loadData = false;
 
-  		})
+          		})
 
-  	    }
+  	     }
 
          getdataCompany()
          {
@@ -275,7 +282,7 @@ onTabSelected(tabName: string) {
 
              } as Icompany ));
 
-             console.log('COMPANIAS', this.company);
+             //console.log('COMPANIAS', this.company);
              // Creamos el dataSource
              this.companyDataSource            = new MatTableDataSource(this.company);
              this.companyDataSource.paginator  = this.paginator;
@@ -421,27 +428,158 @@ onTabSelected(tabName: string) {
   }
 
 
-
     newUsers() {
+      const dialogRef= this.dialog.open(NewComponent);
+
+      /*-------------------------------------
+        Actualizar el listado de la tabla
+       -------------------------------------*/
+
+       dialogRef.afterClosed().subscribe(result => {
+         if (result) {
+             this.getdataUsers();
+         }
+       })
 
     }
 
 
     editUsers(id:string){
 
+        const dialogRef = this.dialog.open(EditComponent,{
 
-    }
+          width:'100%',
+          data: { id: id	}
 
+        })
 
-      editBranchs(id:string){
+        /*=============================================
+        Actualizar el listado de la tabla
+        =============================================*/
 
-       // const dialogRef = this.dialog.open(EditBranchComponent,{
+        dialogRef.afterClosed().subscribe(result =>{
 
-       //   width:'100%',
-       //   data: { id: id	}
+          if(result){
+
+            this.getdataUsers();
+
+          }
+
+        })
 
       }
 
 
+    deleteUsers(id: string, mail: string) {
 
-}
+     alerts.confirmAlert('Are you sure?', 'The information cannot be recovered!', 'warning','Yes, delete it!')
+		.then((result) => {
+
+			if (result.isConfirmed) {
+            this.usersService.getFilterDataperm("email", mail).
+
+              subscribe(
+
+                 (resp:any) => {
+
+                  if (Object.keys(resp).length > 0) {
+                        alerts.basicAlert('error', "The category has related permission", "error")
+                  } else {
+
+                    this.usersService.deleteUsers(id, localStorage.getItem('token'))
+
+                    .subscribe(
+                      () => {
+
+                          alerts.basicAlert("Sucess", "The user has been deleted", "success")
+
+                          this.getdataUsers();
+                      }
+                    )
+                  }
+
+                }
+
+             )
+      }
+    })
+    }
+
+
+
+
+
+
+    editBranchs(id: string){
+
+    }
+
+    deleteBranchs(id: string) {
+
+        console.log("borrado") ;
+
+    }
+
+
+    asssigncomp(id : string, mail: string) {
+
+        this.companyService.searchByEmailAndCompanyId(mail, id).
+
+        subscribe(
+
+           (resp:any) => {
+
+            if (Object.keys(resp).length > 0) {
+                  alerts.basicAlert('error', "The company already have this permission", "error")
+            }else{
+                  alerts.confirmAlert('Are you sure?', 'Assign Company for information user!', 'warning','Yes, Assign it!')
+                  .then((result) => {
+
+                    if (result.isConfirmed) {
+                          this.companyService.addpermiscompany(mail, id, '', '')
+                          alerts.basicAlert("Sucess", "The permission has been Created", "success")
+                    }
+                  })
+            }
+       }
+    )}
+
+
+   join() {
+        const userEmail = 'jsoriano@hco-consultores.com';
+
+        this.usersService.getCompaniesPermission(userEmail).subscribe(response => {
+          const [permissions, companies] = response;
+          this.combinedData = this.combineData(permissions, companies);
+          console.log(this.combinedData)
+        }, error => {
+          console.error(error);
+        });
+   }
+
+
+   combineData(permissions: { [key: string]: any }, companies: { [key: string]: any }): any[] {
+    // Filtrar los permisos por el email deseado
+    const filteredPermissions = Object.values(permissions).filter((permission: any) => permission.email === 'jsoriano@hco-consultores.com');
+
+    // Combina los datos según tu lógica de negocio
+    // Puedes utilizar loops, map, filter u otras funciones de array para combinar los datos
+
+    // Ejemplo de combinación por id_company
+    return filteredPermissions.map((permission: any) => {
+      const companyId = permission.id_company;
+      const company = companies[companyId];
+
+      return {
+        permission,
+        company
+      };
+    });
+  }
+
+
+
+ }
+
+
+

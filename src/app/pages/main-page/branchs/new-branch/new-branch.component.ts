@@ -58,7 +58,7 @@ export class NewBranchComponent implements OnInit {
 
   loadData = false;
 
-  constructor( private form: FormBuilder, private branchsService: BranchsService,
+  constructor( private form: FormBuilder, private branchsService: BranchsService, 
     public dialogRef: MatDialogRef<NewBranchComponent> ) { }
 
   ngOnInit( ): void {

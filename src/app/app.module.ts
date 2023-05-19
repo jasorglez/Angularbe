@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+
+import { provideStorage, getStorage} from '@angular/fire/storage'
 
 //Modulos Personalizados
 
@@ -38,6 +41,7 @@ export function HttpLoaderFactory (http:HttpClient) {
     PagesModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    provideStorage(() => getStorage()),
     TranslateModule.forRoot ({
       loader: {
          provide    : TranslateLoader,
