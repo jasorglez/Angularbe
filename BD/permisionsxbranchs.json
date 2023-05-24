@@ -1,0 +1,28 @@
+{
+  "50": {
+    "branchs"    : "MATRIZ VERACRUZ",
+    "id_branchs" : "500",
+    "id_company" : "-podhjwss102"
+  },
+  "51": {
+    "branchs"    : "Campo Veracruz",
+    "id_branchs" : "501",
+    "id_company" : "-podhjwss102"
+
+  },
+  "52": {
+    "branchs"    : "VILLA",
+    "id_branchs" : "-NSCyh6dLQ8Dpvkf5gS4",
+    "id_company" : "-podhjwss102"
+  },
+  "-NV_XS4-TISPqwcud4BV": {
+    "branchs"    : "Comalcalco",
+    "id_branchs" : "-NSD5LCkTxBOkIPPYhwf",
+    "id_company" : "-sduier100"
+  },
+  "-NV_X66wrIiiChg6z2_H": {
+    "branchs"    : "Camino  Chiapas",
+    "id_branchs" : "-NSK54qghCSTEDS94zcL",
+    "id_company" : "-sduier100"
+  }
+}

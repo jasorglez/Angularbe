@@ -4,7 +4,7 @@ export interface Ibranch {
   country:string;
   cp:number;
   idbra : number;
-	id_empresa:number;
+	id_company:number;
 	id_state:number;
 	iva:number;
   locality:string;

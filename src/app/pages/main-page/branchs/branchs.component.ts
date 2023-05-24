@@ -123,7 +123,7 @@ export class BranchsComponent implements OnInit {
               colony: resp[a].colony,
               country:resp[a].country,
               cp: resp[a].cp,
-              id_empresa:resp[a].id_empresa,
+              id_company:resp[a].id_company,
               id_state:resp[a].id_state,
               iva:resp[a].iva,
               locality:resp[a].locality,

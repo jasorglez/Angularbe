@@ -89,9 +89,12 @@
 
 
                                     <div class="form-group col-md-6 mb-3">
-                                        <label for="Input">{{'picture' | translate}}</label>
-                                        <input type="text" id="Inputpic" class="form-control"
-                                        placeholder="{{'picture' | translate}}" formControlName="picture" >
+
+                                      <div class="custom-file">
+                                        <input type="file" (change)="uploadImage($event)" class="custom-file-input" id="customFile">
+                                        <label class="custom-file-label" for="customFile">Choose Image</label>
+                                        <small class="mt-2">200px * 200px size | jpg or png format </small>
+                                      </div>
 
                                     </div>
 

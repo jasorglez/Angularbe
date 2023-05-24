@@ -3,6 +3,7 @@ import { FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { functions } from 'src/app/helpers/functions';
 import { Iusers } from 'src/app/interface/iusers';
 import { UsersService } from '../../../../services/users.service';
+import { StoragesService } from 'src/app/services/storages.service';
 import { alerts } from 'src/app/helpers/alerts';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { IDialogData } from '../../branchs/edit-branch/edit-branch.component';
@@ -56,14 +57,14 @@ export class EditComponent {
    ----------------------------*/
 
   loadData = false;
+  url : string = '';
 
-
-  constructor( private form: FormBuilder, private usersService :UsersService,
+  constructor( private storageService: StoragesService, private form: FormBuilder, private usersService :UsersService,
     public dialogRef: MatDialogRef<EditComponent>, @Inject(MAT_DIALOG_DATA) public data: IDialogData ) { }
 
   ngOnInit( ): void {
 
-        //Aqui inicializo con el item que voy a editar
+   //Aqui inicializo con el item que voy a editar
 
      this.usersService.getItem(this.data.id).subscribe(
         (resp: any)=> {
@@ -79,6 +80,28 @@ export class EditComponent {
         }
 
      )
+
+  }
+
+
+
+   /*=========================
+    Para las fotos
+  ========================== */
+  uploadImage($event: any) {
+    const file = $event.target.files[0];
+    const path = `images/${file.name}` ;
+
+    this.storageService.uploadFile(file, path)
+    .then(url => {
+       console.log("URL", url);
+       this.url = url;
+    })
+    .then(url => {
+      console.log("Download URL", url);
+
+    })
+    .catch(error => console.log("Error uploading file", error));
 
   }
 
@@ -108,7 +131,7 @@ export class EditComponent {
               displayName    : this.fus.controls.displayName.value ?? '',
               email          : this.fus.controls.email.value ?? '',
               phone          : this.fus.controls.phone.value ?? '',
-              picture        : this.fus.controls.picture.value ?? '',
+              picture        : this.url ,
               position       : this.fus.controls.position.value ?? '',
               organization   : this.fus.controls.organization.value ?? ''
           }

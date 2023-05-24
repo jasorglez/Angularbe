@@ -6,12 +6,18 @@ import { Icompany } from 'src/app/interface/icompany';
 import { Ibranch } from 'src/app/interface/ibranch';
 import { Iproject } from 'src/app/interface/iproject';
 
+/*Servicios */
 import { UsersService } from 'src/app/services/users.service';
 import { CompanysService } from 'src/app/services/companys.service';
 import { BranchsService } from 'src/app/services/branchs.service';
 import { ProjectService } from 'src/app/services/project.service';
 import { TrackingService } from 'src/app/services/tracking.service';
 import { TraductorService} from 'src/app/services/traductor.service';
+
+/**impresiones del reporte */
+import * as pdfMake from 'pdfmake/build/pdfmake';
+import * as pdfFonts from 'pdfmake/build/vfs_fonts';
+pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 import { NewComponent } from './new/new.component';
 import { EditComponent } from './edit/edit.component';
@@ -31,7 +37,7 @@ import { functions } from 'src/app/helpers/functions';
 import { alerts } from 'src/app/helpers/alerts';
 
 import { db } from 'src/app/firebase.config';
-import { ref, get, onValue} from 'firebase/database';
+
 
 
 
@@ -313,7 +319,7 @@ onTabSelected(tabName: string) {
               colony: resp[a].colony,
               country:resp[a].country,
               cp: resp[a].cp,
-              id_empresa:resp[a].id_empresa,
+              id_company:resp[a].id_company,
               id_state:resp[a].id_state,
               iva:resp[a].iva,
               locality:resp[a].locality,
@@ -507,8 +513,9 @@ onTabSelected(tabName: string) {
 
 
 
+    newBranchs(){
 
-
+    }
 
     editBranchs(id: string){
 

@@ -79,6 +79,8 @@ export class TrackingService {
     return this.email;
   }
 
+  
+
   setEmail(email: string): void {
     this.email = email;
   }
@@ -101,7 +103,7 @@ export class TrackingService {
 
         // Ordenar los registros por el campo "idn" en forma ascendente
         const sortedRecords = filteredRecords.sort((a: any, b: any) => a.idn - b.idn);
-       
+
         // Invertir el orden de los registros para que los últimos aparezcan primero
         const reversedRecords = sortedRecords.reverse();
 

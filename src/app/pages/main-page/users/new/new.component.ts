@@ -3,12 +3,13 @@ import { FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { functions } from 'src/app/helpers/functions';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Iusers } from 'src/app/interface/iusers';
-import { UsersService } from '../../../../services/users.service';
-import { alerts } from 'src/app/helpers/alerts';
-import { Storage, ref, uploadBytes} from '@angular/fire/storage'
-import { environment } from 'src/environments/environment';
 
+import { UsersService } from '../../../../services/users.service';
+import { StoragesService } from 'src/app/services/storages.service';
+
+import { alerts } from 'src/app/helpers/alerts';
 import { finalize } from 'rxjs/operators';
+
 
 
 @Component({
@@ -56,29 +57,37 @@ export class NewComponent implements OnInit {
    ----------------------------*/
 
   loadData = false;
+  url : string = '' ;
 
-
-  constructor(private form: FormBuilder, private usersService :UsersService,
+  constructor(private storageService: StoragesService, private form: FormBuilder, private usersService :UsersService,
     public dialogRef: MatDialogRef<NewComponent>, ) { }
 
   ngOnInit( ): void {
+
   }
 
 
-   uploadImage($event: any) {
-     /* const storageUrl  = environment.urlFiles
-      const file=$event.target.files[0];
-      console.log(file);
+  /*=========================
+    Para las fotos
+  ========================== */
+  uploadImage($event: any) {
+    const file = $event.target.files[0];
+    const path = `images/${file.name}` ;
 
-      const imgRef = ref(this.storage, `storageUrl${file.name}`)
+    this.storageService.uploadFile(file, path)
+    .then(url => {
+       console.log("URL", url);
+       this.url = url;
+    })
+    .then(url => {
+      console.log("Download URL", url);
 
-     //const storageRef = this.storage.ref(storageUrl);
-    // const imgRef = storageRef.child(`img/$file.name`);    
+    })
+    .catch(error => console.log("Error uploading file", error));
 
-       uploadBytes(imgRef, file)
-      .then(response => console.log(response))
-      .catch(error => console.log(error));*/
-    }
+  }
+
+
 
   saveUsers(){
 
@@ -102,7 +111,7 @@ export class NewComponent implements OnInit {
               displayName    : this.fus.controls.displayName.value ?? '',
               email          : this.fus.controls.email.value ?? '',
               phone          : this.fus.controls.phone.value ?? '',
-              picture        : this.fus.controls.picture.value ?? '',
+              picture        : this.url,
               position       : this.fus.controls.position.value ?? '',
               organization   : this.fus.controls.organization.value ?? ''
           }

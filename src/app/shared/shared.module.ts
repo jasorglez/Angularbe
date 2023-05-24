@@ -7,6 +7,7 @@ import { SideBarComponent } from './side-bar/side-bar.component';
 
 //rutas
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import {MatMenuModule} from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
@@ -20,8 +21,9 @@ import { TranslateModule } from '@ngx-translate/core';
   exports     : [NavBarComponent, FooterComponent, SideBarComponent],
   imports: [
     CommonModule,
-    RouterModule, MatMenuModule, MatIconModule, 
-    TranslateModule  
+    FormsModule,
+    RouterModule, MatMenuModule, MatIconModule,
+    TranslateModule
   ]
 })
 export class SharedModule { }

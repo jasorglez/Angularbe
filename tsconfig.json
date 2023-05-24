@@ -2,11 +2,10 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    
+
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
-    "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
@@ -24,7 +23,7 @@
     "lib": [
       "ES2022",
       "dom"
-    ]    
+    ]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

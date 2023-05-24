@@ -84,5 +84,18 @@ getEmpresasxEmail(orderBy:string, equalTo:string){
     }
 
 
+
+getpermissionsxCompany(mail:string){
+   return this.http.get(`${environment.urlFirebase}permissionsxcompanys.json?orderBy="email"&equalTo="${mail}"&print=pretty`);
+ }
+
+ getpermissionsxBranch(company:string){
+  return this.http.get(`${environment.urlFirebase}permissionsxbranchs.json?orderBy="id_company"&equalTo="${company}"&print=pretty`);
+}
+
+getpermissionsxProject(branch:string){
+  return this.http.get(`${environment.urlFirebase}permissionsxprojects.json?orderBy="id_branchs"&equalTo="${branch}"&print=pretty`);
+}
+
   }
 

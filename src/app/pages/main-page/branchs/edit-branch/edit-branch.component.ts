@@ -125,7 +125,7 @@ export class EditBranchComponent implements OnInit {
       colony         : this.f.controls.colony.value ?? '',
       country        : 'MX',
       cp             : this.f.controls.cp.value ?? 0,
-      id_empresa     :0,
+      id_company     :0,
       id_state       :0,
       iva            :16,
       locality       : this.f.controls.locality.value ?? '',

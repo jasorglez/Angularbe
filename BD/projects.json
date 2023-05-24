@@ -14,6 +14,22 @@
     "image"       : " ",
     "tender"      : "SIN LICITACION",
     "ubication"   : "CIUDAD DEL CARMEN"
+   },
+   "xueits29": {
+    "code"        : "15874s09BCX",
+    "contract"    : "PERA 587RE",
+    "description" : "REMODELACION DE LA PERA DEL CAMINO A VILLA",
+    "image"       : " ",
+    "tender"      : "SIN LICITACION",
+    "ubication"   : "VILLA HERMOSA"
+   },
+   "LQBGAFSts9829": {
+    "code"        : "15874s09BCX",
+    "contract"    : "PERA CHIAPAS",
+    "description" : "REMODELACION DE LA PERA DE LA PLANTA GAS CHIAPAS",
+    "image"       : " ",
+    "tender"      : "SIN LICITACION",
+    "ubication"   : "CHIAPAS"
    }
 }
 
