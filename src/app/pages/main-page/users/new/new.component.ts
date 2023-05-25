@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators, AbstractControl } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { functions } from 'src/app/helpers/functions';
 import { MatDialogRef } from '@angular/material/dialog';
+
 import { Iusers } from 'src/app/interface/iusers';
 
 import { UsersService } from '../../../../services/users.service';
@@ -19,14 +20,11 @@ import { finalize } from 'rxjs/operators';
 })
 export class NewComponent implements OnInit {
 
-
-
-
 	/*=============================================
 	Creamos grupo de controles
 	=============================================*/
 
-	public fus = this.form.group({
+	public fus = this.formBuilder.group({
 
     active       : 1,
     iduser       : 0,
@@ -59,8 +57,8 @@ export class NewComponent implements OnInit {
   loadData = false;
   url : string = '' ;
 
-  constructor(private storageService: StoragesService, private form: FormBuilder, private usersService :UsersService,
-    public dialogRef: MatDialogRef<NewComponent>, ) { }
+  constructor(private storageService: StoragesService, private usersService :UsersService, private formBuilder: FormBuilder,
+                 public dialogRef: MatDialogRef<NewComponent>, ) { }
 
   ngOnInit( ): void {
 
@@ -90,6 +88,11 @@ export class NewComponent implements OnInit {
 
 
   saveUsers(){
+    if (this.fus.valid) {
+      console.log(this.fus.value)
+    }else{
+      this.fus.markAllAsTouched();
+    }
 
     this.loadData = true;
 
@@ -120,8 +123,6 @@ export class NewComponent implements OnInit {
 
           this.loadData = false;
 
-          //const email = 'example@example.com';
-
             this.usersService.checkIfDataExists(email).subscribe(dataExists => {
               if (dataExists) {
                 alerts.basicAlert("Error", 'The User exist', "error")
@@ -136,7 +137,7 @@ export class NewComponent implements OnInit {
                              })
               }
             });
-          }
+    }
 
 
 

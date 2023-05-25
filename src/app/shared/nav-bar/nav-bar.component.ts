@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 
 import { CompanysService } from 'src/app/services/companys.service';
 import { TrackingService } from 'src/app/services/tracking.service';
-import { TraductorService} from 'src/app/services/traductor.service';
+
 
 @Component({
   selector: 'app-nav-bar',
@@ -15,9 +14,11 @@ export class NavBarComponent {
   mail            : string = '' ;
   company         : string = '' ;
   branch          : string = '' ;
+
   companyData     : any[]  = [] ;
   branchData      : any[]  = [] ;
   projectData     : any[]  = [] ;
+
   selectedCompany : any ;
   selectedBranch  : any ;
   selectedProject : any ;

@@ -1,0 +1,14 @@
+{
+  "-MBsfaIcfGpj7treR0Y": {
+    "id"           :1,
+    "organization" :"Sistemas"
+  },
+  "-apMBsc1fcfGpjreR0Y": {
+    "id"       :2,
+    "organization" :"Compras"
+  },
+  "-ieur6c1fcfGpjreR0": {
+    "id"       :3,
+    "organization" :"Mantenimiento"
+  }
+}

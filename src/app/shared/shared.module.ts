@@ -7,6 +7,8 @@ import { SideBarComponent } from './side-bar/side-bar.component';
 
 //rutas
 import { RouterModule } from '@angular/router';
+
+// Forzosamente necesitas el FormsModule para los Dropdown de la entrada
 import { FormsModule } from '@angular/forms';
 
 import {MatMenuModule} from '@angular/material/menu';

@@ -10,6 +10,10 @@ import { InteresService } from 'src/app/services/interes.service';
 
 import { MatPaginator} from '@angular/material/paginator';
 import { MatSort} from '@angular/material/sort';
+import { MatDialog } from '@angular/material/dialog';
+
+import { NewInterestedComponent } from './newInterested/newInterested.component';
+import { EditInterestedComponent } from './editInterested/editInterested.component';
 
 import { functions } from 'src/app/helpers/functions';
 
@@ -68,7 +72,8 @@ export class InterestedComponent implements OnInit{
 	@ViewChild(MatSort) sort!: MatSort;
 
 
-  constructor(public translateService: TraductorService, private trackingService : TrackingService, private interesService : InteresService) { }
+  constructor(public translateService: TraductorService, private trackingService : TrackingService, private interesService : InteresService,
+               public dialog : MatDialog,) { }
 
   ngOnInit(): void {
 
@@ -129,6 +134,7 @@ export class InterestedComponent implements OnInit{
           phone:resp[a].phone,
           picture:resp[a].picture,
           position:resp[a].position,
+          project:resp[a].project,
           power:resp[a].power,
           organization:resp[a].organization,
           role:resp[a].role,
@@ -154,6 +160,18 @@ export class InterestedComponent implements OnInit{
 
     newInteres() {
 
+      const dialogRef= this.dialog.open(NewInterestedComponent);
+
+        /*-------------------------------------
+          Actualizar el listado de la tabla
+         -------------------------------------*/
+
+         dialogRef.afterClosed().subscribe(result => {
+           if (result) {
+               this.getdataIntere();
+           }
+         })
+
     }
 
 
@@ -163,6 +181,39 @@ export class InterestedComponent implements OnInit{
 
 
     deleteInteres(id:string, mail: string) {
+
+
+     alerts.confirmAlert('Are you sure?', 'The information cannot be recovered!', 'warning','Yes, delete it!')
+     .then((result) => {
+
+       if (result.isConfirmed) {
+             this.interesService.getFilterDataperm("email", mail).
+
+               subscribe(
+
+                  (resp:any) => {
+
+                   if (Object.keys(resp).length > 0) {
+                         alerts.basicAlert('error', "The category has related permission", "error")
+                   } else {
+
+                     this.interesService.deleteInteres(id, localStorage.getItem('token'))
+
+                     .subscribe(
+                       () => {
+
+                           alerts.basicAlert("Sucess", "The user has been deleted", "success")
+
+                           this.getdataIntere();
+                       }
+                     )
+                   }
+
+                 }
+
+              )
+       }
+     })
 
     }
 

@@ -9,8 +9,9 @@ export interface Iinteres {
     name: string;
     phone: string;
     picture: string;
-    position: string;
-    power: string;
+    position : string;
+    project  : string;
+    power    : number;
     organization: string;
     role: string;
 }

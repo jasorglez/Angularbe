@@ -1,0 +1,176 @@
+<!-- Este el nuevo de Interested-->
+<mat-dialog-content>
+
+  <div class="card card-warning">
+
+        <div class="card-header">
+             <h2 class="card-title mb-0">{{ 'newinteres' | translate }}</h2>
+             <button type="button" class="close" mat-dialog-close></button>
+
+        </div>
+
+       <form autocomplete="off" [formGroup]="fis" (ngSubmit)="saveInteres()">
+             <div class="card-body">
+
+                      <ng-container *ngIf="!loadData">
+                        <mat-dialog-actions>
+                      
+                          <div class="form-group col-md-6 mb-3">
+
+                                  <input
+                                    type="text"
+                                    id="InputName"
+                                    class="form-control"
+                                    placeholder="{{ 'name' | translate }}"
+                                    formControlName="name"
+                                    [ngClass]="{ 'is-invalid': invalidField('name') }"
+                                  />
+                                  <div class="invalid-feedback">Please provide a name</div>
+
+
+                                  <input
+                                    type="text"
+                                    id="Inputorg"
+                                    class="form-control"
+                                    placeholder="{{ 'organ' | translate }}"
+                                    formControlName="organization"
+                                    [ngClass]="{ 'is-invalid': invalidField('organization') }" />
+
+                                  <div *ngIf="invalidField('organization')" class="invalid-feedback">
+                                    Please enter a valid organization.
+                                  </div>
+
+
+                                  <input
+                                    type="text"
+                                    id="Inputpos"
+                                    class="form-control"
+                                    placeholder="{{ 'position' | translate }}"
+                                    formControlName="position"
+                                    [ngClass]="{ 'is-invalid': invalidField('position') }"
+                                  />
+                                  <div *ngIf="invalidField('position')" class="invalid-feedback">
+                                    Please enter a valid position.
+                                  </div>
+
+
+                                  <input
+                                    type="text"
+                                    id="Inputcount"
+                                    class="form-control"
+                                    placeholder="{{ 'rol' | translate }}"
+                                    formControlName="role"
+                                    [ngClass]="{ 'is-invalid': invalidField('role') }" />
+                                  <span class="invalid-feedback">{{ 'role' | translate }}</span>
+
+
+                                  <input
+                                    type="text"
+                                    id="Inputts"
+                                    class="form-control"
+                                    placeholder="{{ 'ts' | translate }}"
+                                    formControlName="follow"
+                                    [ngClass]="{ 'is-invalid': invalidField('follow') }"
+                                  />
+                                  <span class="invalid-feedback">{{ 'ts' | translate }}</span>
+
+
+                                  <input
+                                    type="text"
+                                    id="Inputemail"
+                                    class="form-control"
+                                    placeholder="{{ 'email' | translate }}"
+                                    formControlName="email"
+                                    [ngClass]="{ 'is-invalid': fis.controls.email.invalid && (fis.controls.email.dirty || fis.controls.email.touched) }"
+                                  />
+                                  <div *ngIf="fis.controls.email.invalid && (fis.controls.email.dirty || fis.controls.email.touched)" class="invalid-feedback">
+                                    Please enter a valid email address.
+                                  </div>
+
+
+                                  <input
+                                    type="text"
+                                    id="Inputph"
+                                    class="form-control"
+                                    placeholder="{{ 'phone' | translate }}"
+                                    formControlName="phone" />
+
+                          </div>
+
+
+                            <div class="form-group col-md-6 mb-3">                                   
+                                  
+                              <div class="card card-primary card-img">
+                                <div class="text-center">
+                                  <label for="pictureUpload" class="mb-3">
+                                    <img src="{{ fis.get('picture').value }}" width="100" height="100">
+                                    {{ 'Avatar/Foto' | translate }}
+                                  </label>
+                                  <input type="file" id="pictureUpload" (change)="uploadImage($event)" formControlName="picture" style="display: none;">
+                                </div>
+                              </div>
+                                                                     
+                                    <div class="container mt-5">
+                                      <div class="row">
+                                        <div class="col">
+
+                                          <mat-label>Interes   </mat-label>
+                                          <select class="form-select" [(ngModel)]="interes" formControlName="interes">
+                                             <option *ngFor="let n of numbers"> {{ n }}</option>
+                                           </select>
+
+                                           <div class="col">    
+                                             <mat-label>     Power </mat-label>
+                                               <select class="form-select" [(ngModel)]="power" formControlName="power">
+                                                 <option *ngFor="let n of numbers"> {{ n }}</option>
+                                               </select>              
+                                            </div>                                                                                                                                      
+                                          </div>
+                                          
+                                       </div>
+
+                                          
+                                    </div> 
+                                                                            
+
+                                      <div class="row">
+                                          <div class="col-md-6">
+                                              <mat-label>Influencia</mat-label>
+                                                <select class="form-select" [(ngModel)]="influence" formControlName="influence">
+                                                  <option *ngFor="let n of numbers"> {{ n }}</option>
+                                                </select>
+                                          </div>           
+                                                                      
+                                                         
+                                            <div class="col-md-6"> 
+                                               <div class="col-md-6">
+                                                  <input
+                                                      type="text"
+                                                      id="Inputph"
+                                                      class="form-control"
+                                                      placeholder="avg"
+                                                      formControlName="avg" />
+                                              </div>
+                                           </div>
+                                      </div>
+                            </div>
+
+                        </mat-dialog-actions>
+                        </ng-container>
+
+
+                      </div>
+
+                      <div class="card-footer">
+                        <button mat-dialog-close class="btn btn-secondary float-left">Cancelar</button>
+                        <button type="submit" class="btn btn-warning float-left" >Salvar</button>
+                    </div>
+                  
+    </form>
+
+
+    
+  </div>
+
+</mat-dialog-content>
+
