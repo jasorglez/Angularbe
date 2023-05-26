@@ -14,15 +14,15 @@
   </ul>
 
   <label for="company"> {{ 'company' | translate }} </label>
-  <select id="company"
-  (change)="onSelectCompany()"
-  [(ngModel)]="selectedCompany"
-  (ngModelChange)="getpermissionxCompanys">
+   <select id="company"
+      (change)="onSelectCompany()"
+      [(ngModel)]="selectedCompany"
+      (ngModelChange)="getpermissionxCompanys">
 
-    <option *ngFor="let item of companyData"
-         [value]="item.id_company">{{ item.company }}
-    </option>
-  </select>
+        <option *ngFor="let item of companyData"
+            [value]="item.id_company">{{ item.company }}
+        </option>
+   </select>
 
 
   <label for="branchs">{{ 'branchs' | translate }} </label>

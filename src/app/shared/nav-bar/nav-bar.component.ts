@@ -34,16 +34,19 @@ export class NavBarComponent {
 
   onSelectCompany(): void {
     console.log('Id Company ->', this.selectedCompany);
+    this.trackingService.setCompany(this.selectedCompany);
     this.getpermissionxBranchs();
   }
 
   onSelectBranch() {
     console.log('Id Branch ->', this.selectedBranch);
+    this.trackingService.setBranch(this.selectedBranch) ;
     this.getpermissionxProjects();
   }
 
   onSelectProject() {
-    console.log('Id Project ->', this.selectedBranch);
+    this.trackingService.setProject(this.selectedProject)
+    console.log('Id Project ->', this.selectedProject);
   }
 
   getpermissionxCompanys() {
@@ -72,6 +75,7 @@ export class NavBarComponent {
       this.projectData = Object.values(data);
       if (this.projectData.length > 0) {
         this.selectedProject = this.projectData[0].id_projects; // Establecer el primer valor como seleccionado
+        this.onSelectProject()
       } else {
         this.selectedProject = null; // No hay projects disponibles, se establece como null
       }

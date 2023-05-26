@@ -25,7 +25,7 @@ export const environment = {
 
   urlFiles: 'gs://beapp-501d1.appspot.com',
 
- // urlFiles :'https://github.com/jasorglez/be/blob/main/img/',
+  urlProfile :'https://firebasestorage.googleapis.com/v0/b/beapp-501d1.appspot.com/o/images%2Fprofile.png?alt=media&token=59949381-f259-4124-bed1-c64de4494fc8',
 
   adminFiles: 'http://localhost/sistemas-angular/marketplace/src/assets/img/index.php?key=AIzaSyDxCBGKk8nT09hdW85-PyOkhw5_JPZLF1A',
 

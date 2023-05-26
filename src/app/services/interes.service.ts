@@ -48,9 +48,7 @@ export class InteresService {
 
   getFilterDataperm(orderBy:string, equalTo:string){
 
-    const url =`${environment.urlFirebase}permissions.json?orderBy="${orderBy}"&equalTo="${equalTo}"`;
-
-		return this.http.get(`${environment.urlFirebase}permissions.json?orderBy="${orderBy}"&equalTo="${equalTo}"`);
+    return this.http.get(`${environment.urlFirebase}permissionsxcompanys.json?orderBy="${orderBy}"&equalTo="${equalTo}"`);
 
 	}
 

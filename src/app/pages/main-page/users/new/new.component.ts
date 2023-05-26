@@ -7,10 +7,12 @@ import { Iusers } from 'src/app/interface/iusers';
 
 import { UsersService } from '../../../../services/users.service';
 import { StoragesService } from 'src/app/services/storages.service';
+import { CatalogService } from 'src/app/services/catalog.service';
 
 import { alerts } from 'src/app/helpers/alerts';
 import { finalize } from 'rxjs/operators';
 
+import { environment } from 'src/environments/environment';
 
 
 @Component({
@@ -19,6 +21,10 @@ import { finalize } from 'rxjs/operators';
   styleUrls: ['./new.component.css']
 })
 export class NewComponent implements OnInit {
+
+   selectedorganization: string = 'Organizations';
+
+   organizationData     : any[]  = [] ;
 
 	/*=============================================
 	Creamos grupo de controles
@@ -34,9 +40,9 @@ export class NewComponent implements OnInit {
     email        : ['', [Validators.required, Validators.email]],
     method       : '',
     phone        : '',
-    picture      : 'S/P',
+    picture      :  environment.urlProfile,
     position     : ['', Validators.required],
-    organization : ['', Validators.required],
+    organization : '',
 
    } )
 
@@ -57,13 +63,25 @@ export class NewComponent implements OnInit {
   loadData = false;
   url : string = '' ;
 
-  constructor(private storageService: StoragesService, private usersService :UsersService, private formBuilder: FormBuilder,
+  constructor(private storageService: StoragesService, private usersService :UsersService, private catalogsService: CatalogService, private formBuilder: FormBuilder,
                  public dialogRef: MatDialogRef<NewComponent>, ) { }
 
   ngOnInit( ): void {
-
+    this.getOrganizations();
   }
 
+
+  onSelectOrganization(): void {
+    console.log('Id Company ->', this.selectedorganization);
+    this.getOrganizations();
+  }
+
+
+  getOrganizations(){
+    this.catalogsService.getdataOrganization().subscribe(( orga) => {
+      this.organizationData = Object.values(orga)
+     })
+    }
 
   /*=========================
     Para las fotos
@@ -76,6 +94,7 @@ export class NewComponent implements OnInit {
     .then(url => {
        console.log("URL", url);
        this.url = url;
+       this.fus.patchValue({ picture: url}) ;
     })
     .then(url => {
       console.log("Download URL", url);
@@ -114,7 +133,7 @@ export class NewComponent implements OnInit {
               displayName    : this.fus.controls.displayName.value ?? '',
               email          : this.fus.controls.email.value ?? '',
               phone          : this.fus.controls.phone.value ?? '',
-              picture        : this.url,
+              picture        : this.fus.controls.picture.value ?? '',
               position       : this.fus.controls.position.value ?? '',
               organization   : this.fus.controls.organization.value ?? ''
           }

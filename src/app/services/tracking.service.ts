@@ -7,7 +7,10 @@ import { map } from 'rxjs';
   providedIn: 'root'
 })
 export class TrackingService {
-  public email : string = '' ;
+  public email   : string = '' ;
+  public project : string = '' ;
+  public branch  : string = '' ;
+  public company : string = '' ;
 
   constructor(private http: HttpClient) { }
 
@@ -73,17 +76,39 @@ export class TrackingService {
   }
 
 
+  setEmail(email: string): void {
+    this.email = email;
+  }
 
+  setProject(project: string) : void {
+     this.project = project ;
+  }
+
+  setBranch(branch: string) : void {
+     this.branch = branch ;
+  }
+
+  setCompany(company : string) : void {
+    this.company = company ;
+  }
+
+  getProject() {
+    return this.project ;
+  }
+
+  getBranch() {
+    return this.branch ;
+  }
+
+  getCompany(){
+    return this.company ;
+  }
 
   getEmail(): string {
     return this.email;
   }
 
-  
 
-  setEmail(email: string): void {
-    this.email = email;
-  }
 
 
 	getDataTracking(valoruser :string){

@@ -7,9 +7,12 @@ import { Iinteres } from 'src/app/interface/interested';
 
 import { StoragesService } from 'src/app/services/storages.service';
 import { InteresService } from 'src/app/services/interes.service';
+import { CatalogService } from 'src/app/services/catalog.service';
+import { TrackingService } from 'src/app/services/tracking.service';
+
+import { environment } from 'src/environments/environment';
 
 import { alerts } from 'src/app/helpers/alerts';
-
 
 
 @Component({
@@ -20,11 +23,13 @@ import { alerts } from 'src/app/helpers/alerts';
 export class NewInterestedComponent implements OnInit {
 
 
-  numbers: number[] = [1, 2, 3, 4, 5];
-  selectedNumber: number;
-  interes   : 1 ;
-  influence : 2 ;
-  power     : 3 ;
+   numbers: number[] = [1, 2, 3, 4, 5];
+   selectedNumber: number;
+   interes   : 1 ;
+   influence : 2 ;
+   power     : 3 ;
+   selectedorganization: string = 'Organizations';
+   organizationData     : any[]  = [] ;
 
 	/*=============================================
 	Creamos grupo de controles
@@ -41,10 +46,10 @@ export class NewInterestedComponent implements OnInit {
       influence    : 0,
       name         : ['', [Validators.required]],
       phone        : '',
-      picture      : 'https://firebasestorage.googleapis.com/v0/b/beapp-501d1.appspot.com/o/images%2Fprofile.png?alt=media&token=59949381-f259-4124-bed1-c64de4494fc8',
+      picture      : environment.urlProfile,
       position     : ['', Validators.required],
       power        : 0,
-      organization : ['', Validators.required],
+      organization : '',
       role         : ''
    } )
 
@@ -63,23 +68,36 @@ export class NewInterestedComponent implements OnInit {
   loadData = false;
   url : string = '' ;
 
-  constructor(private storageService: StoragesService, private interesService : InteresService, private formBuilder: FormBuilder,
+  constructor(private storageService: StoragesService, private interesService : InteresService, private catalogServices: CatalogService, private trackingService: TrackingService, private formBuilder: FormBuilder,
     public dialogRef: MatDialogRef<NewInterestedComponent> ) {
         this.selectedNumber = this.numbers[0]}
 
   ngOnInit(): void {
-    
-    //puedo ver o escuchar un evento del form
+
+    /*puedo ver o escuchar un evento del form
     this.name.valueChanges
     .subscribe(value => {
        console.log(value)
-    })
+    })  */
+
+    this.getOrganizations();
+
+
   }
 
 
-  onNumberSelectionChange(): void {
-
+  onSelectOrganization(): void {
+    console.log('Id Company ->', this.selectedorganization);
+    this.getOrganizations();
   }
+
+
+  getOrganizations(){
+    this.catalogServices.getdataOrganization().subscribe(( orga) => {
+      this.organizationData = Object.values(orga)
+     })
+
+   }
 
   /*=========================
     Para las fotos
@@ -93,7 +111,7 @@ export class NewInterestedComponent implements OnInit {
        console.log("URL", url);
        this.url = url;
        this.fis.patchValue({ picture: url}) ;
-       
+
     })
     .then(url => {
       console.log("Download URL", url);
@@ -134,7 +152,7 @@ export class NewInterestedComponent implements OnInit {
               phone        : this.fis.controls.phone.value ?? '',
               picture      : this.fis.controls.picture.value ?? '',
               position     : this.fis.controls.position.value ?? '',
-              project      : 'PROJECT',
+              project      : this.trackingService.getProject(),
               power        : this.power,
               organization : this.fis.controls.organization.value ?? '',
               role         : this.fis.controls.role.value ?? ''

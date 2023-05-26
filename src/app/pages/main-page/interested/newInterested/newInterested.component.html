@@ -14,7 +14,7 @@
 
                       <ng-container *ngIf="!loadData">
                         <mat-dialog-actions>
-                      
+
                           <div class="form-group col-md-6 mb-3">
 
                                   <input
@@ -27,19 +27,14 @@
                                   />
                                   <div class="invalid-feedback">Please provide a name</div>
 
-
-                                  <input
-                                    type="text"
-                                    id="Inputorg"
-                                    class="form-control"
-                                    placeholder="{{ 'organ' | translate }}"
-                                    formControlName="organization"
-                                    [ngClass]="{ 'is-invalid': invalidField('organization') }" />
-
-                                  <div *ngIf="invalidField('organization')" class="invalid-feedback">
-                                    Please enter a valid organization.
-                                  </div>
-
+                                      <select id="organization"
+                                          class="form-control"
+                                          (change)="onSelectOrganization()"
+                                          [(ngModel)]="selectedorganization"
+                                          (ngModelChange)="getOrganizations" formControlName="organization">
+                                          <option disabled selected ="">{{ selectedorganization }}</option>
+                                          <option *ngFor="let item of organizationData" [value]="item.organization">{{ item.organization }}</option>
+                                       </select>
 
                                   <input
                                     type="text"
@@ -98,8 +93,8 @@
                           </div>
 
 
-                            <div class="form-group col-md-6 mb-3">                                   
-                                  
+                            <div class="form-group col-md-6 mb-3">
+
                               <div class="card card-primary card-img">
                                 <div class="text-center">
                                   <label for="pictureUpload" class="mb-3">
@@ -109,51 +104,75 @@
                                   <input type="file" id="pictureUpload" (change)="uploadImage($event)" formControlName="picture" style="display: none;">
                                 </div>
                               </div>
-                                                                     
-                                    <div class="container mt-5">
-                                      <div class="row">
-                                        <div class="col">
 
-                                          <mat-label>Interes   </mat-label>
+                              <div class="container mt-5">
+                                <div class="row">
+                                  <div class="col">
+                                    <table>
+                                      <tr>
+                                        <td>
+                                          <mat-label>Interes</mat-label>
+                                        </td>
+                                        <td>
                                           <select class="form-select" [(ngModel)]="interes" formControlName="interes">
-                                             <option *ngFor="let n of numbers"> {{ n }}</option>
-                                           </select>
+                                            <option *ngFor="let n of numbers">{{ n }}</option>
+                                          </select>
+                                        </td>
 
-                                           <div class="col">    
-                                             <mat-label>     Power </mat-label>
-                                               <select class="form-select" [(ngModel)]="power" formControlName="power">
-                                                 <option *ngFor="let n of numbers"> {{ n }}</option>
-                                               </select>              
-                                            </div>                                                                                                                                      
-                                          </div>
-                                          
-                                       </div>
 
-                                          
-                                    </div> 
-                                                                            
+                                        <td>
+                                          <mat-label>Influencia</mat-label>
+                                        </td>
+                                        <td>
+                                          <select class="form-select" [(ngModel)]="influence" formControlName="influence">
+                                            <option *ngFor="let n of numbers"> {{ n }}</option>
+                                          </select>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </div>
+                                </div>
+                              </div>
 
-                                      <div class="row">
+
+                              <div class="container mt-5">
+                                <div class="row">
+                                  <div class="col">
+                                    <table>
+                                      <tr>
+                                        <td>
+                                          <mat-label>Power</mat-label>
+                                        </td>
+                                        <td>
+
+                                          <select class="form-select" [(ngModel)]="power" formControlName="power">
+                                            <option *ngFor="let n of numbers">{{ n }}</option>
+                                          </select>
+                                        </td>
+
+                                        <td>
+                                          <mat-label>Avg</mat-label>
+                                        </td>
+                                        <td>
                                           <div class="col-md-6">
-                                              <mat-label>Influencia</mat-label>
-                                                <select class="form-select" [(ngModel)]="influence" formControlName="influence">
-                                                  <option *ngFor="let n of numbers"> {{ n }}</option>
-                                                </select>
-                                          </div>           
-                                                                      
-                                                         
-                                            <div class="col-md-6"> 
-                                               <div class="col-md-6">
-                                                  <input
-                                                      type="text"
-                                                      id="Inputph"
-                                                      class="form-control"
-                                                      placeholder="avg"
-                                                      formControlName="avg" />
-                                              </div>
+                                            <div class="col-md-6">
+                                               <input
+                                                   type="text"
+                                                   id="Inputph"
+                                                   class="form-control"
+                                                   placeholder="avg"
+                                                   formControlName="avg" />
                                            </div>
-                                      </div>
+                                        </div>
+
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
+
 
                         </mat-dialog-actions>
                         </ng-container>
@@ -165,11 +184,11 @@
                         <button mat-dialog-close class="btn btn-secondary float-left">Cancelar</button>
                         <button type="submit" class="btn btn-warning float-left" >Salvar</button>
                     </div>
-                  
+
     </form>
 
 
-    
+
   </div>
 
 </mat-dialog-content>

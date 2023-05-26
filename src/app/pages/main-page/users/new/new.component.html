@@ -15,118 +15,101 @@
                         <ng-container *ngIf="!loadData">
                           <mat-dialog-actions>
                             <div class="form-group col-md-6 mb-3">
-                              <label for="InputName">{{ 'name' | translate }}</label>
-                              <input
-                                type="text"
-                                id="InputName"
-                                class="form-control"
-                                placeholder="{{ 'name' | translate }}"
-                                formControlName="displayName"
-                                [ngClass]="{ 'is-invalid': invalidField('displayName') }"
-                              />
-                              <div class="invalid-feedback">Please provide a name</div>
-                            </div>
 
-                            <div class="form-group col-md-6 mb-3">
-                              <label for="Inputage">{{ 'age' | translate }}</label>
-                              <input
-                                type="text"
-                                id="Inputage"
-                                class="form-control"
-                                placeholder="{{ 'age' | translate }}"
-                                formControlName="age"
-                                [ngClass]="{ 'is-invalid': age.invalid && (age.dirty || age.touched) }"
-                              />
-                              <div *ngIf="age.invalid && (age.dirty || age.touched)" class="invalid-feedback">
-                                <div *ngIf="age.hasError('required')" class="invalid-feedback">Please enter an age.</div>
-                                <div *ngIf="age.hasError('pattern')" class="invalid-feedback">
-                                  Please enter a valid age between 18 and 69.
-                                </div>
-                              </div>
-                            </div>
-
-                            <div class="form-group col-md-6 mb-3">
-                              <label for="Inputemail">{{ 'email' | translate }}</label>
-                              <input
-                                type="text"
-                                id="Inputemail"
-                                class="form-control"
-                                placeholder="{{ 'email' | translate }}"
-                                formControlName="email"
-                                [ngClass]="{ 'is-invalid': fus.controls.email.invalid && (fus.controls.email.dirty || fus.controls.email.touched) }"
-                              />
-                              <div *ngIf="fus.controls.email.invalid && (fus.controls.email.dirty || fus.controls.email.touched)" class="invalid-feedback">
-                                Please enter a valid email address.
-                              </div>
-                            </div>
+                                            <input
+                                              type="text"
+                                              id="InputName"
+                                              class="form-control"
+                                              placeholder="{{ 'name' | translate }}"
+                                              formControlName="displayName"
+                                              [ngClass]="{ 'is-invalid': invalidField('displayName') }"     />
+                                            <div class="invalid-feedback">Please provide a name</div>
 
 
-
-                            <div class="form-group col-md-6 mb-3">
-                              <label for="Inputcount">{{ 'country' | translate }}</label>
-                              <input
-                                type="text"
-                                id="Inputcount"
-                                class="form-control"
-                                placeholder="{{ 'country' | translate }}"
-                                formControlName="country"
-                                [ngClass]="{ 'is-invalid': invalidField('country') }"
-                              />
-                              <span class="invalid-feedback">{{ 'country' | translate }}</span>
-                            </div>
-
-                            <div class="form-group col-md-6 mb-3">
-                              <label for="Inputph">{{ 'phone' | translate }}</label>
-                              <input
-                                type="text"
-                                id="Inputph"
-                                class="form-control"
-                                placeholder="{{ 'phone' | translate }}"
-                                formControlName="phone"
-                              />
-                            </div>
+                                          <input
+                                              type="text"
+                                              id="Inputage"
+                                              class="form-control"
+                                              placeholder="{{ 'age' | translate }}"
+                                              formControlName="age"
+                                              [ngClass]="{ 'is-invalid': age.invalid && (age.dirty || age.touched) }"/>
+                                            <div *ngIf="age.invalid && (age.dirty || age.touched)" class="invalid-feedback">
+                                              <div *ngIf="age.hasError('required')" class="invalid-feedback">Please enter an age.</div>
+                                              <div *ngIf="age.hasError('pattern')" class="invalid-feedback">
+                                                Please enter a valid age between 18 and 69.
+                                              </div>
+                                            </div>
 
 
-                             <div class="form-group col-md-6 mb-3">
+                                            <input
+                                              type="text"
+                                              id="Inputemail"
+                                              class="form-control"
+                                              placeholder="{{ 'email' | translate }}"
+                                              formControlName="email"
+                                              [ngClass]="{ 'is-invalid': fus.controls.email.invalid && (fus.controls.email.dirty || fus.controls.email.touched) }"
+                                            />
+                                            <div *ngIf="fus.controls.email.invalid && (fus.controls.email.dirty || fus.controls.email.touched)" class="invalid-feedback">
+                                              Please enter a valid email address.
+                                            </div>
 
-                               <div class="custom-file">
-                                  <input type="file" (change)="uploadImage($event)" class="custom-file-input" id="customFile">
-                                  <label class="custom-file-label" for="customFile">Choose Image</label>
-                                  <small class="mt-2">200px * 200px size | jpg or png format </small>
-                                </div>
 
-                             </div>
+                                        <input
+                                          type="text"
+                                          id="Inputcount"
+                                          class="form-control"
+                                          placeholder="{{ 'country' | translate }}"
+                                          formControlName="country"
+                                          [ngClass]="{ 'is-invalid': invalidField('country') }"
+                                        />
+                                        <span class="invalid-feedback">{{ 'country' | translate }}</span>
 
 
-                                    <div class="form-group col-md-6 mb-3">
-                                      <label for="Inputpos">{{ 'position' | translate }}</label>
-                                      <input
-                                        type="text"
-                                        id="Inputpos"
-                                        class="form-control"
-                                        placeholder="{{ 'position' | translate }}"
-                                        formControlName="position"
-                                        [ngClass]="{ 'is-invalid': invalidField('position') }"
-                                      />
-                                      <div *ngIf="invalidField('position')" class="invalid-feedback">
-                                        Please enter a valid position.
+
+                                        <input
+                                          type="text"
+                                          id="Inputph"
+                                          class="form-control"
+                                          placeholder="{{ 'phone' | translate }}"
+                                          formControlName="phone" />
+
+                                            <select id="organization"
+                                                  class="form-control"
+                                                  (change)="onSelectOrganization()"
+                                                  [(ngModel)]="selectedorganization"
+                                                  (ngModelChange)="getOrganizations" formControlName="organization">
+                                                  <option disabled selected ="">{{ selectedorganization }}</option>
+                                                  <option *ngFor="let item of organizationData" [value]="item.organization">{{ item.organization }}</option>
+                                            </select>
+
+
+                                            <input
+                                            type="text"
+                                            id="Inputpos"
+                                            class="form-control"
+                                            placeholder="{{ 'position' | translate }}"
+                                            formControlName="position"
+                                            [ngClass]="{ 'is-invalid': invalidField('position') }"
+                                          />
+                                          <div *ngIf="invalidField('position')" class="invalid-feedback">
+                                            Please enter a valid position.
+                                          </div>
+                                  </div>
+
+
+                                   <div class="form-group col-md-6 mb-3">
+                                      <div class="card card-primary card-img">
+                                        <div class="text-center">
+                                          <label for="pictureUpload" class="mb-3">
+                                            <img src="{{ fus.get('picture').value }}" width="100" height="100">
+                                            {{ 'Avatar/Foto' | translate }}
+                                          </label>
+                                          <input type="file" id="pictureUpload" (change)="uploadImage($event)" formControlName="picture" style="display: none;">
                                       </div>
-                                    </div>
-
-                                    <div class="form-group col-md-6 mb-3">
-                                      <label for="Inputorg">{{ 'organ' | translate }}</label>
-                                      <input
-                                        type="text"
-                                        id="Inputorg"
-                                        class="form-control"
-                                        placeholder="{{ 'organ' | translate }}"
-                                        formControlName="organization"
-                                        [ngClass]="{ 'is-invalid': invalidField('organization') }"
-                                      />
-                                      <div *ngIf="invalidField('organization')" class="invalid-feedback">
-                                        Please enter a valid organization.
                                       </div>
-                                    </div>
+
+                               </div>
+
 
 
                         </mat-dialog-actions>
