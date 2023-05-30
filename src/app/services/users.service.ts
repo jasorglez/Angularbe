@@ -190,7 +190,7 @@ constructor(private http:HttpClient ) { }
 
 
   checkIfDataExists(email: string): Observable<boolean> {
-    const url = `${environment.urlFirebase}users.json?orderBy="email"&equalTo="${email}"`;
+    const url = `${environment.urlFirebase}users.json?orderBy="emailu"&equalTo="${email}"`;
 
     return this.http.get<any>(url).pipe(
       map(response => {

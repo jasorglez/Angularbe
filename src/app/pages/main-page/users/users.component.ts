@@ -236,7 +236,7 @@ onTabSelected(tabName: string) {
                   age          :resp[a].age,
           			  country      :resp[a].country,
         				  displayName  :resp[a].displayName,
-        				  emailu       :resp[a].email,
+        				  emailu       :resp[a].emailu,
                   iduser       :resp[a].iduser,
         				  method       :resp[a].method,
                   password     :resp[a].password,

@@ -24,7 +24,9 @@
                                               formControlName="displayName"
                                               [ngClass]="{ 'is-invalid': namef.invalid && (namef.dirty || namef.touched) }"    />
                                               <div *ngIf="namef.invalid && (namef.dirty || namef.touched)" class="invalid-feedback">
-                                                <div *ngIf="namef.errors['required']" >Name Required</div>
+                                                <div *ngIf="namef.errors['required']" >
+                                                  Name Required
+                                                </div>
                                               </div>
                  
                                    
@@ -114,13 +116,12 @@
                                   type="text"
                                   class="form-control"
                                   placeholder="{{ 'country' | translate }}"
-                                  formControlName="country"
-                                  [ngClass]="{ 'is-invalid': invalidField('country') }"  />
-                                  <div *ngIf="countryf.invalid && (countryf.dirty || countryf.touched)" class="invalid-feedback">
-                                  <div *ngIf="countryf.errors['required']" >
-                                      Country Required
-                                    </div>
-                                </div>
+                                  formControlName="country" />
+                                  <div *ngIf="fus.get('country').invalid && (fus.get('country').dirty || fus.get('country').touched)" class="invalid-feedback">
+                                    
+                                           Country Required
+                                           
+                                  </div>
 
                                       <select id="organization"
                                         class="form-control"

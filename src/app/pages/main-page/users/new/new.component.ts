@@ -55,8 +55,7 @@ export class NewComponent implements OnInit {
    get agef() { return this.fus.get('age') }
  
    get namef() { return this.fus.get('displayName') }
-   get phonef() { return this.fus.get('phone') } ;
-   get countryf() { return this.fus.get('country')}
+
    get positionf() { return this.fus.get('position') }
 
 
@@ -145,7 +144,7 @@ uploadImage($event: any) {
                         iduser         : 0,
                         method         : '',
                         age            : this.fus.controls.age.value ?? 0,
-                        country        : this.fus.controls.country.value ?? '',
+                        country        : this.fus.get('country').value,
                         displayName    : this.fus.controls.displayName.value ?? '',
                         emailu          : this.fus.controls.emailu.value ?? '',
                         password       : this.fus.controls.passnew.value ?? '',
