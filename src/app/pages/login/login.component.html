@@ -7,12 +7,12 @@
 	  <div class="card" >
 	    <div class="card-body login-card-body">
 	      <p class="login-box-msg" > {{ 'titlelogin' | translate}} </p>
-		  
-		    
-		     
+
+
+
 	      <form
 	      	autocomplete="off"
-	      	[formGroup]="f"
+	      	[formGroup]="flogin"
 	      	(ngSubmit)="login()"
 	      >
 
@@ -21,8 +21,8 @@
                 <input type="email"
                 class="form-control"
                 placeholder="{{ 'email' | translate}}"
-                formControlName="email"
-                [ngClass]="{'is-invalid': invalidField('email')}" >
+                formControlName="emaillogin"
+                [ngClass]="{'is-invalid': invalidField('emaillogin')}" >
 
 	          <div class="input-group-append">
 	            <div class="input-group-text">
@@ -39,8 +39,9 @@
 	          <input type="password"
 	          class="form-control"
 	          placeholder="{{'password' | translate}}"
-	          formControlName="password"
-	          [ngClass]="{'is-invalid': invalidField('password')}">
+            autocomplete="current-password"
+	          formControlName="passwordlogin"
+	          [ngClass]="{'is-invalid': invalidField('passwordlogin')}">
 
 	          <div class="input-group-append">
 	            <div class="input-group-text">
@@ -60,7 +61,6 @@
 	          <!-- /.col -->
 	        </div>
 	      </form>
-
 
 
 	    </div>

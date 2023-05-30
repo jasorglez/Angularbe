@@ -15,6 +15,7 @@ import { app, db } from 'src/app/firebase.config';
 
 import 'firebase/compat/database';
 import { ConstantPool } from '@angular/compiler';
+import { Validators } from '@angular/forms';
 
 
 @Injectable({
@@ -158,7 +159,12 @@ constructor(private http:HttpClient ) { }
 
 
 	getDataUsers(){
-		return this.http.get(`${environment.urlFirebase}users.json`);
+    try {
+      return this.http.get(`${environment.urlFirebase}users.json`);
+    }
+    catch (error) {console.log(error)}
+    return null ;
+
 	}
 
 
@@ -180,6 +186,8 @@ constructor(private http:HttpClient ) { }
       })
     );
   }
+
+
 
   checkIfDataExists(email: string): Observable<boolean> {
     const url = `${environment.urlFirebase}users.json?orderBy="email"&equalTo="${email}"`;
@@ -234,6 +242,8 @@ constructor(private http:HttpClient ) { }
 
      return forkJoin([permissions$, company$]);
   }
+
+
 
 
 

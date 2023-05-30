@@ -26,4 +26,10 @@ export class StoragesService {
         throw error;
       });
   }
+
+
+  getObjectURL(file: File): string {
+    return URL.createObjectURL(file);
+  }
+
 }

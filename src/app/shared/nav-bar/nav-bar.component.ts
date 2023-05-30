@@ -33,20 +33,20 @@ export class NavBarComponent {
 
 
   onSelectCompany(): void {
-    console.log('Id Company ->', this.selectedCompany);
+
     this.trackingService.setCompany(this.selectedCompany);
     this.getpermissionxBranchs();
   }
 
   onSelectBranch() {
-    console.log('Id Branch ->', this.selectedBranch);
+ //   console.log('Id Branch ->', this.selectedBranch);
     this.trackingService.setBranch(this.selectedBranch) ;
     this.getpermissionxProjects();
   }
 
   onSelectProject() {
     this.trackingService.setProject(this.selectedProject)
-    console.log('Id Project ->', this.selectedProject);
+    //console.log('Id Project ->', this.selectedProject);
   }
 
   getpermissionxCompanys() {

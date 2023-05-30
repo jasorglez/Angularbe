@@ -23,17 +23,18 @@ export class EditComponent {
 
 	public fus = this.form.group({
 
-    active       : 1,
-    iduser       : 0,
-    age          : 0,
-    country      : '',
-    displayName  : [''],
-    email        : [''],
-    method       : '',
-    phone        : '',
-    picture      : 'S/P',
-    position     : [''],
-    organization : [''],
+     active       : 1,
+     iduser       : 0,
+     age          : 0,
+     country      : '',
+     displayName  : [''],
+     email        : [''],
+     method       : '',
+     password     : '',
+     phone        : '',
+     picture      : 'S/P',
+     position     : [''],
+     organization : [''],
 
    } )
 
@@ -129,7 +130,8 @@ export class EditComponent {
               age            : this.fus.controls.age.value ?? 0,
               country        : this.fus.controls.country.value ?? '',
               displayName    : this.fus.controls.displayName.value ?? '',
-              email          : this.fus.controls.email.value ?? '',
+              emailu          : this.fus.controls.email.value ?? '',
+              password       : this.fus.controls.password.value ?? '',
               phone          : this.fus.controls.phone.value ?? '',
               picture        : this.url ,
               position       : this.fus.controls.position.value ?? '',

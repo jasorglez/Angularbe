@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 // Forzosamente necesita este componente para activar el formulario del inicio en caso nuevo
-import { ReactiveFormsModule } from '@angular/forms';
+import {  ReactiveFormsModule } from '@angular/forms';
 
 import { UsersRoutingModule } from './users-routing.module';
 

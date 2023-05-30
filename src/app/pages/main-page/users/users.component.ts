@@ -13,6 +13,7 @@ import { BranchsService } from 'src/app/services/branchs.service';
 import { ProjectService } from 'src/app/services/project.service';
 import { TrackingService } from 'src/app/services/tracking.service';
 import { TraductorService} from 'src/app/services/traductor.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 /**impresiones del reporte */
 import * as pdfMake from 'pdfmake/build/pdfmake';
@@ -27,7 +28,7 @@ import { MatSort} from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 
-import { FormBuilder, FormGroup, Validators, FormsModule } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 
 import {animate, state, style, transition, trigger} from '@angular/animations';
 
@@ -102,7 +103,7 @@ onTabSelected(tabName: string) {
 	Variable para nombrar las columnas de nuestra tabla en Angular Material
 	=============================================*/
 	 displayedColUsers: string[] = [  'numberposition',
-				'email', 'actions'];
+				'email',  'actions'];
 
    displayedColCompany: string[] = [  'numberposition',
 					'displayName', 'rfc',
@@ -177,7 +178,7 @@ onTabSelected(tabName: string) {
 
 
   	constructor(public translateService: TraductorService, private usersService: UsersService, private companyService: CompanysService,
-        private branchService: BranchsService, private projectsService: ProjectService, private trackingService : TrackingService,
+        private branchService: BranchsService, private projectsService: ProjectService, private trackingService : TrackingService, private authService: AuthService,
         public dialog : MatDialog, private form:FormBuilder) {   }
 
   	ngOnInit(): void {
@@ -203,7 +204,6 @@ onTabSelected(tabName: string) {
     		}
 
  	}
-
 
 
 	/*=============================================
@@ -232,17 +232,18 @@ onTabSelected(tabName: string) {
 
           				id:a,
           				numberposition:numberposition++,
-                  active:resp[a].active,
-                  age:resp[a].age,
-          			  country:resp[a].country,
-        				  displayName:resp[a].displayName,
-        				  email:resp[a].email,
-                  iduser:resp[a].iduser,
-        				  method:resp[a].method,
-        				  phone:resp[a].phone,
-        				  picture:resp[a].picture,
-                  position:resp[a].position,
-        				  organization:resp[a].organization
+                  active       :resp[a].active,
+                  age          :resp[a].age,
+          			  country      :resp[a].country,
+        				  displayName  :resp[a].displayName,
+        				  emailu       :resp[a].email,
+                  iduser       :resp[a].iduser,
+        				  method       :resp[a].method,
+                  password     :resp[a].password,
+        				  phone        :resp[a].phone,
+        				  picture      :resp[a].picture,
+                  position     :resp[a].position,
+        				  organization :resp[a].organization
 
           			} as Iusers ));
 
@@ -421,17 +422,6 @@ onTabSelected(tabName: string) {
 
 }
 
-  	/*=============================================
-	Filtro de Búsqueda
-	=============================================*/
-  applyFilter(dataSource: MatTableDataSource<any>, event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    dataSource.filter = filterValue.trim().toLowerCase();
-
-    if (dataSource.paginator) {
-      dataSource.paginator.firstPage();
-    }
-  }
 
 
     newUsers() {
@@ -498,6 +488,7 @@ onTabSelected(tabName: string) {
                       () => {
 
                           alerts.basicAlert("Sucess", "The user has been deleted", "success")
+                          this.authService.removeUserByEmail(mail) ;
 
                           this.getdataUsers();
                       }
@@ -584,6 +575,19 @@ onTabSelected(tabName: string) {
     });
   }
 
+
+
+    	/*=============================================
+	Filtro de Búsqueda
+	=============================================*/
+  applyFilter(dataSource: MatTableDataSource<any>, event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    dataSource.filter = filterValue.trim().toLowerCase();
+
+    if (dataSource.paginator) {
+      dataSource.paginator.firstPage();
+    }
+  }
 
 
  }

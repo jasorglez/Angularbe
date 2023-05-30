@@ -4,6 +4,7 @@ import { FormsModule, FormBuilder, Validators } from '@angular/forms'
 import { Ilogin } from 'src/app/interface/ilogin';
 import { LoginService } from 'src/app/services/login.service';
 import { CompanysService } from 'src/app/services/companys.service';
+import { AuthService } from 'src/app/services/auth.service';
 import { TrackingService } from 'src/app/services/tracking.service';
 
 import { functions } from 'src/app/helpers/functions';
@@ -27,10 +28,10 @@ export class LoginComponent implements OnInit{
 	Creamos grupo de controles
 	=============================================*/
 
-	public f = this.form.group({
+	public flogin = this.formBuilder.group({
 
-		email: ['', [Validators.required, Validators.email]],
-		password: ['', Validators.required]
+		emaillogin    : ['', [Validators.required, Validators.email]],
+		passwordlogin : ['', Validators.required]
 
 	})
 
@@ -44,8 +45,9 @@ export class LoginComponent implements OnInit{
 
 
 
-  constructor( public translateService: TraductorService, private form: FormBuilder, private loginService: LoginService,
-    private companysService : CompanysService, private trackingService : TrackingService, private router: Router) { }
+  constructor( public translateService: TraductorService,  private loginService: LoginService,
+    private companysService : CompanysService, private trackingService : TrackingService, private auth: AuthService,
+    private formBuilder: FormBuilder, private router: Router) { }
 
 
   ngOnInit(): void {
@@ -68,11 +70,11 @@ export class LoginComponent implements OnInit{
     this.formSubmitted = true;
 
    // Atrapo la variable para enviarla al servicio
-   this.emailcapt = this.f.get('email')?.value || '';
+   this.emailcapt = this.flogin.get('email')?.value || '';
 
-   this.trackingService.setEmail(this.f.controls.email.value ?? '' );
+   this.trackingService.setEmail(this.flogin.controls.emaillogin.value ?? '' );
 
-    if(this.f.invalid){
+    if(this.flogin.invalid){
 
 			return;
 		}
@@ -83,8 +85,8 @@ export class LoginComponent implements OnInit{
 
 		const data: Ilogin = {
 
-			email: this.f.controls.email.value ?? '',
-			password: this.f.controls.password.value ?? '',
+			email: this.flogin.controls.emaillogin.value ?? '',
+			password: this.flogin.controls.passwordlogin.value ?? '',
 			returnSecureToken: true
 
 		}
@@ -103,7 +105,10 @@ export class LoginComponent implements OnInit{
 				/*=============================================
 				Entramos al sistema
 				=============================================*/
-
+        /*const user = await this.auth.login(this.emailcapt, this.f.controls.passwordlogin.value)
+        if (user.user.emailVerified) {
+             //aqui lo mandamos al home o en caso contratio a la verificacion del email  
+        }*/
         this.router.navigateByUrl("/");
 
 			},
@@ -140,7 +145,7 @@ export class LoginComponent implements OnInit{
 
 	invalidField(field:string){
 
-		return functions.invalidField(field, this.f, this.formSubmitted);
+		return functions.invalidField(field, this.flogin, this.formSubmitted);
 
 	}
 

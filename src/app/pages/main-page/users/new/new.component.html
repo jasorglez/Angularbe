@@ -6,7 +6,6 @@
         <div class="card-header">
              <h2 class="card-title mb-0">{{ 'newuser' | translate }}</h2>
              <button type="button" class="close" mat-dialog-close></button>
-
         </div>
 
        <form autocomplete="off" [formGroup]="fus" (ngSubmit)="saveUsers()">
@@ -14,7 +13,8 @@
 
                         <ng-container *ngIf="!loadData">
                           <mat-dialog-actions>
-                            <div class="form-group col-md-6 mb-3">
+
+                            <div class="form-group col-md-6 mb-6">
 
                                             <input
                                               type="text"
@@ -22,107 +22,140 @@
                                               class="form-control"
                                               placeholder="{{ 'name' | translate }}"
                                               formControlName="displayName"
-                                              [ngClass]="{ 'is-invalid': invalidField('displayName') }"     />
-                                            <div class="invalid-feedback">Please provide a name</div>
+                                              [ngClass]="{ 'is-invalid': namef.invalid && (namef.dirty || namef.touched) }"    />
+                                              <div *ngIf="namef.invalid && (namef.dirty || namef.touched)" class="invalid-feedback">
+                                                <div *ngIf="namef.errors['required']" >Name Required</div>
+                                              </div>
+                 
+                                   
+                                            <input
+                                            type="number"
+                                            id="Inputage"
+                                            class="form-control"
+                                            placeholder="{{ 'age' | translate }}"
+                                            formControlName="age"
+                                            [ngClass]="{ 'is-invalid': agef.invalid && (agef.dirty || agef.touched) }" />
+                                          <div *ngIf="agef.invalid && (agef.dirty || agef.touched)" class="invalid-feedback">
+                                            <div *ngIf="agef.errors['required']" >
+                                              Please enter an age.</div>
+                                            <div *ngIf="agef.errors['pattern']" >
+                                              Please valid age between 18 and 69.
+                                            </div>
+                                          </div>
 
 
                                           <input
-                                              type="text"
-                                              id="Inputage"
-                                              class="form-control"
-                                              placeholder="{{ 'age' | translate }}"
-                                              formControlName="age"
-                                              [ngClass]="{ 'is-invalid': age.invalid && (age.dirty || age.touched) }"/>
-                                            <div *ngIf="age.invalid && (age.dirty || age.touched)" class="invalid-feedback">
-                                              <div *ngIf="age.hasError('required')" class="invalid-feedback">Please enter an age.</div>
-                                              <div *ngIf="age.hasError('pattern')" class="invalid-feedback">
-                                                Please enter a valid age between 18 and 69.
-                                              </div>
-                                            </div>
-
-
-                                            <input
-                                              type="text"
-                                              id="Inputemail"
-                                              class="form-control"
-                                              placeholder="{{ 'email' | translate }}"
-                                              formControlName="email"
-                                              [ngClass]="{ 'is-invalid': fus.controls.email.invalid && (fus.controls.email.dirty || fus.controls.email.touched) }"
-                                            />
-                                            <div *ngIf="fus.controls.email.invalid && (fus.controls.email.dirty || fus.controls.email.touched)" class="invalid-feedback">
-                                              Please enter a valid email address.
-                                            </div>
-
-
-                                        <input
-                                          type="text"
-                                          id="Inputcount"
+                                          type="email"
+                                          id="InputEmail"
                                           class="form-control"
-                                          placeholder="{{ 'country' | translate }}"
-                                          formControlName="country"
-                                          [ngClass]="{ 'is-invalid': invalidField('country') }"
+                                          placeholder="{{ 'email' | translate }}"
+                                          autocomplete="off"
+                                          formControlName="emailu"
+                                          (blur)="checkEmailExists()"
+                                          [ngClass]="{ 'is-invalid': fus.controls.emailu.invalid && (fus.controls.emailu.dirty || fus.controls.emailu.touched) || emailExists }"
                                         />
-                                        <span class="invalid-feedback">{{ 'country' | translate }}</span>
-
-
+                                        <div *ngIf="fus.controls.emailu.invalid && (fus.controls.emailu.dirty || fus.controls.emailu.touched)" class="invalid-feedback">
+                                          <div *ngIf="fus.controls.emailu.errors['required']" class="invalid-feedback">
+                                            Required Email address.
+                                          </div>
+                                          <div *ngIf="fus.controls.emailu.errors['email']" class="invalid-feedback">
+                                            Please enter a valid email address.
+                                          </div>
+                                        </div>
+                                        <div *ngIf="emailExists">
+                                          Email already exist.
+                                        </div>
 
                                         <input
-                                          type="text"
-                                          id="Inputph"
-                                          class="form-control"
-                                          placeholder="{{ 'phone' | translate }}"
-                                          formControlName="phone" />
-
-                                            <select id="organization"
-                                                  class="form-control"
-                                                  (change)="onSelectOrganization()"
-                                                  [(ngModel)]="selectedorganization"
-                                                  (ngModelChange)="getOrganizations" formControlName="organization">
-                                                  <option disabled selected ="">{{ selectedorganization }}</option>
-                                                  <option *ngFor="let item of organizationData" [value]="item.organization">{{ item.organization }}</option>
-                                            </select>
+                                        type="password"
+                                        class="form-control"
+                                        placeholder="{{ 'password' | translate }}"
+                                        formControlName="passnew"
+                                        autocomplete="off"
+                                        [ngClass]="{ 'is-invalid': fus.controls.passnew.invalid && (fus.controls.passnew.dirty || fus.controls.passnew.touched) }"
+                                      />
+                                      <div *ngIf="fus.controls.passnew.invalid && (fus.controls.passnew.dirty || fus.controls.passnew.touched)" class="invalid-feedback">
+                                        Password Required
+                                      </div>
 
 
-                                            <input
-                                            type="text"
-                                            id="Inputpos"
-                                            class="form-control"
-                                            placeholder="{{ 'position' | translate }}"
-                                            formControlName="position"
-                                            [ngClass]="{ 'is-invalid': invalidField('position') }"
-                                          />
-                                          <div *ngIf="invalidField('position')" class="invalid-feedback">
-                                            Please enter a valid position.
-                                          </div>
+                                      <input
+                                      type="text"
+                                      class="form-control"
+                                      placeholder="{{ 'phone' | translate }}"
+                                      formControlName="phone" />
+                                      <div *ngIf="fus.get('phone').invalid && (fus.get('phone').dirty || fus.get('phone').touched)" class="invalid-feedback">
+                                        <div *ngIf="fus.get('phone').errors['required']">
+                                          Phone Required
+                                        </div>
+                                        <div *ngIf="fus.get('phone').errors['pattern']">
+                                          Number phone 10 digit.
+                                        </div>
+                                      </div>
+
+                            </div>
+
+                            
+                       <div class="form-group col-md-6 mb-3">
+                              <div class="form-group">
+                                 <div class="card card-primary card-img">
+                                    <div class="text-center">
+                                       <label for="pictureUpload" class="mb-3">
+                                       <img [src]="imageUrl" width="100" height="100" *ngIf="imageUrl">
+                                      {{ 'Avatar/Foto' | translate }}
+                                    </label>
+                                    <input type="file" id="pictureUpload" (change)="uploadImage($event)" style="display: none;">
                                   </div>
+                                 </div>
+                              </div> 
 
 
-                                   <div class="form-group col-md-6 mb-3">
-                                      <div class="card card-primary card-img">
-                                        <div class="text-center">
-                                          <label for="pictureUpload" class="mb-3">
-                                            <img src="{{ fus.get('picture').value }}" width="100" height="100">
-                                            {{ 'Avatar/Foto' | translate }}
-                                          </label>
-                                          <input type="file" id="pictureUpload" (change)="uploadImage($event)" formControlName="picture" style="display: none;">
-                                      </div>
-                                      </div>
+                                  <input
+                                  type="text"
+                                  class="form-control"
+                                  placeholder="{{ 'country' | translate }}"
+                                  formControlName="country"
+                                  [ngClass]="{ 'is-invalid': invalidField('country') }"  />
+                                  <div *ngIf="countryf.invalid && (countryf.dirty || countryf.touched)" class="invalid-feedback">
+                                  <div *ngIf="countryf.errors['required']" >
+                                      Country Required
+                                    </div>
+                                </div>
 
-                               </div>
+                                      <select id="organization"
+                                        class="form-control"
+                                        (change)="onSelectOrganization()"
+                                        [(ngModel)]="selectedorganization"
+                                        formControlName="organization">
+                                        <option disabled selected ="">{{ selectedorganization }}</option>
+                                        <option *ngFor="let item of organizationData" [value]="item.organization">{{ item.organization }}</option>
+                                    </select>  
+                    
+                                    <input 
+                                    type="text"
+                                      class="form-control" 
+                                      placeholder="{{ 'position' | translate }}" 
+                                      formControlName="position" 
+                                    [ngClass]="{ 'is-invalid': invalidField('position') }" />
+                                    <div *ngIf="positionf.invalid && (positionf.dirty || positionf.touched)" class="invalid-feedback">
+                                        <div *ngIf="positionf.errors['required']" >
+                                          Position Required
+                                        </div>
+                                    </div>                                
 
-
+                       </div>
+                                                        
 
                         </mat-dialog-actions>
                         </ng-container>
-
-                      </div>
-
+             
 
                       <div class="card-footer">
                         <button mat-dialog-close class="btn btn-secondary float-right">Cancelar</button>
                         <button type="submit" class="btn btn-warning float-right" [disabled]="fus.invalid">Salvar</button>
                       </div>
 
+               </div>
        </form>
 
   </div>

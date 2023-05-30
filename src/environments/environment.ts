@@ -5,14 +5,15 @@
 
 
 export const environment = {
-  firebase : {
-    apiKey: "AIzaSyDxCBGKk8nT09hdW85-PyOkhw5_JPZLF1A",
-    authDomain: "beapp-501d1.firebaseapp.com",
-    databaseURL: "https://beapp-501d1-default-rtdb.firebaseio.com",
-    projectId: "beapp-501d1",
-    storageBucket: "beapp-501d1.appspot.com",
-    messagingSenderId: "151993360357",
-    appId: "1:151993360357:web:127db5b6d20896fb84990c"
+  firebase: {
+    projectId: 'beapp-501d1',
+    appId: '1:151993360357:web:127db5b6d20896fb84990c',
+    databaseURL: 'https://beapp-501d1-default-rtdb.firebaseio.com',
+    storageBucket: 'beapp-501d1.appspot.com',
+    locationId: 'us-central',
+    apiKey: 'AIzaSyDxCBGKk8nT09hdW85-PyOkhw5_JPZLF1A',
+    authDomain: 'beapp-501d1.firebaseapp.com',
+    messagingSenderId: '151993360357',
   },
 
   production: false,

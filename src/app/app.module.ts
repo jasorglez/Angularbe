@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //Modulos Personalizados
 
 import { PagesModule } from './pages/pages.module';
@@ -19,12 +20,14 @@ import { TranslateModule, TranslateLoader} from '@ngx-translate/core';
 /*============================
   Modulo para firebase
   ==============================*/
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { provideAuth, getAuth } from '@angular/fire/auth';
+import { provideStorage, getStorage } from '@angular/fire/storage';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore'
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireModule } from '@angular/fire/compat';
 
-//import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
-import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
-import { provideStorage, getStorage} from '@angular/fire/storage'
 import { environment } from 'src/environments/environment';
-
 
 export function HttpLoaderFactory (http:HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -41,7 +44,17 @@ export function HttpLoaderFactory (http:HttpClient) {
 
     BrowserModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
     provideStorage(() => getStorage()),
+
+    AngularFireAuthModule,
+    AngularFireModule.initializeApp(environment.firebase),
+
+    AngularFireModule,
+    AngularFireAuthModule,
+
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     PagesModule,
     BrowserAnimationsModule,

@@ -38,7 +38,7 @@ export class NewInterestedComponent implements OnInit {
 	public fis = this.formBuilder.group({
 
       active       : 1,
-      avg          : [0, [Validators.required, Validators.pattern('^(1[8-9]|[2-5][0-9]|6[0-9])$')]],
+      avg          : [, [Validators.required]],
       email        : ['', [Validators.required, Validators.email]],
       follow       : 'Reporte Diario',
       iduser       : 0,
@@ -54,6 +54,7 @@ export class NewInterestedComponent implements OnInit {
    } )
 
     get name() { return this.fis.controls['name'] }
+    get avg()  { return this.fis.get('avg')}
 
       /*=============================================
 	  Variable que valida el envío del formulario
@@ -102,24 +103,28 @@ export class NewInterestedComponent implements OnInit {
   /*=========================
     Para las fotos
   ========================== */
-  uploadImage($event: any) {
-    const file = $event.target.files[0];
-    const path = `images/${file.name}` ;
+  selectedImage: File;
+  imageUrl: string = environment.urlProfile
 
-    this.storageService.uploadFile(file, path)
+uploadImage($event: any) {
+  const file = $event.target.files[0];
+  this.selectedImage = file;
+  const path = `images/${file.name}`;
+
+  if (!file) {
+    this.imageUrl = ''; // No hay imagen seleccionada, establecemos la URL vacía
+    return;
+  }
+
+  this.storageService.uploadFile(file, path)
     .then(url => {
-       console.log("URL", url);
-       this.url = url;
-       this.fis.patchValue({ picture: url}) ;
-
-    })
-    .then(url => {
-      console.log("Download URL", url);
-
+        this.url = url;
+        this.imageUrl = this.storageService.getObjectURL(this.selectedImage); // Almacenar la URL de la imagen seleccionada
+        this.fis.patchValue({ picture: url }); // Actualizar el valor del control 'picture' con la URL de la imagen
     })
     .catch(error => console.log("Error uploading file", error));
+}
 
-  }
 
 
   saveInteres() {
