@@ -39,16 +39,18 @@ export class NavBarComponent {
   }
 
   onSelectBranch() {
- //   console.log('Id Branch ->', this.selectedBranch);
+    console.log('Id Branch ->', this.selectedBranch);
     this.trackingService.setBranch(this.selectedBranch) ;
     this.getpermissionxProjects();
   }
 
   onSelectProject() {
     this.trackingService.setProject(this.selectedProject)
-    //console.log('Id Project ->', this.selectedProject);
+    console.log('Id Project ->', this.selectedProject);
   }
 
+
+//obtener los permisos de la cia
   getpermissionxCompanys() {
     this.companysService.getpermissionsxCompany(this.mail).subscribe((data) => {
       this.companyData = Object.values(data);

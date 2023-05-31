@@ -26,9 +26,9 @@
 
         <button type="button" class="btn btn-primary d-block d-sm-none" (click)="home()">{{'home' | translate}}</button>
 
-        <div class="btn-group d-none d-sm-block">
+        <div class="btn-group d-block d-sm-block">
           <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-            P  M   O.
+            PMO
           </button>
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
             <li><button class="dropdown-item" type="button" (click)="navigateToInterested()">{{'menuPM.gi' | translate}}</button></li>
@@ -40,9 +40,9 @@
           </ul>
         </div>
 
-        <div class="btn-group d-none d-sm-block">
+        <div class="btn-group d-block d-sm-block">
           <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-            PR   M.
+            PM
           </button>
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
             <li><button class="dropdown-item" type="button">{{'menuPMO.pt' | translate}}</button></li>
@@ -52,20 +52,18 @@
           </ul>
         </div>
 
-        <div class="btn-group d-none d-sm-block">
+        <div class="btn-group d-block d-sm-block">
           <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
             ADMIN
           </button>
-
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
-            <button class="dropdown-item" type="button" (click)="navigateToCompanys()"><i class="bi bi-building"></i> {{'company' | translate}}</button>
-            <button class="dropdown-item" type="button" (click)="navigateToUsers()"><i class="bi bi-people"></i> {{'user' | translate}}</button>
-            <button class="dropdown-item" type="button"><i class="bi bi-shield-lock"></i> {{'perm' | translate}}</button>
-            <button class="dropdown-item" type="button" (click)="navigateToBranchs()"><i class="bi bi-gear"></i>{{'branchs' | translate}}</button>
+             <button class="dropdown-item" type="button" (click)="navigateToCompanys()"><i class="bi bi-building"></i> {{'company' | translate}}</button>
+             <button class="dropdown-item" type="button" (click)="navigateToUsers()"><i class="bi bi-people"></i> {{'user' | translate}}</button>
+             <button class="dropdown-item" type="button"><i class="bi bi-shield-lock"></i> {{'perm' | translate}}</button>
+             <button class="dropdown-item" type="button" (click)="navigateToBranchs()"><i class="bi bi-gear"></i>{{'branchs' | translate}}</button>
+             <button class="dropdown-item" type="button" (click)="logout()"><i class="bi bi-gear"></i>{{'logout' | translate}}</button>
           </ul>
         </div>
-
-        <button type="button" class="btn btn-warning d-block d-sm-none" (click)="logout()">{{'logout' | translate}}</button>
 
       </ul>
     </nav>

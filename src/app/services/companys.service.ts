@@ -52,17 +52,17 @@ getEmpresasxEmail(orderBy:string, equalTo:string){
     }
 
 
-    async addpermiscompany(email: string, id_company: string, id_branchs: string, id_projects: string) {
+    async addpermiscompany(company: string, email: string, id_company: string) {
 
       const data = {
+        company,
         email,
         id_company,
-        id_branchs,
-        id_projects
+        
       };
 
       try {
-        const response = await this.http.post(`${environment.urlFirebase}permissions.json`, data).toPromise();
+        const response = await this.http.post(`${environment.urlFirebase}permissionsxcompanys.json`, data).toPromise();
         } catch (error) {
         console.error('Error al crear el permiso de la empresa:', error);
         alerts.basicAlert('error', "Error create permission for user/permission", "error")

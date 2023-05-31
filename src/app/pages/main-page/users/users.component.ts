@@ -63,6 +63,8 @@ export class UsersComponent implements OnInit {
   currentIndex : number = 0 ;
   combinedData: any[] = [];
 
+
+
   selectedTab = 'users';
 
 onTabSelected(tabName: string) {
@@ -534,7 +536,8 @@ onTabSelected(tabName: string) {
                   .then((result) => {
 
                     if (result.isConfirmed) {
-                          this.companyService.addpermiscompany(mail, id, '', '')
+                        
+                          this.companyService.addpermiscompany(this.trackingService.getCompany(), mail, id)
                           alerts.basicAlert("Sucess", "The permission has been Created", "success")
                     }
                   })
