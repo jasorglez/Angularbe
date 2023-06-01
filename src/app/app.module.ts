@@ -26,6 +26,7 @@ import { provideStorage, getStorage } from '@angular/fire/storage';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore'
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 
 import { environment } from 'src/environments/environment';
 
@@ -50,8 +51,9 @@ export function HttpLoaderFactory (http:HttpClient) {
     AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebase),
 
-    AngularFireModule,
     AngularFireAuthModule,
+    AngularFireModule,
+    AngularFireDatabaseModule,
 
     FormsModule,
     ReactiveFormsModule,

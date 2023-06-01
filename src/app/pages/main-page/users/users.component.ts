@@ -14,11 +14,8 @@ import { ProjectService } from 'src/app/services/project.service';
 import { TrackingService } from 'src/app/services/tracking.service';
 import { TraductorService} from 'src/app/services/traductor.service';
 import { AuthService } from 'src/app/services/auth.service';
+import { FirebaseService } from 'src/app/services/firebase.service';
 
-/**impresiones del reporte */
-import * as pdfMake from 'pdfmake/build/pdfmake';
-import * as pdfFonts from 'pdfmake/build/vfs_fonts';
-pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 import { NewComponent } from './new/new.component';
 import { EditComponent } from './edit/edit.component';
@@ -38,6 +35,8 @@ import { functions } from 'src/app/helpers/functions';
 import { alerts } from 'src/app/helpers/alerts';
 
 import { db } from 'src/app/firebase.config';
+import { Observable } from 'rxjs';
+import { async } from '@angular/core/testing';
 
 
 
@@ -63,7 +62,7 @@ export class UsersComponent implements OnInit {
   currentIndex : number = 0 ;
   combinedData: any[] = [];
 
-
+  users$: Observable<any[]>;
 
   selectedTab = 'users';
 
@@ -179,31 +178,32 @@ onTabSelected(tabName: string) {
 	@ViewChild(MatSort) sort!: MatSort;
 
 
-  	constructor(public translateService: TraductorService, private usersService: UsersService, private companyService: CompanysService,
+  	constructor(public translateService: TraductorService, private usersService: UsersService, private companyService: CompanysService, private firebaseService: FirebaseService,
         private branchService: BranchsService, private projectsService: ProjectService, private trackingService : TrackingService, private authService: AuthService,
         public dialog : MatDialog, private form:FormBuilder) {   }
 
   	ngOnInit(): void {
 
-  		this.getdataUsers();
+
+    		this.getdataUsers();
 
 
-      	/*=============================================
-    		Definir tamaños de pantalla
-    		=============================================*/
+        	/*=============================================
+      		Definir tamaños de pantalla
+      		=============================================*/
 
-    		if(functions.screenSize(0, 767)){
+      		if(functions.screenSize(0, 767)){
 
-    			this.screenSizeSM = true;
+      			this.screenSizeSM = true;
 
-    		}else{
+      		}else{
 
-    			this.screenSizeSM = false;
+      			this.screenSizeSM = false;
 
-    			this.displayedColUsers.splice(1, 0, 'displayName');
-    			this.displayedColUsers.splice(2, 0, 'position');
+      			this.displayedColUsers.splice(1, 0, 'displayName');
+      			this.displayedColUsers.splice(2, 0, 'position');
 
-    		}
+      		}
 
  	}
 
@@ -303,7 +303,7 @@ onTabSelected(tabName: string) {
          }
 
          getdataBranchs(){
-        this.branchService.getData().subscribe((resp:any)=>{
+                this.branchService.getData().subscribe((resp:any)=>{
 
           this.loadData3 = true ;
 
@@ -476,9 +476,7 @@ onTabSelected(tabName: string) {
 			if (result.isConfirmed) {
             this.usersService.getFilterDataperm("email", mail).
 
-              subscribe(
-
-                 (resp:any) => {
+              subscribe((resp:any) => {
 
                   if (Object.keys(resp).length > 0) {
                         alerts.basicAlert('error', "The category has related permission", "error")
@@ -505,7 +503,6 @@ onTabSelected(tabName: string) {
     }
 
 
-
     newBranchs(){
 
     }
@@ -521,29 +518,31 @@ onTabSelected(tabName: string) {
     }
 
 
-    asssigncomp(id : string, mail: string) {
+     async assigncomp(id: string, mail: string, name: string) {
+      try {
+        const resp = await this.firebaseService.getpermxCompany(id, mail);
 
-        this.companyService.searchByEmailAndCompanyId(mail, id).
+        if (resp) {
+          alerts.basicAlert('error', "The company already has this permission", "error");
+        }
+        else {
+          const result = await alerts.confirmAlert('Are you sure?', 'Assign Company for information user!', 'warning', 'Yes, Assign it!');
 
-        subscribe(
+          if (result.isConfirmed) {
 
-           (resp:any) => {
+                     await this.companyService.addpermiscompany(name, mail, id)
+                     alerts.basicAlert("Success", "The permission has been created", "success");
 
-            if (Object.keys(resp).length > 0) {
-                  alerts.basicAlert('error', "The company already have this permission", "error")
-            }else{
-                  alerts.confirmAlert('Are you sure?', 'Assign Company for information user!', 'warning','Yes, Assign it!')
-                  .then((result) => {
+                  }
+        } //termino el try
 
-                    if (result.isConfirmed) {
-                        
-                          this.companyService.addpermiscompany(this.trackingService.getCompany(), mail, id)
-                          alerts.basicAlert("Sucess", "The permission has been Created", "success")
-                    }
-                  })
-            }
-       }
-    )}
+        } catch (error) {
+            // Manejar errores si es necesario
+        }
+
+      }
+
+
 
 
    join() {

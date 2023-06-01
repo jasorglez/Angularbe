@@ -7,10 +7,61 @@ import { map } from 'rxjs';
   providedIn: 'root'
 })
 export class TrackingService {
-  public email   : string = '' ;
-  public project : string = '' ;
-  public branch  : string = '' ;
-  public company : string = '' ;
+  private emailser   : string = '' ;
+  private nameser    : string = '' ;
+  private pictureser  : string = '' ;
+
+  public projectser  : string = '' ;
+  public branchser   : string = '' ;
+  public companyser  : string = '' ;
+
+  setEmail(email: string): void {
+    this.emailser = email;
+  }
+
+  setName(name: string): void {
+    this.nameser = name;
+  }
+
+  setPicture(picture: string): void {
+    this.pictureser = picture;
+  }
+
+  setProject(project: string) : void {
+     this.projectser = project ;
+  }
+
+  setBranch(branch: string) : void {
+     this.branchser = branch ;
+  }
+
+  setCompany(company : string) : void {
+    this.companyser = company ;
+  }
+
+  getProject() {
+    return this.projectser ;
+  }
+
+  getBranch() {
+    return this.branchser ;
+  }
+
+  getCompany(){
+    return this.companyser ;
+  }
+
+  getEmail(): string {
+    return this.emailser;
+  }
+
+  getName():string {
+    return this.nameser;
+  }
+
+  getPicture():string {
+     return this.pictureser
+  }
 
   constructor(private http: HttpClient) { }
 
@@ -76,40 +127,7 @@ export class TrackingService {
   }
 
 
-  setEmail(email: string): void {
-    this.email = email;
-  }
-
-  setProject(project: string) : void {
-     this.project = project ;
-  }
-
-  setBranch(branch: string) : void {
-     this.branch = branch ;
-  }
-
-  setCompany(company : string) : void {
-    this.company = company ;
-  }
-
-  getProject() {
-    return this.project ;
-  }
-
-  getBranch() {
-    return this.branch ;
-  }
-
-  getCompany(){
-    return this.company ;
-  }
-
-  getEmail(): string {
-    return this.email;
-  }
-
-
-
+  
 
 	getDataTracking(valoruser :string){
 

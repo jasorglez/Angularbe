@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { alerts } from '../helpers/alerts';
+
 import { map, tap, catchError, filter } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 
@@ -52,26 +52,28 @@ getEmpresasxEmail(orderBy:string, equalTo:string){
     }
 
 
-    async addpermiscompany(company: string, email: string, id_company: string) {
-
+    async addpermiscompany(company: string, email: string, id_company: string): Promise<void> {
       const data = {
         company,
         email,
-        id_company,
-        
+        id_company
       };
 
       try {
-        const response = await this.http.post(`${environment.urlFirebase}permissionsxcompanys.json`, data).toPromise();
-        } catch (error) {
+
+        await this.http.post(`${environment.urlFirebase}permissionsxcompanys.json`, data).toPromise();
+
+      } catch (error) {
+
         console.error('Error al crear el permiso de la empresa:', error);
-        alerts.basicAlert('error', "Error create permission for user/permission", "error")
+
+        throw error; // Lanzar el error para manejarlo en la función llamadora si es necesario
       }
     }
 
 
     searchByEmailAndCompanyId(email: string, companyId: string) {
-      const url =`${environment.urlFirebase}permissions.json?`;
+      const url =`${environment.urlFirebase}permissionsxcompanys.json?`;
 
       const params = new HttpParams()
         .set('orderBy', '"email"')
@@ -79,7 +81,14 @@ getEmpresasxEmail(orderBy:string, equalTo:string){
         .set('orderBy', '"id_company"')
         .set('equalTo', `"${companyId}"`);
 
+        console.log("dentro del servicio", email)
+        console.log("dentro del servicio", companyId)
+
       return this.http.get(url, { params });
+
+
+
+
 
     }
 

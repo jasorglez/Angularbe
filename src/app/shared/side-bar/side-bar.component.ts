@@ -14,42 +14,41 @@ import { get } from 'firebase/database';
 })
 export class SideBarComponent implements OnInit {
 
-  email : string = '' ;
+  email   : string = '' ;
 
-  constructor(public translateService: TraductorService, private trackingService : TrackingService, public companyService : CompanysService,
+  constructor(public translateService: TraductorService, public trackingService : TrackingService, public companyService : CompanysService,
     private router: Router) { }
 
 
 
-
-  home() {
-    this.trackingService.addLog('', 'Eleccion del menu Home/Inicio', 'Menu Side Bar', '')
-    this.router.navigate(['/']);
-   }
-
-
-  navigateToBranchs()  {
-    this.trackingService.addLog('', 'Eleccion del menu Branchs/Sucursales', 'Menu Side Bar', '')
-    this.router.navigate(['/branchs']);
-  }
-
-
-   navigateToUsers()  {
-    this.trackingService.addLog('', 'Eleccion del menu Users/Usuarios', 'Menu Side Bar', '')
-    this.router.navigate(['/users']);
-  }
-
-  navigateToCompanys()  {
-    this.router.navigate(['/companys']);
-  }
-
-  navigateToInterested()  {
-    this.router.navigate(['/interested']);
-  }
-
-	ngOnInit(): void  {
-
-   }
+        home() {
+          this.trackingService.addLog('', 'Eleccion del menu Home/Inicio', 'Menu Side Bar', '')
+          this.router.navigate(['/']);
+         }
+      
+      
+        navigateToBranchs()  {
+          this.trackingService.addLog('', 'Eleccion del menu Branchs/Sucursales', 'Menu Side Bar', '')
+          this.router.navigate(['/branchs']);
+        }
+      
+      
+         navigateToUsers()  {
+          this.trackingService.addLog('', 'Eleccion del menu Users/Usuarios', 'Menu Side Bar', '')
+          this.router.navigate(['/users']);
+        }
+      
+        navigateToCompanys()  {
+          this.router.navigate(['/companys']);
+        }
+      
+        navigateToInterested()  {
+          this.router.navigate(['/interested']);
+        }
+      
+      	ngOnInit(): void  {
+    
+         }
 
     /*=============================================
 	Función de salida del sistema

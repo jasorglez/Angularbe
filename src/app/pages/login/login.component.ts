@@ -6,12 +6,14 @@ import { LoginService } from 'src/app/services/login.service';
 import { CompanysService } from 'src/app/services/companys.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { TrackingService } from 'src/app/services/tracking.service';
+import { UsersService } from 'src/app/services/users.service';
 
 import { functions } from 'src/app/helpers/functions';
 import { alerts } from 'src/app/helpers/alerts';
 import { Router } from '@angular/router';
 
 import { TraductorService} from 'src/app/services/traductor.service';
+import { map } from 'rxjs';
 
 
 @Component({
@@ -22,7 +24,10 @@ import { TraductorService} from 'src/app/services/traductor.service';
 export class LoginComponent implements OnInit{
 
 
-  emailcapt : string = '';
+  emailcapt   : string = '';
+
+  displayName : string = '' ;
+  picture     : string = '' ;
 
  /*=============================================
 	Creamos grupo de controles
@@ -46,7 +51,7 @@ export class LoginComponent implements OnInit{
 
 
   constructor( public translateService: TraductorService,  private loginService: LoginService,
-    private companysService : CompanysService, private trackingService : TrackingService, private auth: AuthService,
+    private companysService : CompanysService, private trackingService : TrackingService, private userService: UsersService, private auth: AuthService,
     private formBuilder: FormBuilder, private router: Router) { }
 
 
@@ -54,87 +59,104 @@ export class LoginComponent implements OnInit{
 
   }
 
-
-
 	/*=============================================
 	Función Login
 	=============================================*/
 
 	login(){
 
-		/*=============================================
-		Validamos que el formulario haya sido enviado
-		=============================================*/
+          		/*=============================================
+          		Validamos que el formulario haya sido enviado
+          		=============================================*/
+
+              this.formSubmitted = true;
+
+             // Atrapo la variable para enviarla al servicio
+             this.emailcapt = this.flogin.get('emaillogin').value ;
 
 
-    this.formSubmitted = true;
+             this.trackingService.setEmail(this.flogin.get('emaillogin').value);
 
-   // Atrapo la variable para enviarla al servicio
-   this.emailcapt = this.flogin.get('email')?.value || '';
+              if(this.flogin.invalid){
 
-   this.trackingService.setEmail(this.flogin.controls.emaillogin.value ?? '' );
+          			return;
+          		}
 
-    if(this.flogin.invalid){
+              /*=============================================
+          		Capturamos la información del formulario en la interfaz
+          		=============================================*/
 
-			return;
-		}
+          		const data: Ilogin = {
 
-    /*=============================================
-		Capturamos la información del formulario en la interfaz
-		=============================================*/
+          		   	email: this.flogin.get('emaillogin').value,
+          			  password: this.flogin.get('passwordlogin').value ,
+          			  returnSecureToken: true
 
-		const data: Ilogin = {
-
-			email: this.flogin.controls.emaillogin.value ?? '',
-			password: this.flogin.controls.passwordlogin.value ?? '',
-			returnSecureToken: true
-
-		}
-
-		/*=============================================
-		Ejecutamos el servicio del Login
-		=============================================*/
-
-     this.trackingService.addLog('', "Inicio del Sistema ", "Origen del Formulario Login", this.emailcapt)
+          		}
 
 
-		this.loginService.login(data).subscribe(
+          		/*=============================================
+          		Ejecutamos el servicio del Login
+          		=============================================*/
 
-			(resp)=>{
+               this.trackingService.addLog('', "Inicio del Sistema ", "Origen del Formulario Login", this.emailcapt)
 
-				/*=============================================
-				Entramos al sistema
-				=============================================*/
-        /*const user = await this.auth.login(this.emailcapt, this.f.controls.passwordlogin.value)
-        if (user.user.emailVerified) {
-             //aqui lo mandamos al home o en caso contratio a la verificacion del email  
-        }*/
-        this.router.navigateByUrl("/");
 
-			},
+          		this.loginService.login(data).subscribe(
 
-			(err)=>{
+          			(resp)=>{
 
-				/*=============================================
-				Errores al intentar entrar al sistema
-				=============================================*/
+                  this.userService.findEmail(this.emailcapt).subscribe(
+                    (datauser: any) => {
+                      if (datauser) {
+                        const displayName = datauser.displayName;
+                        const picture = datauser.picture;
+                        
+                        this.trackingService.setName(displayName);
+                        this.trackingService.setPicture(picture);
+                        
+                      }
+                    },
+                    (error) => {
+                      console.error('Error al obtener los datos del usuario:', error);
+                      // Manejo del error
+                    }
+                  );
 
-				if(err.error.error.message == "EMAIL_NOT_FOUND"){
 
-					alerts.basicAlert("Error", 'Invalid email', "error")
 
-				}else if(err.error.error.message == "INVALID_PASSWORD"){
+                  /*const user = await this.auth.login(this.emailcapt, this.f.controls.passwordlogin.value)
+                  if (user.user.emailVerified) {
+                       //aqui lo mandamos al home o en caso contratio a la verificacion del email
+                  }*/
 
-					alerts.basicAlert("Error", 'Invalid password', "error")
 
-				}else{
+                  this.router.navigateByUrl("/");
 
-					alerts.basicAlert("Error", "An error occurred", "error")
-				}
+          			},
 
-			}
+          			(err)=>{
 
-		);
+          				/*=============================================
+          				Errores al intentar entrar al sistema
+          				=============================================*/
+
+          				if(err.error.error.message == "EMAIL_NOT_FOUND"){
+
+          					alerts.basicAlert("Error", 'Invalid email', "error")
+
+          				}else if(err.error.error.message == "INVALID_PASSWORD"){
+
+          					alerts.basicAlert("Error", 'Invalid password', "error")
+
+          				}else{
+
+          					alerts.basicAlert("Error", "An error occurred", "error")
+          				}
+
+          			}
+
+          		);
 
   }
 

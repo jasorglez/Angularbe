@@ -11,7 +11,7 @@ import { forkJoin, Observable, of, throwError } from 'rxjs';
 import { getDatabase, startAt, endAt, ref, child, query, orderByChild, equalTo, get,
     DataSnapshot, limitToFirst, onValue, onChildAdded } from 'firebase/database';
 
-import { app, db } from 'src/app/firebase.config';
+
 
 import 'firebase/compat/database';
 import { ConstantPool } from '@angular/compiler';
@@ -152,11 +152,6 @@ constructor(private http:HttpClient ) { }
 	Tomar la data de la colección usuarios en Firebase
 	=============================================*/
 
-  getCompaniesWithPermission(email: string): Observable<any> {
-
-    return this.http.get<any>(`${environment.urlFirebase}prueba.json?orderBy="permisosxemail/${email}"&equalTo=true`);
-  }
-
 
 	getDataUsers(){
     try {
@@ -243,6 +238,22 @@ constructor(private http:HttpClient ) { }
      return forkJoin([permissions$, company$]);
   }
 
+
+  findEmail(email: string): Observable<any> {
+    return this.http.get<any>(`${environment.urlFirebase}users.json?orderBy="emailu"&equalTo="${email}"`).pipe(
+      map(datauser => {
+        const user = Object.values(datauser)[0] as any;
+        if (user) {
+          const displayName = user.displayName;
+          const picture = user.picture;
+          return { displayName, picture };
+        } 
+        else {
+          return { displayName: '', picture: '' };
+        }
+      })
+    );
+  }
 
 
 

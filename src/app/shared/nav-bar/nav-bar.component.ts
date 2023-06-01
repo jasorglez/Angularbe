@@ -23,7 +23,7 @@ export class NavBarComponent {
   selectedBranch  : any ;
   selectedProject : any ;
 
-  constructor( private companysService :CompanysService, private trackingService : TrackingService  ) { }
+  constructor( private companysService :CompanysService, public trackingService : TrackingService  ) { }
 
   ngOnInit( ): void {
 
@@ -31,9 +31,7 @@ export class NavBarComponent {
     this.getpermissionxCompanys() ;
   }
 
-
   onSelectCompany(): void {
-
     this.trackingService.setCompany(this.selectedCompany);
     this.getpermissionxBranchs();
   }
@@ -46,7 +44,7 @@ export class NavBarComponent {
 
   onSelectProject() {
     this.trackingService.setProject(this.selectedProject)
-    console.log('Id Project ->', this.selectedProject);
+    //console.log('Id Project ->', this.selectedProject);
   }
 
 
