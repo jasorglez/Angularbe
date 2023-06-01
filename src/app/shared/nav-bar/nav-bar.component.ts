@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { CompanysService } from 'src/app/services/companys.service';
 import { TrackingService } from 'src/app/services/tracking.service';
-
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -23,7 +23,7 @@ export class NavBarComponent {
   selectedBranch  : any ;
   selectedProject : any ;
 
-  constructor( private companysService :CompanysService, public trackingService : TrackingService  ) { }
+  constructor( private companysService :CompanysService, public trackingService : TrackingService, public authService : AuthService  ) { }
 
   ngOnInit( ): void {
 
@@ -44,7 +44,7 @@ export class NavBarComponent {
 
   onSelectProject() {
     this.trackingService.setProject(this.selectedProject)
-    //console.log('Id Project ->', this.selectedProject);
+    console.log('Id Project ->', this.selectedProject);
   }
 
 
@@ -81,6 +81,7 @@ export class NavBarComponent {
       }
     });
   }
+
 
 
 }

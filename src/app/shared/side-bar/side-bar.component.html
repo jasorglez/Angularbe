@@ -55,7 +55,7 @@
              <button class="dropdown-item" type="button" (click)="navigateToUsers()"><i class="bi bi-people"></i> {{'user' | translate}}</button>
              <button class="dropdown-item" type="button"><i class="bi bi-shield-lock"></i> {{'perm' | translate}}</button>
              <button class="dropdown-item" type="button" (click)="navigateToBranchs()"><i class="bi bi-gear"></i>{{'branchs' | translate}}</button>
-             <button class="dropdown-item" type="button" (click)="logout()"><i class="bi bi-gear"></i>{{'logout' | translate}}</button>
+             <button class="dropdown-item" type="button" (click)="authService.logout()"><i class="bi bi-gear"></i>{{'logout' | translate}}</button>
           </ul>
         </div>
 

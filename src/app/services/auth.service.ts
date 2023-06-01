@@ -2,10 +2,14 @@ import { Injectable } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
 
+import { Router } from '@angular/router';
+
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { TrackingService } from './tracking.service';
 
 import { Auth } from '@angular/fire/auth';
 import { User } from '@angular/fire/auth';
+
 import { first } from 'rxjs';
 
 
@@ -16,7 +20,7 @@ export class AuthService {
 
   private firebaseAuthUrl = 'https://identitytoolkit.googleapis.com/v1/accounts';
 
-  constructor( public authFire: AngularFireAuth, private http: HttpClient ) { }
+  constructor( private trackingService: TrackingService,  private router: Router, public authFire: AngularFireAuth, private http: HttpClient ) { }
 
 
 
@@ -52,14 +56,22 @@ export class AuthService {
        catch(error){console.log(error)}
   }
 
+    /*=============================================
+	   Función de salida del sistema
+	   =============================================*/
+        async logout() {
+          try{
 
-  async logout() {
-    try{
-      await this.authFire.signOut();
-    }
-    catch(error){console.log(error)}
+              this.trackingService.addLog('', 'Salio del Sistema - Cierre de sesion', 'Menu Side Bar', '')
+              localStorage.removeItem('token');
+              localStorage.removeItem('refreshToken');
+              this.router.navigateByUrl("/login");
+              await this.authFire.signOut();
 
-  }
+          }
+          catch(error){console.log(error)}
+
+        }
 
   getCurrentUser(){
     return this.authFire.authState.pipe(first()).toPromise();
