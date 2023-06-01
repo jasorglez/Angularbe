@@ -19,8 +19,8 @@ export class NavBarComponent {
   branchData      : any[]  = [] ;
   projectData     : any[]  = [] ;
 
-  selectedCompany : any ;
-  selectedBranch  : any ;
+  selectedCompany : string = 'Company' ;
+  selectedBranch  : string ;
   selectedProject : any ;
 
   constructor( private companysService :CompanysService, public trackingService : TrackingService, public authService : AuthService  ) { }

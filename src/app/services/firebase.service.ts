@@ -12,19 +12,38 @@ export class FirebaseService {
   constructor(private db: AngularFireDatabase) { }
 
 
-  getpermxCompany2(idcomp: string, mail: string): Observable<boolean> {
-    const usersRef: AngularFireList<any> = this.db.list('permissionsxcompanys');
-    return usersRef.valueChanges().pipe(
-      map(pc => pc.filter(pc => pc.email === mail && pc.id_company === idcomp)),
-      map(filteredPc => filteredPc.length > 0)
-    );
-  }
 
   async getpermxCompany(idcomp: string, mail: string): Promise<boolean> {
-    const usersRef: AngularFireList<any> = this.db.list('permissionsxcompanys');
+    const permissRef: AngularFireList<any> = this.db.list('permissionsxcompanys');
 
     try {
-      const pc = await usersRef.valueChanges().pipe(take(1)).toPromise();
+      const pc = await permissRef.valueChanges().pipe(take(1)).toPromise();
+      const filteredPc = pc.filter(pc => pc.email === mail && pc.id_company === idcomp);
+      return filteredPc.length > 0;
+    } catch (error) {
+      console.error('Error al obtener los permisos de la empresa:', error);
+      throw error;
+    }
+  }
+
+  async getpermxBranch(idcomp: string, mail: string): Promise<boolean> {
+    const permissRef: AngularFireList<any> = this.db.list('permissionsxbranchs');
+
+    try {
+      const pc = await permissRef.valueChanges().pipe(take(1)).toPromise();
+      const filteredPc = pc.filter(pc => pc.email === mail && pc.id_company === idcomp);
+      return filteredPc.length > 0;
+    } catch (error) {
+      console.error('Error al obtener los permisos de la empresa:', error);
+      throw error;
+    }
+  }
+
+  async getpermxProjecty(idcomp: string, mail: string): Promise<boolean> {
+    const permissRef: AngularFireList<any> = this.db.list('permissionsxprojects');
+
+    try {
+      const pc = await permissRef.valueChanges().pipe(take(1)).toPromise();
       const filteredPc = pc.filter(pc => pc.email === mail && pc.id_company === idcomp);
       return filteredPc.length > 0;
     } catch (error) {

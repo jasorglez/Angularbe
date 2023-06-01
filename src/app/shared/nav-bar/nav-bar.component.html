@@ -13,35 +13,38 @@
 
   </ul>
 
-  <label for="company"> {{ 'company' | translate }} </label>
-   <select id="company"
+  <mat-form-field>
+    <mat-select id="company"
       (change)="onSelectCompany()"
       [(ngModel)]="selectedCompany"
       (ngModelChange)="getpermissionxCompanys">
 
-        <option *ngFor="let item of companyData"
+        <mat-option *ngFor="let item of companyData"
             [value]="item.id_company">{{ item.company }}
-        </option>
-   </select>
+        </mat-option>
+   </mat-select>
+  </mat-form-field>
 
 
-  <label for="branchs">{{ 'branchs' | translate }} </label>
-  <select id="branchs"
+  <mat-form-field>
+    <mat-select id="branchs"
      (change)="onSelectBranch()"
      [(ngModel)]="selectedBranch" >
-       <option *ngFor="let item of branchData"
+       <mat-option *ngFor="let item of branchData"
           [value]="item.id_branchs">{{ item.branchs }}
-       </option>
-  </select>
+       </mat-option>
+  </mat-select>
+  </mat-form-field>
 
-  <label for="projects">{{ 'projects' | translate }} </label>
-  <select id="projects"
-     (change)="onSelectProject()"
-     [(ngModel)]="selectedProject" >
-       <option *ngFor="let item of projectData"
-          [value]="item.id_projects">{{ item.projects }}
-       </option>
-  </select>
+  <mat-form-field>
+    <mat-select id="projects"
+    (change)="onSelectProject()"
+    [(ngModel)]="selectedProject" >
+      <mat-option *ngFor="let item of projectData"
+         [value]="item.id_projects">{{ item.projects }}
+      </mat-option>
+   </mat-select>
+  </mat-form-field>
 
 
 

@@ -10,7 +10,8 @@ import { RouterModule } from '@angular/router';
 
 // Forzosamente necesitas el FormsModule para los Dropdown de la entrada
 import { FormsModule } from '@angular/forms';
-
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select'
 import {MatMenuModule} from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 
@@ -24,6 +25,8 @@ import { TranslateModule } from '@ngx-translate/core';
   imports: [
     CommonModule,
     FormsModule,
+    MatFormFieldModule,
+    MatSelectModule,
     RouterModule, MatMenuModule, MatIconModule,
     TranslateModule
   ]
