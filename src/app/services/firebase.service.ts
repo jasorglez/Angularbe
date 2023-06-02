@@ -12,7 +12,6 @@ export class FirebaseService {
   constructor(private db: AngularFireDatabase) { }
 
 
-
   async getpermxCompany(idcomp: string, mail: string): Promise<boolean> {
     const permissRef: AngularFireList<any> = this.db.list('permissionsxcompanys');
 

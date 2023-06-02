@@ -14,6 +14,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 
 import { PipesModule } from 'src/app/pipes/pipes.module';
 
@@ -35,6 +37,8 @@ import { EditComponent } from './edit/edit.component';
     MatSortModule,
     MatIconModule,
     MatCardModule, MatDialogModule,
+    MatFormFieldModule,
+    MatSelectModule,
     ReactiveFormsModule,
     PipesModule,
     TranslateModule

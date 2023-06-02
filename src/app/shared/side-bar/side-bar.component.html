@@ -9,7 +9,51 @@
   <div class="sidebar">
     <!-- Sidebar user (optional) -->
 
-    <div> {{ trackingService.getEmail() }}   </div>
+ <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+  <div >
+
+    <p>
+
+        <select id="company"
+          (change)="onSelectCompany()"
+          [(ngModel)]="selectedCompany"
+          (ngModelChange)="getpermissionxCompanys">
+
+            <option *ngFor="let item of companyData"
+                [value]="item.id_company">{{ item.company }}
+            </option>
+       </select>
+
+     </p>
+
+      <p>
+
+          <select id="branchs"
+          (change)="onSelectBranch()"
+          [(ngModel)]="selectedBranch" >
+            <option *ngFor="let item of branchData"
+                [value]="item.id_branchs">{{ item.branchs }}
+            </option>
+        </select>
+
+      </p>
+
+      <p>
+
+          <select id="projects"
+          (change)="onSelectProject()"
+          [(ngModel)]="selectedProject" >
+            <option *ngFor="let item of projectData"
+              [value]="item.id_projects">{{ item.projects }}
+            </option>
+        </select>
+
+
+      </p>
+
+   </div>
+</div>
+
 
     <!-- Sidebar Menu -->
     <nav class="mt-2">

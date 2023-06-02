@@ -28,8 +28,8 @@
                                                   Name Required
                                                 </div>
                                               </div>
-                 
-                                   
+
+
                                             <input
                                             type="number"
                                             id="Inputage"
@@ -97,7 +97,7 @@
 
                             </div>
 
-                            
+
                        <div class="form-group col-md-6 mb-3">
                               <div class="form-group">
                                  <div class="card card-primary card-img">
@@ -109,8 +109,7 @@
                                     <input type="file" id="pictureUpload" (change)="uploadImage($event)" style="display: none;">
                                   </div>
                                  </div>
-                              </div> 
-
+                              </div>
 
                                   <input
                                   type="text"
@@ -118,38 +117,42 @@
                                   placeholder="{{ 'country' | translate }}"
                                   formControlName="country" />
                                   <div *ngIf="fus.get('country').invalid && (fus.get('country').dirty || fus.get('country').touched)" class="invalid-feedback">
-                                    
+
                                            Country Required
-                                           
+
                                   </div>
 
-                                      <select id="organization"
-                                        class="form-control"
-                                        (change)="onSelectOrganization()"
-                                        [(ngModel)]="selectedorganization"
-                                        formControlName="organization">
-                                        <option disabled selected ="">{{ selectedorganization }}</option>
-                                        <option *ngFor="let item of organizationData" [value]="item.organization">{{ item.organization }}</option>
-                                    </select>  
-                    
-                                    <input 
+
+                                    <mat-form-field>
+                                      <mat-label> {{ 'organ' | translate }} </mat-label>
+                                      <mat-select id="organization"
+                                                  [(ngModel)]="selectedorganization"
+                                                  (selectionChange)="onSelectOrganization()"
+                                                  formControlName="organization">
+                                        <mat-option disabled></mat-option>
+                                         <mat-option *ngFor="let item of organizationData" [value]="item.organization">{{ item.organization }} </mat-option>
+                                      </mat-select>
+                                    </mat-form-field>
+
+
+                                    <input
                                     type="text"
-                                      class="form-control" 
-                                      placeholder="{{ 'position' | translate }}" 
-                                      formControlName="position" 
+                                      class="form-control"
+                                      placeholder="{{ 'position' | translate }}"
+                                      formControlName="position"
                                     [ngClass]="{ 'is-invalid': invalidField('position') }" />
                                     <div *ngIf="positionf.invalid && (positionf.dirty || positionf.touched)" class="invalid-feedback">
                                         <div *ngIf="positionf.errors['required']" >
                                           Position Required
                                         </div>
-                                    </div>                                
+                                    </div>
 
                        </div>
-                                                        
+
 
                         </mat-dialog-actions>
                         </ng-container>
-             
+
 
                       <div class="card-footer">
                         <button mat-dialog-close class="btn btn-secondary float-right">Cancelar</button>

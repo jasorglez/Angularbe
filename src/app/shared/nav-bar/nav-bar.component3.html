@@ -13,6 +13,43 @@
 
   </ul>
 
+  <mat-form-field>
+    <mat-label> {{ 'company' | translate }} </mat-label>
+     <mat-select id="company"
+     [(ngModel)]="selectedCompany"
+     (selectionchange)="onSelectCompany()">
+     <mat-option disabled></mat-option>
+        <mat-option *ngFor="let item of companyData"
+            [value]="item.id_company">{{ item.company }}
+        </mat-option>
+   </mat-select>
+  </mat-form-field>
+
+
+  <mat-form-field>
+    <mat-label> {{ 'branchs' | translate }} </mat-label>
+    <mat-select id="branchs"
+    [(ngModel)]="selectedBranch"
+     (selectionchange)="onSelectBranch()">
+     <mat-option disabled></mat-option>
+       <mat-option *ngFor="let item of branchData"
+          [value]="item.id_branchs">{{ item.branchs }}
+       </mat-option>
+  </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label> {{ 'projects' | translate }} </mat-label>
+    <mat-select id="projects"
+        [(ngModel)]="selectedProject"
+        (change)="onSelectProject()" >
+      <mat-option disabled></mat-option>
+      <mat-option *ngFor="let item of projectData"
+         [value]="item.id_projects">{{ item.projects }}
+      </mat-option>
+   </mat-select>
+  </mat-form-field>
+
 
 
   <!-- Right navbar links -->
