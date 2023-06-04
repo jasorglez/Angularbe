@@ -29,6 +29,8 @@ export class NewComponent implements OnInit {
 
    organizationData     : any[]  = [] ;
 
+   eml : string = '' ;
+
    emailExists: boolean = false;
 
 	/*=============================================
@@ -53,12 +55,11 @@ export class NewComponent implements OnInit {
    } )
 
    get agef() { return this.fus.get('age') }
- 
+
    get namef() { return this.fus.get('displayName') }
 
+   get countryf()      { return this.fus.get('country')}
    get positionf() { return this.fus.get('position') }
-
-
 
 
   /*=============================================
@@ -78,12 +79,13 @@ export class NewComponent implements OnInit {
               private formBuilder: FormBuilder,  public dialogRef: MatDialogRef<NewComponent>, ) { }
 
   ngOnInit( ): void {
+
     this.getOrganizations();
   }
 
   onSelectOrganization(): void {
-    console.log('Id Company ->', this.selectedorganization);
-    this.getOrganizations();
+    console.log('Id Organization ->', this.selectedorganization);
+    //this.getOrganizations();
   }
 
 
@@ -96,15 +98,20 @@ export class NewComponent implements OnInit {
   /*=========================
     Para las fotos
   ========================== */
-
-
   selectedImage: File;
   imageUrl: string = environment.urlProfile
 
 uploadImage($event: any) {
+
+  this.eml = this.fus.get('emailu').value ;
+
   const file = $event.target.files[0];
+
   this.selectedImage = file;
-  const path = `images/${file.name}`;
+
+  const path = `images/${this.eml}${file.name}`;
+
+  //const path = `images/${file.name}`;
 
   if (!file) {
     this.imageUrl = ''; // No hay imagen seleccionada, establecemos la URL vacía
@@ -183,15 +190,15 @@ uploadImage($event: any) {
     }
 
 
-    checkEmailExists() { 
+    checkEmailExists() {
 
       const emailread = this.fus.controls.emailu.value;
-      
-      if (emailread) { 
+
+      if (emailread) {
 
            this.usersService.checkIfDataExists(emailread).subscribe( dataExists => {
 
-            if (dataExists) { 
+            if (dataExists) {
 
                   this.emailExists = dataExists ;
 
@@ -201,11 +208,11 @@ uploadImage($event: any) {
                }
 
             });
-          
+
           }
 
     }
 
-      
+
 
 }

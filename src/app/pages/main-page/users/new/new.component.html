@@ -8,11 +8,13 @@
              <button type="button" class="close" mat-dialog-close></button>
         </div>
 
-       <form autocomplete="off" [formGroup]="fus" (ngSubmit)="saveUsers()">
+       <form autocomplete="off"
+             [formGroup]="fus"
+             (ngSubmit)="saveUsers()">
              <div class="card-body">
 
                         <ng-container *ngIf="!loadData">
-                          <mat-dialog-actions>
+                            <mat-dialog-actions>
 
                             <div class="form-group col-md-6 mb-6">
 
@@ -51,7 +53,7 @@
                                           id="InputEmail"
                                           class="form-control"
                                           placeholder="{{ 'email' | translate }}"
-                                          autocomplete="off"
+                                          autocomplete="on"
                                           formControlName="emailu"
                                           (blur)="checkEmailExists()"
                                           [ngClass]="{ 'is-invalid': fus.controls.emailu.invalid && (fus.controls.emailu.dirty || fus.controls.emailu.touched) || emailExists }"
@@ -73,7 +75,7 @@
                                         class="form-control"
                                         placeholder="{{ 'password' | translate }}"
                                         formControlName="passnew"
-                                        autocomplete="off"
+                                        autocomplete="on"
                                         [ngClass]="{ 'is-invalid': fus.controls.passnew.invalid && (fus.controls.passnew.dirty || fus.controls.passnew.touched) }"
                                       />
                                       <div *ngIf="fus.controls.passnew.invalid && (fus.controls.passnew.dirty || fus.controls.passnew.touched)" class="invalid-feedback">
@@ -98,41 +100,39 @@
                             </div>
 
 
-                       <div class="form-group col-md-6 mb-3">
-                              <div class="form-group">
+                            <div class="form-group col-md-6 mb-3">
+
                                  <div class="card card-primary card-img">
-                                    <div class="text-center">
-                                       <label for="pictureUpload" class="mb-3">
-                                       <img [src]="imageUrl" width="100" height="100" *ngIf="imageUrl">
-                                      {{ 'Avatar/Foto' | translate }}
-                                    </label>
-                                    <input type="file" id="pictureUpload" (change)="uploadImage($event)" style="display: none;">
+                                     <div class="text-center">
+                                        <label for="pictureUpload" class="mb-3">
+                                         <img [src]="imageUrl" width="100" height="100" *ngIf="imageUrl">
+                                        {{ 'Avatar/Foto' | translate }}
+                                       </label>
+                                       <input type="file" id="pictureUpload" (change)="uploadImage($event)" style="display: none;">
+                                     </div>
                                   </div>
-                                 </div>
-                              </div>
 
                                   <input
                                   type="text"
                                   class="form-control"
                                   placeholder="{{ 'country' | translate }}"
-                                  formControlName="country" />
-                                  <div *ngIf="fus.get('country').invalid && (fus.get('country').dirty || fus.get('country').touched)" class="invalid-feedback">
-
-                                           Country Required
-
+                                  formControlName="country"
+                                  [ngClass]="{ 'is-invalid': countryf.invalid && (countryf.dirty || countryf.touched) }"    />
+                                  <div *ngIf="countryf.invalid && (countryf.dirty || countryf.touched)" class="invalid-feedback">
+                                    <div *ngIf="countryf.errors['required']" >
+                                        Country Required
+                                    </div>
                                   </div>
 
+                                        <select id="organ"
+                                             class="form-control"
 
-                                    <mat-form-field>
-                                      <mat-label> {{ 'organ' | translate }} </mat-label>
-                                      <mat-select id="organization"
-                                                  [(ngModel)]="selectedorganization"
-                                                  (selectionChange)="onSelectOrganization()"
-                                                  formControlName="organization">
-                                        <mat-option disabled></mat-option>
-                                         <mat-option *ngFor="let item of organizationData" [value]="item.organization">{{ item.organization }} </mat-option>
-                                      </mat-select>
-                                    </mat-form-field>
+                                             formControlName="organization">
+                                             <option value=''>Organization</option>
+                                         <option *ngFor="let item of organizationData"
+                                            [value]="item.organization">{{ item.organization }}
+                                          </option>
+                                      </select>
 
 
                                     <input
@@ -140,27 +140,26 @@
                                       class="form-control"
                                       placeholder="{{ 'position' | translate }}"
                                       formControlName="position"
-                                    [ngClass]="{ 'is-invalid': invalidField('position') }" />
+                                      [ngClass]="{ 'is-invalid': positionf.invalid && (positionf.dirty || positionf.touched) }"    />
                                     <div *ngIf="positionf.invalid && (positionf.dirty || positionf.touched)" class="invalid-feedback">
                                         <div *ngIf="positionf.errors['required']" >
                                           Position Required
                                         </div>
                                     </div>
 
-                       </div>
+                            </div>
 
+                            </mat-dialog-actions>
+                </ng-container>
 
-                        </mat-dialog-actions>
-                        </ng-container>
+             </div>
 
+        <div class="card-footer">
+             <button mat-dialog-close class="btn btn-secondary float-right">Cancelar</button>
+             <button type="submit" class="btn btn-warning float-right" [disabled]="fus.invalid">Salvar</button>
+        </div>
 
-                      <div class="card-footer">
-                        <button mat-dialog-close class="btn btn-secondary float-right">Cancelar</button>
-                        <button type="submit" class="btn btn-warning float-right" [disabled]="fus.invalid">Salvar</button>
-                      </div>
-
-               </div>
-       </form>
+   </form>
 
   </div>
 

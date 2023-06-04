@@ -2,8 +2,12 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { functions } from 'src/app/helpers/functions';
 import { Iusers } from 'src/app/interface/iusers';
+
 import { UsersService } from '../../../../services/users.service';
 import { StoragesService } from 'src/app/services/storages.service';
+import { CatalogService } from 'src/app/services/catalog.service';
+
+import { environment } from 'src/environments/environment';
 import { alerts } from 'src/app/helpers/alerts';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { IDialogData } from '../../branchs/edit-branch/edit-branch.component';
@@ -15,37 +19,50 @@ import { IDialogData } from '../../branchs/edit-branch/edit-branch.component';
 })
 export class EditComponent {
 
+  selectedorganization: string = '';
+
+  organizationData     : any[]  = [] ;
+
+  emailExists: boolean = false;
+
+  isInputDisabled = true;
+
 
   emailExistsError = false;
 	/*=============================================
 	Creamos grupo de controles
 	=============================================*/
 
-	public fus = this.form.group({
 
-     active       : 1,
-     iduser       : 0,
-     age          : 0,
-     country      : '',
-     displayName  : [''],
-     email        : [''],
-     method       : '',
-     password     : '',
-     phone        : '',
-     picture      : 'S/P',
-     position     : [''],
-     organization : [''],
+	public fus = this.formbuilder.group({
+
+    active       :  1,
+    iduser       :  0,
+    age          :  [, [Validators.required, Validators.pattern('^(1[8-9]|[2-5][0-9]|6[0-9])$')]],
+    country      :  ['', [Validators.required]],
+    displayName  :  ['', [Validators.required]],
+    emailu       :  {value: 'email', disabled:true},
+    method       :  '',
+    passnew      :  {value :'', disabled:true },
+    phone        :  ['',  [Validators.required, Validators.pattern(/^\d{10}$/)]],
+    picture      :  '',
+    position     :  ['', Validators.required],
+    organization :  '',
 
    } )
 
-   get age() { return this.fus.controls['age'] }
-   get displayName() { return this.fus.controls['displayName'] }
-   get country() { return this.fus.controls['country'] }
-   get email() { return this.fus.controls['email'] }
-   get phone() { return this.fus.controls['phone'] }
-   get picture() { return this.fus.controls['picture'] }
-   get position() { return this.fus.controls['position'] }
-   get organization() { return this.fus.controls['organization'] }
+   get activef()       { return this.fus.get('active') }
+   get iduserf()       { return this.fus.get('iduser') }
+   get agef()          { return this.fus.get('age') }
+   get countryf()      { return this.fus.get('country')}
+   get namef()         { return this.fus.get('displayName') }
+   get emailf()        { return this.fus.get('emailu') }
+   get methodf()       { return this.fus.get('method') }
+   get passnewf()      { return this.fus.get('passnew') }
+   get phonef()        { return this.fus.get('phone') }
+   get picturef()      { return this.fus.get('picture') }
+   get positionf()     { return this.fus.get('position') }
+   get organizationf() { return this.fus.get('organization') }
 
   /*=============================================
 	  Variable que valida el envío del formulario
@@ -59,9 +76,12 @@ export class EditComponent {
 
   loadData = false;
   url : string = '';
+  imageUrl: string = '';
+  pass : '' ;
 
-  constructor( private storageService: StoragesService, private form: FormBuilder, private usersService :UsersService,
-    public dialogRef: MatDialogRef<EditComponent>, @Inject(MAT_DIALOG_DATA) public data: IDialogData ) { }
+  constructor( private storageService: StoragesService,  private usersService :UsersService, private catalogsService: CatalogService,
+    private formbuilder: FormBuilder, public dialogRef: MatDialogRef<EditComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: IDialogData ) { }
 
   ngOnInit( ): void {
 
@@ -70,41 +90,67 @@ export class EditComponent {
      this.usersService.getItem(this.data.id).subscribe(
         (resp: any)=> {
 
-              this.displayName.setValue(resp.displayName);
-              this.age.setValue(resp.age);
-              this.country.setValue(resp.country);
-              this.email.setValue(resp.email);
-              this.phone.setValue(resp.phone);
-              this.picture.setValue(resp.picture);
-              this.position.setValue(resp.position);
-              this.organization.setValue(resp.organization);
+              this.imageUrl = resp.picture ;
+              this.activef.setValue(resp.active);
+              this.iduserf.setValue(resp.iuser);
+              this.namef.setValue(resp.displayName);
+              this.agef.setValue(resp.age);
+              this.countryf.setValue(resp.country);
+              this.emailf.setValue(resp.emailu);
+              this.methodf.setValue(resp.method);
+              this.passnewf.setValue(resp.password);
+              this.phonef.setValue(resp.phone);
+              this.picturef.setValue(resp.picture);
+              this.positionf.setValue(resp.position);
+              this.organizationf.setValue(resp.organization);
         }
 
      )
 
+     this.getOrganizations();
+
+  }
+
+  onSelectOrganization(): void {
+
+     console.log('Organizations', this.selectedorganization)
+
   }
 
 
+  getOrganizations(){
+    this.catalogsService.getdataOrganization().subscribe(( orga) => {
+      this.organizationData = Object.values(orga)
+     })
+    }
 
-   /*=========================
+
+ /*=========================
     Para las fotos
   ========================== */
-  uploadImage($event: any) {
-    const file = $event.target.files[0];
-    const path = `images/${file.name}` ;
+  selectedImage: File;
 
-    this.storageService.uploadFile(file, path)
-    .then(url => {
-       console.log("URL", url);
-       this.url = url;
-    })
-    .then(url => {
-      console.log("Download URL", url);
 
+
+uploadImage($event: any) {
+  const file = $event.target.files[0];
+  this.selectedImage = file;
+  const path = `images/${file.name}`;
+
+  if (!file) {
+    this.imageUrl = ''; // No hay imagen seleccionada, establecemos la URL vacía
+    return;
+  }
+
+  this.storageService.uploadFile(file, path)
+    .then(url => {
+        this.url = url;
+        this.imageUrl = this.storageService.getObjectURL(this.selectedImage); // Almacenar la URL de la imagen seleccionada
+        this.fus.patchValue({ picture: url }); // Actualizar el valor del control 'picture' con la URL de la imagen
     })
     .catch(error => console.log("Error uploading file", error));
+}
 
-  }
 
 
   editUsers(){
@@ -121,21 +167,21 @@ export class EditComponent {
     Validamos y capturamos la informacion del formulario en la interfaz
     =============================================*/
 
-    const email = this.fus.controls.email.value ?? '';
+    const email = this.fus.get('emailu').value;
 
               const dataUser: Iusers = {
               active         : 1,
               iduser         : 0,
               method         : '',
-              age            : this.fus.controls.age.value ?? 0,
-              country        : this.fus.controls.country.value ?? '',
-              displayName    : this.fus.controls.displayName.value ?? '',
-              emailu          : this.fus.controls.email.value ?? '',
-              password       : this.fus.controls.password.value ?? '',
-              phone          : this.fus.controls.phone.value ?? '',
-              picture        : this.url ,
-              position       : this.fus.controls.position.value ?? '',
-              organization   : this.fus.controls.organization.value ?? ''
+              age            : this.fus.get('age').value ,
+              country        : this.fus.get('country').value,
+              displayName    : this.fus.get('displayName').value,
+              emailu         : email,
+              password       : this.fus.get('passnew').value,
+              phone          : this.fus.get('phone').value,
+              picture        : this.fus.get('picture').value,
+              position       : this.fus.get('position').value,
+              organization   : this.fus.get('organization').value
           }
 
           this.loadData = false;

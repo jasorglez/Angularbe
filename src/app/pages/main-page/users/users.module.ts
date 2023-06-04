@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 // Forzosamente necesita este componente para activar el formulario del inicio en caso nuevo
 import {  ReactiveFormsModule } from '@angular/forms';
+//import { FormsModule } from '@angular/forms';
 
 import { UsersRoutingModule } from './users-routing.module';
 
@@ -31,6 +32,7 @@ import { EditComponent } from './edit/edit.component';
   imports: [
     CommonModule,
     UsersRoutingModule,
+  //  FormsModule,
     MatTableModule,
     MatPaginatorModule,
     MatTabsModule,

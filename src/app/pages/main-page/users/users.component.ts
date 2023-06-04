@@ -15,7 +15,7 @@ import { TrackingService } from 'src/app/services/tracking.service';
 import { TraductorService} from 'src/app/services/traductor.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { FirebaseService } from 'src/app/services/firebase.service';
-
+import { StoragesService } from 'src/app/services/storages.service';
 
 import { NewComponent } from './new/new.component';
 import { EditComponent } from './edit/edit.component';
@@ -178,8 +178,10 @@ onTabSelected(tabName: string) {
 	@ViewChild(MatSort) sort!: MatSort;
 
 
-  	constructor(public translateService: TraductorService, private usersService: UsersService, private companyService: CompanysService, private firebaseService: FirebaseService,
-        private branchService: BranchsService, private projectsService: ProjectService, private trackingService : TrackingService, private authService: AuthService,
+  	constructor(public translateService: TraductorService, private usersService: UsersService, private companyService: CompanysService,
+        private firebaseService: FirebaseService, private branchService: BranchsService, private projectsService: ProjectService,
+        private trackingService : TrackingService,
+        private authService: AuthService, private storagesService: StoragesService,
         public dialog : MatDialog, private form:FormBuilder) {   }
 
   	ngOnInit(): void {
@@ -468,39 +470,41 @@ onTabSelected(tabName: string) {
       }
 
 
-    deleteUsers(id: string, mail: string) {
-
-     alerts.confirmAlert('Are you sure?', 'The information cannot be recovered!', 'warning','Yes, delete it!')
-		.then((result) => {
-
-			if (result.isConfirmed) {
-            this.usersService.getFilterDataperm("email", mail).
-
-              subscribe((resp:any) => {
-
+      deleteUsers(id: string, mail: string, pic: string) {
+        alerts.confirmAlert('Are you sure?', 'The information cannot be recovered!', 'warning', 'Yes, delete it!')
+          .then((result) => {
+            if (result.isConfirmed) {
+              this.usersService.getFilterDataperm("email", mail)
+                .subscribe((resp: any) => {
                   if (Object.keys(resp).length > 0) {
-                        alerts.basicAlert('error', "The category has related permission", "error")
+                    alerts.basicAlert('error', "The category has related permission", "error");
                   } else {
-
                     this.usersService.deleteUsers(id, localStorage.getItem('token'))
-
-                    .subscribe(
-                      () => {
-
-                          alerts.basicAlert("Sucess", "The user has been deleted", "success")
-                          this.authService.removeUserByEmail(mail) ;
-
-                          this.getdataUsers();
-                      }
-                    )
+                      .subscribe(() => {
+                        // Borrar la imagen del Firebase Storage
+                        const imagePath = pic; // Ruta de la imagen en el Storage
+                        this.storagesService.deleteFile(imagePath)
+                          .then(() => {
+                            // La imagen se ha borrado correctamente
+                            alerts.basicAlert("Success", "The user and image have been deleted", "success");
+                            this.authService.removeUserByEmail(mail);
+                            this.getdataUsers();
+                          })
+                          .catch((error) => {
+                            // Ocurrió un error al borrar la imagen
+                            console.error("Error deleting image from Firebase Storage:", error);
+                            alerts.basicAlert("Error", "An error occurred while deleting the image", "error");
+                          });
+                      }, (error) => {
+                        // Error occurred while deleting the user
+                        console.error("Error deleting user:", error);
+                        alerts.basicAlert("Error", "An error occurred while deleting the user", "error");
+                      });
                   }
-
-                }
-
-             )
+                });
+            }
+          });
       }
-    })
-    }
 
 
     newBranchs(){
