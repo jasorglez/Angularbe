@@ -22,8 +22,10 @@ import { EditComponent } from './edit/edit.component';
 
 import { MatPaginator} from '@angular/material/paginator';
 import { MatSort} from '@angular/material/sort';
-import { MatTableDataSource } from '@angular/material/table';
+import { MatTableDataSource,  MatTableModule } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
+
+import {SelectionModel} from '@angular/cdk/collections';
 
 import { FormBuilder, Validators } from '@angular/forms';
 
@@ -37,8 +39,6 @@ import { alerts } from 'src/app/helpers/alerts';
 import { db } from 'src/app/firebase.config';
 import { Observable } from 'rxjs';
 import { async } from '@angular/core/testing';
-
-
 
 
 @Component({
@@ -88,7 +88,10 @@ onTabSelected(tabName: string) {
       this.trackingService.addLog('', 'Click en la Pestaña Settings/Seguimiento del menu Usuarios', 'Usuarios', '')
       this.getdataTracking() }
 
-}
+    }
+
+
+
  /*=============================================
 	Creamos grupo de controles
 	=============================================*/
@@ -133,6 +136,7 @@ onTabSelected(tabName: string) {
   projectsDataSource! : MatTableDataSource<Iproject>;
   trackingDataSource! : MatTableDataSource<Ilog>;
 
+
 	/*=============================================
 	Variable global que tipifica la interfaz de usuario
 	=============================================*/
@@ -149,6 +153,8 @@ onTabSelected(tabName: string) {
 	=============================================*/
 
 	//expandedElement!: Iusers | null;
+
+  selection = new SelectionModel<Iusers>(true, []);
 
 	/*=============================================
 	Variable global que captura la ruta de los archivos de imagen
@@ -210,6 +216,7 @@ onTabSelected(tabName: string) {
  	}
 
 
+
 	/*=============================================
 	función para tomar la data de usuarios
 	=============================================*/
@@ -265,6 +272,20 @@ onTabSelected(tabName: string) {
           		})
 
   	     }
+
+
+         masterToggle() {
+          this.isAllSelected() ?
+            this.selection.clear() :
+            this.UsersDataSource.data.forEach(row => this.selection.select(row));
+        }
+
+        isAllSelected() {
+          const numSelected = this.selection.selected.length;
+          const numRows = this.UsersDataSource.data.length;
+          return numSelected === numRows;
+        }
+
 
          getdataCompany()
          {
@@ -547,6 +568,26 @@ onTabSelected(tabName: string) {
       }
 
 
+
+     async desasigncomp(id: string, mail: string, name: string) {
+      try {
+        const resp = await this.firebaseService.getpermxCompany(id, mail);
+
+        if (resp) {
+          const result = await alerts.confirmAlert('Are you sure?', 'Desasign Company for this user!', 'warning', 'Yes, Assign it!');
+
+          if (result.isConfirmed) {
+
+                     await this.firebaseService.borrarRegistro( id, mail)
+                     alerts.basicAlert("Success", "The permission has been removed", "success");
+
+                  }
+        } //termino el try
+
+        } catch (error) { }
+            // Manejar errores si es necesario
+
+      }
 
 
    join() {

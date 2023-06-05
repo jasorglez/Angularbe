@@ -25,16 +25,44 @@ export class FirebaseService {
     }
   }
 
+
+  async borrarRegistro(idcomp: string, mail: string): Promise<void> {
+    const permissRef: AngularFireList<any> = this.db.list('permissionsxcompanys');
+
+    try {
+      const pc = await permissRef.snapshotChanges().pipe(take(1)).toPromise();
+      const filteredPc = pc.filter(pc => pc.payload.val().email === mail && pc.payload.val().id_company === idcomp);
+
+      if (filteredPc.length > 0) {
+        await permissRef.remove(filteredPc[0].key);
+      //  console.log('Registro eliminado con éxito');
+      }
+
+      else {
+        console.log('No se encontró ningún registro que coincida con las condiciones');
+      }
+
+    } catch (error) {
+      console.error('Error al eliminar el registro:', error);
+      throw error;
+    }
+  }
+
+
   async getpermxBranch(idcomp: string, mail: string): Promise<boolean> {
     const permissRef: AngularFireList<any> = this.db.list('permissionsxbranchs');
 
     try {
+
       const pc = await permissRef.valueChanges().pipe(take(1)).toPromise();
       const filteredPc = pc.filter(pc => pc.email === mail && pc.id_company === idcomp);
       return filteredPc.length > 0;
+
     } catch (error) {
+
       console.error('Error al obtener los permisos de la empresa:', error);
       throw error;
+
     }
   }
 

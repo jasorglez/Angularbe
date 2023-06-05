@@ -76,114 +76,99 @@
 
                  <div class="card-body">
                     <div class="tab-content">
+
                           <div class="tab-pane" [class.active]="selectedTab === 'users'" *ngIf="selectedTab === 'users'">
-                            <div >
-                              <!-- Default box -->
-                                        <div class="card">
+                        <div>
+                          <!-- Default box -->
+                          <div class="card">
+                            <div class="card-header">
+                              <div [hidden]="loadData" class="row mb-2">
+                                <div class="col-12 col-sm-6 col-xl-3 ml-auto">
+                                  <button class="btn tn-block bg-gradient-primary" type="button" (click)="newUsers()">{{'new' | translate }}</button>
+                                </div>
+                                <div class="col-12 col-sm-6 col-xl-3 ml-auto">
+                                  <input class="form-control" placeholder="{{'search' | translate}}" (keyup)="applyFilter(UsersDataSource, $event)">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card-body">
+                              <div class="mat-table-container">
+                                <table [hidden]="loadData" mat-table [dataSource]="UsersDataSource" multiTemplateDataRows matSort matSortStart="desc" class="mat-elevation-z8 matTable-table">
+                                  <!-- Select Column -->
+                                  <ng-container matColumnDef="select">
 
-                                          <div class="card-header">
+                                    <th mat-header-cell *matHeaderCellDef>
+                                      <mat-checkbox (change)="$event ? masterToggle() : null"
+                                                    [checked]="selection.hasValue() && isAllSelected()"
+                                                    [indeterminate]="selection.hasValue() && !isAllSelected()">
+                                      </mat-checkbox>
+                                    </th>
 
-                                            <div [hidden]="loadData" class="row mb-2">
+                                    <td mat-cell *matCellDef="let element">
+                                      <mat-checkbox (click)="$event.stopPropagation()"
+                                                    (change)="$event ? selection.toggle(element) : null"
+                                                    [checked]="selection.isSelected(element)">
+                                      </mat-checkbox>
+                                    </td>
 
-                                              <div class="col-12 col-sm-6 col-xl-3 ml-auto">
-                                                  <button class="btn tn-block bg-gradient-primary" type="button" (click)="newUsers()">{{'new' | translate }}</button>
-                                              </div>
+                                  </ng-container>
+                                  <!-- Position Column -->
+                                  <ng-container matColumnDef="numberposition">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> No.</th>
+                                    <td mat-cell *matCellDef="let element"> {{element.numberposition}} </td>
+                                  </ng-container>
+                                  <!-- Display Name Column -->
+                                  <ng-container *ngIf="!screenSizeSM" matColumnDef="displayName">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'name' | translate}} </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.displayName}} </td>
+                                  </ng-container>
+                                  <!-- Username Column -->
+                                  <ng-container *ngIf="!screenSizeSM" matColumnDef="position">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'position' | translate }} </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                                  </ng-container>
+                                  <!-- Email Column -->
+                                  <ng-container matColumnDef="email">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'email' | translate}} </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.emailu}} </td>
+                                  </ng-container>
+                                  <!-- Actions Column -->
+                                  <ng-container matColumnDef="actions">
+                                    <th mat-header-cell *matHeaderCellDef> {{'actions' | translate}} </th>
+                                    <td mat-cell *matCellDef="let element">
 
-                                              <div class="col-12 col-sm-6 col-xl-3 ml-auto">
-                                                    <input class="form-control"
-                                                    placeholder="{{'search' | translate}}"
-                                                    (keyup)="applyFilter(UsersDataSource, $event)">
-                                              </div>
+                                      <button class="btn btn-sm btn-warning mr-1"
+                                           (click)="showProfile(element)">
+                                           <i class="fas fa-eye"></i>
+                                      </button>
 
-                                            </div>
+                                      <button class="btn btn-sm btn-dark mr-1"
+                                          (click)="editUsers(element.id)">
+                                          <i class="fas fa-pencil-alt"></i>
+                                      </button>
 
-                                          </div>
+                                      <button class="btn btn-sm btn-danger"
+                                         (click)="deleteUsers(element.id, element.email, profile.picture)">
+                                         <i class="fas fa-trash"></i>
+                                      </button>
 
-                                          <div class="card-body">
-
-                                                <div class="mat-table-container">
-
-                                                  <table [hidden]="loadData" mat-table [dataSource]="UsersDataSource" multiTemplateDataRows matSort matSortStart="desc"
-                                                  class="mat-elevation-z8 matTable-table">
-
-                                                    <!-- Position Column -->
-                                                    <ng-container matColumnDef="numberposition">
-                                                      <th mat-header-cell *matHeaderCellDef mat-sort-header> No. </th>
-                                                      <td mat-cell *matCellDef="let element"> {{element.numberposition}} </td>
-                                                    </ng-container>
-
-                                                    <!-- Display Name Column -->
-                                                    <ng-container *ngIf="!screenSizeSM" matColumnDef="displayName">
-                                                      <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'name' | translate}} </th>
-                                                      <td mat-cell *matCellDef="let element"> {{element.displayName}} </td>
-                                                    </ng-container>
-
-
-                                                    <!-- username Column -->
-                                                    <ng-container *ngIf="!screenSizeSM" matColumnDef="position">
-                                                      <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'position' | translate }} </th>
-                                                      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-                                                    </ng-container>
-
-                                                    <!-- Email Column -->
-                                                    <ng-container matColumnDef="email">
-                                                      <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'email' | translate}} </th>
-                                                      <td mat-cell *matCellDef="let element"> {{element.emailu}} </td>
-                                                    </ng-container>
-
-                                                <!-- Actions Column  y los 3 botones-->
-                                                      <ng-container matColumnDef="actions">
-                                                        <th mat-header-cell *matHeaderCellDef> {{'actions' | translate}} </th>
-                                                        <td mat-cell *matCellDef="let element">
-
-                                                                <button
-                                                                  class="btn btn-sm btn-warning mr-1"
-                                                                  (click)="showProfile(element)" >
-                                                                  <i class="fas fa-eye"></i>
-                                                                </button>
-
-                                                                <button
-                                                                class="btn btn-sm btn-dark mr-1"
-                                                                (click)="editUsers(element.id)" >
-                                                                  <i class="fas fa-pencil-alt"></i>
-                                                                </button>
-
-                                                                <button
-                                                                class="btn btn-sm btn-danger"
-                                                                (click)="deleteUsers(element.id, element.email, profile.picture)" >
-                                                                <i class="fas fa-trash"></i>
-                                                              </button>
-
-
-                                                        </td>
-                                                      </ng-container>
-
-                                                      <tr mat-header-row *matHeaderRowDef="displayedColUsers"></tr>
-
-                                                      <tr mat-row *matRowDef="let row; columns: displayedColUsers;"></tr>
-
-                                                      <!-- Row shown when there is no matching data. -->
-                                              </table>
-
-                                              <div *ngIf="loadData" class="text-center m-5">
-
-                                                    <div class="spinner-border"></div>
-
-                                              </div>
-
-                                            </div>
-
-                                          </div>
-
-                                          <!-- /.card-body -->
-                                          <div class="card-footer bg-white">
-                                            <mat-paginator [hidden]="loadData" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
-                                          </div>
-                      <!-- /.card-footer-->
+                                    </td>
+                                  </ng-container>
+                                  <tr mat-header-row *matHeaderRowDef="displayedColUsers"></tr>
+                                  <tr mat-row *matRowDef="let row; columns: displayedColUsers;"></tr>
+                                </table>
+                                <div *ngIf="loadData" class="text-center m-5">
+                                  <div class="spinner-border"></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card-footer bg-white">
+                              <mat-paginator [hidden]="loadData" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+                            </div>
                           </div>
-                    <!-- /.card -->
-                  </div>
-                    </div>
+                        </div>
+                          </div>
+
 
                           <div class="tab-pane" [class.active]="selectedTab === 'companys'" *ngIf="selectedTab === 'companys'">
                             <div >
@@ -243,30 +228,36 @@
                                                       <th mat-header-cell *matHeaderCellDef> {{'actions' | translate}} </th>
                                                       <td mat-cell *matCellDef="let element">
 
-                                                              <button
+                                                              <button matTooltip="{{'sc' | translate}}"
                                                               class="btn btn-sm btn-warning mr-1"
                                                               (click)="showProfile(element)" >
                                                               <i class="fas fa-eye"></i>
                                                             </button>
 
-                                                              <button
+                                                              <button matTooltip="{{'ec' | translate}}"
                                                               class="btn btn-sm btn-dark mr-1"
                                                               (click)="editUsers(element.id)" >
                                                                 <i class="fas fa-pencil-alt"></i>
                                                               </button>
 
-                                                              <button
+                                                              <button matTooltip="{{ 'rc' | translate }}"
                                                               class="btn btn-sm btn-danger">
                                                               <i class="fas fa-trash"></i>
                                                             </button>
 
                                                             &nbsp;
-                                                            <button
+                                                            <button mat-icon-button matTooltip="{{ 'ac' | translate}}"
                                                               class="btn btn-sm bg-gradient-blue"
                                                               (click)="assigncomp(element.id, profile.emailu, element.displayName)" >
                                                               <i class="fas fa-paste"></i>
                                                             </button>
 
+                                                            &nbsp;
+                                                            <button mat-icon-button matTooltip="{{ 'dc' | translate}}"
+                                                              class="btn btn-sm bg-gradient-red"
+                                                              (click)="desasigncomp(element.id, profile.emailu, element.displayName)" >
+                                                              <i class="fas fa-paste"></i>
+                                                            </button>
 
                                                       </td>
                                                     </ng-container>

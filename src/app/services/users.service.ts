@@ -222,7 +222,6 @@ constructor(private http:HttpClient ) { }
 
   deleteUsers(id:string, token: any){
 
-    //const url =`${environment.urlFirebase}permissions.json?orderBy="${orderBy}"&equalTo="${equalTo}"`;
 		return this.http.delete(`${environment.urlFirebase}users/${id}.json?auth=${token}`);
 
 	}
@@ -247,7 +246,7 @@ constructor(private http:HttpClient ) { }
           const displayName = user.displayName;
           const picture = user.picture;
           return { displayName, picture };
-        } 
+        }
         else {
           return { displayName: '', picture: '' };
         }

@@ -72,27 +72,6 @@ getEmpresasxEmail(orderBy:string, equalTo:string){
     }
 
 
-    searchByEmailAndCompanyId(email: string, companyId: string) {
-      const url =`${environment.urlFirebase}permissionsxcompanys.json?`;
-
-      const params = new HttpParams()
-        .set('orderBy', '"email"')
-        .set('equalTo', `"${email}"`)
-        .set('orderBy', '"id_company"')
-        .set('equalTo', `"${companyId}"`);
-
-        console.log("dentro del servicio", email)
-        console.log("dentro del servicio", companyId)
-
-      return this.http.get(url, { params });
-
-
-
-
-
-    }
-
-
 
 getpermissionsxCompany(mail:string){
    return this.http.get(`${environment.urlFirebase}permissionsxcompanys.json?orderBy="email"&equalTo="${mail}"&print=pretty`);

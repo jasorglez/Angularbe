@@ -25,7 +25,8 @@ import { UsersComponent } from './users.component';
 import { NewComponent } from './new/new.component';
 import { EditComponent } from './edit/edit.component';
 
-
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [UsersComponent, NewComponent, EditComponent],
@@ -43,7 +44,9 @@ import { EditComponent } from './edit/edit.component';
     MatSelectModule,
     ReactiveFormsModule,
     PipesModule,
-    TranslateModule
+    TranslateModule,
+    MatCheckboxModule,
+    MatTooltipModule
 
   ]
 })
