@@ -578,7 +578,7 @@ onTabSelected(tabName: string) {
 
           if (result.isConfirmed) {
 
-                     await this.firebaseService.borrarRegistro( id, mail)
+                     await this.firebaseService.deleteRegister( id, mail)
                      alerts.basicAlert("Success", "The permission has been removed", "success");
 
                   }

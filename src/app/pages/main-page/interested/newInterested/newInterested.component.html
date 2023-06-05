@@ -116,7 +116,7 @@
                                           <mat-label>Interes</mat-label>
                                         </td>
                                         <td>
-                                       
+
                                           <select class="form-select" [(ngModel)]="interes" formControlName="interes"
                                             [(ngModel)]="selectedorganization">
                                             <option *ngFor="let n of numbers">{{ n }}</option>
@@ -146,11 +146,13 @@
                                     <table>
                                       <tr>
                                         <td>
-                                          <mat-label>Power</mat-label>
+                                          
                                         </td>
                                         <td>
 
-                                          <select class="form-select" [(ngModel)]="power" formControlName="power">
+                                          <select class="form-select"
+                                                  formControlName="power">
+                                            <option value=''>Power</option>
                                             <option *ngFor="let n of numbers">{{ n }}</option>
                                           </select>
                                         </td>

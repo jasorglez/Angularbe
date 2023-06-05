@@ -5,17 +5,13 @@ import { Iusers } from '../interface/iusers';
 
 import  axios  from 'axios';
 
-import { map, tap, catchError, filter } from 'rxjs/operators';
-import { forkJoin, Observable, of, throwError } from 'rxjs';
+import { tap, filter, map, concat, catchError, forkJoin, Observable,  throwError } from 'rxjs';
 
 import { getDatabase, startAt, endAt, ref, child, query, orderByChild, equalTo, get,
     DataSnapshot, limitToFirst, onValue, onChildAdded } from 'firebase/database';
 
 
-
 import 'firebase/compat/database';
-import { ConstantPool } from '@angular/compiler';
-import { Validators } from '@angular/forms';
 
 
 @Injectable({
@@ -138,10 +134,6 @@ constructor(private http:HttpClient ) { }
 */
 
 
-  ///***termina el codigo */
-
-
-
 	postData(data: Iusers, token:any){
 
 		return this.http.post(`${environment.urlFirebase}users.json?auth=${token}`, data);
@@ -183,7 +175,6 @@ constructor(private http:HttpClient ) { }
   }
 
 
-
   checkIfDataExists(email: string): Observable<boolean> {
     const url = `${environment.urlFirebase}users.json?orderBy="emailu"&equalTo="${email}"`;
 
@@ -223,18 +214,20 @@ constructor(private http:HttpClient ) { }
   deleteUsers(id:string, token: any){
 
 		return this.http.delete(`${environment.urlFirebase}users/${id}.json?auth=${token}`);
-
 	}
 
   getCompaniesPermission(userEmail: string): Observable<any> {
 
-    const permissionsUrl = `${environment.urlFirebase}permissions.json`;
+    const permissionsUrl = `${environment.urlFirebase}permissionsxcompanys.json`;
     const companyUrl = `${environment.urlFirebase}companys.json`;
 
      const permissions$ = this.http.get(permissionsUrl);
      const company$ = this.http.get(companyUrl);
 
      return forkJoin([permissions$, company$]);
+
+     return concat(permissions$, company$)
+
   }
 
 

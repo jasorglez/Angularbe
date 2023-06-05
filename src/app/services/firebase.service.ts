@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/database';
-import { Observable, map, take } from 'rxjs';
-import { environment } from 'src/environments/environment';
-import { app, db } from 'src/app/firebase.config';
+import { take } from 'rxjs';
+
+//import { app, db } from 'src/app/firebase.config';
 
 @Injectable({
   providedIn: 'root'
@@ -26,7 +26,7 @@ export class FirebaseService {
   }
 
 
-  async borrarRegistro(idcomp: string, mail: string): Promise<void> {
+  async deleteRegister(idcomp: string, mail: string): Promise<void> {
     const permissRef: AngularFireList<any> = this.db.list('permissionsxcompanys');
 
     try {

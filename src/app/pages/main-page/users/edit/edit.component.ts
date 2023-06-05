@@ -27,6 +27,7 @@ export class EditComponent {
 
   isInputDisabled = true;
 
+  eml : string = '' ;
 
   emailExistsError = false;
 	/*=============================================
@@ -133,9 +134,16 @@ export class EditComponent {
 
 
 uploadImage($event: any) {
+
+  this.eml = this.fus.get('emailu').value ;
+
   const file = $event.target.files[0];
+
   this.selectedImage = file;
-  const path = `images/${file.name}`;
+
+  const path = `images/${this.eml}${file.name}`;
+
+
 
   if (!file) {
     this.imageUrl = ''; // No hay imagen seleccionada, establecemos la URL vacía
