@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { Icompany } from '../interface/icompany';
 
 import { map, tap, catchError, filter } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
+import { alerts } from '../helpers/alerts';
 
 @Injectable({
   providedIn: 'root'
@@ -34,7 +36,6 @@ getEmpresasxEmail(orderBy:string, equalTo:string){
   return this.http.get(`${environment.urlFirebase}companyxusers.json?orderBy="${orderBy}"&equalTo="${equalTo}"&print=pretty`);
 
 }
-
 
    /*=============================================
 	Tomar la data de la colección Empresas en Firebase
@@ -83,6 +84,18 @@ getpermissionsxCompany(mail:string){
 
 getpermissionsxProject(branch:string){
   return this.http.get(`${environment.urlFirebase}permissionsxprojects.json?orderBy="id_branchs"&equalTo="${branch}"&print=pretty`);
+}
+
+postData(data: Icompany, token:any){
+  try {
+    return this.http.post(`${environment.urlFirebase}companys.json?auth=${token}`, data);
+
+  }catch(error) {
+  //  alerts.basicAlert("error", `Error save Users${error}`, "error")
+    console.log("Error al grabar Companiaa", error)
+    return null ;
+  }
+
 }
 
   }

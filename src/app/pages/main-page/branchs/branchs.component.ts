@@ -104,7 +104,7 @@ export class BranchsComponent implements OnInit {
 
      getData(){
 
-          this.branchService.getData().subscribe((resp:any)=>{
+          this.branchService.getData('i').subscribe((resp:any)=>{
 
           this.loadData = true ;
 
@@ -124,10 +124,9 @@ export class BranchsComponent implements OnInit {
               country:resp[a].country,
               cp: resp[a].cp,
               id_company:resp[a].id_company,
-              id_state:resp[a].id_state,
+              state:resp[a].id_state,
               iva:resp[a].iva,
               locality:resp[a].locality,
-              municipality:resp[a].municipality,
               name:resp[a].name,
               number_exterior:resp[a].number_exterior,
               number_interior:resp[a].number_interior,

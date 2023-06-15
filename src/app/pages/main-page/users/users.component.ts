@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, OnChanges, SimpleChanges } from '@angular/core';
 
 import { Iusers } from 'src/app/interface/iusers';
 import { Ilog } from 'src/app/interface/ilog';
@@ -36,9 +36,7 @@ import { functions } from 'src/app/helpers/functions';
 
 import { alerts } from 'src/app/helpers/alerts';
 
-import { db } from 'src/app/firebase.config';
 import { Observable } from 'rxjs';
-import { async } from '@angular/core/testing';
 
 
 @Component({
@@ -56,7 +54,9 @@ import { async } from '@angular/core/testing';
   	]
 
 })
-export class UsersComponent implements OnInit {
+
+ export class UsersComponent implements OnChanges, OnInit {
+
 
   userEvents: any[] = [];
   currentIndex : number = 0 ;
@@ -74,7 +74,7 @@ onTabSelected(tabName: string) {
 
   if (tabName=== 'companys') {
       this.trackingService.addLog('', 'Click en la Pestaña Company/Empresas del menu Usuarios', 'Usuarios', '')
-      this.getdataCompany() }
+      this.getdataCompanys() }
 
   if (tabName=== 'branchs') {
       this.trackingService.addLog('', 'Click en la Pestaña Branchs/Sucursales del menu Usuarios', 'Usuarios', '')
@@ -82,7 +82,7 @@ onTabSelected(tabName: string) {
 
   if (tabName=== 'projects') {
       this.trackingService.addLog('', 'Click en la Pestaña Projects/Proyectos del menu Usuarios', 'Usuarios', '')
-      this.getdataProject() }
+      this.getdataProjects() }
 
   if (tabName=== 'settings') {
       this.trackingService.addLog('', 'Click en la Pestaña Settings/Seguimiento del menu Usuarios', 'Usuarios', '')
@@ -90,17 +90,15 @@ onTabSelected(tabName: string) {
 
     }
 
+     /*=============================================
+    	Creamos grupo de controles
+    	=============================================*/
 
+    	public myform = this.form.group({
 
- /*=============================================
-	Creamos grupo de controles
-	=============================================*/
-
-	public myform = this.form.group({
-
-		email: ['', [Validators.required, Validators.email]],
-		password: ['', Validators.required]
-	})
+    		email: ['', [Validators.required, Validators.email]],
+    		password: ['', Validators.required]
+    	})
 
 
 	/*=============================================
@@ -115,7 +113,7 @@ onTabSelected(tabName: string) {
         ];
 
     displayedColBranchs: string[] = [  'position',
-        'name', 'street', 'country' ,'actions' ];
+        'name', 'street', 'locality' ,'actions' ];
 
     displayedColProject: string[] = [  'position',
         'contract', 'description', 'tender' ,'actions' ];
@@ -136,7 +134,6 @@ onTabSelected(tabName: string) {
   projectsDataSource! : MatTableDataSource<Iproject>;
   trackingDataSource! : MatTableDataSource<Ilog>;
 
-
 	/*=============================================
 	Variable global que tipifica la interfaz de usuario
 	=============================================*/
@@ -146,7 +143,12 @@ onTabSelected(tabName: string) {
     log     : Ilog[]     = [];
     branch  : Ibranch[]  = [];
     project : Iproject[] = [];
-    profile : any = {};
+
+    profile    : any = {} ;
+
+    infcompany : any = {} ;
+    infbranch  : any = {} ;
+    infproject : any = {} ;
 
 	/*=============================================
 	Variable global que informa a la vista cuando hay una expansión de la tabla
@@ -193,6 +195,8 @@ onTabSelected(tabName: string) {
   	ngOnInit(): void {
 
 
+
+
     		this.getdataUsers();
 
 
@@ -213,12 +217,10 @@ onTabSelected(tabName: string) {
 
       		}
 
- 	}
-
-
+   	}
 
 	/*=============================================
-	función para tomar la data de usuarios
+	función para tomar la data de users, cias, branchs, projects
 	=============================================*/
 
        // Función para mostrar el perfil de un usuario
@@ -228,7 +230,28 @@ onTabSelected(tabName: string) {
         this.profile = user;
        }
 
-         getdataUsers(){
+       infoCompany(company: Icompany) {
+        // Actualizamos el currentIndex y el profile
+        // console.log(`Nombre: ${user.displayName}, Email: ${user.email}, Edad: ${user.age}`);
+       this.infcompany = company;
+
+      }
+
+
+      infoBranch(branch: Ibranch) {
+         // console.log(`Nombre: ${user.displayName}, Email: ${user.email}, Edad: ${user.age}`);
+         this.infbranch = branch;
+      }
+
+      infoProject(project: Iproject) {
+        // Actualizamos el currentIndex y el profile
+        // console.log(`Nombre: ${user.displayName}, Email: ${user.email}, Edad: ${user.age}`);
+       this.infproject = project;
+
+      }
+
+
+        getdataUsers(){
 
           		this.loadData = true;
 
@@ -273,8 +296,7 @@ onTabSelected(tabName: string) {
 
   	     }
 
-
-         masterToggle() {
+        masterToggle() {
           this.isAllSelected() ?
             this.selection.clear() :
             this.UsersDataSource.data.forEach(row => this.selection.select(row));
@@ -287,7 +309,7 @@ onTabSelected(tabName: string) {
         }
 
 
-         getdataCompany()
+        getdataCompanys()
          {
            this.loadData2 = true;
 
@@ -323,12 +345,12 @@ onTabSelected(tabName: string) {
 
            })
 
-         }
+        }
 
          getdataBranchs(){
-                this.branchService.getData().subscribe((resp:any)=>{
+             this.branchService.getData(this.infcompany.id).subscribe((resp:any)=>{
 
-          this.loadData3 = true ;
+              this.loadData3 = true ;
 
             /*=============================================
           	Integrando la respuesta de base de dacion para tomar la data de usuarios
@@ -339,21 +361,20 @@ onTabSelected(tabName: string) {
             this.branch = Object.keys(resp).map(a=> ({
 
               id: a,
-              idbra :resp[a].idbra,
-              position: position --,
-              active : resp[a].active,
-              colony: resp[a].colony,
-              country:resp[a].country,
-              cp: resp[a].cp,
-              id_company:resp[a].id_company,
-              id_state:resp[a].id_state,
-              iva:resp[a].iva,
-              locality:resp[a].locality,
-              municipality:resp[a].municipality,
-              name:resp[a].name,
-              number_exterior:resp[a].number_exterior,
-              number_interior:resp[a].number_interior,
-              street:resp[a].street
+              idbra            : resp[a].idbra,
+              position         : position --,
+              active           : resp[a].active,
+              colony           : resp[a].colony,
+              country          : resp[a].country,
+              cp               : resp[a].cp,
+              id_company       : resp[a].id_company,
+              state            : resp[a].state,
+              iva              : resp[a].iva,
+              locality         : resp[a].locality,
+              name             : resp[a].name,
+              number_exterior  : resp[a].number_exterior,
+              number_interior  : resp[a].number_interior,
+              street           :resp[a].street
 
             } as Ibranch )) ;
 
@@ -366,11 +387,11 @@ onTabSelected(tabName: string) {
     } )
          }
 
-         getdataProject()
+         getdataProjects()
          {
            this.loadData4 = true;
 
-           this.projectsService.getDataprojects().subscribe((resp:any)=>{
+           this.projectsService.getDataprojects(this.infbranch.id).subscribe((resp:any)=>{
 
              /*=============================================
            Integrando respuesta de base de datos con la interfaz
@@ -380,13 +401,14 @@ onTabSelected(tabName: string) {
              this.project = Object.keys(resp).map(a=> ({
 
                 id:a,
-                numberposition :numberposition++,
-                code           :resp[a].code,
-                contract       :resp[a].contract,
-                description    :resp[a].description,
-                image          :resp[a].image,
-                tender         :resp[a].tender,
-                ubication      :resp[a].ubication
+                numberposition  :numberposition++,
+                code            :resp[a].code,
+                contract        :resp[a].contract,
+                description     :resp[a].description,
+                id_branch       :resp[a].id_branch,
+                image           :resp[a].image,
+                tender          :resp[a].tender,
+                ubication       :resp[a].ubication
              } as Iproject ));
 
              // Creamos el dataSource
@@ -437,207 +459,364 @@ onTabSelected(tabName: string) {
 
 
 
- public async getUserEventData() {
-  try {
-    const result = await this.usersService.getUserEventData();
-    console.log(result);
-  }catch (err) {
-    console.log(err);
-  }
+         public async getUserEventData() {
+          try {
+            const result = await this.usersService.getUserEventData();
+            console.log(result);
+          }catch (err) {
+            console.log(err);
+          }
+
+        }
+
+
+          newUsers(formType: string) {
+              const dialogRef = this.dialog.open(NewComponent, { data: { formType: formType } });
+              dialogRef.afterClosed().subscribe(result => {
+                if (result) {
+                  this.getdataUsers();
+                }
+              });
+          }
+
+          newCompanys(formType: string) {
+            const dialogRef = this.dialog.open(NewComponent, { data: { formType: formType } });
+            dialogRef.afterClosed().subscribe(result => {
+              if (result) {
+                this.getdataCompanys();
+              }
+            });
+
+          }
+
+          newBranchs(formType: string, id:string) {
+            const dialogRef = this.dialog.open(NewComponent, {
+                data: { formType: formType,
+                companyId: id } });
+            dialogRef.afterClosed().subscribe(result => {
+              if (result) {
+                this.getdataBranchs();
+              }
+            });
+          }
+
+         newProjects(formType: string, id:string) {
+           const dialogRef = this.dialog.open(NewComponent, {
+              data: { formType: formType,
+              branchId: id } });
+            dialogRef.afterClosed().subscribe(result => {
+             if (result) {
+               this.getdataProjects();
+             }
+          });
+
+        }
+
+
+
+          editUsers(id:string){
+
+              const dialogRef = this.dialog.open(EditComponent,{
+
+                width:'100%',
+                data: { id: id	}
+
+              })
+
+              /*=============================================
+              Actualizar el listado de la tabla
+              =============================================*/
+
+              dialogRef.afterClosed().subscribe(result =>{
+
+                if(result){
+
+                  this.getdataUsers();
+
+                }
+
+              })
+
+            }
+
+          editBranchs(id: string){
+
+            }
+
+            deleteUsers(id: string, mail: string, pic: string) {
+              alerts.confirmAlert('Are you sure?', 'The information cannot be recovered!', 'warning', 'Yes, delete it!')
+                .then((result) => {
+                  if (result.isConfirmed) {
+                    this.usersService.getFilterDataperm("email", mail)
+                      .subscribe((resp: any) => {
+                        if (Object.keys(resp).length > 0) {
+                          alerts.basicAlert('error', "The category has related permission", "error");
+                        } else {
+                          this.usersService.deleteUsers(id, localStorage.getItem('token'))
+                            .subscribe(() => {
+                              // Borrar la imagen del Firebase Storage
+                              const imagePath = pic; // Ruta de la imagen en el Storage
+                              this.storagesService.deleteFile(imagePath)
+                                .then(() => {
+                                  // La imagen se ha borrado correctamente
+                                  alerts.basicAlert("Success", "The user and image have been deleted", "success");
+                                  this.authService.removeUserByEmail(mail);
+                                  this.getdataUsers();
+                                })
+                                .catch((error) => {
+                                  // Ocurrió un error al borrar la imagen
+                                  console.error("Error deleting image from Firebase Storage:", error);
+                                  alerts.basicAlert("Error", "An error occurred while deleting the image", "error");
+                                });
+                            }, (error) => {
+                              // Error occurred while deleting the user
+                              console.error("Error deleting user:", error);
+                              alerts.basicAlert("Error", "An error occurred while deleting the user", "error");
+                            });
+                        }
+                      });
+                  }
+                });
+            }
+
+            deleteCompanys(id: string){
+
+            }
+
+            deleteBranchs(id: string) {
+
+              alerts.confirmAlert('Are you sure?', 'The information cannot be recovered!', 'warning', 'Yes, delete it!')
+              .then((result) => {
+
+                if (result.isConfirmed) {
+
+                    this.branchService.deleteBranchs(id, localStorage.getItem('token'))
+                    .subscribe(() => {
+
+                      alerts.basicAlert("Success", "The branch has been deleted", "success");
+                      this.getdataBranchs();
+
+                  })
+
+                }
+
+              })
+            }
+
+
+            deleteProjects(id: string) {
+
+              alerts.confirmAlert('Are you sure?', 'The information cannot be recovered!', 'warning', 'Yes, delete it!')
+              .then((result) => {
+
+                if (result.isConfirmed) {
+
+                    this.projectsService.deleteProjects(id, localStorage.getItem('token'))
+                    .subscribe(() => {
+
+                       alerts.basicAlert("Success", "The project has been deleted", "success");
+                       this.getdataProjects();
+
+                  })
+
+                }
+
+              })
+            }
+
+
+            async assigncomp(id: string, mail: string, name: string) {
+            try {
+              const resp = await this.firebaseService.getpermxCompany(id, mail);
+
+              if (resp) {
+                alerts.basicAlert('error', "The company already has this permission", "error");
+              }
+              else {
+                const result = await alerts.confirmAlert('Are you sure?', 'Assign Company for information user!', 'warning', 'Yes, Assign it!');
+
+                if (result.isConfirmed) {
+
+                           await this.companyService.addpermiscompany(name, mail, id)
+                           alerts.basicAlert("Success", "The permission has been created", "success");
+
+                        }
+              } //termino el try
+
+              } catch (error) {
+                  // Manejar errores si es necesario
+              }
+
+            }
+
+            async desasigncomp(id: string, mail: string, name: string) {
+            try {
+              const resp = await this.firebaseService.getpermxCompany(id, mail);
+
+              if (resp) {
+                const result = await alerts.confirmAlert('Are you sure?', 'Desasign Company for this user!', 'warning', 'Yes, Assign it!');
+
+                if (result.isConfirmed) {
+
+                           await this.firebaseService.deleteCompanys( id, mail)
+                           alerts.basicAlert("Success", "The permission has been removed", "success");
+
+                        }
+              } //termino el try
+
+              } catch (error) { }
+                  // Manejar errores si es necesario
+
+            }
+
+             async assignBranch(id: string, idCompany: string, name: string) {
+              try {
+                const resp = await this.firebaseService.getpermxBranch(id, idCompany);
+  
+                if (resp) {
+                  alerts.basicAlert('error', "The Branch already has this permission", "error");
+                }
+                else {
+                  const result = await alerts.confirmAlert('Are you sure?', 'Assign Branch for information user!', 'warning', 'Yes, Assign it!');
+  
+                  if (result.isConfirmed) {
+  
+                             await this.branchService.addpermisBranch(name, id, idCompany)
+                             alerts.basicAlert("Success", "The permission has been created", "success");
+  
+                          }
+                } //termino el try
+  
+                } catch (error) {
+                    // Manejar errores si es necesario
+                }
+  
+              }
+  
+              async desasignBranch(id: string, idCompany: string, name: string) {
+              try {
+                const resp = await this.firebaseService.getpermxBranch(id, idCompany);
+  
+                if (resp) {
+                  const result = await alerts.confirmAlert('Are you sure?', 'Desasign Branch for this user!', 'warning', 'Yes, Assign it!');
+  
+                  if (result.isConfirmed) {
+  
+                             await this.firebaseService.deleteBranchs( id, idCompany)
+                             alerts.basicAlert("Success", "The permission has been removed", "success");
+  
+                          }
+                } //termino el try
+  
+                } catch (error) { }
+                    // Manejar errores si es necesario
+  
+              } 
+
+
+              async assignProject(id: string, idBranch: string, name: string) {
+                try {
+                  const resp = await this.firebaseService.getpermxProject(id, idBranch);
+    
+                  if (resp) {
+                    alerts.basicAlert('error', "The Project already has this permission", "error");
+                  }
+                  else {
+                    const result = await alerts.confirmAlert('Are you sure?', 'Assign Project for information user!', 'warning', 'Yes, Assign it!');
+    
+                    if (result.isConfirmed) {
+    
+                               await this.projectsService.addpermisProject(name, id, idBranch)
+                               alerts.basicAlert("Success", "The permission has been created", "success");
+    
+                            }
+                  } //termino el try
+    
+                  } catch (error) {
+                      // Manejar errores si es necesario
+                  }
+    
+              }
+
+    
+              async desasignProject(id: string, idBranch: string, name: string) {
+                try {
+                  const resp = await this.firebaseService.getpermxProject(id, idBranch);
+    
+                  if (resp) {
+                    const result = await alerts.confirmAlert('Are you sure?', 'Desasign Project for this user!', 'warning', 'Yes, Assign it!');
+    
+                    if (result.isConfirmed) {
+    
+                               await this.firebaseService.deleteProjects( id, idBranch)
+                               alerts.basicAlert("Success", "The permission has been removed", "success");
+    
+                            }
+                  } //termino el try
+    
+                  } catch (error) { }
+                      // Manejar errores si es necesario
+    
+               } 
+  
+
+
+         join() {
+              const userEmail = 'jsoriano@hco-consultores.com';
+
+              this.usersService.getCompaniesPermission(userEmail).subscribe(response => {
+                const [permissions, companies] = response;
+                this.combinedData = this.combineData(permissions, companies);
+                console.log(this.combinedData)
+              }, error => {
+                console.error(error);
+              });
+         }
+
+
+         combineData(permissions: { [key: string]: any }, companies: { [key: string]: any }): any[] {
+          // Filtrar los permisos por el email deseado
+          const filteredPermissions = Object.values(permissions).filter((permission: any) => permission.email === 'jsoriano@hco-consultores.com');
+
+          // Combina los datos según tu lógica de negocio
+          // Puedes utilizar loops, map, filter u otras funciones de array para combinar los datos
+
+          // Ejemplo de combinación por id_company
+          return filteredPermissions.map((permission: any) => {
+            const companyId = permission.id_company;
+            const company = companies[companyId];
+
+            return {
+              permission,
+              company
+            };
+          });
+        }
+
+
+          /*=============================================
+        	Filtro de Búsqueda
+        	=============================================*/
+          applyFilter(dataSource: MatTableDataSource<any>, event: Event) {
+            const filterValue = (event.target as HTMLInputElement).value;
+            dataSource.filter = filterValue.trim().toLowerCase();
+
+            if (dataSource.paginator) {
+              dataSource.paginator.firstPage();
+            }
+          }
+
+
+        ngOnChanges(changes: SimpleChanges): void {
+          if (changes['selectedTab'] && changes['selectedTab'].currentValue === 'users') {
+              this.getdataUsers();
+            }
+         }
 
 }
 
 
 
-    newUsers() {
-      const dialogRef= this.dialog.open(NewComponent);
-
-      /*-------------------------------------
-        Actualizar el listado de la tabla
-       -------------------------------------*/
-
-       dialogRef.afterClosed().subscribe(result => {
-         if (result) {
-             this.getdataUsers();
-         }
-       })
-
-    }
-
-
-    editUsers(id:string){
-
-        const dialogRef = this.dialog.open(EditComponent,{
-
-          width:'100%',
-          data: { id: id	}
-
-        })
-
-        /*=============================================
-        Actualizar el listado de la tabla
-        =============================================*/
-
-        dialogRef.afterClosed().subscribe(result =>{
-
-          if(result){
-
-            this.getdataUsers();
-
-          }
-
-        })
-
-      }
-
-
-      deleteUsers(id: string, mail: string, pic: string) {
-        alerts.confirmAlert('Are you sure?', 'The information cannot be recovered!', 'warning', 'Yes, delete it!')
-          .then((result) => {
-            if (result.isConfirmed) {
-              this.usersService.getFilterDataperm("email", mail)
-                .subscribe((resp: any) => {
-                  if (Object.keys(resp).length > 0) {
-                    alerts.basicAlert('error', "The category has related permission", "error");
-                  } else {
-                    this.usersService.deleteUsers(id, localStorage.getItem('token'))
-                      .subscribe(() => {
-                        // Borrar la imagen del Firebase Storage
-                        const imagePath = pic; // Ruta de la imagen en el Storage
-                        this.storagesService.deleteFile(imagePath)
-                          .then(() => {
-                            // La imagen se ha borrado correctamente
-                            alerts.basicAlert("Success", "The user and image have been deleted", "success");
-                            this.authService.removeUserByEmail(mail);
-                            this.getdataUsers();
-                          })
-                          .catch((error) => {
-                            // Ocurrió un error al borrar la imagen
-                            console.error("Error deleting image from Firebase Storage:", error);
-                            alerts.basicAlert("Error", "An error occurred while deleting the image", "error");
-                          });
-                      }, (error) => {
-                        // Error occurred while deleting the user
-                        console.error("Error deleting user:", error);
-                        alerts.basicAlert("Error", "An error occurred while deleting the user", "error");
-                      });
-                  }
-                });
-            }
-          });
-      }
-
-
-    newBranchs(){
-
-    }
-
-    editBranchs(id: string){
-
-    }
-
-    deleteBranchs(id: string) {
-
-        console.log("borrado") ;
-
-    }
-
-
-     async assigncomp(id: string, mail: string, name: string) {
-      try {
-        const resp = await this.firebaseService.getpermxCompany(id, mail);
-
-        if (resp) {
-          alerts.basicAlert('error', "The company already has this permission", "error");
-        }
-        else {
-          const result = await alerts.confirmAlert('Are you sure?', 'Assign Company for information user!', 'warning', 'Yes, Assign it!');
-
-          if (result.isConfirmed) {
-
-                     await this.companyService.addpermiscompany(name, mail, id)
-                     alerts.basicAlert("Success", "The permission has been created", "success");
-
-                  }
-        } //termino el try
-
-        } catch (error) {
-            // Manejar errores si es necesario
-        }
-
-      }
-
-
-
-     async desasigncomp(id: string, mail: string, name: string) {
-      try {
-        const resp = await this.firebaseService.getpermxCompany(id, mail);
-
-        if (resp) {
-          const result = await alerts.confirmAlert('Are you sure?', 'Desasign Company for this user!', 'warning', 'Yes, Assign it!');
-
-          if (result.isConfirmed) {
-
-                     await this.firebaseService.deleteRegister( id, mail)
-                     alerts.basicAlert("Success", "The permission has been removed", "success");
-
-                  }
-        } //termino el try
-
-        } catch (error) { }
-            // Manejar errores si es necesario
-
-      }
-
-
-   join() {
-        const userEmail = 'jsoriano@hco-consultores.com';
-
-        this.usersService.getCompaniesPermission(userEmail).subscribe(response => {
-          const [permissions, companies] = response;
-          this.combinedData = this.combineData(permissions, companies);
-          console.log(this.combinedData)
-        }, error => {
-          console.error(error);
-        });
-   }
-
-
-   combineData(permissions: { [key: string]: any }, companies: { [key: string]: any }): any[] {
-    // Filtrar los permisos por el email deseado
-    const filteredPermissions = Object.values(permissions).filter((permission: any) => permission.email === 'jsoriano@hco-consultores.com');
-
-    // Combina los datos según tu lógica de negocio
-    // Puedes utilizar loops, map, filter u otras funciones de array para combinar los datos
-
-    // Ejemplo de combinación por id_company
-    return filteredPermissions.map((permission: any) => {
-      const companyId = permission.id_company;
-      const company = companies[companyId];
-
-      return {
-        permission,
-        company
-      };
-    });
-  }
-
-
-
-    	/*=============================================
-	Filtro de Búsqueda
-	=============================================*/
-  applyFilter(dataSource: MatTableDataSource<any>, event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    dataSource.filter = filterValue.trim().toLowerCase();
-
-    if (dataSource.paginator) {
-      dataSource.paginator.firstPage();
-    }
-  }
-
-
- }
 
 
 

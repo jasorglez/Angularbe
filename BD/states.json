@@ -1,0 +1,159 @@
+{
+  "-MBsfaIcfGpj7treR0Y": {
+    "sClaveEstado": "1",
+    "sNombre": "AGUASCALIENTES"
+  },
+    "-RPxbtGzLki7treT4Y": {
+    "sClaveEstado": "2",
+    "sNombre": "BAJA CALIFORNIA"
+  },
+  "-FZfgtrxbtGzLki7t4tuM": {
+    "sClaveEstado": "3",
+    "sNombre": "BAJA CALIFORNIA SUR"
+  }
+  {
+    "id_Estados": 4,
+    "sClaveEstado": "4",
+    "sNombre": "CAMPECHE"
+  },
+  {
+    "id_Estados": 5,
+    "sClaveEstado": "5",
+    "sNombre": "COAHUILA DE ZARAGOZA"
+  },
+  {
+    "id_Estados": 6,
+    "sClaveEstado": "6",
+    "sNombre": "COLIMA"
+  },
+  {
+    "id_Estados": 7,
+    "sClaveEstado": "7",
+    "sNombre": "CHIAPAS"
+  },
+  {
+    "id_Estados": 8,
+    "sClaveEstado": "8",
+    "sNombre": "CHIHUAHUA"
+  },
+  {
+    "id_Estados": 9,
+    "sClaveEstado": "9",
+    "sNombre": "DISTRITO FEDERAL"
+  },
+  {
+    "id_Estados": 10,
+    "sClaveEstado": "10",
+    "sNombre": "DURANGO"
+  },
+  {
+    "id_Estados": 11,
+    "sClaveEstado": "11",
+    "sNombre": "GUANAJUATO"
+  },
+  {
+    "id_Estados": 12,
+    "sClaveEstado": "12",
+    "sNombre": "GUERRERO"
+  },
+  {
+    "id_Estados": 13,
+    "sClaveEstado": "13",
+    "sNombre": "HIDALGO"
+  },
+  {
+    "id_Estados": 14,
+    "sClaveEstado": "14",
+    "sNombre": "JALISCO"
+  },
+  {
+    "id_Estados": 15,
+    "sClaveEstado": "15",
+    "sNombre": "ESTADO DE MEXICO"
+  },
+  {
+    "id_Estados": 16,
+    "sClaveEstado": "16",
+    "sNombre": "MICHOACAN DE OCAMPO"
+  },
+  {
+    "id_Estados": 17,
+    "sClaveEstado": "17",
+    "sNombre": "MORELOS"
+  },
+  {
+    "id_Estados": 18,
+    "sClaveEstado": "18",
+    "sNombre": "NAYARIT"
+  },
+  {
+    "id_Estados": 19,
+    "sClaveEstado": "19",
+    "sNombre": "NUEVO LEON"
+  },
+  {
+    "id_Estados": 20,
+    "sClaveEstado": "20",
+    "sNombre": "OAXACA"
+  },
+  {
+    "id_Estados": 21,
+    "sClaveEstado": "21",
+    "sNombre": "PUEBLA"
+  },
+  {
+    "id_Estados": 22,
+    "sClaveEstado": "22",
+    "sNombre": "QUERETARO"
+  },
+  {
+    "id_Estados": 23,
+    "sClaveEstado": "23",
+    "sNombre": "QUINTANA ROO"
+  },
+  {
+    "id_Estados": 24,
+    "sClaveEstado": "24",
+    "sNombre": "SAN LUIS POTOSI"
+  },
+  {
+    "id_Estados": 25,
+    "sClaveEstado": "25",
+    "sNombre": "SINALOA"
+  },
+  {
+    "id_Estados": 26,
+    "sClaveEstado": "26",
+    "sNombre": "SONORA"
+  },
+  {
+    "id_Estados": 27,
+    "sClaveEstado": "27",
+    "sNombre": "TABASCO"
+  },
+  {
+    "id_Estados": 28,
+    "sClaveEstado": "28",
+    "sNombre": "TAMAULIPAS"
+  },
+  {
+    "id_Estados": 29,
+    "sClaveEstado": "29",
+    "sNombre": "TLAXCALA"
+  },
+  {
+    "id_Estados": 30,
+    "sClaveEstado": "30",
+    "sNombre": "VERACRUZ DE IGNACIO DE LA LLAVE"
+  },
+  {
+    "id_Estados": 31,
+    "sClaveEstado": "31",
+    "sNombre": "YUCATAN"
+  },
+  {
+    "id_Estados": 32,
+    "sClaveEstado": "32",
+    "sNombre": "ZACATECAS"
+  }
+]

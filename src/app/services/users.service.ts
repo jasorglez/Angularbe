@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Iusers } from '../interface/iusers';
+import { alerts } from '../helpers/alerts';
 
 import  axios  from 'axios';
 
@@ -135,8 +136,12 @@ constructor(private http:HttpClient ) { }
 
 
 	postData(data: Iusers, token:any){
-
-		return this.http.post(`${environment.urlFirebase}users.json?auth=${token}`, data);
+    try {
+      return this.http.post(`${environment.urlFirebase}users.json?auth=${token}`, data);
+    }catch(error) {
+      alerts.basicAlert("error", `Error save Users${error}`, "error")
+      return null ;
+    }
 
 	}
 
@@ -149,8 +154,10 @@ constructor(private http:HttpClient ) { }
     try {
       return this.http.get(`${environment.urlFirebase}users.json`);
     }
-    catch (error) {console.log(error)}
-    return null ;
+    catch (error) {
+      alerts.basicAlert("error", `Error get data call Users${error}`, "error")
+      return null ;
+    }
 
 	}
 

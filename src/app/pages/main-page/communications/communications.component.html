@@ -1,0 +1,95 @@
+<div class="content-wrapper" >
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1>Interesteds</h1>
+        </div>
+        <div class="col-sm-6">
+        </div>
+      </div>
+    </div><!-- /.container-fluid -->
+  </section>
+
+
+  <!-- Main content -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xxl-2 col-xl-4 col-lg-4 col-md-4">
+        <!-- Profile Image -->
+        <div class="card card-primary card-outline">
+          <div class="card-body box-profile">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="text-center">
+                  <img img src="{{profile.picture}}" class="rounded-circle" width="100" alt="User profile picture">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <h3 class="profile-username text-center">{{ profile.name }}</h3>
+                <div class="dropdown-divider mt-2 mb-4"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <p class="text-muted text-center" style="font-size: 18px;">{{ profile.position }}</p>
+                <p class="text-muted text-center">{{ profile.email }}</p>
+                <div class="dropdown-divider mt-2 mb-4"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                <div class="d-flex justify-content-xl-end justify-content-center d-inline text-nowrap" style="font-weight: bold; font-size: 11px; color: #595959; ">
+                  {{'organ' | translate}}
+                </div>
+              </div>
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                <div class="d-flex justify-content-xl-start justify-content-center d-inline text-nowrap" style="font-size: 10px; font-weight: normal; color: #4f6d7a; ">
+                  {{ profile.organization }}
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                <div class="d-flex justify-content-xl-end justify-content-center d-inline text-nowrap" style="font-weight: bold; font-size: 11px; color: #595959; ">
+                  {{'follow' | translate}}
+                </div>
+              </div>
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                <div class="d-flex justify-content-xl-start justify-content-center d-inline text-nowrap" style="font-size: 10px; font-weight: normal; color: #4f6d7a; ">
+                  {{ profile.follow}}
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                <div class="d-flex justify-content-xl-end justify-content-center d-inline text-nowrap" style="font-weight: bold; font-size: 11px; color: #595959; ">
+                  {{'project' | translate}}
+                </div>
+              </div>
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                <div class="d-flex justify-content-xl-start justify-content-center d-inline text-nowrap" style="font-size: 10px; font-weight: normal; color: #4f6d7a; ">
+                  {{ profile.project}}
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 ">
+                <div class="dropdown-divider mt-2 mb-4"></div>
+              </div>
+            </div>
+            <div class="row justify-content-center">
+              <div class="col-9 ">
+                <button mat-button mat-dialog-close class="btn btn-primary btn-block">
+                  {{ 'print' | translate}}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.card -->
+      </div>
+01

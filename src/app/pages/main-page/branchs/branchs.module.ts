@@ -8,14 +8,16 @@ import { BranchsRoutingModule } from './branchs-routing.module';
 //componente
 import { BranchsComponent } from './branchs.component';
 import { NewBranchComponent } from './new-branch/new-branch.component';
+import { EditBranchComponent } from './edit-branch/edit-branch.component';
+import { DeleteBranchsComponent } from './delete-branchs/delete-branchs.component';
+
 
 //Angular Material
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-import { EditBranchComponent } from './edit-branch/edit-branch.component';
-import { DeleteBranchsComponent } from './delete-branchs/delete-branchs.component';
+
 
 
 @NgModule({

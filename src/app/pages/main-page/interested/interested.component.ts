@@ -40,8 +40,7 @@ export class InterestedComponent implements OnInit{
   	/*=============================================
 	Variable para nombrar las columnas de nuestra tabla en Angular Material
 	=============================================*/
-  displayedColInteres: string[] = [  'numberposition',
-  'email', 'actions'];
+  displayedColInteres: string[] = ['numberposition', 'email','actions'];
 
   /*=============================================
   	Variable global que instancie la data que aparecerá en la Tabla
@@ -72,7 +71,8 @@ export class InterestedComponent implements OnInit{
 	@ViewChild(MatSort) sort!: MatSort;
 
 
-  constructor(public translateService: TraductorService, private trackingService : TrackingService, private interesService : InteresService,
+  constructor(public translateService: TraductorService, private trackingService : TrackingService,
+              private interesService : InteresService,
                public dialog : MatDialog,) { }
 
   ngOnInit(): void {
@@ -90,9 +90,9 @@ export class InterestedComponent implements OnInit{
     		}else{
 
     			this.screenSizeSM = false;
-
     			this.displayedColInteres.splice(1, 0, 'displayName');
     			this.displayedColInteres.splice(2, 0, 'position');
+          this.displayedColInteres.splice(3, 0, 'phone');
 
     		}
 
@@ -125,6 +125,8 @@ export class InterestedComponent implements OnInit{
           numberposition:numberposition++,
           active:resp[a].active,
           avg:resp[a].avg,
+          branch:resp[a].branch,
+          company:resp[a].company,
           email:resp[a].email,
           follow:resp[a].follow,
           idinter:resp[a].idinter,
@@ -168,7 +170,13 @@ export class InterestedComponent implements OnInit{
 
          dialogRef.afterClosed().subscribe(result => {
            if (result) {
+
+            //alerts.basicAlert("Ok", 'The User has been saved', "success");
+             alerts.confirmAlert('Se realizo el registro correctamente', 'Se ha agregado un nuevo interesado', 'success', 'Ok').then((result) => {
+
                this.getdataIntere();
+             });
+
            }
          })
 
@@ -176,7 +184,23 @@ export class InterestedComponent implements OnInit{
 
 
     editInteres(id:string) {
+      const dialogRef = this.dialog.open(EditInterestedComponent, {
+        data: { id: id }
+      })
 
+      /*=============================================
+      Actualizar el listado de la tabla
+      =============================================*/
+
+      dialogRef.afterClosed().subscribe(result => {
+
+        if (result) {
+
+          this.getdataIntere();
+
+        }
+
+      })
     }
 
 

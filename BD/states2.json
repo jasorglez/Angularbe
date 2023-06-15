@@ -1,0 +1,128 @@
+{
+  "-MBsfaIcfGpj7treR0Y": {
+    "sClaveEstado": "1",
+    "sNombre": "AGUASCALIENTES"
+  },
+    "-RPxbtGzLki7treT4Y": {
+    "sClaveEstado": "2",
+    "sNombre": "BAJA CALIFORNIA"
+  },
+  "-FZfgtrxbtGzLki7t4tuM": {
+    "sClaveEstado": "3",
+    "sNombre": "BAJA CALIFORNIA SUR"
+  },
+   "id_Estados4" :{
+    "sClaveEstado": "4",
+    "sNombre": "CAMPECHE"
+  },
+  "id_Estados5": {
+    "sClaveEstado": "5",
+    "sNombre": "COAHUILA DE ZARAGOZA"
+  },
+  "id_Estados6": {
+    "sClaveEstado": "6",
+    "sNombre": "COLIMA"
+  },
+  "id_Estados7" : {
+    "sClaveEstado": "7",
+    "sNombre": "CHIAPAS"
+  },
+  "id_Estados8": {
+    "sClaveEstado": "8",
+    "sNombre": "CHIHUAHUA"
+  },
+  "id_Estados9": {
+    "sClaveEstado": "9",
+    "sNombre": "DISTRITO FEDERAL"
+  },
+  "id_Estados10": {
+    "sClaveEstado": "10",
+    "sNombre": "DURANGO"
+  },
+  "id_Estados11": {
+    "sClaveEstado": "11",
+    "sNombre": "GUANAJUATO"
+  },
+  "id_Estados12": {
+    "sClaveEstado": "12",
+    "sNombre": "GUERRERO"
+  },
+  "id_Estados13": {
+    "sClaveEstado": "13",
+    "sNombre": "HIDALGO"
+  },
+  "id_Estados14": {
+    "sClaveEstado": "14",
+    "sNombre": "JALISCO"
+  },
+  "id_Estados15": {
+    "sClaveEstado": "15",
+    "sNombre": "ESTADO DE MEXICO"
+  },
+  "id_Estados16": {
+    "sClaveEstado": "16",
+    "sNombre": "MICHOACAN DE OCAMPO"
+  },
+  "id_Estados17": {
+    "sClaveEstado": "17",
+    "sNombre": "MORELOS"
+  },
+ "id_Estados18": {
+    "sClaveEstado": "18",
+    "sNombre": "NAYARIT"
+  },
+  "id_Estados19": {
+    "sClaveEstado": "19",
+    "sNombre": "NUEVO LEON"
+  },
+  "id_Estados20": {
+    "sClaveEstado": "20",
+    "sNombre": "OAXACA"
+  },
+  "id_Estados21": {
+    "sClaveEstado": "21",
+    "sNombre": "PUEBLA"
+  },
+    "id_Estados22": {
+    "sClaveEstado": "22",
+    "sNombre": "QUERETARO"
+  },
+  "id_Estados23": {
+    "sClaveEstado": "23",
+    "sNombre": "QUINTANA ROO"
+  },
+    "id_Estados24": {
+    "sClaveEstado": "24",
+    "sNombre": "SAN LUIS POTOSI"
+  },
+  "id_Estados25": {
+    "sClaveEstado": "25",
+    "sNombre": "SINALOA"
+  },
+  "id_Estados26": {
+    "sClaveEstado": "26",
+    "sNombre": "SONORA"
+  },
+  "id_Estados27": {
+    "sClaveEstado": "27",
+    "sNombre": "TABASCO"
+  },
+  "id_Estados28": {
+    "sClaveEstado": "28",
+    "sNombre": "TAMAULIPAS"
+  },
+  "id_Estados29": {
+    "sClaveEstado": "29",
+    "sNombre": "TLAXCALA"
+  },
+  "id_Estados30": {
+    "sClaveEstado": "30",
+    "sNombre": "VERACRUZ DE IGNACIO DE LA LLAVE"
+  },
+  "id_Estados31": {
+    "sNombre": "YUCATAN"
+  },
+  "id_Estados32": {
+    "sNombre": "ZACATECAS"
+  }
+}

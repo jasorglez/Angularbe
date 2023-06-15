@@ -127,7 +127,7 @@ export class TrackingService {
   }
 
 
-  
+
 
 	getDataTracking(valoruser :string){
 
@@ -176,7 +176,6 @@ export class TrackingService {
       })
     );
   }
-
 
 
 

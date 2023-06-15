@@ -58,6 +58,14 @@ export class InteresService {
     return this.http.delete(`${environment.urlFirebase}interested/${id}.json?auth=${token}`);
 
 	}
+  getItem(id: string) {
 
+    return this.http.get(`${environment.urlFirebase}interested/${id}.json`);
+
+  }
+  patchData(id: string, data: object, token: any) {
+    return this.http.patch(`${environment.urlFirebase}interested/${id}.json?auth=${token}`, data);
+    
+  }
 
 }

@@ -89,20 +89,16 @@ saveBranch(){
 
   const dataBranch: Ibranch = {
 
-      active         : 1,
-      idbra          : this.f.controls.idbra.value ?? 0 + 1,
-      colony         : this.f.controls.colony.value ?? '',
-      country        : 'MX',
-      cp             : this.f.controls.cp.value ?? 0,
-      id_company     :0,
-      id_state       :0,
-	  	iva            :0,
-      locality       : this.f.controls.locality.value ?? '',
-    	municipality   : this.f.controls.municipality.value ?? '',
-      name           : this.f.controls.name.value ?? '',
-    	number_exterior: this.f.controls.number_exterior.value ?? 0,
-    	number_interior: this.f.controls.number_interior.value ?? 0,
-      street         : this.f.controls.street.value ?? ''
+       active          : 1,
+       idbra           : this.f.controls.idbra.value ?? 0 + 1,
+       colony          : this.f.controls.colony.value ?? '',
+       country         : 'MX',
+       cp              : this.f.controls.cp.value ?? 0,
+       id_company      :'0',
+       state          :'',
+	  	 locality       : this.f.controls.locality.value ?? '',
+    	 name           : this.f.controls.name.value ?? '',
+    	 street          : this.f.controls.street.value ?? ''
 
      }
 

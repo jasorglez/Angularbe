@@ -18,19 +18,20 @@ import { alerts } from 'src/app/helpers/alerts';
 @Component({
   selector: 'app-newInterested',
   templateUrl: './newInterested.component.html',
-  styleUrls: ['./newInterested.component.css']
+  styleUrls: ['./newInterested.component.css'],
+
 })
 export class NewInterestedComponent implements OnInit {
 
 
-   numbers: number[] = [1, 2, 3, 4, 5];
-   selectedNumber: number;
-   interes   : 1 ;
-   influence : 2 ;
-   power     : 3 ;
-   selectedorganization: string = 'Organizations';
+   numbers              : number[] = [1, 2, 3, 4, 5];
+   selectedNumber       : number;
+   interes              : number;
+   influence            : number;
+   power                : number;
+   selectedorganization : string = 'Organization';
    organizationData     : any[]  = [] ;
-
+   panelOpenState = false;
 	/*=============================================
 	Creamos grupo de controles
 	=============================================*/
@@ -38,25 +39,29 @@ export class NewInterestedComponent implements OnInit {
 	public fis = this.formBuilder.group({
 
       active       : 1,
-      avg          : [, [Validators.required]],
+      avg          : 5,
       email        : ['', [Validators.required, Validators.email]],
-      follow       : 'Reporte Diario',
+      follow       : ['', Validators.required],
       iduser       : 0,
       interes      : 0,
       influence    : 0,
       name         : ['', [Validators.required]],
-      phone        : '',
+      phone        : ['', [Validators.required]],
       picture      : environment.urlProfile,
       position     : ['', Validators.required],
       power        : 0,
       organization : '',
-      role         : ''
+      role         : ['', Validators.required],
    } )
 
-    get name() { return this.fis.controls['name'] }
-    get avg()  { return this.fis.get('avg')}
+    get name()      { return this.fis.controls['name'] }
+    get position()  { return this.fis.controls['position'] }
+    get role()      { return this.fis.controls['role'] }
+    get follow()    { return this.fis.controls['follow'] }
+    get avg()       { return this.fis.get('avg')}
+    //get interes()   { return this.fis.controls['sinteres'] }
 
-      /*=============================================
+  /*=============================================
 	  Variable que valida el envío del formulario
 	=============================================*/
 
@@ -84,8 +89,8 @@ export class NewInterestedComponent implements OnInit {
     this.getOrganizations();
 
 
-  }
 
+  }
 
   onSelectOrganization(): void {
     console.log('Id Company ->', this.selectedorganization);
@@ -108,8 +113,10 @@ export class NewInterestedComponent implements OnInit {
 
 uploadImage($event: any) {
   const file = $event.target.files[0];
+
   this.selectedImage = file;
-  const path = `images/${file.name}`;
+
+  const path = `images/${this.storageService.generateRandom()}${file.name}`;
 
   if (!file) {
     this.imageUrl = ''; // No hay imagen seleccionada, establecemos la URL vacía
@@ -146,19 +153,21 @@ uploadImage($event: any) {
     Validamos y capturamos la informacion del formulario en la interfaz
     =============================================*/
        const dataInteres: Iinteres = {
-              active      : 1,
+              active       : 1,
               avg          : this.fis.controls.avg.value ?? 0,
+              branch       : this.trackingService.getBranch(),
+              company      : this.trackingService.getCompany(),
               email        : this.fis.controls.email.value ?? '',
               follow       : this.fis.controls.follow.value ?? '',
               idinter      : 1 ,
-              interes      : this.interes,
-              influence    : this.influence,
+              interes      : this.fis.controls.interes.value ?? 0,
+              influence    : this.fis.controls.influence.value ?? 0,
               name         : this.fis.controls.name.value ?? '',
               phone        : this.fis.controls.phone.value ?? '',
               picture      : this.fis.controls.picture.value ?? '',
               position     : this.fis.controls.position.value ?? '',
               project      : this.trackingService.getProject(),
-              power        : this.power,
+              power        : this.fis.controls.power.value ?? 0,
               organization : this.fis.controls.organization.value ?? '',
               role         : this.fis.controls.role.value ?? ''
          }
@@ -174,7 +183,9 @@ uploadImage($event: any) {
                       this.interesService.postData(dataInteres, localStorage.getItem('token')).subscribe(
                         resp=>{
                                this.dialogRef.close('save')
-                                alerts.basicAlert("Ok", 'The User has been saved', "success")
+                                //alerts.basicAlert("Ok", 'The User has been saved', "success")
+
+
                         },
                              err=>{
                                alerts.basicAlert("Error", 'User saving error', "error")

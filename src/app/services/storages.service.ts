@@ -42,6 +42,13 @@ export class StoragesService {
   }
 
 
+  generateRandom() {
+    const letters = 'abcdefghijklmnopqrstuvwxyz';
+    const randomLetter1 = letters.charAt(Math.floor(Math.random() * letters.length));
+    const randomLetter2 = letters.charAt(Math.floor(Math.random() * letters.length));
+    const randomNumber = Math.floor(Math.random() * 10);
+    return randomLetter1 + randomLetter2 + randomNumber;
+  }
 
 
 }

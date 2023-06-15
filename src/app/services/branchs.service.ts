@@ -10,48 +10,44 @@ export class BranchsService {
 
   constructor(private http: HttpClient) { }
 
-	/*=============================================
-	Tomar la data de la colección Empresas en Firebase
-	=============================================*/
 
-    getData(){
+    getData(equalTo:string){
 
-        return this.http.get(`${environment.urlFirebase}branchs.json`);
+      try {
+
+        return this.http.get(`${environment.urlFirebase}branchs.json?orderBy="id_company"&equalTo="${equalTo}"`);
+
+      }catch(error){
+        console.log(error);
+        return null ;
+      }
 
     }
 
-/*=============================================
-	Tomar data filtrada de la colección branch en Firebase
-	=============================================*/
 
 	getFilterData(orderBy:string, equalTo:string){
 
 		return this.http.get(`${environment.urlFirebase}branchs.json?orderBy="${orderBy}"&equalTo="${equalTo}
           "&print=pretty`);
-
 	}
 
-  /*=============================================
-	Guardar información de la categoría
-	=============================================*/
 
-	postData(data: Ibranch, token:any){
+  postData(data: Ibranch, token:any){
+    try {
+      return this.http.post(`${environment.urlFirebase}branchs.json?auth=${token}`, data);
 
-		return this.http.post(`${environment.urlFirebase}branchs.json?auth=${token}`, data);
+    }catch(error) {
+    //  alerts.basicAlert("error", `Error save Users${error}`, "error")
+      console.log("Error al grabar Companiaa", error)
+      return null ;
+    }
+  }
 
-	}
-
-  /*-------------------------
-   Actualizar informacion
-  --------------------------*/
 
   patchData(id:string, data:object, token:any){
 		return this.http.patch(`${environment.urlFirebase}branchs/${id}.json?auth=${token}`, data);
 	}
 
-  /*---------------------------------------------
-    Tomar un item de la data branch en Firebase
-   ---------------------------------------------*/
 
   getItem(id: string) {
 
@@ -59,14 +55,37 @@ export class BranchsService {
 
 	}
 
-	 /*=============================================
-	Eliminar categoría
-	=============================================*/
 
-	deleteData(id:string){
+  
+  async addpermisBranch(branchs: string, id_branchs: string, id_company: string): Promise<void> {
+    const databra = {
+      branchs,
+      id_branchs,
+      id_company
+    };
 
-		return this.http.delete(`${environment.urlFirebase}branchs/${id}.json`);
+    try {
 
-	}
+      await this.http.post(`${environment.urlFirebase}permissionsxbranchs.json`, databra).toPromise();
+
+    } catch (error) {
+
+      console.error('Error for create the permission of the Branch:', error);
+
+      throw error; // Lanzar el error para manejarlo en la función llamadora si es necesario
+    }
+  }
+
+
+  deleteBranchs(id:string, token: any){
+    try {
+     return this.http.delete(`${environment.urlFirebase}branchs/${id}.json?auth=${token}`);
+    }catch(error) {
+       console.log(error)
+       return null ;
+    }
+ 
+   }
+
 
   }
