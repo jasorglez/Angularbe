@@ -40,8 +40,9 @@ import { TranslateModule } from '@ngx-translate/core';
     InterestedRoutingModule,
     MatTableModule,
     MatPaginatorModule,
-    MatTabsModule,
     MatSortModule,
+    MatTabsModule,
+
     MatIconModule,
     MatCardModule,
     MatDialogModule,

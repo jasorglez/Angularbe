@@ -54,10 +54,15 @@ export class InteresService {
 
 
   deleteInteres(id:string, token: any){
-
-    return this.http.delete(`${environment.urlFirebase}interested/${id}.json?auth=${token}`);
+    try {
+      return this.http.delete(`${environment.urlFirebase}interested/${id}.json?auth=${token}`);
+    }catch(error){
+      console.log("Error al borrar", error) ;
+      return null ;
+   }
 
 	}
+
   getItem(id: string) {
 
     return this.http.get(`${environment.urlFirebase}interested/${id}.json`);
@@ -65,7 +70,7 @@ export class InteresService {
   }
   patchData(id: string, data: object, token: any) {
     return this.http.patch(`${environment.urlFirebase}interested/${id}.json?auth=${token}`, data);
-    
+
   }
 
 }

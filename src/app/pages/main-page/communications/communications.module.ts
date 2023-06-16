@@ -8,6 +8,10 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { CommunicationsRoutingModule } from './communications.routing';
 
+// estos 3 son forzosos para la paginacion y la conexion del data table
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 
 @NgModule({
@@ -15,7 +19,10 @@ import { CommunicationsRoutingModule } from './communications.routing';
   imports: [
     CommonModule,
     CommunicationsRoutingModule,
-    TranslateModule
+    TranslateModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
   ]
 })
 

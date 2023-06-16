@@ -3,6 +3,7 @@
     "active"        :1,
     "name"          : "",
     "procces"       : "Ejecucion",
+    "information"   : "Info",
     "format"        : "PDF",
     "area"          : "Control Obra",
     "owner"         : "Heber Arce",
@@ -10,5 +11,18 @@
     "frequence"     : "Diario, 5 PM",
     "group"         : "Ingenieria",
     "id_interested" : "-MSJiei9238sjwqhwmin"
+  },
+  "-KPsdbJqlXpj7treU4587M": {
+    "active"        :1,
+    "name"          : "",
+    "procces"       : "?Inicion",
+    "information"   : "Info",
+    "format"        : "Word",
+    "area"          : "Superintendencia",
+    "owner"         : "Jesus Montes",
+    "reference"     : "Anexo C, seccion AXI",
+    "frequence"     : "Diario, 8 AM",
+    "group"         : "Ingenieria",
+    "id_interested" : "-MSJiewe2qi8sjwqhwmin"
   }
 }

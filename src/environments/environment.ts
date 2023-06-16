@@ -26,7 +26,7 @@ export const environment = {
 
   urlFiles: 'gs://beapp-501d1.appspot.com',
 
-  urlProfile :'https://firebasestorage.googleapis.com/v0/b/beapp-501d1.appspot.com/o/images%2Fprofile.png?alt=media&token=59949381-f259-4124-bed1-c64de4494fc8',
+  urlProfile :'https://firebasestorage.googleapis.com/v0/b/beapp-501d1.appspot.com/o/images%2Fprofile.png?alt=media&token=b7e9886b-59d9-43da-9c8e-f91017225b8d',
 
   adminFiles: 'http://localhost/sistemas-angular/marketplace/src/assets/img/index.php?key=AIzaSyDxCBGKk8nT09hdW85-PyOkhw5_JPZLF1A',
 
