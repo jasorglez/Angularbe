@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
 import { functions } from 'src/app/helpers/functions';
 import { MatDialogRef } from '@angular/material/dialog';
 
@@ -13,6 +12,7 @@ import { TrackingService } from 'src/app/services/tracking.service';
 import { environment } from 'src/environments/environment';
 
 import { alerts } from 'src/app/helpers/alerts';
+import { FormBuilder, Validators } from '@angular/forms';
 
 
 @Component({
@@ -74,7 +74,8 @@ export class NewInterestedComponent implements OnInit {
   loadData = false;
   url : string = '' ;
 
-  constructor(private storageService: StoragesService, private interesService : InteresService, private catalogServices: CatalogService, private trackingService: TrackingService, private formBuilder: FormBuilder,
+  constructor(private storageService: StoragesService, private interesService : InteresService, private catalogServices: CatalogService,
+    private trackingService: TrackingService, private formBuilder: FormBuilder,
     public dialogRef: MatDialogRef<NewInterestedComponent> ) {
         this.selectedNumber = this.numbers[0]}
 
@@ -166,7 +167,7 @@ uploadImage($event: any) {
               phone        : this.fis.controls.phone.value ?? '',
               picture      : this.fis.controls.picture.value ?? '',
               position     : this.fis.controls.position.value ?? '',
-              project      : this.trackingService.getProject(),
+              id_project   : this.trackingService.getProject(),
               power        : this.fis.controls.power.value ?? 0,
               organization : this.fis.controls.organization.value ?? '',
               role         : this.fis.controls.role.value ?? ''
@@ -184,7 +185,6 @@ uploadImage($event: any) {
                         resp=>{
                                this.dialogRef.close('save')
                                 //alerts.basicAlert("Ok", 'The User has been saved', "success")
-
 
                         },
                              err=>{

@@ -110,51 +110,54 @@ export class InterestedComponent implements OnInit{
 
     getdataIntere(){
 
-      this.loadData = true;
+            this.loadData = true;
 
-      this.interesService.getDataInteres().subscribe((resp:any)=>{
+            console.log(this.trackingService.getProject())
 
-        /*=============================================
-      Integrando respuesta de base de datos con la interfaz
-      =============================================*/
-        let numberposition = 1;
+            this.interesService.getDataInteres(this.trackingService.getProject())
+            .subscribe((resp:any)=>{
 
-        this.interes = Object.keys(resp).map(a=> ({
+              /*=============================================
+            Integrando respuesta de base de datos con la interfaz
+            =============================================*/
+              let numberposition = 1;
 
-          id:a,
-          numberposition:numberposition++,
-          active:resp[a].active,
-          avg:resp[a].avg,
-          branch:resp[a].branch,
-          company:resp[a].company,
-          email:resp[a].email,
-          follow:resp[a].follow,
-          idinter:resp[a].idinter,
-          interes:resp[a].interes,
-          influence:resp[a].influence,
-          name:resp[a].name,
-          phone:resp[a].phone,
-          picture:resp[a].picture,
-          position:resp[a].position,
-          project:resp[a].project,
-          power:resp[a].power,
-          organization:resp[a].organization,
-          role:resp[a].role,
+              this.interes = Object.keys(resp).map(a=> ({
 
-        } as Iinteres ));
+                id:a,
+                numberposition :numberposition++,
+                active         :resp[a].active,
+                avg            :resp[a].avg,
+                branch         :resp[a].branch,
+                company        :resp[a].company,
+                email          :resp[a].email,
+                follow         :resp[a].follow,
+                idinter        :resp[a].idinter,
+                interes        :resp[a].interes,
+                influence      :resp[a].influence,
+                name           :resp[a].name,
+                phone          :resp[a].phone,
+                picture        :resp[a].picture,
+                position       :resp[a].position,
+                id_project     :resp[a].project,
+                power          :resp[a].power,
+                organization   :resp[a].organization,
+                role           :resp[a].role,
 
-            // Tomamos el primer registro
-        this.profile = this.interes[this.currentIndex];
+              } as Iinteres ));
 
-        //console.log("this.profile", this.profile);
+                  // Tomamos el primer registro
+              this.profile = this.interes[this.currentIndex];
 
-        // Creamos el dataSource
-        this.interesDataSource = new MatTableDataSource(this.interes);
-        this.interesDataSource.paginator = this.paginator;
-        this.interesDataSource.sort = this.sort;
-        this.loadData = false;
+              //console.log("this.profile", this.profile);
 
-      })
+              // Creamos el dataSource
+              this.interesDataSource = new MatTableDataSource(this.interes);
+              this.interesDataSource.paginator = this.paginator;
+              this.interesDataSource.sort = this.sort;
+              this.loadData = false;
+
+        })
 
      }
 

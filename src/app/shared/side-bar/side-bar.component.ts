@@ -6,6 +6,8 @@ import { TrackingService } from 'src/app/services/tracking.service';
 import { CompanysService } from 'src/app/services/companys.service';
 import { AuthService } from 'src/app/services/auth.service';
 
+import { alerts } from 'src/app/helpers/alerts';
+
 import { get } from 'firebase/database';
 
 @Component({
@@ -15,19 +17,16 @@ import { get } from 'firebase/database';
 })
 export class SideBarComponent implements OnInit {
 
-   mail            : string = '' ;
-
    companyData     : any[]  = [] ;
    branchData      : any[]  = [] ;
    projectData     : any[]  = [] ;
 
-   selectedCompany : string ;
-   selectedBranch  : string ;
-   selectedProject : string ;
+   selectedCompany   : string = '';
+   selectedProjectId : string ;
+   selectedBranchId  : string ;
 
   constructor(public translateService: TraductorService, public trackingService : TrackingService, public companysService : CompanysService, public authService : AuthService,
     private router: Router) { }
-
 
 
         home() {
@@ -40,13 +39,13 @@ export class SideBarComponent implements OnInit {
           this.router.navigate(['/branchs']);
         }
 
+        navigateToCompanys()  {
+          this.router.navigate(['/companys']);
+        }
+
          navigateToUsers()  {
           this.trackingService.addLog('', 'Eleccion del menu Users/Usuarios', 'Menu Side Bar', '')
           this.router.navigate(['/users']);
-        }
-
-        navigateToCompanys()  {
-          this.router.navigate(['/companys']);
         }
 
         navigateToInterested()  {
@@ -57,61 +56,80 @@ export class SideBarComponent implements OnInit {
           this.router.navigate(['/communications']);
         }
 
+
       	ngOnInit(): void  {
-            this.mail = this.trackingService.getEmail()
-            this.getpermissionxCompanys() ;
+              this.getpermissionxCompanys() ;
          }
 
-         onSelectCompany(): void {
-          console.log('Id Compnay ->', this.selectedCompany);
-          this.trackingService.setCompany(this.selectedCompany);
+
+
+      //empiezan los procedimientos para las llamadas de los combobox
+      //obtener los permisos de la cia
+      getpermissionxCompanys() {
+
+          this.companysService.getpermissionsxCompany(this.trackingService.getEmail()).subscribe((data) => {
+            this.companyData = Object.values(data);
+
+            if (this.companyData.length > 0) {
+              this.selectedCompany = this.companyData[0].id_company;
+              this.trackingService.setCompany(this.selectedCompany);
+              this.getpermissionxBranchs();
+            }
+
+           });
+        }
+
+        onCompanysSelected(event: Event): void {
+          const target = event.target as HTMLSelectElement;
+          this.selectedCompany = target.value;
           this.getpermissionxBranchs();
         }
 
-        onSelectBranch() {
-          console.log('Id Branch ->', this.selectedBranch);
-          this.trackingService.setBranch(this.selectedBranch) ;
+
+        getpermissionxBranchs() {
+
+          this.companysService.getpermissionsxBranch(this.selectedCompany, this.trackingService.getEmail()).subscribe((databranch) => {
+            this.branchData = Object.values(databranch);
+            if (this.branchData.length > 0) {
+
+              this.selectedBranchId = this.branchData[0].id_branchs ;
+              this.trackingService.setBranch(this.selectedBranchId) ;
+              this.getpermissionxProjects();
+            }else{
+               alerts.basicAlert("Error", "The user has not Branchs asssigns", "error")
+            }
+
+          });
+        }
+
+        onBranchsSelected(event: Event): void {
+          const target = event.target as HTMLSelectElement;
+          this.selectedBranchId = target.value;
           this.getpermissionxProjects();
         }
 
-        onSelectProject() {
-          this.trackingService.setProject(this.selectedProject)
-          console.log('Id Project ->', this.selectedProject);
-        }
 
+        // Datos de Projectos
 
-      //obtener los permisos de la cia
-        getpermissionxCompanys() {
-          this.companysService.getpermissionsxCompany(this.mail).subscribe((data) => {
-            this.companyData = Object.values(data);
-            if (this.companyData.length > 0) {
-              this.selectedCompany = this.companyData[0].id_company; // Establecer el primer valor como seleccionado
-              this.getpermissionxBranchs();
-            }
-          });
-        }
+        getpermissionxProjects(): void {
+          this.companysService.getpermissionsxProject(this.selectedBranchId).subscribe((data) => {
 
-        getpermissionxBranchs() {
-          this.companysService.getpermissionsxBranch(this.selectedCompany).subscribe((data) => {
-            this.branchData = Object.values(data);
-            if (this.branchData.length > 0) {
-              this.selectedBranch = this.branchData[0].id_branchs; // Establecer el primer valor como seleccionado
-              this.getpermissionxProjects();
-            }
-          });
-        }
-
-
-        getpermissionxProjects() {
-          this.companysService.getpermissionsxProject(this.selectedBranch).subscribe((data) => {
             this.projectData = Object.values(data);
             if (this.projectData.length > 0) {
-              this.selectedProject = this.projectData[0].id_projects; // Establecer el primer valor como seleccionado
-              this.onSelectProject()
-            } else {
-              this.selectedProject = null; // No hay projects disponibles, se establece como null
+               this.selectedProjectId = this.projectData[0].id_projects ;
+               this.trackingService.setProject(this.selectedProjectId) ;
+            }
+            else
+            {
+              alerts.basicAlert("Error", "No existen Proyectos para este usuario.", "error");
             }
           });
+        }
+
+        onProjectSelected(event: Event): void {
+          const target = event.target as HTMLSelectElement;
+          this.selectedProjectId = target.value;
+          this.trackingService.setProject(this.selectedProjectId) ;
         }
 
 

@@ -56,10 +56,11 @@ export class BranchsService {
 	}
 
 
-  
-  async addpermisBranch(branchs: string, id_branchs: string, id_company: string): Promise<void> {
+
+  async addpermisBranch(branchs: string, email: string, id_branchs: string, id_company: string): Promise<void> {
     const databra = {
       branchs,
+      email,
       id_branchs,
       id_company
     };
@@ -84,7 +85,7 @@ export class BranchsService {
        console.log(error)
        return null ;
     }
- 
+
    }
 
 

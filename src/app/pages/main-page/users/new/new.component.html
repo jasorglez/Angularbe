@@ -360,33 +360,37 @@
             <div class="card-body">
               <ng-container *ngIf="!loadData">
                 <mat-dialog-actions>
-                 
+
                   <div class="row">
                                 <div class="col-md-6">
-                                  
+
                                   <div class="form-group mb-3">
-                                      <input type="text" class="form-control" 
-                                            placeholder="{{ 'code' | translate }} {{ 'project' | translate }}" 
+                                      <input type="text" class="form-control"
+                                            placeholder="{{ 'code' | translate }} {{ 'project' | translate }}"
                                             formControlName="codep" />
-                                         
+
                                             <div *ngIf="fprojects.get('codep').invalid && (fprojects.get('codep').dirty || fprojects.get('codep').touched)" class="invalid-feedback">
                                               <div *ngIf="fprojects.get('codep').errors['required']">
                                                 {{ 'req' | translate}}  {{ 'code' | translate }}
                                               </div>
                                             </div>
-                                                                
-                                      <input type="text" class="form-control" 
-                                             placeholder="{{ 'contract' | translate }} {{ 'project' | translate }}" 
+
+                                      <input type="text" class="form-control"
+                                             placeholder="{{ 'contract' | translate }} {{ 'project' | translate }}"
                                              formControlName="contractp" />
                                   </div>
                                 </div>
-                                
+
                                   <div class="col-md-6">
                                     <div class="form-group mb-3">
                                       <div class="card card-primary card-img">
                                         <div class="text-center">
                                           <label for="pictureUpload" class="mb-3">
-                                            <img [src]="imageUrl" width="100" height="100" *ngIf="imageUrl" />
+                                            <img src="./assets/img/profile.png"   alt="HCO Logo"
+                                                 class="brand-image img-circle elevation-0"
+                                                 style="opacity: 0.8"
+                                            />
+
                                             {{ 'Avatar/Foto' | translate }}
                                           </label>
                                           <input type="file" id="pictureUpload" (change)="uploadImage($event)" style="display: none;" />
@@ -394,18 +398,18 @@
                                       </div>
                                     </div>
                                   </div>
-                            
+
                                 <div class="col-md-12">
                                   <div class="form-group mb-3">
-                                
+
                                     <input type="text" class="form-control" style="height: 100px;" placeholder="{{ 'description' | translate }} {{ 'project' | translate }}" formControlName="descriptionp" />
-                                
+
                                     <input type="text" class="form-control" placeholder="{{ 'tender' | translate }} " formControlName="tenderp" />
-                    
+
                                     <input type="text" class="form-control" placeholder="{{ 'ubication' | translate }}" formControlName="ubicationp" />
                                   </div>
                                 </div>
-                   
+
                   </div>
                 </mat-dialog-actions>
               </ng-container>
@@ -416,8 +420,8 @@
             </div>
           </form>
         </div>
-        
-        
+
+
 
   </div>
 

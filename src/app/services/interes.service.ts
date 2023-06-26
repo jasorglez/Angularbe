@@ -16,9 +16,16 @@ export class InteresService {
   constructor( public http:HttpClient) { }
 
 
-	getDataInteres(){
-		return this.http.get(`${environment.urlFirebase}interested.json`);
-	}
+  getDataInteres(valor: string): Observable<any> {
+    try {
+      const apiUrl = `${environment.urlFirebase}interested.json?orderBy="id_project"&equalTo="${valor}"`;
+      return this.http.get(apiUrl);
+    } catch (error) {
+      console.log("Error al obtener los intereses", error);
+      throw error;
+    }
+  }
+
 
 
   checkIfDataExists(email: string): Observable<boolean> {
@@ -39,8 +46,12 @@ export class InteresService {
 
 
 	postData(data: Iinteres, token:any){
-
-		return this.http.post(`${environment.urlFirebase}interested.json?auth=${token}`, data);
+     try{
+      return this.http.post(`${environment.urlFirebase}interested.json?auth=${token}`, data);
+     }catch(error) {
+      console.log("Error al guardar ", error ) ;
+      return null ;
+     }
 
 	}
 
@@ -72,5 +83,6 @@ export class InteresService {
     return this.http.patch(`${environment.urlFirebase}interested/${id}.json?auth=${token}`, data);
 
   }
+
 
 }

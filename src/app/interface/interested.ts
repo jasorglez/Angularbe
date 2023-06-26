@@ -12,7 +12,7 @@ export interface Iinteres {
     phone        : string;
     picture      : string;
     position     : string;
-    project      : string;
+    id_project   : string;
     power        : number;
     organization : string;
     role         : string;

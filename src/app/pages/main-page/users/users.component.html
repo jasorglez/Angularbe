@@ -163,7 +163,7 @@
                               </div>
                             </div>
                             <div class="card-footer bg-white">
-                              <mat-paginator [hidden]="loadData" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+                              <mat-paginator [hidden]="loadData" [pageSizeOptions]="[15, 20, 25]" showFirstLastButtons></mat-paginator>
                             </div>
                           </div>
                         </div>
@@ -367,14 +367,14 @@
                                                             &nbsp;
                                                             <button mat-icon-button matTooltip="{{ 'ac' | translate}}  {{ 'branch' | translate }}"
                                                               class="btn btn-sm bg-gradient-blue"
-                                                              (click)="assignBranch(element.id, infcompany.id, element.name)" >
+                                                              (click)="assignBranch(element.id, profile.emailu, infcompany.id, element.name)" >
                                                               <i class="fas fa-paste"></i>
                                                             </button>
 
                                                             &nbsp;
                                                             <button mat-icon-button matTooltip="{{ 'dc' | translate}}  {{ 'branch' | translate }}"
                                                               class="btn btn-sm bg-gradient-red"
-                                                              (click)="desasigncomp(element.id, infcompany.id, element.name)" >
+                                                              (click)="desasignBranch(element.id, profile.emailu, infcompany.id, element.name)" >
                                                               <i class="fas fa-paste"></i>
                                                             </button>
 
@@ -480,20 +480,20 @@
                                                          class="btn btn-sm btn-danger"
                                                          (click)="deleteProjects(element.id)" >
                                                          <i class="fas fa-trash"></i>
-                                                         
+
                                                        </button>
 
                                                        &nbsp;
                                                        <button mat-icon-button matTooltip="{{ 'ac' | translate}}  {{ 'projects' | translate }}"
                                                          class="btn btn-sm bg-gradient-blue"
-                                                         (click)="assignProject(element.id, infbranch.id, element.contract)" >
+                                                         (click)="assignProject(element.id, profile.emailu, infbranch.id, element.contract)" >
                                                          <i class="fas fa-paste"></i>
                                                        </button>
 
                                                        &nbsp;
                                                        <button mat-icon-button matTooltip="{{ 'dc' | translate}}  {{ 'projects' | translate }}"
                                                          class="btn btn-sm bg-gradient-red"
-                                                         (click)="desasignProject(element.id, infbranch.id, element.contract)" >
+                                                         (click)="desasignProject(element.id, profile.emailu, infbranch.id, element.contract)" >
                                                          <i class="fas fa-paste"></i>
                                                        </button>
 

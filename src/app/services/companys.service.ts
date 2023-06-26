@@ -74,17 +74,52 @@ getEmpresasxEmail(orderBy:string, equalTo:string){
 
 
 
-getpermissionsxCompany(mail:string){
-   return this.http.get(`${environment.urlFirebase}permissionsxcompanys.json?orderBy="email"&equalTo="${mail}"&print=pretty`);
+getpermissionsxCompany(mail:string): Observable<any>{
+  try {
+    const apiUrl = `${environment.urlFirebase}permissionsxcompanys.json?orderBy="email"&equalTo="${mail}"`;
+     return this.http.get(apiUrl);
+  }
+  catch(error){
+    console.log("Error al Obtener permisos la cia", error)
+    throw Error ;
+    return null
+  }
+
  }
 
- getpermissionsxBranch(company:string){
-  return this.http.get(`${environment.urlFirebase}permissionsxbranchs.json?orderBy="id_company"&equalTo="${company}"&print=pretty`);
+
+ getpermissionsxBranch(id_company: string, mail: string): Observable<any> {
+  try {
+    const apiUrl= `${environment.urlFirebase}permissionsxbranchs.json?orderBy="id_company"&equalTo="${id_company}"`
+    return this.http.get(apiUrl)
+      .pipe(
+        map((permissions: any) => {
+          return Object.values(permissions).filter((permission: any) => {
+            return permission.id_company === id_company && permission.email === mail;
+          });
+        })
+      );
+  } catch (error) {
+    console.log("Error al obtener permisos de las sucursales", error);
+    throw Error ;
+    return null;
+  }
 }
 
-getpermissionsxProject(branch:string){
-  return this.http.get(`${environment.urlFirebase}permissionsxprojects.json?orderBy="id_branchs"&equalTo="${branch}"&print=pretty`);
+
+getpermissionsxProject(branch:string): Observable<any>{
+  try {
+    const apiUrl = `${environment.urlFirebase}permissionsxprojects.json?orderBy="id_branchs"&equalTo="${branch}"`
+    return this.http.get(apiUrl);
+  }catch(error) {
+    console.log("Error al Obtener permisos del Projecto", error)
+    throw Error ;
+    return null
+  }
+
 }
+
+
 
 postData(data: Icompany, token:any){
   try {
@@ -92,7 +127,7 @@ postData(data: Icompany, token:any){
 
   }catch(error) {
   //  alerts.basicAlert("error", `Error save Users${error}`, "error")
-    console.log("Error al grabar Companiaa", error)
+    console.log("Error al grabar Compania", error)
     return null ;
   }
 

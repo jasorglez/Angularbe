@@ -3,6 +3,9 @@ import { Observable, filter, forkJoin, map, of, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 
+import { EmailjsService } from 'src/app/services/emailjs.service.ts.service';
+import { MessagesService } from '../../../services/messages.service';
+
 @Component({
   selector: 'app-companys',
   templateUrl: './companys.component.html',
@@ -14,25 +17,63 @@ export class CompanysComponent implements OnInit{
 
      combinedData: any[] = [];
 
-     constructor(private http:HttpClient ) { }
+
+
+
+
+     constructor(private http:HttpClient, private messagesService : MessagesService ) { }
+
+
+
+
 
      ngOnInit(): void {
 
-          this.exampletap()
-          this.examplemap();
-          this.examplemapwithfillter() ;
+          /*    this.exampletap()
+              this.examplemap();
+              this.examplemapwithfillter() ;
 
-          this.getCompaniesPermission().subscribe(response => {
-            const [permissions, companies] = response;
-            this.combinedData = this.combineData(permissions, companies);
-            console.log("JOIN", this.combinedData)
-          }, error => {
-            console.error(error);
-          });
+              this.getCompaniesPermission().subscribe(response => {
+                const [permissions, companies] = response;
+                this.combinedData = this.combineData(permissions, companies);
+                console.log("JOIN", this.combinedData)
+              }, error => {
+                console.error(error);
+              }); */
 
-     }
+         //     this.sendEmails() ;
 
-     exampletap() {
+       this.messagesService.sendMessage();
+
+    }
+
+    public createTemplate(email: string): void {
+      const templateData = {
+        user_id: 'zlMs5PLsv4XRQhXkc', // Reemplaza con tu clave pública (public key) de EmailJS
+        template_name: 'flortemplate', // Nombre de la plantilla que deseas crear
+        subject: 'Subject of the template', // Asunto de la plantilla
+        html: '<p>HTML content of the template</p>', // Contenido HTML de la plantilla
+        email_address: email // Correo electrónico asociado a la plantilla
+      };
+
+      this.http.post('https://api.emailjs.com/api/v1.0/templates', templateData)
+        .subscribe(
+          response => {
+            console.log('Template created successfully:', response);
+          },
+          error => {
+            console.error('Error creating template:', error);
+          }
+        );
+    }
+
+
+
+
+
+
+
+  exampletap() {
         this.data$
         .pipe(
          map((number) => number * number),

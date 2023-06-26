@@ -1,3 +1,228 @@
-<p>
-  newcommunic works!
-</p>
+<!--
+*-----------------------------------------------------------------------------------------------------------------------------------------*
+* Descripcion:    Dialog Nuevo Interesado                                                                                                 *
+* Autor:          Jose Angel Soriano                                                                                                      *
+* Version:        1.0a1                                                                                                                   *
+* Fecha Creacion: 01/05/2023                                                                                                              *
+*-----------------------------------------------------------------------------------------------------------------------------------------*
+* Log de Modificación                                                                                                                     *
+*                                                                                                                                         *
+*   Fecha           Programador            Correccion                                     Descripcion                                     *
+* 05/06/2023    Heber Alejandro Arce      s/n Solicitud     Se reorganizo la estructura Bootstrap, se elimino la card-warning, se cambio  *
+*                                                           el invalid-feelback por invalid-tooltip, se cambiaron estilos y colores       *
+*-----------------------------------------------------------------------------------------------------------------------------------------*
+-->
+<h2 mat-dialog-title class="h2-dialog">{{ 'newcomunic' | translate }}</h2>
+<!-- Se inicializa el Formulario -->
+<form
+  autocomplete="off"
+  [formGroup]="fcommunications"
+  (ngSubmit)="saveCommunications()">
+
+  <!-- Contenido del dialog -->
+
+
+  <!-- Resto del código HTML... -->
+
+<!-- Contenido del dialog -->
+<!-- Resto del código HTML... -->
+
+<!-- Contenido del dialog -->
+<mat-dialog-content class="mat-typography">
+  <!-- Contenido del dialog -->
+  <ng-container>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-6">
+          <!-- Left Group -->
+          <div class="form-group">
+            <!-- Container Bootstrap -->
+            <div class="container-fluid">
+              <!-- Fila 1 Bootstrap -->
+              <div class="row">
+                <!-- Columna 1.1 Bootstrap Izquierda-->
+                <div class="col-sm-12">
+                  <!-- SubFila 1.1.1 Bootstrap Proceso-->
+                  <div class="row mt-2">
+                    <!-- SubColumna 1.1.1.1 Bootstrap Proceso-->
+                    <div class="col-sm-12">
+                      <!-- Campo de Seleccion Proceso PMBOK -->
+                      <select name="procces" id="procces" class="form-control" formControlName="process">
+                        <option selected value="">Proceso PMBOK</option>
+                        <option>Ejecución</option>
+                        <option>Monitoreo y Control</option>
+                        <option>Cierre</option>
+                      </select>
+                    </div>
+                  </div>
+                  <!-- SubFila 1.1.2 Bootstrap information-->
+                  <div class="row mt-2">
+                    <!-- SubColumna 1.1.2.1 Bootstrap information-->
+                    <div class="col-sm-12">
+                      <!-- Campo de Nombre del Documento -->
+                      <input type="text" id="information" class="form-control" placeholder="Nombre del Documento a Comunicar" formControlName="information" />
+                      <!-- Tooltip de validacion del campo information -->
+                      <div class="invalid-tooltip">
+                        Please enter a valid position.
+                      </div>
+                    </div>
+                  </div>
+                  <!-- SubFila 1.1.3 Bootstrap format-->
+                  <div class="row mt-2">
+                    <!-- SubColumna 1.1.3.1 Bootstrap format-->
+                    <div class="col-sm-12">
+                      <!-- Campo de Seleccion Formato / Medio -->
+                      <select name="format" id="format" class="form-control" formControlName="format">
+                        <option selected value="">Formato / Medio</option>
+                        <option>PDF</option>
+                        <option>Excel</option>
+                        <option>Word</option>
+                      </select>
+                    </div>
+                  </div>
+                  <!-- SubFila 1.1.4 Bootstrap Area-->
+                  <div class="row mt-2">
+                    <!-- SubColumna 1.1.4.1 Bootstrap Area-->
+                    <div class="col-sm-12">
+                      <!-- Campo de texto Area Responsable -->
+                      <input type="text" id="area" class="form-control" placeholder="Area Responsable de la Información" formControlName="area" />
+                      <!-- Tooltip de validacion del campo Area -->
+                      <div class="invalid-tooltip">
+                        Please enter a valid role.
+                      </div>
+                    </div>
+                  </div>
+                  <!-- SubFila 1.1.5 Bootstrap Dueño-->
+                  <div class="row mt-2">
+                    <!-- SubColumna 1.1.5.1 Bootstrap Dueño-->
+                    <div class="col-sm-12">
+                      <!-- Campo de Seleccion Dueño del Documento, extrae de Interesados -->
+                      <select id="owner" class="form-control" formControlName="owner" (change)="onInteresSelect()">
+                        <option selected disabled value="">{{ 'Interesados' | translate }}</option>
+                        <option *ngFor="let item of interestedList" [value]="item.name">{{ item.name }}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <!-- SubFila 1.1.6 Bootstrap Referencia-->
+                  <div class="row mt-2">
+                    <!-- SubColumna 1.1.6.1 Bootstrap Referencia-->
+                    <div class="col-sm-12">
+                      <!-- Campo de texto Referencia -->
+                      <input type="text" id="reference" class="form-control" placeholder="Referencia Contractual de la Información" formControlName="reference" />
+                      <!-- Tooltip de validacion del campo referencia -->
+                      <div class="invalid-tooltip">
+                        Required Reference
+                      </div>
+                    </div>
+                  </div>
+                  <!-- SubFila 1.1.7 Bootstrap Frecuencia-->
+                  <div class="row mt-2">
+                    <!-- SubColumna 1.1.7.1 Bootstrap Frecuencia-->
+                    <div class="col-sm-12">
+                      <!-- Campo de Seleccion Frecuencia / Tiempo -->
+                      <select name="frequence" id="frequence" class="form-control" formControlName="frequence">
+                        <option selected value="">Frecuencia / Tiempo</option>
+                        <option>Diario</option>
+                        <option>Semanal</option>
+                        <option>Mensual</option>
+                      </select>
+                    </div>
+                  </div>
+                  <!-- SubFila 1.1.8 Bootstrap Grupo-->
+                  <div class="row mt-2">
+                    <!-- SubColumna 1.1.8.1 Bootstrap Grupo-->
+                    <div class="col-sm-12">
+                      <!-- Campo de texto Grupo -->
+                      <input type="text" id="group" class="form-control" placeholder="Grupo / Departamento Destinatario" formControlName="group" />
+                      <!-- Tooltip de validacion del campo Grupo -->
+                      <div class="invalid-tooltip">
+                        Please enter a valid email address.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6">
+          <!-- Right Group -->
+          <div class="form-group">
+            <!-- Container Bootstrap -->
+            <div class="container-fluid">
+              <!-- Fila 1 Bootstrap -->
+              <div class="row">
+
+                    <!-- Columna 1.1 Bootstrap Derecha -->
+                    <div class="col-sm-12">
+                      <div class="row mt-2">
+                        <div class="col-sm-10">
+                          <!-- Campo de Seleccion Proceso PMBOK -->
+                          <select id="selectedUsers" class="form-control" [(ngModel)]="selectedValue">
+                            <option selected disabled value=""> {{ 'interes' | translate }} </option>
+                            <option *ngFor="let interes of availableUsers" [value]="interes.name">{{ interes.name }}</option>
+                          </select>
+                        </div>
+
+                        <div class="col-sm-2">
+                          <button type="button" class="btn btn-primary" (click)="addSelectedInterested()">{{'add' | translate }}</button>
+                        </div>
+                      </div>
+
+                      <div class="col-sm-12">
+                        <ul class="list-group mt-12" id="selectedUsersList">
+                          <!-- Iterar sobre los interesados seleccionados y mostrarlos en la lista -->
+                          <li class="list-group-item" *ngFor="let selected of selectedInterested; let i = index">
+                            {{ selected }}
+                            <button type="button" class="btn btn-danger btn-sm" (click)="removeSelectedInterested(i)">Eliminar</button>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                  <!-- SubFila 1.1.8 Bootstrap Grupo-->
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</mat-dialog-content>
+
+<!-- Resto del código HTML... -->
+
+
+  <!-- Acciones del Dialog -->
+  <mat-dialog-actions align="end" class="footer-dialog">
+    <!-- Container Bootstrap del contenido del las Acciones del Dialog -->
+    <div class="container-fluid">
+      <div class="row justify-content-end">
+        <div class="col-auto me-auto">
+          <!-- Boton de Cancelar -->
+          <button
+            mat-button
+            mat-dialog-close
+            class="btn btn-secondary">
+            Cancelar
+          </button>
+        </div>
+        <div class="col-auto">
+          <!-- Boton de Guardar -->
+          <button
+            type="submit"
+            mat-button
+            [mat-dialog-close]="true"
+            cdkFocusInitial
+            class="btn btn-primary"
+            >
+            Salvar
+          </button>
+        </div>
+      </div>
+    </div>
+  </mat-dialog-actions>
+</form>

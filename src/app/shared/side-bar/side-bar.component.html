@@ -20,49 +20,43 @@
   <div class="sidebar">
     <!-- Sidebar user (optional) -->
     <div class="user-panel mt-4 pb-2 mb-2 brand-image">
+
       <select
-        id="company"
-        (change)="onSelectCompany()"
-        [(ngModel)]="selectedCompany"
-        (ngModelChange)="(getpermissionxCompanys)"
-        class="form-control select-side"
-      >
-        <option selected disabled value="">
-          Empresas
-        </option>
+        id="company" (change)="onCompanysSelected($event)"  class="form-control select-side"      >
+     <!--   <option selected disabled value="">   {{ 'company'| translate }}     </option> -->
+
         <option *ngFor="let item of companyData" [value]="item.id_company">
           {{ item.company }}
         </option>
       </select>
 
-      <select
-        id="branchs"
-        (change)="onSelectBranch()"
-        [(ngModel)]="selectedBranch"
-        class="form-control select-side"
-      >
-        <option selected disabled value="">
-          Sucursales
-        </option>
-        <option *ngFor="let item of branchData" [value]="item.id_branchs">
-          {{ item.branchs }}
-        </option>
-      </select>
+      <p>Company ID: {{ selectedCompany }}</p>
 
-      <select
-        id="projects"
-        (change)="onSelectProject()"
-        [(ngModel)]="selectedProject"
-        class="form-control select-side"
-      >
-        <option selected disabled value="">
-          Proyectos
-        </option>
-        <option *ngFor="let item of projectData" [value]="item.id_projects">
-          {{ item.projects }}
-        </option>
-      </select>
+
+      <div>
+          <select id="branchs" (change)="onBranchsSelected($event)" class="form-control select-side">
+          <!--      <option selected disabled value=""> Sucursales    </option> -->
+
+              <option *ngFor="let item of branchData" [value]="item.id_branchs">
+                  {{ item.branchs }}
+              </option>
+          </select>
+      </div>
+
+      <p>Branch ID: {{ selectedBranchId }}</p>
+
+
+    <div>
+        <select id="projects" (change)="onProjectSelected($event)" class="form-control select-side">
+   <!--       <option value="">Seleccione un proyecto</option> -->
+          <option *ngFor="let item of projectData" [value]="item.id_projects">
+            {{ item.projects }}
+          </option>
+        </select>
     </div>
+
+    <p>Project ID: {{ selectedProjectId }}</p>
+
 
     <!-- Sidebar Menu -->
     <mat-list>
@@ -73,14 +67,17 @@
             <div matListItemTitle class="item-content-panel brand-text">Dashboard</div>
           </mat-panel-title>
         </mat-expansion-panel-header>
+
         <mat-list-item routerLink="#" (click)="navigateToInterested()">
           <mat-icon matListItemIcon>apartment</mat-icon>
           <div matListItemTitle class="item-content">PMO</div>
         </mat-list-item>
+
         <mat-list-item routerLink="#">
           <mat-icon matListItemIcon>share</mat-icon>
           <div matListItemTitle class="item-content">PM</div>
         </mat-list-item>
+
       </mat-expansion-panel>
       <mat-expansion-panel id="expMenu">
         <mat-expansion-panel-header class="panel-header">
@@ -121,22 +118,27 @@
             <div matListItemTitle class="item-content-panel brand-text">Administración</div>
             </mat-panel-title>
         </mat-expansion-panel-header>
-        <mat-list-item routerLink="#">
+
+        <mat-list-item routerLink="#" (click)="navigateToCompanys()">
           <mat-icon matListItemIcon>apple</mat-icon>
           <div matListItemTitle class="item-content">Empresas</div>
         </mat-list-item>
+
         <mat-list-item  routerLink="#" (click)="navigateToUsers()">
           <mat-icon matListItemIcon>person</mat-icon>
           <div matListItemTitle class="item-content">Usuarios</div>
         </mat-list-item>
+
         <mat-list-item routerLink="#">
           <mat-icon matListItemIcon>android</mat-icon>
           <div matListItemTitle class="item-content">Permisos</div>
         </mat-list-item>
-        <mat-list-item routerLink="#">
+
+        <mat-list-item routerLink="#" (click)="navigateToBranchs()">
           <mat-icon matListItemIcon>android</mat-icon>
           <div matListItemTitle class="item-content">Sucursales</div>
         </mat-list-item>
+
       </mat-expansion-panel>
       <mat-list-item routerLink="#" (click)="authService.logout()">
         <mat-icon matListItemIcon>logout</mat-icon>
@@ -146,4 +148,4 @@
     <!-- /.sidebar-menu -->
   </div>
   <!-- /.sidebar -->
-</aside>
+

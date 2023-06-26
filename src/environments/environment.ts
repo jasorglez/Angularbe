@@ -18,7 +18,11 @@ export const environment = {
 
   production: false,
 
-  urlFirebase: 'https://beapp-501d1-default-rtdb.firebaseio.com/',
+  urlFirebase           : 'https://beapp-501d1-default-rtdb.firebaseio.com/',
+
+  googleDriveCredentials:{ client_email: 'jsorglez@gmail.com',
+                           private_key: '	9bb18cadc7bbafd5bd7fb4c2cea3ffb503b0900a',
+  },
 
   urlLogin: 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDxCBGKk8nT09hdW85-PyOkhw5_JPZLF1A',
 

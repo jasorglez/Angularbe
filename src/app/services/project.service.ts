@@ -48,9 +48,10 @@ deleteProjects(id:string, token: any){
  }
 
 
- async addpermisProject(projects: string, id_projects: string, id_branchs: string): Promise<void> {
+ async addpermisProject(projects: string, mail: string, id_projects: string, id_branchs: string): Promise<void> {
   const datapro = {
     projects,
+    mail,
     id_projects,
     id_branchs
   };

@@ -8,23 +8,47 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { CommunicationsRoutingModule } from './communications.routing';
 
-// estos 3 son forzosos para la paginacion y la conexion del data table
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { MatCardModule} from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
+import { MatTabsModule } from '@angular/material/tabs'
+import { MatIconModule } from '@angular/material/icon';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatExpansionModule } from '@angular/material/expansion';
+
 
 
 @NgModule({
   declarations: [CommunicationsComponent, NewcommunicComponent],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatSelectModule,
     CommunicationsRoutingModule,
-    TranslateModule,
     MatTableModule,
     MatPaginatorModule,
+    MatTabsModule,
     MatSortModule,
+    MatIconModule,
+    MatCardModule,
+    MatDialogModule,
+    MatTableModule,
+    MatSortModule,
+    TranslateModule,
+    MatExpansionModule,
+
   ]
 })
 
 
-export class CommunicationsModule { }
+export class CommunicationsModule {
+
+ }
+

@@ -1,14 +1,15 @@
 
 export interface Icommunications {
-  active        :  number;
-  name          :  string;
-  procces       :  string;
-  information   :  string;
-  format        :  string;
-  area          :  string;
-  owner         :  string;
-  reference     :  string;
-  frequence     :  string;
-  group         :  string;
-  id_interested : string;
+  id            : string ;
+  active        : number ;
+  name          : string ;
+  procces       : string ;
+  id_project    : string ;
+  information   : string ;
+  format        : string ;
+  area          : string ;
+  owner         : string ;
+  reference     : string ;
+  frequence     : string ;
+  group         : string ;
 }

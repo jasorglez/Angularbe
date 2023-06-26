@@ -57,7 +57,6 @@ import { Observable } from 'rxjs';
 
  export class UsersComponent implements OnChanges, OnInit {
 
-
   userEvents: any[] = [];
   currentIndex : number = 0 ;
   combinedData: any[] = [];
@@ -194,9 +193,6 @@ onTabSelected(tabName: string) {
 
   	ngOnInit(): void {
 
-
-
-
     		this.getdataUsers();
 
 
@@ -296,18 +292,6 @@ onTabSelected(tabName: string) {
 
   	     }
 
-        masterToggle() {
-          this.isAllSelected() ?
-            this.selection.clear() :
-            this.UsersDataSource.data.forEach(row => this.selection.select(row));
-        }
-
-        isAllSelected() {
-          const numSelected = this.selection.selected.length;
-          const numRows = this.UsersDataSource.data.length;
-          return numSelected === numRows;
-        }
-
 
         getdataCompanys()
          {
@@ -346,6 +330,7 @@ onTabSelected(tabName: string) {
            })
 
         }
+
 
          getdataBranchs(){
              this.branchService.getData(this.infcompany.id).subscribe((resp:any)=>{
@@ -468,7 +453,6 @@ onTabSelected(tabName: string) {
           }
 
         }
-
 
           newUsers(formType: string) {
               const dialogRef = this.dialog.open(NewComponent, { data: { formType: formType } });
@@ -669,96 +653,96 @@ onTabSelected(tabName: string) {
 
             }
 
-             async assignBranch(id: string, idCompany: string, name: string) {
+           async assignBranch(id: string, mail: string, idCompany: string, name: string) {
               try {
-                const resp = await this.firebaseService.getpermxBranch(id, idCompany);
-  
+                const resp = await this.firebaseService.getpermxBranch(id, mail, idCompany);
+
                 if (resp) {
                   alerts.basicAlert('error', "The Branch already has this permission", "error");
                 }
                 else {
                   const result = await alerts.confirmAlert('Are you sure?', 'Assign Branch for information user!', 'warning', 'Yes, Assign it!');
-  
+
                   if (result.isConfirmed) {
-  
-                             await this.branchService.addpermisBranch(name, id, idCompany)
+
+                             await this.branchService.addpermisBranch(name, mail, id, idCompany)
                              alerts.basicAlert("Success", "The permission has been created", "success");
-  
+
                           }
                 } //termino el try
-  
+
                 } catch (error) {
                     // Manejar errores si es necesario
                 }
-  
+
               }
-  
-              async desasignBranch(id: string, idCompany: string, name: string) {
+
+              async desasignBranch(id: string, mail : string, idCompany: string, name: string) {
               try {
-                const resp = await this.firebaseService.getpermxBranch(id, idCompany);
-  
+                const resp = await this.firebaseService.getpermxBranch(id, mail, idCompany);
+
                 if (resp) {
                   const result = await alerts.confirmAlert('Are you sure?', 'Desasign Branch for this user!', 'warning', 'Yes, Assign it!');
-  
+
                   if (result.isConfirmed) {
-  
-                             await this.firebaseService.deleteBranchs( id, idCompany)
+
+                             await this.firebaseService.deleteBranchs( id, mail,  idCompany)
                              alerts.basicAlert("Success", "The permission has been removed", "success");
-  
+
                           }
                 } //termino el try
-  
+
                 } catch (error) { }
                     // Manejar errores si es necesario
-  
-              } 
+
+              }
 
 
-              async assignProject(id: string, idBranch: string, name: string) {
+              async assignProject(id: string, mail: string, idBranch: string, name: string) {
                 try {
-                  const resp = await this.firebaseService.getpermxProject(id, idBranch);
-    
+                  const resp = await this.firebaseService.getpermxProject(id, mail, idBranch);
+
                   if (resp) {
                     alerts.basicAlert('error', "The Project already has this permission", "error");
                   }
                   else {
                     const result = await alerts.confirmAlert('Are you sure?', 'Assign Project for information user!', 'warning', 'Yes, Assign it!');
-    
+
                     if (result.isConfirmed) {
-    
-                               await this.projectsService.addpermisProject(name, id, idBranch)
+
+                               await this.projectsService.addpermisProject(name, mail, id, idBranch)
                                alerts.basicAlert("Success", "The permission has been created", "success");
-    
+
                             }
                   } //termino el try
-    
+
                   } catch (error) {
                       // Manejar errores si es necesario
                   }
-    
+
               }
 
-    
-              async desasignProject(id: string, idBranch: string, name: string) {
+
+              async desasignProject(id: string, mail: string, idBranch: string, name: string) {
                 try {
-                  const resp = await this.firebaseService.getpermxProject(id, idBranch);
-    
+                  const resp = await this.firebaseService.getpermxProject(id, mail, idBranch);
+
                   if (resp) {
                     const result = await alerts.confirmAlert('Are you sure?', 'Desasign Project for this user!', 'warning', 'Yes, Assign it!');
-    
+
                     if (result.isConfirmed) {
-    
-                               await this.firebaseService.deleteProjects( id, idBranch)
+
+                               await this.firebaseService.deleteProjects( id,mail, idBranch)
                                alerts.basicAlert("Success", "The permission has been removed", "success");
-    
+
                             }
                   } //termino el try
-    
+
                   } catch (error) { }
                       // Manejar errores si es necesario
-    
-               } 
-  
+
+               }
+
 
 
          join() {
@@ -812,6 +796,18 @@ onTabSelected(tabName: string) {
               this.getdataUsers();
             }
          }
+
+         masterToggle() {
+          this.isAllSelected() ?
+            this.selection.clear() :
+            this.UsersDataSource.data.forEach(row => this.selection.select(row));
+        }
+
+        isAllSelected() {
+          const numSelected = this.selection.selected.length;
+          const numRows = this.UsersDataSource.data.length;
+          return numSelected === numRows;
+        }
 
 }
 

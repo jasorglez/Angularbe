@@ -153,25 +153,25 @@ export class EditInterestedComponent implements OnInit {
     const email = this.fis.get('email').value;
 
     const dataInteres: Iinteres = {
-      active       : 1,
-      avg          :      this.fis.get('avg')?.value,
+      active         : 1,
+      avg            :      this.fis.get('avg')?.value,
 
-      company      : this.trackingServices.getCompany(),
-      branch       : this.trackingServices.getBranch(),
-      project      : this.trackingServices.getProject(),
+      company        : this.trackingServices.getCompany(),
+      branch         : this.trackingServices.getBranch(),
+      id_project     : this.trackingServices.getProject(),
 
-      email        : this.fis.get('email')?.value,
-      follow       : this.fis.get('follow')?.value,
-      idinter      : 0,
-      interes      : this.fis.get('interes')?.value,
-      influence    : this.fis.get('influence')?.value,
-      name         : this.fis.get('name')?.value,
-      phone        : this.fis.get('phone')?.value,
-      picture      : this.fis.get('picture')?.value,
-      position     : this.fis.get('position')?.value,
-      power        : this.fis.get('power')?.value,
-      organization : this.fis.get('organization')?.value,
-      role         : this.fis.get('role')?.value
+      email          : this.fis.get('email')?.value,
+      follow         : this.fis.get('follow')?.value,
+      idinter        : 0,
+      interes        : this.fis.get('interes')?.value,
+      influence      : this.fis.get('influence')?.value,
+      name           : this.fis.get('name')?.value,
+      phone          : this.fis.get('phone')?.value,
+      picture        : this.fis.get('picture')?.value,
+      position       : this.fis.get('position')?.value,
+      power          : this.fis.get('power')?.value,
+      organization   : this.fis.get('organization')?.value,
+      role           : this.fis.get('role')?.value
     }
 
     this.loadData = false;
@@ -180,7 +180,7 @@ export class EditInterestedComponent implements OnInit {
     Guardar en base de datos la info de la categoría
     =============================================*/
     console.log("pase por el patchData", dataInteres)
-    
+
     this.interesService.patchData(this.data.id, dataInteres, localStorage.getItem('token')).subscribe(
       resp => {
         this.dialogRef.close('save')
