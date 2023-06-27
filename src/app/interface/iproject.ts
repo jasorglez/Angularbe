@@ -6,5 +6,7 @@ export interface Iproject {
   image        : string;
   tender       : string;
   ubication    : string;
+  dStart       : Date ;
+  dEnd         : Date ;
 }
 

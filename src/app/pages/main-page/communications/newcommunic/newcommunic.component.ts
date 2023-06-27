@@ -19,8 +19,10 @@ export class NewcommunicComponent implements OnInit {
 
   interestedList  : any[] = [];
   selectedInteres : any[] = [];
+  
   availableUsers  : any[];
-  selectedInterested: string[]=[];
+
+  selectedInterested: { name: string; email: string; }[] = [];
 
   selectedValue: string;
 
@@ -37,7 +39,7 @@ export class NewcommunicComponent implements OnInit {
       reference     :  ['',[Validators.required]],
       frequence     :  '',
       group         :  ['', [Validators.required]],
-      id_interested :  '',
+     
    } )
 
   constructor( private communicationservice : CommunicationsService,
@@ -87,6 +89,7 @@ export class NewcommunicComponent implements OnInit {
        const selectedOwner = this.fcommunications.get('owner').value;
 
        this.availableUsers = this.interestedList.filter(interes => interes.name !== selectedOwner);
+       console.log('Avalaible', this.availableUsers)
 
     }
 
@@ -135,10 +138,12 @@ export class NewcommunicComponent implements OnInit {
 
   saveToDetailInterested(key: string) {
     // Recorrer el arreglo selectedInterested y agregar la clave correspondiente a cada nombre
-     const details: any[] = this.selectedInterested.map(name => {
+     const details: any[] = this.selectedInterested.map(interest => {
        return {
          id: key,
-         name: name,
+         name     : interest.name,
+         email    : interest.email,
+         position : '' ,
          active : 1
        };
      });
@@ -154,14 +159,26 @@ export class NewcommunicComponent implements OnInit {
 
 
 
-  addSelectedInterested()
-  {
-        const selectedInter = (document.getElementById('selectedUsers') as HTMLSelectElement).value;
+addSelectedInterested() {
+  const selectedInterElement = document.getElementById('selectedUsers') as HTMLSelectElement;
 
-        this.selectedInterested.push(selectedInter);
-         console.log('Selected Interes:', this.selectedInterested);
-         //     console.log('Available Users:', this.availableUsers);
-  }
+  const selectedValue = selectedInterElement.value;
+  const selectedOption = selectedInterElement.options[selectedInterElement.selectedIndex];
+  
+  const selectedName = selectedOption.text;
+  
+  const selectedEmail = selectedValue;
+
+  const selectedInterest = {
+    name: selectedName,
+    email: selectedEmail
+  };
+  this.selectedInterested.push(selectedInterest);
+
+  //console.log('Selected Interest:', this.selectedInterested);
+  // console.log('Available Users:', this.availableUsers);
+}
+
 
   removeSelectedInterested(index: number) {
     this.selectedInterested.splice(index, 1);

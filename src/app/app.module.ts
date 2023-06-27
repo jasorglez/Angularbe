@@ -23,9 +23,13 @@ import { TranslateModule, TranslateLoader} from '@ngx-translate/core';
   ==============================*/
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { provideAuth, getAuth } from '@angular/fire/auth';
+
 //para el storage
 import { provideStorage, getStorage } from '@angular/fire/storage';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore'
+
+// paara la db
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireModule } from '@angular/fire/compat';
@@ -58,6 +62,7 @@ export function HttpLoaderFactory (http:HttpClient) {
     AngularFireAuthModule,
     AngularFireModule,
     AngularFireDatabaseModule,
+    AngularFirestoreModule,
 
     FormsModule,
     ReactiveFormsModule,

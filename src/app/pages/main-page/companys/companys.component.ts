@@ -3,7 +3,9 @@ import { Observable, filter, forkJoin, map, of, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 
-import { EmailjsService } from 'src/app/services/emailjs.service.ts.service';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+
+
 import { MessagesService } from '../../../services/messages.service';
 
 @Component({
@@ -17,14 +19,13 @@ export class CompanysComponent implements OnInit{
 
      combinedData: any[] = [];
 
+     to: string;
+     subject: string;
+     html: string;
 
 
 
-
-     constructor(private http:HttpClient, private messagesService : MessagesService ) { }
-
-
-
+     constructor(private http:HttpClient, private messagesService : MessagesService, private db: AngularFirestore ) { }
 
 
      ngOnInit(): void {
@@ -43,9 +44,32 @@ export class CompanysComponent implements OnInit{
 
          //     this.sendEmails() ;
 
-       this.messagesService.sendMessage();
+    //   this.messagesService.sendMessage();
 
     }
+
+
+    sendEmail() {
+      this.db.collection('mail').add({
+        to: this.to,
+        message:{
+          subject: this.subject,
+          html: this.html
+        },
+      })
+      .then(() => {
+        console.log('Registro agregado correctamente');
+        // Restablece los campos del formulario
+        this.to = '';
+        this.subject = '';
+        this.html = '';
+      })
+      .catch((error) => {
+        console.error('Error al agregar el registro:', error);
+      });
+    }
+
+
 
     public createTemplate(email: string): void {
       const templateData = {
@@ -66,10 +90,6 @@ export class CompanysComponent implements OnInit{
           }
         );
     }
-
-
-
-
 
 
 

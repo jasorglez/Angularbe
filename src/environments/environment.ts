@@ -30,7 +30,7 @@ export const environment = {
 
   urlFiles: 'gs://beapp-501d1.appspot.com',
 
-  urlProfile :'https://firebasestorage.googleapis.com/v0/b/beapp-501d1.appspot.com/o/images%2Fprofile.png?alt=media&token=b7e9886b-59d9-43da-9c8e-f91017225b8d',
+  urlProfile :'./assets/img/profile.png',
 
   adminFiles: 'http://localhost/sistemas-angular/marketplace/src/assets/img/index.php?key=AIzaSyDxCBGKk8nT09hdW85-PyOkhw5_JPZLF1A',
 

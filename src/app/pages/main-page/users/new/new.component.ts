@@ -96,19 +96,21 @@ export class NewComponent implements OnInit {
          colonyb      :  '',
          countryb     :  ['Mexico',],
          cpb          :  '',
-         dnameb        :  ['', [Validators.required]],
+         dnameb       :  ['', [Validators.required]],
          stateb       :  '',
          streetb      : '',
      } )
 
 
     public fprojects = this.formBuilder.group({
-      codep: ['', [Validators.required, Validators.minLength(3), Validators.pattern('[A-Z0-9]{3,}')]],
-      contractp: ['', [Validators.required, Validators.minLength(3), Validators.pattern('[A-Z0-9]{3,}'), Validators.required]],
-      descriptionp: ['', [Validators.required]],
-      imagep: '',
-      tenderp: ['', [Validators.required]],
-      ubicationp: '',
+      codep        : ['', [Validators.required, Validators.minLength(3), Validators.pattern('[A-Z0-9]{3,}')]],
+      contractp    : ['', [Validators.required, Validators.minLength(3), Validators.pattern('[A-Z0-9]{3,}'), Validators.required]],
+      descriptionp : ['', [Validators.required]],
+      imagep       : '',
+      tenderp      : ['', [Validators.required]],
+      ubicationp   : '',
+      dStart       : [new Date(), Validators.required], // Asignar un objeto Date por defecto y validación requerida
+      dEnd         : [new Date(), Validators.required], // Asignar un objeto Date por defecto y validación requerida
       });
 
       /*=============================================
@@ -361,6 +363,8 @@ export class NewComponent implements OnInit {
                                  image        : this.url,
                                  tender       : this.fprojects.get('tenderp')?.value,
                                  ubication    : this.fbranchs.get('ubicationp')?.value,
+                                 dStart       : this.fprojects.get('dStart')?.value as Date,
+                                 dEnd         : this.fprojects.get('dEnd')?.value as Date
 
                               }
 
@@ -378,7 +382,6 @@ export class NewComponent implements OnInit {
 
 
       }
-
 
 
         invalidField(field:string){

@@ -12,3 +12,28 @@
       </div>
     </div><!-- /.container-fluid -->
   </section>
+
+  
+
+<h1>Enviar correo</h1>
+<form (ngSubmit)="sendEmail()">
+  <div>
+    <label for="email">Correo electrónico:</label>
+    <input type="email" id="to" class="form-control"
+    [(ngModel)]="to" name="to" required>
+  </div>
+
+  <div>
+    <label for="asunto">Asunto:</label>
+    <input type="text" id="subject" class="form-control"
+    [(ngModel)]="subject" name="subject" required>
+  </div>
+
+  <div>
+    <label for="contenido">Contenido:</label>
+    <textarea id="body" class="form-control"
+    [(ngModel)]="html" name="body" required></textarea>
+  </div>
+
+  <button type="submit">Enviar</button>
+</form>

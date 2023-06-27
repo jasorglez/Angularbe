@@ -14,6 +14,7 @@ export class CommunicationsService {
 constructor( public http : HttpClient) { }
 
 
+
 getDataCommunications(valor:string): Observable<any> {
 
   try {
@@ -77,21 +78,20 @@ deleteCommunications(id:string, token: any){
 
 
 getCommunications(valor) {
-
   const apiUrl = `${environment.urlFirebase}interested.json?orderBy="id_project"&equalTo="${valor}"`;
-try {
-  return this.http.get<any>(apiUrl).toPromise()
-    .then(data => {
-      return Object.keys(data).map(key => {
-        return { key: key, name: data[key].name };
+  try {
+    return this.http.get<any>(apiUrl).toPromise()
+      .then(data => {
+        return Object.keys(data).map(key => {
+          return { key: key, name: data[key].name, email: data[key].email };
+        });
       });
-    });
-  }catch(error){
+  } catch (error) {
     console.log('Error al Consultar tabla de comunicaciones', error);
     return null;
   }
-
 }
+
 
 
 postCommunic(data: Icommunications, token:any){
@@ -111,6 +111,8 @@ postCommunic(data: Icommunications, token:any){
 
 }
 
+
+
 postCommunicDetail(data: any, token:any){
   try{
    return this.http.post(`${environment.urlFirebase}detail_communications.json?auth=${token}`, data);
@@ -120,6 +122,8 @@ postCommunicDetail(data: any, token:any){
   }
 
 }
+
+
 
 buscarSubdetalle(id: string) {
   const url = `${environment.urlFirebase}detail_communications.json?`;

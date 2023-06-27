@@ -25,12 +25,15 @@ import { NewcommunicComponent } from './newcommunic/newcommunic.component';
 
 import { HttpClient } from '@angular/common/http';
 
+import { AngularFireStorage } from '@angular/fire/compat/storage';
+
 @Component({
   selector: 'app-communications',
   templateUrl: './communications.component.html',
   styleUrls: ['./communications.component.css'],
 })
 export class CommunicationsComponent implements OnInit {
+  
   selectedTab = 'comunication';
   isGeneratingPDF: boolean;
 
@@ -72,9 +75,9 @@ export class CommunicationsComponent implements OnInit {
   detailsDataSource: MatTableDataSource<Idetailscom>;
 
   comunications: Icommunications[] = [];
-  detailscom: Idetailscom[] = [];
+  detailscom   : Idetailscom[] = [];
 
-  detailscom2: Idetailscom[] = [];
+  detailscom2  : Idetailscom[] = [];
 
   profile: any = {};
 
@@ -83,6 +86,7 @@ export class CommunicationsComponent implements OnInit {
 
   screenSizeSM = false;
   currentIndex: number = 0;
+ 
 
   //  Variable para nombrar las columnas de nuestra tabla en Angular Material
   displayedColumns: string[] = [
@@ -94,17 +98,19 @@ export class CommunicationsComponent implements OnInit {
   ];
 
   // para mostrar columnas de detalles
-  displayedColdetails: string[] = ['numberposition', 'name', 'actions'];
+  displayedColdetails: string[] = ['numberposition', 'name', 'email', 'actions'];
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
+  archivosSeleccionados: Archivo[] = [];
+
   constructor(
-    private trackingService: TrackingService,
-    private communicationsService: CommunicationsService,
-    public translateService: TraductorService,
-    public http : HttpClient,
-    private dialog: MatDialog
+      private trackingService: TrackingService, private storage: AngularFireStorage,
+      private communicationsService: CommunicationsService,
+      public translateService: TraductorService,
+      public http : HttpClient,
+      private dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
@@ -180,9 +186,10 @@ export class CommunicationsComponent implements OnInit {
         this.detailscom2 = Object.keys(resp).map(
           (a) =>
             ({
-                 id: resp[a].id,
-                 active: resp[a].active,
-                 name: resp[a].name,
+                 id     : resp[a].id,
+                 active : resp[a].active,
+                 name   : resp[a].name,
+                 email  : resp[a].email,
             } as Idetailscom)
         );
 
@@ -204,9 +211,11 @@ export class CommunicationsComponent implements OnInit {
           (a) =>
             ({
               id: resp[a].id,
-              numberposition: numberposition++,
-              active: resp[a].active,
-              name: resp[a].name,
+              numberposition : numberposition++,
+              active         : resp[a].active,
+              name           : resp[a].name,
+              email          : resp[a].email,
+              position       : resp[a].position,
             } as Idetailscom)
         );
 
@@ -559,8 +568,7 @@ console.log("Rows", dataRows);
         console.log('Error:', error);
       });
   }
-
-
+  
 
   enviarFormulario() {
     // Lógica para enviar el formulario y subir los archivos al almacenamiento
@@ -568,10 +576,7 @@ console.log("Rows", dataRows);
     console.log('Formulario enviado');
   }
 
-  adjuntarArchivos(event: any) {
-    this.archivos = event.target.files;
-  }
-
+ 
   cancelar() {
     // Lógica para cancelar la ventana
     // Puedes implementar la funcionalidad correspondiente aquí
@@ -579,4 +584,39 @@ console.log("Rows", dataRows);
   }
 
 
+  adjuntarArchivos(event: any): void {
+  
+    const archivos: FileList = event.target.files;
+    for (let i = 0; i < archivos.length; i++) {
+      const archivo = archivos[i];
+      // Generar miniatura y obtener su URL
+      const miniaturaUrl = URL.createObjectURL(archivo);
+
+      // Guardar archivo en el almacenamiento (storage) y enviar por correo
+      const filePath = `carpeta_archivos/${archivo.name}`;
+      const fileRef = this.storage.ref(filePath);
+      const task = this.storage.upload(filePath, archivo);
+
+      task.snapshotChanges().subscribe(() => {
+        // Archivo subido correctamente, aquí puedes realizar acciones adicionales si es necesario
+        // Por ejemplo, enviar el correo con el archivo adjunto utilizando el Trigger Email desde Firestore
+
+        // Agregar archivo a la lista de archivos seleccionados para mostrar miniaturas
+        this.archivosSeleccionados.push({
+          nombre: archivo.name,
+          thumbnailUrl: miniaturaUrl
+        });
+      });
+    }
+  }
+ 
 }
+
+interface Archivo {
+  nombre: string;
+  thumbnailUrl: string;
+}
+
+
+
+

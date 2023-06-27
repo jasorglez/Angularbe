@@ -282,12 +282,23 @@
                       <td mat-cell *matCellDef="let element" class="text-nowrap"> {{element.numberposition}} </td>
                     </ng-container>
 
-                    <!-- Proceso PMBOK Column -->
+                    <!-- Proceso Name Column -->
                     <ng-container matColumnDef="name">
                       <th mat-header-cell *matHeaderCellDef mat-sort-header > {{'name' | translate}} </th>
                       <td mat-cell *matCellDef="let element" class="text-nowrap"> {{element.name}} </td>
                     </ng-container>
 
+                    <!-- Proceso Position Column 
+                    <ng-container matColumnDef="position">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header > {{'position' | translate}} </th>
+                      <td mat-cell *matCellDef="let element" class="text-nowrap"> {{element.position}} </td>
+                    </ng-container> -->
+
+                    <!-- Proceso Email Column -->
+                    <ng-container matColumnDef="email">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header > {{'email' | translate}} </th>
+                      <td mat-cell *matCellDef="let element" class="text-nowrap"> {{element.email}} </td>
+                    </ng-container>
 
                     <!-- Actions Column -->
                     <ng-container matColumnDef="actions">
@@ -324,40 +335,62 @@
               </div>
             </div>
 
-
             <div class="tab-pane" [class.active]="selectedTab === 'documents'" *ngIf="selectedTab === 'documents'">
+              <div>
+                <h2>Crear Ventana</h2>
+                <div class="form-group">
+                  <form (ngSubmit)="enviarFormulario()">
+                    <div class="row">
+                      
+                          <div class="col-sm-6">
+                            <label for="fecha">Fecha:</label>
+                            <input type="date" id="fecha" class="form-control" name="fecha" [(ngModel)]="fecha" required>
+                          </div>
 
-                    <div>
-                      <h2>Crear Ventana</h2>
-                      <form (ngSubmit)="enviarFormulario()">
-                        <label for="fecha">Fecha:</label>
-                        <input type="date" id="fecha" name="fecha" [(ngModel)]="fecha" required>
-
-                        <label for="descripcion">Descripción:</label>
-                        <textarea id="descripcion" name="descripcion" [(ngModel)]="descripcion" required></textarea>
-
-                        <label for="adjuntos">Adjuntar archivos:</label>
-                        <input type="file" id="adjuntos" name="adjuntos" (change)="adjuntarArchivos($event)" multiple>
-
-                        <h3>Interesados:</h3>
-                        <div class="row mt-2">
-                          <!-- SubColumna 1.1.5.1 Bootstrap Dueño-->
-                          <div class="col-sm-12">
-                            <!-- Campo de Seleccion Dueño del Documento, extrae de Interesados -->
-                            <select id="owner" class="form-control" formControlName="owner" >
-                              <option selected disabled value="">{{ 'own' | translate }}</option>
-                              <option *ngFor="let item of interestedList" [value]="item.name">{{ item.name }}</option>
+                          <div class="col-sm-6">
+                            <label for="owner">{{ 'interes' | translate }}</label>
+                            <select id="owner" class="form-control" formControlName="owner">
+                              <option selected disabled value="">{{ 'interes' | translate }}</option>
+                              <option *ngFor="let item of detailscom" [value]="item.name">
+                                   {{ item.email }}</option>
                             </select>
                           </div>
-                        </div>
-
-                        <button type="submit">Enviar</button>
-                        <button type="button" (click)="cancelar()">Cancelar</button>
-                      </form>
+                    </div>
+            
+                    <div>
+                      <label for="descripcion">Descripción:</label>
+                      <textarea id="descripcion" class="form-control" name="descripcion" [(ngModel)]="descripcion" required></textarea>
+                    </div>
+            
+                    <div>
+                      <label for="adjuntos">Adjuntar archivos:</label>
+                      <input type="file" id="adjuntos" class="form-control" 
+                      name="adjuntos" (change)="adjuntarArchivos($event)" multiple>
                     </div>
 
+                    <!--Listado de miniaturaas-->
+                    <div>
+                      <label>Miniaturas:</label>
+                      <ul class="list-unstyled">
+                        <li *ngFor="let archivo of archivosSeleccionados">
+                          <div class="thumbnail">
+                            <img [src]="archivo.thumbnailUrl" alt="Miniatura">
+                            <div class="caption">
+                              <p>{{ archivo.nombre }}</p>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+            
+                    <button type="submit">Enviar</button>
+                    <button type="button" (click)="cancelar()">Cancelar</button>
+                  </form>
+                </div>
+              </div>
             </div>
-
+            
+            
 
           </mat-card-content>
         </mat-card>

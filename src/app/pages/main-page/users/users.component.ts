@@ -386,14 +386,16 @@ onTabSelected(tabName: string) {
              this.project = Object.keys(resp).map(a=> ({
 
                 id:a,
-                numberposition  :numberposition++,
-                code            :resp[a].code,
-                contract        :resp[a].contract,
-                description     :resp[a].description,
-                id_branch       :resp[a].id_branch,
-                image           :resp[a].image,
-                tender          :resp[a].tender,
-                ubication       :resp[a].ubication
+                numberposition  : numberposition++,
+                code            : resp[a].code,
+                contract        : resp[a].contract,
+                description     : resp[a].description,
+                id_branch       : resp[a].id_branch,
+                image           : resp[a].image,
+                tender          : resp[a].tender,
+                ubication       : resp[a].ubication,
+                dStart          : resp[a].dStart,
+                dEnd            : resp[a].dEnd
              } as Iproject ));
 
              // Creamos el dataSource
