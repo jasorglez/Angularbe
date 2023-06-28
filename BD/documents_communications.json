@@ -1,0 +1,17 @@
+{
+  "-DFT54SXer100": {
+    "active"          : 1,
+    "date"            : "2023-06-25",
+    "description"     : "Prueba descripcion",
+    "picture"         : "talon pago.pdf,comp2.pdf",
+    "id_communication": "-NYvaq3Wb92QSy9XrTaT"
+  },
+  "-DFTwkISLEEAAAer502": {
+    "active"          : 1,
+    "date"            : "2023-06-20",
+    "description"     : "Prueba descripcion",
+    "picture"         : "talon pago.pdf,comp2.pdf",
+    "id_communication": "-NYvaq3Wb92QSy9XrTaT"
+  }
+
+}

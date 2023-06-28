@@ -1,7 +1,8 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 
 import { Icommunications } from 'src/app/interface/icommunication';
 import { Idetailscom } from 'src/app/interface/idetailscom';
+import { Idocumentscom } from 'src/app/interface/idocumentscom';
 
 import { TraductorService } from 'src/app/services/traductor.service';
 import { TrackingService } from 'src/app/services/tracking.service';
@@ -26,14 +27,23 @@ import { NewcommunicComponent } from './newcommunic/newcommunic.component';
 import { HttpClient } from '@angular/common/http';
 
 import { AngularFireStorage } from '@angular/fire/compat/storage';
+import { FormBuilder } from '@angular/forms';
+
 
 @Component({
   selector: 'app-communications',
+  template:`
+     <app-CommunicationsComponent (datosEnviados)="recibirDatos($event)"></app-CommunicationsComponent>
+     <app-NewcommunicComponente   [datosRecibidos]="datos"></app-NewcommunicComponente >`,
   templateUrl: './communications.component.html',
   styleUrls: ['./communications.component.css'],
 })
+
 export class CommunicationsComponent implements OnInit {
+  @Output() datosEnviados = new EventEmitter<Idetailscom[]>();
+
   
+
   selectedTab = 'comunication';
   isGeneratingPDF: boolean;
 
@@ -42,6 +52,7 @@ export class CommunicationsComponent implements OnInit {
   fecha          : string;
   descripcion    : string;
   archivos       : File[] = [];
+
   interesados    : string[] = [];
   interestedList : any[] = [];
 
@@ -67,17 +78,20 @@ export class CommunicationsComponent implements OnInit {
 
       );
 
-      this.getCommunicint()
+      this.getDatafindDocuments()
     }
   }
 
-  comDataSource!: MatTableDataSource<Icommunications>; //Variable global que instancie la data que aparecerá en la Tabla
-  detailsDataSource: MatTableDataSource<Idetailscom>;
 
-  comunications: Icommunications[] = [];
-  detailscom   : Idetailscom[] = [];
+  comDataSource!       : MatTableDataSource<Icommunications>; //Variable global que instancie la data que aparecerá en la Tabla
+  detailsDataSource    : MatTableDataSource<Idetailscom>;
+  documentsDataSource  : MatTableDataSource<Idocumentscom>
 
-  detailscom2  : Idetailscom[] = [];
+  comunications : Icommunications[] = [] ;
+  detailscom    : Idetailscom[]     = [] ;
+  documentscom  : Idocumentscom[]   = [] ;
+
+  detailscom2   : Idetailscom[] = [];
 
   profile: any = {};
 
@@ -86,7 +100,7 @@ export class CommunicationsComponent implements OnInit {
 
   screenSizeSM = false;
   currentIndex: number = 0;
- 
+
 
   //  Variable para nombrar las columnas de nuestra tabla en Angular Material
   displayedColumns: string[] = [
@@ -97,18 +111,20 @@ export class CommunicationsComponent implements OnInit {
     'actions',
   ];
 
-  // para mostrar columnas de detalles
-  displayedColdetails: string[] = ['numberposition', 'name', 'email', 'actions'];
+      // para mostrar columnas de detalles
+      displayedColdetails: string[] = ['numberposition', 'name', 'email', 'actions'];
+
+      // para mostrar columnas de documentos
+      displayedColdocuments: string[] = ['numberposition', 'date', 'picture', 'actions'];
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-
-  archivosSeleccionados: Archivo[] = [];
 
   constructor(
       private trackingService: TrackingService, private storage: AngularFireStorage,
       private communicationsService: CommunicationsService,
       public translateService: TraductorService,
+      private formBuilder: FormBuilder,
       public http : HttpClient,
       private dialog: MatDialog
   ) {}
@@ -228,16 +244,65 @@ export class CommunicationsComponent implements OnInit {
       });
   }
 
-  newCommunications() {
-    const dialogRef = this.dialog.open(NewcommunicComponent, {
-      width: '600px',
-    });
+
+  getDatafindDocuments() {
+
+    this.loadData2 = true;
+
+    this.communicationsService.buscarDatafindDocuments(this.profile.id)
+      .subscribe((resp: any) => {
+        /*=============================================
+    Integrando respuesta de base de datos con la interfaz
+    =============================================*/
+        let numberposition = 1;
+
+        this.documentscom = Object.keys(resp).map(
+          (a) =>
+            ({
+              id: resp[a].id,
+              numberposition   : numberposition++,
+              active           : resp[a].active,
+              date             : resp[a].date,
+              picture          : resp[a].picture,
+              description      : resp[a].description,
+              id_communication : this.profile.id
+            } as Idocumentscom)
+        );
+
+        //console.log('details', this.detailscom);
+        // Creamos el dataSource
+        this.documentsDataSource = new MatTableDataSource(this.documentscom);
+        this.documentsDataSource.paginator = this.paginator;
+        this.documentsDataSource.sort = this.sort;
+        this.loadData2 = false;
+      });
+  }
+
+
+  newCommunications(formType: string) {
+
+    const dialogRef = this.dialog.open(NewcommunicComponent, { data: { formType: formType } });
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         this.getdataComunications();
       }
     });
+
+  }
+
+
+  newDocuments(formType: string) {
+
+      const dialogRef = this.dialog.open(NewcommunicComponent, { data: { formType: formType } });
+        this.datosEnviados.emit(this.detailscom)
+        console.log('Enviado', this.detailscom)
+      dialogRef.afterClosed().subscribe(result => {
+        if (result) {
+
+          this.getDatafindDocuments();
+        }
+      });
 
   }
 
@@ -374,7 +439,7 @@ export class CommunicationsComponent implements OnInit {
   return row;
 });
 
-console.log("Rows", dataRows);
+    //console.log("Rows", dataRows);
 
     const documentDefinition = {
       content: [
@@ -561,61 +626,23 @@ console.log("Rows", dataRows);
     //aqui qe pasar el id project que tengo los combo box
     this.communicationsService.getCommunications(this.trackingService.getProject())
       .then(dataInteres => {
-        
+
         this.interestedList = dataInteres;
       })
       .catch(error => {
         console.log('Error:', error);
       });
   }
-  
-
-  enviarFormulario() {
-    // Lógica para enviar el formulario y subir los archivos al almacenamiento
-    // Puedes implementar la funcionalidad correspondiente aquí
-    console.log('Formulario enviado');
-  }
-
- 
-  cancelar() {
-    // Lógica para cancelar la ventana
-    // Puedes implementar la funcionalidad correspondiente aquí
-    console.log('Ventana cancelada');
-  }
 
 
-  adjuntarArchivos(event: any): void {
-  
-    const archivos: FileList = event.target.files;
-    for (let i = 0; i < archivos.length; i++) {
-      const archivo = archivos[i];
-      // Generar miniatura y obtener su URL
-      const miniaturaUrl = URL.createObjectURL(archivo);
 
-      // Guardar archivo en el almacenamiento (storage) y enviar por correo
-      const filePath = `carpeta_archivos/${archivo.name}`;
-      const fileRef = this.storage.ref(filePath);
-      const task = this.storage.upload(filePath, archivo);
 
-      task.snapshotChanges().subscribe(() => {
-        // Archivo subido correctamente, aquí puedes realizar acciones adicionales si es necesario
-        // Por ejemplo, enviar el correo con el archivo adjunto utilizando el Trigger Email desde Firestore
 
-        // Agregar archivo a la lista de archivos seleccionados para mostrar miniaturas
-        this.archivosSeleccionados.push({
-          nombre: archivo.name,
-          thumbnailUrl: miniaturaUrl
-        });
-      });
-    }
-  }
- 
+
+
 }
 
-interface Archivo {
-  nombre: string;
-  thumbnailUrl: string;
-}
+
 
 
 

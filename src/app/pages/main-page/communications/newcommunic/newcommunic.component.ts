@@ -1,14 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, Input, OnInit } from '@angular/core';
 
 import { CommunicationsService } from 'src/app/services/communications.service';
 import { TrackingService } from 'src/app/services/tracking.service';
 
 import { FormBuilder, Validators } from '@angular/forms';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 import { alerts } from 'src/app/helpers/alerts';
 
 import { Icommunications } from 'src/app/interface/icommunication';
+
+import { AngularFireStorage } from '@angular/fire/compat/storage';
 
 @Component({
   selector: 'app-newcommunic',
@@ -17,9 +19,19 @@ import { Icommunications } from 'src/app/interface/icommunication';
 })
 export class NewcommunicComponent implements OnInit {
 
+  @Input() datosRecibidos: string[];
+
+  detailscomp     : any[] = [] ;
+
+  recibirDatos(detailscomp: any[] = [] ):void {
+    this.detailscomp = detailscomp ;
+    console.log('recibido');
+  }
+
   interestedList  : any[] = [];
   selectedInteres : any[] = [];
-  
+
+
   availableUsers  : any[];
 
   selectedInterested: { name: string; email: string; }[] = [];
@@ -39,17 +51,38 @@ export class NewcommunicComponent implements OnInit {
       reference     :  ['',[Validators.required]],
       frequence     :  '',
       group         :  ['', [Validators.required]],
-     
+
    } )
+
+
+   public fdocuments = this.formBuilder.group({
+
+    fecha       : '',
+    descripcion :  '',
+    owner        :  '',
+   } )
+
+
+   archivosSeleccionados: Archivo[] = [];
 
   constructor( private communicationservice : CommunicationsService,
                private trackingService: TrackingService,
                private formBuilder: FormBuilder,
-               public dialogRef: MatDialogRef<NewcommunicComponent >) { }
+               private storage: AngularFireStorage,
+               public dialogRef: MatDialogRef<NewcommunicComponent >,
+               @Inject(MAT_DIALOG_DATA) public data: any) { }
 
     ngOnInit() {
 
-      this.getCommunicint();
+      if (this.data.formType === 'fcommunications')  {
+        this.getCommunicint();
+      }
+
+      if (this.data.formType === 'fdocuments')  {
+
+       console.log('desde el NewcommunicComponent this.detailscomp',this.detailscomp) ;
+
+      }
 
     }
 
@@ -164,9 +197,8 @@ addSelectedInterested() {
 
   const selectedValue = selectedInterElement.value;
   const selectedOption = selectedInterElement.options[selectedInterElement.selectedIndex];
-  
+
   const selectedName = selectedOption.text;
-  
   const selectedEmail = selectedValue;
 
   const selectedInterest = {
@@ -175,8 +207,7 @@ addSelectedInterested() {
   };
   this.selectedInterested.push(selectedInterest);
 
-  //console.log('Selected Interest:', this.selectedInterested);
-  // console.log('Available Users:', this.availableUsers);
+
 }
 
 
@@ -185,4 +216,50 @@ addSelectedInterested() {
   }
 
 
+  adjuntarArchivos(event: any): void {
+
+    const archivos: FileList = event.target.files;
+    for (let i = 0; i < archivos.length; i++) {
+      const archivo = archivos[i];
+      // Generar miniatura y obtener su URL
+      const miniaturaUrl = URL.createObjectURL(archivo);
+
+      // Guardar archivo en el almacenamiento (storage) y enviar por correo
+      const filePath = `pdf/${archivo.name}`;
+      const fileRef = this.storage.ref(filePath);
+      const task = this.storage.upload(filePath, archivo);
+
+      task.snapshotChanges().subscribe(() => {
+        // Archivo subido correctamente, aquí puedes realizar acciones adicionales si es necesario
+        // Por ejemplo, enviar el correo con el archivo adjunto utilizando el Trigger Email desde Firestore
+
+        // Agregar archivo a la lista de archivos seleccionados para mostrar miniaturas
+        this.archivosSeleccionados.push({
+          nombre: archivo.name,
+          thumbnailUrl: miniaturaUrl
+        });
+      });
+    }
+  }
+
+
+  enviarFormulario() {
+    // Lógica para enviar el formulario y subir los archivos al almacenamiento
+    // Puedes implementar la funcionalidad correspondiente aquí
+    console.log('Formulario enviado');
+  }
+
+
+  cancelar() {
+    // Lógica para cancelar la ventana
+    // Puedes implementar la funcionalidad correspondiente aquí
+    console.log('Ventana cancelada');
+  }
+
+}
+
+
+interface Archivo {
+  nombre: string;
+  thumbnailUrl: string;
 }

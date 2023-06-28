@@ -36,12 +36,12 @@ export class NewComponent implements OnInit {
 
    selectedorganization: string = 'Organizations';
 
-   organizationData  : any[]  = [] ;
-   stateData         : any[]  = [] ;
+    organizationData  : any[]  = [] ;
+    stateData         : any[]  = [] ;
 
-     eml        : string = '' ;
-     companyId  : string = '' ;
-     branchId   : string = '' ;
+    eml        : string = '' ;
+    companyId  : string = '' ;
+    branchId   : string = '' ;
 
    emailExists: boolean = false;
 
@@ -129,7 +129,8 @@ export class NewComponent implements OnInit {
   constructor(private storageService: StoragesService, private usersService :UsersService, private companysService :CompanysService,
                private branchsService: BranchsService, private projectsService : ProjectService ,
                private catalogsService: CatalogService, private authService: AuthService,
-               private formBuilder: FormBuilder,  public dialogRef: MatDialogRef<NewComponent>, @Inject(MAT_DIALOG_DATA) public data: any ) { }
+               private formBuilder: FormBuilder,  public dialogRef: MatDialogRef<NewComponent>,
+               @Inject(MAT_DIALOG_DATA) public data: any ) { }
 
   ngOnInit( ): void {
 

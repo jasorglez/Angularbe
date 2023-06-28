@@ -23,43 +23,32 @@
 
       <select
         id="company" (change)="onCompanysSelected($event)"  class="form-control select-side"      >
-     <!--   <option selected disabled value="">   {{ 'company'| translate }}     </option> -->
+        <!--   <option selected disabled value="">   {{ 'company'| translate }}     </option> -->
 
         <option *ngFor="let item of companyData" [value]="item.id_company">
           {{ item.company }}
         </option>
       </select>
 
-      <p>Company ID: {{ selectedCompany }}</p>
+      <select id="branchs" (change)="onBranchsSelected($event)" class="form-control select-side">
+        <!--      <option selected disabled value=""> Sucursales    </option> -->
+        <option *ngFor="let item of branchData" [value]="item.id_branchs">
+            {{ item.branchs }}
+        </option>
+      </select>
 
-
-      <div>
-          <select id="branchs" (change)="onBranchsSelected($event)" class="form-control select-side">
-          <!--      <option selected disabled value=""> Sucursales    </option> -->
-
-              <option *ngFor="let item of branchData" [value]="item.id_branchs">
-                  {{ item.branchs }}
-              </option>
-          </select>
-      </div>
-
-      <p>Branch ID: {{ selectedBranchId }}</p>
-
-
-    <div>
-        <select id="projects" (change)="onProjectSelected($event)" class="form-control select-side">
-   <!--       <option value="">Seleccione un proyecto</option> -->
-          <option *ngFor="let item of projectData" [value]="item.id_projects">
-            {{ item.projects }}
-          </option>
-        </select>
+      <select id="projects" (change)="onProjectSelected($event)" class="form-control select-side">
+        <!--       <option value="">Seleccione un proyecto</option> -->
+        <option *ngFor="let item of projectData" [value]="item.id_projects">
+          {{ item.projects }}
+        </option>
+      </select>
     </div>
-
-    <p>Project ID: {{ selectedProjectId }}</p>
 
 
     <!-- Sidebar Menu -->
     <mat-list>
+      <!-- Menu Dashboard -->
       <mat-expansion-panel id="expMenu">
         <mat-expansion-panel-header class="panel-header">
           <mat-panel-title>
@@ -74,11 +63,11 @@
         </mat-list-item>
 
         <mat-list-item routerLink="#">
-          <mat-icon matListItemIcon>share</mat-icon>
+          <mat-icon matListItemIcon>home_work</mat-icon>
           <div matListItemTitle class="item-content">PM</div>
         </mat-list-item>
-
       </mat-expansion-panel>
+      <!-- Menu PMO -->
       <mat-expansion-panel id="expMenu">
         <mat-expansion-panel-header class="panel-header">
           <mat-panel-title>
@@ -111,11 +100,42 @@
           <div matListItemTitle class="item-content">Gestion de Capacitaciones</div>
         </mat-list-item>
       </mat-expansion-panel>
+      <!-- Menu PM -->
+      <mat-expansion-panel id="expMenu">
+        <mat-expansion-panel-header class="panel-header">
+          <mat-panel-title>
+            <mat-icon matListItemIcon class="brand-image">home_work</mat-icon>
+            <div matListItemTitle class="item-content-panel brand-text">PM</div>
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <mat-list-item routerLink="#" (click)="navigateToUsers()">
+          <mat-icon matListItemIcon>wysiwyg</mat-icon>
+          <div matListItemTitle class="item-content">Catalogo de Conceptos</div>
+        </mat-list-item>
+
+        <mat-list-item  routerLink="#" (click)="navigateToUsers()">
+          <mat-icon matListItemIcon>engineering</mat-icon>
+          <div matListItemTitle class="item-content">Catalogo de Personal</div>
+        </mat-list-item>
+
+        <mat-list-item routerLink="#" (click)="navigateToUsers()">
+          <mat-icon matListItemIcon>front_loader</mat-icon>
+          <div matListItemTitle class="item-content">Catalogo de Equipos</div>
+        </mat-list-item>
+
+        <mat-list-item routerLink="#" (click)="navigateToUsers()">
+          <mat-icon matListItemIcon>handyman</mat-icon>
+          <div matListItemTitle class="item-content">Catalogo de Herramientas</div>
+        </mat-list-item>
+
+      </mat-expansion-panel>
+      <!-- Menu Configuracion -->
       <mat-expansion-panel id="expMenu">
         <mat-expansion-panel-header class="panel-header">
           <mat-panel-title>
             <mat-icon matListItemIcon class="brand-image">admin_panel_settings</mat-icon>
-            <div matListItemTitle class="item-content-panel brand-text">Administración</div>
+            <div matListItemTitle class="item-content-panel brand-text">Configuración</div>
             </mat-panel-title>
         </mat-expansion-panel-header>
 

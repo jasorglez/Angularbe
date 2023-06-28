@@ -14,14 +14,14 @@
 -->
 <h2 mat-dialog-title class="h2-dialog">{{ 'newcomunic' | translate }}</h2>
 <!-- Se inicializa el Formulario -->
-<form
+
+  <div *ngIf="data.formType === 'fcommunications'">
+      <form
   autocomplete="off"
   [formGroup]="fcommunications"
   (ngSubmit)="saveCommunications()">
 
   <!-- Contenido del dialog -->
-
-
   <!-- Resto del código HTML... -->
 
 <!-- Contenido del dialog -->
@@ -159,7 +159,7 @@
                       <div class="row mt-2">
                         <div class="col-sm-10">
                           <!-- Campo de Seleccion Proceso PMBOK -->
-                          
+
                             <select id="selectedUsers" class="form-control">
                                 <option selected disabled value=""> {{ 'interes' | translate }} </option>
                                 <option *ngFor="let interes of availableUsers" [value]="interes.email">
@@ -227,4 +227,62 @@
       </div>
     </div>
   </mat-dialog-actions>
-</form>
+      </form>
+  </div>
+
+
+    <div *ngIf="data.formType === 'fdocuments'">
+
+      <h2>Crear Ventana</h2>
+      <div class="form-group">
+        <form (ngSubmit)="enviarFormulario()" [formGroup]="fdocuments">
+          <div class="row">
+
+                <div class="col-sm-6">
+                  <label for="fecha">Fecha:</label>
+                  <input type="date" id="fecha" class="form-control" formControlName="fecha"  required>
+                </div>
+
+                <div class="col-sm-6">
+                  <label for="owner">{{ 'interes' | translate }}</label>
+                  <select id="owner" class="form-control" formControlName="owner">
+                    <option selected disabled value="">{{ 'interes' | translate }}</option>
+                    <option *ngFor="let item of detailscomp" [value]="item.name">
+                         {{ item.email }}</option>
+                  </select>
+                </div>
+          </div>
+
+          <div>
+            <label for="descripcion">Descripción:</label>
+            <textarea id="descripcion" class="form-control" required formControlName="descripcion"></textarea>
+          </div>
+
+          <div>
+            <label for="adjuntos">Adjuntar archivos:</label>
+            <input type="file" id="adjuntos" class="form-control"
+            name="adjuntos" (change)="adjuntarArchivos($event)" multiple>
+          </div>
+
+          <!--Listado de miniaturaas-->
+          <div>
+            <label>Miniaturas:</label>
+            <ul class="list-unstyled">
+              <li *ngFor="let archivo of archivosSeleccionados">
+                <div class="thumbnail">
+                  <img [src]="archivo.thumbnailUrl" alt="Miniatura">
+                  <div class="caption">
+                    <p>{{ archivo.nombre }}</p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <button type="submit">Enviar</button>
+          <button type="button" (click)="cancelar()">Cancelar</button>
+        </form>
+      </div>
+
+
+    </div>

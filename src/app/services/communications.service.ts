@@ -21,19 +21,18 @@ getDataCommunications(valor:string): Observable<any> {
     const apiUrl = `${environment.urlFirebase}communications.json?orderBy="id_project"&equalTo="${valor}"` ;
     return this.http.get(apiUrl);
   }catch(error){
-    console.log(`Error en la consulta`, error )
+    console.error(`Error en la consulta`, error )
     return null
   }
 
 }
 
 
-
 getDataCommunicationsdetail2(){
   try {
     return this.http.get(`${environment.urlFirebase}detail_communications.json`);
   }catch(error){
-    console.log(`Error en la consulta`, error )
+    console.error(`Error en la consulta`, error )
     return null
   }
 }
@@ -70,7 +69,7 @@ deleteCommunications(id:string, token: any){
   try {
     return this.http.delete(`${environment.urlFirebase}communications/${id}.json?auth=${token}`);
   }catch(error){
-    console.log("Error al borrar", error) ;
+    console.error("Error al borrar", error) ;
     return null ;
  }
 
@@ -87,7 +86,7 @@ getCommunications(valor) {
         });
       });
   } catch (error) {
-    console.log('Error al Consultar tabla de comunicaciones', error);
+    console.error('Error al Consultar tabla de comunicaciones', error);
     return null;
   }
 }
@@ -105,7 +104,7 @@ postCommunic(data: Icommunications, token:any){
       })
     );
   } catch (error) {
-    console.log('Error al guardar', error);
+    console.error('Error al guardar', error);
     return null;
   }
 
@@ -117,7 +116,7 @@ postCommunicDetail(data: any, token:any){
   try{
    return this.http.post(`${environment.urlFirebase}detail_communications.json?auth=${token}`, data);
   }catch(error) {
-   console.log("Error al guardar ", error ) ;
+   console.error("Error al guardar ", error ) ;
    return null ;
   }
 
@@ -150,6 +149,19 @@ buscarSubdetalle(id: string) {
       throw error;
     })
   );
+}
+
+
+buscarDatafindDocuments(id: string){
+  try {
+    const apiUrl = `${environment.urlFirebase}documents_communications.json?orderBy="id_communication"&equalTo="${id}"`;
+    return this.http.get(apiUrl);
+
+  }
+  catch(error) {
+    console.error('Error en la consulta:', error);
+    throw error;
+  }
 }
 
 
