@@ -16,6 +16,8 @@ export class InteresService {
   constructor( public http:HttpClient) { }
 
 
+
+
   getDataInteres(valor: string): Observable<any> {
     try {
       const apiUrl = `${environment.urlFirebase}interested.json?orderBy="id_project"&equalTo="${valor}"`;
@@ -83,6 +85,56 @@ export class InteresService {
     return this.http.patch(`${environment.urlFirebase}interested/${id}.json?auth=${token}`, data);
 
   }
+
+
+
+  getDatacompInteres(project: string, consecutivo: string) {
+    try {
+      if (project !== '') {
+        return this.http.get(`${environment.urlFirebase}interested.json?orderBy="id_project"&equalTo="${project}"`)
+          .pipe(
+            map(data => {
+              const interesDataArray = Object.values(data);
+              const filteredData = interesDataArray.map((interesData: any, consec: number) => {
+                const { name, organization, position, phone, email, interes, influence, power, follow } = interesData;
+                const updatedConsecutivo = consecutivo  + (consec + 1).toString();
+  
+                const sum = parseInt(interes) + parseInt(influence) + parseInt(power);
+
+                return [
+                  updatedConsecutivo,
+                  name,
+                  organization,
+                  position,
+                  phone,
+                  email,
+                  interes,
+                  influence,
+                  power,
+                  sum,
+                  follow
+                ];
+              });
+  
+              return filteredData;
+            })
+          );
+      } else {
+        alert('Project está vacío');
+        return null;
+      }
+    } catch (error) {
+      console.error('ERROR get list companies', error);
+      return null;
+    }
+  }
+  
+
+
+
+
+
+
 
 
 }

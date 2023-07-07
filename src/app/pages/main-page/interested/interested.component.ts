@@ -4,6 +4,7 @@ import { Iinteres } from 'src/app/interface/interested';
 
 import { TraductorService} from 'src/app/services/traductor.service';
 import { TrackingService } from 'src/app/services/tracking.service';
+import { PrintreportsService } from 'src/app/services/printreports.service';
 
 import { MatTableDataSource } from '@angular/material/table';
 import { InteresService } from 'src/app/services/interes.service';
@@ -52,6 +53,7 @@ export class InterestedComponent implements OnInit{
 	=============================================*/
 
   interes : Iinteres[]   = [];
+  reportef : any[] = [] ;
 
   profile : any = {};
 
@@ -73,11 +75,12 @@ export class InterestedComponent implements OnInit{
 
   constructor(public translateService: TraductorService, private trackingService : TrackingService,
               private interesService : InteresService,
+              public printReportsService : PrintreportsService,
                public dialog : MatDialog,) { }
 
   ngOnInit(): void {
 
-    this.getdataIntere();
+        this.getdataIntere();
 
     	/*=============================================
     		Definir tamaños de pantalla
@@ -111,8 +114,6 @@ export class InterestedComponent implements OnInit{
     getdataIntere(){
 
             this.loadData = true;
-
-            console.log(this.trackingService.getProject())
 
             this.interesService.getDataInteres(this.trackingService.getProject())
             .subscribe((resp:any)=>{
@@ -255,6 +256,11 @@ export class InterestedComponent implements OnInit{
     if (dataSource.paginator) {
       dataSource.paginator.firstPage();
     }
+  }
+
+
+  printList() {
+    this.printReportsService.listInterested();
   }
 
 }

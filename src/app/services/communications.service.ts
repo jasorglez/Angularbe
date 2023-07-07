@@ -15,10 +15,10 @@ constructor( public http : HttpClient) { }
 
 
 
-getDataCommunications(valor:string): Observable<any> {
+getDataCommunications2(valor:string): Observable<any> {
 
   try {
-    const apiUrl = `${environment.urlFirebase}communications.json?orderBy="id_project"&equalTo="${valor}"` ;
+    const apiUrl = `${environment.urlFirebase}communications.json?orderBy="id_project"&equalTo="${valor}"&orderBy="procces"` ;
     return this.http.get(apiUrl);
   }catch(error){
     console.error(`Error en la consulta`, error )
@@ -26,6 +26,27 @@ getDataCommunications(valor:string): Observable<any> {
   }
 
 }
+
+getDataCommunications(valor: string): Observable<any[]> {
+  try {
+    const apiUrl = `${environment.urlFirebase}communications.json?orderBy="id_project"&equalTo="${valor}"`;
+    return this.http.get(apiUrl).pipe(
+      map((data: any) => {
+        // Obtener los datos como un array de objetos con el ID incluido
+        const communications = Object.keys(data).map(key => ({ id: key, ...data[key] }));
+
+        // Ordenar los datos por el campo "procces"
+        communications.sort((a, b) => a.procces.localeCompare(b.procces));
+
+        return communications;
+      })
+    );
+  } catch(error) {
+    console.error(`Error en la consulta`, error);
+    return null;
+  }
+}
+
 
 
 getDataCommunicationsdetail2(){

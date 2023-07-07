@@ -1,0 +1,38 @@
+
+{
+  "-POsfaIcfGpjg7HGqR0Y": {
+    "idconc" : "-LOET4GTYTSCC9" {
+      "equipos": [
+        {
+          "cantidad": 1,
+          "descripcion": "Descripción del equipo 1",
+          "idequipo": "IDEQUIPO1"
+        },
+        {
+          "cantidad": 2,
+          "descripcion": "Descripción del equipo 2",
+          "idequipo": "IDEQUIPO2"
+        }
+      ],
+      "materiales": [
+        {
+          "cantidad": 5,
+          "descripcion": "Material 1",
+          "idmaterial": "MATERIAL1"
+        }
+      ],
+      "personal": [
+        {
+          "cantidad": 2,
+          "descripcion": "Descripción del personal 1",
+          "idpersonal": "IDPERSONAL1"
+        },
+        {
+          "cantidad": 3,
+          "descripcion": "Descripción del personal 2",
+          "idpersonal": "IDPERSONAL2"
+        }
+      ]
+    }
+  }
+}

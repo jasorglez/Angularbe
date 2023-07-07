@@ -297,7 +297,7 @@ onTabSelected(tabName: string) {
          {
            this.loadData2 = true;
 
-           this.companyService.getData().subscribe((resp:any)=>{
+           this.companyService.getDataCompanys('').subscribe((resp:any)=>{
 
              /*=============================================
            Integrando respuesta de base de datos con la interfaz
@@ -307,16 +307,17 @@ onTabSelected(tabName: string) {
              this.company = Object.keys(resp).map(a=> ({
 
                id:a,
-               numberposition :numberposition++,
-               address        :resp[a].address,
-               city           :resp[a].city,
-               country        :resp[a].country,
-               displayName    :resp[a].displayName,
-               email          :resp[a].email,
-               phone          :resp[a].phone,
-               picture        :resp[a].picture,
-               rfc            :resp[a].rfc,
-               state          :resp[a].state
+               numberposition : numberposition++,
+               address        : resp[a].address,
+               city           : resp[a].city,
+               country        : resp[a].country,
+               displayName    : resp[a].displayName,
+               email          : resp[a].email,
+               formatrep      : resp[a].formatrep,
+               phone          : resp[a].phone,
+               picture        : resp[a].picture,
+               rfc            : resp[a].rfc,
+               state          : resp[a].state
 
              } as Icompany ));
 

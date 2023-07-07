@@ -1,4 +1,5 @@
-import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+
+import { Component, EventEmitter, OnInit,  ViewChild } from '@angular/core';
 
 import { Icommunications } from 'src/app/interface/icommunication';
 import { Idetailscom } from 'src/app/interface/idetailscom';
@@ -6,16 +7,13 @@ import { Idocumentscom } from 'src/app/interface/idocumentscom';
 
 import { TraductorService } from 'src/app/services/traductor.service';
 import { TrackingService } from 'src/app/services/tracking.service';
+import { PrintreportsService } from 'src/app/services/printreports.service';
 
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatDialog } from '@angular/material/dialog';
 
-import pdfMake from 'pdfmake/build/pdfmake';
-import pdfFonts from 'pdfmake/build/vfs_fonts';
-
-pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 import { functions } from 'src/app/helpers/functions';
 
@@ -29,25 +27,19 @@ import { HttpClient } from '@angular/common/http';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { FormBuilder } from '@angular/forms';
 
-
 @Component({
   selector: 'app-communications',
-  template:`
-     <app-CommunicationsComponent (datosEnviados)="recibirDatos($event)"></app-CommunicationsComponent>
-     <app-NewcommunicComponente   [datosRecibidos]="datos"></app-NewcommunicComponente >`,
+  template: '',
   templateUrl: './communications.component.html',
   styleUrls: ['./communications.component.css'],
 })
 
 export class CommunicationsComponent implements OnInit {
-  @Output() datosEnviados = new EventEmitter<Idetailscom[]>();
 
-  
 
   selectedTab = 'comunication';
   isGeneratingPDF: boolean;
 
-  pdfMake: any;
 
   fecha          : string;
   descripcion    : string;
@@ -81,7 +73,6 @@ export class CommunicationsComponent implements OnInit {
       this.getDatafindDocuments()
     }
   }
-
 
   comDataSource!       : MatTableDataSource<Icommunications>; //Variable global que instancie la data que aparecerá en la Tabla
   detailsDataSource    : MatTableDataSource<Idetailscom>;
@@ -123,7 +114,8 @@ export class CommunicationsComponent implements OnInit {
   constructor(
       private trackingService: TrackingService, private storage: AngularFireStorage,
       private communicationsService: CommunicationsService,
-      public translateService: TraductorService,
+      public translateService    : TraductorService,
+      public printReportsService : PrintreportsService,
       private formBuilder: FormBuilder,
       public http : HttpClient,
       private dialog: MatDialog
@@ -146,7 +138,14 @@ export class CommunicationsComponent implements OnInit {
 
   }
 
-  showProfile(commun: Icommunications) {
+
+  mensajeAExcel() {
+    this.printReportsService.writeDataToExcelFile('/assets/files/HCO-PMO-FOR-001.xlsx');
+    window.open('./assets/files/HCO-PMOOR-001.xlsx', '_blank');
+  }
+
+
+ showProfile(commun: Icommunications) {
     // Actualizamos el currentIndex y el profile
     this.profile = commun;
   }
@@ -155,7 +154,7 @@ export class CommunicationsComponent implements OnInit {
   getdataComunications() {
     this.loadData = true;
 
-    this.communicationsService.getDataCommunications(this.trackingService.getProject())
+    this.communicationsService.getDataCommunications2(this.trackingService.getProject())
       .subscribe((resp: any) => {
         /*=============================================
       Integrando respuesta de base de datos con la interfaz
@@ -181,11 +180,12 @@ export class CommunicationsComponent implements OnInit {
             } as Icommunications)
         );
 
+       // console.log(this.comunications)
          this.profile = this.comunications[this.currentIndex]; // Tomamos el primer registro
-        this.comDataSource = new MatTableDataSource(this.comunications); // Creamos el dataSource
-        this.comDataSource.paginator = this.paginator;
-        this.comDataSource.sort = this.sort;
-        this.loadData = false;
+         this.comDataSource = new MatTableDataSource(this.comunications); // Creamos el dataSource
+         this.comDataSource.paginator = this.paginator;
+         this.comDataSource.sort = this.sort;
+         this.loadData = false;
       });
   }
 
@@ -194,6 +194,8 @@ export class CommunicationsComponent implements OnInit {
 
     this.communicationsService.getDataCommunicationsdetail()
       .subscribe((resp: any) => {
+
+      //    console.log(resp);
         /*=============================================
       Integrando respuesta de base de datos con la interfaz
       =============================================*/
@@ -214,6 +216,7 @@ export class CommunicationsComponent implements OnInit {
 
 
   getdatafindDetail() {
+  //  alert(this.profile.id) ;
     this.loadData2 = true;
 
     this.communicationsService.buscarSubdetalle(this.profile.id)
@@ -235,7 +238,6 @@ export class CommunicationsComponent implements OnInit {
             } as Idetailscom)
         );
 
-        //console.log('details', this.detailscom);
         // Creamos el dataSource
         this.detailsDataSource = new MatTableDataSource(this.detailscom);
         this.detailsDataSource.paginator = this.paginator;
@@ -295,9 +297,8 @@ export class CommunicationsComponent implements OnInit {
   newDocuments(formType: string) {
 
       const dialogRef = this.dialog.open(NewcommunicComponent, { data: { formType: formType } });
-        this.datosEnviados.emit(this.detailscom)
-        console.log('Enviado', this.detailscom)
-      dialogRef.afterClosed().subscribe(result => {
+
+         dialogRef.afterClosed().subscribe(result => {
         if (result) {
 
           this.getDatafindDocuments();
@@ -346,117 +347,8 @@ export class CommunicationsComponent implements OnInit {
   }
 
 
-  deleteDetails(id: string, name: string) {
-
-    alerts.confirmAlert('Are you sure?', 'The information cannot be recovered!', 'warning','Yes, delete it!')
-     .then((result) => {
-
-       if (result.isConfirmed) {
-
-              const index = this.detailscom.findIndex(item => item.name === name);
-
-              if (index !== -1) {
-                    const idBorrar = this.detailscom[index].id;
-                    // Eliminar el elemento del arreglo
-                    this.detailscom.splice(index, 1);
-
-                    // Actualiza el dataSource
-                    this.detailsDataSource = new MatTableDataSource(this.detailscom);
-                    this.detailsDataSource.paginator = this.paginator;
-                    this.detailsDataSource.sort = this.sort;
-
-                   // Eliminar el dato de la base de datos Firebase
-                              this.http.get('https://beapp-501d1-default-rtdb.firebaseio.com/details_communications.json')
-                              .subscribe((resp: any) => {
-                                const keys = Object.keys(resp);
-                                for (const key of keys) {
-                                  if (resp[key].id === idBorrar && resp[key].name === name) {
-                                    this.http.delete(`https://beapp-501d1-default-rtdb.firebaseio.com/details_communications/${key}.json`)
-                                      .subscribe(
-                                        () => {
-                                          console.log('Dato borrado exitosamente de la base de datos Firebase.');
-                                        },
-                                        (error) => {
-                                          console.error('Error al borrar el dato de la base de datos Firebase:', error);
-                                        }
-                                      );
-                                    break;
-                                  }
-                                }
-                              });
-                          }
-              else
-              {
-                console.log('No se encontró el elemento con el nombre proporcionado.');
-              }
-            }
-
-
-        });
-
-  }
-
 
   detailsdata() {}
-
-
-  generarReporte() {
-    // Obtener los detalles de comunicaciones únicos
-    const uniqueDetails = this.detailscom2;
-    const uniqueDetailNames = [...new Set(uniqueDetails.map(detail => detail.name))].sort();
-
-    // Crear o armar la cabecera la fila de encabezados
-    const headerRow = [
-      'procces',
-      'information',
-      'format',
-      'owner',
-      'reference',
-      'frequence',
-      'group',
-      ...uniqueDetailNames.map(name => ({ text: name, rotation: 90 }))
-    ];
-
-   // Crear las filas de datos
-  const dataRows = this.comunications.map(com => {
-  const details = this.detailscom2.filter(detail => detail.id === com.id);
-
-  const row = [
-    com.procces,
-    com.information,
-    com.format,
-    com.owner,
-    com.reference,
-    com.frequence,
-    com.group
-  ];
-
-  uniqueDetailNames.forEach(name => {
-    const interactionNames = details.some(detail => detail.name === name) ? 'X' : '';
-    row.push(interactionNames);
-  });
-
-  return row;
-});
-
-    //console.log("Rows", dataRows);
-
-    const documentDefinition = {
-      content: [
-        {
-          table: {
-            headerRows: 1,
-            widths: new Array(headerRow.length).fill('auto'),
-            body: [headerRow, ...dataRows]
-          }
-        }
-      ],
-      pageSize: { width: 1214, height: 595 }
-    };
-
-    pdfMake.createPdf(documentDefinition).open();
-  }
-
 
 
   applyFilter(dataSource: MatTableDataSource<any>, event: Event) {
@@ -469,157 +361,6 @@ export class CommunicationsComponent implements OnInit {
   }
 
 
-  generatePDFReport() {
-    const documentDefinition = this.getDocumentDefinition();
-
-    // Genera el documento PDF
-    pdfMake.createPdf(documentDefinition).open();
-  }
-
-
-  getDocumentDefinition() {
-    // Define the content of the PDF document
-    const content = [];
-
-    // Title of the report
-    content.push({
-      text: 'Informe de Comunicaciones',
-      style: 'header',
-      alignment: 'center',
-      margin: [0, 0, 0, 20] // Bottom margin of 20 units
-    });
-
-    // Table of communications
-    const tableRows = [];
-
-    // Table headers
-    tableRows.push([
-
-      { text: 'Proceso', style: 'tableHeader', rotation: 90 },
-      { text: 'Información', style: 'tableHeader' },
-      { text: 'Formato', style: 'tableHeader' },
-      { text: 'Área', style: 'tableHeader' },
-      { text: 'Propietario', style: 'tableHeader' },
-      { text: 'Referencia', style: 'tableHeader' },
-      { text: 'Frecuencia', style: 'tableHeader' },
-      { text: 'Grupo', style: 'tableHeader' }
-    ]);
-
-
-    // Table rows
-    Object.values(this.comunications).forEach((communication) => {
-      tableRows.push([
-        communication.procces,
-        communication.information,
-        communication.format,
-        communication.area,
-        communication.owner,
-        communication.reference,
-        communication.frequence,
-        communication.group
-      ]);
-    });
-
-   content.push({
-      table: {
-        headerRows: 1,
-        widths: [ 'auto', 'auto', 'auto', 100, 'auto', 'auto', 'auto', 'auto'],
-        body: tableRows
-      }
-    });
-
-    // Define the styles for the document
-    const styles = {
-      header: {
-        fontSize: 8,
-        bold: false
-      },
-      tableHeader: {
-        bold: false,
-        fontSize: 8,
-        fillColor: '#F2F2F2'
-      }
-    };
-
-    // Define las opciones de configuración del documento
-    const options = {
-      pageSize: { width: 869, height: 595
-      }  // Establece el tamaño del documento en formato horizontal
-    };
-
-    // Return the definition of the PDF document
-    return {
-      content: content,
-      styles: styles,
-      pageSize: options.pageSize
-    };
-  }
-
-
-  /// que salgas de los reportes los borras
-  CreatePDF() {
-    const pdfDefinition: any = {
-      content: [
-        {
-          table: {
-            body: [
-              ['col 1', 'col 2', 'col 3'],
-              ['campo 1', 'campo 2', 'campo 3'],
-              ['campo 4', 'campo 5', 'campo 6'],
-              ['campo 7', 'campo 8', 'campo 9'],
-            ],
-          },
-        },
-      ],
-    };
-
-    const pdf = pdfMake.createPdf(pdfDefinition);
-    pdf.open();
-  }
-
-  generatePdfold() {
-    // Crear la fila de encabezados
-    const headerRow = [
-      'procces77',
-      'information',
-      'format',
-      'Responsible',
-      'owner',
-      'Reference',
-      'frequence',
-      'Group',
-      ...this.detailscom.map(detail => detail.name)
-    ].map(header => ({ text: header, rotation: 90 }));
-
-    // Crear las filas de datos
-    const dataRows = this.comunications.map(com => [
-
-      com.procces,
-      com.information,
-      com.format,
-      com.area,
-      com.owner,
-      com.reference,
-      com.frequence,
-      com.group,
-      ...this.detailscom.map(detail => detail.id === com[0].key ? 'X' : '')
-    ]);
-
-    const documentDefinition = {
-      content: [
-        {
-          table: {
-            headerRows: 1,
-            widths: new Array(headerRow.length).fill('*'),
-            body: [headerRow, ...dataRows]
-          }
-        }
-      ],
-      pageSize: { width: 969, height: 595 }
-    };
-
-    pdfMake.createPdf(documentDefinition).open();
-  }
 
 
   getCommunicint() {
@@ -634,6 +375,13 @@ export class CommunicationsComponent implements OnInit {
       });
   }
 
+
+
+  generarReporte(){
+
+    this.printReportsService.generarReporte(this.detailscom2, this.comunications);
+
+  }
 
 
 

@@ -18,6 +18,7 @@ const routes: Routes = [
       { path: 'companys', loadChildren: () => import('./main-page/companys/companys.module').then( m=> m.CompanysModule)},
       { path: 'interested', loadChildren: () => import('./main-page/interested/interested.module').then( m=> m.InterestedModule)},
       { path: 'communications', loadChildren: () => import('./main-page/communications/communications.module').then( m=> m.CommunicationsModule)},
+      { path: 'concepts', loadChildren: () => import('./main-page/concepts/concepts.module').then( m=> m.ConceptsModule)},
       { path: '**', component: Error404Component}
     ]}
 ];

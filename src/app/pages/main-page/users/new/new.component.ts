@@ -18,11 +18,11 @@ import { CatalogService } from 'src/app/services/catalog.service';
 import { AuthService } from 'src/app/services/auth.service';
 
 import { alerts } from 'src/app/helpers/alerts';
-import { finalize } from 'rxjs/operators';
+
 
 import { environment } from 'src/environments/environment';
 import { TrackingService } from '../../../../services/tracking.service';
-import { getDownloadURL } from '@angular/fire/storage';
+
 
 
 @Component({
@@ -80,6 +80,7 @@ export class NewComponent implements OnInit {
           countryc      :  ['', [Validators.required]],
           displayNamec  :  ['', [Validators.required]],
           emailc        :  ['', [Validators.required, Validators.email]],
+          formatrep     :  ['', [Validators.required]],
           phonec        :  ['',  [Validators.required, Validators.pattern(/^\d{10}$/)]],
           picturec      :  environment.urlProfile,
           rfcc          :  ['', Validators.required],
@@ -281,6 +282,7 @@ export class NewComponent implements OnInit {
                         email       : this.fcompanys.get('emailc')?.value ,
                         phone       : this.fcompanys.get('phonec')?.value,
                         picture     : this.fcompanys.get('picturec')?.value,
+                        formatrep   : this.fcompanys.get('formatrep')?.value,
                         rfc         : this.fcompanys.get('rfcc')?.value,
                         state       : this.fcompanys.get('statec')?.value
                     }

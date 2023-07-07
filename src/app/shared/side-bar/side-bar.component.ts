@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { TraductorService} from 'src/app/services/traductor.service';
 import { TrackingService } from 'src/app/services/tracking.service';
 import { CompanysService } from 'src/app/services/companys.service';
+import { ProjectService } from 'src/app/services/project.service';
+
 import { AuthService } from 'src/app/services/auth.service';
 
 import { alerts } from 'src/app/helpers/alerts';
@@ -21,21 +23,26 @@ export class SideBarComponent implements OnInit {
    branchData      : any[]  = [] ;
    projectData     : any[]  = [] ;
 
+
+   infcompany : any = {} ;
+
    selectedCompany   : string = '';
    selectedProjectId : string ;
    selectedBranchId  : string ;
 
-  constructor(public translateService: TraductorService, public trackingService : TrackingService, public companysService : CompanysService, public authService : AuthService,
-    private router: Router) { }
+  constructor(public translateService: TraductorService, public trackingService : TrackingService,
+              public companysService : CompanysService, public authService : AuthService,
+              public projectsService : ProjectService,
+              private router: Router) { }
 
 
         home() {
-          this.trackingService.addLog('', 'Eleccion del menu Home/Inicio', 'Menu Side Bar', '')
+          this.trackingService.addLog(this.trackingService.getnameComp(), 'Eleccion del menu Home/Inicio', 'Menu Side Bar', '')
           this.router.navigate(['/']);
          }
 
         navigateToBranchs()  {
-          this.trackingService.addLog('', 'Eleccion del menu Branchs/Sucursales', 'Menu Side Bar', '')
+          this.trackingService.addLog(this.trackingService.getnameComp(), 'Eleccion del menu Branchs/Sucursales', 'Menu Side Bar', '')
           this.router.navigate(['/branchs']);
         }
 
@@ -43,9 +50,15 @@ export class SideBarComponent implements OnInit {
           this.router.navigate(['/companys']);
         }
 
-         navigateToUsers()  {
-          this.trackingService.addLog('', 'Eleccion del menu Users/Usuarios', 'Menu Side Bar', '')
+        navigateToUsers()  {
+          this.trackingService.addLog(this.trackingService.getnameComp(), 'Eleccion del menu Users/Usuarios', 'Menu Side Bar', '')
           this.router.navigate(['/users']);
+        }
+
+
+         navigateToCatalog()  {
+          this.trackingService.addLog(this.trackingService.getnameComp(), 'Eleccion del menu Catalog Concepts/Catalogo Conceptos', 'Menu Side Bar', '')
+          this.router.navigate(['/concepts']);
         }
 
         navigateToInterested()  {
@@ -56,11 +69,9 @@ export class SideBarComponent implements OnInit {
           this.router.navigate(['/communications']);
         }
 
-
       	ngOnInit(): void  {
               this.getpermissionxCompanys() ;
          }
-
 
 
       //empiezan los procedimientos para las llamadas de los combobox
@@ -72,16 +83,24 @@ export class SideBarComponent implements OnInit {
 
             if (this.companyData.length > 0) {
               this.selectedCompany = this.companyData[0].id_company;
+           //   console.log('select company getpermission', this.selectedCompany);
               this.trackingService.setCompany(this.selectedCompany);
+
+              this.getHeadersCompanys();
+
               this.getpermissionxBranchs();
+
             }
 
            });
+
+
         }
 
         onCompanysSelected(event: Event): void {
           const target = event.target as HTMLSelectElement;
           this.selectedCompany = target.value;
+
           this.getpermissionxBranchs();
         }
 
@@ -118,6 +137,7 @@ export class SideBarComponent implements OnInit {
             if (this.projectData.length > 0) {
                this.selectedProjectId = this.projectData[0].id_projects ;
                this.trackingService.setProject(this.selectedProjectId) ;
+               this.getHeadersProjects() ;
             }
             else
             {
@@ -132,6 +152,52 @@ export class SideBarComponent implements OnInit {
           this.trackingService.setProject(this.selectedProjectId) ;
         }
 
+
+
+        getHeadersCompanys(){
+          this.companysService.getDataCompanys(this.selectedCompany).subscribe((datacom: any) => {
+            // Utilizar los datos obtenidos
+              this.trackingService.setnameComp(datacom.displayName);
+
+              this.trackingService.setpictureComp(datacom.picture);
+             //  alert('Picture:'+ datacom.picture);
+
+              this.trackingService.setformatrepint(datacom.formatrep) ;
+             //  alert('Format:'+ datacom.formatrep);
+
+          });
+        }
+
+
+        getHeadersProjects(){
+
+          this.projectsService.getDataprojectsheader(this.selectedProjectId).subscribe(
+            (data: any) => {
+              if (data) {
+                // Datos obtenidos correctamente
+
+                this.trackingService.setContract(data.contract)
+
+                this.trackingService.setnameProject(data.description);
+
+                this.trackingService.setubicationProject(data.ubication) ;
+
+                this.trackingService.setStart(data.dStart)
+
+                this.trackingService.setEnd(data.dEnd)
+
+              } else {
+                // Error al obtener los datos
+                console.error('Error al obtener los datos del proyecto');
+              }
+            },
+            (error: any) => {
+              console.error('Error en la llamada al servicio:', error);
+            }
+          );
+
+
+        }
 
 
 }

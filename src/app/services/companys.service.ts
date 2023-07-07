@@ -7,6 +7,7 @@ import { map, tap, catchError, filter } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { alerts } from '../helpers/alerts';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -31,24 +32,58 @@ export class CompanysService {
  ------------------------------------------------------------------------------------*/
 
 getEmpresasxEmail(orderBy:string, equalTo:string){
+  const apiUrl =`${environment.urlFirebase}companyxusers.json?orderBy="${orderBy}"&equalTo="${equalTo}"`;
+ try {
+  return this.http.get(apiUrl);
+ }catch(error) {
+  console.error('ERROR in companyxusers', error);
+  return null
+ }
 
- // return this.http.get(`${environment.urlFirebase}companyxusers.json?orderBy="email"&equalTo="jsoriano@hco-consultores.com"&print=pretty`);
-  return this.http.get(`${environment.urlFirebase}companyxusers.json?orderBy="${orderBy}"&equalTo="${equalTo}"&print=pretty`);
 
 }
 
-   /*=============================================
+   /*=============================================   -NYP2xZxhzclIdICuKf-
 	Tomar la data de la colección Empresas en Firebase
 	=============================================*/
-    getData(){
+   getDataCompanys(clave: string){
+          try {
+            if (clave !== '') {
+              return this.http.get(`${environment.urlFirebase}companys.json?orderBy="$key"&equalTo="${clave}"`)
+                .pipe(
+                  map(data => {
+                    const companyData = data[clave];
+                    const {  displayName, email, phone, picture, rfc, state, formatrep } = companyData;
+                    return {
+                      displayName, email,
+                      phone, picture,
+                      rfc, state, formatrep
+                    };
 
-        return this.http.get(`${environment.urlFirebase}companys.json`);
+                  })
+                );
+                
+            }else {
+              return this.http.get(`${environment.urlFirebase}companys.json`);
+            }
 
+          }
+          catch(error) {
+              console.error('ERROR get list companys ', error);
+              return null
+          }
     }
 
-    getEmpresa(id: string): Observable<any> {
 
+
+    getEmpresa(id: string): Observable<any> {
+      try {
        return this.http.get(`${environment.urlFirebase}empresas/${id}.json`);
+      }
+      catch(error) {
+        console.error();
+        return error;
+      }
 
     }
 
@@ -80,7 +115,7 @@ getpermissionsxCompany(mail:string): Observable<any>{
      return this.http.get(apiUrl);
   }
   catch(error){
-    console.log("Error al Obtener permisos la cia", error)
+    console.error("Error al Obtener permisos la cia", error)
     throw Error ;
     return null
   }
@@ -100,7 +135,7 @@ getpermissionsxCompany(mail:string): Observable<any>{
         })
       );
   } catch (error) {
-    console.log("Error al obtener permisos de las sucursales", error);
+    console.error("Error al obtener permisos de las sucursales", error);
     throw Error ;
     return null;
   }
@@ -112,13 +147,12 @@ getpermissionsxProject(branch:string): Observable<any>{
     const apiUrl = `${environment.urlFirebase}permissionsxprojects.json?orderBy="id_branchs"&equalTo="${branch}"`
     return this.http.get(apiUrl);
   }catch(error) {
-    console.log("Error al Obtener permisos del Projecto", error)
+    console.error("Error al Obtener permisos del Projecto", error)
     throw Error ;
     return null
   }
 
 }
-
 
 
 postData(data: Icompany, token:any){
@@ -127,7 +161,7 @@ postData(data: Icompany, token:any){
 
   }catch(error) {
   //  alerts.basicAlert("error", `Error save Users${error}`, "error")
-    console.log("Error al grabar Compania", error)
+    console.error("Error al grabar Compania", error)
     return null ;
   }
 

@@ -1,4 +1,12 @@
 {
+  "rules": {
+    "storage": {
+      "$file": {
+        "read": true,
+        "write": false
+      }
+    }
+  },
   "hosting": {
     "public": "dist/app-be",
     "ignore": [

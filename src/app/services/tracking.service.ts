@@ -7,24 +7,99 @@ import { map } from 'rxjs';
   providedIn: 'root'
 })
 export class TrackingService {
-  private emailser   : string = '' ;
-  private nameser    : string = '' ;
-  private pictureser  : string = '' ;
+  private emailser     : string = '' ;
 
-  public projectser  : string = '' ;
-  public branchser   : string = '' ;
-  public companyser  : string = '' ;
+  private namecomp     : string = '' ;
+  private picturecomp  : string = '' ;
+  private fri          : string = '' ;
+
+  public nameuser     : string = '' ;
+  private pictureuser : string = '' ;
+
+  private projectser   : string = '' ;
+  private branchser    : string = '' ;
+  private companyser   : string = '' ;
+
+  private contract         : string = '' ;
+  private nameproject      : string = '' ;
+  private ubicationproject : string = '' ;
+
+  private startproject : string = '' ;
+  private endproject   : string = '' ;
+
+setnameUser(name: string) : void{
+ this.nameuser = name ;
+}
+
+setpictureUser(picture : string) : void {
+  this.pictureuser = picture
+}
+
+getnameUser() {
+  return this.nameuser ;
+}
+
+getpictureUser(){
+  return this.pictureuser ;
+}
+
+
+setContract(contract: string): void {
+  this.contract = contract ;
+}
+
+ setnameProject(name: string): void {
+  this.nameproject= name ;
+ }
+
+ setubicationProject(ubication: string): void {
+  this.ubicationproject= ubication ;
+ }
+
+ setStart(start : string): void {
+  this.startproject = start ;
+ }
+
+ setEnd(end : string): void {
+  this.endproject = end ;
+ }
+
+
+ getContract() {
+   return this.contract ;
+}
+
+ getnameProject() {
+  return this.nameproject ;
+ }
+
+ getubicationProject() {
+   return this.ubicationproject
+ }
+
+ getStart() {
+  return this.startproject ;
+ }
+
+ getEnd() {
+  return this.endproject ;
+ }
+
 
   setEmail(email: string): void {
     this.emailser = email;
   }
 
-  setName(name: string): void {
-    this.nameser = name;
+  setnameComp(namecomp: string): void {
+    this.namecomp = namecomp;
   }
 
-  setPicture(picture: string): void {
-    this.pictureser = picture;
+  setpictureComp(picturecomp: string): void {
+    this.picturecomp = picturecomp;
+  }
+
+  setformatrepint(fri : string): void {
+        this.fri = fri ;
   }
 
   setProject(project: string) : void {
@@ -55,12 +130,16 @@ export class TrackingService {
     return this.emailser;
   }
 
-  getName():string {
-    return this.nameser;
+  getnameComp():string {
+    return this.namecomp
   }
 
-  getPicture():string {
-     return this.pictureser
+  getpictureComp():string {
+     return this.picturecomp
+  }
+
+  getformrepint() : string {
+    return this.fri ;
   }
 
   constructor(private http: HttpClient) { }
@@ -73,8 +152,6 @@ export class TrackingService {
     // Obtener la fecha actual
     const datetime = new Date();
 
-    company = '' || 'SIN COMPANIA';
-
     if (!user) user = this.getEmail();
 
     const data = {
@@ -85,6 +162,8 @@ export class TrackingService {
       user,
       idn: 0,
     };
+
+  //  console.log("Tracking", data)
 
     try {
       const response: any = await this.http.get(`${environment.urlFirebase}tracking.json?orderBy="$key"&limitToLast=1`).toPromise();

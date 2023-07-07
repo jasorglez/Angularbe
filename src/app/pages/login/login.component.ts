@@ -110,10 +110,10 @@ export class LoginComponent implements OnInit{
                     (datauser: any) => {
                       if (datauser) {
                         const displayName = datauser.displayName;
-                        const picture = datauser.picture;
+                        const picture     = datauser.picture;
                         
-                        this.trackingService.setName(displayName);
-                        this.trackingService.setPicture(picture);
+                        this.trackingService.setnameUser(displayName);
+                        this.trackingService.setpictureUser(picture);
                         
                       }
                     },

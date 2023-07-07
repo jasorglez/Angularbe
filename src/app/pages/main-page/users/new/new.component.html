@@ -210,6 +210,13 @@
                           </div>
                          </div>
 
+                         <input type="text" class="form-control" placeholder="{{ 'format' | translate }}" formControlName="formatrep" />
+                         <div *ngIf="fcompanys.get('formatrep').invalid && (fcompanys.get('formatrep').dirty || fcompanys.get('formatrep').touched)" class="invalid-feedback">
+                            <div *ngIf="fcompanys.get('formatrep').errors['required']">
+                               {{ 'req' | translate}}  {{ 'format' | translate }}
+                            </div>
+                          </div>
+
                       </div>
 
                  </div>
