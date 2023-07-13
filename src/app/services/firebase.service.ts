@@ -143,4 +143,10 @@ export class FirebaseService {
       .toPromise();
   }
 
+
+  createDetailLessons(registro: any, key:string) {
+    return this.db.object(`details_lessons/${key}`).set(registro);
+  }
+
+
 }

@@ -99,6 +99,8 @@ export class InterestedComponent implements OnInit{
 
     		}
 
+        console.log('project', this.trackingService.getProject())
+
 
   }
 
@@ -115,7 +117,7 @@ export class InterestedComponent implements OnInit{
 
             this.loadData = true;
 
-            this.interesService.getDataInteres(this.trackingService.getProject())
+            this.interesService.getDataInteres(localStorage.getItem('project'))
             .subscribe((resp:any)=>{
 
               /*=============================================

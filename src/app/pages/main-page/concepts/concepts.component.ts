@@ -183,8 +183,6 @@ export class ConceptsComponent implements OnInit {
   }
 
 
-
-
   showProfile(commun: Iconcepts) {
     // Actualizamos el currentIndex y el profile
     this.profile = commun;

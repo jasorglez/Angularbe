@@ -14,14 +14,14 @@ export class TrackingService {
   private fri          : string = '' ;
 
   public nameuser     : string = '' ;
-  private pictureuser : string = '' ;
+  public pictureuser : string = '' ;
 
-  private projectser   : string = '' ;
-  private branchser    : string = '' ;
-  private companyser   : string = '' ;
+  public projectser   : string = '' ;
+  public branchser    : string = '' ;
+  public companyser   : string = '' ;
 
-  private contract         : string = '' ;
-  private nameproject      : string = '' ;
+  public contract         : string = '' ;
+  public nameproject      : string = '' ;
   private ubicationproject : string = '' ;
 
   private startproject : string = '' ;
@@ -88,6 +88,7 @@ setContract(contract: string): void {
 
   setEmail(email: string): void {
     this.emailser = email;
+    localStorage.setItem('mail', this.emailser)
   }
 
   setnameComp(namecomp: string): void {
@@ -104,14 +105,17 @@ setContract(contract: string): void {
 
   setProject(project: string) : void {
      this.projectser = project ;
+     localStorage.setItem('project', this.projectser) ;
   }
 
   setBranch(branch: string) : void {
      this.branchser = branch ;
+     localStorage.setItem('branch',this.branchser ) ;
   }
 
   setCompany(company : string) : void {
     this.companyser = company ;
+    localStorage.setItem("company",this.companyser);
   }
 
   getProject() {

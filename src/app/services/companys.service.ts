@@ -5,7 +5,6 @@ import { Icompany } from '../interface/icompany';
 
 import { map, tap, catchError, filter } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
-import { alerts } from '../helpers/alerts';
 
 
 @Injectable({
@@ -62,7 +61,7 @@ getEmpresasxEmail(orderBy:string, equalTo:string){
 
                   })
                 );
-                
+
             }else {
               return this.http.get(`${environment.urlFirebase}companys.json`);
             }

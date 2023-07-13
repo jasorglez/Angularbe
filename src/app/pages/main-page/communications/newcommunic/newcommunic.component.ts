@@ -1,4 +1,4 @@
-import { Component, Inject, Input, OnInit } from '@angular/core';
+import { Component, Inject,  OnInit } from '@angular/core';
 
 import { CommunicationsService } from 'src/app/services/communications.service';
 import { TrackingService } from 'src/app/services/tracking.service';
@@ -18,8 +18,6 @@ import { AngularFireStorage } from '@angular/fire/compat/storage';
   styleUrls: ['./newcommunic.component.css']
 })
 export class NewcommunicComponent implements OnInit {
-
-  @Input() datosRecibidos: string[];
 
   detailscomp     : any[] = [] ;
 
@@ -80,8 +78,6 @@ export class NewcommunicComponent implements OnInit {
 
       if (this.data.formType === 'fdocuments')  {
 
-       console.log('desde el NewcommunicComponent this.detailscomp',this.detailscomp) ;
-
       }
 
     }
@@ -108,7 +104,7 @@ export class NewcommunicComponent implements OnInit {
       this.communicationservice.getCommunications(this.trackingService.getProject())
         .then(dataInteres => {
           this.interestedList = dataInteres;
-          console.log("Los datos", dataInteres);
+
         })
         .catch(error => {
           console.log('Error:', error);
@@ -122,7 +118,6 @@ export class NewcommunicComponent implements OnInit {
        const selectedOwner = this.fcommunications.get('owner').value;
 
        this.availableUsers = this.interestedList.filter(interes => interes.name !== selectedOwner);
-       console.log('Avalaible', this.availableUsers)
 
     }
 
@@ -206,7 +201,6 @@ addSelectedInterested() {
     email: selectedEmail
   };
   this.selectedInterested.push(selectedInterest);
-
 
 }
 

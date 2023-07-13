@@ -65,7 +65,14 @@ export class AuthService {
               this.trackingService.addLog('', 'Salio del Sistema - Cierre de sesion', 'Menu Side Bar', '')
               localStorage.removeItem('token');
               localStorage.removeItem('refreshToken');
+
+              localStorage.removeItem('project');
+              localStorage.removeItem('company');
+              localStorage.removeItem('branch');
+              localStorage.removeItem('mail') ;
+
               this.router.navigateByUrl("/login");
+
               await this.authFire.signOut();
 
           }

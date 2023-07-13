@@ -139,10 +139,6 @@ export class CommunicationsComponent implements OnInit {
   }
 
 
-  mensajeAExcel() {
-    this.printReportsService.writeDataToExcelFile('/assets/files/HCO-PMO-FOR-001.xlsx');
-    window.open('./assets/files/HCO-PMOOR-001.xlsx', '_blank');
-  }
 
 
  showProfile(commun: Icommunications) {
@@ -154,7 +150,7 @@ export class CommunicationsComponent implements OnInit {
   getdataComunications() {
     this.loadData = true;
 
-    this.communicationsService.getDataCommunications2(this.trackingService.getProject())
+    this.communicationsService.getDataCommunications2(localStorage.getItem('project') )
       .subscribe((resp: any) => {
         /*=============================================
       Integrando respuesta de base de datos con la interfaz
@@ -347,7 +343,6 @@ export class CommunicationsComponent implements OnInit {
   }
 
 
-
   detailsdata() {}
 
 
@@ -362,7 +357,6 @@ export class CommunicationsComponent implements OnInit {
 
 
 
-
   getCommunicint() {
     //aqui qe pasar el id project que tengo los combo box
     this.communicationsService.getCommunications(this.trackingService.getProject())
@@ -374,7 +368,6 @@ export class CommunicationsComponent implements OnInit {
         console.log('Error:', error);
       });
   }
-
 
 
   generarReporte(){

@@ -4,6 +4,7 @@ import { Ilogin } from 'src/app/interface/ilogin';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { map } from 'rxjs/operators';
+import { TrackingService } from './tracking.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,8 @@ import { map } from 'rxjs/operators';
 
 export class LoginService {
 
-	constructor(private http: HttpClient) { }
+	constructor(private http: HttpClient,
+            private trackingService : TrackingService) { }
 
 	/*=============================================
 	LOGIN en Firebase Authentication
@@ -28,6 +30,10 @@ export class LoginService {
 				=============================================*/
         localStorage.setItem('token', resp.idToken);
 				localStorage.setItem('refreshToken', resp.refreshToken);
+
+        
+
+
 			})
 
 		);

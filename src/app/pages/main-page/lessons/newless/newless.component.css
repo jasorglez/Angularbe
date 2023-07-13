@@ -1,0 +1,17 @@
+.placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transition: all 0.2s;
+  color: #999;
+}
+
+input[type="date"]:not(:placeholder-shown) + .placeholder {
+  transform: translateY(-20px) scale(0.75);
+}
+
+
+.smaller-title {
+  font-size: 16px; /* Ajusta el tamaño de fuente según tus necesidades */
+}

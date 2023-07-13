@@ -69,7 +69,12 @@ export class SideBarComponent implements OnInit {
           this.router.navigate(['/communications']);
         }
 
+        navigateToLessons()  {
+          this.router.navigate(['/lessons']);
+        }
+
       	ngOnInit(): void  {
+
               this.getpermissionxCompanys() ;
          }
 
@@ -78,7 +83,11 @@ export class SideBarComponent implements OnInit {
       //obtener los permisos de la cia
       getpermissionxCompanys() {
 
-          this.companysService.getpermissionsxCompany(this.trackingService.getEmail()).subscribe((data) => {
+          this.companysService.getpermissionsxCompany(localStorage.getItem('mail'))
+          .subscribe((data) => {
+
+
+
             this.companyData = Object.values(data);
 
             if (this.companyData.length > 0) {
@@ -107,7 +116,7 @@ export class SideBarComponent implements OnInit {
 
         getpermissionxBranchs() {
 
-          this.companysService.getpermissionsxBranch(this.selectedCompany, this.trackingService.getEmail()).subscribe((databranch) => {
+          this.companysService.getpermissionsxBranch(localStorage.getItem('company'), localStorage.getItem('mail')).subscribe((databranch) => {
             this.branchData = Object.values(databranch);
             if (this.branchData.length > 0) {
 
@@ -150,6 +159,7 @@ export class SideBarComponent implements OnInit {
           const target = event.target as HTMLSelectElement;
           this.selectedProjectId = target.value;
           this.trackingService.setProject(this.selectedProjectId) ;
+
         }
 
 
