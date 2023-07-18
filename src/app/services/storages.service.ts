@@ -12,7 +12,6 @@ import { finalize } from 'rxjs';
 export class StoragesService {
 
 
-
   constructor( private storage2 : Storage, private storage : AngularFireStorage) {  }
 
 
@@ -51,8 +50,6 @@ export class StoragesService {
     const randomNumber = Math.floor(Math.random() * 10);
     return randomLetter1 + randomLetter2 + randomNumber;
   }
-
-
 
 
   uploadPdf(file: File): Promise<string> {

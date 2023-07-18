@@ -69,22 +69,22 @@ onTabSelected(tabName: string) {
   this.selectedTab = tabName;
 
   if (tabName=== 'users') {
-      this.trackingService.addLog('', 'Click en la Pestaña Users/Usuarios del menu Usuarios', 'Usuarios', '')}
+      this.trackingService.addLog(localStorage.getItem('company'), 'Click en la Pestaña Users/Usuarios del menu Usuarios', 'Usuarios', '')}
 
   if (tabName=== 'companys') {
-      this.trackingService.addLog('', 'Click en la Pestaña Company/Empresas del menu Usuarios', 'Usuarios', '')
+      this.trackingService.addLog(localStorage.getItem('company'), 'Click en la Pestaña Company/Empresas del menu Usuarios', 'Usuarios', '')
       this.getdataCompanys() }
 
   if (tabName=== 'branchs') {
-      this.trackingService.addLog('', 'Click en la Pestaña Branchs/Sucursales del menu Usuarios', 'Usuarios', '')
+      this.trackingService.addLog(localStorage.getItem('company'), 'Click en la Pestaña Branchs/Sucursales del menu Usuarios', 'Usuarios', '')
       this.getdataBranchs() }
 
   if (tabName=== 'projects') {
-      this.trackingService.addLog('', 'Click en la Pestaña Projects/Proyectos del menu Usuarios', 'Usuarios', '')
+      this.trackingService.addLog(localStorage.getItem('company'), 'Click en la Pestaña Projects/Proyectos del menu Usuarios', 'Usuarios', '')
       this.getdataProjects() }
 
   if (tabName=== 'settings') {
-      this.trackingService.addLog('', 'Click en la Pestaña Settings/Seguimiento del menu Usuarios', 'Usuarios', '')
+      this.trackingService.addLog(localStorage.getItem('company'), 'Click en la Pestaña Settings/Seguimiento del menu Usuarios', 'Usuarios', '')
       this.getdataTracking() }
 
     }
@@ -183,7 +183,6 @@ onTabSelected(tabName: string) {
 
 	@ViewChild(MatPaginator) paginator!: MatPaginator;
 	@ViewChild(MatSort) sort!: MatSort;
-
 
   	constructor(public translateService: TraductorService, private usersService: UsersService, private companyService: CompanysService,
         private firebaseService: FirebaseService, private branchService: BranchsService, private projectsService: ProjectService,

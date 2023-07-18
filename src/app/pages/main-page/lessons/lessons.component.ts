@@ -1,11 +1,15 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, NgModule } from '@angular/core';
 
 import { TraductorService } from 'src/app/services/traductor.service';
 import { TrackingService } from 'src/app/services/tracking.service';
 
 import { Ilessons } from 'src/app/interface/ilessons';
+import { Ilearned } from 'src/app/interface/ilearned';
+
+import { PrintreportsService } from 'src/app/services/printreports.service';
 
 import { LessonsService } from 'src/app/services/lessons.service';
+import { LessonslearnedService } from 'src/app/services/lessonslearned.service';
 import { alerts } from 'src/app/helpers/alerts';
 
 import { FormBuilder } from '@angular/forms';
@@ -14,7 +18,9 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 
+
 import { NewlessComponent } from './newless/newless.component';
+
 
 @Component({
   selector: 'app-lessons',
@@ -22,38 +28,40 @@ import { NewlessComponent } from './newless/newless.component';
   styleUrls: ['./lessons.component.css']
 })
 export class LessonsComponent implements OnInit {
-  selectedTab = 'lessons';
+  profileId : string = '';
+  selectedTab = 'meeting';
   profile: any = {};
 
   onTabSelected(tabName: string) {
     this.selectedTab = tabName;
 
-    if (tabName === 'lessons') {
+    if (tabName === 'meeting') {
       this.trackingService.addLog(
          this.trackingService.getnameComp(),
-        'Click en la Pestaña Details/Detalles del menu Conceptos',
+        'Click en la Pestaña Meeting',
         'Conceptos',
         this.trackingService.getEmail()
       );
-      this.getDataLessons();
+      this.getdataMeeting();
     }
 
-    if (tabName === 'personal') {
+    if (tabName === 'lessons') {
       this.trackingService.addLog(
         this.trackingService.getnameComp(),
-        'Click en la Pestaña Personal del menu Conceptos',
+        'Click en la Pestaña Lecciones aprendidas',
         'Conceptos',
         this.trackingService.getEmail()
-
       );
 
-      this.getDatafindLessons()
+      this.getdataLessonsl()
     }
   }
 
   lessonsDataSource!   : MatTableDataSource<Ilessons>;
+  learnedDataSource!   : MatTableDataSource<Ilearned>;
 
-  lessons : Ilessons[] = [] ;
+  meeting  : Ilessons[] = [] ;
+  lessonsl : Ilearned[] = [] ;
 
   screenSizeSM = false;
 
@@ -62,7 +70,7 @@ export class LessonsComponent implements OnInit {
 
   loadData     = false;
 
-  displayedColessons: string[] = [
+  displayedColmeeting: string[] = [
     'numberposition',
     'type',
     'place',
@@ -71,37 +79,48 @@ export class LessonsComponent implements OnInit {
     'actions',
   ];
 
+
+  displayedCollessons: string[] = [
+    'numberposition',  'concept', 'lessons',
+    'evidence', 'signed', 'actions'];
+
+
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
   constructor(private trackingService: TrackingService,
-    private translateService    : TraductorService,
-    private lessonsService      : LessonsService,
-    private dialog: MatDialog
+    private translateService      : TraductorService,
+    private lessonsService        : LessonsService,
+    private lessonslearnedService : LessonslearnedService,
+    public dialog: MatDialog
     ) { }
 
 
   ngOnInit() {
-    this.getDataLessons();
+
+
+
+      this.getdataMeeting();
+
   }
 
 
-
-  getDataLessons() {
+  
+  getdataMeeting() {
 
       this.loadData = true;
 
-      this.lessonsService.getDataLessons(localStorage.getItem('project'))
+      this.lessonsService.getDataMeeting(localStorage.getItem('project'))
         .subscribe((resp: any) => {
           /*=============================================
         Integrando respuesta de base de datos con la interfaz
         =============================================*/
           let numberposition = 1;
 
-          this.lessons = Object.keys(resp).map(
+          this.meeting = Object.keys(resp).map(
             (a) =>
               ({
-                 id: resp[a].key,
+                 id: a,
                  numberposition : numberposition++,
                  active         : 1,
                  details        : resp[a].details,
@@ -114,14 +133,62 @@ export class LessonsComponent implements OnInit {
               } as Ilessons)
           );
 
-            console.log(this.lessons) ;
-            this.profile = this.lessons[this.currentIndex]; // Tomamos el primer registro
-            this.fileUrl = this.profile.file ;
-            this.lessonsDataSource = new MatTableDataSource(this.lessons); // Creamos el dataSource
-            this.lessonsDataSource.paginator = this.paginator ;
-            this.lessonsDataSource.sort = this.sort;
+        //    console.log(this.lessons) ;
+             this.profile = this.meeting[this.currentIndex]; // Tomamos el primer registro
 
-           this.loadData = false;
+             this.fileUrl = this.profile.file ;
+             this.lessonsDataSource = new MatTableDataSource(this.meeting); // Creamos el dataSource
+             this.lessonsDataSource.paginator = this.paginator ;
+             this.lessonsDataSource.sort = this.sort;
+
+            this.loadData = false;
+        });
+    }
+
+
+    getdataLessonsl() {
+
+      this.loadData = true;
+
+      this.lessonslearnedService.getDataLearned(this.trackingService.getidlesson())
+        .subscribe((resp: any) => {
+          /*=============================================
+        Integrando respuesta de base de datos con la interfaz
+        =============================================*/
+          let numberposition = 1;
+
+          this.lessonsl = Object.keys(resp).map(
+            (a) =>
+              ({
+                 id: a,
+                 numberposition : numberposition++,
+                 active         : 1,
+                 people         : resp[a].people,
+                 concept        : resp[a].concept,
+                 reference      : resp[a].reference,
+                 stage          : resp[a].stage,
+                 phase          : resp[a].phase,
+                 procces        : resp[a].procces,
+                 technology     : resp[a].technology,
+                 event          : resp[a].event,
+                 evidenced      : resp[a].evidenced,
+                 id_lesson      : resp[a].id_lesson,
+                 lessonlearned  : resp[a].lessonlearned,
+                 consequencen   : resp[a].consequencen,
+                 consequencep   : resp[a].consequencep,
+                 actionspavoid  : resp[a].actionspavoid,
+                 signed         : resp[a].signed
+              } as Ilearned)
+          );
+
+           //   this.profile = this.lessonsl[this.currentIndex]; // Tomamos el primer registro
+           //  this.fileUrl = this.profile.file ;
+
+             this.learnedDataSource = new MatTableDataSource(this.lessonsl); // Creamos el dataSource
+             this.learnedDataSource.paginator = this.paginator ;
+             this.learnedDataSource.sort = this.sort;
+
+            this.loadData = false;
         });
     }
 
@@ -134,6 +201,8 @@ export class LessonsComponent implements OnInit {
   showProfile(commun: Ilessons) {
     // Actualizamos el currentIndex y el profile
     this.profile = commun;
+    this.trackingService.setidlesson( this.profile.id) ;
+
   }
 
 
@@ -143,12 +212,25 @@ export class LessonsComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.getDataLessons();
+
+        this.getdataMeeting();
       }
     });
 
   }
 
+
+  newLearned(formType: string) {
+    const dialogRef = this.dialog.open(NewlessComponent, { data: { formType: formType } });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+
+        this.getdataMeeting();
+      }
+    });
+
+  }
 
 
   editLessons(id: string) {
@@ -158,8 +240,6 @@ export class LessonsComponent implements OnInit {
 
 
   deleteLessons(id : string) {
-
-    console.log("ID", id)
 
     alerts.confirmAlert('Are you sure?', 'The information cannot be recovered!', 'warning','Yes, delete it!')
     .then((result) => {
@@ -180,7 +260,7 @@ export class LessonsComponent implements OnInit {
 
                       alerts.basicAlert("Sucess", "The user has been deleted", "success")
 
-                      this.getDataLessons();
+                      this.getdataMeeting();
                   }
                 )
               }
@@ -193,8 +273,6 @@ export class LessonsComponent implements OnInit {
   }
 
 
-
-
   applyFilter(dataSource: MatTableDataSource<any>, event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     dataSource.filter = filterValue.trim().toLowerCase();
@@ -203,5 +281,21 @@ export class LessonsComponent implements OnInit {
       dataSource.paginator.firstPage();
     }
   }
+
+
+  openLink(url: string) {
+    // este es el ultimo cambio que subi
+    window.open(url, '_blank');
+  }
+
+
+  reporteOne(){
+
+  }
+
+  reporteAll() {
+
+  }
+
 
 }

@@ -13,19 +13,29 @@ export class TrackingService {
   private picturecomp  : string = '' ;
   private fri          : string = '' ;
 
-  public nameuser     : string = '' ;
-  public pictureuser : string = '' ;
+  private nameuser     : string = '' ;
+  private pictureuser : string = '' ;
 
-  public projectser   : string = '' ;
-  public branchser    : string = '' ;
-  public companyser   : string = '' ;
+  private projectser   : string = '' ;
+  private branchser    : string = '' ;
+  private companyser   : string = '' ;
 
-  public contract         : string = '' ;
-  public nameproject      : string = '' ;
+  private contract         : string = '' ;
+  private nameproject      : string = '' ;
   private ubicationproject : string = '' ;
 
   private startproject : string = '' ;
   private endproject   : string = '' ;
+
+  public idlesson : string = '' ;
+
+  setidlesson(lesson : string): void {
+    this.idlesson = lesson ;
+  }
+
+  getidlesson() {
+    return this.idlesson;
+  }
 
 setnameUser(name: string) : void{
  this.nameuser = name ;

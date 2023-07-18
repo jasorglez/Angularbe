@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject,  OnInit } from '@angular/core';
 
 import { FormBuilder, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
@@ -6,12 +6,17 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { alerts } from 'src/app/helpers/alerts';
 
 import { Ilessons } from 'src/app/interface/ilessons';
+import { Ilearned } from 'src/app/interface/ilearned';
 
 import { CommunicationsService } from 'src/app/services/communications.service';
 
 import { TraductorService } from 'src/app/services/traductor.service';
 import { TrackingService } from 'src/app/services/tracking.service';
+
 import { LessonsService } from 'src/app/services/lessons.service';
+import { LessonslearnedService } from 'src/app/services/lessonslearned.service';
+import { ConceptsService } from 'src/app/services/concepts.service';
+
 import { FirebaseService } from 'src/app/services/firebase.service';
 
 import { StoragesService } from 'src/app/services/storages.service';
@@ -23,8 +28,10 @@ import { StoragesService } from 'src/app/services/storages.service';
 })
 export class NewlessComponent implements OnInit {
 
+  faseOptions = ['Inicio', 'Planeación', 'Ejecución', 'Monitoreo y control', 'Cierre'];
 
   interestedList  : any[] = [];
+  conceptsList    : any[] = [];
   selectedInteres : any[] = [];
 
   selectedFile: File | null = null;
@@ -40,7 +47,7 @@ export class NewlessComponent implements OnInit {
   loadData = false;
 
   url : string = '' ;
-
+  url2 : string = '' ;
 
   public flessons = this.formBuilder.group({
     active     :  1,
@@ -55,23 +62,67 @@ export class NewlessComponent implements OnInit {
  } )
 
 
+ public flearned = this.formBuilder.group({
+   active          :  1,
+   people          : [, [Validators.required]],
+   concept         :  '',
+   reference       :  [, [Validators.required]],
+   stage           :  '',
+   phase           : '' ,
+   procces         : ['',[Validators.required]],
+   technology      : ['',[Validators.required]],
+   event           : ['',[Validators.required]],
+   lessonlearned   : ['',[Validators.required]],
+   conseqp         : ['',[Validators.required]],
+   conseqn         : ['',[Validators.required]],
+   actionsf        : ['',[Validators.required]],
+} )
+
+
   constructor(private trackingService: TrackingService,
       private translateService     : TraductorService,
       private communicationservice : CommunicationsService,
       private lessonsService       : LessonsService,
+      private conceptsService      : ConceptsService,
+      private lessonlearnedService : LessonslearnedService,
       private firebaseService      : FirebaseService,
       private formBuilder: FormBuilder,
       private storage: StoragesService,
-      public dialogRef: MatDialogRef<NewlessComponent>,
+      public dialogRef: MatDialogRef<NewlessComponent >,
       @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit() {
+
     if (this.data.formType === 'flessons')  {
       this.getInterest();
     }
 
+     if (this.data.formType === 'flearned')  {
+
+     this.getDetailslessons(this.trackingService.getidlesson());
+
+     this.getConceptsxActiv() ;
+    }
 
   }
+
+ getDetailslessons(id: string){
+  this.lessonsService.getDatadetailsLessons(id)
+  .subscribe((dataInteres : any) => {
+    this.interestedList = dataInteres;
+
+  })
+
+ }
+
+ getConceptsxActiv() {
+    this.conceptsService.getDataConceptsxActivities(localStorage.getItem('project'))
+      .subscribe(data => {
+
+           this.conceptsList = data ;
+           console.log("Data", data);
+      });
+ }
 
     getInterest() {
       //aqui qe pasar el id project que tengo los combo box
@@ -86,11 +137,11 @@ export class NewlessComponent implements OnInit {
     }
 
 
- saveLessons() {
+ async saveLessons() {
 
     this.loadData = true;
 
-    this.uploadFile();
+    await this.uploadFile();
 
     this.formSubmitted = true;
       /*=============================================
@@ -107,11 +158,7 @@ export class NewlessComponent implements OnInit {
                 timep       :  this.flessons.get('timep')?.value
          }
 
-         console.log('la segunda vez', this.url) ;
-
-            this.loadData = false;
-
-
+               this.loadData = false;
 
             this.lessonsService.postData(dataLessons, localStorage.getItem('token')).subscribe(
               (resp: any) => {
@@ -124,6 +171,7 @@ export class NewlessComponent implements OnInit {
                   alerts.basicAlert('Ok', 'The communication has been saved', 'success');
 
                   this.dialogRef.close('save');
+
                 },
                     err=>{
                            alerts.basicAlert("Error", 'User saving error', "error")
@@ -133,17 +181,61 @@ export class NewlessComponent implements OnInit {
  }
 
 
+ async saveLearned() {
+  this.loadData = true;
+
+  await this.uploadFile();
+  await this.uploadFile2();
+
+  this.formSubmitted = true;
+    /*=============================================
+    Validamos y capturamos la informacion del formulario en la interfaz
+    =============================================*/
+       const dataLearned  : Ilearned = {
+              active        : 1,
+              people        : this.flearned.get('people').value,
+              concept       : this.flearned.get('concept').value,
+              lessonlearned : this.flearned.get('lessonlearned').value,
+              evidenced     : this.url,
+              signed        : this.url2,
+
+              reference     : this.flearned.get('reference').value,
+              stage         : this.flearned.get('stage').value,
+              phase         : this.flearned.get('phase').value,
+              procces       : this.flearned.get('procces').value,
+              technology    : this.flearned.get('technology').value,
+              event         : this.flearned.get('event').value,
+              id_lesson     : this.trackingService.getidlesson() ,
+              consequencen  : this.flearned.get('conseqn').value,
+              consequencep  : this.flearned.get('conseqp').value,
+              actionspavoid : this.flearned.get('actionsf').value,
+       }
+
+             this.loadData = false;
+
+             this.lessonlearnedService.postData(dataLearned, localStorage.getItem('token')).subscribe(
+              (resp: any) => {
+
+                  alerts.basicAlert('Ok', 'The Lesson Learned has been saved', 'success');
+
+                  this.dialogRef.close('save');
+
+                },
+                    err=>{
+                           alerts.basicAlert("Error", 'Learned saving error', "error")
+                    }
+             );
+
+ }
+
    saveToDetailInterested(key: string) {
     // Recorrer el arreglo selectedInterested y agregar la clave correspondiente a cada nombre
     const fieldName = key; // Nombre del campo con nombre dinámico
 
-    console.log('Registro automatico', key);
-
      const details: any[] = this.selectedInterested.map(interest => {
        return {
          name     : interest.name,
-         email    : 'correo',
-         position : '' ,
+         email    : 'un dato lo que sea',
          active : 1
        };
      });
@@ -152,7 +244,6 @@ export class NewlessComponent implements OnInit {
          .then(()  => {
 
         // console.log('Details:', details);
-         // Resto del código para guardar los detalles del interesado
        }
      )
   }
@@ -186,7 +277,6 @@ export class NewlessComponent implements OnInit {
 
 }
 
-
   removeSelectedInterested(index: number) {
     this.selectedInterested.splice(index, 1);
   }
@@ -195,19 +285,36 @@ export class NewlessComponent implements OnInit {
     this.selectedFile = event.target.files[0];
   }
 
-  uploadFile() {
+  onFileSelected2(event: any) {
+    this.selectedFile = event.target.files[0];
+  }
+
+
+  async uploadFile() {
     if (this.selectedFile) {
-      this.storage.uploadPdf(this.selectedFile)
-        .then(downloadUrl => {
-          this.url = downloadUrl ;
-          // Aquí puedes guardar el enlace de descarga (downloadUrl) en tu registro o realizar cualquier otra acción necesaria
-          console.log('Download this.url:', this.url);
-        })
-        .catch(error => {
-          console.error('Upload error:', error);
-        });
+      try {
+        const downloadUrl = await this.storage.uploadPdf(this.selectedFile);
+        this.url = downloadUrl;
+        console.log('Download this.url:', this.url);
+      } catch (error) {
+        console.error('Upload error:', error);
+      }
     }
   }
+
+
+  async uploadFile2() {
+    if (this.selectedFile) {
+      try {
+        const downloadUrl = await this.storage.uploadPdf(this.selectedFile);
+        this.url2 = downloadUrl;
+
+      } catch (error) {
+        console.error('Upload error:', error);
+      }
+    }
+  }
+
 
 
 }

@@ -44,20 +44,25 @@ getDataConcepts(project: string): Observable<any> {
 
 }
 
-getDataConcepts2() {
-  const db = firebase.firestore();
-  const conceptsCollection = db.collection("conceptos");
 
-  const query = conceptsCollection
-    .where('Actividad', '==', '1')
-    .limit(1);
+getDataConceptsxActivities(id_project: string): Observable<any[]> {
+  const url = `${environment.urlFirebase}concepts.json`;
 
-  query.get().then(querySnapshot => {
-    querySnapshot.forEach(doc => {
-       const data = doc.data()
-      alert(JSON.stringify(data));
-    });
-  });
+  return this.http.get<any[]>(url).pipe(
+    map(data => {
+      const filteredData = Object.values(data).filter(item =>
+        item.id_project === id_project && item.tipoactividad === 'Actividad'
+      );
+      const selectedFields = filteredData.map(item => {
+        return {
+          actividad: item.actividad,
+          descripcion: item.descripcion,
+          tipoactividad: item.tipoactividad
+        };
+      });
+      return selectedFields;
+    })
+  );
 }
 
 
@@ -72,5 +77,7 @@ getPersonal(id: string): Observable<any> {
   }
 
 }
+
+
 
 }

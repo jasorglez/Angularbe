@@ -721,6 +721,100 @@
       }
     ]
   },
+  "details_lessons": {
+    "-N_EPC9EEIKgy5bbZe7r": [
+      {
+        "active": 1,
+        "email": "Juan Perez",
+        "name": "Juan Perez",
+        "position": ""
+      },
+      {
+        "active": 1,
+        "email": "Pedro Malave Gonzalez",
+        "name": "Pedro Malave Gonzalez",
+        "position": ""
+      }
+    ],
+    "-N_FYRfPW_LH-3lz5tws": [
+      {
+        "active": 1,
+        "email": "correo",
+        "name": "Maggie Simpson Arce Montes",
+        "position": ""
+      },
+      {
+        "active": 1,
+        "email": "correo",
+        "name": "Bartolome Simpson",
+        "position": ""
+      }
+    ],
+    "-N_FZP3uz1cCCjc4ghZF": [
+      {
+        "active": 1,
+        "email": "correo",
+        "name": "Heber Sanchezuuuuuu",
+        "position": ""
+      },
+      {
+        "active": 1,
+        "email": "correo",
+        "name": "David Rios Alvarado",
+        "position": ""
+      },
+      {
+        "active": 1,
+        "email": "correo",
+        "name": "Pedro Malave Gonzalez",
+        "position": ""
+      }
+    ],
+    "-N_F_Ft20yUyHWW9X2-M": [
+      {
+        "active": 1,
+        "email": "correo",
+        "name": "Arturo Gonzalez",
+        "position": ""
+      },
+      {
+        "active": 1,
+        "email": "correo",
+        "name": "Pedro Serafin",
+        "position": ""
+      }
+    ],
+    "-N_GJWhH1-LOqkiXc_mK": [
+      {
+        "active": 1,
+        "email": "correo",
+        "name": "Heber Sanchezuuuuuu",
+        "position": ""
+      },
+      {
+        "active": 1,
+        "email": "correo",
+        "name": "Pedro Malave Gonzalez",
+        "position": ""
+      }
+    ],
+    "-N_GKxb5X-75nlMmlt6Z": [
+      {
+        "active": 1,
+        "email": "correo",
+        "name": "David Rios Alvarado",
+        "position": ""
+      }
+    ],
+    "-N_GLuO3C4MvGcOge42x": [
+      {
+        "active": 1,
+        "email": "correo",
+        "name": "Juan Ramirez Rodriguez",
+        "position": ""
+      }
+    ]
+  },
   "documents_communications": {
     "-DFT54SXer100": {
       "active": 1,
@@ -1219,6 +1313,76 @@
     }
   },
   "lessons": {
+    "-N_FVFGfxE44R26iVy6v": {
+      "active": 1,
+      "datep": "2023-07-01T00:00:00.000Z",
+      "details": "se reunieron las sig, personas",
+      "file": "https://firebasestorage.googleapis.com/v0/b/beapp-501d1.appspot.com/o/pdf%2F1689273616742_recibo_cfe.pdf?alt=media&token=20f2123a-d5ac-4ae8-9da5-d43a3c998e18",
+      "id_project": "LQBGAFSts9829",
+      "place": "Oficinas de Cd carmen",
+      "timep": "09:48 pm",
+      "typemeeting": "Registro"
+    },
+    "-N_FYRfPW_LH-3lz5tws": {
+      "active": 1,
+      "datep": "2023-07-02T00:00:00.000Z",
+      "details": "se reunieron en el DF",
+      "file": "https://firebasestorage.googleapis.com/v0/b/beapp-501d1.appspot.com/o/pdf%2F1689274092519_xime%202.pdf?alt=media&token=bb990f15-c80f-47ce-b888-b914ef1c6d7f",
+      "id_project": "LQBGAFSts9829",
+      "place": "Mexico, DF",
+      "timep": "10:20",
+      "typemeeting": "Presentacion"
+    },
+    "-N_FZP3uz1cCCjc4ghZF": {
+      "active": 1,
+      "datep": "2023-07-06T00:00:00.000Z",
+      "details": "los detalles en el campeche",
+      "file": "",
+      "id_project": "LQBGAFSts9829",
+      "place": "Campeche",
+      "timep": "15:09",
+      "typemeeting": "Presentacion"
+    },
+    "-N_F_Ft20yUyHWW9X2-M": {
+      "active": 1,
+      "datep": "2023-07-08T00:00:00.000Z",
+      "details": "se reunieron en veracruz",
+      "file": "https://firebasestorage.googleapis.com/v0/b/beapp-501d1.appspot.com/o/pdf%2F1689273868233_comp1.pdf?alt=media&token=b64b9fd3-c0c3-44d9-aa78-fad92003a209",
+      "id_project": "LQBGAFSts9829",
+      "place": "Veracruz",
+      "timep": "12:24",
+      "typemeeting": "Presentacion"
+    },
+    "-N_GJWhH1-LOqkiXc_mK": {
+      "active": 1,
+      "datep": "2023-07-05T00:00:00.000Z",
+      "details": "Reunion zacatecas para los detalles de los sig.",
+      "file": "",
+      "id_project": "LQBGAFSts9829",
+      "place": "Zacatecas",
+      "timep": "14:00",
+      "typemeeting": "Presentacion"
+    },
+    "-N_GKxb5X-75nlMmlt6Z": {
+      "active": 1,
+      "datep": "2023-07-12T00:00:00.000Z",
+      "details": "los detalles ch",
+      "file": "",
+      "id_project": "LQBGAFSts9829",
+      "place": "Chihuahua",
+      "timep": "17:00 pm",
+      "typemeeting": "Presentacion"
+    },
+    "-N_GLuO3C4MvGcOge42x": {
+      "active": 1,
+      "datep": "2023-06-30T00:00:00.000Z",
+      "details": "se identificaron los sig. valores",
+      "file": "https://firebasestorage.googleapis.com/v0/b/beapp-501d1.appspot.com/o/pdf%2F1689287105694_soriano_MX_April_2023.pdf?alt=media&token=d744bf4b-0670-42d2-9f26-41b270759b33",
+      "id_project": "LQBGAFSts9829",
+      "place": "Oficinas de HCO",
+      "timep": "Merida",
+      "typemeeting": "Registro"
+    },
     "-YHZXNIYpPvmjb0x6bEd": {
       "active": 1,
       "datep": "01/01/2023",
@@ -3139,95 +3303,6 @@
   },
   "risk": {
     "1001": {
-      "actions": [
-        {
-          "adescription": "accion de mitigacion 1",
-          "endDate": "2023-06-27",
-          "id_action": 0,
-          "resources": [
-            {
-              "cost": 0,
-              "id_resource": 0,
-              "quantity": 0,
-              "rdescription": "",
-              "unit": ""
-            }
-          ],
-          "startDate": "2023-06-05",
-          "total_cost": 50,
-          "tracking": [
-            {
-              "id_tracking": 0,
-              "observations": "Sin observaciones",
-              "progress": 5,
-              "reg_date": "2023-07-02",
-              "sum_progress": 5
-            },
-            {
-              "id_tracking": 1,
-              "observations": "Sin observaciones",
-              "progress": 5,
-              "reg_date": "2023-07-04",
-              "sum_progress": 10
-            },
-            {
-              "id_tracking": 2,
-              "observations": "Sin observaciones",
-              "progress": 10,
-              "reg_date": "2023-07-08",
-              "sum_progress": 20
-            },
-            {
-              "id_tracking": 3,
-              "observations": "Observaciones del avance",
-              "progress": 5,
-              "reg_date": "2023-07-10",
-              "sum_progress": 25
-            }
-          ]
-        },
-        {
-          "adescription": "accion de mitigacion 2",
-          "endDate": "2023-06-27",
-          "id_action": 1,
-          "resources": [
-            {
-              "cost": 0,
-              "id_resource": 0,
-              "quantity": 0,
-              "rdescription": "",
-              "unit": ""
-            }
-          ],
-          "startDate": "2023-06-09",
-          "total_cost": 10,
-          "tracking": [
-            {
-              "id_tracking": 0,
-              "observations": "Observaciones trakin 0 action 1",
-              "progress": 5,
-              "reg_date": "2023-06-05",
-              "sum_progress": 5
-            }
-          ]
-        },
-        {
-          "adescription": "accion de mitigacion 3",
-          "endDate": "2023-06-28",
-          "id_action": 2,
-          "resources": [
-            {
-              "cost": 0,
-              "id_resource": 0,
-              "quantity": 0,
-              "rdescription": "",
-              "unit": ""
-            }
-          ],
-          "startDate": "2023-06-11",
-          "total_cost": 5
-        }
-      ],
       "active": 1,
       "closing_incharge": "Alberto Vazquez",
       "description": "Seguimiento a los oficios PEP",
@@ -3249,50 +3324,10 @@
       "rimp_scope": 0,
       "rimp_score": 0,
       "rimp_time": 0,
-      "rinteres": [
-        {
-          "email": "lsanchez@hco-consultores.com",
-          "id_int": 0,
-          "name": "Lidia Sanchez"
-        },
-        {
-          "email": "mmateos@hco-consultores.com",
-          "id_int": 1,
-          "name": "Miguel Mateos"
-        },
-        {
-          "email": "gzapata@hco-consultores.com",
-          "id_int": 2,
-          "name": "Guillermina Zapata"
-        },
-        {
-          "email": "cfontanero@hco-consultores.com",
-          "id_int": 3,
-          "name": "Carlos Fontanero"
-        }
-      ],
       "rprobability": 0,
       "status": "Abierto"
     },
     "1002": {
-      "actions": [
-        {
-          "adescription": "",
-          "endDate": "",
-          "id_action": 0,
-          "resources": [
-            {
-              "cost": 0,
-              "id_resource": 0,
-              "quantity": 0,
-              "rdescription": "",
-              "unit": ""
-            }
-          ],
-          "startDate": "",
-          "total_cost": 0
-        }
-      ],
       "active": 1,
       "closing_incharge": "Ignacio Reyna",
       "description": "Estatus reporte diario (tierra y abordo)",
@@ -3316,6 +3351,106 @@
       "rimp_time": 0,
       "rprobability": 0,
       "status": "En proceso de Mitigación"
+    },
+    "-N_D_bbOU3h49UCR6yAq": {
+      "active": 1,
+      "closing_incharge": "",
+      "description": "Esto es una prueba",
+      "id_concept": "concepto 1",
+      "id_project": "LQBGAFSts9829",
+      "imp_cost": "",
+      "imp_quality": "",
+      "imp_scope": "",
+      "imp_score": 0,
+      "imp_time": "",
+      "monitoring_date": "",
+      "observations": "",
+      "owner": "",
+      "phase": "Ejecución",
+      "probability": "",
+      "response": "Transferir",
+      "rimp_cost": 0,
+      "rimp_quality": 0,
+      "rimp_scope": 0,
+      "rimp_score": 0,
+      "rimp_time": 0,
+      "rprobability": 0,
+      "status": "Abierto"
+    },
+    "-N_DafF_dZNWthXqdFe3": {
+      "active": 1,
+      "closing_incharge": "Pedro Malave Gonzalez",
+      "description": "Esto es una prueba 1",
+      "id_concept": "concepto 2",
+      "id_project": "LQBGAFSts9829",
+      "imp_cost": "5",
+      "imp_quality": "3",
+      "imp_scope": "3",
+      "imp_score": 0,
+      "imp_time": "5",
+      "monitoring_date": "",
+      "observations": "",
+      "owner": "Arturo Gonzalez",
+      "phase": "Monitoreo y Control",
+      "probability": "4",
+      "response": "Transferir",
+      "rimp_cost": 0,
+      "rimp_quality": 0,
+      "rimp_scope": 0,
+      "rimp_score": 0,
+      "rimp_time": 0,
+      "rprobability": 0,
+      "status": "Abierto"
+    },
+    "-N_DbVIEm7EKxtmJ8yyh": {
+      "active": 1,
+      "closing_incharge": "Lisa Simpson",
+      "description": "Esto es una prueba 2",
+      "id_concept": "concepto 3",
+      "id_project": "LQBGAFSts9829",
+      "imp_cost": "3",
+      "imp_quality": "1",
+      "imp_scope": "4",
+      "imp_score": 0,
+      "imp_time": "5",
+      "monitoring_date": "",
+      "observations": "",
+      "owner": "Arturo Gonzalez",
+      "phase": "Ejecución",
+      "probability": "5",
+      "response": "Mitigar",
+      "rimp_cost": 0,
+      "rimp_quality": 0,
+      "rimp_scope": 0,
+      "rimp_score": 0,
+      "rimp_time": 0,
+      "rprobability": 0,
+      "status": "Abierto"
+    },
+    "-N_DcWrriHck1COP-d6y": {
+      "active": 1,
+      "closing_incharge": "Heber Arce Sanchez",
+      "description": "Esto es una prueba 3",
+      "id_concept": "concepto 2",
+      "id_project": "LQBGAFSts9829",
+      "imp_cost": "4",
+      "imp_quality": "4",
+      "imp_scope": "4",
+      "imp_score": 80,
+      "imp_time": "4",
+      "monitoring_date": "",
+      "observations": "",
+      "owner": "Pedro Malave Gonzalez",
+      "phase": "Cierre",
+      "probability": "5",
+      "response": "Aceptar",
+      "rimp_cost": 0,
+      "rimp_quality": 0,
+      "rimp_scope": 0,
+      "rimp_score": 0,
+      "rimp_time": 0,
+      "rprobability": 0,
+      "status": "Abierto"
     }
   },
   "sales": {
@@ -60406,6 +60541,1838 @@
       "idn": 7001,
       "origin": "Origen del Formulario Login",
       "user": "jmontes@hco-consultores.com"
+    },
+    "-N_C10WcVUKNANiRqnh5": {
+      "company": "",
+      "datetime": "2023-07-13T02:15:21.935Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7002,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_C10s6aMEjyzQASrHC": {
+      "company": "",
+      "datetime": "2023-07-13T02:15:23.533Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7003,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_C1KdQuMh9LJgusmWm": {
+      "company": "",
+      "datetime": "2023-07-13T02:16:44.435Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7004,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_C1L-shMw10qOrKazV": {
+      "company": "",
+      "datetime": "2023-07-13T02:16:45.957Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7005,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_C1WUY3m_OuhFY3l10": {
+      "company": "",
+      "datetime": "2023-07-13T02:17:32.885Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7006,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_C1XRpXel4LKKNOBwW": {
+      "company": "",
+      "datetime": "2023-07-13T02:17:36.852Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7007,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_C22_5-cfmlKuiYgYi": {
+      "company": "",
+      "datetime": "2023-07-13T02:19:52.399Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7008,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_C23PbAsBofRu1xbfZ": {
+      "company": "",
+      "datetime": "2023-07-13T02:19:56.010Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7009,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_C2qi0CNY1aQMgmtnz": {
+      "company": "",
+      "datetime": "2023-07-13T02:23:21.954Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7010,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_C2r68Si3KObJP1AmX": {
+      "company": "",
+      "datetime": "2023-07-13T02:23:23.718Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7011,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_C3cqJur1I93Bp8I6A": {
+      "company": "",
+      "datetime": "2023-07-13T02:26:47.256Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7012,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_C5GDChZJrDwYchGeJ": {
+      "company": "",
+      "datetime": "2023-07-13T02:33:54.800Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7013,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_CBKs5nu_927D2NM82": {
+      "company": "",
+      "datetime": "2023-07-13T03:00:26.777Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7014,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_CBM1d7JDNCFlGvcZD": {
+      "company": "",
+      "datetime": "2023-07-13T03:00:31.539Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7015,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_CBMTM7kcaY7anHyKQ": {
+      "company": "",
+      "datetime": "2023-07-13T03:00:33.107Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7016,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_CBTFSc_aPNc4iHDXy": {
+      "company": "",
+      "datetime": "2023-07-13T03:01:01.057Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7017,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_CD0PSvX_Hm9_qBCuY": {
+      "company": "",
+      "datetime": "2023-07-13T03:07:47.165Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7018,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_CDr52ZHEksWVnWmEf": {
+      "company": "",
+      "datetime": "2023-07-13T03:11:26.937Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7019,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_CF2WWC8MO1dsBhyVA": {
+      "company": "",
+      "datetime": "2023-07-13T03:16:39.935Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7020,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_CJu8l5dT4BdqlrcIF": {
+      "company": "",
+      "datetime": "2023-07-13T03:37:52.267Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7021,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_CKAAV_PmoxMf9UBgQ": {
+      "company": "",
+      "datetime": "2023-07-13T03:39:02.225Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7022,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_CKAkMcsLSdzRzMTOd": {
+      "company": "",
+      "datetime": "2023-07-13T03:39:04.478Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7023,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_CKeuC0Ea2MF7MikZ3": {
+      "company": "",
+      "datetime": "2023-07-13T03:41:12.091Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7024,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_CKgAYHdsn6F0Doxbv": {
+      "company": "",
+      "datetime": "2023-07-13T03:41:17.281Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7025,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_CQ415ZgiKD6pBT8xd": {
+      "company": "",
+      "datetime": "2023-07-13T04:04:49.798Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7026,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_CTzBtck-vHJ71bHg6": {
+      "company": "",
+      "datetime": "2023-07-13T04:21:54.313Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7027,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_CV9cjjPJZbTPurEof": {
+      "company": "",
+      "datetime": "2023-07-13T04:27:03.362Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7028,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_CVLgywPwh3Tzu9icq": {
+      "company": "",
+      "datetime": "2023-07-13T04:27:52.946Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7029,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_CVZfpLj0LltXRH9Lg": {
+      "company": "",
+      "datetime": "2023-07-13T04:28:50.113Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7030,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_CV_I00NxwPqd3nqn-": {
+      "company": "",
+      "datetime": "2023-07-13T04:28:52.131Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7031,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_DBftvjH7iRneLPBdx": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T07:41:35.167Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7032,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_DBgfje8RlbbizUpnB": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T07:41:38.797Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7033,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_DBmkXGxlIqh8MkAP3": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T07:42:03.587Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7034,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_DBnwHdeNpsY3CaLrm": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T07:42:08.367Z",
+      "description": "Eleccion del menu Risk/Riesgos",
+      "idn": 7035,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_DC-bi-atEtzQSDWZ7": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T07:43:00.028Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7036,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_DC3RcVyIx9pmh2ZAo": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T07:43:16.030Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7037,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_DC4Mowe9H0-bwKViy": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T07:43:19.912Z",
+      "description": "Eleccion del menu Risk/Riesgos",
+      "idn": 7038,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_DD0zMJRfZ71xtn_BI": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T07:47:27.707Z",
+      "description": "Eleccion del menu Comunications/Comunicaciones",
+      "idn": 7039,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_DD1_ufZeOXB-Kohna": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T07:47:30.566Z",
+      "description": "Eleccion del menu Risk/Riesgos",
+      "idn": 7040,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_DDhK2ZGdcLUh_Yus-": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T07:50:25.559Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7041,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_DDmbBmyRjcctzd2Fc": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T07:50:47.279Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7042,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_DDnrNTeOA8bNS-NCq": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T07:50:52.352Z",
+      "description": "Eleccion del menu Risk/Riesgos",
+      "idn": 7043,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_DEu5D3QUb-y5nGsXB": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T07:55:38.873Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7044,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_DFAl_Tpkae9ryZ9Tp": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T07:56:52.481Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7045,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_DFCY4RA6lFe2mA5TQ": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T07:56:59.727Z",
+      "description": "Eleccion del menu Risk/Riesgos",
+      "idn": 7046,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_DP6Lo_AhM6_kPyQtw": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T08:40:15.607Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7047,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_DP6s--St2zI0Ocaze": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T08:40:18.030Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7048,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_DPA5G1meYeezq8wx3": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T08:40:31.148Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7049,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_DPBV5-DcV3pRL9JDw": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T08:40:36.241Z",
+      "description": "Eleccion del menu Risk/Riesgos",
+      "idn": 7050,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_DVxQdOin_7GXSKW1i": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T09:10:10.153Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7051,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_DW-VI0ag6ykmcHfxq": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T09:10:22.779Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7052,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_DW0Ie3bhZYnaBfsNo": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T09:10:25.780Z",
+      "description": "Eleccion del menu Risk/Riesgos",
+      "idn": 7053,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_DWJ-NenEtPQ4E5Kx9": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T09:11:42.604Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7054,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_DWLWTMUL9HEhUO7dm": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T09:11:52.954Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7055,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_DWMIeX4ZD-LDKi3UA": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T09:11:56.187Z",
+      "description": "Eleccion del menu Risk/Riesgos",
+      "idn": 7056,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_DX7jYrlMwRey2YtmU": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T09:15:18.481Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7057,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_DXA9BQAeVu9p0QvVI": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T09:15:28.565Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7058,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_DXEi-pWH3EgR3GiZ2": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T09:15:47.139Z",
+      "description": "Eleccion del menu Risk/Riesgos",
+      "idn": 7059,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_DXt56r86ffiNSPOgk": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T09:18:36.725Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7060,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_DYBg2e_WtY5UgpYar": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T09:19:56.753Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7061,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_DYClds3pqbK-OPVAJ": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T09:20:01.398Z",
+      "description": "Eleccion del menu Risk/Riesgos",
+      "idn": 7062,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_DYaI7sDvx79EdTLIC": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T09:21:41.598Z",
+      "description": "Eleccion del menu Interested/Interesados",
+      "idn": 7063,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_DYamNlpoaQSEYJJix": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T09:21:43.895Z",
+      "description": "Eleccion del menu Risk/Riesgos",
+      "idn": 7064,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_DZnu4FMw4uYGSBCex": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T09:26:59.544Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7065,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_DZreOYS0jMKbqRO7b": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T09:27:14.839Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7066,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_DZwangk5z93Nf9d4P": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T09:27:35.358Z",
+      "description": "Eleccion del menu Risk/Riesgos",
+      "idn": 7067,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_D_AX-zH8-c4qyGfPd": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T09:28:36.239Z",
+      "description": "Eleccion del menu Interested/Interesados",
+      "idn": 7068,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_D_AzVExw0jUHN_pdB": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T09:28:38.366Z",
+      "description": "Eleccion del menu Risk/Riesgos",
+      "idn": 7069,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_D_SbYw5yU2MVWrTZ5": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T09:29:49.810Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7070,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_D_Xg3R6W8NhOrml3P": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T09:30:11.365Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7071,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_D_YQQFGZA-AKUorVH": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T09:30:14.488Z",
+      "description": "Eleccion del menu Risk/Riesgos",
+      "idn": 7072,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_D_dkCAlHiBYHfJVPC": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T09:30:40.133Z",
+      "description": "Eleccion del menu Interested/Interesados",
+      "idn": 7073,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_D_e5jaLwnHMhjYqJG": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T09:30:41.723Z",
+      "description": "Eleccion del menu Risk/Riesgos",
+      "idn": 7074,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_DaRbBLpor2G5cWI-h": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T09:34:07.919Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7075,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_DaU77ItFAdsxwdBab": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T09:34:18.926Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7076,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_DaUpHB4Cy2Z3HwM4O": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T09:34:21.839Z",
+      "description": "Eleccion del menu Risk/Riesgos",
+      "idn": 7077,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_DagX6jRTXIFP_rRJw": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T09:35:13.575Z",
+      "description": "Eleccion del menu Interested/Interesados",
+      "idn": 7078,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_DagqGnLB2GaVqinPU": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T09:35:15.123Z",
+      "description": "Eleccion del menu Risk/Riesgos",
+      "idn": 7079,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_Db9trBjOyhss2ABtS": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T09:37:18.103Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7080,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_DbDhG517Jn5--FnQS": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T09:37:33.176Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7081,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_DbFUaH-DpMCA_yA99": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T09:37:41.085Z",
+      "description": "Eleccion del menu Interested/Interesados",
+      "idn": 7082,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_DbFmqoVZeWpLgrRe_": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T09:37:42.455Z",
+      "description": "Eleccion del menu Risk/Riesgos",
+      "idn": 7083,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_DbXTyLwiFcMvKTSfy": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T09:38:54.444Z",
+      "description": "Eleccion del menu Comunications/Comunicaciones",
+      "idn": 7084,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_DbXx0-CZaQaX8_KWo": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T09:38:56.752Z",
+      "description": "Eleccion del menu Risk/Riesgos",
+      "idn": 7085,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_DbvfwfMFBhSt628Zy": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T09:40:37.576Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7086,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_DcIHONj547aD3phhw": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T09:42:14.309Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7087,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_DcJ6F8A2mh1fqJp2C": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T09:42:18.157Z",
+      "description": "Eleccion del menu Risk/Riesgos",
+      "idn": 7088,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_DcYoRAPYWs7WLdgyN": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T09:43:22.418Z",
+      "description": "Eleccion del menu Interested/Interesados",
+      "idn": 7089,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_DcZ7dsDc8ktb4jAni": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T09:43:23.717Z",
+      "description": "Eleccion del menu Risk/Riesgos",
+      "idn": 7090,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_DddFFopJNDoNggJP-": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T09:48:06.488Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7091,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_DdhAT6wvkaZA0dhvN": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T09:48:22.107Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7092,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_DdhjBPaME9Xw8mtpL": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T09:48:25.147Z",
+      "description": "Eleccion del menu Risk/Riesgos",
+      "idn": 7093,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_DeO5oVo8HnbjxkvVP": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T09:51:22.730Z",
+      "description": "Eleccion del menu Interested/Interesados",
+      "idn": 7094,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_DeOoVfKzbbZf_mKwg": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T09:51:25.873Z",
+      "description": "Eleccion del menu Comunications/Comunicaciones",
+      "idn": 7095,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_DeP-vIznJ_TOKbcbM": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T09:51:26.661Z",
+      "description": "Eleccion del menu Risk/Riesgos",
+      "idn": 7096,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_EGcZR3om9apGJryIG": {
+      "company": "",
+      "datetime": "2023-07-13T12:42:47.737Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7097,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_EHu4YXbQQhZ1bQb47": {
+      "company": "",
+      "datetime": "2023-07-13T12:48:22.141Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7098,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_EICBqILKDShkUOVTP": {
+      "company": "",
+      "datetime": "2023-07-13T12:49:40.523Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7099,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_EIGSMcj0A_RutFzM-": {
+      "company": "",
+      "datetime": "2023-07-13T12:49:56.639Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7100,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_EIwt6IolihyfA9yU5": {
+      "company": "",
+      "datetime": "2023-07-13T12:52:55.789Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7101,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_EIxonbLutxCe83kod": {
+      "company": "",
+      "datetime": "2023-07-13T12:52:59.791Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7102,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_ENuDaoLee6j4xHGrs": {
+      "company": "",
+      "datetime": "2023-07-13T13:14:35.459Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7103,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_EO8eveBIAgGVFw0px": {
+      "company": "",
+      "datetime": "2023-07-13T13:15:38.886Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7104,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_EO95pRP6mAwLf7-8a": {
+      "company": "",
+      "datetime": "2023-07-13T13:15:40.831Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7105,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_EOPXhYCFPLwz5At5H": {
+      "company": "",
+      "datetime": "2023-07-13T13:16:47.888Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7106,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_EOQG-aV9MCknksZYy": {
+      "company": "",
+      "datetime": "2023-07-13T13:16:51.103Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7107,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_EOkqllOxS99TPGZ8Y": {
+      "company": "",
+      "datetime": "2023-07-13T13:18:19.277Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7108,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_EOn34JBlV4WRxvEG7": {
+      "company": "",
+      "datetime": "2023-07-13T13:18:28.510Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7109,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_EOtSN4QFh_8RlV7Ee": {
+      "company": "",
+      "datetime": "2023-07-13T13:18:54.531Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7110,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_EOv0a_U0sSTEaPbyn": {
+      "company": "",
+      "datetime": "2023-07-13T13:19:01.124Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7111,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_EQ6s7et-ycTO8nfpT": {
+      "company": "",
+      "datetime": "2023-07-13T13:24:15.818Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7112,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_EQRkqh1UfqtzlVly_": {
+      "company": "",
+      "datetime": "2023-07-13T13:25:41.327Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7113,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_F5qOo5I4Fkiy6jd_g": {
+      "company": "",
+      "datetime": "2023-07-13T16:35:19.772Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7114,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_F5t0WkSyFnEpPaA_c": {
+      "company": "",
+      "datetime": "2023-07-13T16:35:30.296Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7115,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_FAUDcNW5Lzzc5IWZc": {
+      "company": "",
+      "datetime": "2023-07-13T16:55:34.596Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7116,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_FC0xkvYsfQmxMfiga": {
+      "company": "",
+      "datetime": "2023-07-13T17:02:20.005Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7117,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_FCJ4dpyKV62n4xVtp": {
+      "company": "",
+      "datetime": "2023-07-13T17:03:34.446Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7118,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_FCJR9W3UJJJHtrTfg": {
+      "company": "",
+      "datetime": "2023-07-13T17:03:35.947Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7119,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_FKx-HXGtF9t4fmVAZ": {
+      "company": "",
+      "datetime": "2023-07-13T17:41:18.887Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7120,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_FQfyHtIAzFOk-vvWg": {
+      "company": "",
+      "datetime": "2023-07-13T18:06:22.012Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7121,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_FQonN7q-Z5ZfQEhfS": {
+      "company": "",
+      "datetime": "2023-07-13T18:06:58.324Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7122,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_FQp52X4IE5MBOWUlp": {
+      "company": "",
+      "datetime": "2023-07-13T18:06:59.631Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7123,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_FQwNjL8h7e0omeiV4": {
+      "company": "",
+      "datetime": "2023-07-13T18:07:29.280Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7124,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_FQw_LS_rZUDmLEn9n": {
+      "company": "",
+      "datetime": "2023-07-13T18:07:30.304Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7125,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_FSGIP8Dd9uO0h7QFj": {
+      "company": "",
+      "datetime": "2023-07-13T18:13:16.726Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7126,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_FT6QwuBZYmLUmXH08": {
+      "company": "",
+      "datetime": "2023-07-13T18:16:58.808Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7127,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_FUhQpLehP8cswQj_i": {
+      "company": "",
+      "datetime": "2023-07-13T18:23:56.523Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7128,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_FUkE8be-BxdfKehDf": {
+      "company": "",
+      "datetime": "2023-07-13T18:24:08.241Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7129,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_FUytwGo0gq1LrAPVI": {
+      "company": "",
+      "datetime": "2023-07-13T18:25:08.098Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7130,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_FV38pteFplvhLCv2h": {
+      "company": "",
+      "datetime": "2023-07-13T18:25:29.725Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7131,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_FV3Y-Sy-3Z6YiU53-": {
+      "company": "",
+      "datetime": "2023-07-13T18:25:31.323Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7132,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_FVuGUN0sx3iySo0Lo": {
+      "company": "",
+      "datetime": "2023-07-13T18:29:11.137Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7133,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_FYB1CWB90tqH6Zj4O": {
+      "company": "",
+      "datetime": "2023-07-13T18:39:08.419Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7134,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_FYC_y24-FUJGTaCxE": {
+      "company": "",
+      "datetime": "2023-07-13T18:39:14.660Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7135,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_FYCxUImIW5WL-hsjY": {
+      "company": "",
+      "datetime": "2023-07-13T18:39:16.464Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7136,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_FYE-iifP6aAxUWzcO": {
+      "company": "",
+      "datetime": "2023-07-13T18:39:20.715Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7137,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_FYt95RveH77WrZYkF": {
+      "company": "",
+      "datetime": "2023-07-13T18:42:12.940Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7138,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_FZ86dqlptU1akMuGW": {
+      "company": "",
+      "datetime": "2023-07-13T18:43:18.690Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7139,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_FZokQKFpMrR860keH": {
+      "company": "",
+      "datetime": "2023-07-13T18:46:17.315Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7140,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_FZsZ3-ZgZJcQjgBZw": {
+      "company": "",
+      "datetime": "2023-07-13T18:46:33.055Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7141,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_F_P0TwfPv7pfz3aEi": {
+      "company": "",
+      "datetime": "2023-07-13T18:48:50.058Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7142,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_F_PUZu23FWYOcWvWq": {
+      "company": "",
+      "datetime": "2023-07-13T18:48:52.010Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7143,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_F_gmo8io19ycKuLTa": {
+      "company": "",
+      "datetime": "2023-07-13T18:50:06.810Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7144,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_F_jcUOe3SqKuAPwtp": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T18:50:18.502Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7145,
+      "origin": "Origen del Formulario Login",
+      "user": "jsoriano@beapp.com.mx"
+    },
+    "-N_F_kHdrj79o_Zsomur": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T18:50:21.355Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7146,
+      "origin": "Menu Side Bar",
+      "user": "jsoriano@beapp.com.mx"
+    },
+    "-N_F_okS5faZCqpVUxrD": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T18:50:39.595Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7147,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@beapp.com.mx"
+    },
+    "-N_Fa0P76XGP0Ps9c1Ek": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T18:51:31.398Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7148,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@beapp.com.mx"
+    },
+    "-N_Fa44jQ9kBd2UYZy2O": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T18:51:46.379Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7149,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_Fa9N0_Y9c8fZK6WOG": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T18:52:08.146Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7150,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_FaDAEwkTHm28iHcDj": {
+      "company": "",
+      "datetime": "2023-07-13T18:52:23.629Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7151,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_Fbue1gj3GUS1NtIXC": {
+      "company": "",
+      "datetime": "2023-07-13T18:59:47.649Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7152,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_Fc2BUqHDBnNkgi9_M": {
+      "company": "",
+      "datetime": "2023-07-13T19:00:22.997Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7153,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_Fc3IlTdEORIjHPKbw": {
+      "company": "",
+      "datetime": "2023-07-13T19:00:27.567Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7154,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_Fc3cY5I_iAV2uO_q3": {
+      "company": "",
+      "datetime": "2023-07-13T19:00:28.897Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7155,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_Fc8pwqLFMH6oilsJi": {
+      "company": "",
+      "datetime": "2023-07-13T19:00:50.145Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7156,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_Fc9E7CKwDpddw9fJm": {
+      "company": "",
+      "datetime": "2023-07-13T19:00:51.882Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7157,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_FcABxGxXd_c59CETn": {
+      "company": "",
+      "datetime": "2023-07-13T19:00:55.630Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7158,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_FcJ-cQedlwGQodGMm": {
+      "company": "",
+      "datetime": "2023-07-13T19:01:31.806Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7159,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_FcJPH2ZeV6FKEehY6": {
+      "company": "",
+      "datetime": "2023-07-13T19:01:33.574Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7160,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_FcKBDYQ8NRw6AdeWT": {
+      "company": "",
+      "datetime": "2023-07-13T19:01:36.719Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7161,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_FcMkOZWQ6PqkC-U3y": {
+      "company": "",
+      "datetime": "2023-07-13T19:01:47.115Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7162,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_Fca9FY6zOS8w5urDk": {
+      "company": "",
+      "datetime": "2023-07-13T19:02:46.023Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7163,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_Fi5zajjULyLOa_BTN": {
+      "company": "",
+      "datetime": "2023-07-13T19:26:50.475Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7164,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_FlwaTZW9ZgIfmEbFT": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T19:43:37.080Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7165,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_FlxM0SmUA2aYVl6KW": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T19:43:40.369Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7166,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_FlxkIPcLTy8LZyKqD": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T19:43:42.170Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7167,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_Flza01NyrKZoVHBEM": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T19:43:49.417Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7168,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_Flzooo6fO4BKF6Kjl": {
+      "company": "SIN COMPANIA",
+      "datetime": "2023-07-13T19:43:50.661Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7169,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_Fm_gJTLDiv-9ouuWo": {
+      "company": "",
+      "datetime": "2023-07-13T19:46:25.599Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7170,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_FmcXk4c90PAUM-i1t": {
+      "company": "",
+      "datetime": "2023-07-13T19:46:37.376Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7171,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_FnOYW1MyhEk79cv_6": {
+      "company": "",
+      "datetime": "2023-07-13T19:49:57.849Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7172,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_FncXkEINFl7Uge-K5": {
+      "company": "",
+      "datetime": "2023-07-13T19:50:59.180Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7173,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_Fncxl-XNLL5nLeMGo": {
+      "company": "",
+      "datetime": "2023-07-13T19:51:01.186Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7174,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_Fng4giG_phIZ7XouQ": {
+      "company": "",
+      "datetime": "2023-07-13T19:51:13.949Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7175,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_FnmeVH5S9-BHkY23I": {
+      "company": "",
+      "datetime": "2023-07-13T19:51:40.725Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7176,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_FnnIsv9SlVG7HqGmY": {
+      "company": "",
+      "datetime": "2023-07-13T19:51:43.574Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7177,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_FoQ7f6wTclOZHI2ZV": {
+      "company": "",
+      "datetime": "2023-07-13T19:54:26.651Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7178,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_FoR8IcNSGkolGGwW8": {
+      "company": "",
+      "datetime": "2023-07-13T19:54:30.882Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7179,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_FpDBSPfCbJsAHsz6W": {
+      "company": "",
+      "datetime": "2023-07-13T19:57:55.633Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7180,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_FpDciMKOVPvG2AIBq": {
+      "company": "",
+      "datetime": "2023-07-13T19:57:57.751Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7181,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_FpGhWLM7FTvZ7qE2X": {
+      "company": "",
+      "datetime": "2023-07-13T19:58:10.266Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7182,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_FpH1GOhZr7IsSvfW9": {
+      "company": "",
+      "datetime": "2023-07-13T19:58:11.664Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7183,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_FwLOpQR_A15HoRHXb": {
+      "company": "",
+      "datetime": "2023-07-13T20:29:04.432Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7184,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_FwMFv_MuRypHuJQ0i": {
+      "company": "",
+      "datetime": "2023-07-13T20:29:08.015Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7185,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_Fx53UbKkWQ6tKsXk8": {
+      "company": "",
+      "datetime": "2023-07-13T20:32:19.664Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7186,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_Fx623eDzXzmji-7ON": {
+      "company": "",
+      "datetime": "2023-07-13T20:32:23.764Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7187,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_FxNH4qovx6LHKewFO": {
+      "company": "",
+      "datetime": "2023-07-13T20:33:34.243Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7188,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_FxNkIJ4W2w6DmRQEQ": {
+      "company": "",
+      "datetime": "2023-07-13T20:33:36.289Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7189,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_FyTqRzojHI0rB5DvG": {
+      "company": "",
+      "datetime": "2023-07-13T20:38:22.603Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7190,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_FyUdjvnAR-aqrpoQz": {
+      "company": "",
+      "datetime": "2023-07-13T20:38:26.546Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7191,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_FyXx0nFMEAfhAtn5l": {
+      "company": "",
+      "datetime": "2023-07-13T20:38:40.152Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7192,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_G3Ocb6ICWtrIX6Gr0": {
+      "company": "",
+      "datetime": "2023-07-13T21:04:14.649Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7193,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_G3ROD7T5pe-pPwtgB": {
+      "company": "",
+      "datetime": "2023-07-13T21:04:26.104Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7194,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_G49VOb0OcP6SGjg7I": {
+      "company": "",
+      "datetime": "2023-07-13T21:07:34.944Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7195,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_G4JLTldgFtZ7KTHaN": {
+      "company": "",
+      "datetime": "2023-07-13T21:08:15.311Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7196,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_G4L8eTNb7HURXsOIX": {
+      "company": "",
+      "datetime": "2023-07-13T21:08:22.675Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7197,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_G4VplaRWeDWa2jvJo": {
+      "company": "",
+      "datetime": "2023-07-13T21:09:06.448Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7198,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_G5d-FmOwug4P3Kx2r": {
+      "company": "",
+      "datetime": "2023-07-13T21:14:01.827Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7199,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_G5dXEg4qmEHuWffRN": {
+      "company": "",
+      "datetime": "2023-07-13T21:14:04.278Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7200,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_G5knvZQR9dvG_4EiV": {
+      "company": "",
+      "datetime": "2023-07-13T21:14:33.758Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7201,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_G6nzKwfAxM4eIt3D-": {
+      "company": "",
+      "datetime": "2023-07-13T21:19:08.905Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7202,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_G6oqfe5ogyJAA0sEl": {
+      "company": "",
+      "datetime": "2023-07-13T21:19:12.684Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7203,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_G6pFVVC3w9-QnswtI": {
+      "company": "",
+      "datetime": "2023-07-13T21:19:14.373Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7204,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_G6sa9l5JEKBIXfCJ8": {
+      "company": "",
+      "datetime": "2023-07-13T21:19:28.053Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7205,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_G7ck7_kSUokHMkmh0": {
+      "company": "",
+      "datetime": "2023-07-13T21:22:44.937Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7206,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_G8uIOUwqMpgKNSNn7": {
+      "company": "",
+      "datetime": "2023-07-13T21:28:19.102Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7207,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_G8uzOOy8YPDhKylTU": {
+      "company": "",
+      "datetime": "2023-07-13T21:28:22.201Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7208,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_G9Kj6bBenuIp-hNOA": {
+      "company": "",
+      "datetime": "2023-07-13T21:30:11.673Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7209,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_G9aSe6KDUhmiy_xoB": {
+      "company": "",
+      "datetime": "2023-07-13T21:31:20.206Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7210,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_G9encTVf1u6G8HHAm": {
+      "company": "",
+      "datetime": "2023-07-13T21:31:37.973Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7211,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_GAFAJ0wX_CN1taIUY": {
+      "company": "",
+      "datetime": "2023-07-13T21:34:10.988Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7212,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_GBGDGU8iE9rApozaV": {
+      "company": "",
+      "datetime": "2023-07-13T21:38:37.203Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7213,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_GBZtzclnKUGEP1lNf": {
+      "company": "",
+      "datetime": "2023-07-13T21:39:57.722Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7214,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_GC0SYEGwBAvTITdVY": {
+      "company": "",
+      "datetime": "2023-07-13T21:41:54.956Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7215,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_GC0yFoshKND0KtQ8G": {
+      "company": "",
+      "datetime": "2023-07-13T21:41:57.219Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7216,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_GCFv7E6gFjVLvi5mW": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-13T21:42:58.326Z",
+      "description": "Eleccion del menu Users/Usuarios",
+      "idn": 7217,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_GCYt_HXzOyfHaU31g": {
+      "company": "",
+      "datetime": "2023-07-13T21:44:15.642Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7218,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_GC_axCYYbwMu6Ak14": {
+      "company": "",
+      "datetime": "2023-07-13T21:44:23.116Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7219,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_GD2h8uvmoUmaJxIgX": {
+      "company": "",
+      "datetime": "2023-07-13T21:46:26.125Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7220,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_GDlNxF-b-HqJJt2rS": {
+      "company": "",
+      "datetime": "2023-07-13T21:49:33.290Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7221,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_GEt83RFjCnMCKl6Nd": {
+      "company": "",
+      "datetime": "2023-07-13T21:54:27.339Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7222,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_GEtTKLivUZ1m9s1zc": {
+      "company": "",
+      "datetime": "2023-07-13T21:54:28.825Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7223,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_GI6nhgwWYOMylJakS": {
+      "company": "",
+      "datetime": "2023-07-13T22:08:33.805Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7224,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_GI7G27HvK2CRvHwQR": {
+      "company": "",
+      "datetime": "2023-07-13T22:08:35.842Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7225,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_GJJYgGpXeMPT1cqNB": {
+      "company": "",
+      "datetime": "2023-07-13T22:13:48.097Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7226,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_GJJny8qjbJ0vg9MYJ": {
+      "company": "",
+      "datetime": "2023-07-13T22:13:49.314Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7227,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_GLa3xYJRsky99zY4b": {
+      "company": "",
+      "datetime": "2023-07-13T22:23:44.278Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7228,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_GLbLqm3LfbfTzp8ch": {
+      "company": "",
+      "datetime": "2023-07-13T22:23:49.535Z",
+      "description": "Inicio del Sistema ",
+      "idn": 7229,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_GM2vOpfsVHbFTgwqY": {
+      "company": "",
+      "datetime": "2023-07-13T22:25:46.561Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 7230,
+      "origin": "Menu Side Bar",
+      "user": ""
     }
   },
   "users": {
@@ -60521,24 +62488,14 @@
       "picture": "https://firebasestorage.googleapis.com/v0/b/beapp-501d1.appspot.com/o/images%2Fjgalicia%40hco-consultores.comavatar4.png?alt=media&token=79543c7f-7bba-4896-a651-3e4afbb3c5b2",
       "position": "Directo HCO"
     }
-
   },
-  "details_lessons": {
-    "-FKFSWnbKVZ-ReL2c5": [
-      {
-        "active": 1,
-        "email": "pserafin@gmail.com",
-        "id": "-NYFjcyiFylC2A4Saz6Z",
-        "name": "Pedro Serafin",
-        "position": "Leader"
-      },
-      {
-        "active": 1,
-        "email": "lisa@gmail.com",
-        "id": "-NYFjcyiFylC2A4Saz6Z",
-        "name": "Lisa Simpson",
-        "position": "Team lead"
-      }
-    ]
+  "details_lessonslearned":{
+   "-N_F_Ft20yUyHWW9X2-M" : {
+    "concept" : "18",
+    "lessonlearned" : "Leccion 1",
+    "evidenced"     : "file",
+    "signed"        : "file",
+    "active"        : 1
+   }
   }
 }

@@ -36,10 +36,8 @@ import { FormBuilder } from '@angular/forms';
 
 export class CommunicationsComponent implements OnInit {
 
-
   selectedTab = 'comunication';
   isGeneratingPDF: boolean;
-
 
   fecha          : string;
   descripcion    : string;
@@ -137,8 +135,6 @@ export class CommunicationsComponent implements OnInit {
        this.getdataallDetails() ;
 
   }
-
-
 
 
  showProfile(commun: Icommunications) {
@@ -306,7 +302,6 @@ export class CommunicationsComponent implements OnInit {
   editCommunic(id: string) {}
 
   editDetails(id: string) {}
-
 
 
   deleteCommunic(id: string) {
