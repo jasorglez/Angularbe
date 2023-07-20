@@ -8,13 +8,13 @@ import pdfFonts from 'pdfmake/build/vfs_fonts';
 import { TrackingService } from 'src/app/services/tracking.service';
 
 import { InteresService } from './interes.service';
+import { LessonsService } from 'src/app/services/lessons.service';
+import { LessonslearnedService } from 'src/app/services/lessonslearned.service';
+import { FirebaseService } from './firebase.service';
+
+import { EMPTY, forkJoin, map, mergeMap, of, switchMap, tap } from 'rxjs';
 
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
-
-import * as ExcelJS from 'exceljs';
-import * as XLSX from 'xlsx';
-
-
 
 
 @Injectable({
@@ -22,119 +22,23 @@ import * as XLSX from 'xlsx';
 })
 export class PrintreportsService {
 
-constructor(public  trackingService : TrackingService,
-            private interesService : InteresService,
+  lessonsData$ : any[] ;
+
+  learnedData$ : any[] ;
+
+  combinedData$ : any[] ;
+
+  masterDetail: any[] = [];
+
+  masterData  : any[] = [] ;
+  detailData: any[] = [];
+
+constructor(public  trackingService       : TrackingService,
+            private interesService        : InteresService,
+            private lessonsService        : LessonsService,
+            private lessonslearnedService : LessonslearnedService,
+            private firebaseService       : FirebaseService,
             private http: HttpClient) { }
-
-
-//Aqui empezamos el Excel
-
- writeDataToExcelFile(filePath: string) {
-  this.http.get(filePath, { responseType: 'blob' }).subscribe(data => {
-
-    const workbook = XLSX.read(data, {type: 'array'});
-    const worksheet = workbook.Sheets[workbook.SheetNames[0]];
-
-    worksheet['D16'].v = 'Aqui va el contrato C8';
-    worksheet['F14'].v = 'aQUIVA EL PROYECTO C10';
-
-    const blob = new Blob([data], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
-    const url = window.URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = 'archivo.xlsx';
-    link.click();
-    window.URL.revokeObjectURL(url);
-  });
- }
-
-
-
- writeDataToExcelFile2(filePath: string) {
-  let workbook = XLSX.readFile(filePath);
-  let worksheet = workbook.Sheets[workbook.SheetNames[0]];
-
-  // Escribir en la celda F10 (columna 6, fila 10)
-  let cellF10 = {c: 5, r: 9};  // Las columnas y filas en xlsx empiezan desde 0
-  let cellRefF10 = XLSX.utils.encode_cell(cellF10);
-  worksheet[cellRefF10] = {t: 's', v: 'Estoy en la columna 6 y fila 10'};
-
-  // Escribir en la celda F11 (columna 6, fila 11)
-    let cellF11 = {c: 5, r: 10};
-    let cellRefF11 = XLSX.utils.encode_cell(cellF11);
-  worksheet[cellRefF11] = {t: 's', v: 'Estoy en la columna 6 y fila 11'};
-
-  XLSX.writeFile(workbook, filePath);
- }
-
-
-
- writeDataToExcelFile3(filePath: string) {
-  this.http.get(filePath, {responseType: 'arraybuffer'}).subscribe(data => {
-    const workbook = XLSX.read(data, {type: 'array'});
-    const worksheet = workbook.Sheets[workbook.SheetNames[0]];
-
-    worksheet['D16'].v = 'Aqui va el contrato C8';
-    worksheet['F14'].v = 'aQUIVA EL PROYECTO C10';
-
-    const cellF10 = {c: 5, r: 9}; // Corregido el valor de la fila
-    const cellRefF10 = XLSX.utils.encode_cell(cellF10);
-    worksheet[cellRefF10] = {t: 's', v: 'Estoy en la columna 6 y fila 10'};
-
-    const cellF11 = {c: 6, r: 9}; // Corregido el valor de la fila
-    const cellRefF11 = XLSX.utils.encode_cell(cellF11)
-       worksheet[cellRefF11] = {t: 's', v: 'Estoy en la columna 7 y fila 10'};
-
-    const cellF12 = {c: 2, r: 11}; // Corregido el valor de la fila
-    const cellRefF12 = XLSX.utils.encode_cell(cellF12)
-    worksheet[cellRefF12] = {t: 's', v: 'Estoy en la columna 3 y fila 12'};
-
-    XLSX.writeFile(workbook, 'output.xlsx');
-  });
- }
-
-
-
-  enviarMensajesAExcel() {
-    // Crea un nuevo libro de Excel
-    const workbook = new ExcelJS.Workbook();
-
-    // Agrega una nueva hoja de trabajo
-    const worksheet = workbook.addWorksheet('Sheet 1xxx');
-
-    // Define el mensaje y la ubicación
-    const mensaje1 = 'Valor en la columna J y Renglon 5';
-    const columna1 = 'J';
-    const renglon1 = 5;
-
-    // Escribe el mensaje en la columna y renglón especificados
-    worksheet.getCell(`${columna1}${renglon1}`).value = mensaje1;
-
-    // Define los otros dos mensajes y ubicaciones
-    const mensaje2 = 'Mensaje columna A renglon 10';
-    const columna2 = 'A';
-    const renglon2 = 10;
-
-    const mensaje3 = 'Renglon 15 y columna D';
-    const columna3 = 'D';
-    const renglon3 = 15;
-
-    // Escribe los otros dos mensajes en las ubicaciones especificadas
-    worksheet.getCell(`${columna2}${renglon2}`).value = mensaje2;
-    worksheet.getCell(`${columna3}${renglon3}`).value = mensaje3;
-
-    // Guardar el libro de Excel como un archivo temporal
-    workbook.xlsx.writeBuffer().then((data) => {
-      const blob = new Blob([data], {
-        type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-      });
-      const excelUrl = URL.createObjectURL(blob);
-
-      // Abrir el archivo de Excel en una nueva ventana o con la aplicación predeterminada
-      window.open(excelUrl, '_blank');
-    });
-
-  }
 
 
   listInterested() {
@@ -150,11 +54,11 @@ constructor(public  trackingService : TrackingService,
       {text: 'Correo', style: 'headerCellBlue' },
       {text: 'Interes', style: 'headerCellBlue' },
       {text: 'Influencia', style: 'headerCellBlue' },
-      {text: 'Poder', style: 'headerCellBlue' }, 
-      {text: 'Ponderacion', style: 'headerCellBlue' }, 
+      {text: 'Poder', style: 'headerCellBlue' },
+      {text: 'Ponderacion', style: 'headerCellBlue' },
       {text: 'Seguimiento', style: 'headerCellBlue' }];
 
-      
+
       this.interesService
       .getDatacompInteres(this.trackingService.getProject(), this.trackingService.getformrepint())
       .subscribe(
@@ -168,71 +72,127 @@ constructor(public  trackingService : TrackingService,
           console.error(error);
         }
       );
-            
+
   }
 
 
-//Aqui empieza el reporte
-   generarReporte(detailscom2: any[], comunications: any[]) {
-
-    // estee es para el
-        comunications.sort((a, b) => {
-          if (a.procces < b.procces) {
-            return -1;
-          } else if (a.procces > b.procces) {
-            return 1;
-          } else {
-            return 0;
-          }
-        })
 
 
-        // Obtener los detalles de comunicaciones únicos
-        const uniqueDetails = detailscom2;
-        const uniqueDetailNames = [...new Set(uniqueDetails.map(detail => detail.name))].sort();
+lessonslearnedOne() {
+  const lessonId = this.trackingService.getidlesson();
 
-        // Crear o armar la cabecera la fila de encabezados
-        const headerRow = [
-          { text: 'Proceso', style: 'headerCellBlue' },
-          { text: 'Informacion', style: 'headerCellBlue' },
-          { text: 'Formato', style: 'headerCellBlue' },
-          { text: 'Responsable', style: 'headerCellBlue' },
-          { text: 'Referencia', style: 'headerCellBlue' },
-          { text: 'Frecuencia', style: 'headerCellBlue' },
-          { text: 'Grupo', style: 'headerCellBlue' },
-          ...uniqueDetailNames.map((name, index) => ({
-            text: name,
-            style: index % 2 === 0 ? 'headerCellYellow' : 'headerCellBlue',
-            rotation: 90
-          }))
-        ];
+  this.lessonsService.getDataLessonsOne(lessonId).pipe(
+    switchMap(lessonsData => {
+      this.lessonsData$ = Object.values(lessonsData); // Convert the master record to an array
+      //console.log("Lecciones", this.lessonsData$);
 
-        // Crear las filas de datos
-        const dataRows = comunications.map(com => {
-          const details = detailscom2.filter(detail => detail.id === com.id);
+      return this.lessonslearnedService.getDataLearned(lessonId);
+    })
 
-          const row = [
-            com.procces,
-            com.information,
-            com.format,
-            com.owner,
-            com.reference,
-            com.frequence,
-            com.group
-          ];
+  ).subscribe(learnedData => {
+    //console.log("Learned", learnedData);
+    this.learnedData$ = learnedData;
 
-          uniqueDetailNames.forEach(name => {
-            const interactionNames = details.some(detail => detail.name === name) ? 'X' : '';
-            row.push(interactionNames);
-          });
+    this.combinedData$ = this.learnedData$.map(detailRecord => {
+      const detailArray = Object.values(detailRecord); // Convert the detail record to an array
+      return [...this.lessonsData$, ...detailArray]; // Combine the master and detail arrays
+    });
 
-          return row;
+   /// para el reporte
+   const imagePath = this.trackingService.getpictureComp();
+      const headerRow = [
+        {text: 'ID', style: 'headerCellBlue' },
+        {text: 'Tipo Reunion', style: 'headerCellBlue' },
+        {text: 'Lugar', style: 'headerCellBlue' },
+        {text: 'Fecha', style: 'headerCellBlue' },
+        {text: 'Hora', style: 'headerCellBlue' },
+        {text: 'Leccion Aprendida', style: 'headerCellYellow' },
+        {text: 'Persona', style: 'headerCellYellow' },
+        {text: 'Fase', style: 'headerCellYellow' },
+        {text: 'Proceso', style: 'headerCellYellow' }
+      ];
+
+      this.downloadAndProcessImage(imagePath, headerRow, this.combinedData$, 2)
+
+
+    console.log("Combined Data", this.combinedData$);
+  });
+}
+
+
+
+
+  lessonslearnedAll() {
+
+    this.lessonsService.getDataLessonsAll(localStorage.getItem('project')).pipe(
+      mergeMap(masterData => {
+        const detailRequests = masterData.map(master => {
+          const lessonId = master[0];
+          return this.lessonslearnedService.getDataLearned(lessonId).pipe(
+            tap(detailsData => {
+       //        console.log("DetailData", detailsData);
+            })
+          );
         });
 
-         const imagePath = this.trackingService.getpictureComp();
-         this.downloadAndProcessImage(imagePath, headerRow, dataRows,1)
-   }
+        return forkJoin(detailRequests).pipe(
+          map(detailsData => {
+            const combinedData = masterData.flatMap((master, index) => {
+              const lessonId = master[0];
+              const detailsArray = detailsData[index]; // All the records for this lessonId
 
+              // Map the detailsArray to an array of rows with the desired fields
+              const rows = detailsArray.map(details => [
+                lessonId,
+                master[1],
+                master[2],
+                master[3],
+                master[4],
+                details[0], // lessonlearned
+                details[1], // people
+                details[2], // phase
+                details[3], // procces
+              ]);
+
+              return rows;
+            });
+
+            return combinedData;
+          })
+
+        );
+      })
+    ).subscribe(combinedData => {
+     // console.log("CombinedData P1", combinedData);
+
+      // Procesar los datos combinados aquí
+      // Guardar los datos en una fuente de datos según tus necesidades
+
+      const imagePath = this.trackingService.getpictureComp();
+      const headerRow = [
+        {text: 'ID', style: 'headerCellBlue' },
+        {text: 'Tipo Reunion', style: 'headerCellBlue' },
+        {text: 'Lugar', style: 'headerCellBlue' },
+        {text: 'Fecha', style: 'headerCellBlue' },
+        {text: 'Hora', style: 'headerCellBlue' },
+        {text: 'Leccion Aprendida', style: 'headerCellYellow' },
+        {text: 'Persona', style: 'headerCellYellow' },
+        {text: 'Fase', style: 'headerCellYellow' },
+        {text: 'Proceso', style: 'headerCellYellow' }
+
+      ];
+
+      this.downloadAndProcessImage(imagePath, headerRow, combinedData, 2);
+    });}
+
+
+  reportAll() {
+    this.lessonslearnedAll();
+  }
+
+  reportOne() {
+    this.lessonslearnedOne()
+  }
 
 
 // Method to download and process the image
@@ -250,10 +210,12 @@ private downloadAndProcessImage(imagePath: string, headerRow: any[], dataRows: a
 }
 
 
+
+
 // Method to generate documentDefinition
   generateDocumentDefinition(headerRow : any[], dataRows: any[], imageDataUrl, report: number) {
     let tableBody: any[] = [];
-  
+
     if (report===1) {
     tableBody= [
       headerRow.map((text, index) => ({
@@ -296,12 +258,12 @@ private downloadAndProcessImage(imagePath: string, headerRow: any[], dataRows: a
        fontSize: 9,
        bold: false
     },
-    
+
       {
         alignment: 'center',
         text: report === 1 ? 'PLAN DE GESTION DE COMUNICACIONES' : 'PLAN DE GESTION DE INTERESADOS',
         style: 'header',
-        
+
       },
 
       {
@@ -361,8 +323,8 @@ private downloadAndProcessImage(imagePath: string, headerRow: any[], dataRows: a
         },
         layout: 'Borders'
       },
-         
-     
+
+
 
       {
         columns: [
@@ -409,7 +371,7 @@ private downloadAndProcessImage(imagePath: string, headerRow: any[], dataRows: a
           }
         ]
       },
-      
+
 
       {
         table: {
@@ -448,11 +410,11 @@ private downloadAndProcessImage(imagePath: string, headerRow: any[], dataRows: a
         }
       ]
     },
-    pageSize: { 
+    pageSize: {
       width: report === 1 ? 1414 : (report === 2 ? 1254 : 595),
       height: 596
     },
-     
+
     styles: {
       header: {
         fontSize: 15,
@@ -492,6 +454,66 @@ private downloadAndProcessImage(imagePath: string, headerRow: any[], dataRows: a
   }
 
 
+//Aqui empieza el reporte
+generarReporte(detailscom2: any[], comunications: any[]) {
+
+  // estee es para el
+      comunications.sort((a, b) => {
+        if (a.procces < b.procces) {
+          return -1;
+        } else if (a.procces > b.procces) {
+          return 1;
+        } else {
+          return 0;
+        }
+      })
+
+
+      // Obtener los detalles de comunicaciones únicos
+      const uniqueDetails = detailscom2;
+      const uniqueDetailNames = [...new Set(uniqueDetails.map(detail => detail.name))].sort();
+
+      // Crear o armar la cabecera la fila de encabezados
+      const headerRow = [
+        { text: 'Proceso', style: 'headerCellBlue' },
+        { text: 'Informacion', style: 'headerCellBlue' },
+        { text: 'Formato', style: 'headerCellBlue' },
+        { text: 'Responsable', style: 'headerCellBlue' },
+        { text: 'Referencia', style: 'headerCellBlue' },
+        { text: 'Frecuencia', style: 'headerCellBlue' },
+        { text: 'Grupo', style: 'headerCellBlue' },
+        ...uniqueDetailNames.map((name, index) => ({
+          text: name,
+          style: index % 2 === 0 ? 'headerCellYellow' : 'headerCellBlue',
+          rotation: 90
+        }))
+      ];
+
+      // Crear las filas de datos
+      const dataRows = comunications.map(com => {
+        const details = detailscom2.filter(detail => detail.id === com.id);
+
+        const row = [
+          com.procces,
+          com.information,
+          com.format,
+          com.owner,
+          com.reference,
+          com.frequence,
+          com.group
+        ];
+
+        uniqueDetailNames.forEach(name => {
+          const interactionNames = details.some(detail => detail.name === name) ? 'X' : '';
+          row.push(interactionNames);
+        });
+
+        return row;
+      });
+
+       const imagePath = this.trackingService.getpictureComp();
+       this.downloadAndProcessImage(imagePath, headerRow, dataRows,1)
+ }
 
 
 getDocumentDefinition(comunications: any[])
@@ -574,52 +596,6 @@ getDocumentDefinition(comunications: any[])
 }
 
 
-
-
-generatePdfold(detailscom: any[], comunications: any[])
- {
-  // Crear la fila de encabezados
-  const headerRow = [
-    'procces',
-    'information',
-    'format',
-    'Responsible',
-    'owner',
-    'Reference',
-    'frequence',
-    'Group',
-    ...detailscom.map(detail => detail.name)
-  ].map(header => ({ text: header, rotation: 90 }));
-
-  // Crear las filas de datos
-  const dataRows = comunications.map(com => [
-
-    com.procces,
-    com.information,
-    com.format,
-    com.area,
-    com.owner,
-    com.reference,
-    com.frequence,
-    com.group,
-    ...detailscom.map(detail => detail.id === com[0].key ? 'X' : '')
-  ]);
-
-  const documentDefinition = {
-    content: [
-      {
-        table: {
-          headerRows: 1,
-          widths: new Array(headerRow.length).fill('*'),
-          body: [headerRow, ...dataRows]
-        }
-      }
-    ],
-    pageSize: { width: 969, height: 595 }
-  };
-
-  pdfMake.createPdf(documentDefinition).open();
-}
 
 
 

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, map } from 'rxjs';
+import { Observable, catchError, map, of } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Ilessons } from '../interface/ilessons';
@@ -11,6 +11,105 @@ import { Ilessons } from '../interface/ilessons';
 export class LessonsService {
 
 constructor(private http: HttpClient) { }
+
+
+//elegir los campos a mostrar
+
+getDataLessonsAll(project: string) {
+  try {
+    if (project !== '') {
+      return this.http.get(`${environment.urlFirebase}lessons.json?orderBy="id_project"&equalTo="${project}"`)
+        .pipe(
+          map(data => {
+            const lessonsDataArray = Object.keys(data);
+            const filteredData = lessonsDataArray.map((lessonKey: string) => {
+              const { typemeeting, place, datep, timep } = data[lessonKey];
+
+              return [
+                lessonKey, // Clave de registro
+                typemeeting,
+                place,
+                datep,
+                timep
+              ];
+            });
+
+            return filteredData;
+          })
+        );
+    } else {
+      alert('Project está vacío');
+      return null;
+    }
+  } catch (error) {
+    console.error('ERROR get list Lessons', error);
+    return null;
+  }
+}
+
+
+getDataLessonsOne(id: string) {
+  try {
+    if (id !== '') {
+      return this.http.get<any>(`${environment.urlFirebase}lessons/${id}.json`)
+        .pipe(
+          map(data => {
+            const {  typemeeting, place, datep, timep } = data;
+            return [
+              id,
+              typemeeting,
+              place,
+              datep,
+              timep
+            ];
+          }),
+          catchError(error => {
+            console.error('ERROR getting lesson by ID', error);
+            return of([]);
+          })
+        );
+    } else {
+      alert('Lesson ID is empty');
+      return of([]); // Devuelve un observable de un arreglo vacío
+    }
+  } catch (error) {
+    console.error('ERROR getting lesson by ID', error);
+    return of([]); // Devuelve un observable de un arreglo vacío
+  }
+}
+
+
+
+
+getDataLessonsOne22(id: string): Observable<any> {
+  try {
+    if (id !== '') {
+      return this.http.get<any>(`${environment.urlFirebase}lessons/${id}.json`)
+        .pipe(
+          map(data => {
+            const { typemeeting, place, datep, timep } = data;
+            return {
+              key: id, // Firebase key of the lesson
+              typemeeting,
+              place,
+              datep,
+              timep
+            };
+          })
+        );
+    } else {
+      alert('Lesson ID is empty');
+      return null;
+    }
+  } catch (error) {
+    console.error('ERROR getting lesson by ID', error);
+    return null;
+  }
+}
+
+
+
+
 
 
 findDetails(id:string){
@@ -94,6 +193,9 @@ getDatadetailsLessons(id: string): Observable<any> {
   }
 
 }
+
+
+
 
 
 

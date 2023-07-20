@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/database';
-import { map, take } from 'rxjs';
+import { Observable, map, take } from 'rxjs';
 
 //import { app, db } from 'src/app/firebase.config';
 
@@ -146,6 +146,16 @@ export class FirebaseService {
 
   createDetailLessons(registro: any, key:string) {
     return this.db.object(`details_lessons/${key}`).set(registro);
+  }
+
+
+  getMasterData(idProject: string): Observable<any[]> {
+    return this.db.list('lessons', ref => ref.orderByChild('id_project').equalTo(idProject)).valueChanges() as Observable<any[]>;
+    
+  }
+
+  getDetailData(): Observable<any[]> {
+    return this.db.list('details_lessonslearned').valueChanges() as Observable<any[]>;
   }
 
 

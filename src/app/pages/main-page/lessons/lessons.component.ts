@@ -28,8 +28,11 @@ import { NewlessComponent } from './newless/newless.component';
   styleUrls: ['./lessons.component.css']
 })
 export class LessonsComponent implements OnInit {
+
   profileId : string = '';
+
   selectedTab = 'meeting';
+
   profile: any = {};
 
   onTabSelected(tabName: string) {
@@ -92,23 +95,23 @@ export class LessonsComponent implements OnInit {
     private translateService      : TraductorService,
     private lessonsService        : LessonsService,
     private lessonslearnedService : LessonslearnedService,
+    private printReportsService   : PrintreportsService,
     public dialog: MatDialog
     ) { }
 
 
   ngOnInit() {
 
-
-
       this.getdataMeeting();
 
   }
 
 
-  
   getdataMeeting() {
 
       this.loadData = true;
+
+      //console.log(localStorage.getItem('project'))
 
       this.lessonsService.getDataMeeting(localStorage.getItem('project'))
         .subscribe((resp: any) => {
@@ -133,15 +136,17 @@ export class LessonsComponent implements OnInit {
               } as Ilessons)
           );
 
-        //    console.log(this.lessons) ;
+           // console.log(this.meeting) ;
              this.profile = this.meeting[this.currentIndex]; // Tomamos el primer registro
-
              this.fileUrl = this.profile.file ;
-             this.lessonsDataSource = new MatTableDataSource(this.meeting); // Creamos el dataSource
+
+               this.trackingService.setidlesson( this.profile.id) ;
+               console.log(this.trackingService.getidlesson())
+
+             this.lessonsDataSource = new MatTableDataSource(this.meeting)
              this.lessonsDataSource.paginator = this.paginator ;
              this.lessonsDataSource.sort = this.sort;
-
-            this.loadData = false;
+             this.loadData = false;
         });
     }
 
@@ -150,7 +155,7 @@ export class LessonsComponent implements OnInit {
 
       this.loadData = true;
 
-      this.lessonslearnedService.getDataLearned(this.trackingService.getidlesson())
+      this.lessonslearnedService.getDataLearnedall(this.trackingService.getidlesson())
         .subscribe((resp: any) => {
           /*=============================================
         Integrando respuesta de base de datos con la interfaz
@@ -238,7 +243,6 @@ export class LessonsComponent implements OnInit {
   }
 
 
-
   deleteLessons(id : string) {
 
     alerts.confirmAlert('Are you sure?', 'The information cannot be recovered!', 'warning','Yes, delete it!')
@@ -289,13 +293,15 @@ export class LessonsComponent implements OnInit {
   }
 
 
-  reporteOne(){
-
+  reportOne(){
+    //console.log("Entrado al One");
+    this.printReportsService.reportOne();
   }
 
-  reporteAll() {
-
+  reportAll() {
+    this.printReportsService.reportAll();
   }
+
 
 
 }
