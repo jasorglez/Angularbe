@@ -10,6 +10,8 @@ import { Ilessons } from '../interface/ilessons';
 })
 export class LessonsService {
 
+  indice : number = 0
+
 constructor(private http: HttpClient) { }
 
 
@@ -22,7 +24,7 @@ getDataLessonsAll(project: string) {
         .pipe(
           map(data => {
             const lessonsDataArray = Object.keys(data);
-            const filteredData = lessonsDataArray.map((lessonKey: string) => {
+            const filteredData = lessonsDataArray.map((lessonKey: string, index: number) => {
               const { typemeeting, place, datep, timep } = data[lessonKey];
 
               return [
@@ -56,8 +58,7 @@ getDataLessonsOne(id: string) {
           map(data => {
             const {  typemeeting, place, datep, timep } = data;
             return [
-              id,
-              typemeeting,
+             typemeeting,
               place,
               datep,
               timep

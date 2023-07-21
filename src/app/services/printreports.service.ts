@@ -79,6 +79,8 @@ constructor(public  trackingService       : TrackingService,
 
 
 lessonslearnedOne() {
+  let globalIndex = 1; // Índice consecutivo global
+
   const lessonId = this.trackingService.getidlesson();
 
   this.lessonsService.getDataLessonsOne(lessonId).pipe(
@@ -95,8 +97,10 @@ lessonslearnedOne() {
 
     this.combinedData$ = this.learnedData$.map(detailRecord => {
       const detailArray = Object.values(detailRecord); // Convert the detail record to an array
-      return [...this.lessonsData$, ...detailArray]; // Combine the master and detail arrays
+      return [globalIndex++, ...this.lessonsData$, ...detailArray]; // Combine the master and detail arrays
     });
+
+   // console.log("Combinado", this.combinedData$)
 
    /// para el reporte
    const imagePath = this.trackingService.getpictureComp();
@@ -123,14 +127,15 @@ lessonslearnedOne() {
 
 
   lessonslearnedAll() {
+    let globalIndex = 1; // Índice consecutivo global
 
     this.lessonsService.getDataLessonsAll(localStorage.getItem('project')).pipe(
       mergeMap(masterData => {
-        const detailRequests = masterData.map(master => {
+        const detailRequests = masterData.map((master, index) => {
           const lessonId = master[0];
           return this.lessonslearnedService.getDataLearned(lessonId).pipe(
             tap(detailsData => {
-       //        console.log("DetailData", detailsData);
+              // console.log("DetailData", detailsData);
             })
           );
         });
@@ -138,12 +143,11 @@ lessonslearnedOne() {
         return forkJoin(detailRequests).pipe(
           map(detailsData => {
             const combinedData = masterData.flatMap((master, index) => {
-              const lessonId = master[0];
               const detailsArray = detailsData[index]; // All the records for this lessonId
 
               // Map the detailsArray to an array of rows with the desired fields
               const rows = detailsArray.map(details => [
-                lessonId,
+                globalIndex++, // Índice consecutivo global
                 master[1],
                 master[2],
                 master[3],
@@ -159,7 +163,6 @@ lessonslearnedOne() {
 
             return combinedData;
           })
-
         );
       })
     ).subscribe(combinedData => {
