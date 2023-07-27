@@ -114,7 +114,7 @@ export class EditComponent {
 
   onSelectOrganization(): void {
 
-     console.log('Organizations', this.selectedorganization)
+   //  console.log('Organizations', this.selectedorganization)
 
   }
 

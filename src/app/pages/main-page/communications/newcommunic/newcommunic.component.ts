@@ -23,7 +23,7 @@ export class NewcommunicComponent implements OnInit {
 
   recibirDatos(detailscomp: any[] = [] ):void {
     this.detailscomp = detailscomp ;
-    console.log('recibido');
+   // console.log('recibido');
   }
 
   interestedList  : any[] = [];

@@ -48,6 +48,222 @@
       "id_risk": "-N_DbVIEm7EKxtmJ8yyh",
       "startDate": "2023-06-25",
       "total_cost": 12
+    },
+    "-N_orr-acmmTNNdoo7Ab": {
+      "adescription": "Prueba de guardado de acciones de mitigacion",
+      "endDate": "2023-07-23",
+      "id_risk": "-N_divAGXFzWg1N2jtQQ",
+      "monitoring_date": "2023-07-22",
+      "startDate": "2023-07-20",
+      "total_cost": 100
+    },
+    "-N_oszL7loECkY1iGNJX": {
+      "adescription": "Prueba de guardado de acciones de mitigacion 2",
+      "endDate": "2023-08-05",
+      "id_risk": "-N_divAGXFzWg1N2jtQQ",
+      "monitoring_date": "2023-07-24",
+      "startDate": "2023-07-13",
+      "total_cost": 1505.5
+    },
+    "-N_ouqYAU5lqGETX6RBQ": {
+      "adescription": "Prueba de guardado de acciones de mitigacion 3",
+      "endDate": "2023-07-31",
+      "id_risk": "-N_divAGXFzWg1N2jtQQ",
+      "monitoring_date": "2023-07-24",
+      "startDate": "2023-07-13",
+      "total_cost": 70
+    },
+    "-N_ozoOpElTvDi_pItEs": {
+      "adescription": "Prueba de guardado accion de mitigacion 4 y recursos",
+      "endDate": "2023-08-05",
+      "id_risk": "-N_divAGXFzWg1N2jtQQ",
+      "monitoring_date": "2023-07-24",
+      "startDate": "2023-07-13",
+      "total_cost": 1051000
+    },
+    "-N_pJ3MRt6J9VOC1ulYx": {
+      "adescription": "Prueba de guardado de recursos",
+      "endDate": "2023-07-31",
+      "id_risk": "-N_divAGXFzWg1N2jtQQ",
+      "monitoring_date": "2023-07-21",
+      "startDate": "2023-07-21",
+      "total_cost": 1001101
+    },
+    "-N_pPX_mjCaqNekfLtcD": {
+      "adescription": "guardado recursos 4",
+      "endDate": "2023-08-05",
+      "id_risk": "-N_divAGXFzWg1N2jtQQ",
+      "monitoring_date": "2023-07-24",
+      "startDate": "2023-07-19",
+      "total_cost": 1550.56
+    },
+    "-N_pQm50x61Bw8tgML5W": {
+      "adescription": "Accion de mitigacion 1",
+      "endDate": "2023-11-24",
+      "id_risk": "-N_oHtOY_odSD0jixNTc",
+      "monitoring_date": "2023-07-24",
+      "startDate": "2023-07-16",
+      "total_cost": 862099.5900000001
+    },
+    "-N_pbg0y2JKn5quF0a40": {
+      "adescription": "Prueba guardado accion 1, recursos y edit risk",
+      "endDate": "2023-08-05",
+      "id_risk": "-N_e4RZ-XizbZowedNBd",
+      "monitoring_date": "2023-07-24",
+      "startDate": "2023-07-27",
+      "total_cost": 6303.25
+    },
+    "-N_pdG0PemYnYLjQoV0C": {
+      "adescription": "Prueba 2",
+      "endDate": "2023-08-31",
+      "id_risk": "-N_e4RZ-XizbZowedNBd",
+      "lastTrackingDate": "2023-07-21",
+      "monitoring_date": "2023-08-02",
+      "startDate": "2023-08-01",
+      "total_cost": 400
+    },
+    "-N_qRzV6KUKqCkEh3CCL": {
+      "adescription": "Prueba para seguimiento",
+      "endDate": "2023-09-30",
+      "id_risk": "-N_e4RZ-XizbZowedNBd",
+      "lastTrackingDate": "2023-07-21",
+      "monitoring_date": "2023-07-03",
+      "startDate": "2023-07-01",
+      "sum_progress": 0,
+      "total_cost": 6000
+    }
+  },
+  "actionsres": {
+    "-N_DcWrrfdfsdff": {
+      "cost": 50,
+      "id_action": "-N_DcWrrfdfgdhh",
+      "quantity": 1,
+      "rdescription": "Recurso 1",
+      "unit": "pza"
+    },
+    "-N_Fddgdbbsdgsf": {
+      "cost": 100,
+      "id_action": "-N_DcWrrfdfgdhh",
+      "quantity": 50,
+      "rdescription": "recurso 2",
+      "unit": "h"
+    },
+    "-N_pJ3VWsWqv436__jXd": {
+      "id_action": "-N_pJ3MRt6J9VOC1ulYx"
+    },
+    "-N_pJ3VWsWqv436__jXe": {
+      "id_action": "-N_pJ3MRt6J9VOC1ulYx"
+    },
+    "-N_pJ3XSzbvqJx1mme5K": {
+      "id_action": "-N_pJ3MRt6J9VOC1ulYx"
+    },
+    "-N_pJ3XX1Fj2pjMxjf5k": {
+      "id_action": "-N_pJ3MRt6J9VOC1ulYx"
+    },
+    "-N_pPXdpeRB-l-idIpQA": {
+      "cost": 50,
+      "id_action": "-N_pPX_mjCaqNekfLtcD",
+      "quantity": 5,
+      "rdescription": "r1",
+      "unit": "pza"
+    },
+    "-N_pPXjHPx3oZx0I3qWk": {
+      "cost": 500,
+      "id_action": "-N_pPX_mjCaqNekfLtcD",
+      "quantity": 23,
+      "rdescription": "r2",
+      "unit": "h"
+    },
+    "-N_pPXjJqpjbYW4TeL9s": {
+      "cost": 1000.56,
+      "id_action": "-N_pPX_mjCaqNekfLtcD",
+      "quantity": 20,
+      "rdescription": "r3",
+      "unit": "h"
+    },
+    "-N_pQmXS2a10vwg2X70M": {
+      "cost": 3425.56,
+      "id_action": "-N_pQm50x61Bw8tgML5W",
+      "quantity": 5,
+      "rdescription": "personal",
+      "unit": "h"
+    },
+    "-N_pQmYJsMZYfTkRJY7P": {
+      "cost": 756894.56,
+      "id_action": "-N_pQm50x61Bw8tgML5W",
+      "quantity": 1,
+      "rdescription": "Materiales",
+      "unit": "pza"
+    },
+    "-N_pQmZNexnksspbJ0vV": {
+      "cost": 100523.02,
+      "id_action": "-N_pQm50x61Bw8tgML5W",
+      "quantity": 5,
+      "rdescription": "Herramientas",
+      "unit": "pza"
+    },
+    "-N_pQmZPJc6T7LamcLcK": {
+      "cost": 1256.45,
+      "id_action": "-N_pQm50x61Bw8tgML5W",
+      "quantity": 5,
+      "rdescription": "Equipo",
+      "unit": "pza"
+    },
+    "-N_pbgDRS8f8Wsg9SzL6": {
+      "cost": 50,
+      "id_action": "-N_pbg0y2JKn5quF0a40",
+      "quantity": 5,
+      "rdescription": "Recurso1",
+      "unit": "pza"
+    },
+    "-N_pbgDTKSF8AaSDQkOw": {
+      "cost": 6253.25,
+      "id_action": "-N_pbg0y2JKn5quF0a40",
+      "quantity": 20,
+      "rdescription": "Recurso2",
+      "unit": "m"
+    },
+    "-N_pdG49MBdz8CLvIjy-": {
+      "cost": 200,
+      "id_action": "-N_pdG0PemYnYLjQoV0C",
+      "quantity": 2,
+      "rdescription": "r1",
+      "unit": "pza"
+    },
+    "-N_pdG4wNhJTVCkf2zAf": {
+      "cost": 200,
+      "id_action": "-N_pdG0PemYnYLjQoV0C",
+      "quantity": 2,
+      "rdescription": "r3",
+      "unit": "m"
+    },
+    "-N_qRzZ-8_j032mvCYVo": {
+      "cost": 1000,
+      "id_action": "-N_qRzV6KUKqCkEh3CCL",
+      "quantity": 1,
+      "rdescription": "Recurso 1",
+      "unit": "pza"
+    },
+    "-N_qRzZbO6b2yuzrHyHJ": {
+      "cost": 5000,
+      "id_action": "-N_qRzV6KUKqCkEh3CCL",
+      "quantity": 2,
+      "rdescription": "Recurso 2",
+      "unit": "ton"
+    },
+    "-N_sb5H3ZQ7S3q-THv51": {
+      "cost": 1000,
+      "id_action": "-N_sb5DdQOtNdR3JALTq",
+      "quantity": 1,
+      "rdescription": "R1",
+      "unit": "pza"
+    },
+    "-N_sb5HcOT3Su_scv8f_": {
+      "cost": 1500,
+      "id_action": "-N_sb5DdQOtNdR3JALTq",
+      "quantity": 2,
+      "rdescription": "R2",
+      "unit": "kg"
     }
   },
   "branchs": {
@@ -1598,6 +1814,54 @@
       "place": "Oficina Calle 23",
       "timep": "09:06",
       "typemeeting": "Registro"
+    }
+  },
+  "management": {
+    "LQBGAFSts9829": {
+      "orden": 0,
+      "titulo1": "Plan de Gestion de Proyectos",
+      "titulo2": "Gestion del Alcance",
+      "titulo3": "Gestion del Cronograma",
+      "titulo4": "Gestion del Costo",
+      "titulo5": "Plan de Gestion de la Calidad",
+      "titulo6": "Plan de Gestion de Recursos Humanos",
+      "titulo7": "Plan de Gestion de las Comunicaciones",
+      "titulo8": "Plan de Gestion de las Adquisiciones",
+      "titulo9": "Plan de Gestion de Riesgos, Interfaces y Cambios"
+    }
+  },
+  "management_filesdetails": {
+    "1005": {
+      "date": "2023-06-22",
+      "description": "Description Diferente a todas",
+      "id_project": "LQBGAFSts9829",
+      "name": "File 45.pdf",
+      "parent": "Plan de Gestion de las Comunicaciones",
+      "url": "url_to_file_1"
+    },
+    "1009": {
+      "date": "2023-07-22",
+      "description": "Description 1",
+      "id_project": "LQBGAFSts9829",
+      "name": "File 1",
+      "parent": "Gestion del Alcance",
+      "url": "url_to_file_1"
+    },
+    "1010": {
+      "date": "2023-07-22",
+      "description": "Description 1",
+      "id_project": "LQBGAFSts9829",
+      "name": "file3.xls",
+      "parent": "Gestion del Cronograma",
+      "url": "url_to_file_1"
+    },
+    "1011": {
+      "date": "2023-07-22",
+      "description": "Description 7",
+      "id_project": "LQBGAFSts9829",
+      "name": "File 7.pdf",
+      "parent": "Plan de Gestion de las Comunicaciones",
+      "url": "url_to_file_1"
     }
   },
   "materialsxconcepts": {
@@ -3568,6 +3832,41 @@
       "email": "rorozcob@hco-consultores.com",
       "id_risk": "-N_eHxlWyq6-iUR0G7UY",
       "name": "Raul Orozco Buenfil"
+    },
+    "-N_oHtaqpmpsVrbgmuwn": {
+      "email": "vguerrero@hco-consultores",
+      "id_risk": "-N_oHtOY_odSD0jixNTc",
+      "name": "Vicente Guerrero Escamilla"
+    },
+    "-N_oHtarjsqsKupUZrk6": {
+      "email": "driosa@hco-consultores.com",
+      "id_risk": "-N_oHtOY_odSD0jixNTc",
+      "name": "David Rios Alvarado"
+    },
+    "-N_oHtc8ixIUeDE5c0CC": {
+      "email": "hsimpson@hco-consultores.com",
+      "id_risk": "-N_oHtOY_odSD0jixNTc",
+      "name": "Homero Simpson"
+    },
+    "-N_t6PWlcf6TilWpOOqi": {
+      "email": "jjperez@gmail.com",
+      "id_risk": "-N_t6PTr4oh_MOeo_HAC",
+      "name": "Juan Perez"
+    },
+    "-N_t6PXVlLP2d9YYSR9A": {
+      "email": "gpalestina@hco-consultores.com",
+      "id_risk": "-N_t6PTr4oh_MOeo_HAC",
+      "name": "Guillermo Palestina"
+    },
+    "-N_t6PXjmHHJUW9ellcE": {
+      "email": "agonzalez@gmail.com",
+      "id_risk": "-N_t6PTr4oh_MOeo_HAC",
+      "name": "Arturo Gonzalez"
+    },
+    "-N_t6PXkjN4lUsNKs4YW": {
+      "email": "lsimpson@hco-consultores.com",
+      "id_risk": "-N_t6PTr4oh_MOeo_HAC",
+      "name": "Lisa Simpson"
     }
   },
   "risk": {
@@ -3833,18 +4132,18 @@
       "imp_score": 64,
       "imp_time": "4",
       "monitoring_date": "",
-      "observations": "",
+      "observations": "Esta es una prueba de observaciones del riesgo modificada por tercera vez",
       "owner": "Lisa Simpson",
       "phase": "Planeación",
       "probability": "4",
       "response": "Mitigar",
-      "rimp_cost": 0,
-      "rimp_quality": 0,
-      "rimp_scope": 0,
-      "rimp_score": 0,
-      "rimp_time": 0,
-      "rprobability": 0,
-      "status": "Abierto"
+      "rimp_cost": "3",
+      "rimp_quality": "4",
+      "rimp_scope": "5",
+      "rimp_score": 45,
+      "rimp_time": "3",
+      "rprobability": "3",
+      "status": "En proceso de mitigación"
     },
     "-N_e9eNfLty-vgodaRB8": {
       "active": 1,
@@ -3919,6 +4218,54 @@
       "rimp_score": 0,
       "rimp_time": 0,
       "rprobability": 0,
+      "status": "Abierto"
+    },
+    "-N_oHtOY_odSD0jixNTc": {
+      "active": 1,
+      "closing_incharge": "Pedro Serafin",
+      "description": "Esto es una prueba para revision del impacto",
+      "id_concept": "2",
+      "id_project": "LQBGAFSts9829",
+      "imp_cost": "4",
+      "imp_quality": "4",
+      "imp_scope": "1",
+      "imp_score": 30,
+      "imp_time": "1",
+      "observations": "",
+      "owner": "Guillermo Palestina",
+      "phase": "Ejecución",
+      "probability": "3",
+      "response": "Mitigar",
+      "rimp_cost": "4",
+      "rimp_quality": "4",
+      "rimp_scope": "1",
+      "rimp_score": 30,
+      "rimp_time": "1",
+      "rprobability": "3",
+      "status": "Abierto"
+    },
+    "-N_t6PTr4oh_MOeo_HAC": {
+      "active": 1,
+      "closing_incharge": "Pedro Malave Gonzalez",
+      "description": "Descripcion del riesgo",
+      "id_concept": "2",
+      "id_project": "LQBGAFSts9829",
+      "imp_cost": "4",
+      "imp_quality": "4",
+      "imp_scope": "2",
+      "imp_score": 26,
+      "imp_time": "3",
+      "observations": "",
+      "owner": "Guillermo Palestina",
+      "phase": "Inicio",
+      "probability": "2",
+      "response": "Evitar",
+      "rimp_cost": "4",
+      "rimp_quality": "4",
+      "rimp_scope": "2",
+      "rimp_score": 26,
+      "rimp_time": "3",
+      "rprobability": "2",
       "status": "Abierto"
     }
   },
@@ -74050,6 +74397,5438 @@
       "idn": 8623,
       "origin": "Origen del Formulario Login",
       "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oHNJniA76KuqUzK4S": {
+      "company": "",
+      "datetime": "2023-07-20T17:12:01.604Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8624,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oHQdLKveK_KapexKE": {
+      "company": "",
+      "datetime": "2023-07-20T17:12:14.888Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8625,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oHU1v8KrsVUdYshLH": {
+      "company": "",
+      "datetime": "2023-07-20T17:12:29.177Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 8626,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oHUz0BPHYXhcMpN8-": {
+      "company": "",
+      "datetime": "2023-07-20T17:12:33.365Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8627,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oHYDlIse4HfI9IHET": {
+      "company": "",
+      "datetime": "2023-07-20T17:12:46.305Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 8628,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oHZRvCGRLSEAwvmFi": {
+      "company": "",
+      "datetime": "2023-07-20T17:12:51.615Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8629,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oHaU0embfAmlsLSrj": {
+      "company": "",
+      "datetime": "2023-07-20T17:12:58.909Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 8630,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oHcSPQNMI-nAkTMXa": {
+      "company": "",
+      "datetime": "2023-07-20T17:13:08.003Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8631,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oHd91EcEeD54FAWv0": {
+      "company": "",
+      "datetime": "2023-07-20T17:13:10.940Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 8632,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oI-7ifs0p5fEvbISV": {
+      "company": "",
+      "datetime": "2023-07-20T17:14:44.964Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8633,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oI86QmlmcwNWB_NH7": {
+      "company": "",
+      "datetime": "2023-07-20T17:15:21.759Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 8634,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oOdYplIKi6FHfYwz4": {
+      "company": "",
+      "datetime": "2023-07-20T17:43:46.708Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8635,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oOesW9_QI5senTedB": {
+      "company": "",
+      "datetime": "2023-07-20T17:43:52.770Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8636,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oPIVD7eLR8kZAIOKM": {
+      "company": "",
+      "datetime": "2023-07-20T17:46:38.665Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8637,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oPL05xD4QFx8SekOF": {
+      "company": "",
+      "datetime": "2023-07-20T17:46:49.606Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8638,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oPYKEgGi5MBEb070M": {
+      "company": "",
+      "datetime": "2023-07-20T17:47:44.104Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 8639,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oPbUPLbfA5N8seaqW": {
+      "company": "",
+      "datetime": "2023-07-20T17:48:01.203Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8640,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oPcSfw4qaq9Icv8HI": {
+      "company": "",
+      "datetime": "2023-07-20T17:48:05.250Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8641,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oPog58-UvOgEclzzm": {
+      "company": "",
+      "datetime": "2023-07-20T17:48:55.005Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 8642,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oPzqNNyUPUrqR5z_O": {
+      "company": "",
+      "datetime": "2023-07-20T17:49:40.685Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8643,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oQ-nxPXwOtsJylOf6": {
+      "company": "",
+      "datetime": "2023-07-20T17:49:44.986Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8644,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oQ_u-6C5llaJW4G1A": {
+      "company": "",
+      "datetime": "2023-07-20T17:52:16.871Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 8645,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_oQa-OX8Vrp4_FiXZF": {
+      "company": "",
+      "datetime": "2023-07-20T17:52:17.338Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 8646,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_oQaG4vowsIv9Jtgcb": {
+      "company": "",
+      "datetime": "2023-07-20T17:52:18.411Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 8647,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_oQaIvbkz9tWzFJsx5": {
+      "company": "",
+      "datetime": "2023-07-20T17:52:18.589Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 8648,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_oQaKwNuMdxvOw3A-k": {
+      "company": "",
+      "datetime": "2023-07-20T17:52:18.738Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 8649,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_oQdcc15p2GtuXVpO9": {
+      "company": "",
+      "datetime": "2023-07-20T17:52:31.093Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8650,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oQeY52YfarqHA2n-j": {
+      "company": "",
+      "datetime": "2023-07-20T17:52:35.904Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8651,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oQq3nktLwi8SQLR2E": {
+      "company": "",
+      "datetime": "2023-07-20T17:53:22.692Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 8652,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oQtD_4QgdoQY5C1aq": {
+      "company": "",
+      "datetime": "2023-07-20T17:53:35.888Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8653,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oQuUPsJBMMA1058qo": {
+      "company": "",
+      "datetime": "2023-07-20T17:53:41.154Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8654,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oSGgAmYxxS2yTeiv0": {
+      "company": "",
+      "datetime": "2023-07-20T17:59:38.125Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 8655,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oSODEVTNd740y1r7w": {
+      "company": "",
+      "datetime": "2023-07-20T18:00:09.197Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8656,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oSPPmPCsV2IPfedvv": {
+      "company": "",
+      "datetime": "2023-07-20T18:00:14.150Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8657,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oTQ4dfT75hDH6R6xK": {
+      "company": "",
+      "datetime": "2023-07-20T18:04:38.764Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 8658,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oTSvPcFnIJxTFHrS4": {
+      "company": "",
+      "datetime": "2023-07-20T18:04:50.622Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8659,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oTTtsXlzPEXUE62fq": {
+      "company": "",
+      "datetime": "2023-07-20T18:04:54.602Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8660,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oUWYLW-kVP5JU17Ob": {
+      "company": "",
+      "datetime": "2023-07-20T18:09:26.952Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 8661,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oUZgYI0h7_XVBi0Jz": {
+      "company": "",
+      "datetime": "2023-07-20T18:09:40.484Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8662,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oU_gZBorQ76jxR2vt": {
+      "company": "",
+      "datetime": "2023-07-20T18:09:44.143Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8663,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oVa6IXmlU3zJSUr6O": {
+      "company": "",
+      "datetime": "2023-07-20T18:14:08.293Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 8664,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oVwlpNSQw_qXAzL24": {
+      "company": "",
+      "datetime": "2023-07-20T18:15:37.548Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8665,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oVx7HtlxoGeTpluAI": {
+      "company": "",
+      "datetime": "2023-07-20T18:15:42.026Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8666,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oVyCwX6ia8yiSYPzC": {
+      "company": "",
+      "datetime": "2023-07-20T18:15:46.074Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8667,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oWM6rm1nhF4Zd1zoC": {
+      "company": "",
+      "datetime": "2023-07-20T18:17:27.350Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8668,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oWMp0v8dHS3qW6K11": {
+      "company": "",
+      "datetime": "2023-07-20T18:17:30.881Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8669,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oWO8KmJBwblDswk6_": {
+      "company": "",
+      "datetime": "2023-07-20T18:17:36.888Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8670,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oWocK4uDPO-RLFL21": {
+      "company": "",
+      "datetime": "2023-07-20T18:19:29.723Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 8671,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oWuVU61g4mkgaGdbg": {
+      "company": "",
+      "datetime": "2023-07-20T18:19:54.111Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8672,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oWvoznKVQU8tRgnSD": {
+      "company": "",
+      "datetime": "2023-07-20T18:19:59.438Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8673,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oXQIsZt4aPg3Ij3i3": {
+      "company": "",
+      "datetime": "2023-07-20T18:22:07.501Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 8674,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oXUCgAcLIz6E-XJlm": {
+      "company": "",
+      "datetime": "2023-07-20T18:22:24.173Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8675,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oXVJy4_rAFxNyUR9-": {
+      "company": "",
+      "datetime": "2023-07-20T18:22:29.052Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8676,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oYQfrT0QaIX7JxY1z": {
+      "company": "",
+      "datetime": "2023-07-20T18:26:32.131Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 8677,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_oYU_oHXdOB0WLYQvg": {
+      "company": "",
+      "datetime": "2023-07-20T18:26:48.145Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8678,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oYVq5rT_jfzZCvoua": {
+      "company": "",
+      "datetime": "2023-07-20T18:26:52.132Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8679,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_o_d4ny8IVIcUetGhb": {
+      "company": "",
+      "datetime": "2023-07-20T18:36:10.628Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 8680,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_ob47TZXTWT1JIaAMl": {
+      "company": "",
+      "datetime": "2023-07-20T18:42:27.816Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8681,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_ob4xMB8EWbdyIWbbW": {
+      "company": "",
+      "datetime": "2023-07-20T18:42:31.666Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8682,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_obBKMxgbyBVrtNCxL": {
+      "company": "",
+      "datetime": "2023-07-20T18:42:57.791Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 8683,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_obUmCg4_X9pJqLagG": {
+      "company": "",
+      "datetime": "2023-07-20T18:44:16.881Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8684,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_obWYLMoJjFQY9HPLi": {
+      "company": "",
+      "datetime": "2023-07-20T18:44:24.708Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8685,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oc7qcb359CeNHsqxD": {
+      "company": "",
+      "datetime": "2023-07-20T18:47:05.279Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 8686,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_ocft_e1devw6jIRaO": {
+      "company": "",
+      "datetime": "2023-07-20T18:49:29.038Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8687,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_ocgvgJdPvgGCgn2v7": {
+      "company": "",
+      "datetime": "2023-07-20T18:49:33.442Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8688,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oeMCVA0P2RK4dC7bM": {
+      "company": "",
+      "datetime": "2023-07-20T18:56:48.177Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 8689,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oePQiV3D2yTYmT9Gb": {
+      "company": "",
+      "datetime": "2023-07-20T18:57:02.017Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8690,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oeQgsuPC81ekEOrie": {
+      "company": "",
+      "datetime": "2023-07-20T18:57:07.183Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8691,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_ofHllxSK-tTJp8osJ": {
+      "company": "",
+      "datetime": "2023-07-20T19:00:52.420Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 8692,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_ogB6dgem5Etpm7vT1": {
+      "company": "",
+      "datetime": "2023-07-20T19:04:42.300Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8693,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_ogBBqcqMBHx1uzK2U": {
+      "company": "",
+      "datetime": "2023-07-20T19:04:47.041Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8693,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_ogC1SaoagRjmaEvI8": {
+      "company": "",
+      "datetime": "2023-07-20T19:04:51.427Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8694,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oh1R5jnYGK3DohTDz": {
+      "company": "",
+      "datetime": "2023-07-20T19:08:29.973Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 8695,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oh5EQ4xzwX-HEQy8v": {
+      "company": "",
+      "datetime": "2023-07-20T19:08:45.765Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8696,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oh736U_WozNj6jwoO": {
+      "company": "",
+      "datetime": "2023-07-20T19:08:53.014Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8697,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_ohrRXQhDIDdHhaBC9": {
+      "company": "",
+      "datetime": "2023-07-20T19:12:07.085Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 8698,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_ohvCNOuPCUFk3q_97": {
+      "company": "",
+      "datetime": "2023-07-20T19:12:22.731Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8699,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_ohwXxo8Ii86SHvcV2": {
+      "company": "",
+      "datetime": "2023-07-20T19:12:28.128Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8700,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_ojJUpi1u01uZikyGA": {
+      "company": "",
+      "datetime": "2023-07-20T19:18:27.732Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 8701,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_ojMLW4rXY9MVUjrsF": {
+      "company": "",
+      "datetime": "2023-07-20T19:18:40.134Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8702,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_ojOJ4uVqsH0FUDoZf": {
+      "company": "",
+      "datetime": "2023-07-20T19:18:48.149Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8703,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_ojya1V1ChLmoKfdYL": {
+      "company": "",
+      "datetime": "2023-07-20T19:21:20.875Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8704,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_ojzjo4Qap9vS8kCRZ": {
+      "company": "",
+      "datetime": "2023-07-20T19:21:25.371Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8705,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oqlnHcL1l_ifmEQo-": {
+      "company": "",
+      "datetime": "2023-07-20T19:51:02.965Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 8706,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_oqoaFwuXkHTetKsp9": {
+      "company": "",
+      "datetime": "2023-07-20T19:51:14.683Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8707,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oqqSJ3jm2c9QuIgib": {
+      "company": "",
+      "datetime": "2023-07-20T19:51:22.512Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8708,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oqqidLdPnnTqlB5r_": {
+      "company": "",
+      "datetime": "2023-07-20T19:51:23.699Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 8709,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oqs36Gp1xSstzcm8n": {
+      "company": "",
+      "datetime": "2023-07-20T19:51:29.136Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8710,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_orCBjR5UqXeygaSJG": {
+      "company": "",
+      "datetime": "2023-07-20T19:52:55.592Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 8711,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_orCths-tmKB4PdzZ-": {
+      "company": "",
+      "datetime": "2023-07-20T19:52:58.652Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8712,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_orDBA9JZec1inPBTb": {
+      "company": "",
+      "datetime": "2023-07-20T19:52:59.553Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 8713,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_orDkXZCMmbHBwgL8s": {
+      "company": "",
+      "datetime": "2023-07-20T19:53:02.086Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8714,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_orRe8tYs0Mxk-0DOg": {
+      "company": "",
+      "datetime": "2023-07-20T19:53:57.485Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 8715,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oraf3--JmxK8ddEna": {
+      "company": "",
+      "datetime": "2023-07-20T19:54:40.036Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8716,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_orcKzHAda_iRgA3VM": {
+      "company": "",
+      "datetime": "2023-07-20T19:54:46.855Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8717,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_ors5yUbRPCSS_UJ-s": {
+      "company": "",
+      "datetime": "2023-07-20T19:55:51.415Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 8718,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_orskVyZeY7s26C5pq": {
+      "company": "",
+      "datetime": "2023-07-20T19:55:54.203Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8719,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_osd_UY_QrQDN_Q7oq": {
+      "company": "",
+      "datetime": "2023-07-20T19:59:13.762Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 8720,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_osgdU_t0fapE9Knzr": {
+      "company": "",
+      "datetime": "2023-07-20T19:59:26.658Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8721,
+      "origin": "Origen del Formulario Login",
+      "user": "jmnontes@hco-consultores.com"
+    },
+    "-N_osiX-ss8U9rwNlOMe": {
+      "company": "",
+      "datetime": "2023-07-20T19:59:33.156Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8722,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oskD2D07sYkjg5sKR": {
+      "company": "",
+      "datetime": "2023-07-20T19:59:40.745Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8723,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_ot73hDXz-cMxjxUI5": {
+      "company": "",
+      "datetime": "2023-07-20T20:01:18.947Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 8724,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_ot7oQkYUGFIFgmPP5": {
+      "company": "",
+      "datetime": "2023-07-20T20:01:22.090Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8725,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_ou_P_8T-2nN7OCAf9": {
+      "company": "",
+      "datetime": "2023-07-20T20:07:40.985Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 8726,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_oucPXXgQ5tzfNkUM9": {
+      "company": "",
+      "datetime": "2023-07-20T20:07:53.499Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8727,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_oueVQru9MxReG_p41": {
+      "company": "",
+      "datetime": "2023-07-20T20:08:00.995Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8728,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_ourlq5OHrc6gDoiz6": {
+      "company": "",
+      "datetime": "2023-07-20T20:08:56.482Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 8729,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_ourz3zZct5XduZ-GZ": {
+      "company": "",
+      "datetime": "2023-07-20T20:08:57.439Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8730,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_ousen43lxbDsD-7No": {
+      "company": "",
+      "datetime": "2023-07-20T20:08:59.652Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 8731,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_outNy3X5dNHTovo5f": {
+      "company": "",
+      "datetime": "2023-07-20T20:09:03.120Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8732,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_ouvXqQn0-ekqWHB8m": {
+      "company": "",
+      "datetime": "2023-07-20T20:09:11.978Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8733,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_ouvlUSWSz8HZ_XKIE": {
+      "company": "",
+      "datetime": "2023-07-20T20:09:12.937Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8734,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_ozTeAewraTukIi1R_": {
+      "company": "",
+      "datetime": "2023-07-20T20:29:03.849Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8735,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_ozV_1WBM2UrLxv-QS": {
+      "company": "",
+      "datetime": "2023-07-20T20:29:12.186Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8736,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_ozpCvqSAZ9rZ8CDzi": {
+      "company": "",
+      "datetime": "2023-07-20T20:30:36.297Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 8737,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_ozpe8R-5_KyVIPiFA": {
+      "company": "",
+      "datetime": "2023-07-20T20:30:38.516Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8738,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pJ4Vlo108LCDFw3Ss": {
+      "company": "",
+      "datetime": "2023-07-20T21:59:05.624Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 8739,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pJ56XT1NNlKisk0z-": {
+      "company": "",
+      "datetime": "2023-07-20T21:59:08.215Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8740,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pMprrSh07Q3_ubO8o": {
+      "company": "",
+      "datetime": "2023-07-20T22:15:29.983Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8741,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pMxSHZvqBSVdOMhaX": {
+      "company": "",
+      "datetime": "2023-07-20T22:16:01.170Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8742,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pNfrbD0stc2E8gSDz": {
+      "company": "",
+      "datetime": "2023-07-20T22:19:10.926Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 8743,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pOC-O-uYV2Wa_s5no": {
+      "company": "",
+      "datetime": "2023-07-20T22:21:26.868Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 8744,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pOFNMqecaW0Sim4Dv": {
+      "company": "",
+      "datetime": "2023-07-20T22:21:40.934Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8745,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pOHjCVCVRJfm1nCJA": {
+      "company": "",
+      "datetime": "2023-07-20T22:21:50.570Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8746,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pOZYuH8MfhqG1rmZT": {
+      "company": "",
+      "datetime": "2023-07-20T22:23:03.356Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 8747,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pPEkv_h_KirWIeDaD": {
+      "company": "",
+      "datetime": "2023-07-20T22:26:00.355Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8748,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pPGYmToB1L0BhoZcZ": {
+      "company": "",
+      "datetime": "2023-07-20T22:26:07.869Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8749,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pPZLWQxU1BAPmyvxw": {
+      "company": "",
+      "datetime": "2023-07-20T22:27:24.398Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 8750,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pPZp7158iQBs2X076": {
+      "company": "",
+      "datetime": "2023-07-20T22:27:26.875Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8751,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pQBxbVsNuvGj-mLrj": {
+      "company": "",
+      "datetime": "2023-07-20T22:30:10.698Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 8752,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pQG-4X2PTaXXKzvzR": {
+      "company": "",
+      "datetime": "2023-07-20T22:30:27.569Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8753,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pQI220PETponpRyFw": {
+      "company": "",
+      "datetime": "2023-07-20T22:30:36.137Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8754,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pQmzIUpFLFVZEaIOH": {
+      "company": "",
+      "datetime": "2023-07-20T22:32:46.891Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 8755,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pQnU58E2Ez5A8T84w": {
+      "company": "",
+      "datetime": "2023-07-20T22:32:49.077Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8756,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pQtyemaxyd2bAs55I": {
+      "company": "",
+      "datetime": "2023-07-20T22:33:15.569Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 8757,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pQubY2rBfAHcguhFi": {
+      "company": "",
+      "datetime": "2023-07-20T22:33:18.290Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8758,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pQvuqiRrpowbA372j": {
+      "company": "",
+      "datetime": "2023-07-20T22:33:23.529Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 8759,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pQwuo6dBf5sD2nbNT": {
+      "company": "",
+      "datetime": "2023-07-20T22:33:27.644Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8760,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pR-hfVhOmimz-VMmQ": {
+      "company": "",
+      "datetime": "2023-07-20T22:33:43.038Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 8761,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pZeQBN8Hjz6vaT6Lr": {
+      "company": "",
+      "datetime": "2023-07-20T23:11:30.711Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 8762,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pbECcJ3t8E2B3zZgJ": {
+      "company": "",
+      "datetime": "2023-07-20T23:22:45.875Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8763,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pbIEzqRB3g4TRrVht": {
+      "company": "",
+      "datetime": "2023-07-20T23:23:02.683Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8764,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pbhIkWgi95D4g1imY": {
+      "company": "",
+      "datetime": "2023-07-20T23:24:49.390Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 8765,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pbmZJsuWno563dciL": {
+      "company": "",
+      "datetime": "2023-07-20T23:25:06.227Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8766,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pbuYZfBypidDe0tSO": {
+      "company": "",
+      "datetime": "2023-07-20T23:25:43.648Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 8767,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pbvnt58L8UZaS076u": {
+      "company": "",
+      "datetime": "2023-07-20T23:25:48.802Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8768,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pco6Dxlby8WfourIl": {
+      "company": "",
+      "datetime": "2023-07-20T23:29:39.200Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 8769,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pcsEo3jPto64nf0Xq": {
+      "company": "",
+      "datetime": "2023-07-20T23:29:56.390Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8770,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-comunicaciones.com"
+    },
+    "-N_pcv2Zrv87U1WMd6Kw": {
+      "company": "",
+      "datetime": "2023-07-20T23:30:07.805Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8771,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pcx7Y3exn4StZ7kLh": {
+      "company": "",
+      "datetime": "2023-07-20T23:30:16.385Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8772,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pdxxoTlxyT468js-g": {
+      "company": "",
+      "datetime": "2023-07-20T23:34:41.544Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 8773,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pdzCVbNuPfHF68Azt": {
+      "company": "",
+      "datetime": "2023-07-20T23:34:46.099Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8774,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pe4ZHNWAE_gfBJ0be": {
+      "company": "",
+      "datetime": "2023-07-20T23:35:03.150Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 8775,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pe6DC8iUvoFbqpAg9": {
+      "company": "",
+      "datetime": "2023-07-20T23:35:19.415Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8776,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pe6_NM6DZhL36d_Hm": {
+      "company": "",
+      "datetime": "2023-07-20T23:35:21.146Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8777,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pe7bUiis99WhemzY6": {
+      "company": "",
+      "datetime": "2023-07-20T23:35:25.138Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8778,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pe8VSFAHrEVv1jHZn": {
+      "company": "",
+      "datetime": "2023-07-20T23:35:29.284Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 8779,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pe9KCOzowHLXmqYyj": {
+      "company": "",
+      "datetime": "2023-07-20T23:35:32.579Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8780,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pe9fJeQySuE5bIPDv": {
+      "company": "",
+      "datetime": "2023-07-20T23:35:33.836Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 8781,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_peARIVtCxGq5l5aEl": {
+      "company": "",
+      "datetime": "2023-07-20T23:35:37.246Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8782,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_peCuJu5ChKtT8OAC8": {
+      "company": "",
+      "datetime": "2023-07-20T23:35:46.610Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 8783,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_peGFTfIhIenu-H9xN": {
+      "company": "",
+      "datetime": "2023-07-20T23:36:00.965Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8784,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_peHQvUTOy7XlFeC1P": {
+      "company": "",
+      "datetime": "2023-07-20T23:36:05.888Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8785,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_peHmLuFX9bmHy1eKk": {
+      "company": "",
+      "datetime": "2023-07-20T23:36:06.897Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 8786,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_peKcnROor5fLWAwBo": {
+      "company": "",
+      "datetime": "2023-07-20T23:36:18.436Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 8787,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pfhLZoUCvbgBsXsr0": {
+      "company": "",
+      "datetime": "2023-07-20T23:42:17.477Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8788,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pfmSyIvMlYFjyUBZ6": {
+      "company": "",
+      "datetime": "2023-07-20T23:42:34.325Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8789,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_pfmTGAisFb3NWplrH": {
+      "company": "",
+      "datetime": "2023-07-20T23:42:38.337Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 8789,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_pfnbhHKRjrFN-YpSE": {
+      "company": "",
+      "datetime": "2023-07-20T23:42:43.930Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8790,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_pg9UE9-5ykjEDrcqq": {
+      "company": "",
+      "datetime": "2023-07-20T23:44:16.209Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8791,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_pgBWbpXQc2HrEakKo": {
+      "company": "",
+      "datetime": "2023-07-20T23:44:25.533Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 8792,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_pgSQ8OS_0mbZ2p128": {
+      "company": "",
+      "datetime": "2023-07-20T23:45:34.459Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 8793,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_pi5sGqmFwTazGVA6e": {
+      "company": "",
+      "datetime": "2023-07-20T23:52:46.737Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8794,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pi7nr_a37VW7ANUNp": {
+      "company": "",
+      "datetime": "2023-07-20T23:52:54.899Z",
+      "description": "Click en la Pestaña Details/Detalles del menu Communications",
+      "idn": 8795,
+      "origin": "Communications",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pi8-wlkNjAGnzB2JW": {
+      "company": "",
+      "datetime": "2023-07-20T23:52:55.878Z",
+      "description": "Click en la Pestaña Documents del menu Communications",
+      "idn": 8796,
+      "origin": "Communications",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pi98Y01W0A5ZS7YDL": {
+      "company": "",
+      "datetime": "2023-07-20T23:53:00.102Z",
+      "description": "Click en la Pestaña Details/Detalles del menu Communications",
+      "idn": 8797,
+      "origin": "Communications",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pi99HOqGPzSRLtsTu": {
+      "company": "",
+      "datetime": "2023-07-20T23:53:00.533Z",
+      "description": "Click en la Pestaña Documents del menu Communications",
+      "idn": 8797,
+      "origin": "Communications",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pi9xFK8gsN2jyCp_z": {
+      "company": "",
+      "datetime": "2023-07-20T23:53:03.811Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 8798,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_piEn5j5k8m3KKF7Bz": {
+      "company": "",
+      "datetime": "2023-07-20T23:53:23.555Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8799,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_piGlnswDaLY8T8xjd": {
+      "company": "",
+      "datetime": "2023-07-20T23:53:31.636Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 8800,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pifKdqVLZ30fMdGGT": {
+      "company": "",
+      "datetime": "2023-07-20T23:55:16.251Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8801,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-comunicaciones"
+    },
+    "-N_pii2HpzNiusyUtOAV": {
+      "company": "",
+      "datetime": "2023-07-20T23:55:27.411Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8802,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pjTRk5grQvAK5K_pb": {
+      "company": "",
+      "datetime": "2023-07-20T23:58:45.628Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 8803,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_pjWCNTFQ_6F_48esx": {
+      "company": "",
+      "datetime": "2023-07-20T23:58:56.755Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8804,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pji8YHzY2fNN4PI4B": {
+      "company": "",
+      "datetime": "2023-07-20T23:59:49.605Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 8805,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pnqwMTUteoHDrjESh": {
+      "company": "",
+      "datetime": "2023-07-21T00:17:53.790Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8806,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pz07csFU7mmgArqhe": {
+      "company": "",
+      "datetime": "2023-07-21T01:06:38.940Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 8807,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_pzyyG3xODmN6EFArq": {
+      "company": "",
+      "datetime": "2023-07-21T01:10:53.254Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8808,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_q-1S5V4JvFMCdsDCC": {
+      "company": "",
+      "datetime": "2023-07-21T01:11:07.735Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8809,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_q-2ZmNzHlmHukj2pp": {
+      "company": "",
+      "datetime": "2023-07-21T01:11:12.395Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8810,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_q-547v5C2K5DQkY_M": {
+      "company": "",
+      "datetime": "2023-07-21T01:11:22.557Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8811,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_q-5qjbpKoj6Jiw2QO": {
+      "company": "",
+      "datetime": "2023-07-21T01:11:25.550Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8812,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_q-6NeH4BsU3_U9pLL": {
+      "company": "",
+      "datetime": "2023-07-21T01:11:27.725Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 8813,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_q-89xHWNgbKgmO2bu": {
+      "company": "",
+      "datetime": "2023-07-21T01:11:34.952Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8814,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_q-8a2ygTWKL86N4iQ": {
+      "company": "",
+      "datetime": "2023-07-21T01:11:37.063Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8815,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_q-9J8MAHMOGVHN5S5": {
+      "company": "",
+      "datetime": "2023-07-21T01:11:40.006Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8816,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_q-9wrldHqlS_df33V": {
+      "company": "",
+      "datetime": "2023-07-21T01:11:42.504Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8817,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_q-AKZQuFGsdHhYHNt": {
+      "company": "",
+      "datetime": "2023-07-21T01:11:44.015Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8818,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_q-AtQC9tKny7XM937": {
+      "company": "",
+      "datetime": "2023-07-21T01:11:46.483Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8819,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_q-BFKplHrn7_LvwVp": {
+      "company": "",
+      "datetime": "2023-07-21T01:11:47.873Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8820,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_q-FY8BmAZW1MU_8nF": {
+      "company": "",
+      "datetime": "2023-07-21T01:12:05.128Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 8821,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_q-FuwjHkgZ8JZqBET": {
+      "company": "",
+      "datetime": "2023-07-21T01:12:07.057Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8822,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_q-HfO3dV2YwJcntXU": {
+      "company": "",
+      "datetime": "2023-07-21T01:12:14.151Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 8823,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_q-HvzRUPFPrD4P8gr": {
+      "company": "",
+      "datetime": "2023-07-21T01:12:15.268Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8824,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_q-I2evNttzIBJwVhw": {
+      "company": "",
+      "datetime": "2023-07-21T01:12:15.818Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8825,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_q-ILJaGS-a3XtVUaM": {
+      "company": "",
+      "datetime": "2023-07-21T01:12:16.852Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8826,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_q-ItMd30fNnV1a7ez": {
+      "company": "",
+      "datetime": "2023-07-21T01:12:19.158Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8827,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_q-JHfU8WS6pdj1CmP": {
+      "company": "",
+      "datetime": "2023-07-21T01:12:20.783Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8828,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_q-Ji630nqo6UFpUVQ": {
+      "company": "",
+      "datetime": "2023-07-21T01:12:22.604Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8829,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_qAgxsp2kUS62h8zRZ": {
+      "company": "",
+      "datetime": "2023-07-21T02:02:05.172Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8830,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_qBRP3sXSUBoyWqdrR": {
+      "company": "",
+      "datetime": "2023-07-21T02:05:19.723Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8831,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_qByPTgvwJ8ZvmQLjm": {
+      "company": "",
+      "datetime": "2023-07-21T02:07:38.704Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8832,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_qCsRiQnP1mC4bEy00": {
+      "company": "",
+      "datetime": "2023-07-21T02:11:36.662Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8833,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_qD4bFxHH0u-RamRQF": {
+      "company": "",
+      "datetime": "2023-07-21T02:12:30.681Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8834,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_qEO9EGKJPo2Kiw9ES": {
+      "company": "",
+      "datetime": "2023-07-21T02:18:12.331Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8835,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_qEPhTbh1ZqCMiO5FI": {
+      "company": "",
+      "datetime": "2023-07-21T02:18:19.150Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8836,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_qFtFohWoGg8kqct4T": {
+      "company": "",
+      "datetime": "2023-07-21T02:24:46.485Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8837,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_qG8gOXBkci-zuz3Zo": {
+      "company": "",
+      "datetime": "2023-07-21T02:25:53.671Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8838,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_qGNSPD2X1qyTkaaBQ": {
+      "company": "",
+      "datetime": "2023-07-21T02:26:54.305Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8839,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_qGpQiafWihVZTqxKW": {
+      "company": "",
+      "datetime": "2023-07-21T02:28:52.884Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8840,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_qPOCPL9ULKVvnsxV3": {
+      "company": "",
+      "datetime": "2023-07-21T03:06:16.642Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8841,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_qPOlbCSuYV5KcHysy": {
+      "company": "",
+      "datetime": "2023-07-21T03:06:18.830Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 8842,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_qPPXTQoNyDVLEMzBG": {
+      "company": "",
+      "datetime": "2023-07-21T03:06:22.130Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8843,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_qPR0pRpTD5tN7l88B": {
+      "company": "",
+      "datetime": "2023-07-21T03:06:28.256Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8844,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_qPWMjSWjr2L4m8sVp": {
+      "company": "",
+      "datetime": "2023-07-21T03:06:50.123Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8845,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_qRKN2g4Cf5GrosJ-G": {
+      "company": "",
+      "datetime": "2023-07-21T03:14:45.277Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8846,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_qS-gXsPqDD1kBvQkn": {
+      "company": "",
+      "datetime": "2023-07-21T03:17:42.682Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 8847,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_qS0CgEmklEcgyqJYu": {
+      "company": "",
+      "datetime": "2023-07-21T03:17:44.924Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8848,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_qSCLqFru5LHUIk4U2": {
+      "company": "",
+      "datetime": "2023-07-21T03:18:34.561Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8849,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_qSOuz-QiIIR0_wt5r": {
+      "company": "",
+      "datetime": "2023-07-21T03:19:26.045Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8850,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_qSPRKRs9gLPuvEAyf": {
+      "company": "",
+      "datetime": "2023-07-21T03:19:28.240Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8851,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_qTp5iQT33JryEsimj": {
+      "company": "",
+      "datetime": "2023-07-21T03:25:38.828Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8852,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_qTqrlrHDuRrFYe4tw": {
+      "company": "",
+      "datetime": "2023-07-21T03:25:46.728Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8853,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_qTrb1R0S8r_R9OSA1": {
+      "company": "",
+      "datetime": "2023-07-21T03:25:49.870Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8854,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_qUGdYCF4gtkAY3slv": {
+      "company": "",
+      "datetime": "2023-07-21T03:27:36.359Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8855,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_qUHPZd97KULKZK6MN": {
+      "company": "",
+      "datetime": "2023-07-21T03:27:39.686Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8856,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_qUSOqidIFkshpS9ND": {
+      "company": "",
+      "datetime": "2023-07-21T03:28:24.511Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8857,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_qUTy1vNeocpoF0Nvs": {
+      "company": "",
+      "datetime": "2023-07-21T03:28:30.623Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8858,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_qUjJvDhifqbPEcrGD": {
+      "company": "",
+      "datetime": "2023-07-21T03:29:37.997Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8859,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_qUk27ivnSUlA5rEda": {
+      "company": "",
+      "datetime": "2023-07-21T03:29:40.929Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8860,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_qV8fMSyCoXwYXSKiz": {
+      "company": "",
+      "datetime": "2023-07-21T03:31:25.748Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8861,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_qVSDEJE4AuCMd6awo": {
+      "company": "",
+      "datetime": "2023-07-21T03:32:45.999Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8862,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_qVSvv6TmA_Ut2y0wv": {
+      "company": "",
+      "datetime": "2023-07-21T03:32:49.022Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8863,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_qWICsyI-mlOETYYeP": {
+      "company": "",
+      "datetime": "2023-07-21T03:36:26.980Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8864,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_qWImNmHb47DlCLU3H": {
+      "company": "",
+      "datetime": "2023-07-21T03:36:29.569Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8865,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_qWiX366dJg8k1536h": {
+      "company": "",
+      "datetime": "2023-07-21T03:38:18.752Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8866,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_qWj4kfg_IrHdOxzs3": {
+      "company": "",
+      "datetime": "2023-07-21T03:38:21.118Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8867,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_qWuxFOpOcWz3ssihI": {
+      "company": "",
+      "datetime": "2023-07-21T03:39:09.932Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8868,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_qWvlBVNDpdXQe3avk": {
+      "company": "",
+      "datetime": "2023-07-21T03:39:12.592Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8869,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_qWvzDxGT2Gipr2NG8": {
+      "company": "",
+      "datetime": "2023-07-21T03:39:14.237Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8870,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_qWwllfUs2MbkXfvmZ": {
+      "company": "",
+      "datetime": "2023-07-21T03:39:16.282Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8871,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_qXJnUnKfDqHYRico9": {
+      "company": "",
+      "datetime": "2023-07-21T03:40:55.764Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8872,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_qXKJm7OucEHK2kR7G": {
+      "company": "",
+      "datetime": "2023-07-21T03:40:58.026Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8873,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_qXnko1eMjmkN-dixr": {
+      "company": "",
+      "datetime": "2023-07-21T03:43:00.393Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8874,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_qXo49gUP_WpiojGLo": {
+      "company": "",
+      "datetime": "2023-07-21T03:43:04.012Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8875,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_qYk1glf2d5SsRZLp3": {
+      "company": "",
+      "datetime": "2023-07-21T03:47:09.522Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8876,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_qYkiVZ3YOu4KHTPPU": {
+      "company": "",
+      "datetime": "2023-07-21T03:47:12.418Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8877,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_s1ZV6WrwdBbegb-dV": {
+      "company": "",
+      "datetime": "2023-07-21T10:41:25.259Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8878,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_s1_-3kYc6j_Vu1f09": {
+      "company": "",
+      "datetime": "2023-07-21T10:41:27.634Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 8879,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_s1aBumRKn_zzkfFNb": {
+      "company": "",
+      "datetime": "2023-07-21T10:41:32.486Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8880,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_s1bRXyh8l1SnBRp3_": {
+      "company": "",
+      "datetime": "2023-07-21T10:41:37.186Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8881,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_s46Vf-3YdB-xVWNIM": {
+      "company": "",
+      "datetime": "2023-07-21T10:52:32.084Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8882,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_s4A0_MyZwC0SOkabO": {
+      "company": "",
+      "datetime": "2023-07-21T10:52:47.537Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8883,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_s4AxRcM92PGz1st6l": {
+      "company": "",
+      "datetime": "2023-07-21T10:52:51.521Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8884,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_s5b2g4gQenSb6MmTS": {
+      "company": "",
+      "datetime": "2023-07-21T10:59:03.178Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8885,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_s5cvM6sphKWm3Q6jt": {
+      "company": "",
+      "datetime": "2023-07-21T10:59:12.236Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8886,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_s8JFQ7Bt1NGLS1RHM": {
+      "company": "",
+      "datetime": "2023-07-21T11:10:54.004Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8887,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_s8JyDQ7lOCrTYXiW9": {
+      "company": "",
+      "datetime": "2023-07-21T11:10:57.027Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8888,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_s8kmczzvoXzOOPAUR": {
+      "company": "",
+      "datetime": "2023-07-21T11:12:50.876Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8889,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_s8lnMatLh3sLllRBd": {
+      "company": "",
+      "datetime": "2023-07-21T11:12:54.797Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8890,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_s9hsTecUaq4O_n7UH": {
+      "company": "",
+      "datetime": "2023-07-21T11:17:01.112Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8891,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_s9iQtbqkKgMbwcB2-": {
+      "company": "",
+      "datetime": "2023-07-21T11:17:03.472Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8892,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_s9r3fXt0OAjAitl_L": {
+      "company": "",
+      "datetime": "2023-07-21T11:17:38.748Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8893,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_s9sQBiSMU-oKBd19D": {
+      "company": "",
+      "datetime": "2023-07-21T11:17:44.295Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8894,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sAMAugebQMeeqSz-y": {
+      "company": "",
+      "datetime": "2023-07-21T11:19:49.886Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 8895,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sAMgXzXykA1NwzlOJ": {
+      "company": "",
+      "datetime": "2023-07-21T11:19:52.457Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8896,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sANEIhazaxGH_rhB5": {
+      "company": "",
+      "datetime": "2023-07-21T11:19:54.689Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8897,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sARL7b-9gyWf02woj": {
+      "company": "",
+      "datetime": "2023-07-21T11:20:11.388Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 8898,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sAS7lvdzV3H0Hu2Wx": {
+      "company": "",
+      "datetime": "2023-07-21T11:20:14.745Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8899,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sASixfOs7PsSiA0wO": {
+      "company": "",
+      "datetime": "2023-07-21T11:20:17.123Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8900,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sC3hMsCMCkVlHo4LS": {
+      "company": "",
+      "datetime": "2023-07-21T11:27:18.810Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8901,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sC4QBL76ctcCXlZOV": {
+      "company": "",
+      "datetime": "2023-07-21T11:27:21.890Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8902,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sCSlWxe7w7HRu5CdX": {
+      "company": "",
+      "datetime": "2023-07-21T11:29:01.487Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8903,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sCTGkGHAL8D-SnHs3": {
+      "company": "",
+      "datetime": "2023-07-21T11:29:03.633Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8904,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sFpwkPi_zE4SNYyP2": {
+      "company": "",
+      "datetime": "2023-07-21T11:43:47.007Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8905,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sFqWmv21qEZ_V23lN": {
+      "company": "",
+      "datetime": "2023-07-21T11:43:49.084Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8906,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sKLf7Ru1ZEckfJDXU": {
+      "company": "",
+      "datetime": "2023-07-21T12:03:29.056Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8907,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_sKOYkUL7RxrpOrOnF": {
+      "company": "",
+      "datetime": "2023-07-21T12:03:41.457Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8908,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_sKPJHwkAif8-vOPzb": {
+      "company": "",
+      "datetime": "2023-07-21T12:03:44.262Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8909,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_sKUSyTUhoFLi1yWoI": {
+      "company": "",
+      "datetime": "2023-07-21T12:04:05.622Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8910,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_sKV-2Ymx7E29JfZuh": {
+      "company": "",
+      "datetime": "2023-07-21T12:04:07.936Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8911,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_sL9fyZwIpF0BByI-E": {
+      "company": "",
+      "datetime": "2023-07-21T12:07:02.484Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8912,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_sLBs6L7OrOaa07iph": {
+      "company": "",
+      "datetime": "2023-07-21T12:07:11.656Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8913,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sLC_057CChYXLudPy": {
+      "company": "",
+      "datetime": "2023-07-21T12:07:14.605Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8914,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sLTq6v8zc6YmkF7xh": {
+      "company": "",
+      "datetime": "2023-07-21T12:08:25.226Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8915,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sLUYsjWhPfiBNhqYI": {
+      "company": "",
+      "datetime": "2023-07-21T12:08:27.935Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8916,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sLV1mtkvWZT3BVyAV": {
+      "company": "",
+      "datetime": "2023-07-21T12:08:30.222Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 8917,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sLVgZVORidlV7k01B": {
+      "company": "",
+      "datetime": "2023-07-21T12:08:32.802Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8918,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sLWJu7rqvZWR-yu2X": {
+      "company": "",
+      "datetime": "2023-07-21T12:08:35.500Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8919,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sLXlwTil-Ji51SJbh": {
+      "company": "",
+      "datetime": "2023-07-21T12:08:41.288Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 8920,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sNALWv74YwwQ0xXfX": {
+      "company": "",
+      "datetime": "2023-07-21T12:15:43.877Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8921,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sNAinny1Xfad5CzAZ": {
+      "company": "",
+      "datetime": "2023-07-21T12:15:51.015Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 8922,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sNC5BTs5ZZufLm_oO": {
+      "company": "",
+      "datetime": "2023-07-21T12:15:56.372Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8923,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sNDR8AwlLW9yOfq0X": {
+      "company": "",
+      "datetime": "2023-07-21T12:16:01.284Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8924,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sNDoUNkEr3ianhG9L": {
+      "company": "",
+      "datetime": "2023-07-21T12:15:58.932Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8924,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sNGfooruwQErB_AJq": {
+      "company": "",
+      "datetime": "2023-07-21T12:16:04.605Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8925,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sOGqeUQF1NnhBI2ho": {
+      "company": "",
+      "datetime": "2023-07-21T12:20:38.455Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8926,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sOHkQc12O6mHegfcs": {
+      "company": "",
+      "datetime": "2023-07-21T12:20:42.016Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8927,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sON4guZxyaUZDEnFY": {
+      "company": "",
+      "datetime": "2023-07-21T12:21:03.972Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8928,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sONddL7rOHeUD6L2Q": {
+      "company": "",
+      "datetime": "2023-07-21T12:21:06.348Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8929,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sOp0-SuS17_VDMImD": {
+      "company": "",
+      "datetime": "2023-07-21T12:23:02.451Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8930,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sOpn18gnuSDd5Y2eD": {
+      "company": "",
+      "datetime": "2023-07-21T12:23:05.687Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8931,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sQIijTPDeuUuhQoje": {
+      "company": "",
+      "datetime": "2023-07-21T12:29:30.448Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8932,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sQJPNbkk_iBOS5ICQ": {
+      "company": "",
+      "datetime": "2023-07-21T12:29:33.129Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8933,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sQQXjzZiwJ0t5EgI9": {
+      "company": "",
+      "datetime": "2023-07-21T12:30:02.259Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8934,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sQRF13Q17qFI9OxWa": {
+      "company": "",
+      "datetime": "2023-07-21T12:30:05.191Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8935,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sR5TaiLhKFpy9brBn": {
+      "company": "",
+      "datetime": "2023-07-21T12:32:58.297Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8936,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sR64hDEtOhw7HSr-A": {
+      "company": "",
+      "datetime": "2023-07-21T12:33:00.878Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8937,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sRuml_nFmVWFtApk-": {
+      "company": "",
+      "datetime": "2023-07-21T12:36:32.591Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8938,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sRvMws5RQRaId93aB": {
+      "company": "",
+      "datetime": "2023-07-21T12:36:35.063Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8939,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sRzZP4pJ2R0BdvqEM": {
+      "company": "",
+      "datetime": "2023-07-21T12:36:52.123Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8940,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sS-OsYgJq-SkzH_d-": {
+      "company": "",
+      "datetime": "2023-07-21T12:36:55.412Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8941,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sTbCGd_V790kfWJS8": {
+      "company": "",
+      "datetime": "2023-07-21T12:43:56.664Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8942,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sTbsiGMC_gvqTpIKv": {
+      "company": "",
+      "datetime": "2023-07-21T12:43:59.532Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8943,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_s_3E-rPOnWxsokoWv": {
+      "company": "",
+      "datetime": "2023-07-21T13:12:07.630Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8944,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_s_4bGiDtVg-1Ocvta": {
+      "company": "",
+      "datetime": "2023-07-21T13:12:14.080Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8945,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_s_5CAnC8tOlEXzRE1": {
+      "company": "",
+      "datetime": "2023-07-21T13:12:16.589Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8946,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_s_AMdXS_rrfx0APgl": {
+      "company": "",
+      "datetime": "2023-07-21T13:12:37.312Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8947,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_s_Aoo6AkiBkJhbZMF": {
+      "company": "",
+      "datetime": "2023-07-21T13:12:39.606Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8948,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_s_mWarbLtt9M95RgM": {
+      "company": "",
+      "datetime": "2023-07-21T13:15:17.743Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8949,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_s_n571VmkLTxTvStL": {
+      "company": "",
+      "datetime": "2023-07-21T13:15:20.465Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8950,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_saINLfTGzUsjsiuom": {
+      "company": "",
+      "datetime": "2023-07-21T13:17:32.393Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8951,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_saJEyO2FZMteWehPk": {
+      "company": "",
+      "datetime": "2023-07-21T13:17:36.256Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8952,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sapJ_2U8opFzcMOAL": {
+      "company": "",
+      "datetime": "2023-07-21T13:19:51.525Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8953,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sb5yntaKP_PVpNpLr": {
+      "company": "",
+      "datetime": "2023-07-21T13:21:03.909Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 8954,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sb6_UNMKxARMELkJv": {
+      "company": "",
+      "datetime": "2023-07-21T13:21:06.513Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8955,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sb7uMCZNwWORt5A0h": {
+      "company": "",
+      "datetime": "2023-07-21T13:21:11.871Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8956,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sdsRuxgBZw3MbwuBU": {
+      "company": "",
+      "datetime": "2023-07-21T13:33:10.137Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 8957,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_sfgV2yry0nc3cHEJS": {
+      "company": "",
+      "datetime": "2023-07-21T13:41:05.671Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8958,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_sflv6idn-cjU-rUa1": {
+      "company": "",
+      "datetime": "2023-07-21T13:41:28.428Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8959,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_sfmsV5VtIa37UAl2A": {
+      "company": "",
+      "datetime": "2023-07-21T13:41:32.450Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8960,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_sfx2APfAIo4xIfCBt": {
+      "company": "",
+      "datetime": "2023-07-21T13:42:13.990Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8961,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_sfyFRO1epLuz8gy3Y": {
+      "company": "",
+      "datetime": "2023-07-21T13:42:19.033Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8962,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_sgXKWM8N1RxY_BwbV": {
+      "company": "",
+      "datetime": "2023-07-21T13:44:46.730Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8963,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sgYC_kBWwrb7fIBP-": {
+      "company": "",
+      "datetime": "2023-07-21T13:44:50.410Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8964,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_su0w5jABjmxsTW_kA": {
+      "company": "",
+      "datetime": "2023-07-21T14:43:42.715Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 8965,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_sv2oerR8-5t3i47lo": {
+      "company": "",
+      "datetime": "2023-07-21T14:48:11.508Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8966,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_sv5-YSpaglEVA0O3U": {
+      "company": "",
+      "datetime": "2023-07-21T14:48:22.872Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8967,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_sv6ndrbxc2HGfmCCT": {
+      "company": "",
+      "datetime": "2023-07-21T14:48:30.231Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8968,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_svuhi63gU7XxMcvAT": {
+      "company": "",
+      "datetime": "2023-07-21T14:51:58.767Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8969,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_svvWEHelzzxPOoE9N": {
+      "company": "",
+      "datetime": "2023-07-21T14:52:01.851Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8970,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_swJWWWGWO-jhX57el": {
+      "company": "",
+      "datetime": "2023-07-21T14:53:44.182Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8971,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_swLSpFqpON0qBi-TL": {
+      "company": "",
+      "datetime": "2023-07-21T14:53:52.069Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 8972,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_swM5v2VpvAxVaWd6S": {
+      "company": "",
+      "datetime": "2023-07-21T14:53:55.146Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8973,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sxVsz722Xep2FjwG2": {
+      "company": "",
+      "datetime": "2023-07-21T14:58:57.268Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8974,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sxWqwmBZtEneZufbQ": {
+      "company": "",
+      "datetime": "2023-07-21T14:59:01.338Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8975,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sxYRYRhd8VV69YCfY": {
+      "company": "",
+      "datetime": "2023-07-21T14:59:07.742Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 8976,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sxZ5gvrku8sohWk9s": {
+      "company": "",
+      "datetime": "2023-07-21T14:59:10.495Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8977,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sxZtUttf4muLnK5qP": {
+      "company": "",
+      "datetime": "2023-07-21T14:59:13.686Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8978,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sxys-9bQKPZga-lpV": {
+      "company": "",
+      "datetime": "2023-07-21T15:00:59.415Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8979,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sy-kNGnDoP6luyhU-": {
+      "company": "",
+      "datetime": "2023-07-21T15:01:02.554Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8980,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sz6O8gh5NOju3dy_-": {
+      "company": "",
+      "datetime": "2023-07-21T15:05:56.928Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8981,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_sz79q0FB4ejA0EGxV": {
+      "company": "",
+      "datetime": "2023-07-21T15:05:59.288Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8982,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_t0lJsAdpeze6RIL9y": {
+      "company": "",
+      "datetime": "2023-07-21T15:17:29.855Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8983,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_t0oKQEGWWI3_4CmOC": {
+      "company": "",
+      "datetime": "2023-07-21T15:17:44.845Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8984,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_t15K504LYSKta63U-": {
+      "company": "",
+      "datetime": "2023-07-21T15:18:51.515Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8985,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_t15kuzDgtOb1jdrHN": {
+      "company": "",
+      "datetime": "2023-07-21T15:19:00.927Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8986,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_t1bHXt46f-w6jro68": {
+      "company": "",
+      "datetime": "2023-07-21T15:21:10.629Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8987,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_t1bW5wNU_SFU2gfte": {
+      "company": "",
+      "datetime": "2023-07-21T15:21:14.960Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8988,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_t2d47FB78QELzKMMP": {
+      "company": "",
+      "datetime": "2023-07-21T15:25:43.698Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8989,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_t2dhkFxER7MOM_lOD": {
+      "company": "",
+      "datetime": "2023-07-21T15:25:46.387Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8990,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_t3vCu5x0z5m4EABYr": {
+      "company": "",
+      "datetime": "2023-07-21T15:31:19.691Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8991,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_t3x0W_g7oTc_Opel1": {
+      "company": "",
+      "datetime": "2023-07-21T15:31:27.251Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8992,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_t3xC2JHddLCbi6xy2": {
+      "company": "",
+      "datetime": "2023-07-21T15:31:28.171Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 8993,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_t3xQuxNko5d6vrEWs": {
+      "company": "",
+      "datetime": "2023-07-21T15:31:29.291Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8994,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_t3x_AHsxTlAVnqFFb": {
+      "company": "",
+      "datetime": "2023-07-21T15:31:29.681Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 8995,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_t5u8htZFZfm3Eh0Jo": {
+      "company": "",
+      "datetime": "2023-07-21T15:40:00.427Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8996,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_t6Rwqlc16hlQX-tCT": {
+      "company": "",
+      "datetime": "2023-07-21T15:42:23.200Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 8997,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_t6SEVdLnq6KxrD-DF": {
+      "company": "",
+      "datetime": "2023-07-21T15:42:24.506Z",
+      "description": "Inicio del Sistema ",
+      "idn": 8998,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_t6W3YLbolQds8uNKJ": {
+      "company": "",
+      "datetime": "2023-07-21T15:42:40.039Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 8999,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_t6WTuCC1tCjiQQ5Kk": {
+      "company": "",
+      "datetime": "2023-07-21T15:42:41.870Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 9000,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_t6fR0j4o46f7NAwW2": {
+      "company": "",
+      "datetime": "2023-07-21T15:43:22.503Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 9001,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_t6hcyC5Zk9P5HGYic": {
+      "company": "",
+      "datetime": "2023-07-21T15:43:31.591Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 9002,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_t6ipQIQrzoLaoovKb": {
+      "company": "",
+      "datetime": "2023-07-21T15:43:36.535Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 9003,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_t7Q-7OTDhjcaBNmCe": {
+      "company": "",
+      "datetime": "2023-07-21T15:46:37.159Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9004,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_t8D2ME23HG-w65is7": {
+      "company": "",
+      "datetime": "2023-07-21T15:50:06.427Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9005,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_t8DUIDvRhS_HmnaJ5": {
+      "company": "",
+      "datetime": "2023-07-21T15:50:08.302Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9006,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_t8ORw1G59Nm0cADsG": {
+      "company": "",
+      "datetime": "2023-07-21T15:50:53.072Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9007,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_t8OyHikr29dyfncsd": {
+      "company": "",
+      "datetime": "2023-07-21T15:50:55.343Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9008,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_t8QQ02ZXfhodXrgb4": {
+      "company": "",
+      "datetime": "2023-07-21T15:51:01.270Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9009,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_t8RD8WXZt-NPw1yhG": {
+      "company": "",
+      "datetime": "2023-07-21T15:51:04.551Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9010,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_t8tlJaQxxmSY1cwrT": {
+      "company": "",
+      "datetime": "2023-07-21T15:53:05.554Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9011,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_t8uC1-H39ERfKWGaY": {
+      "company": "",
+      "datetime": "2023-07-21T15:53:07.400Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9012,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_t9mjWrxBCy-ZpByZP": {
+      "company": "",
+      "datetime": "2023-07-21T15:56:58.623Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9013,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_t9ncRONewRnFH0n_4": {
+      "company": "",
+      "datetime": "2023-07-21T15:57:02.619Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9014,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_tA_XUfiUptNeDzV4-": {
+      "company": "",
+      "datetime": "2023-07-21T16:00:26.911Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9015,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_tAcGQEJZmPILttpx5": {
+      "company": "",
+      "datetime": "2023-07-21T16:00:38.146Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9016,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_tCmkKfTSAu2CuxfbV": {
+      "company": "",
+      "datetime": "2023-07-21T16:10:05.294Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9017,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_tCrdD6cqZdfkshKah": {
+      "company": "",
+      "datetime": "2023-07-21T16:10:25.411Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9018,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_tCvDNApKx2BkPPvlX": {
+      "company": "",
+      "datetime": "2023-07-21T16:10:40.055Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9019,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_tR0QUqWRs2mjR9KDP": {
+      "company": "",
+      "datetime": "2023-07-21T17:12:15.220Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9020,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_tR7BWMoO77muxY4WX": {
+      "company": "",
+      "datetime": "2023-07-21T17:12:42.893Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9021,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_tRAEs7AOsLLRPMko7": {
+      "company": "",
+      "datetime": "2023-07-21T17:12:55.661Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9022,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_tRXCaUIczhcD8zWAe": {
+      "company": "",
+      "datetime": "2023-07-21T17:14:29.705Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9023,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_tRXkwGLOFHTts4Olg": {
+      "company": "",
+      "datetime": "2023-07-21T17:14:31.801Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9024,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_tS7zlgLWTDXHHD_Uh": {
+      "company": "",
+      "datetime": "2023-07-21T17:17:08.469Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9025,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_tS8S_70NMhqN68rDZ": {
+      "company": "",
+      "datetime": "2023-07-21T17:17:10.527Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9026,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_tSB-lbjWQAm7hKXfH": {
+      "company": "",
+      "datetime": "2023-07-21T17:17:20.895Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9027,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_tTMPUchic7MMubDn4": {
+      "company": "",
+      "datetime": "2023-07-21T17:22:29.732Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9028,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_tTMe_mw1MSkGO-cZf": {
+      "company": "",
+      "datetime": "2023-07-21T17:22:30.840Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9029,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_tTzsptGLcZVUAEUpc": {
+      "company": "",
+      "datetime": "2023-07-21T17:25:15.534Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9030,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_tU-GQoHYG5QFpc4NA": {
+      "company": "",
+      "datetime": "2023-07-21T17:25:16.657Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9031,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_tb6cgqSL6niyvG-bL": {
+      "company": "",
+      "datetime": "2023-07-21T18:00:44.086Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9032,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_tb7Fbzlf1GJmEbzow": {
+      "company": "",
+      "datetime": "2023-07-21T18:00:47.010Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9033,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_tbPBlI6BDReyQU2bs": {
+      "company": "",
+      "datetime": "2023-07-21T18:02:00.401Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9034,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_tbPaavmqcsdd3jkI5": {
+      "company": "",
+      "datetime": "2023-07-21T18:02:02.156Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9035,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_tcH-jzWTBAxHv4rZp": {
+      "company": "",
+      "datetime": "2023-07-21T18:05:49.026Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9036,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_tcJoFkOw9RNWOEZy_": {
+      "company": "",
+      "datetime": "2023-07-21T18:06:00.489Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9037,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_tcXI0Uq6YKWBST5Dp": {
+      "company": "",
+      "datetime": "2023-07-21T18:06:55.607Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9038,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_tcZ9l7zbFhgK16hJn": {
+      "company": "",
+      "datetime": "2023-07-21T18:07:03.370Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9039,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_tcwNasAoCfv-6-aqy": {
+      "company": "",
+      "datetime": "2023-07-21T18:08:42.573Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9040,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_tcwi2WvryeAeVVlN5": {
+      "company": "",
+      "datetime": "2023-07-21T18:08:44.006Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9041,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_tcyOiK5ae4jTUXT0q": {
+      "company": "",
+      "datetime": "2023-07-21T18:08:50.848Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9042,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_tdkfg7I9XPa9p5Jm0": {
+      "company": "",
+      "datetime": "2023-07-21T18:12:16.601Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9043,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_tzICQHq9aBC6ucYGS": {
+      "company": "",
+      "datetime": "2023-07-21T19:46:22.932Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9044,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_tziOYPH0VHEGyfXMl": {
+      "company": "",
+      "datetime": "2023-07-21T19:48:14.377Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9045,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_tzjj3Os_lysJ9-5pX": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-21T19:48:19.995Z",
+      "description": "Eleccion del menu Lesson/Lecciones",
+      "idn": 9046,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_tzlxOWJ1xiqQT-Q2C": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-21T19:48:29.098Z",
+      "description": "Click en la Pestaña Lecciones aprendidas",
+      "idn": 9047,
+      "origin": "Conceptos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_tznKDNGAnZim2IYTv": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-21T19:48:34.730Z",
+      "description": "Click en la Pestaña Meeting",
+      "idn": 9048,
+      "origin": "Conceptos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_tzu7rGJtCed6-T4L4": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-21T19:49:02.607Z",
+      "description": "Click en la Pestaña Lecciones aprendidas",
+      "idn": 9049,
+      "origin": "Conceptos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_tzv0VD4cmCGW6SJhJ": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-21T19:49:06.298Z",
+      "description": "Click en la Pestaña Meeting",
+      "idn": 9050,
+      "origin": "Conceptos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_u2INBsnaguEYntIpy": {
+      "company": "",
+      "datetime": "2023-07-21T20:03:52.408Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9051,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_u2Ik4NXUycussqF7Y": {
+      "company": "",
+      "datetime": "2023-07-21T20:03:54.004Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9052,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_u2LE_pr3eqdNOtXMO": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-21T20:04:04.130Z",
+      "description": "Eleccion del menu Lesson/Lecciones",
+      "idn": 9053,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_u2jSMXLkwXc9HluYv": {
+      "company": "",
+      "datetime": "2023-07-21T20:05:47.424Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9054,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_u2jnqhPEVdcw1kt_h": {
+      "company": "",
+      "datetime": "2023-07-21T20:05:48.925Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9055,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_uSfsJozhJgejJas_j": {
+      "company": "",
+      "datetime": "2023-07-21T21:59:08.193Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9056,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_uSgPR723H6XGmJfD8": {
+      "company": "",
+      "datetime": "2023-07-21T21:59:10.621Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9057,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_uSi2UqfY9JQomHU0T": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-21T21:59:17.284Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9058,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_uTAHBA7McfErKirAM": {
+      "company": "",
+      "datetime": "2023-07-21T22:01:16.919Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9059,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_uTAaugXJcqZNUW28s": {
+      "company": "",
+      "datetime": "2023-07-21T22:01:18.398Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9060,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_uTBdQCz6pXaLq3ccj": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-21T22:01:22.609Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9061,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_uTLdWHFMmu3hORzzl": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-21T22:02:03.455Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9062,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_uTM7MBGX0_julnB-k": {
+      "company": "",
+      "datetime": "2023-07-21T22:02:05.599Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9063,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_uTmga-NSTxU3MlG8R": {
+      "company": "",
+      "datetime": "2023-07-21T22:03:58.294Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9064,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_uTtADoQqUpjJk9Koo": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-21T22:04:23.857Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9065,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_uVmFRI4wCAUDR9yCy": {
+      "company": "",
+      "datetime": "2023-07-21T22:12:40.749Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9066,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_uWkWxEFeTI4K0buQo": {
+      "company": "",
+      "datetime": "2023-07-21T22:16:55.921Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9067,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_uWlbgg_7q2uUDmXNZ": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-21T22:17:00.531Z",
+      "description": "Eleccion del menu Lesson/Lecciones",
+      "idn": 9068,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_uWm1D41c98btMwljp": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-21T22:17:02.175Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9069,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_uZ87Hc6FhjFDt53Hg": {
+      "company": "",
+      "datetime": "2023-07-21T22:27:21.026Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9070,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_uZ8b4nIfZ2ppLBqsw": {
+      "company": "",
+      "datetime": "2023-07-21T22:27:23.082Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9071,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_uZ9Szi-P7RcfpORVb": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-21T22:27:26.536Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9072,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_u_kHkBZSx9DzWqEpa": {
+      "company": "",
+      "datetime": "2023-07-21T22:34:23.438Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9073,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_u_krZR7330o76sBcz": {
+      "company": "",
+      "datetime": "2023-07-21T22:34:26.006Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9074,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_ua_pIW5qaxUyaKpJR": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-21T22:38:02.888Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9075,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_utWqzaqwTcW2wgx39": {
+      "company": "",
+      "datetime": "2023-07-22T00:00:47.033Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9076,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_utXte8iFbxv53OAgw": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T00:00:51.604Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9077,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_utrEMGYbsqiIL5n8h": {
+      "company": "",
+      "datetime": "2023-07-22T00:02:14.841Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9078,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_utrbd6j9BNTbfsYYC": {
+      "company": "",
+      "datetime": "2023-07-22T00:02:16.462Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9079,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_uts9BBeTMLNJcpoG0": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T00:02:18.675Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9080,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_uuWhu9cC8rXw69MZZ": {
+      "company": "",
+      "datetime": "2023-07-22T00:05:08.805Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9081,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_uuY3HhuGlI5w-X4TJ": {
+      "company": "",
+      "datetime": "2023-07-22T00:05:14.355Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9082,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_uuZYyb6ozKFYJTG0R": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T00:05:20.457Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9083,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_uv73rd6zccD3YfAkL": {
+      "company": "",
+      "datetime": "2023-07-22T00:07:45.914Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9084,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_uv86BGuqsAOopkNyr": {
+      "company": "",
+      "datetime": "2023-07-22T00:07:50.247Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9085,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_uv9FAOuvuuKuzFpF-": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T00:07:54.851Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9086,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_uw-5mHKakKs57P3dM": {
+      "company": "",
+      "datetime": "2023-07-22T00:11:35.382Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9087,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_uw-XPkGnWhxuoEq9j": {
+      "company": "",
+      "datetime": "2023-07-22T00:11:37.269Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9088,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_uw0cq7xb9KVHKV7Vo": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T00:11:41.711Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9089,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_vBFcnSoweUPTeHjml": {
+      "company": "",
+      "datetime": "2023-07-22T01:22:36.941Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 9090,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_vBGBZNqKcfAf4ueJA": {
+      "company": "",
+      "datetime": "2023-07-22T01:22:40.077Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 9091,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_vBaoV8oUfCKj1edlG": {
+      "company": "",
+      "datetime": "2023-07-22T01:24:08.573Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 9092,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_vBbq7uRydkBW_UXyt": {
+      "company": "",
+      "datetime": "2023-07-22T01:24:12.845Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 9093,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_vC8WgSEs4pxvlMF0R": {
+      "company": "",
+      "datetime": "2023-07-22T01:26:30.384Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9094,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_vD3LBAincvr2G3ZcJ": {
+      "company": "",
+      "datetime": "2023-07-22T01:30:31.354Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9095,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_vD52aHNABSSGnQb61": {
+      "company": "",
+      "datetime": "2023-07-22T01:30:38.357Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 9096,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_vD5qw-jUPqm-mCFkY": {
+      "company": "",
+      "datetime": "2023-07-22T01:30:42.015Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 9097,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_vD_dkEySH3P-wxO2g": {
+      "company": "",
+      "datetime": "2023-07-22T01:32:48.058Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 9098,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_vDaE9Y6HOvkBYwYCI": {
+      "company": "",
+      "datetime": "2023-07-22T01:32:50.510Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 9099,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_vHBRfaqvomsTXYY9t": {
+      "company": "",
+      "datetime": "2023-07-22T01:48:33.201Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 9100,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_vHCIia_wKD7Pa7AL6": {
+      "company": "",
+      "datetime": "2023-07-22T01:48:36.985Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 9101,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_vHDDPVy0frDbHTF2P": {
+      "company": "",
+      "datetime": "2023-07-22T01:48:40.628Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 9102,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_vHE__JaZe6xjz4gEo": {
+      "company": "",
+      "datetime": "2023-07-22T01:48:45.740Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 9103,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_vHFIU9nlIltET6kGn": {
+      "company": "",
+      "datetime": "2023-07-22T01:48:49.255Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 9104,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_vHIw7rh1dM1NDqI0P": {
+      "company": "",
+      "datetime": "2023-07-22T01:49:04.081Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 9105,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_vHJfB0GzqeCFfkDJX": {
+      "company": "",
+      "datetime": "2023-07-22T01:49:07.183Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 9106,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_vHJxZczMD7BZh7eXh": {
+      "company": "",
+      "datetime": "2023-07-22T01:49:08.327Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 9107,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_vHKlEZKWDXeyq4c79": {
+      "company": "",
+      "datetime": "2023-07-22T01:49:11.576Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 9108,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_vHLiCeP8vmdEm7nXI": {
+      "company": "",
+      "datetime": "2023-07-22T01:49:15.515Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 9109,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_vHNrWtm7-m4YSG8FD": {
+      "company": "",
+      "datetime": "2023-07-22T01:49:23.955Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 9110,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_vHOaTj8Vmat44w4rn": {
+      "company": "",
+      "datetime": "2023-07-22T01:49:27.372Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 9111,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_vHP2wPMMxK6c4d5_9": {
+      "company": "",
+      "datetime": "2023-07-22T01:49:29.227Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 9112,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_vHPiiEARj1L9yRcZ2": {
+      "company": "",
+      "datetime": "2023-07-22T01:49:31.893Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 9113,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_vHQ9xn2nCtE4xwOS-": {
+      "company": "",
+      "datetime": "2023-07-22T01:49:33.752Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 9114,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_vHQra5Mx-_eKFkTtL": {
+      "company": "",
+      "datetime": "2023-07-22T01:49:36.191Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 9115,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_vHUqAgQcd7eOhKGIH": {
+      "company": "",
+      "datetime": "2023-07-22T01:49:52.853Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 9116,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_vHVRAlIkKmEPTyMzZ": {
+      "company": "",
+      "datetime": "2023-07-22T01:49:55.369Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 9117,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_vH_vfimqI3qiLitOd": {
+      "company": "",
+      "datetime": "2023-07-22T01:50:17.768Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 9118,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_vHaWmk0DWfO5UqkDl": {
+      "company": "",
+      "datetime": "2023-07-22T01:50:19.918Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 9119,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_vHeIfpTNAXozlykZl": {
+      "company": "",
+      "datetime": "2023-07-22T01:50:35.410Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 9120,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_vHeubHkCDWeExUKDk": {
+      "company": "",
+      "datetime": "2023-07-22T01:50:38.151Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 9121,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_vHkkRvu2O87XpbyGS": {
+      "company": "",
+      "datetime": "2023-07-22T01:51:02.081Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 9122,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_vHlM07xdc3ixaF-OY": {
+      "company": "",
+      "datetime": "2023-07-22T01:51:04.661Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 9123,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_vI938vg13lFowt0zW": {
+      "company": "",
+      "datetime": "2023-07-22T01:52:45.750Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 9124,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_vI9l28w_dzsH7o0zJ": {
+      "company": "",
+      "datetime": "2023-07-22T01:52:48.730Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 9125,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_vMC7rBgwoHlI8YwMN": {
+      "company": "",
+      "datetime": "2023-07-22T02:10:26.365Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 9126,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_vMCo4MGPOozQ28IE5": {
+      "company": "",
+      "datetime": "2023-07-22T02:10:29.730Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 9127,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-N_vQ_TUKJB-5naUzgrS": {
+      "company": "",
+      "datetime": "2023-07-22T02:29:34.531Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9128,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_vQaGU0DSMMtUf7Gib": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T02:29:38.158Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9129,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_vRwtoBL0QxHU2cD-8": {
+      "company": "",
+      "datetime": "2023-07-22T02:35:32.916Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9130,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_vRxlA9sv5ZvvALJhM": {
+      "company": "",
+      "datetime": "2023-07-22T02:35:36.514Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9131,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_vRynJZl5mPzSOSpYK": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T02:35:40.696Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9132,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_vSTdyOHAc9duqB7-C": {
+      "company": "",
+      "datetime": "2023-07-22T02:37:51.173Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9133,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_vSWP6nIFdh_w9qKzC": {
+      "company": "",
+      "datetime": "2023-07-22T02:38:02.439Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9134,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_vSXErFVEEwGzoAa3e": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T02:38:05.939Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9135,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_vU1On_80FYYrwTT4w": {
+      "company": "",
+      "datetime": "2023-07-22T02:44:39.699Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9136,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_vU38BWo2EqmQ4qj0i": {
+      "company": "",
+      "datetime": "2023-07-22T02:44:46.849Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9137,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_vU41EEfW6D5ofFYZh": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T02:44:50.568Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9138,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_vUwLLsdj95oHYcWWI": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T02:48:37.052Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9139,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_vUxFfgSY5gQh2h47w": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T02:48:40.860Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9140,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_vW7GQMcfyPzTv0TTk": {
+      "company": "",
+      "datetime": "2023-07-22T02:53:48.001Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9141,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_vW7YVGDjQaS6Obn9n": {
+      "company": "",
+      "datetime": "2023-07-22T02:53:49.260Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9142,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_vW8mrWSvTM06sJaYp": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T02:53:53.225Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9143,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_wHcDzI6b3eTEI3wIB": {
+      "company": "",
+      "datetime": "2023-07-22T06:30:03.441Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9144,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_wHdMogVXq3-X49Sr0": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T06:30:08.547Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9145,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_wHrggjmUtSpImuWDD": {
+      "company": "",
+      "datetime": "2023-07-22T06:31:07.163Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9146,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_wHs7JfoZnCb5uawkx": {
+      "company": "",
+      "datetime": "2023-07-22T06:31:08.998Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9147,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_wHss_m_xmZHO5lKRA": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T06:31:12.085Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9148,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_wJ3yXM9QUOyPx5w3B": {
+      "company": "",
+      "datetime": "2023-07-22T06:36:23.684Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9149,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_wJ4VFeWXtCwdjlLWY": {
+      "company": "",
+      "datetime": "2023-07-22T06:36:25.919Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9150,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_wJ5s3TR7mVzlxvZXO": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T06:36:31.470Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9151,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_wJGw5g9H1Sg4ZEnmF": {
+      "company": "",
+      "datetime": "2023-07-22T06:37:16.676Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9152,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_wJHAIIFpep_4H04K_": {
+      "company": "",
+      "datetime": "2023-07-22T06:37:17.822Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9153,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_wJIq6ecNEuKGSJ1lD": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T06:37:24.591Z",
+      "description": "Eleccion del menu Lesson/Lecciones",
+      "idn": 9154,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_wJK9iBzUvJ03BuUek": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T06:37:30.007Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9155,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_wKgsWnxLjFph8EPpo": {
+      "company": "",
+      "datetime": "2023-07-22T06:43:29.241Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9156,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_wKhf315GkYdnc6N6o": {
+      "company": "",
+      "datetime": "2023-07-22T06:43:32.547Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9157,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_wKjlg87kkpkc070o1": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T06:43:41.086Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9158,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_wOAbjbjBsZudak8Sd": {
+      "company": "",
+      "datetime": "2023-07-22T06:58:41.512Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9159,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_wOAxZPSUcyCjcezcU": {
+      "company": "",
+      "datetime": "2023-07-22T06:58:43.048Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9160,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_wOBkhsE6PBZPKKDeb": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T06:58:46.340Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9161,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_wOGQSy1ILPHzWLaXT": {
+      "company": "",
+      "datetime": "2023-07-22T06:59:05.397Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9162,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_wOGjoooONmaImlV9r": {
+      "company": "",
+      "datetime": "2023-07-22T06:59:06.750Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9163,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_wOHadgMr0Q5b-PWwB": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T06:59:10.264Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9164,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_wQIxKg5JhJsoABDwc": {
+      "company": "",
+      "datetime": "2023-07-22T07:08:00.035Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9165,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_wQJL2OIK_MVpDkRgu": {
+      "company": "",
+      "datetime": "2023-07-22T07:08:01.664Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9166,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_wQLnPpJQ1T1CjaXB-": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T07:08:11.672Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9167,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_wR8QVLIDkR6Jysh50": {
+      "company": "",
+      "datetime": "2023-07-22T07:11:38.966Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9168,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_wR8hgW7MmgTckMNDU": {
+      "company": "",
+      "datetime": "2023-07-22T07:11:40.262Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9169,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_wR9mJglfyhdWb4jNn": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T07:11:44.601Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9170,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_wS4oy0FIH9AJrcBNK": {
+      "company": "",
+      "datetime": "2023-07-22T07:15:46.409Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9171,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_wS5J2BpQ7Hns3TJjL": {
+      "company": "",
+      "datetime": "2023-07-22T07:15:48.476Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9172,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_wS622ooD5TTNw54hd": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T07:15:51.490Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9173,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_wUN3b9S32djgAAhfh": {
+      "company": "",
+      "datetime": "2023-07-22T07:25:45.437Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9174,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_wUNbhI0sSZZOs65P6": {
+      "company": "",
+      "datetime": "2023-07-22T07:25:47.525Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9175,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_wUOx41GNu8sMMdn2J": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T07:25:53.149Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9176,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_wVhsr57G78hIIIrzj": {
+      "company": "",
+      "datetime": "2023-07-22T07:31:36.917Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9177,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_wVi9wbWkdEZLh6km9": {
+      "company": "",
+      "datetime": "2023-07-22T07:31:38.157Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9178,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_wVjJMK7D7dM2qlOu5": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T07:31:42.790Z",
+      "description": "Eleccion del menu Lesson/Lecciones",
+      "idn": 9179,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_wVjy8tYY5LbWcXAHS": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T07:31:45.526Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9180,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_wZHC_o-XKGaWo-8bm": {
+      "company": "",
+      "datetime": "2023-07-22T07:47:12.047Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9181,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_wZHf2bKQYxv618KYJ": {
+      "company": "",
+      "datetime": "2023-07-22T07:47:14.085Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9182,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_wZIdRA5gODmqVstDZ": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T07:47:18.021Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9183,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_wZZKW3FYqWCGzohpr": {
+      "company": "",
+      "datetime": "2023-07-22T07:48:26.368Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9184,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_wZZcD_R1lBxxCulQz": {
+      "company": "",
+      "datetime": "2023-07-22T07:48:27.621Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9185,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_wZa1YISZY2K63YRAK": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T07:48:33.353Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9186,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_w_pC32dRmm2naL3oq": {
+      "company": "",
+      "datetime": "2023-07-22T07:53:57.566Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9187,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_w_pXZ2e0L9LCXxjlw": {
+      "company": "",
+      "datetime": "2023-07-22T07:53:59.044Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9188,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_w_qrt_EEI6CAdDnvw": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T07:54:04.412Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9189,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_wdo7PrZqD0xxJJCoQ": {
+      "company": "",
+      "datetime": "2023-07-22T08:11:21.743Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9190,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_wdoSb4s9P7B3enjrC": {
+      "company": "",
+      "datetime": "2023-07-22T08:11:23.171Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9191,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_wdpfnu3slEAky0aZB": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T08:11:28.133Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9192,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_wej1chd82A6R0Bsdd": {
+      "company": "",
+      "datetime": "2023-07-22T08:15:23.057Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9193,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_wejUsJNJ2jpq379zH": {
+      "company": "",
+      "datetime": "2023-07-22T08:15:24.968Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9194,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_wekEiITCQI2MS6V_C": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T08:15:28.055Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9195,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_wh9is3aDMhMsTDxwZ": {
+      "company": "",
+      "datetime": "2023-07-22T08:26:00.724Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9196,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_whA-l1Y_bLTdaFF6Y": {
+      "company": "",
+      "datetime": "2023-07-22T08:26:01.963Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9197,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_whAwwFDP4F0EWkxWH": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T08:26:05.810Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9198,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_z5SL0ACOFmPF3uJR3": {
+      "company": "",
+      "datetime": "2023-07-22T19:35:47.079Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9199,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_z5TRPQvE-9F4rNiL3": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T19:35:51.944Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9200,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_zFLG9d3tM6xRSeIfn": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T20:18:59.815Z",
+      "description": "Eleccion del menu Lesson/Lecciones",
+      "idn": 9201,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_zFqw5RZi3Is1E2P9p": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T20:21:13.658Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9202,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_zL2MVK0EZZ82JoBKr": {
+      "company": "",
+      "datetime": "2023-07-22T20:43:55.023Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9203,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_zL3H7kYn9G4BiH0LK": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T20:43:58.960Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9204,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_zNI_5UIf4mgA2YGWN": {
+      "company": "",
+      "datetime": "2023-07-22T20:53:45.751Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9205,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_zNJJc4kT3bsbgqcMM": {
+      "company": "",
+      "datetime": "2023-07-22T20:53:49.076Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9206,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_zNKOf7oSI9rxjRHR1": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T20:53:53.360Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9207,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_zNU27BiqNIjvkIcx1": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T20:54:32.946Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9208,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_zNUOm3mBzoiGct5-R": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T20:54:34.460Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9209,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_zNUfA31PbhWmYB80Z": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T20:54:35.570Z",
+      "description": "Eleccion del menu Lesson/Lecciones",
+      "idn": 9210,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_zNUvVXvPooYf5Y-Bc": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T20:54:36.613Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9211,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_zNck98UCv_ceavHWt": {
+      "company": "",
+      "datetime": "2023-07-22T20:55:12.580Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9212,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_zNd1zMkLzs88Yqn4x": {
+      "company": "",
+      "datetime": "2023-07-22T20:55:13.956Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9213,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_zNe5O3t7MllF6KKrE": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T20:55:18.202Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9214,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_zOm2426jFsdjBxBVC": {
+      "company": "",
+      "datetime": "2023-07-22T21:00:12.437Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9215,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_zP6vxEXMsFDXf--Wb": {
+      "company": "",
+      "datetime": "2023-07-22T21:01:42.149Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9216,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_zP9lq0tb8tXzfFcDD": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T21:01:54.195Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9217,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_zRjCPuTJ6tKGuR2hV": {
+      "company": "",
+      "datetime": "2023-07-22T21:13:07.651Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9218,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_zRjW6fg1iwEVLOcKs": {
+      "company": "",
+      "datetime": "2023-07-22T21:13:09.021Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9219,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_zRkU7jrj_ZFOmTbkg": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T21:13:12.799Z",
+      "description": "Eleccion del menu communication/Comunicaciones",
+      "idn": 9220,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_zRknIf1zeNMq-87nv": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T21:13:14.223Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9221,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_zSN_X7M_EGAxA1zVW": {
+      "company": "",
+      "datetime": "2023-07-22T21:15:57.118Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9222,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_zSNqj_Q0_lxTbbxPX": {
+      "company": "",
+      "datetime": "2023-07-22T21:15:58.303Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9223,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_zSOiyiE59-zuOHKkm": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T21:16:01.923Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9224,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_zXTjsQ_r5Hjntvng9": {
+      "company": "",
+      "datetime": "2023-07-22T21:38:12.914Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9225,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_zXUmhciPPANF-bPar": {
+      "company": "",
+      "datetime": "2023-07-22T21:38:17.318Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9226,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_zXViKIbdEUop0C6xq": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T21:38:21.192Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9227,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_zXkg6mtKh2CTCzMx6": {
+      "company": "",
+      "datetime": "2023-07-22T21:39:26.482Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9228,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-N_zXl2ceWAK0_TRubX-": {
+      "company": "",
+      "datetime": "2023-07-22T21:39:28.155Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9229,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_zXll9xhEju-8eJTEB": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T21:39:31.070Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9230,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_zzpwTkG8hWzn26iN9": {
+      "company": "",
+      "datetime": "2023-07-22T23:46:29.524Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9231,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-N_zzqjWqQgQIyZy2Unm": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T23:46:33.502Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9232,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na--6AEXoYlDTfMp2FE": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T23:47:40.626Z",
+      "description": "Eleccion del menu Interested/Interesados",
+      "idn": 9233,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na--N_mXHyEXTGUGRjT": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-22T23:48:51.743Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9234,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-Na-zhyD3qhqyaA9E_lE": {
+      "company": "",
+      "datetime": "2023-07-23T04:25:33.007Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 9235,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-Na-zk695mS0HavoRCPk": {
+      "company": "",
+      "datetime": "2023-07-23T04:25:42.240Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 9236,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-Na-zlzMS6OPknnrCsLR": {
+      "company": "",
+      "datetime": "2023-07-23T04:25:49.929Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 9237,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-Na-zmPOmVYNcV7a_-_U": {
+      "company": "",
+      "datetime": "2023-07-23T04:25:51.714Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 9238,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-Na-zmh1InL_SqLtcIDd": {
+      "company": "",
+      "datetime": "2023-07-23T04:25:52.846Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 9239,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-Na-zmw-YG6hznHRht68": {
+      "company": "",
+      "datetime": "2023-07-23T04:25:53.911Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 9240,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-Na-zn7Mntxv5oLdNgEL": {
+      "company": "",
+      "datetime": "2023-07-23T04:25:54.682Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 9241,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-Na-zoP0_9JsZ9lAbkD6": {
+      "company": "",
+      "datetime": "2023-07-23T04:25:59.521Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 9242,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-Na0-3RjHjHbOvOeFS1h": {
+      "company": "",
+      "datetime": "2023-07-23T04:27:05.421Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 9243,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-Na0-AIuhzCqNfRtKES8": {
+      "company": "",
+      "datetime": "2023-07-23T04:27:33.662Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9244,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na0-LWCluVnb04zhIDz": {
+      "company": "",
+      "datetime": "2023-07-23T04:28:19.555Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 9245,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na0-NmKYWtFULI9OKrP": {
+      "company": "",
+      "datetime": "2023-07-23T04:28:28.866Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 9246,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na0-PjL3WyyaYmCqSZ8": {
+      "company": "",
+      "datetime": "2023-07-23T04:28:36.538Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 9247,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na0-SQ_b94ILqSMKYBX": {
+      "company": "",
+      "datetime": "2023-07-23T04:28:47.891Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 9248,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na0-_eJyMG4zqIbV1cb": {
+      "company": "",
+      "datetime": "2023-07-23T04:29:21.582Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 9249,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na00eN0EvvSR-hlDHxn": {
+      "company": "",
+      "datetime": "2023-07-23T04:34:02.727Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 9250,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na00f-0FOOoFlgMax_w": {
+      "company": "",
+      "datetime": "2023-07-23T04:34:05.686Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 9251,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na00f95r0FoKZH3XOuw": {
+      "company": "",
+      "datetime": "2023-07-23T04:34:06.319Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 9252,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na00fmd3KeUdokjPX7x": {
+      "company": "",
+      "datetime": "2023-07-23T04:34:08.837Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 9253,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na00gAuPXI03iegq20i": {
+      "company": "",
+      "datetime": "2023-07-23T04:34:09.983Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 9254,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na00gRk2C9rsARJQsLJ": {
+      "company": "",
+      "datetime": "2023-07-23T04:34:11.635Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 9255,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na00gqD4ieY7RhuURUc": {
+      "company": "",
+      "datetime": "2023-07-23T04:34:12.916Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 9256,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na00h5HJDGgigvo2Hc_": {
+      "company": "",
+      "datetime": "2023-07-23T04:34:14.104Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 9257,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na00hHilPKNGxU2dPo2": {
+      "company": "",
+      "datetime": "2023-07-23T04:34:14.627Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 9258,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na00hnwHof8jPCoA3wm": {
+      "company": "",
+      "datetime": "2023-07-23T04:34:17.167Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 9259,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na00iLHgFYOI944UniH": {
+      "company": "",
+      "datetime": "2023-07-23T04:34:19.335Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 9260,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na00ihflWEM0Le1ZMNc": {
+      "company": "",
+      "datetime": "2023-07-23T04:34:20.617Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 9261,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na00jNJAMK40Kie4cEI": {
+      "company": "",
+      "datetime": "2023-07-23T04:34:23.620Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 9262,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na00jtUmrJ24yyW0KJg": {
+      "company": "",
+      "datetime": "2023-07-23T04:34:25.667Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 9263,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na00kNLKZi5lOMCVjOX": {
+      "company": "",
+      "datetime": "2023-07-23T04:34:27.389Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 9264,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na00kqtxUXvCIDsF2l2": {
+      "company": "",
+      "datetime": "2023-07-23T04:34:29.338Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 9265,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na00lFEBJq_Ok3YbEXd": {
+      "company": "",
+      "datetime": "2023-07-23T04:34:31.229Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 9266,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na00llxhG_EkPAcfTi-": {
+      "company": "",
+      "datetime": "2023-07-23T04:34:33.446Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 9267,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na00nrAeXN07yyVFI5g": {
+      "company": "",
+      "datetime": "2023-07-23T04:34:41.851Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 9268,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na00pn3dNgm4_ZafHuU": {
+      "company": "",
+      "datetime": "2023-07-23T04:34:49.292Z",
+      "description": "Click en la Pestaña registry/registro del menu Risk",
+      "idn": 9269,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na00qrZppVcs4H9crp6": {
+      "company": "",
+      "datetime": "2023-07-23T04:34:54.288Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 9270,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na00sDdNTSU3ypTxVfe": {
+      "company": "",
+      "datetime": "2023-07-23T04:34:59.480Z",
+      "description": "Click en la Pestaña tracking/Seguimiento del menu Risk",
+      "idn": 9271,
+      "origin": "Risk",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na0JOsuJCHBINjiNHN_": {
+      "company": "",
+      "datetime": "2023-07-23T05:55:56.917Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9272,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na0KdgjKwPD4m4CW_rt": {
+      "company": "",
+      "datetime": "2023-07-23T06:01:23.887Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9273,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na0KfLdPUGcTstd1pAw": {
+      "company": "",
+      "datetime": "2023-07-23T06:01:30.561Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9274,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na0Khx3-1_VfsMyDFTK": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-23T06:01:40.850Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9275,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na7byvnNVpn1EtyPP3g": {
+      "company": "",
+      "datetime": "2023-07-24T15:58:48.193Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9276,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na7c7j9bPnnYFxnNriM": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-24T15:59:28.686Z",
+      "description": "Eleccion del menu Interested/Interesados",
+      "idn": 9277,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na7dd6L4Y7vhUEnQ_ZM": {
+      "company": "",
+      "datetime": "2023-07-24T16:06:03.549Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9278,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na7ed08bLI024s8oZ0r": {
+      "company": "",
+      "datetime": "2023-07-24T16:10:25.389Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9279,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na7eeHJg8UkcpKoSdTr": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-24T16:10:30.652Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9280,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na7elj4AUWRDFQMU1Ve": {
+      "company": "",
+      "datetime": "2023-07-24T16:11:01.096Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9281,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-Na821NMBk7wrlV_v8hj": {
+      "company": "",
+      "datetime": "2023-07-24T17:57:01.867Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9282,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na8FJA_rF1-1ZuL_Jrg": {
+      "company": "",
+      "datetime": "2023-07-24T18:55:02.564Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9283,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na8FuvsXI3BKIhZbooN": {
+      "company": "",
+      "datetime": "2023-07-24T18:57:41.485Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9284,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na8GInYQ2P6OKJaSqbl": {
+      "company": "",
+      "datetime": "2023-07-24T18:59:23.379Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9285,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-Na8Gj5x2HpFaKiZl7ys": {
+      "company": "",
+      "datetime": "2023-07-24T19:01:15.171Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9286,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na8Mf-EfrKv8NS_ec9o": {
+      "company": "",
+      "datetime": "2023-07-24T19:27:11.654Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9287,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-Na8MfTDOS-02QPbZAUk": {
+      "company": "",
+      "datetime": "2023-07-24T19:27:13.663Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9288,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-Na8Mf_1-sT7Bn_ASTBS": {
+      "company": "",
+      "datetime": "2023-07-24T19:27:13.952Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9289,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-Na8PBCg5UZIQ-uizQI1": {
+      "company": "",
+      "datetime": "2023-07-24T19:38:11.535Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9290,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na8PjSsm--6zOyw7_mi": {
+      "company": "",
+      "datetime": "2023-07-24T19:40:36.280Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9291,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-Na8Pm2F3QmDpuOoajmf": {
+      "company": "",
+      "datetime": "2023-07-24T19:40:46.950Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9292,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na8Tn2m3jsyoR1u7nzz": {
+      "company": "",
+      "datetime": "2023-07-24T19:58:19.611Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9293,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-Na8Tp71hd5qDW-ykqTY": {
+      "company": "",
+      "datetime": "2023-07-24T19:58:27.792Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9294,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na8_CsxA5W-t2xT5oH_": {
+      "company": "",
+      "datetime": "2023-07-24T20:26:20.302Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9295,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na8_QKhECEnce3JxhJt": {
+      "company": "",
+      "datetime": "2023-07-24T20:27:15.720Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9296,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-Na8_RbkUtrVQkMwcHOw": {
+      "company": "",
+      "datetime": "2023-07-24T20:27:20.787Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9297,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na8i0mWyl-rwBT_38be": {
+      "company": "",
+      "datetime": "2023-07-24T21:04:51.688Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9298,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
     }
   },
   "trackingrisk": {
@@ -74101,6 +79880,30 @@
       "progress": 5,
       "reg_date": "2023-06-05",
       "sum_progress": 25
+    },
+    "-N_sbD_UkJOJBC-mT2Tu": {
+      "id_action": "-N_sb5DdQOtNdR3JALTq",
+      "observations": "Prueba de seguimiento 1",
+      "progress": "0.05",
+      "reg_date": "2023-07-21"
+    },
+    "-N_svzXtytvH7R-8kSXz": {
+      "id_action": "-N_sb5DdQOtNdR3JALTq",
+      "observations": "Prueba Seguimiento 2",
+      "progress": "0.05",
+      "reg_date": "2023-07-21"
+    },
+    "-N_sw54tJaBF_-UHoJAy": {
+      "id_action": "-N_sb5DdQOtNdR3JALTq",
+      "observations": "Prueba seguimiento 4",
+      "progress": "0.25",
+      "reg_date": "2023-07-21"
+    },
+    "-N_vBXU2fiJDk-4ixIqj": {
+      "id_action": "-N_pdG0PemYnYLjQoV0C",
+      "observations": "Prueba 1",
+      "progress": "0.05",
+      "reg_date": "2023-07-21"
     }
   },
   "users": {
@@ -74216,20 +80019,5 @@
       "picture": "https://firebasestorage.googleapis.com/v0/b/beapp-501d1.appspot.com/o/images%2Fjgalicia%40hco-consultores.comavatar4.png?alt=media&token=79543c7f-7bba-4896-a651-3e4afbb3c5b2",
       "position": "Directo HCO"
     }
-  },
-  "management":{
-    "2574sWZ":{
-      "titulo1" : "Plan de Gestion de Proyectos",
-      "titulo2" : "Gestion del Alcance",
-      "titulo3" : "Gestion del Cronograma",
-      "titulo4" : "Gestion del Costo",
-      "titulo5" : "Plan de Gestion de la Calidad",
-      "titulo6" : "Plan de Gestion de Recursos Humanos",
-      "titulo7" : "Plan de Gestion de las Comunicaciones",
-      "titulo8" : "Plan de Gestion de las Adquisiciones",
-      "titulo9" : "Plan de Gestion de Riesgos, Interfaces y Cambios"
-    }
-
   }
-
 }

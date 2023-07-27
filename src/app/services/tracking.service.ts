@@ -195,33 +195,6 @@ setContract(contract: string): void {
 
 
 
-  async addLog3(company: string, description: string, origin: string, user: string) {
-    // Obtener la fecha actual
-    const datetime = new Date();
-
-    company = ''   || 'SIN COMPANIA' ;
-
-    if (!user)  user = this.getEmail();
-
-    const data = {
-      company,
-      datetime,
-      origin,
-      description,
-      user
-    };
-
-    try {
-      const response = await this.http.post(`${environment.urlFirebase}tracking.json`, data).toPromise();
-     // console.log('Log creado exitosamente:', response);
-    } catch (error) {
-      console.error('Error al crear el log:', error);
-    }
-  }
-
-
-
-
 	getDataTracking(valoruser :string){
 
     return this.http.get(`${environment.urlFirebase}tracking.json?orderBy="user"&equalTo="${valoruser}"&orderBy="$idn"&print=pretty&sortOrder="desc"`);
@@ -249,26 +222,6 @@ setContract(contract: string): void {
     );
   }
 
-
-  getTrackingRecordsByUser3(user: string) {
-    const url = `${environment.urlFirebase}tracking.json`;
-
-    return this.http.get(url).pipe(
-      map((response: any) => {
-        // Obtener las claves de los registros
-        const keys = Object.keys(response);
-
-        // Ordenar las claves en forma descendente
-        const sortedKeys = keys.sort((a: any, b: any) => b.localeCompare(a));
-
-        // Filtrar los registros por el campo "user"
-        const filteredRecords = sortedKeys.map(key => response[key])
-          .filter((record: any) => record.user === user);
-
-        return filteredRecords;
-      })
-    );
-  }
 
 
 

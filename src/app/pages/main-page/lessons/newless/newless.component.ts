@@ -235,7 +235,7 @@ export class NewlessComponent implements OnInit {
      const details: any[] = this.selectedInterested.map(interest => {
        return {
          name     : interest.name,
-         email    : 'un dato lo que sea',
+         email    : 'email si se necesita',
          active : 1
        };
      });

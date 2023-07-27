@@ -62,15 +62,23 @@ export class SideBarComponent implements OnInit {
         }
 
         navigateToInterested()  {
+          this.trackingService.addLog(this.trackingService.getnameComp(), 'Eleccion del menu Interested/Interesados', 'Menu Side Bar', '')
           this.router.navigate(['/interested']);
         }
 
         navigateToCommunications()  {
+          this.trackingService.addLog(this.trackingService.getnameComp(), 'Eleccion del menu communication/Comunicaciones', 'Menu Side Bar', '')
           this.router.navigate(['/communications']);
         }
 
         navigateToLessons()  {
+          this.trackingService.addLog(this.trackingService.getnameComp(), 'Eleccion del menu Lesson/Lecciones', 'Menu Side Bar', '')
           this.router.navigate(['/lessons']);
+        }
+
+        navigateToManagement()  {
+          this.trackingService.addLog(this.trackingService.getnameComp(), 'Eleccion del menu Management/Gestion de Archivo', 'Menu Side Bar', '')
+          this.router.navigate(['/management']);
         }
 
       	ngOnInit(): void  {

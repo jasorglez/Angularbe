@@ -1,0 +1,116 @@
+{
+  "1005": {
+    "date": "2023-06-22",
+    "description": "Description Diferente a todas",
+    "id_manage": "10",
+    "name": "File 45.pdf",
+    "parent": "Plan de Gestion de las Comunicaciones",
+    "url": "https://firebasestorage.googleapis.com/v0/b/beapp-501d1.appspot.com/o/pdf%2F1689851373915_lecciones.pdf?alt=media&token=a61112c0-76aa-425f-9f63-fef5b7f649b8",
+    "version": "Version 1"
+  },
+  "1009": {
+    "date": "2023-07-22",
+    "description": "Description 1",
+    "id_manage": "10",
+    "name": "File 1",
+    "parent": "Gestion del Alcance",
+    "url": "https://firebasestorage.googleapis.com/v0/b/beapp-501d1.appspot.com/o/pdf%2F1689273616742_recibo_cfe.pdf?alt=media&token=20f2123a-d5ac-4ae8-9da5-d43a3c998e18",
+    "version": "Version 2"
+  },
+  "1010": {
+    "date": "2023-07-22T00:00:00.000Z",
+    "description": "Description 1666666666666666",
+    "id_manage": "20",
+    "name": "file3.xls",
+    "parent": "Gestion del Cronograma",
+    "url": "",
+    "version": "Version 10"
+  },
+  "1011": {
+    "date": "2023-07-22",
+    "description": "Description 7",
+    "id_manage": "30",
+    "name": "File 7.pdf",
+    "parent": "Plan de Gestion de las Comunicaciones",
+    "url": "url_to_file_1",
+    "version": "Version 4"
+  },
+  "-NaImS7kX2b8BpaJLyum": {
+    "date": "2023-07-24T00:00:00.000Z",
+    "description": "Descripcion",
+    "id_manage": "30",
+    "name": "File 1",
+    "parent": "Titulo",
+    "url": "https://firebasestorage.googleapis.com/v0/b/beapp-501d1.appspot.com/o/pdf%2F1690401622825_nueva%20leccion.pdf?alt=media&token=fbda724f-bef4-4319-8fe4-359fdc1fab09",
+    "version": "Version 1"
+  },
+  "-NaJ2z-Qruk1i19aUWM1": {
+    "date": "2023-07-25T00:00:00.000Z",
+    "description": "dfsksadksdksd la descripcion",
+    "id_manage": "40",
+    "name": "",
+    "parent": "Parent titulo",
+    "url": "https://firebasestorage.googleapis.com/v0/b/beapp-501d1.appspot.com/o/pdf%2F1690406218551_arreglado%20el%20huarache%20los%202%20reportes.pdf?alt=media&token=51234b83-1e06-4839-be74-c39ed80aa523",
+    "version": "Version 4"
+  },
+  "-NaJ8yafUN86sVS1qw9h": {
+    "date": "2023-07-20T00:00:00.000Z",
+    "description": "Correccion de la descripcion y del titulo FLORA 7777777777777",
+    "id_manage": "60",
+    "name": "vuelo flora.pdf",
+    "parent": "El titulo del vuelo FLOR 5555555555",
+    "url": "https://firebasestorage.googleapis.com/v0/b/beapp-501d1.appspot.com/o/pdf%2F1689286858615_soriano_MX_April_2023.pdf?alt=media&token=229bff44-1da7-4105-9e6b-187600076d09",
+    "version": "Version 4"
+  },
+  "-NaJ9jOvQ_vQ873cku_w": {
+    "date": "2023-06-26T00:00:00.000Z",
+    "description": "esel dia 26 cuando empezamos a obteneerkkkkkkkkkkkkk",
+    "id_manage": "70",
+    "name": "nueva leccion.pdf",
+    "parent": "Ttiutlo del dia 26yyyyyyyyyyyh",
+    "url": "",
+    "version": "Version 9"
+  },
+  "-NaJAcwinnyYoRERq-Ru": {
+    "date": "2023-07-19T00:00:00.000Z",
+    "description": "dlsldfldfldf ferkgkg ",
+    "id_manage": "80",
+    "name": "arreglado el huarache los 2 reportes.pdf",
+    "parent": "titulo del; 1290",
+    "url": "https://firebasestorage.googleapis.com/v0/b/beapp-501d1.appspot.com/o/pdf%2F1690408225286_arreglado%20el%20huarache%20los%202%20reportes.pdf?alt=media&token=43d4b3cc-77cf-4e49-a8c2-70acb6dc99eb",
+    "version": "Version 3"
+  },
+  "-NaJtTG56EdVul3IhbcE": {
+    "date": "2023-07-05T00:00:00.000Z",
+    "description": "la descripcion del; titulo del 5 de julio",
+    "id_manage": "90",
+    "name": "xime 2.pdf",
+    "parent": "titulo del 5 07",
+    "url": "https://firebasestorage.googleapis.com/v0/b/beapp-501d1.appspot.com/o/pdf%2F1690420239267_xime%202.pdf?alt=media&token=96e24193-c46c-4640-a3c4-3e3437d7702b",
+    "version": "Version 5"
+  },
+  "-NaNT83yDWRnfV2Z_dOl": {
+    "date": "2023-07-26T00:00:00.000Z",
+    "description": "descriupcion del dia 26dkdkdkdkdkdkkdkdkdkd",
+    "id_manage": "90",
+    "name": "comunicaciones.pdf",
+    "parent": "titulo del dia 26 de julio",
+    "url": "https://firebasestorage.googleapis.com/v0/b/beapp-501d1.appspot.com/o/pdf%2F1690480183714_comunicaciones.pdf?alt=media&token=bdc6d075-e4fc-42a1-a103-d062c72d24c9",
+    "version": "Version 6"
+  },
+  "-NaNZYW4vSRaMHZJhSpj": {
+    "date": "2023-07-27T00:00:00.000Z",
+    "description": "prueba del dia 27tttttttttt",
+    "id_manage": "70",
+    "name": "SERVICIOS.pdf",
+    "parent": "titulo del dia 27gggggg",
+    "url": "",
+    "version": "Version 6"
+  },
+  "date": "2023-07-20T00:00:00.000Z",
+  "description": "esel dia 26 cuando empezamos a obteneer",
+  "id_manage": "-NaJ9jOvQ_vQ873cku_w",
+  "parent": "Ttiutlo del dia 261023",
+  "url": "",
+  "version": "Version 9"
+}

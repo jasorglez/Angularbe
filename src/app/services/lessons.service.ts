@@ -82,37 +82,6 @@ getDataLessonsOne(id: string) {
 
 
 
-getDataLessonsOne22(id: string): Observable<any> {
-  try {
-    if (id !== '') {
-      return this.http.get<any>(`${environment.urlFirebase}lessons/${id}.json`)
-        .pipe(
-          map(data => {
-            const { typemeeting, place, datep, timep } = data;
-            return {
-              key: id, // Firebase key of the lesson
-              typemeeting,
-              place,
-              datep,
-              timep
-            };
-          })
-        );
-    } else {
-      alert('Lesson ID is empty');
-      return null;
-    }
-  } catch (error) {
-    console.error('ERROR getting lesson by ID', error);
-    return null;
-  }
-}
-
-
-
-
-
-
 findDetails(id:string){
 
   try {
