@@ -29,7 +29,6 @@ export class NewcommunicComponent implements OnInit {
   interestedList  : any[] = [];
   selectedInteres : any[] = [];
 
-
   availableUsers  : any[];
 
   selectedInterested: { name: string; email: string; }[] = [];

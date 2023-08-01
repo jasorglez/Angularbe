@@ -93,16 +93,16 @@ export class NewlessComponent implements OnInit {
 
   ngOnInit() {
 
-    if (this.data.formType === 'flessons')  {
-      this.getInterest();
-    }
+        if (this.data.formType === 'flessons')  {
+            this.getInterest();
+        }
 
-     if (this.data.formType === 'flearned')  {
+         if (this.data.formType === 'flearned')  {
 
-     this.getDetailslessons(this.trackingService.getidlesson());
+             this.getDetailslessons(this.trackingService.getidlesson());
 
-     this.getConceptsxActiv() ;
-    }
+             this.getConceptsxActiv() ;
+        }
 
   }
 

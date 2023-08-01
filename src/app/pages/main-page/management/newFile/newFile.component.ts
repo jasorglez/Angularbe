@@ -4,15 +4,12 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormBuilder, Validators } from '@angular/forms';
 import { alerts } from 'src/app/helpers/alerts';
 
-
 import { TraductorService } from 'src/app/services/traductor.service';
 import { TrackingService } from 'src/app/services/tracking.service';
 import { Imanfildet } from 'src/app/interface/imanfildet';
 
-
 import { StoragesService } from 'src/app/services/storages.service';
 import { ManagementService } from '../../../../services/management.service';
-import { profile } from 'console';
 
 
 @Component({
@@ -124,7 +121,7 @@ export class NewFileComponent implements OnInit {
         const downloadUrl = await this.storage.uploadPdf(this.selectedFile);
         this.url = downloadUrl;
         this.file = this.selectedFile.name ;
-        
+
         console.log("this.selected", this.file)
       } catch (error) {
         console.error('Upload error:', error);

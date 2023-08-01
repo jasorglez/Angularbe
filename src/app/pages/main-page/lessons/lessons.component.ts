@@ -141,7 +141,7 @@ export class LessonsComponent implements OnInit {
              this.fileUrl = this.profile.file ;
 
                this.trackingService.setidlesson( this.profile.id) ;
-               console.log(this.trackingService.getidlesson())
+             //  console.log(this.trackingService.getidlesson())
 
              this.lessonsDataSource = new MatTableDataSource(this.meeting)
              this.lessonsDataSource.paginator = this.paginator ;
@@ -217,8 +217,10 @@ export class LessonsComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
+        alerts.confirmAlert('Se realizo el registro correctamente', 'Register new Ok', 'success', 'Ok').then((result) => {
+          this.getdataMeeting();
+        });
 
-        this.getdataMeeting();
       }
     });
 

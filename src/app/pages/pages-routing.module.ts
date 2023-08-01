@@ -21,10 +21,10 @@ const routes: Routes = [
       { path: 'concepts', loadChildren: () => import('./main-page/concepts/concepts.module').then( m=> m.ConceptsModule)},
       { path: 'lessons', loadChildren: () => import('./main-page/lessons/lessons.module').then (m => m.LessonsModule)},
       { path: 'management', loadChildren: () => import('./main-page/management/management.module').then (m => m.ManagementModule)},
-      { path: '**', component: Error404Component}                                                               
+      { path: 'training', loadChildren: () => import ('./main-page/training/training.module'). then (m => m.TrainingModule )},
+      { path: '**', component: Error404Component}
     ]}
 ];
-
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

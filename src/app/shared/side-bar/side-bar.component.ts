@@ -81,6 +81,12 @@ export class SideBarComponent implements OnInit {
           this.router.navigate(['/management']);
         }
 
+        navigateToTraining()  {
+          this.trackingService.addLog(this.trackingService.getnameComp(), 'Eleccion del menu Training/Entrenamiento ', 'Menu Side Bar', '')
+          this.router.navigate(['/training']);
+                                
+        }
+
       	ngOnInit(): void  {
 
               this.getpermissionxCompanys() ;

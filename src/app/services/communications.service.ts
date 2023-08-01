@@ -97,8 +97,8 @@ deleteCommunications(id:string, token: any){
 }
 
 
-getCommunications(valor) {
-  const apiUrl = `${environment.urlFirebase}interested.json?orderBy="id_project"&equalTo="${valor}"`;
+getCommunications(project: string) {
+  const apiUrl = `${environment.urlFirebase}interested.json?orderBy="id_project"&equalTo="${project}"`;
   try {
     return this.http.get<any>(apiUrl).toPromise()
       .then(data => {

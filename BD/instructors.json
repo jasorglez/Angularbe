@@ -1,0 +1,24 @@
+{
+  "2020": {
+    "active": 1,
+    "email": "pmalave@cotemar.com.mx",
+    "file1": "https://firebasestorage.googleapis.com/v0/b/beapp-501d1.appspot.com/o/pdf%2F1689649453981_nueva%20leccion.pdf?alt=media&token=1c778c33-2560-46de-8971-ae0d9f474684",
+    "file2": "",
+    "file3": "",
+    "id_company": "-hdyewq101",
+    "id_course": "1010",
+    "name": "Pedro Malave Gonzalez",
+    "rfc": "RFC123455555"
+  },
+  "2021": {
+    "active": 1,
+    "email": "rasuara@cotemar.com.mx",
+    "file1": "https://firebasestorage.googleapis.com/v0/b/beapp-501d1.appspot.com/o/pdf%2F1689649453981_nueva%20leccion.pdf?alt=media&token=1c778c33-2560-46de-8971-ae0d9f474684",
+    "file2": "",
+    "file3": "",
+    "id_company": "-hdyewq101",
+    "id_course": "1010",
+    "name": "Rocio Sanchez Asuara",
+    "rfc": "RFC123455555"
+  }
+}

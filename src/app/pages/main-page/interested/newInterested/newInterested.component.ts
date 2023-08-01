@@ -137,7 +137,7 @@ uploadImage($event: any) {
 
   saveInteres() {
     if (this.fis.valid) {
-      console.log(this.fis.value)
+     // console.log(this.fis.value)
     }else{
       this.fis.markAllAsTouched();
     }

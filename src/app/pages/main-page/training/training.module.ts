@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { DatePipe } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core'
 
-import { ManagementComponent } from './management.component';
-import { NewFileComponent } from './newFile/newFile.component';
-import { EditFileComponent } from './editFile/editFile.component';
-import { ManagementRoutingModule } from './management-routing.module';
+import { TrainingComponent } from './training.component';
+import { NewcoinstComponent } from './newcoinst/newcoinst.component';
+
+import { TrainingRoutingModule } from './training-routing.module';
 
 //Angular Material
 import { MatTableModule } from '@angular/material/table';
@@ -21,11 +21,13 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
+
 @NgModule({
-  declarations: [ManagementComponent, NewFileComponent, EditFileComponent],
+  providers:[DatePipe],
+  declarations: [TrainingComponent, NewcoinstComponent],
   imports: [
     CommonModule,
-    ManagementRoutingModule,
+    TrainingRoutingModule,
     TranslateModule,
     MatTableModule,
     MatIconModule,
@@ -38,4 +40,4 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 
   ]
 })
-export class ManagementModule { }
+export class TrainingModule { }

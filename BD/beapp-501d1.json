@@ -615,30 +615,16 @@
       "active": 1,
       "area": "Siete",
       "format": "Excel",
-      "frequence": "Semanal",
+      "frequence": "Diario, 2023-07-13 08:05",
       "group": "Control de Obra",
+      "id": "",
       "id_interested": "0",
       "id_project": "LQBGAFSts9829",
       "information": "Generadores Obra",
       "name": "name",
       "owner": "Pedro Malave Gonzalez",
-      "procces": "Inicio",
+      "procces": "Ejecucion",
       "reference": "Anexo B1"
-    },
-    "-NYP2xZxhzclIdICuKf-": {
-      "active": 1,
-      "area": "Ingenieria",
-      "format": "Excel",
-      "frequence": "",
-      "group": "",
-      "id": "",
-      "id_interested": "0",
-      "id_project": "LQBGAFSts9829",
-      "information": "Reporte Semanal",
-      "name": "name",
-      "owner": "Guillermo Palestina",
-      "procces": "Ejecución",
-      "reference": ""
     },
     "-NYvaq3Wb92QSy9XrTaT": {
       "active": 1,
@@ -723,6 +709,32 @@
       "owner": "Guillermo Palestina",
       "procces": "Cierre",
       "reference": "Anexo B2"
+    },
+    "-NaAMI9IjalDbvqzcDNE": {
+      "active": 1,
+      "area": "Control de Obra",
+      "format": "PDF",
+      "frequence": "Semanal, 2023-07-25 10:44",
+      "group": "Supervisión de Contrato",
+      "id": "",
+      "id_project": "LQBGAFSts9829",
+      "information": "Reporte Semanal",
+      "owner": "David Rios Alvarado",
+      "procces": "Ejecucion",
+      "reference": "Anexo B2"
+    },
+    "-NaANan04kHnIOEiHwd8": {
+      "active": 1,
+      "area": "Calidad",
+      "format": "Word",
+      "frequence": "Semanal, 2023-07-25 08:00",
+      "group": "Control de Obra",
+      "id": "",
+      "id_project": "LQBGAFSts9829",
+      "information": "Reporte de calidad",
+      "owner": "Juan Perez",
+      "procces": "Ejecucion",
+      "reference": "Anexo B1"
     }
   },
   "companys": {
@@ -1005,7 +1017,54 @@
         "name": "Raul Orozco Buenfil",
         "position": ""
       }
-    ]
+    ],
+    "-NaAMIBz75_cPlHYykz9": [
+      {
+        "active": 1,
+        "email": "jsorglez@gmail.com",
+        "id": "-NaAMI9IjalDbvqzcDNE",
+        "name": "Pedro Serafin",
+        "position": ""
+      },
+      {
+        "active": 1,
+        "email": "pedroalbertomv84@gmail.com",
+        "id": "-NaAMI9IjalDbvqzcDNE",
+        "name": "Pedro Malave Gonzalez",
+        "position": ""
+      }
+    ],
+    "-NaANarDky8HRI0sUzN_": [
+      {
+        "active": 1,
+        "email": "gpalestina@hco-consultores.com",
+        "id": "-NaANan04kHnIOEiHwd8",
+        "name": "Guillermo Palestina",
+        "position": ""
+      },
+      {
+        "active": 1,
+        "email": "agonzalez@gmail.com",
+        "id": "-NaANan04kHnIOEiHwd8",
+        "name": "Arturo Gonzalez",
+        "position": ""
+      },
+      {
+        "active": 1,
+        "email": "lsimpson@hco-consultores.com",
+        "id": "-NaANan04kHnIOEiHwd8",
+        "name": "Lisa Simpson",
+        "position": ""
+      }
+    ],
+    "-NaIkHmVvb7dXnPbkDiU": {
+      "date": "2023-07-19T00:00:00.000Z",
+      "description": "en esta descripcion",
+      "id_manage": "",
+      "parent": "totiulo de la `",
+      "url": "https://firebasestorage.googleapis.com/v0/b/beapp-501d1.appspot.com/o/pdf%2F1690401056132_nueva%20leccion.pdf?alt=media&token=ba2ece9f-a605-4e55-a266-d39508de498e",
+      "version": "Version 3"
+    }
   },
   "details_lessons": {
     "-N_EPC9EEIKgy5bbZe7r": [
@@ -1284,6 +1343,62 @@
       "description": "Esto es una prueba 6",
       "id_communication": "-NZE3ENrjFFG0h0pdhM5",
       "picture": "PROTOT_REV-1.pdf"
+    },
+    "-NaLOuZofnaM93t87JaG": {
+      "active": 1,
+      "date": "2023-07-14",
+      "description": "Se envia reporte diario del dia 14",
+      "id_communication": "-NZSL5VxCcms--cJuSD6",
+      "picture": "12.- BC nov 19.pdf, 12.- BC nov 19.pdf, 12.- BC nov 19.pdf, 12.- BC nov 19.pdf, 12.- BC nov 19.pdf"
+    },
+    "-NaLSv68uzhZWwuZLRvd": {
+      "active": 1,
+      "date": "2023-07-15",
+      "description": "Reporte diario del dia 15",
+      "id_communication": "-NZSL5VxCcms--cJuSD6",
+      "picture": "120664.pdf, 120664.pdf"
+    },
+    "-NaLWNZC2uk6SY2aOL-B": {
+      "active": 1,
+      "date": "2023-07-16",
+      "description": "Prueba",
+      "id_communication": "-NZSL5VxCcms--cJuSD6",
+      "picture": "120667.pdf, 120667.pdf"
+    },
+    "-NaLXbvWpe6yEs4V51EU": {
+      "active": 1,
+      "date": "2023-07-17",
+      "description": "Prueba class",
+      "id_communication": "-NZSL5VxCcms--cJuSD6",
+      "picture": "120664.pdf, 120664.pdf"
+    },
+    "-NaL_dyfzWN3oYYZinU7": {
+      "active": 1,
+      "date": "2023-07-18",
+      "description": "prueba class",
+      "id_communication": "-NZSL5VxCcms--cJuSD6",
+      "picture": "120664.pdf, 120664.pdf"
+    },
+    "-NaLaWZLOaFXQBgqkFOZ": {
+      "active": 1,
+      "date": "2023-07-20",
+      "description": "prueba class",
+      "id_communication": "-NZSL5VxCcms--cJuSD6",
+      "picture": "120670.pdf, 120670.pdf"
+    },
+    "-NaLb1vXQd_tFOgohw5r": {
+      "active": 1,
+      "date": "2023-07-19",
+      "description": "Prueba class",
+      "id_communication": "-NZSL5VxCcms--cJuSD6",
+      "picture": "120670.pdf, 120670.pdf"
+    },
+    "-NaNYzLz7gPVT-5Een9v": {
+      "active": 1,
+      "date": "2023-07-21",
+      "description": "enviar prueba del dia 21 julio",
+      "id_communication": "-NZSL5VxCcms--cJuSD6",
+      "picture": "AS.jpg, AS.jpg"
     }
   },
   "equipmentxconcepts": {
@@ -1723,6 +1838,44 @@
       "position": "Gerente",
       "power": "4",
       "role": "Encargado de Reportes diarios"
+    },
+    "-NaAS9bHIKSxjJebwSGc": {
+      "active": 1,
+      "avg": 5,
+      "branch": "500",
+      "company": "-hdyewq101",
+      "email": "jarreola@hco-consultores.com",
+      "follow": "Compras",
+      "id_project": "LQBGAFSts9829",
+      "idinter": 1,
+      "influence": "3",
+      "interes": "2",
+      "name": "Jesus Arreola",
+      "organization": "Compras",
+      "phone": "9384539856",
+      "picture": "https://firebasestorage.googleapis.com/v0/b/beapp-501d1.appspot.com/o/images%2Faa9bart.png?alt=media&token=0320c9a1-acb8-40b0-bf6f-e64cc47cc595",
+      "position": "Comprador",
+      "power": "4",
+      "role": "Comprador"
+    },
+    "-NaASzTKhE2YrLGojWcD": {
+      "active": 1,
+      "avg": 5,
+      "branch": "500",
+      "company": "-hdyewq101",
+      "email": "jcclemente@hco-consultores.com",
+      "follow": "Reportes de SCRUM",
+      "id_project": "LQBGAFSts9829",
+      "idinter": 1,
+      "influence": "3",
+      "interes": "2",
+      "name": "Juan Carlos Clemente",
+      "organization": "Sistemas",
+      "phone": "9387856932",
+      "picture": "https://firebasestorage.googleapis.com/v0/b/beapp-501d1.appspot.com/o/images%2Fmx1raton.jpg?alt=media&token=60099104-8b47-4379-b962-e4bedb9c4131",
+      "position": "Jefe de Desarrollo",
+      "power": "4",
+      "role": "Scrum Master"
     }
   },
   "lessons": {
@@ -1817,52 +1970,167 @@
     }
   },
   "management": {
-    "LQBGAFSts9829": {
+    "10": {
+      "id_project": "LQBGAFSts9829",
+      "orden": 1,
+      "titulo": "Gestion del Alcance"
+    },
+    "20": {
+      "id_project": "LQBGAFSts9829",
+      "orden": 2,
+      "titulo": "Gestion del Cronograma"
+    },
+    "30": {
+      "id_project": "LQBGAFSts9829",
+      "orden": 3,
+      "titulo": "Gestion del Costo"
+    },
+    "40": {
+      "id_project": "LQBGAFSts9829",
+      "orden": 4,
+      "titulo": "Plan de Gestion de la Calidad"
+    },
+    "60": {
+      "id_project": "LQBGAFSts9829",
+      "orden": 6,
+      "titulo": "Plan de Gestion de Recursos Humanos"
+    },
+    "70": {
+      "id_project": "LQBGAFSts9829",
+      "orden": 6,
+      "titulo": "Plan de Gestion de las Comunicaciones"
+    },
+    "80": {
+      "id_project": "LQBGAFSts9829",
+      "orden": 8,
+      "titulo": "Plan de Gestion de las Adquisiciones"
+    },
+    "90": {
+      "id_project": "LQBGAFSts9829",
+      "orden": 8,
+      "titulo": "Plan de Gestion de Riesgos, Interfaces y Cambios"
+    },
+    "05": {
+      "id_project": "LQBGAFSts9829",
       "orden": 0,
-      "titulo1": "Plan de Gestion de Proyectos",
-      "titulo2": "Gestion del Alcance",
-      "titulo3": "Gestion del Cronograma",
-      "titulo4": "Gestion del Costo",
-      "titulo5": "Plan de Gestion de la Calidad",
-      "titulo6": "Plan de Gestion de Recursos Humanos",
-      "titulo7": "Plan de Gestion de las Comunicaciones",
-      "titulo8": "Plan de Gestion de las Adquisiciones",
-      "titulo9": "Plan de Gestion de Riesgos, Interfaces y Cambios"
+      "titulo": "Plan de Gestion de Proyectos"
     }
   },
   "management_filesdetails": {
     "1005": {
       "date": "2023-06-22",
       "description": "Description Diferente a todas",
-      "id_project": "LQBGAFSts9829",
+      "id_manage": "10",
       "name": "File 45.pdf",
       "parent": "Plan de Gestion de las Comunicaciones",
-      "url": "url_to_file_1"
+      "url": "https://firebasestorage.googleapis.com/v0/b/beapp-501d1.appspot.com/o/pdf%2F1689851373915_lecciones.pdf?alt=media&token=a61112c0-76aa-425f-9f63-fef5b7f649b8",
+      "version": "Version 1"
     },
     "1009": {
       "date": "2023-07-22",
       "description": "Description 1",
-      "id_project": "LQBGAFSts9829",
+      "id_manage": "10",
       "name": "File 1",
       "parent": "Gestion del Alcance",
-      "url": "url_to_file_1"
+      "url": "https://firebasestorage.googleapis.com/v0/b/beapp-501d1.appspot.com/o/pdf%2F1689273616742_recibo_cfe.pdf?alt=media&token=20f2123a-d5ac-4ae8-9da5-d43a3c998e18",
+      "version": "Version 2"
     },
     "1010": {
-      "date": "2023-07-22",
-      "description": "Description 1",
-      "id_project": "LQBGAFSts9829",
+      "date": "2023-07-22T00:00:00.000Z",
+      "description": "Description 1666666666666666",
+      "id_manage": "20",
       "name": "file3.xls",
       "parent": "Gestion del Cronograma",
-      "url": "url_to_file_1"
+      "url": "",
+      "version": "Version 10"
     },
     "1011": {
       "date": "2023-07-22",
       "description": "Description 7",
-      "id_project": "LQBGAFSts9829",
+      "id_manage": "30",
       "name": "File 7.pdf",
       "parent": "Plan de Gestion de las Comunicaciones",
-      "url": "url_to_file_1"
-    }
+      "url": "url_to_file_1",
+      "version": "Version 4"
+    },
+    "-NaImS7kX2b8BpaJLyum": {
+      "date": "2023-07-24T00:00:00.000Z",
+      "description": "Descripcion",
+      "id_manage": "30",
+      "name": "File 1",
+      "parent": "Titulo",
+      "url": "https://firebasestorage.googleapis.com/v0/b/beapp-501d1.appspot.com/o/pdf%2F1690401622825_nueva%20leccion.pdf?alt=media&token=fbda724f-bef4-4319-8fe4-359fdc1fab09",
+      "version": "Version 1"
+    },
+    "-NaJ2z-Qruk1i19aUWM1": {
+      "date": "2023-07-25T00:00:00.000Z",
+      "description": "dfsksadksdksd la descripcion",
+      "id_manage": "40",
+      "name": "",
+      "parent": "Parent titulo",
+      "url": "https://firebasestorage.googleapis.com/v0/b/beapp-501d1.appspot.com/o/pdf%2F1690406218551_arreglado%20el%20huarache%20los%202%20reportes.pdf?alt=media&token=51234b83-1e06-4839-be74-c39ed80aa523",
+      "version": "Version 4"
+    },
+    "-NaJ8yafUN86sVS1qw9h": {
+      "date": "2023-07-20T00:00:00.000Z",
+      "description": "Correccion de la descripcion y del titulo FLORA 7777777777777",
+      "id_manage": "60",
+      "name": "vuelo flora.pdf",
+      "parent": "El titulo del vuelo FLOR 5555555555",
+      "url": "https://firebasestorage.googleapis.com/v0/b/beapp-501d1.appspot.com/o/pdf%2F1689286858615_soriano_MX_April_2023.pdf?alt=media&token=229bff44-1da7-4105-9e6b-187600076d09",
+      "version": "Version 4"
+    },
+    "-NaJ9jOvQ_vQ873cku_w": {
+      "date": "2023-06-26T00:00:00.000Z",
+      "description": "esel dia 26 cuando empezamos a obteneerkkkkkkkkkkkkk",
+      "id_manage": "70",
+      "name": "nueva leccion.pdf",
+      "parent": "Ttiutlo del dia 26yyyyyyyyyyyh",
+      "url": "",
+      "version": "Version 9"
+    },
+    "-NaJAcwinnyYoRERq-Ru": {
+      "date": "2023-07-19T00:00:00.000Z",
+      "description": "dlsldfldfldf ferkgkg ",
+      "id_manage": "80",
+      "name": "arreglado el huarache los 2 reportes.pdf",
+      "parent": "titulo del; 1290",
+      "url": "https://firebasestorage.googleapis.com/v0/b/beapp-501d1.appspot.com/o/pdf%2F1690408225286_arreglado%20el%20huarache%20los%202%20reportes.pdf?alt=media&token=43d4b3cc-77cf-4e49-a8c2-70acb6dc99eb",
+      "version": "Version 3"
+    },
+    "-NaJtTG56EdVul3IhbcE": {
+      "date": "2023-07-05T00:00:00.000Z",
+      "description": "la descripcion del; titulo del 5 de julio",
+      "id_manage": "90",
+      "name": "xime 2.pdf",
+      "parent": "titulo del 5 07",
+      "url": "https://firebasestorage.googleapis.com/v0/b/beapp-501d1.appspot.com/o/pdf%2F1690420239267_xime%202.pdf?alt=media&token=96e24193-c46c-4640-a3c4-3e3437d7702b",
+      "version": "Version 5"
+    },
+    "-NaNT83yDWRnfV2Z_dOl": {
+      "date": "2023-07-26T00:00:00.000Z",
+      "description": "descriupcion del dia 26dkdkdkdkdkdkkdkdkdkd",
+      "id_manage": "90",
+      "name": "comunicaciones.pdf",
+      "parent": "titulo del dia 26 de julio",
+      "url": "https://firebasestorage.googleapis.com/v0/b/beapp-501d1.appspot.com/o/pdf%2F1690480183714_comunicaciones.pdf?alt=media&token=bdc6d075-e4fc-42a1-a103-d062c72d24c9",
+      "version": "Version 6"
+    },
+    "-NaNZYW4vSRaMHZJhSpj": {
+      "date": "2023-07-27T00:00:00.000Z",
+      "description": "prueba del dia 27tttttttttt",
+      "id_manage": "70",
+      "name": "SERVICIOS.pdf",
+      "parent": "titulo del dia 27gggggg",
+      "url": "",
+      "version": "Version 6"
+    },
+    "date": "2023-07-20T00:00:00.000Z",
+    "description": "esel dia 26 cuando empezamos a obteneer",
+    "id_manage": "-NaJ9jOvQ_vQ873cku_w",
+    "parent": "Ttiutlo del dia 261023",
+    "url": "",
+    "version": "Version 9"
   },
   "materialsxconcepts": {
     "-EVGTDOSelPOL23": {
@@ -3752,7 +4020,7 @@
     "LQBGAFSts9829": {
       "code": "15874s09BCX",
       "contract": "PERA CHIAPAS",
-      "dEnd": "2023-05-30",
+      "dEnd": "2023-09-30",
       "dStart": "2023-05-01",
       "description": "REMODELACION DE LA PERA DE LA PLANTA GAS CHIAPAS",
       "id_branch": "500",
@@ -79829,6 +80097,2838 @@
       "idn": 9298,
       "origin": "Origen del Formulario Login",
       "user": "jmontes@hco-consultores.com"
+    },
+    "-Na94ajPtwK9Pv79zIm9": {
+      "company": "",
+      "datetime": "2023-07-24T22:47:52.531Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9299,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na9EpVuRDiRNKHrGNs7": {
+      "company": "",
+      "datetime": "2023-07-24T23:32:32.476Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9300,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na9EqbOFVqXazWhZx_E": {
+      "company": "",
+      "datetime": "2023-07-24T23:32:37.310Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9301,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na9ErNQjW0tNwROJukm": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-24T23:32:40.347Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9302,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na9F9xFFpGxqv5ygP14": {
+      "company": "",
+      "datetime": "2023-07-24T23:34:00.219Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9303,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-Na9FALb_gVwO7ID57Me": {
+      "company": "",
+      "datetime": "2023-07-24T23:34:02.307Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9304,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na9FBJytr7JyxFQIcD0": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-24T23:34:06.184Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9305,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na9FBwArbMYYJYRBWzY": {
+      "company": "",
+      "datetime": "2023-07-24T23:34:08.669Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9306,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na9Hie3bIT8RU4RkYMv": {
+      "company": "",
+      "datetime": "2023-07-24T23:45:10.428Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9307,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na9HkbA4mO5Tr-CWp8U": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-24T23:45:18.948Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9308,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-Na9I0XVl4_GZ4497LIj": {
+      "company": "",
+      "datetime": "2023-07-24T23:46:28.438Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9309,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-Na9I15zY26Z89vpsAWL": {
+      "company": "",
+      "datetime": "2023-07-24T23:46:30.778Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9310,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na9I27wKnd21ALQC8DB": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-24T23:46:34.985Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9311,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na9IOb_gYH1ZKl2Mdhc": {
+      "company": "",
+      "datetime": "2023-07-24T23:48:07.056Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9312,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-Na9JdPscxxkhxFQQU1j": {
+      "company": "",
+      "datetime": "2023-07-24T23:53:33.612Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9313,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na9Je2vVKDqWfB_VMph": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-24T23:53:36.605Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9314,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na9KopK0RLxE1wkJetT": {
+      "company": "",
+      "datetime": "2023-07-24T23:58:44.423Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9315,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na9L-n7YS9RDDBI-rhU": {
+      "company": "",
+      "datetime": "2023-07-24T23:59:31.695Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9316,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-Na9L0HjiAor-1F9_o7T": {
+      "company": "",
+      "datetime": "2023-07-24T23:59:33.376Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9317,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na9L12w2_Y0AEzMB2up": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-24T23:59:37.008Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9318,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na9Md42ambDt1EHjF9H": {
+      "company": "",
+      "datetime": "2023-07-25T00:06:38.880Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9319,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na9MdJy4R8LcL1eIXlE": {
+      "company": "",
+      "datetime": "2023-07-25T00:06:40.054Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9320,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na9MfWHT_xpi8t31zcc": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-25T00:06:48.966Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9321,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-Na9q12qDpasa29ByrNi": {
+      "company": "",
+      "datetime": "2023-07-25T02:19:25.901Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9322,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaAI4TVJbgpVqBIwhrc": {
+      "company": "",
+      "datetime": "2023-07-25T04:26:22.580Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9323,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaAUQeWSiArc1GtmXL_": {
+      "company": "",
+      "datetime": "2023-07-25T05:20:19.344Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9324,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-NaAUT7rZJCR-wBoQVLL": {
+      "company": "",
+      "datetime": "2023-07-25T05:20:29.672Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9325,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaAse6iJcPHUnl_3lrM": {
+      "company": "",
+      "datetime": "2023-07-25T07:10:32.343Z",
+      "description": "Click en la Pestaña treatment/treatment del menu Risk",
+      "idn": 9326,
+      "origin": "Risk",
+      "user": ""
+    },
+    "-NaAxQg_fb-mtQY_ATwD": {
+      "company": "",
+      "datetime": "2023-07-25T07:31:23.801Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9327,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaAxRfQnhzwoBaI6Zzn": {
+      "company": "",
+      "datetime": "2023-07-25T07:31:27.845Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9328,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaCj54vS4dUq7uNfZSA": {
+      "company": "",
+      "datetime": "2023-07-25T15:48:00.025Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9329,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaCj5wvh81_fhN_HUG-": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-25T15:48:03.767Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9330,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaClk76gWq6SWQQx8V9": {
+      "company": "",
+      "datetime": "2023-07-25T15:59:36.689Z",
+      "description": "Click en la Pestaña Documents del menu Communications",
+      "idn": 9331,
+      "origin": "Communications",
+      "user": ""
+    },
+    "-NaCmKH_s6HAIFXEi96e": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-25T16:02:08.853Z",
+      "description": "Eleccion del menu communication/Comunicaciones",
+      "idn": 9332,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-NaCmL-pPccNDS20k-bg": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-25T16:02:11.931Z",
+      "description": "Eleccion del menu communication/Comunicaciones",
+      "idn": 9333,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-NaCmLSP4R9vwmwtzLUD": {
+      "company": "",
+      "datetime": "2023-07-25T16:02:13.652Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9334,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-NaCmLvZwXHcsVGIL763": {
+      "company": "",
+      "datetime": "2023-07-25T16:02:15.645Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9335,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaCmMfpTTkPxFzh4VwE": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-25T16:02:18.766Z",
+      "description": "Eleccion del menu communication/Comunicaciones",
+      "idn": 9336,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaCmO73s5g8LagIEiN4": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-25T16:02:24.651Z",
+      "description": "Eleccion del menu Lesson/Lecciones",
+      "idn": 9337,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaCmWCqXxoytAiFp1LU": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-25T16:02:57.718Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9338,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaCoB23KAn_SYFU4Lv0": {
+      "company": "",
+      "datetime": "2023-07-25T16:10:15.251Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9339,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaCoBRaj240E33i7Hp9": {
+      "company": "",
+      "datetime": "2023-07-25T16:10:17.047Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9340,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaCoCaCfWDzr4z2vbYA": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-25T16:10:21.472Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9341,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaCoMcfBHdh1mEcmBVu": {
+      "company": "",
+      "datetime": "2023-07-25T16:11:02.516Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9342,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaCoODDk5cg1YiH-Qk5": {
+      "company": "",
+      "datetime": "2023-07-25T16:11:09.311Z",
+      "description": "Click en la Pestaña Documents del menu Communications",
+      "idn": 9343,
+      "origin": "Communications",
+      "user": ""
+    },
+    "-NaCpO4NyMmQht8Usaoj": {
+      "company": "",
+      "datetime": "2023-07-25T16:15:30.889Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9344,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaD4Pe73gqQzgWuRIdj": {
+      "company": "",
+      "datetime": "2023-07-25T17:25:31.312Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9345,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaD4TAMjFgmMM0J6hH7": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-25T17:25:45.867Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9346,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaD4dHsLGXQ5VNFBkYy": {
+      "company": "",
+      "datetime": "2023-07-25T17:26:07.608Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9347,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaD57nHKRRNEZjOQCoP": {
+      "company": "",
+      "datetime": "2023-07-25T17:28:32.455Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9348,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaD5Zi8wXTM8mEmUkMc": {
+      "company": "",
+      "datetime": "2023-07-25T17:30:34.372Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9349,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaD5cnvz_BhK_BrHS47": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-25T17:30:51.691Z",
+      "description": "Eleccion del menu Lesson/Lecciones",
+      "idn": 9350,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaD5dx5gSjN6MLe6OyD": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-25T17:30:56.426Z",
+      "description": "Click en la Pestaña Lecciones aprendidas",
+      "idn": 9351,
+      "origin": "Conceptos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaD5uh4Pgiiwf-Kl_le": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-25T17:32:04.829Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9352,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaD5vY7aCrFDPzbEDmY": {
+      "company": "",
+      "datetime": "2023-07-25T17:32:08.504Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9353,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaD71-Ef0o9Tp9bvVVf": {
+      "company": "",
+      "datetime": "2023-07-25T17:36:56.785Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9354,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-NaD71OzGf4hskBy02WQ": {
+      "company": "",
+      "datetime": "2023-07-25T17:36:58.593Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9355,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaD72qlKgyN01WtFs3a": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-25T17:37:04.365Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9356,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaD74KJ4aO-8Nyl--cd": {
+      "company": "",
+      "datetime": "2023-07-25T17:37:10.625Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9357,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaD8KjF725NLqIUw9oh": {
+      "company": "",
+      "datetime": "2023-07-25T17:42:39.467Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9358,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaD8T8Hki84Ad9lro0Y": {
+      "company": "",
+      "datetime": "2023-07-25T17:43:14.228Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9359,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaD8TVqqETb9mBWTnJS": {
+      "company": "",
+      "datetime": "2023-07-25T17:43:15.374Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9360,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaD8UC05QC3heFvniYx": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-25T17:43:18.578Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9361,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaD8UzUaxW0d3Ghp37W": {
+      "company": "",
+      "datetime": "2023-07-25T17:43:21.984Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9362,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaD8ZFTxRQyil9e4FIY": {
+      "company": "",
+      "datetime": "2023-07-25T17:43:39.286Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9363,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaD9-6W9E_FQiLAHbQm": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-25T17:45:33.481Z",
+      "description": "Eleccion del menu Users/Usuarios",
+      "idn": 9364,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaD91pTd4F5lusPpH-g": {
+      "company": "-hdyewq101",
+      "datetime": "2023-07-25T17:45:44.587Z",
+      "description": "Click en la Pestaña Company/Empresas del menu Usuarios",
+      "idn": 9365,
+      "origin": "Usuarios",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaDABkO-KPDVYgSf5zF": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-25T17:50:47.361Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9366,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-NaDACeL3hMuKAVvl7bd": {
+      "company": "",
+      "datetime": "2023-07-25T17:50:51.236Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9367,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaDADkkEKBfh92aU8pd": {
+      "company": "",
+      "datetime": "2023-07-25T17:50:55.671Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9368,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-NaDAEA30L6wUgWU3YCE": {
+      "company": "",
+      "datetime": "2023-07-25T17:50:57.313Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9369,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaDAII3K9ZjOQdwRYZy": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-25T17:51:14.255Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9370,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaDAJ0SmwTUqfGRrKyX": {
+      "company": "",
+      "datetime": "2023-07-25T17:51:17.013Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9371,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaDANGVuh-07-qnovVZ": {
+      "company": "",
+      "datetime": "2023-07-25T17:51:34.635Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9372,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaDAQ0VV6i76fb2F_6Z": {
+      "company": "",
+      "datetime": "2023-07-25T17:51:45.889Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9373,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaDAR8j-rFgkHppTiEU": {
+      "company": "",
+      "datetime": "2023-07-25T17:51:50.598Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9374,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-NaDAnbo993wS5CmY-OU": {
+      "company": "",
+      "datetime": "2023-07-25T17:53:26.221Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9375,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaDAoIAIE3FA66SSqf6": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-25T17:53:29.499Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9376,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaDAuW0ABNPUT6DdDgR": {
+      "company": "",
+      "datetime": "2023-07-25T17:53:54.896Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9377,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaDBL-QUCSXz6yRwj9I": {
+      "company": "",
+      "datetime": "2023-07-25T17:55:47.320Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9378,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaDC1GNdzHMxAfap6Gt": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-25T17:58:48.511Z",
+      "description": "Eleccion del menu Interested/Interesados",
+      "idn": 9379,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-NaDE3CN6gLIxZQ7Eauh": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-25T18:07:40.556Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9380,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-NaDE6gHhlRtBZ95w2dz": {
+      "company": "",
+      "datetime": "2023-07-25T18:07:55.261Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9381,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaDQwNEFiWkg2e20xTL": {
+      "company": "",
+      "datetime": "2023-07-25T19:03:56.547Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9382,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-NaDRJF6hD5UCoafD8H6": {
+      "company": "",
+      "datetime": "2023-07-25T19:05:34.442Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9383,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaDRKVX9wQC8sFG4j55": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-25T19:05:39.604Z",
+      "description": "Eleccion del menu communication/Comunicaciones",
+      "idn": 9384,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaDRMHuqMuU11L3KMGa": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-25T19:05:46.961Z",
+      "description": "Eleccion del menu Interested/Interesados",
+      "idn": 9385,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaDRQ2PfMYRsc2qJGJc": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-25T19:06:02.269Z",
+      "description": "Eleccion del menu Lesson/Lecciones",
+      "idn": 9386,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaDRi7c0_CjtUF6SuEH": {
+      "company": "",
+      "datetime": "2023-07-25T19:07:20.759Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9387,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaEO9Weoe0nCyjtmoGM": {
+      "company": "",
+      "datetime": "2023-07-25T23:31:25.530Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9388,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaHxQkabu7x3ZMwJ4Dk": {
+      "company": "",
+      "datetime": "2023-07-26T16:08:44.579Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9389,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaHxSGqlN66GEL4vFmB": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-26T16:08:51.302Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9390,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaHxTrUuxriwPBqRtw0": {
+      "company": "",
+      "datetime": "2023-07-26T16:08:57.871Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9391,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaHxv5JT4KOkYMRUCQ4": {
+      "company": "",
+      "datetime": "2023-07-26T16:10:53.477Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9392,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaHy89Pf7B60sqsVijl": {
+      "company": "",
+      "datetime": "2023-07-26T16:11:51.086Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9393,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaHyJSCHSO9FQq_5ZG8": {
+      "company": "",
+      "datetime": "2023-07-26T16:12:37.225Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9394,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaHybb0EqXRa6rIR43_": {
+      "company": "",
+      "datetime": "2023-07-26T16:13:55.795Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9395,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaHyjzSduZrk6RxGCio": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-26T16:14:30.022Z",
+      "description": "Eleccion del menu Lesson/Lecciones",
+      "idn": 9396,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-NaHymcdstVYRiuJ7KuU": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-26T16:14:40.077Z",
+      "description": "Click en la Pestaña Lecciones aprendidas",
+      "idn": 9397,
+      "origin": "Conceptos",
+      "user": ""
+    },
+    "-NaHyzbC8IIek8KEb2_Z": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-26T16:15:34.114Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9398,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-NaHz-4HyJLOHqkMERBb": {
+      "company": "",
+      "datetime": "2023-07-26T16:15:36.109Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9399,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaHzOo6hKYCFxOJU1Q9": {
+      "company": "",
+      "datetime": "2023-07-26T16:17:21.261Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9400,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-NaHzPKfp32ubzU3YVvW": {
+      "company": "",
+      "datetime": "2023-07-26T16:17:23.651Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9401,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-NaI7VHBlIlR17l7TtMh": {
+      "company": "",
+      "datetime": "2023-07-26T16:57:06.621Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9402,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaI7WSTpYVU772LKnad": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-26T16:57:12.025Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9403,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaI7XRo3WHjyUGcLTc6": {
+      "company": "",
+      "datetime": "2023-07-26T16:57:16.045Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9404,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaI7u5fCNT1TrpeY1p5": {
+      "company": "",
+      "datetime": "2023-07-26T16:58:52.851Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9405,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-NaI7uVx8DcIS0AIaPp7": {
+      "company": "",
+      "datetime": "2023-07-26T16:58:53.992Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9406,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaI7vAnBtxquaMB62wZ": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-26T16:58:57.398Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9407,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaI7vVyXEhRxMG3HM54": {
+      "company": "",
+      "datetime": "2023-07-26T16:58:58.682Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9408,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaI8KiqsEMKw36sD6Ps": {
+      "company": "",
+      "datetime": "2023-07-26T17:00:46.073Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9409,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaI8ifdoE4_K3-9pjra": {
+      "company": "",
+      "datetime": "2023-07-26T17:02:28.280Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9410,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaI8so3G9RaFrW7vZ7S": {
+      "company": "",
+      "datetime": "2023-07-26T17:03:09.770Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9411,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaIJ2uYZpJbKS54V46I": {
+      "company": "",
+      "datetime": "2023-07-26T17:47:36.386Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9412,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaIMLnDheUw8-cdiYeB": {
+      "company": "",
+      "datetime": "2023-07-26T18:01:59.977Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9413,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaIMVOxZli7MQrdkoTr": {
+      "company": "",
+      "datetime": "2023-07-26T18:02:39.586Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9414,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaINwYDHsU7lK0m233D": {
+      "company": "",
+      "datetime": "2023-07-26T18:08:56.973Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9415,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaINxYVm_h5I4sHBU2q": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-26T18:09:01.278Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9416,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaINxqvcFtfV1CiP9Zx": {
+      "company": "",
+      "datetime": "2023-07-26T18:09:02.545Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9417,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaIP1ZYMORhSQU45QRr": {
+      "company": "",
+      "datetime": "2023-07-26T18:13:43.972Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9418,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaIQGeaCQTf1s1QMBPn": {
+      "company": "",
+      "datetime": "2023-07-26T18:19:07.864Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9419,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaIQaCDGiTyAjGNP9Kg": {
+      "company": "",
+      "datetime": "2023-07-26T18:20:32.097Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9420,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaIRFNzRCti2gQdU6ng": {
+      "company": "",
+      "datetime": "2023-07-26T18:23:24.827Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9421,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaIRUmC42859lTpcYsh": {
+      "company": "",
+      "datetime": "2023-07-26T18:24:27.664Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9422,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaIRlfG2ipfGsm9_mQJ": {
+      "company": "",
+      "datetime": "2023-07-26T18:25:41.227Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9423,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaIRw5iiauqScMsXu7m": {
+      "company": "",
+      "datetime": "2023-07-26T18:26:23.935Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9424,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaI_kVDYlLNQr93bdE2": {
+      "company": "",
+      "datetime": "2023-07-26T19:04:55.917Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9425,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-NaI_njWH3JlBi6lgPlj": {
+      "company": "",
+      "datetime": "2023-07-26T19:05:09.528Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9426,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaIbOO4Xu8hvsNgBZCS": {
+      "company": "",
+      "datetime": "2023-07-26T19:12:05.279Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9427,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaIb_uMdlJdhynRLG6B": {
+      "company": "",
+      "datetime": "2023-07-26T19:12:56.571Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9428,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaIbcxwLta18ZFLvLJx": {
+      "company": "",
+      "datetime": "2023-07-26T19:13:09.071Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9429,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaIbiJ2gzpfpBw-t1Pj": {
+      "company": "",
+      "datetime": "2023-07-26T19:13:30.948Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9430,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaIbovBj3L4LS44XZ2X": {
+      "company": "",
+      "datetime": "2023-07-26T19:13:58.067Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9431,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaIk4Zrltre_cPy6TFy": {
+      "company": "",
+      "datetime": "2023-07-26T19:50:02.744Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9432,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaIk6DtLwwa7FVxFVLX": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-26T19:50:09.965Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9433,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaIk6gpMh1EcT9697Gd": {
+      "company": "",
+      "datetime": "2023-07-26T19:50:12.055Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9434,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaIkbnDNquoaqx9AB_H": {
+      "company": "",
+      "datetime": "2023-07-26T19:52:23.346Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9435,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaIkc7mN6zMdEVo23-4": {
+      "company": "",
+      "datetime": "2023-07-26T19:52:24.972Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9436,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaIkukZBCpRcddR6son": {
+      "company": "",
+      "datetime": "2023-07-26T19:53:41.088Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9437,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-NaIl-2IsqistV12Qh8N": {
+      "company": "",
+      "datetime": "2023-07-26T19:54:02.841Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9438,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaIlVuzZVVQCi6tZBrs": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-26T19:56:17.485Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9439,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-NaIlZFFPbMM-QjAXIzn": {
+      "company": "",
+      "datetime": "2023-07-26T19:56:31.154Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9440,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaIlfYC6Nqrm5JryCXQ": {
+      "company": "",
+      "datetime": "2023-07-26T19:57:01.055Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9441,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaImdtuNkJmWNHTBQYW": {
+      "company": "",
+      "datetime": "2023-07-26T20:01:16.430Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9442,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaImiSsHfobwNihKlDS": {
+      "company": "",
+      "datetime": "2023-07-26T20:01:35.149Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9443,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaIqivvaxaTUlvWInSs": {
+      "company": "",
+      "datetime": "2023-07-26T20:19:05.622Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9444,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaItCYXFlIa7dhcX8Bi": {
+      "company": "",
+      "datetime": "2023-07-26T20:29:55.764Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9445,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaIuL1WaG3eq-42dfDM": {
+      "company": "",
+      "datetime": "2023-07-26T20:34:51.497Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9446,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-NaIuLE5rVwoymKSRXEc": {
+      "company": "",
+      "datetime": "2023-07-26T20:34:53.056Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9447,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaIuM83Jn1XFeGMSHNr": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-26T20:34:56.740Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9448,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaIuNLzp9MbW6AkoIAR": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-26T20:35:01.697Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9449,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaIuSwvfq7PJ018IBvt": {
+      "company": "",
+      "datetime": "2023-07-26T20:35:24.588Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9450,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaIuTCb-TwFyFMcQEFw": {
+      "company": "",
+      "datetime": "2023-07-26T20:35:25.700Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9451,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaIuUA0OWE9V-XG2pKk": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-26T20:35:29.590Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9452,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaIw0TkyPHmLH8hmdgp": {
+      "company": "",
+      "datetime": "2023-07-26T20:42:12.172Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9453,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-NaIw2Fep-mG_8obeeap": {
+      "company": "",
+      "datetime": "2023-07-26T20:42:19.529Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9454,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaIw4D7xOwPjJTNMLZd": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-26T20:42:27.592Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9455,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaIw7KqHItACpurp2gV": {
+      "company": "",
+      "datetime": "2023-07-26T20:42:40.323Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9456,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaIwBcyUdESVAbTFEuG": {
+      "company": "",
+      "datetime": "2023-07-26T20:42:57.644Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9457,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaJ-SWenGpWQnFTxGyY": {
+      "company": "",
+      "datetime": "2023-07-26T21:01:35.445Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9458,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaJ2o-jQfC6nZbLQfxW": {
+      "company": "",
+      "datetime": "2023-07-26T21:16:14.152Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9459,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-NaJ2oP-gm3rnXZB1SR7": {
+      "company": "",
+      "datetime": "2023-07-26T21:16:15.892Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9460,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaJ2pHewgg1li-MC6uw": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-26T21:16:19.285Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9461,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaJ2qSqpAdV0FhIySkA": {
+      "company": "",
+      "datetime": "2023-07-26T21:16:24.331Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9462,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaJ34K9Uzid58iJNXsS": {
+      "company": "",
+      "datetime": "2023-07-26T21:17:25.126Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9463,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaJ3flgpk6i0boIrFOi": {
+      "company": "",
+      "datetime": "2023-07-26T21:20:02.266Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9464,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaJ3layEb90ZqCVJxFN": {
+      "company": "",
+      "datetime": "2023-07-26T21:20:26.509Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9465,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaJ3okARwzIu_12MMCL": {
+      "company": "",
+      "datetime": "2023-07-26T21:20:39.369Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9466,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-NaJ3pdGqMbzyIVyGs4Z": {
+      "company": "",
+      "datetime": "2023-07-26T21:20:43.105Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9467,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaJ3s0eZZu6I8x3C4aM": {
+      "company": "",
+      "datetime": "2023-07-26T21:20:52.754Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9468,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaJ8oSHPllAMPfg9XZn": {
+      "company": "",
+      "datetime": "2023-07-26T21:42:28.680Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9469,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaJ8pqSZoAWhpfb4xvj": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-26T21:42:34.536Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9470,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaJ8rKN9kF-yTliDo9j": {
+      "company": "",
+      "datetime": "2023-07-26T21:42:40.669Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9471,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaJ8zY0f-KAmVD4z2ds": {
+      "company": "",
+      "datetime": "2023-07-26T21:43:14.314Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9472,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaJ95fP7XOpI4MZmh77": {
+      "company": "",
+      "datetime": "2023-07-26T21:43:43.474Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9473,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaJ9B2xAQq10FzCjp15": {
+      "company": "",
+      "datetime": "2023-07-26T21:44:05.554Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9474,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaJ9TOAgwJYlceA4k4g": {
+      "company": "",
+      "datetime": "2023-07-26T21:45:20.659Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9475,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaJ9UHpdyjQFkUz2KxA": {
+      "company": "",
+      "datetime": "2023-07-26T21:45:24.349Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9476,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaJ9V3Yx3cSPEwEiB-B": {
+      "company": "",
+      "datetime": "2023-07-26T21:45:27.503Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9477,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-NaJ9VQtqBY-6ll8eAne": {
+      "company": "",
+      "datetime": "2023-07-26T21:45:29.082Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9478,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaJ9XZ5rgcCmCcnKQu8": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-26T21:45:37.687Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9479,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaJ9_n6Vs1cRDBCu62s": {
+      "company": "",
+      "datetime": "2023-07-26T21:45:50.980Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9480,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaJA4UFCT3K2iz1IV6J": {
+      "company": "",
+      "datetime": "2023-07-26T21:48:00.603Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9481,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaJATq1AEGgR_G6AQQg": {
+      "company": "",
+      "datetime": "2023-07-26T21:49:44.571Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9482,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-NaJAUAJw6mOkqbyc0UN": {
+      "company": "",
+      "datetime": "2023-07-26T21:49:46.062Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9483,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaJAUwwzNdetlbAa-Zo": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-26T21:49:49.239Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9484,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaJAVkTkqHOGIuTsyyN": {
+      "company": "",
+      "datetime": "2023-07-26T21:49:52.470Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9485,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaJAYNzPy4K_qKkyktH": {
+      "company": "",
+      "datetime": "2023-07-26T21:50:03.256Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9486,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaJAef8tJuET0MC0a9B": {
+      "company": "",
+      "datetime": "2023-07-26T21:50:33.090Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9487,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaJAhPvehKq8y5ySC3L": {
+      "company": "",
+      "datetime": "2023-07-26T21:50:44.317Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9488,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaJqFTzMnPha1cqcoCc": {
+      "company": "",
+      "datetime": "2023-07-27T00:56:37.931Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9489,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaJslvyMcgnphyT7GBo": {
+      "company": "",
+      "datetime": "2023-07-27T01:07:38.888Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9490,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaJsmf3vlF6SHvkpbeh": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-27T01:07:42.078Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9491,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaJtH_x6CDm6Y3_36zK": {
+      "company": "",
+      "datetime": "2023-07-27T01:09:52.665Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9492,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaJtISuaaug3DRJnhqz": {
+      "company": "",
+      "datetime": "2023-07-27T01:09:56.542Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9493,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaJtK3jNAYTJAC1X4gt": {
+      "company": "",
+      "datetime": "2023-07-27T01:10:02.977Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9494,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaJtVHt6TVyU5u0nER1": {
+      "company": "",
+      "datetime": "2023-07-27T01:10:49.023Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9495,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaJtjjhs9Jmapk9V7bm": {
+      "company": "",
+      "datetime": "2023-07-27T01:11:52.206Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9496,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaJtkR2kB0NHuPO1BCL": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-27T01:11:55.206Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9497,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaJtl1n-1-KZsu6DOky": {
+      "company": "",
+      "datetime": "2023-07-27T01:11:57.006Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9498,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaJuVpliTatWpy541md": {
+      "company": "",
+      "datetime": "2023-07-27T01:15:13.018Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9499,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaJuXRofaPCbojv9gxu": {
+      "company": "",
+      "datetime": "2023-07-27T01:15:19.976Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9500,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaJwpkzXzLAHkEFbwC-": {
+      "company": "",
+      "datetime": "2023-07-27T01:25:23.338Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9501,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-NaJwqAz_Y0oRszgTRHm": {
+      "company": "",
+      "datetime": "2023-07-27T01:25:25.170Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9502,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaJwsWnI5vejcKCGURg": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-27T01:25:34.433Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9503,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaJwtcgsqmycyBhPaFB": {
+      "company": "",
+      "datetime": "2023-07-27T01:25:39.271Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9504,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaJx7SKjbCQ2ymjxw6U": {
+      "company": "",
+      "datetime": "2023-07-27T01:26:39.888Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9505,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaJx9Hmxl_VS7rwOKaq": {
+      "company": "",
+      "datetime": "2023-07-27T01:26:46.391Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9506,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaJxERp1tHYBzwGSv76": {
+      "company": "",
+      "datetime": "2023-07-27T01:27:08.552Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9507,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaJxYskJJYs_QoEJxX1": {
+      "company": "",
+      "datetime": "2023-07-27T01:28:32.279Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9508,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaJxfngtL8rNNGkdvMg": {
+      "company": "",
+      "datetime": "2023-07-27T01:29:04.732Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9509,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-NaKAFoxvE0P2Ca2yDT5": {
+      "company": "",
+      "datetime": "2023-07-27T02:28:23.881Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9510,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaKBCwxQyjqbEH307fJ": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-27T02:32:34.456Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9511,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaKBE21Cf6q1A6_YA2X": {
+      "company": "",
+      "datetime": "2023-07-27T02:32:39.063Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9512,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaKBSBSa34ik5RtzoPv": {
+      "company": "",
+      "datetime": "2023-07-27T02:33:36.833Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9513,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaKBdL-8MJzq236lDui": {
+      "company": "",
+      "datetime": "2023-07-27T02:34:26.672Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9514,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaKBo0jWfRaG4k9lC6d": {
+      "company": "",
+      "datetime": "2023-07-27T02:35:10.480Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9515,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaKD3FCVFisl3bjKMW4": {
+      "company": "",
+      "datetime": "2023-07-27T02:40:39.042Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9516,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaKD4E52CN8rRg11cCX": {
+      "company": "",
+      "datetime": "2023-07-27T02:40:43.101Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9517,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaKD7bj-toZ6Bf4SYZV": {
+      "company": "",
+      "datetime": "2023-07-27T02:40:56.942Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9518,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaKDFDv-5xsyUwGUZx1": {
+      "company": "",
+      "datetime": "2023-07-27T02:41:27.665Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9519,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaKDQNnDGeUpSuagFnt": {
+      "company": "",
+      "datetime": "2023-07-27T02:42:13.833Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9520,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaKDuE2SKEPS119VIub": {
+      "company": "",
+      "datetime": "2023-07-27T02:44:20.105Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9521,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaKDuJ9yA3hO4dWniRj": {
+      "company": "",
+      "datetime": "2023-07-27T02:44:20.478Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9522,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaKDveM0qBS9LqxR-FV": {
+      "company": "",
+      "datetime": "2023-07-27T02:44:26.011Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9523,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaKF-_r5Pz7JXsLs11z": {
+      "company": "",
+      "datetime": "2023-07-27T02:49:08.143Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9524,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaKFS-rV0aD_urqBCey": {
+      "company": "",
+      "datetime": "2023-07-27T02:51:04.661Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9525,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-NaKFT4Nbpr8Fc2xTiVk": {
+      "company": "",
+      "datetime": "2023-07-27T02:51:09.089Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9526,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaKFTycD-Bj-NPeUY4j": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-27T02:51:12.647Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9527,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaKG7gY2NZG50Ra3uQX": {
+      "company": "",
+      "datetime": "2023-07-27T02:54:03.679Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9528,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaL0XmSS921gjWaXM9C": {
+      "company": "",
+      "datetime": "2023-07-27T06:25:33.720Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9529,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaLFfYurNWAbBBteSXB": {
+      "company": "",
+      "datetime": "2023-07-27T07:31:42.009Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9530,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaLVwmZz5yvwQmiRmug": {
+      "company": "",
+      "datetime": "2023-07-27T08:42:46.441Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9531,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaLbHRpo9oj5sdEd2zQ": {
+      "company": "",
+      "datetime": "2023-07-27T09:10:27.824Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9532,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-NaLbsn__h88VCn6Nhal": {
+      "company": "",
+      "datetime": "2023-07-27T09:13:05.505Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9533,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaNQXbhKVY9bZ-ONSKp": {
+      "company": "",
+      "datetime": "2023-07-27T17:38:22.297Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9534,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaNQYH0L1jTjRIeVwl8": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-27T17:38:25.397Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9535,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaNQaM-G4dxO07XEbUl": {
+      "company": "",
+      "datetime": "2023-07-27T17:38:38.172Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9536,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaNQrnqRC3H-q9eBdRU": {
+      "company": "",
+      "datetime": "2023-07-27T17:39:49.647Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9537,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaNQt-d627eoaDjDrTh": {
+      "company": "",
+      "datetime": "2023-07-27T17:39:54.632Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9538,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaNRaqk1YDX5VGsULJk": {
+      "company": "",
+      "datetime": "2023-07-27T17:43:02.304Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9539,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaNSdHQr1QhI1H4PS2R": {
+      "company": "",
+      "datetime": "2023-07-27T17:47:34.374Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9540,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaNSpb3O-NMNRoINxo1": {
+      "company": "",
+      "datetime": "2023-07-27T17:48:24.897Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9541,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaNSw4UbDL9NDoOd6FJ": {
+      "company": "",
+      "datetime": "2023-07-27T17:48:51.446Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9542,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-NaNSwTsmJE9OnoDDfMl": {
+      "company": "",
+      "datetime": "2023-07-27T17:48:53.136Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9543,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaNSxRNlXT6-kEhmdwW": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-27T17:48:56.968Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9544,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaNSyJAbdeutjk5mFhJ": {
+      "company": "",
+      "datetime": "2023-07-27T17:49:00.640Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9545,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaNSzgBX_A_4E79evxE": {
+      "company": "",
+      "datetime": "2023-07-27T17:49:06.212Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9546,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaNTWaqeC4rLrTcIM04": {
+      "company": "",
+      "datetime": "2023-07-27T17:51:25.074Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9547,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-NaNTWtyfMh3VGuxPkxh": {
+      "company": "",
+      "datetime": "2023-07-27T17:51:26.375Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9548,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaNTXZyZuXFSMD1xvdY": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-27T17:51:29.161Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9549,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaNTXvZM2YQYQWkNXUE": {
+      "company": "",
+      "datetime": "2023-07-27T17:51:30.519Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9550,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaNTZ5sMCLUtjZeyWbi": {
+      "company": "",
+      "datetime": "2023-07-27T17:51:35.424Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9551,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaNTiCABRs6-2v7bTvz": {
+      "company": "",
+      "datetime": "2023-07-27T17:52:16.724Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9552,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaNTyvA0RRt06kG1cbL": {
+      "company": "",
+      "datetime": "2023-07-27T17:53:25.080Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9553,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaNU1tMsDproZ7W-VFt": {
+      "company": "",
+      "datetime": "2023-07-27T17:53:41.472Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9554,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaNU2biJ_SU_Lf8DJb-": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-27T17:53:44.437Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9555,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaNU3TOJUhmvY_U1_OM": {
+      "company": "",
+      "datetime": "2023-07-27T17:53:47.893Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9556,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaNV8epU9M3wrJlkV6V": {
+      "company": "",
+      "datetime": "2023-07-27T17:58:31.339Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9557,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaNVrsnl7WHy1rIuKtJ": {
+      "company": "",
+      "datetime": "2023-07-27T18:01:40.597Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9558,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaNXEnCd5bjIaXxkQmf": {
+      "company": "",
+      "datetime": "2023-07-27T18:07:40.576Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9559,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-NaNXFtQple-tKqAPOC1": {
+      "company": "",
+      "datetime": "2023-07-27T18:07:45.318Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9560,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaNXGuCP7Hz2IO_ytXW": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-27T18:07:49.309Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9561,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaNXI9hwql1jpWlvTYE": {
+      "company": "",
+      "datetime": "2023-07-27T18:07:54.513Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9562,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaNXXEXZx_j_ZrEy219": {
+      "company": "",
+      "datetime": "2023-07-27T18:08:56.245Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9563,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaNXYxf5K06wCcHSzQg": {
+      "company": "",
+      "datetime": "2023-07-27T18:09:03.327Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9564,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaNXlomCU4kD70G8JuT": {
+      "company": "",
+      "datetime": "2023-07-27T18:10:00.113Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9565,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaNXyf8gbrI6FkRvbZK": {
+      "company": "",
+      "datetime": "2023-07-27T18:10:52.496Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9566,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaNZGNAGNkJO5YnBrdc": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-27T18:16:31.484Z",
+      "description": "Eleccion del menu communication/Comunicaciones",
+      "idn": 9567,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-NaNZHZ9sH6Q_k2JRXNk": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-27T18:16:36.403Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9568,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-NaNZIdVXH2eKDosUbKT": {
+      "company": "",
+      "datetime": "2023-07-27T18:16:40.781Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9569,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaNZMf2vNuX6QFuuS9R": {
+      "company": "",
+      "datetime": "2023-07-27T18:16:57.274Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9570,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaNZbjQceBjogDl6Ln7": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-27T18:18:03.040Z",
+      "description": "Eleccion del menu communication/Comunicaciones",
+      "idn": 9571,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-NaNZcWvewz3m36l5aGA": {
+      "company": "",
+      "datetime": "2023-07-27T18:18:06.364Z",
+      "description": "Click en la Pestaña Details/Detalles del menu Communications",
+      "idn": 9572,
+      "origin": "Communications",
+      "user": ""
+    },
+    "-NaNZd0_wJIwrkY6U6Cs": {
+      "company": "",
+      "datetime": "2023-07-27T18:18:08.329Z",
+      "description": "Click en la Pestaña Documents del menu Communications",
+      "idn": 9573,
+      "origin": "Communications",
+      "user": ""
+    },
+    "-NaNZdHLcJLNQQz7FdVm": {
+      "company": "",
+      "datetime": "2023-07-27T18:18:09.491Z",
+      "description": "Click en la Pestaña Details/Detalles del menu Communications",
+      "idn": 9574,
+      "origin": "Communications",
+      "user": ""
+    },
+    "-NaNZi1dVHfkJMiJe-fw": {
+      "company": "",
+      "datetime": "2023-07-27T18:18:28.886Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9575,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-NaNoc_fXKx8zXrBBLgF": {
+      "company": "",
+      "datetime": "2023-07-27T19:28:00.558Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9576,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaNodX9N4nv92-A4kGw": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-27T19:28:04.666Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9577,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaNoeDscX_mQ38J7KRT": {
+      "company": "",
+      "datetime": "2023-07-27T19:28:07.531Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9578,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaNsy96vfygg8w2yUdb": {
+      "company": "",
+      "datetime": "2023-07-27T19:46:57.549Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9579,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaNsyRwCBUADJdF9-mH": {
+      "company": "",
+      "datetime": "2023-07-27T19:46:58.972Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9580,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaNszQwrn6iVz3of6eE": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-27T19:47:02.909Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9581,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaNt-F2_UCwOSsVKUh2": {
+      "company": "",
+      "datetime": "2023-07-27T19:47:06.337Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9582,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaNtELD7EcogAqjrEgi": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-27T19:48:08.107Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9583,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-NaNtF5fPcsk2y7zGyIJ": {
+      "company": "",
+      "datetime": "2023-07-27T19:48:11.256Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9584,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaNtR9gZcgBEctsI2KI": {
+      "company": "",
+      "datetime": "2023-07-27T19:49:00.577Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9585,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaNuY_KybfX3zp03h4k": {
+      "company": "",
+      "datetime": "2023-07-27T19:53:52.871Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9586,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaNumjYSnRsWfdeBmqj": {
+      "company": "",
+      "datetime": "2023-07-27T19:54:54.693Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9587,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaNvuBM_-0bu7RgQaWu": {
+      "company": "",
+      "datetime": "2023-07-27T19:59:47.860Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9588,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaNxOs8ynJIy1h12p3c": {
+      "company": "",
+      "datetime": "2023-07-27T20:06:19.789Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9589,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaNxTlLKEGOCZggL8NO": {
+      "company": "",
+      "datetime": "2023-07-27T20:06:39.843Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9590,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaNx_cq-lQKAZ3jbcRC": {
+      "company": "",
+      "datetime": "2023-07-27T20:07:07.954Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9591,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaNyUmKtPgFsGalZZRF": {
+      "company": "",
+      "datetime": "2023-07-27T20:11:06.106Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9592,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaNysE8_uRsTbxXRZg6": {
+      "company": "",
+      "datetime": "2023-07-27T20:12:45.951Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9593,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaNzL2bzcCMjJetHXS8": {
+      "company": "",
+      "datetime": "2023-07-27T20:14:48.415Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9594,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-NaNzMD8bWc2z3rkB8RV": {
+      "company": "",
+      "datetime": "2023-07-27T20:14:53.216Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9595,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaNzN1G3Tir8-k6wT1C": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-27T20:14:56.436Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9596,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaNzOWafwuQpPLuLOSi": {
+      "company": "",
+      "datetime": "2023-07-27T20:15:02.619Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9597,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaO-CMruodNmTBrnbob": {
+      "company": "",
+      "datetime": "2023-07-27T20:18:34.906Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9598,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaO05GDifCMoXngyHb3": {
+      "company": "",
+      "datetime": "2023-07-27T20:22:27.977Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9599,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaO1qDX06Cl6ROPodRj": {
+      "company": "",
+      "datetime": "2023-07-27T20:30:06.390Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9600,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaO1rmLdkfaQRlOK78z": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-27T20:30:12.559Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9601,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaO1skT9SKCpt4E2k98": {
+      "company": "",
+      "datetime": "2023-07-27T20:30:17.032Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9602,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaO2gQpdAEZ9QK8vDlt": {
+      "company": "",
+      "datetime": "2023-07-27T20:33:48.634Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9603,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaO4iseZP0pwaeTi4ke": {
+      "company": "",
+      "datetime": "2023-07-27T20:42:42.413Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9604,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaO4yHgJxiImaPJ-eWW": {
+      "company": "",
+      "datetime": "2023-07-27T20:43:46.069Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9605,
+      "origin": "Proyectos",
+      "user": ""
+    },
+    "-NaO5QgdIpVmJEUivfT9": {
+      "company": "",
+      "datetime": "2023-07-27T20:45:46.512Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9606,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-NaO5RTHW3KXx7lxh4fR": {
+      "company": "",
+      "datetime": "2023-07-27T20:45:49.755Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9607,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-NaO5S0RQ0UisrBYeDWW": {
+      "company": "",
+      "datetime": "2023-07-27T20:45:51.906Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9608,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-NaO5Vd0jzNghICXpIbI": {
+      "company": "",
+      "datetime": "2023-07-27T20:46:06.750Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9609,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-NaO5W09Lp8FQW-f1hWh": {
+      "company": "",
+      "datetime": "2023-07-27T20:46:08.368Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9610,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-NaO5X3DojQHfAH_Djj-": {
+      "company": "",
+      "datetime": "2023-07-27T20:46:12.576Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9611,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-NaO5bVgUrJ8iqHGhI0W": {
+      "company": "",
+      "datetime": "2023-07-27T20:46:34.866Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9612,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-NaO5jcD17dvZwcv5VUy": {
+      "company": "",
+      "datetime": "2023-07-27T20:47:08.129Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9613,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaO5kSTLM_1GIpRxSVg": {
+      "company": "",
+      "datetime": "2023-07-27T20:47:11.609Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9614,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaO5kjOjS-GMapjbyWN": {
+      "company": "",
+      "datetime": "2023-07-27T20:47:12.762Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9615,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaO5lWXkQ6LYfzwnHpD": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-27T20:47:15.877Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9616,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaO5mY1tJWWIEDm9uLQ": {
+      "company": "",
+      "datetime": "2023-07-27T20:47:20.163Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9617,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaO5yfoBR6gOxgoJdQ5": {
+      "company": "",
+      "datetime": "2023-07-27T20:48:09.821Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9618,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaO5zx66WTrwaSr4bjA": {
+      "company": "",
+      "datetime": "2023-07-27T20:48:14.990Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9619,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaO61ZvVe6yCX-hRuMX": {
+      "company": "",
+      "datetime": "2023-07-27T20:48:25.750Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9620,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaO62ehawKk0xxwdyPe": {
+      "company": "",
+      "datetime": "2023-07-27T20:48:30.272Z",
+      "description": "Click en la Pestaña Documents del menu Gestion de Proyectos",
+      "idn": 9621,
+      "origin": "Proyectos",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaO6C_laUVixY8wKWju": {
+      "company": "",
+      "datetime": "2023-07-27T20:49:10.817Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9622,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaOd6aWwGUQR1AmbobB": {
+      "company": "",
+      "datetime": "2023-07-27T23:17:18.845Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9623,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaOd7CLBVYFnsavYhFk": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-27T23:17:21.614Z",
+      "description": "Eleccion del menu Lesson/Lecciones",
+      "idn": 9624,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaOd856ci3cEV4kloP8": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-27T23:17:25.164Z",
+      "description": "Eleccion del menu Lesson/Lecciones",
+      "idn": 9625,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaOd8Q6r_SxbnsUsheE": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-27T23:17:26.600Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9626,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaOd8k6AHFzGljzfLE1": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-27T23:17:27.950Z",
+      "description": "Eleccion del menu Lesson/Lecciones",
+      "idn": 9627,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaOd97gQ26dU3A_JxRl": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-27T23:17:29.519Z",
+      "description": "Eleccion del menu Lesson/Lecciones",
+      "idn": 9628,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaOd9Kmozx57wfsFBep": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-27T23:17:30.298Z",
+      "description": "Eleccion del menu Lesson/Lecciones",
+      "idn": 9629,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaOdMLFHTuem53OdcQH": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-27T23:18:23.577Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9630,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaOdNCGYz3pMwz4I0QW": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-27T23:18:27.158Z",
+      "description": "Eleccion del menu communication/Comunicaciones",
+      "idn": 9631,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaOdNaoHM8hBR9CAaGa": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-27T23:18:28.723Z",
+      "description": "Eleccion del menu communication/Comunicaciones",
+      "idn": 9632,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaOdNnh3YpNcX9dfGlL": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-27T23:18:29.616Z",
+      "description": "Eleccion del menu communication/Comunicaciones",
+      "idn": 9633,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaOdO2EYnaXDUXcpre4": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-27T23:18:30.614Z",
+      "description": "Eleccion del menu communication/Comunicaciones",
+      "idn": 9634,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaOdOdNg7NiNMh3klSe": {
+      "company": "",
+      "datetime": "2023-07-27T23:18:33.012Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9635,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaOgjSnVF3UKCB0WC4P": {
+      "company": "",
+      "datetime": "2023-07-27T23:33:08.548Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9636,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaOgkEH_mLpmIYw7oyU": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-27T23:33:11.929Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9637,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaOgkXu5DYN0cvhQ5KS": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-27T23:33:13.211Z",
+      "description": "Eleccion del menu Lesson/Lecciones",
+      "idn": 9638,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaOglYFXt7UpaC_1ZvI": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-27T23:33:17.186Z",
+      "description": "Eleccion del menu communication/Comunicaciones",
+      "idn": 9639,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaOgltlW0I7bOBhzGy9": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-27T23:33:18.633Z",
+      "description": "Eleccion del menu communication/Comunicaciones",
+      "idn": 9640,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaOgmARJLWKXKuQ1N73": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-27T23:33:19.867Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9641,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaOgmMkQ1kDNzhZaRHr": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-27T23:33:20.743Z",
+      "description": "Eleccion del menu Lesson/Lecciones",
+      "idn": 9642,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaOgpVmfACOlem0dY71": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-27T23:33:33.505Z",
+      "description": "Eleccion del menu Lesson/Lecciones",
+      "idn": 9643,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaOgpm0r4sS2qF6qJcC": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-27T23:33:34.668Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9644,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaOgzsKJXrEdD0fW2FI": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-27T23:34:15.964Z",
+      "description": "Eleccion del menu Lesson/Lecciones",
+      "idn": 9645,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaOh-Jx8C-keeontfal": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-27T23:34:17.860Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9646,
+      "origin": "Menu Side Bar",
+      "user": "jmontes@hco-consultores.com"
+    },
+    "-NaOh3WQhLjqZk35AUA4": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-27T23:34:34.939Z",
+      "description": "Eleccion del menu communication/Comunicaciones",
+      "idn": 9647,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-NaOh4K7j9kaAUrogQXe": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-27T23:34:38.381Z",
+      "description": "Eleccion del menu Management/Gestion de Archivo",
+      "idn": 9648,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-NaOh4ogRp7qfMsoSjoM": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-27T23:34:40.344Z",
+      "description": "Eleccion del menu Lesson/Lecciones",
+      "idn": 9649,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-NaOh5a9sSCgoj-LMl7F": {
+      "company": "Sisteli-Code",
+      "datetime": "2023-07-27T23:34:43.578Z",
+      "description": "Eleccion del menu Training/Entrenamiento ",
+      "idn": 9650,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-NaOh6BkZy7p4SFf68tz": {
+      "company": "",
+      "datetime": "2023-07-27T23:34:45.992Z",
+      "description": "Salio del Sistema - Cierre de sesion",
+      "idn": 9651,
+      "origin": "Menu Side Bar",
+      "user": ""
+    },
+    "-NaOh6sROUpQXa5BqcKc": {
+      "company": "",
+      "datetime": "2023-07-27T23:34:48.850Z",
+      "description": "Inicio del Sistema ",
+      "idn": 9652,
+      "origin": "Origen del Formulario Login",
+      "user": "jmontes@hco-consultores.com"
     }
   },
   "trackingrisk": {
@@ -80018,6 +83118,45 @@
       "phone": "9382063147",
       "picture": "https://firebasestorage.googleapis.com/v0/b/beapp-501d1.appspot.com/o/images%2Fjgalicia%40hco-consultores.comavatar4.png?alt=media&token=79543c7f-7bba-4896-a651-3e4afbb3c5b2",
       "position": "Directo HCO"
+    }
+  },
+  "courses":{
+    "1010":{
+      "name"  : "Seguridad Industrial",
+      "dStart": "2023-07-10",
+      "dEnd"  : "2023-07-30",
+      "description"  : "Curso basico de Seguridad Industrial",
+      "instructor"   : "Juan Perez",
+      "id_project"   : "LQBGAFSts9829",
+      "schedule"     : "09:30-11:00",
+      "file1"        : "",
+      "file2"        : "",
+      "file3"        : ""
+    }
+  },
+  "instructors":{
+    "2020" : {
+      "active"   : 1,
+      "name"   : "Pedro Malave Gonzalez",
+      "email"  : "pmalave@cotemar.com.mx",
+      "id_course" : "1010",
+      "rfc"    : "RFC123455555",
+
+      "file1"  : "",
+      "file2"  : "",
+      "file3"  : ""
+    }
+  },
+  "students":{
+    "3030" : {
+      "active"   : 1,
+      "name"   : "Pedro Malave Gonzalez",
+      "email"  : "pmalave@cotemar.com.mx",
+      "id_instructor": "2020",
+      "rfc"    : "RFC123455555",
+      "description"  : "",
+      "file1"  : "",
+      "age"    : "22"
     }
   }
 }
