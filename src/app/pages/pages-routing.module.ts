@@ -22,6 +22,7 @@ const routes: Routes = [
       { path: 'lessons', loadChildren: () => import('./main-page/lessons/lessons.module').then (m => m.LessonsModule)},
       { path: 'management', loadChildren: () => import('./main-page/management/management.module').then (m => m.ManagementModule)},
       { path: 'training', loadChildren: () => import ('./main-page/training/training.module'). then (m => m.TrainingModule )},
+      { path: 'employees', loadChildren: () => import ('./main-page/employees/employees.module'). then (m => m.EmployeesModule )},
       { path: '**', component: Error404Component}
     ]}
 ];

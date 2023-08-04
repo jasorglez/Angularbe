@@ -19,7 +19,7 @@ import { ManagementService } from '../../../../services/management.service';
 export class EditFileComponent implements OnInit {
 
 
-      constructor(
+  constructor(
         private trackingService: TrackingService,
         private translateService: TraductorService,
         private managementService: ManagementService,
@@ -69,9 +69,6 @@ export class EditFileComponent implements OnInit {
         //Aqui inicializo con el item que voy a editar
         this.managementService.getManfildetxid(this.data.id).subscribe(
           (resp: any) => {
-
-            //console.log("resp", resp)
-
             // Almacenar los valores iniciales
             // Convertir la fecha a formato 'YYYY-MM-DD'
             let date = new Date(resp.date);

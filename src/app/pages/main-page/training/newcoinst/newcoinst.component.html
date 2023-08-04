@@ -96,7 +96,6 @@ autocomplete="off"
                       </div>
                     </div>
 
-
                       <!-- SubFila 1.1.4 Bootstrap Horario-->
                       <div class="row mt-2">
 
@@ -390,6 +389,175 @@ autocomplete="off"
     </div>
   </div>
 </div>
+</ng-container>
+</mat-dialog-content>
+
+<!-- Resto del código HTML... -->
+
+
+<!-- Acciones del Dialog -->
+<mat-dialog-actions align="end" class="footer-dialog">
+<!-- Container Bootstrap del contenido del las Acciones del Dialog -->
+<div class="container-fluid">
+  <div class="row justify-content-end">
+    <div class="col-auto me-auto">
+      <!-- Boton de Cancelar -->
+      <button mat-button mat-dialog-close class="btn btn-secondary">
+        Cancelar
+      </button>
+
+    </div>
+
+    <div class="col-auto">
+      <!-- Boton de Guardar -->
+      <button type="submit" mat-button [mat-dialog-close]="true" cdkFocusInitial class="btn btn-primary">
+        Salvar
+      </button>
+    </div>
+
+
+  </div>
+</div>
+</mat-dialog-actions>
+  </form>
+
+</div>
+
+<div *ngIf="data.formType === 'fstudents'">
+
+  <form
+autocomplete="off"
+[formGroup]="fstudents"
+(ngSubmit)="saveStudents()">
+
+<!-- Contenido del dialog -->
+<!-- Resto del código HTML... -->
+
+<!-- Contenido del dialog -->
+<mat-dialog-content class="mat-typography">
+<!-- Contenido del dialog -->
+<ng-container>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <!-- Left Group -->
+      <div class="form-group">
+        <!-- Container Bootstrap -->
+        <div class="container-fluid">
+          <!-- Fila 1 Bootstrap -->
+          <div class="row">
+            <!-- Columna 1.1 Bootstrap Izquierda-->
+            <div class="col-sm-12">
+               <!-- SubFila 1.1.2 Bootstrap information-->
+
+               <div class="row mt-2">
+                <!-- SubColumna 1.1.2.1 Bootstrap information-->
+                <div class="col-sm-12">
+                  <!-- Campo de Nombre  -->
+                  <input type="text" id="idname" class="form-control" placeholder="{{ 'name' | translate }} "
+                      formControlName="name" />
+                  <!-- Tooltip de validacion del campo information -->
+                  <div class="invalid-tooltip">
+                    {{ 'requires'  | translate }}   {{ 'name'  | translate }}
+                  </div>
+                </div>
+              </div>
+
+                     <!-- SubFila 1.1.4 Bootstrap Phone-->
+                    <div class="row mt-2">
+                          <div class="col-md-6">
+                             <div class="form-group">
+                                <input type="text" class="form-control" placeholder="{{ 'phone' | translate }} "
+                                    formControlName="phone" />
+                             </div>
+                          </div>
+
+                          <!-- SubFila 1.1.4 Bootstrap Email-->
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <input type="text" class="form-control" placeholder="{{ 'email' | translate }} "
+                                    formControlName="email" />
+                              </div>
+                            </div>
+                     </div>
+
+                    <!-- SubFila 1.1.4 Bootstrap Address-->
+                    <div class="row mt-2">
+                      <div class="col-sm-12">
+                        <input type="text" class="form-control" placeholder="{{ 'address' | translate }} "
+                            formControlName="address" />
+                      </div>
+                    </div>
+
+                      <!-- SubFila 1.1.4 Bootstrap RFC-->
+                      <div class="row mt-2">
+                            <div class="col-sm-6">
+                                  <input type="text" class="form-control" placeholder="{{ 'rfc' | translate }} "
+                                      formControlName="rfc" />
+                                  <!-- Tooltip de validacion del campo Area -->
+                                  <div class="invalid-tooltip">
+                                    {{ 'requires'  | translate }}   {{ 'rfc'  | translate }}
+                                  </div>
+                            </div>
+
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="{{ 'qualification' | translate }}" formControlName="qualification" />
+                                    <!-- Tooltip de validacion del campo Qualification -->
+                                    <div class="invalid-tooltip">
+                                      {{ 'requires'  | translate }} {{ 'qualification'  | translate }}
+                                    </div>
+                              </div>
+                            </div>
+                        </div>
+            </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-4">
+      <!-- Right Group -->
+      <div class="form-group">
+        <!-- Container Bootstrap -->
+        <div class="container-fluid">
+          <!-- Fila 1 Bootstrap -->
+          <div class="row">
+
+          <!-- SubFila 1.1.4 Bootstrap Botones-->
+          <h2>Soportes</h2>
+          <div class="button-group">
+            <table>
+              <tr>
+                <td>
+                    <input type="file" (change)="selectFile8($event)" id="fileInput8" hidden>
+                    <label for="fileInput8" class="custom-file-button">
+                      <span class="icon"> ➕ </span> <!-- Aquí puedes utilizar tu icono personalizado, p. ej. una etiqueta <i> con una clase de icono -->
+                         Evaluacion
+                    </label>
+                  </td>
+
+                  <td>
+                        <input type="file" (change)="selectFile9($event)" id="fileInput9" hidden>
+                        <label for="fileInput9" class="custom-file-button2">
+                          <span class="icon"> ➕  </span> <!-- Aquí puedes utilizar tu icono personalizado, p. ej. una etiqueta <i> con una clase de icono -->
+                             Constancia
+                        </label>
+                  </td>
+
+
+              </tr>
+            </table>
+          </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </ng-container>
 </mat-dialog-content>
 

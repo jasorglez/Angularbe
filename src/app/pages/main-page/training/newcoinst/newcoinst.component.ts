@@ -6,12 +6,18 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { StoragesService } from 'src/app/services/storages.service';
 
 import { TrackingService } from 'src/app/services/tracking.service';
+
 import { InstructorsService } from 'src/app/services/instructors.service';
 import { TrainingService } from 'src/app/services/training.service';
+import { StudentsService } from 'src/app/services/students.service';
 
 import { Icourse } from 'src/app/interface/icourses';
-import { alerts } from 'src/app/helpers/alerts';
 import { Iinstructors } from 'src/app/interface/iinstructors';
+import { Istudents } from 'src/app/interface/istudents';
+
+import { alerts } from 'src/app/helpers/alerts';
+
+
 
 @Component({
   selector: 'app-newcoinst',
@@ -28,6 +34,9 @@ export class NewcoinstComponent implements OnInit {
   selectedFile4: File;
   selectedFile5: File;
   selectedFile6: File;
+
+  selectedFile8: File;
+  selectedFile9: File;
 
   url  : string = '' ;
   url2 : string = '' ;
@@ -60,10 +69,21 @@ export class NewcoinstComponent implements OnInit {
 
 } )
 
+public fstudents = this.formBuilder.group({
+  name          : [, [Validators.required]],
+  phone         : [, [Validators.required]],
+  email         : [, [Validators.required]],
+  address       : [],
+  rfc           : [, [Validators.required]],
+  qualification : [0]
 
-  constructor( private trackingService : TrackingService,
-               private trainingService : TrainingService,
-               private instructorsService: InstructorsService,
+} )
+
+
+  constructor( private trackingService    : TrackingService,
+               private trainingService    : TrainingService,
+               private instructorsService : InstructorsService,
+               private studentsService    : StudentsService,
                private formBuilder: FormBuilder,
                private storageServ: StoragesService,
                public dialogRef: MatDialogRef<NewcoinstComponent >,
@@ -74,14 +94,6 @@ export class NewcoinstComponent implements OnInit {
 
     if (this.data.formType === 'fcourses')  {
       this.getInstructors();
-    }
-
-    if (this.data.formType === 'finstructors')  {
-
-    }
-
-    if (this.data.formType === 'fstudents')  {
-
     }
 
     this.setDates() ;
@@ -119,6 +131,18 @@ export class NewcoinstComponent implements OnInit {
       console.error('Error:', error);
     });
   }
+
+
+  getCourses() {
+      //aqui voy a pasar lo que tengo en los combo box de Instructors
+      this.trainingService.getCourses(localStorage.getItem('project'))
+      .then(dataInstructors  => {
+         this.instructorsList = dataInstructors;
+        // console.log(this.instructorsList)
+      }, error => {
+        console.error('Error:', error);
+      });
+   }
 
 
    async saveCourses() {
@@ -216,6 +240,8 @@ export class NewcoinstComponent implements OnInit {
   }
 
 
+
+
   async saveFilesInstructors() {
 
     if (this.selectedFile4) {
@@ -288,6 +314,81 @@ export class NewcoinstComponent implements OnInit {
 
 }
 
+
+selectFile8(event : any) {
+  this.selectedFile8 = event.target.files[0];
+}
+
+selectFile9(event : any) {
+  this.selectedFile9 = event.target.files[0];
+}
+
+
+
+async saveFilesStudents() {
+
+  if (this.selectedFile8) {
+    try {
+      this.url = await this.storageServ.uploadPdf(this.selectedFile8);
+     // console.log('Download URL for file 1:', this.url);
+    } catch (error) {
+      console.error('Upload error for file 4:', error);
+    }
+  }
+
+  if (this.selectedFile9) {
+    try {
+      this.url2 = await this.storageServ.uploadPdf(this.selectedFile9);
+      //console.log('Download URL for file 2:', this.url2);
+    } catch (error) {
+      console.error('Upload error for file 5:', error);
+    }
+  }
+
+
+}
+
+
+
+async saveStudents() {
+  this.loadData = true;
+
+  console.log("data.Idprofile", this.data.Idprofile)
+
+  this.formSubmitted = true;
+
+  await this.saveFilesStudents() ;
+
+     const dataStudents: Istudents = {
+            active        : 1,
+            address       : this.fstudents.get('name').value,
+            email         : this.fstudents.get('email').value,
+
+            id_company    : localStorage.getItem('company'),
+            id_course     : this.data.IdProfile,
+            file1         : this.url,
+            file2         : this.url2,
+
+            name          : this.fstudents.get('name').value,
+            phone         : this.fstudents.get('phone').value,
+
+            rfc           : this.fstudents.get('rfc').value,
+            qualification : this.fstudents.get('qualification').value,
+       }
+
+       this.loadData = false;
+
+       this.studentsService.post(dataStudents, localStorage.getItem('token')).subscribe(
+        (resp: any) => { // Indicar que la respuesta es de tipo 'any'
+
+            this.dialogRef.close('save');
+          },
+              err=>{
+                     alerts.basicAlert("Error", 'User saving error', "error")
+              }
+       );
+
+}
 
 
 }

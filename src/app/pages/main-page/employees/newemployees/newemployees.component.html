@@ -1,0 +1,123 @@
+<div *ngIf="data.formType === 'femployees'">
+  <form autocomplete="off" [formGroup]="femployees" (ngSubmit)="saveEmployees()">
+    <div class="card-body">
+      <ng-container *ngIf="!loadData">
+        <mat-dialog-actions>
+
+         <div class="row">
+
+            <div class="col-md-12">
+
+              <div class="form-group mb-3">
+                <input type="text" id="InputName" class="form-control" placeholder="{{ 'name' | translate }} {{ 'employees' | translate }}"
+                formControlName="name"  />
+                <div *ngIf="femployees.get('name').invalid && (femployees.get('name').dirty || femployees.get('name').touched)" class="invalid-feedback">
+                  <div *ngIf="femployees.get('name').errors['required']">
+                    {{ 'req' | translate}}  {{ 'name' | translate }}
+                  </div>
+                </div>
+
+                <input type="text" class="form-control" placeholder="{{ 'address' | translate }}" formControlName="address" />
+
+                <input type="text" class="form-control" placeholder="{{ 'colony' | translate }}" formControlName="colony" />
+
+
+                <input type="name" id="InputEmail" class="form-control" placeholder="{{ 'email' | translate }}" autocomplete="on" formControlName="email" />
+                <div *ngIf="femployees.get('email').invalid && (femployees.get('email').dirty || femployees.get('email').touched)" class="invalid-feedback">
+                  <div *ngIf="femployees.get('email').errors['required']">
+                    {{ 'req' | translate}}  {{ 'email' | translate }}
+                  </div>
+                  <div *ngIf="femployees.get('email').errors['email']">
+                    Please enter a valid email address.
+                  </div>
+                </div>
+
+                <input type="text" class="form-control" placeholder="{{ 'rfc' | translate }}" formControlName="rfc" />
+                <div *ngIf="femployees.get('rfc').invalid && (femployees.get('rfc').dirty || femployees.get('rfc').touched)" class="invalid-feedback">
+                  <div *ngIf="femployees.get('rfc').errors['required']">
+                    {{ 'req' | translate}}  {{ 'rfc' | translate }}
+                  </div>
+                </div>
+
+
+                 <input type="text" class="form-control" placeholder="{{ 'phone' | translate }}" formControlName="phone" />
+                 <div *ngIf="femployees.get('phone').invalid && (femployees.get('phone').dirty || femployees.get('phone').touched)" class="invalid-feedback">
+                   <div *ngIf="femployees.get('phone').errors['required']">
+                     {{ 'req' | translate}}  {{ 'phone' | translate }}
+                   </div>
+                   <div *ngIf="femployees.get('phone').errors['pattern']">
+                     Number phone 10 digit.
+                   </div>
+                 </div>
+
+
+                 <input type="text" class="form-control" placeholder="{{ 'CURP' | translate }}" formControlName="curp" />
+                 <div *ngIf="femployees.get('curp').invalid && (femployees.get('curp').dirty || femployees.get('curp').touched)" class="invalid-feedback">
+                    <div *ngIf="femployees.get('curp').errors['required']">
+                       {{ 'req' | translate}}  {{ 'curp' | translate }}
+                    </div>
+                  </div>
+
+              </div>
+
+         </div>
+
+            <div class="col-md-6">
+
+              <div class="form-group mb-3">
+                <div class="card card-primary card-img">
+                  <div class="text-center">
+                    <label for="pictureUpload" class="mb-3">
+                      <img [src]="imageUrl" width="100" height="100" *ngIf="imageUrl">
+                      {{ 'Avatar/Foto' | translate }}
+                    </label>
+                    <input type="file" id="pictureUpload" (change)="uploadImage($event)" style="display: none;">
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+                <div class="row">
+
+                  <div class="col-md-12">
+
+                    <div class="form-group mb-3">
+                      <input type="text" class="form-control" placeholder="{{ 'age' | translate }}"
+                          formControlName="age"/>
+
+                          <input type="text" class="form-control" placeholder="{{ 'city' | translate }}" formControlName="city"
+                            [ngClass]="{ 'is-invalid': city.invalid && (city.dirty || city.touched) }" />
+                          <div *ngIf="city.invalid && (city.dirty || city.touched)" class="invalid-feedback">
+                            <div *ngIf="city.errors['required']">
+                              {{ 'req' | translate}}  {{ 'city' | translate }}
+                            </div>
+                          </div>
+
+                        <input type="text" class="form-control" placeholder="{{ 'country' | translate }}" formControlName="country"
+                          [ngClass]="{ 'is-invalid': country.invalid && (country.dirty || country.touched) }" />
+                          <div *ngIf="country.invalid && (country.dirty || country.touched)" class="invalid-feedback">
+                            <div *ngIf="country.errors['required']">
+                              {{ 'req' | translate}}  {{ 'country' | translate }}
+                            </div>
+                          </div>
+
+                     </div>
+                  </div>
+                </div>
+
+          </div>
+
+        </mat-dialog-actions>
+      </ng-container>
+
+    </div>
+
+    <div class="card-footer">
+      <button mat-dialog-close class="btn btn-secondary float-right">Cancelar</button>
+      <button type="submit" class="btn btn-warning float-right"  [disabled]="!femployees.valid" >Salvar</button>
+    </div>
+
+  </form>
+</div>

@@ -45,6 +45,22 @@ deleteCourse(id:string, token: any){
 }
 
 
+getCourses( project: string) {
+  const apiUrl = `${environment.urlFirebase}courses.json?orderBy="id_projet"&equalTo="${project}"`;
+  try {
+    return this.http.get<any>(apiUrl).toPromise()
+      .then(data => {
+        return Object.keys(data).map(key => {
+          return { key: key, name: data[key].name, email: data[key].email };
+        });
+      });
+  } catch (error) {
+    console.error('Error al Consultar tabla de comunicaciones', error);
+    return null;
+  }
+
+
+}
 
 }
 

@@ -504,7 +504,7 @@ onTabSelected(tabName: string) {
 
               const dialogRef = this.dialog.open(EditComponent,{
 
-                width:'100%',
+                width:'50%',
                 data: { id: id	}
 
               })

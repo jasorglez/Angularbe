@@ -1,0 +1,15 @@
+{
+  "active": 1,
+  "age": "22",
+  "address"       : "Direccion",
+  "description"   : "",
+  "email"         : "pmalave@cotemar.com.mx",
+  "file1"         : "",
+  "file2"         : "",
+  "id_instructor" : "2020",
+  "id_course"     : "",
+  "name"          : "Pedro Malave Gonzalez",
+  "phone"         : "287 256 0325",
+  "rfc"           : "RFC123455555",
+  "qualification" : 8
+}

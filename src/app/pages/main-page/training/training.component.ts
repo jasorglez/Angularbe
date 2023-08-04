@@ -2,11 +2,16 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { TraductorService } from 'src/app/services/traductor.service';
 import { TrackingService } from 'src/app/services/tracking.service';
+
 import { TrainingService } from 'src/app/services/training.service';
+import { InstructorsService } from '../../../services/instructors.service';
+import { StudentsService } from 'src/app/services/students.service';
+
 import { alerts } from 'src/app/helpers/alerts';
 
 import { Icourse } from 'src/app/interface/icourses';
 import { Iinstructors } from 'src/app/interface/iinstructors';
+import { Istudents } from 'src/app/interface/istudents';
 
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
@@ -14,8 +19,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 
 import { NewcoinstComponent } from './newcoinst/newcoinst.component';
-import { Icategories } from 'src/app/interface/icategories';
-import { InstructorsService } from '../../../services/instructors.service';
+
 
 @Component({
   selector: 'app-training',
@@ -40,26 +44,39 @@ export class TrainingComponent implements OnInit {
       this.getdataCourses();
     }
 
-    if (tabName === 'lessons') {
+    if (tabName === 'instructors') {
       this.trackingService.addLog(
         this.trackingService.getnameComp(),
-        'Click en la Pestaña Lecciones aprendidas',
-        'Conceptos',
+        'Click en la Pestaña Instructores',
+        'Training',
         this.trackingService.getEmail()
       );
+       this.getdataInstructors() ;
+    }
 
-    //  this.getdataLessonsl()
+
+    if (tabName === 'students') {
+      this.trackingService.addLog(
+        this.trackingService.getnameComp(),
+        'Click en la Pestaña Estudiantes',
+        'Training',
+        this.trackingService.getEmail()
+      );
+        this.getdataStudents();
     }
   }
 
  coursesDataSource!     : MatTableDataSource<Icourse> ;
  instructorsDataSource! : MatTableDataSource<Iinstructors> ;
+ studentsDataSource!    : MatTableDataSource<Istudents> ;
 
- training : Icourse[] = [] ;
+ training    : Icourse[]      = [] ;
  instructors : Iinstructors[] = [] ;
+ students     : Istudents[]    = [] ;
 
  screenSizeSM = false;
 
+ IdProfile : string = '' ;
  fileUrl : string ;
  currentIndex: number = 0;
 
@@ -74,28 +91,40 @@ export class TrainingComponent implements OnInit {
     'numberposition',  'name', 'mail','CV',
     'REs', 'Eva', 'actions'];
 
+  displayedColstudents: string[] = [
+      'numberposition',  'name', 'mail', 'evaluation', 'constancy', 'actions'];
+
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
 
   constructor(private trackingService: TrackingService,
-        private translateService  : TraductorService,
-        private trainingService   : TrainingService,
+        private translateService   : TraductorService,
+        private trainingService    : TrainingService,
         private instructorsService : InstructorsService,
+        private studentsService    : StudentsService,
         public dialog: MatDialog) { }
 
   ngOnInit() {
-    this.getdataCourses() ;
+    if (this.selectedTab === 'courses') {
+        this.getdataCourses() ;
+    }
+
+    if (this.selectedTab === 'students') {
+      this.getdataStudents();
+    }
+
+    if (this.selectedTab === 'instructors') {
     this.getdataInstructors();
+    }
   }
 
 
-  showProfile(commun: Icourse) {
+  showProfile(course: Icourse) {
     // Actualizamos el currentIndex y el profile
-    this.profile = commun;
-    this.trackingService.setidlesson( this.profile.id) ;
-
+    this.profile = course;
+    this.IdProfile = this.profile.id ;
   }
 
 
@@ -131,10 +160,8 @@ export class TrainingComponent implements OnInit {
             } as Icourse)
         );
 
-           console.log("cOURSES", this.training) ;
-           this.profile = this.training[this.currentIndex]; // Tomamos el primer registro
-           this.fileUrl = this.profile.file ;
-
+          // console.log("cOURSES", this.training) ;
+     //      this.profile = this.training[this.currentIndex]; // Tomamos el primer registro
            this.coursesDataSource = new MatTableDataSource(this.training)
            this.coursesDataSource.paginator = this.paginator ;
            this.coursesDataSource.sort = this.sort;
@@ -178,8 +205,8 @@ export class TrainingComponent implements OnInit {
              } as Iinstructors)
          );
 
-           console.log("Instructors", this.instructors) ;
-            //this.profile = this.training[this.currentIndex]; // Tomamos el primer registro
+          // console.log("Instructors", this.instructors) ;
+
             this.instructorsDataSource = new MatTableDataSource(this.instructors)
             this.instructorsDataSource.paginator = this.paginator ;
             this.instructorsDataSource.sort = this.sort;
@@ -187,6 +214,51 @@ export class TrainingComponent implements OnInit {
        });
   }
 
+
+  getdataStudents() {
+
+      this.loadData = true;
+
+     // console.log("Profie Id", this.IdProfile)
+
+      this.studentsService.getStudents(this.IdProfile)
+        .subscribe((resp: any) => {
+          /*=============================================
+        Integrando respuesta de base de datos con la interfaz
+        =============================================*/
+          let numberposition = 1;
+
+          this.students = Object.keys(resp).map(
+            (a) =>
+              ({
+                 id: a,
+                 numberposition : numberposition++,
+                 active         : resp[a].active,
+                 age            : resp[a].age,
+                 address        : resp[a].address,
+                 description    : resp[a].description,
+                 email          : resp[a].email,
+                 file1          : resp[a].file1,
+                 file2          : resp[a].file2,
+                 id_project     : resp[a].id_project,
+                 id_instructor  : resp[a].id_instructor,
+                 id_course      : resp[a].id_course,
+                 id_company     : resp[a].id_company,
+                 name           : resp[a].name,
+                 phone          : resp[a].phone,
+                 rfc            : resp[a].rfc,
+                 qualification  : resp[a].qualification
+              } as Istudents)
+          );
+
+            // console.log("Students", this.students) ;
+             this.studentsDataSource = new MatTableDataSource(this.students)
+             this.studentsDataSource.paginator = this.paginator ;
+             this.studentsDataSource.sort = this.sort;
+             this.loadData = false;
+        });
+
+  }
 
   newCourses(formType: string) {
     const dialogRef = this.dialog.open(NewcoinstComponent,
@@ -217,6 +289,24 @@ export class TrainingComponent implements OnInit {
   }
 
 
+  newStudents(formType : string) {
+    const dialogRef = this.dialog.open(NewcoinstComponent, { data: {
+      formType: formType,
+      profileId: this.IdProfile
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        alerts.confirmAlert('Se realizo el registro correctamente', 'Register new Ok', 'success', 'Ok').then((result) => {
+          this.getdataStudents();
+        });
+      }
+    });
+
+  }
+
+
   editCourse(id: string) {
 
   }
@@ -224,6 +314,11 @@ export class TrainingComponent implements OnInit {
   editInstructor(id: string) {
 
   }
+
+  editStudent( id: string) {
+
+  }
+
 
 
   deleteCourse(id: string) {
@@ -258,6 +353,10 @@ export class TrainingComponent implements OnInit {
           })
         }
   })
+ }
+
+ deleteStudent(id: string) {
+
  }
 
 

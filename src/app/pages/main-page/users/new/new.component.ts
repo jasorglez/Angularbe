@@ -175,7 +175,6 @@ export class NewComponent implements OnInit {
           ========================== */
         uploadImage($event: any) {
 
-
           const file = $event.target.files[0];
 
           this.selectedImage = file;

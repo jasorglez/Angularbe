@@ -1,0 +1,18 @@
+
+{
+  "active"        : 1,
+  "age"           : "38",
+  "address"       : "Direccion",
+  "colonia"       : "centro",
+  "cp"            : "68310",
+  "ciudad"        : "Tuxtepec",
+  "curp"          : "CKISA89SDLWL3S",
+  "email"         : "pmalave@cotemar.com.mx",
+  "file1"         : "",
+  "file2"         : "",
+  "id_company"     : "",
+  "name"          : "Pedro Malave Gonzalez",
+  "phone"         : "287 256 0325",
+  "rfc"           : "RFC123455555",
+  "lugarnac"      : "Km 20"
+}

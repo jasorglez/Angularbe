@@ -166,7 +166,6 @@ uploadImage($event: any) {
     this.loadData = true;
 
     this.formSubmitted = true;
-
     /*------------------------------
      Validamos que el formulario este correcto
     -----------------------*/
