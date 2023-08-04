@@ -140,8 +140,24 @@ getpermissionsxCompany(mail:string): Observable<any>{
   }
 }
 
+getpermissionsxProject(branch:string, mail:string): Observable<any>{
+  try {
+    const apiUrl = `${environment.urlFirebase}permissionsxprojects.json?orderBy="id_branchs"&equalTo="${branch}"`
+    return this.http.get(apiUrl).pipe(
+      map((permissions : any) => {
+        return Object.values(permissions).filter((permission: any) => {
+          return permission.mail === mail
+        }) ;
+      })
+    );
+  }catch(error) {
+    console.error("Error al Obtener permisos del Projecto", error)
+    throw Error ;
+    return null
+  }
+}
 
-getpermissionsxProject(branch:string): Observable<any>{
+getpermissionsxProject2(branch:string): Observable<any>{
   try {
     const apiUrl = `${environment.urlFirebase}permissionsxprojects.json?orderBy="id_branchs"&equalTo="${branch}"`
     return this.http.get(apiUrl);

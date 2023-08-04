@@ -159,8 +159,10 @@ export class SideBarComponent implements OnInit {
         // Datos de Projectos
 
         getpermissionxProjects(): void {
-          this.companysService.getpermissionsxProject(this.selectedBranchId).subscribe((data) => {
+          this.companysService.getpermissionsxProject(this.selectedBranchId,localStorage.getItem("mail")).subscribe((data) => {
 
+            console.log("projectData", this.projectData)
+            
             this.projectData = Object.values(data);
             if (this.projectData.length > 0) {
                this.selectedProjectId = this.projectData[0].id_projects ;
