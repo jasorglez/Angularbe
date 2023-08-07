@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, OnChanges, ViewChild } from '@angular/core';
 
 import { Iinteres } from 'src/app/interface/interested';
 
@@ -75,8 +75,9 @@ export class InterestedComponent implements OnInit{
 
   constructor(public translateService: TraductorService, private trackingService : TrackingService,
               private interesService : InteresService,
+              private cdRef : ChangeDetectorRef,
               public printReportsService : PrintreportsService,
-               public dialog : MatDialog,) { }
+              public dialog : MatDialog,) { }
 
   ngOnInit(): void {
 
@@ -85,7 +86,6 @@ export class InterestedComponent implements OnInit{
     	/*=============================================
     		Definir tamaños de pantalla
     		=============================================*/
-
     		if(functions.screenSize(0, 767)){
 
     			this.screenSizeSM = true;
@@ -99,8 +99,14 @@ export class InterestedComponent implements OnInit{
 
     		}
 
-        console.log('project', this.trackingService.getProject())
+      this.trackingService.setultimaVentana('INTERESADOS')
 
+  }
+
+  ngOnChanges(): void {
+    //Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
+    //Add '${implements OnChanges}' to the class.
+    this.getdataIntere() ;
 
   }
 
@@ -159,6 +165,8 @@ export class InterestedComponent implements OnInit{
               this.interesDataSource.paginator = this.paginator;
               this.interesDataSource.sort = this.sort;
               this.loadData = false;
+
+              this.cdRef.detectChanges() ;
 
         })
 

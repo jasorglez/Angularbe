@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { map } from 'rxjs';
+import { BehaviorSubject, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TrackingService {
+
+  private currentProject = new BehaviorSubject<string>(null);
+
   private emailser     : string = '' ;
 
   private namecomp     : string = '' ;
@@ -27,14 +30,14 @@ export class TrackingService {
   private startproject : string = '' ;
   private endproject   : string = '' ;
 
-  public idlesson : string = '' ;
+  public ultimaventana : string ;
 
-  setidlesson(lesson : string): void {
-    this.idlesson = lesson ;
+  setultimaVentana(ultven : string): void {
+    this.ultimaventana = ultven ;
   }
 
-  getidlesson() {
-    return this.idlesson;
+  getultimaVentana() {
+    return this.ultimaventana;
   }
 
 setnameUser(name: string) : void{
@@ -126,6 +129,10 @@ setContract(contract: string): void {
   setCompany(company : string) : void {
     this.companyser = company ;
     localStorage.setItem("company",this.companyser);
+  }
+
+  changeProject(project : string) {
+      this.currentProject.next(project) ;
   }
 
   getProject() {

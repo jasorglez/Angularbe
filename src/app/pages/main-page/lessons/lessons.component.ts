@@ -140,9 +140,6 @@ export class LessonsComponent implements OnInit {
              this.profile = this.meeting[this.currentIndex]; // Tomamos el primer registro
              this.fileUrl = this.profile.file ;
 
-               this.trackingService.setidlesson( this.profile.id) ;
-             //  console.log(this.trackingService.getidlesson())
-
              this.lessonsDataSource = new MatTableDataSource(this.meeting)
              this.lessonsDataSource.paginator = this.paginator ;
              this.lessonsDataSource.sort = this.sort;
@@ -155,7 +152,7 @@ export class LessonsComponent implements OnInit {
 
       this.loadData = true;
 
-      this.lessonslearnedService.getDataLearnedall(this.trackingService.getidlesson())
+      this.lessonslearnedService.getDataLearnedall('CORRECIONID')
         .subscribe((resp: any) => {
           /*=============================================
         Integrando respuesta de base de datos con la interfaz
@@ -206,7 +203,6 @@ export class LessonsComponent implements OnInit {
   showProfile(commun: Ilessons) {
     // Actualizamos el currentIndex y el profile
     this.profile = commun;
-    this.trackingService.setidlesson( this.profile.id) ;
 
   }
 

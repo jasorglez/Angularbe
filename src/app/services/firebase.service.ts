@@ -159,4 +159,9 @@ export class FirebaseService {
   }
 
 
+  createProject(id: string, project: any) {
+    return this.db.list(`/management/${id}`).push(project);
+  }
+
+
 }

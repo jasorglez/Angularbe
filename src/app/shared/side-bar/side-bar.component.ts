@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { TraductorService} from 'src/app/services/traductor.service';
@@ -23,6 +23,7 @@ export class SideBarComponent implements OnInit {
    branchData      : any[]  = [] ;
    projectData     : any[]  = [] ;
 
+   valorultven    : string = '' ;
 
    infcompany : any = {} ;
 
@@ -32,11 +33,12 @@ export class SideBarComponent implements OnInit {
 
   constructor(public translateService: TraductorService, public trackingService : TrackingService,
               public companysService : CompanysService, public authService : AuthService,
+              private cdRef: ChangeDetectorRef,
               public projectsService : ProjectService,
               private router: Router) { }
 
 
-        home() {
+        async home() {
           this.trackingService.addLog(this.trackingService.getnameComp(), 'Eleccion del menu Home/Inicio', 'Menu Side Bar', '')
           this.router.navigate(['/']);
          }
@@ -61,27 +63,27 @@ export class SideBarComponent implements OnInit {
           this.router.navigate(['/concepts']);
         }
 
-        navigateToInterested()  {
+        async navigateToInterested()  {
           this.trackingService.addLog(this.trackingService.getnameComp(), 'Eleccion del menu Interested/Interesados', 'Menu Side Bar', '')
           this.router.navigate(['/interested']);
         }
 
-        navigateToCommunications()  {
+       async navigateToCommunications()  {
           this.trackingService.addLog(this.trackingService.getnameComp(), 'Eleccion del menu communication/Comunicaciones', 'Menu Side Bar', '')
           this.router.navigate(['/communications']);
         }
 
-        navigateToLessons()  {
+       async navigateToLessons()  {
           this.trackingService.addLog(this.trackingService.getnameComp(), 'Eleccion del menu Lesson/Lecciones', 'Menu Side Bar', '')
           this.router.navigate(['/lessons']);
         }
 
-        navigateToManagement()  {
+        async navigateToManagement()  {
           this.trackingService.addLog(this.trackingService.getnameComp(), 'Eleccion del menu Management/Gestion de Archivo', 'Menu Side Bar', '')
           this.router.navigate(['/management']);
         }
 
-        navigateToTraining()  {
+       async navigateToTraining()  {
           this.trackingService.addLog(this.trackingService.getnameComp(), 'Eleccion del menu Training/Entrenamiento ', 'Menu Side Bar', '')
           this.router.navigate(['/training']);
 
@@ -92,15 +94,15 @@ export class SideBarComponent implements OnInit {
           this.router.navigate(['/employees']);
         }
 
-      	ngOnInit(): void  {
+      	async ngOnInit()  {
 
-              this.getpermissionxCompanys() ;
+             await this.getpermissionxCompanys() ;
          }
 
 
       //empiezan los procedimientos para las llamadas de los combobox
       //obtener los permisos de la cia
-      getpermissionxCompanys() {
+      async getpermissionxCompanys() {
 
           this.companysService.getpermissionsxCompany(localStorage.getItem('mail'))
           .subscribe((data) => {
@@ -122,7 +124,21 @@ export class SideBarComponent implements OnInit {
 
            });
 
+        }
 
+
+        getHeadersCompanys(){
+          this.companysService.getDataCompanys(this.selectedCompany).subscribe((datacom: any) => {
+            // Utilizar los datos obtenidos
+              this.trackingService.setnameComp(datacom.displayName);
+
+              this.trackingService.setpictureComp(datacom.picture);
+             //  alert('Picture:'+ datacom.picture);
+
+              this.trackingService.setformatrepint(datacom.formatrep) ;
+             //  alert('Format:'+ datacom.formatrep);
+
+          });
         }
 
         onCompanysSelected(event: Event): void {
@@ -161,8 +177,8 @@ export class SideBarComponent implements OnInit {
         getpermissionxProjects(): void {
           this.companysService.getpermissionsxProject(this.selectedBranchId,localStorage.getItem("mail")).subscribe((data) => {
 
-            console.log("projectData", this.projectData)
-            
+          //  console.log("projectData", this.projectData)
+
             this.projectData = Object.values(data);
             if (this.projectData.length > 0) {
                this.selectedProjectId = this.projectData[0].id_projects ;
@@ -176,27 +192,25 @@ export class SideBarComponent implements OnInit {
           });
         }
 
-        onProjectSelected(event: Event): void {
+        async onProjectSelected(event: Event) {
           const target = event.target as HTMLSelectElement;
           this.selectedProjectId = target.value;
           this.trackingService.setProject(this.selectedProjectId) ;
 
-        }
+          this.cdRef.markForCheck() ;
 
+          await this.home();
 
+          this.valorultven = this.trackingService.getultimaVentana()
 
-        getHeadersCompanys(){
-          this.companysService.getDataCompanys(this.selectedCompany).subscribe((datacom: any) => {
-            // Utilizar los datos obtenidos
-              this.trackingService.setnameComp(datacom.displayName);
+          if (this.valorultven === 'INTERESADOS') {
+           await this.navigateToInterested()
+          }
 
-              this.trackingService.setpictureComp(datacom.picture);
-             //  alert('Picture:'+ datacom.picture);
+          if (this.valorultven === 'COMMUNICATIONS') {
+            await this.navigateToCommunications()
+           }
 
-              this.trackingService.setformatrepint(datacom.formatrep) ;
-             //  alert('Format:'+ datacom.formatrep);
-
-          });
         }
 
 

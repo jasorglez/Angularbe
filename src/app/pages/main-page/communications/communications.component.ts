@@ -134,6 +134,7 @@ export class CommunicationsComponent implements OnInit {
 
        this.getdataallDetails() ;
 
+       this.trackingService.setultimaVentana('COMMUNICATIONS')
   }
 
 

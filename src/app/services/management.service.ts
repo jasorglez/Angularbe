@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { catchError, map, of, switchMap } from 'rxjs';
+import { Observable, catchError, map, of, switchMap } from 'rxjs';
 import { Imanagement } from '../interface/imanagement';
 import { Imanfildet } from '../interface/imanfildet';
 
@@ -13,17 +13,47 @@ export class ManagementService {
 constructor(private http: HttpClient) { }
 
 
-getDatamanagement(project: string) {
+
+getDataManagement2(project: string): Observable<any> {
   try {
-    const apiUrl = `${environment.urlFirebase}management.json?orderBy="id_project"&equalTo="${project}"`;
-    return this.http.get(apiUrl)
-
-  }catch(error){
-  console.error("Error Managment files", error) ;
-  return null ;
+    const apiUrl = `${environment.urlFirebase}management/${project}.json`;
+    return this.http.get(apiUrl).pipe(
+      map(response => Array.isArray(response) ? response : []),
+      catchError(error => {
+        console.error("Error Managment files", error);
+        return of([]); // return an Observable of an empty array
+      })
+    );
+  } catch(error) {
+    console.error("Error Managment files", error);
+    return of([]); // return an Observable of an empty array
+  }
 }
 
+
+getDataManagement(project: string): Observable<any> {
+  try {
+    const apiUrl = `${environment.urlFirebase}management/${project}.json`;
+    return this.http.get(apiUrl).pipe(
+      map(response => {
+        if(response && typeof response === 'object') {
+          return Object.values(response);
+        } else {
+          return [];
+        }
+      }),
+      catchError(error => {
+        console.error("Error Managment files", error);
+        return of([]); // return an Observable of an empty array
+      })
+    );
+  } catch(error) {
+    console.error("Error Managment files", error);
+    return of([]); // return an Observable of an empty array
+  }
 }
+
+
 
 
 getManfildet(id : string){

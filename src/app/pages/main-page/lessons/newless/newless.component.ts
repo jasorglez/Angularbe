@@ -99,7 +99,7 @@ export class NewlessComponent implements OnInit {
 
          if (this.data.formType === 'flearned')  {
 
-             this.getDetailslessons(this.trackingService.getidlesson());
+             this.getDetailslessons('correcionId');
 
              this.getConceptsxActiv() ;
         }
@@ -205,7 +205,7 @@ export class NewlessComponent implements OnInit {
               procces       : this.flearned.get('procces').value,
               technology    : this.flearned.get('technology').value,
               event         : this.flearned.get('event').value,
-              id_lesson     : this.trackingService.getidlesson() ,
+              id_lesson     : 'CORRECIONID' ,
               consequencen  : this.flearned.get('conseqn').value,
               consequencep  : this.flearned.get('conseqp').value,
               actionspavoid : this.flearned.get('actionsf').value,

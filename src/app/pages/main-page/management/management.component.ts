@@ -1,10 +1,12 @@
 import { Component, OnInit, ChangeDetectorRef, ViewChild } from '@angular/core';
 import { TrackingService } from 'src/app/services/tracking.service';
+import  * as data from '../management.json'
 
 import { Imanagement } from 'src/app/interface/imanagement';
 import { Imanfildet } from 'src/app/interface/imanfildet';
 import { MatTableDataSource } from '@angular/material/table';
 import { ManagementService } from 'src/app/services/management.service';
+import { FirebaseService } from 'src/app/services/firebase.service';
 
 import { MatPaginator} from '@angular/material/paginator';
 import { MatSort} from '@angular/material/sort';
@@ -18,8 +20,6 @@ import { MatDialog } from '@angular/material/dialog';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { NewFileComponent } from './newFile/newFile.component';
 import { EditFileComponent } from './editFile/editFile.component';
-import { profile } from 'console';
-
 
 @Component({
   selector: 'app-management',
@@ -27,6 +27,9 @@ import { profile } from 'console';
   styleUrls: ['./management.component.css']
 })
 export class ManagementComponent {
+
+  project : any =[] ;
+  defaultData: any = (data as any).default; // Tus datos JSON
 
   selectedTab = 'management';
   currentIndex : number = 0 ;
@@ -70,7 +73,7 @@ export class ManagementComponent {
  management : Imanagement[] = [] ;
  manfildet  : Imanfildet[]  = [] ;
 
- profile : any = {};
+ profile : any = [];
 
  screenSizeSM = false;
 
@@ -87,17 +90,17 @@ export class ManagementComponent {
  constructor(public translateService: TraductorService,
              private trackingService : TrackingService,
              private managementService : ManagementService,
+             private firebaseserv : FirebaseService,
              public dialog : MatDialog,) { }
 
 
 ngOnInit(): void {
   //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
 
-
-  this.getManagement();
-
+  this.get9Records(localStorage.getItem('project'));
 
 }
+
 
    // Función para mostrar el perfil de un usuario
    showProfile(manag: Imanagement) {
@@ -107,11 +110,45 @@ ngOnInit(): void {
  }
 
 
- getManagement(){
+ async get9Records(project: string) {
+  this.managementService.getDataManagement(project).subscribe(
+    async(data) => {
+      this.project = data;
+      if (this.project.length === 0) {
+        this.createProject(project);
+        this.getManagement();
+      } else {
+        await this.getManagement();
+      }
+    },
+    error => {
+      console.log(error);
+    });
+}
+
+
+
+createProject(project: string): void {
+  for (let key in this.defaultData) {
+    let projectarr = this.defaultData[key];
+    projectarr.id_project = project; // Agrega el ID del proyecto
+
+     this.firebaseserv.createProject(project, projectarr).then(
+      () => {
+        console.log('Project created successfully');
+      },
+      error => {
+        console.log(error);
+      });
+  }
+}
+
+
+ async getManagement(){
 
     this.loadData = true;
 
-    this.managementService.getDatamanagement(localStorage.getItem('project') )
+    this.managementService.getDataManagement(localStorage.getItem('project') )
       .subscribe((resp: any) => {
         /*=============================================
       Integrando respuesta de base de datos con la interfaz

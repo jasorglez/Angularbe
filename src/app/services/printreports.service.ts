@@ -81,8 +81,7 @@ constructor(public  trackingService       : TrackingService,
 lessonslearnedOne() {
   let globalIndex = 1; // Índice consecutivo global
 
-  const lessonId = this.trackingService.getidlesson();
-
+  const lessonId = 'correcionid'
   this.lessonsService.getDataLessonsOne(lessonId).pipe(
     switchMap(lessonsData => {
       this.lessonsData$ = Object.values(lessonsData); // Convert the master record to an array
