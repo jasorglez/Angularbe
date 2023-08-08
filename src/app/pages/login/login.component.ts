@@ -23,7 +23,7 @@ import { map } from 'rxjs';
 })
 export class LoginComponent implements OnInit{
 
-
+  hide = true;
   emailcapt   : string = '';
 
   displayName : string = '' ;
@@ -57,6 +57,10 @@ export class LoginComponent implements OnInit{
 
   ngOnInit(): void {
 
+  }
+
+  toggleHide() {
+    this.hide = !this.hide;
   }
 
 	/*=============================================
