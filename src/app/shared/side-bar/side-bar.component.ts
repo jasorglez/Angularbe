@@ -107,7 +107,7 @@ export class SideBarComponent implements OnInit {
           this.companysService.getpermissionsxCompany(localStorage.getItem('mail'))
           .subscribe((data) => {
 
-
+            console.log("data company", data) ;
 
             this.companyData = Object.values(data);
 
@@ -128,7 +128,9 @@ export class SideBarComponent implements OnInit {
 
 
         getHeadersCompanys(){
-          this.companysService.getDataCompanys(this.selectedCompany).subscribe((datacom: any) => {
+          this.companysService.getDataCompanys(this.selectedCompany).subscribe
+          ((datacom: any) => {
+
             // Utilizar los datos obtenidos
               this.trackingService.setnameComp(datacom.displayName);
 
@@ -142,7 +144,11 @@ export class SideBarComponent implements OnInit {
         }
 
         onCompanysSelected(event: Event): void {
+
           const target = event.target as HTMLSelectElement;
+
+          this.trackingService.setCompany(target.value) ;
+
           this.selectedCompany = target.value;
 
           this.getpermissionxBranchs();
@@ -150,10 +156,12 @@ export class SideBarComponent implements OnInit {
 
 
         getpermissionxBranchs() {
-
+          console.log(localStorage.getItem('company'));
           this.companysService.getpermissionsxBranch(localStorage.getItem('company'), localStorage.getItem('mail')).subscribe((databranch) => {
             this.branchData = Object.values(databranch);
             if (this.branchData.length > 0) {
+
+              console.log("dataBranch", this.branchData) ;
 
               this.selectedBranchId = this.branchData[0].id_branchs ;
               this.trackingService.setBranch(this.selectedBranchId) ;
@@ -173,11 +181,13 @@ export class SideBarComponent implements OnInit {
 
 
         // Datos de Projectos
-
         getpermissionxProjects(): void {
-          this.companysService.getpermissionsxProject(this.selectedBranchId,localStorage.getItem("mail")).subscribe((data) => {
+          console.log(localStorage.getItem('branch'));
+          console.log(localStorage.getItem('mail'));
 
-          //  console.log("projectData", this.projectData)
+          this.companysService.getpermissionsxProject(localStorage.getItem('branch'),localStorage.getItem("mail")).subscribe((data) => {
+
+            console.log("projectData", this.projectData)
 
             this.projectData = Object.values(data);
             if (this.projectData.length > 0) {
