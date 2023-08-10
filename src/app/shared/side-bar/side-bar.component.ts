@@ -43,20 +43,20 @@ export class SideBarComponent implements OnInit {
           this.router.navigate(['/']);
          }
 
-        navigateToBranchs()  {
+         navigateToBranchs()  {
           this.trackingService.addLog(this.trackingService.getnameComp(), 'Eleccion del menu Branchs/Sucursales', 'Menu Side Bar', '')
-          this.router.navigate(['/branchs']);
+          this.router.navigate(['/users'], { queryParams: { tab: 'branchs' } });
         }
 
         navigateToCompanys()  {
-          this.router.navigate(['/companys']);
+          this.trackingService.addLog(this.trackingService.getnameComp(), 'Eleccion del menu Companys/Empresas', 'Menu Side Bar', '')
+          this.router.navigate(['/users'], { queryParams: { tab: 'companys' } });
         }
 
         navigateToUsers()  {
           this.trackingService.addLog(this.trackingService.getnameComp(), 'Eleccion del menu Users/Usuarios', 'Menu Side Bar', '')
-          this.router.navigate(['/users']);
+          this.router.navigate(['/users'], { queryParams: { tab: 'users' } });
         }
-
 
          navigateToCatalog()  {
           this.trackingService.addLog(this.trackingService.getnameComp(), 'Eleccion del menu Catalog Concepts/Catalogo Conceptos', 'Menu Side Bar', '')
@@ -107,8 +107,6 @@ export class SideBarComponent implements OnInit {
           this.companysService.getpermissionsxCompany(localStorage.getItem('mail'))
           .subscribe((data) => {
 
-            console.log("data company", data) ;
-
             this.companyData = Object.values(data);
 
             if (this.companyData.length > 0) {
@@ -156,13 +154,12 @@ export class SideBarComponent implements OnInit {
 
 
         getpermissionxBranchs() {
-          console.log(localStorage.getItem('company'));
+          //console.log(localStorage.getItem('company'));
           this.companysService.getpermissionsxBranch(localStorage.getItem('company'), localStorage.getItem('mail')).subscribe((databranch) => {
             this.branchData = Object.values(databranch);
             if (this.branchData.length > 0) {
 
-              console.log("dataBranch", this.branchData) ;
-
+         //     console.log("dataBranch", this.branchData) ;
               this.selectedBranchId = this.branchData[0].id_branchs ;
               this.trackingService.setBranch(this.selectedBranchId) ;
               this.getpermissionxProjects();
@@ -182,13 +179,10 @@ export class SideBarComponent implements OnInit {
 
         // Datos de Projectos
         getpermissionxProjects(): void {
-          console.log(localStorage.getItem('branch'));
-          console.log(localStorage.getItem('mail'));
 
           this.companysService.getpermissionsxProject(localStorage.getItem('branch'),localStorage.getItem("mail")).subscribe((data) => {
 
-            console.log("projectData", this.projectData)
-
+           // console.log("projectData", this.projectData)
             this.projectData = Object.values(data);
             if (this.projectData.length > 0) {
                this.selectedProjectId = this.projectData[0].id_projects ;

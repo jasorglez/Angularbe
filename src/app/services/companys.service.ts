@@ -77,7 +77,7 @@ getEmpresasxEmail(orderBy:string, equalTo:string){
 
     getEmpresa(id: string): Observable<any> {
       try {
-       return this.http.get(`${environment.urlFirebase}empresas/${id}.json`);
+       return this.http.get(`${environment.urlFirebase}companys/${id}.json`);
       }
       catch(error) {
         console.error();
@@ -173,6 +173,17 @@ getpermissionsxProject2(branch:string): Observable<any>{
 postData(data: Icompany, token:any){
   try {
     return this.http.post(`${environment.urlFirebase}companys.json?auth=${token}`, data);
+
+  }catch(error) {
+  //  alerts.basicAlert("error", `Error save Users${error}`, "error")
+    console.error("Error al grabar Compania", error)
+    return null ;
+  }
+
+}
+patchData(id:string, data:object, token:any){
+  try {
+    return this.http.patch(`${environment.urlFirebase}companys/${id}.json?auth=${token}`, data);
 
   }catch(error) {
   //  alerts.basicAlert("error", `Error save Users${error}`, "error")

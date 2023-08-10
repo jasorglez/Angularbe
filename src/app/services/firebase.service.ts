@@ -49,8 +49,8 @@ export class FirebaseService {
 
     try {
       const pc = await permissRef.valueChanges().pipe(take(1)).toPromise();
-      const filteredPc = pc.filter(pc => pc.id_projects === idproject && pc.id_branchs === id_branch
-                                   && pc.email=== mail )  ;
+      const filteredPc = pc.filter(pc => pc.id_projects === idproject && pc.id_branchs === id_branch && pc.mail=== mail);
+      console.log('Filtered permissions:', filteredPc);
       return filteredPc.length > 0;
     } catch (error) {
       console.error('Error al obtener los permisos de la empresa:', error);
@@ -151,7 +151,7 @@ export class FirebaseService {
 
   getMasterData(idProject: string): Observable<any[]> {
     return this.db.list('lessons', ref => ref.orderByChild('id_project').equalTo(idProject)).valueChanges() as Observable<any[]>;
-    
+
   }
 
   getDetailData(): Observable<any[]> {

@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, OnChanges, SimpleChanges } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 import { Iusers } from 'src/app/interface/iusers';
 import { Ilog } from 'src/app/interface/ilog';
@@ -57,37 +58,13 @@ import { Observable } from 'rxjs';
 
  export class UsersComponent implements OnChanges, OnInit {
 
-  userEvents: any[] = [];
+  userEvents   : any[] = [];
   currentIndex : number = 0 ;
-  combinedData: any[] = [];
+  combinedData : any[] = [];
 
   users$: Observable<any[]>;
 
-  selectedTab = 'users';
-
-onTabSelected(tabName: string) {
-  this.selectedTab = tabName;
-
-  if (tabName=== 'users') {
-      this.trackingService.addLog(localStorage.getItem('company'), 'Click en la Pestaña Users/Usuarios del menu Usuarios', 'Usuarios', '')}
-
-  if (tabName=== 'companys') {
-      this.trackingService.addLog(localStorage.getItem('company'), 'Click en la Pestaña Company/Empresas del menu Usuarios', 'Usuarios', '')
-      this.getdataCompanys() }
-
-  if (tabName=== 'branchs') {
-      this.trackingService.addLog(localStorage.getItem('company'), 'Click en la Pestaña Branchs/Sucursales del menu Usuarios', 'Usuarios', '')
-      this.getdataBranchs() }
-
-  if (tabName=== 'projects') {
-      this.trackingService.addLog(localStorage.getItem('company'), 'Click en la Pestaña Projects/Proyectos del menu Usuarios', 'Usuarios', '')
-      this.getdataProjects() }
-
-  if (tabName=== 'settings') {
-      this.trackingService.addLog(localStorage.getItem('company'), 'Click en la Pestaña Settings/Seguimiento del menu Usuarios', 'Usuarios', '')
-      this.getdataTracking() }
-
-    }
+  selectedTab = '';
 
      /*=============================================
     	Creamos grupo de controles
@@ -98,7 +75,6 @@ onTabSelected(tabName: string) {
     		email: ['', [Validators.required, Validators.email]],
     		password: ['', Validators.required]
     	})
-
 
 	/*=============================================
 	Variable para nombrar las columnas de nuestra tabla en Angular Material
@@ -149,12 +125,6 @@ onTabSelected(tabName: string) {
     infbranch  : any = {} ;
     infproject : any = {} ;
 
-	/*=============================================
-	Variable global que informa a la vista cuando hay una expansión de la tabla
-	=============================================*/
-
-	//expandedElement!: Iusers | null;
-
   selection = new SelectionModel<Iusers>(true, []);
 
 	/*=============================================
@@ -184,21 +154,28 @@ onTabSelected(tabName: string) {
 	@ViewChild(MatPaginator) paginator!: MatPaginator;
 	@ViewChild(MatSort) sort!: MatSort;
 
-  	constructor(public translateService: TraductorService, private usersService: UsersService, private companyService: CompanysService,
-        private firebaseService: FirebaseService, private branchService: BranchsService, private projectsService: ProjectService,
+  	constructor(public translateService: TraductorService,
+        private route: ActivatedRoute,
+        private usersService: UsersService,
+        private companyService: CompanysService,
+        private firebaseService: FirebaseService,
+        private branchService: BranchsService,
+        private projectsService: ProjectService,
         private trackingService : TrackingService,
-        private authService: AuthService, private storagesService: StoragesService,
+        private authService: AuthService,
+        private storagesService: StoragesService,
         public dialog : MatDialog, private form:FormBuilder) {   }
 
   	ngOnInit(): void {
 
-    		this.getdataUsers();
-
-
+       this.route.queryParams.subscribe(params => {
+          if (params['tab']) {
+            this.onTabSelected(params['tab']);
+          }
+        });
         	/*=============================================
       		Definir tamaños de pantalla
       		=============================================*/
-
       		if(functions.screenSize(0, 767)){
 
       			this.screenSizeSM = true;
@@ -209,10 +186,40 @@ onTabSelected(tabName: string) {
 
       			this.displayedColUsers.splice(1, 0, 'displayName');
       			this.displayedColUsers.splice(2, 0, 'position');
-
       		}
-
    	}
+
+
+     onTabSelected(tabName: string) {
+      this.selectedTab = tabName;
+
+      if (tabName=== 'users') {
+          this.trackingService.addLog(localStorage.getItem('company'),
+          'Click en la Pestaña Users/Usuarios del menu Usuarios', 'Usuarios', '')
+          this.getdataUsers();
+      }
+
+      if (tabName=== 'companys') {
+          this.trackingService.addLog(localStorage.getItem('company'), 'Click en la Pestaña Company/Empresas del menu Companys',
+           'Companys', '')
+          this.getdataCompanys() }
+
+      if (tabName=== 'branchs') {
+          this.trackingService.addLog(localStorage.getItem('company'), 'Click en la Pestaña Branchs/Sucursales del menu Branchs',
+          'Branchs', '')
+          this.getdataBranchs() }
+
+      if (tabName=== 'projects') {
+          this.trackingService.addLog(localStorage.getItem('company'), 'Click en la Pestaña Projects/Proyectos del menu Projects',
+          'Projects', '')
+          this.getdataProjects() }
+
+      if (tabName=== 'settings') {
+          this.trackingService.addLog(localStorage.getItem('company'), 'Click en la Pestaña Settings/Seguimiento del menu Usuarios', 'Settings', '')
+          this.getdataTracking() }
+
+        }
+
 
 	/*=============================================
 	función para tomar la data de users, cias, branchs, projects
@@ -443,9 +450,6 @@ onTabSelected(tabName: string) {
 
          }
 
-
-
-
          public async getUserEventData() {
           try {
             const result = await this.usersService.getUserEventData();
@@ -486,7 +490,7 @@ onTabSelected(tabName: string) {
             });
           }
 
-         newProjects(formType: string, id:string) {
+          newProjects(formType: string, id:string) {
            const dialogRef = this.dialog.open(NewComponent, {
               data: { formType: formType,
               branchId: id } });
@@ -496,16 +500,18 @@ onTabSelected(tabName: string) {
              }
           });
 
-        }
+          }
 
 
 
-          editUsers(id:string){
+          editUsers(id:string, formType: string){
 
               const dialogRef = this.dialog.open(EditComponent,{
 
                 width:'50%',
-                data: { id: id	}
+                data: {
+                  id: id,
+                  formType: formType},
 
               })
 
@@ -519,16 +525,52 @@ onTabSelected(tabName: string) {
 
                   this.getdataUsers();
 
+                }})
+            }
+
+
+          editCompany(id:string, formType: string){
+
+                const dialogRef = this.dialog.open(EditComponent,{
+
+                  width:'50%',
+                  data: { id: id,
+                          formType: formType	}
+
+                })
+
+                dialogRef.afterClosed().subscribe(result =>{
+
+                  if(result){
+
+                    this.getdataCompanys();
+
+                  }})
+              }
+
+          editBranchs(id: string, formType: string){
+            const dialogRef = this.dialog.open(EditComponent, {
+              data: { formType: formType,
+              id: id } });
+
+            dialogRef.afterClosed().subscribe(result => {
+                if (result) {
+                  this.getdataBranchs();
                 }
-
-              })
-
+              });
             }
 
+          editProjects(id: string, formType : string){
+            const dialogRef = this.dialog.open(EditComponent, {
+              data: { formType: formType,
+              id: id } });
 
-          editBranchs(id: string){
-
-            }
+            dialogRef.afterClosed().subscribe(result => {
+                if (result) {
+                  this.getdataProjects();
+                }
+              });
+          }
 
             deleteUsers(id: string, mail: string, pic: string) {
               alerts.confirmAlert('Are you sure?', 'The information cannot be recovered!', 'warning', 'Yes, delete it!')
@@ -680,7 +722,7 @@ onTabSelected(tabName: string) {
 
               }
 
-              async desasignBranch(id: string, mail : string, idCompany: string, name: string) {
+           async desasignBranch(id: string, mail : string, idCompany: string, name: string) {
               try {
                 const resp = await this.firebaseService.getpermxBranch(id, mail, idCompany);
 
@@ -698,35 +740,35 @@ onTabSelected(tabName: string) {
                 } catch (error) { }
                     // Manejar errores si es necesario
 
-              }
+            }
 
 
-              async assignProject(id: string, mail: string, idBranch: string, name: string) {
+          async assignProject(id: string, mail: string, idBranch: string, name: string) {
                 try {
                   const resp = await this.firebaseService.getpermxProject(id, mail, idBranch);
-
-                  if (resp) {
+                  console.log("resp", resp) ;
+                  if (resp === true) {
                     alerts.basicAlert('error', "The Project already has this permission", "error");
                   }
-                  else {
+
+                  if (resp === false) {
                     const result = await alerts.confirmAlert('Are you sure?', 'Assign Project for information user!', 'warning', 'Yes, Assign it!');
 
                     if (result.isConfirmed) {
-
-                               await this.projectsService.addpermisProject(name, mail, id, idBranch)
-                               alerts.basicAlert("Success", "The permission has been created", "success");
-
-                            }
-                  } //termino el try
-
-                  } catch (error) {
-                      // Manejar errores si es necesario
+                      try {
+                        await this.projectsService.addpermisProject(name, mail, id, idBranch);
+                        alerts.basicAlert("Success", "The permission has been created", "success");
+                      } catch (error) {
+                        console.error('Error al asignar el proyecto:', error);
+                      }
+                    }
                   }
+                } catch (error) {
+                  console.error('Error al obtener los permisos del proyecto:', error);
+                }
+            }
 
-              }
-
-
-              async desasignProject(id: string, mail: string, idBranch: string, name: string) {
+          async desasignProject(id: string, mail: string, idBranch: string, name: string) {
                 try {
                   const resp = await this.firebaseService.getpermxProject(id, mail, idBranch);
 

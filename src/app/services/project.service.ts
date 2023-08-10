@@ -13,9 +13,6 @@ constructor(private http:HttpClient ) { }
 
 
 
-
-
-
 getDataprojects(equalTo:string){
   try {
 
@@ -24,9 +21,18 @@ getDataprojects(equalTo:string){
     console.error(error)
     return null
   }
-
 }
 
+
+getItem(id: string) {
+  try {
+     return this.http.get(`${environment.urlFirebase}projects/${id}.json`);
+ }catch(error){
+   console.error("Error al Leer Projects", error)
+   return null ;
+ }
+
+ }
 
 
 postData(data: Iproject, token:any){
@@ -34,11 +40,21 @@ postData(data: Iproject, token:any){
     return this.http.post(`${environment.urlFirebase}projects.json?auth=${token}`, data);
 
   }catch(error) {
-  //  alerts.basicAlert("error", `Error save Users${error}`, "error")
-    console.error("Error al grabar Companiaa", error)
+    console.error("Error al grabar Project", error)
     return null ;
   }
 }
+
+patchData(id:string, data:object, token:any){
+  try {
+  return this.http.patch(`${environment.urlFirebase}projects/${id}.json?auth=${token}`, data);
+
+  }catch(error) {
+    console.error("Error al grabar Project", error)
+    return null ;
+  }
+}
+
 
 
 deleteProjects(id:string, token: any){
@@ -93,7 +109,7 @@ getDataprojectsheader(clave: string): Observable<{
             };
           })
         );
-    
+
   } catch (error) {
     console.error('ERROR get list projects ', error);
     // Retornar un valor por defecto en caso de error

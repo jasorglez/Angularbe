@@ -37,21 +37,30 @@ export class BranchsService {
       return this.http.post(`${environment.urlFirebase}branchs.json?auth=${token}`, data);
 
     }catch(error) {
-    //  alerts.basicAlert("error", `Error save Users${error}`, "error")
-      console.log("Error al grabar Companiaa", error)
+      console.error("Error al grabar Sucursales", error)
       return null ;
     }
   }
 
 
   patchData(id:string, data:object, token:any){
+    try {
 		return this.http.patch(`${environment.urlFirebase}branchs/${id}.json?auth=${token}`, data);
+    }catch(error){
+      console.error("Error al Actualizar Sucursales", error)
+      return null ;
+    }
 	}
 
 
   getItem(id: string) {
+   try {
+      return this.http.get(`${environment.urlFirebase}branchs/${id}.json`);
 
-		return this.http.get(`${environment.urlFirebase}branchs/${id}.json`);
+  }catch(error){
+    console.error("Error al Leer Sucursales", error)
+    return null ;
+  }
 
 	}
 

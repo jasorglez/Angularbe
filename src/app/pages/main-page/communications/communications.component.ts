@@ -276,7 +276,8 @@ export class CommunicationsComponent implements OnInit {
 
   newCommunications(formType: string) {
 
-    const dialogRef = this.dialog.open(NewcommunicComponent, { data: { formType: formType } });
+    const dialogRef = this.dialog.open(NewcommunicComponent,
+      { data: { formType: formType } });
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {

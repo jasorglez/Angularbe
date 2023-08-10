@@ -32,8 +32,6 @@ import { TrackingService } from '../../../../services/tracking.service';
 })
 export class NewComponent implements OnInit {
 
-  //@Input() fusuarios: FormGroup;
-
    selectedorganization: string = 'Organizations';
 
     organizationData  : any[]  = [] ;
@@ -127,7 +125,8 @@ export class NewComponent implements OnInit {
       loadData = false;
       url : string = '' ;
 
-  constructor(private storageService: StoragesService, private usersService :UsersService, private companysService :CompanysService,
+  constructor(private storageService: StoragesService, private usersService :UsersService,
+               private companysService :CompanysService,
                private branchsService: BranchsService, private projectsService : ProjectService ,
                private catalogsService: CatalogService, private authService: AuthService,
                private formBuilder: FormBuilder,  public dialogRef: MatDialogRef<NewComponent>,
@@ -199,24 +198,14 @@ export class NewComponent implements OnInit {
 
        saveUsers(){
 
-        if (this.fusuarios.valid) {
-          console.log(this.fusuarios.value)
-        }else{
+        if (this.fusuarios.invalid) {
           this.fusuarios.markAllAsTouched();
         }
 
         this.loadData = true;
 
         this.formSubmitted = true;
-
-              /*------------------------------
-               Validamos que el formulario este correcto
-              -----------------------*/
-
-              /*=============================================
-              Validamos y capturamos la informacion del formulario en la interfaz
-              =============================================*/
-                 const dataUser: Iusers = {
+              const dataUser: Iusers = {
                         active         : 1,
                         iduser         : 0,
                         method         : '',
@@ -266,13 +255,6 @@ export class NewComponent implements OnInit {
 
             this.formSubmitted = true;
 
-                  /*------------------------------
-                   Validamos que el formulario este correcto
-                  -----------------------*/
-
-              /*=============================================
-              Validamos y capturamos la informacion del formulario en la interfaz
-              =============================================*/
                  const dataCompany  : Icompany = {
                         address     : this.fcompanys.get('addressc')?.value,
                         city        : this.fcompanys.get('cityc').value,
@@ -300,27 +282,14 @@ export class NewComponent implements OnInit {
         }
 
         saveBranchs(){
-
-
-          if (this.fbranchs.valid) {
-            console.log(this.fbranchs.value)
-
-          }else{
-            this.fbranchs.markAllAsTouched();
+          if (this.fbranchs.invalid) {
+             this.fbranchs.markAllAsTouched();
           }
 
           this.loadData = true;
-
           this.formSubmitted = true;
 
-                /*------------------------------
-                 Validamos que el formulario este correcto
-                -----------------------*/
-
-            /*=============================================
-            Validamos y capturamos la informacion del formulario en la interfaz
-            =============================================*/
-               const dataBranch   : Ibranch = {
+          const dataBranch   : Ibranch = {
                      active      : 1,
                      colony      : this.fbranchs.get('colonyb')?.value,
                      country     : this.fbranchs.get('countryb')?.value,
@@ -348,23 +317,17 @@ export class NewComponent implements OnInit {
 
         saveProjects(){
 
-
-
-                      console.log(this.fprojects)
-
                       this.loadData = true;
-
                       this.formSubmitted = true;
 
                            const dataProject : Iproject = {
-
                                  code         : this.fprojects.get('codep')?.value,
                                  contract     : this.fprojects.get('contractp')?.value,
                                  description  : this.fprojects.get('descriptionp')?.value,
                                  id_branch    : this.branchId,
                                  image        : this.url,
                                  tender       : this.fprojects.get('tenderp')?.value,
-                                 ubication    : this.fbranchs.get('ubicationp')?.value,
+                                 ubication    : this.fprojects.get('ubicationp')?.value,
                                  dStart       : this.fprojects.get('dStart')?.value as Date,
                                  dEnd         : this.fprojects.get('dEnd')?.value as Date
 

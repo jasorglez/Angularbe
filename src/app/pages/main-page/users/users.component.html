@@ -62,17 +62,16 @@
 
          <div class="col-md-9">
             <div class="card">
-               <div class="card-header p-2">
-                  <ul class="nav nav-pills">
-                      <li class="nav-item"><a class="nav-link active" data-toggle="tab" (click)="onTabSelected('users')" >{{'user' | translate}}</a></li>
-                      <li class="nav-item"><a class="nav-link" data-toggle="tab" (click)="onTabSelected('companys')">{{'company' | translate}}</a></li>
-                      <li class="nav-item"><a class="nav-link" data-toggle="tab" (click)="onTabSelected('branchs')">{{'branchs' | translate}}</a></li>
-                      <li class="nav-item"><a class="nav-link" data-toggle="tab" (click)="onTabSelected('projects')">{{'projects' | translate}}</a></li>
-                      <li class="nav-item"><a class="nav-link" data-toggle="tab" (click)="onTabSelected('settings')">{{'admins' | translate}}</a></li>
-                  </ul>
 
-              </div><!-- /.card-header -->
-
+              <div class="card-header p-2">
+                <ul class="nav nav-pills">
+                    <li class="nav-item"><a class="nav-link" [class.active]="selectedTab === 'users'" data-toggle="tab" (click)="onTabSelected('users')">{{'user' | translate}}</a></li>
+                    <li class="nav-item"><a class="nav-link" [class.active]="selectedTab === 'companys'" data-toggle="tab" (click)="onTabSelected('companys')">{{'company' | translate}}</a></li>
+                    <li class="nav-item"><a class="nav-link" [class.active]="selectedTab === 'branchs'" data-toggle="tab" (click)="onTabSelected('branchs')">{{'branchs' | translate}}</a></li>
+                    <li class="nav-item"><a class="nav-link" [class.active]="selectedTab === 'projects'" data-toggle="tab" (click)="onTabSelected('projects')">{{'projects' | translate}}</a></li>
+                    <li class="nav-item"><a class="nav-link" [class.active]="selectedTab === 'settings'" data-toggle="tab" (click)="onTabSelected('settings')">{{'admins' | translate}}</a></li>
+                </ul>
+            </div>
 
                  <div class="card-body">
                     <div class="tab-content">
@@ -143,7 +142,7 @@
                                       </button>
 
                                       <button class="btn btn-sm btn-dark mr-1"
-                                          (click)="editUsers(element.id)">
+                                          (click)="editUsers(element.id, 'users')">
                                           <i class="fas fa-pencil-alt"></i>
                                       </button>
 
@@ -236,7 +235,7 @@
 
                                                               <button matTooltip="{{'ec' | translate}} {{ 'company' | translate }}"
                                                               class="btn btn-sm btn-dark mr-1"
-                                                              (click)="editUsers(element.id)" >
+                                                              (click)="editCompany(element.id, 'companys')" >
                                                                 <i class="fas fa-pencil-alt"></i>
                                                               </button>
 
@@ -287,7 +286,7 @@
 
                                             <!-- /.card-body -->
                                             <div class="card-footer bg-black">
-                                              <mat-paginator [hidden]="loadData2" [pageSizeOptions]="[5, 15, 20]" showFirstLastButtons></mat-paginator>
+                                              <mat-paginator [hidden]="loadData2" [pageSizeOptions]="[15, 20, 25]" showFirstLastButtons></mat-paginator>
                                             </div>
                         <!-- /.card-footer-->
                                  </div>
@@ -354,7 +353,7 @@
 
                                                             <button matTooltip="{{ 'ec' | translate }} {{ 'branch' | translate }}"
                                                                 class="btn btn-sm btn-dark mr-1"
-                                                                (click)="editBranchs(element.id)" >
+                                                                (click)="editBranchs(element.id, 'branchs')" >
                                                                 <i class="fas fa-pencil-alt"></i>
                                                             </button>
 
@@ -472,7 +471,7 @@
 
                                                       <button matTooltip="{{ 'ec' | translate }} {{ 'projects' | translate }}"
                                                          class="btn btn-sm btn-dark mr-1"
-                                                         (click)="editUsers(element.id)" >
+                                                         (click)="editProjects(element.id, 'projects')" >
                                                            <i class="fas fa-pencil-alt"></i>
                                                       </button>
 
