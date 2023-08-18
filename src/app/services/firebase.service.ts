@@ -48,6 +48,10 @@ export class FirebaseService {
     const permissRef: AngularFireList<any> = this.db.list('permissionsxprojects');
 
     try {
+      console.log("Mail", mail);
+      console.log("idproject", idproject);
+      console.log("idbranch", id_branch);
+
       const pc = await permissRef.valueChanges().pipe(take(1)).toPromise();
       const filteredPc = pc.filter(pc => pc.id_projects === idproject && pc.id_branchs === id_branch && pc.mail=== mail);
       console.log('Filtered permissions:', filteredPc);

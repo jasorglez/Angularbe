@@ -5,6 +5,7 @@ export interface Icompany {
 	country     : string;
   displayName : string;
 	email       : string;
+  namesmall   : string ;
 	phone       : string;
   formatrep   : string;
 	picture     : string;

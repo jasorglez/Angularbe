@@ -183,7 +183,7 @@
                         </button>
                         <button
                         class="btn btn-sm btn-dark mr-1"
-                        (click)="editCourse(element.id)">
+                        (click)="editCourse(element.id, 'fcourses')">
                           <i class="fas fa-pencil-alt"></i>
                         </button>
                         <button
@@ -292,7 +292,7 @@
                         </button>
                         <button
                         class="btn btn-sm btn-dark mr-1"
-                        (click)="editInstructor(element.id)">
+                        (click)="editInstructor(element.id, 'finstructors')">
                           <i class="fas fa-pencil-alt"></i>
                         </button>
                         <button
@@ -352,19 +352,13 @@
                       <td mat-cell *matCellDef="let element" class="text-nowrap"> {{element.name}} </td>
                     </ng-container>
 
-                    <!-- E-mail -->
-                    <ng-container *ngIf="!screenSizeSM" matColumnDef="mail">
-                      <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-nowrap"> {{'email' | translate}} </th>
-                      <td mat-cell *matCellDef="let element" class="multi-line-description"> {{element.email}} </td>
-                    </ng-container>
-
                          <!-- File1 -->
                          <ng-container *ngIf="!screenSizeSM" matColumnDef="evaluation">
                           <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-nowrap"> {{'evaluation' | translate}} </th>
                           <td mat-cell *matCellDef="let element" class="text-nowrap">
                             <button
                                 class="btn btn-lg btn-warning mr-1"
-                                  (click)="openLink(element.file1)">
+                                  (click)="openLink(element.evaluation)">
                                   <mat-icon>description</mat-icon>
                              </button>
                         </ng-container>
@@ -375,7 +369,7 @@
                           <td mat-cell *matCellDef="let element" class="text-nowrap">
                              <button
                                 class="btn btn-lg btn-warning mr-1"
-                                 (click)="openLink(element.file2)">
+                                 (click)="openLink(element.constance)">
                                   <mat-icon>open_in_new<</mat-icon>
                              </button>
                         </ng-container>
@@ -391,7 +385,7 @@
                         </button>
                         <button
                         class="btn btn-sm btn-dark mr-1"
-                        (click)="editStudent(element.id)">
+                        (click)="editStudent(element.id, 'students')">
                           <i class="fas fa-pencil-alt"></i>
                         </button>
                         <button

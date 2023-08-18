@@ -1,4 +1,4 @@
-<h2 mat-dialog-title class="h2-dialog">{{ 'new' | translate }}</h2>
+<h2 mat-dialog-title class="h2-dialog">{{ 'edit' | translate }}</h2>
 
 <div *ngIf="data.formType === 'fcourses'">
 
@@ -116,7 +116,7 @@ autocomplete="off"
                         <div class="col-sm-12">
                             <!-- Campo de texto Referencia -->
                            <textarea id="details" rows="3" class="form-control" placeholder="{{ 'description' | translate }}"
-                                          formControlName="event"></textarea>
+                                          formControlName="description"></textarea>
                                 <!-- Tooltip de validacion del campo referencia -->
                              <div class="invalid-tooltip">
                               {{ 'requires' | translate }} {{ 'description' | translate }}
@@ -140,37 +140,7 @@ autocomplete="off"
           <div class="row">
 
           <!-- SubFila 1.1.4 Bootstrap Botones-->
-          <h2>Soportes</h2>
-          <div class="button-group">
-            <table>
-              <tr>
-                <td>
-                    <input type="file" (change)="selectFile1($event)" id="fileInput1" hidden>
-                    <label for="fileInput1" class="custom-file-button">
-                      <span class="icon"> ➕ </span> <!-- Aquí puedes utilizar tu icono personalizado, p. ej. una etiqueta <i> con una clase de icono -->
-                      Manual
-                    </label>
-                  </td>
 
-                  <td>
-                        <input type="file" (change)="selectFile2($event)" id="fileInput2" hidden>
-                        <label for="fileInput2" class="custom-file-button2">
-                          <span class="icon"> ➕  </span> <!-- Aquí puedes utilizar tu icono personalizado, p. ej. una etiqueta <i> con una clase de icono -->
-                          Presentacion
-                        </label>
-                  </td>
-
-                 <td>
-                      <input type="file" (change)="selectFile3($event)" id="fileInput3" hidden>
-                      <label for="fileInput3" class="custom-file-button3">
-                        <span class="icon"> ➕  </span> <!-- Aquí puedes utilizar tu icono personalizado, p. ej. una etiqueta <i> con una clase de icono -->
-                           Lista
-                      </label>
-                  </td>
-
-              </tr>
-            </table>
-          </div>
 
           </div>
         </div>
@@ -181,7 +151,37 @@ autocomplete="off"
 </ng-container>
 </mat-dialog-content>
 
-<!-- Resto del código HTML... -->
+<h2>Soportes</h2>
+<div class="button-group">
+  <div>
+    <input type="file" (change)="selectFile1($event)" id="fileInput1" hidden>
+    <label for="fileInput1" class="custom-file-button">
+      <span class="icon"> ➕ </span>
+      Manual
+    </label>
+    <input type="text" [value]="file1" readonly style="width: 350px;">
+  </div>
+
+  <div>
+    <input type="file" (change)="selectFile2($event)" id="fileInput2" hidden>
+    <label for="fileInput2" class="custom-file-button2">
+      <span class="icon"> ➕  </span>
+      Presentacion
+    </label>
+    <input type="text" [value]="file2" readonly style="width: 350px;">
+  </div>
+
+  <div>
+    <input type="file" (change)="selectFile3($event)" id="fileInput3" hidden>
+    <label for="fileInput3" class="custom-file-button3">
+      <span class="icon"> ➕  </span>
+      Lista
+    </label>
+    <input type="text" [value]="file3" readonly style="width: 350px;">
+  </div>
+</div>
+
+
 
 
 <!-- Acciones del Dialog -->

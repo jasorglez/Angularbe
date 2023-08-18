@@ -164,6 +164,13 @@
                                           </div>
                                         </div>
 
+                                      <input type="text" class="form-control" placeholder="{{ 'name' | translate }} {{ 'small' | translate }}" formControlName="names" />
+                                      <div *ngIf="fcompanys.get('names').invalid && (fcompanys.get('names').dirty || fcompanys.get('names').touched)" class="invalid-feedback">
+                                        <div *ngIf="fcompanys.get('names').errors['required']">
+                                          {{ 'small' | translate}}  {{ 'name' | translate }}
+                                        </div>
+                                      </div>
+
                                         <input type="text" class="form-control" placeholder="{{ 'address' | translate }}" formControlName="addressc" />
 
                                         <input type="email" id="InputEmail" class="form-control" placeholder="{{ 'email' | translate }}" autocomplete="on" formControlName="emailc" />
@@ -257,9 +264,10 @@
                     </div>
 
                       <div class="card-footer">
-                          <button mat-dialog-close class="btn btn-secondary float-right">Cancelar</button>
-                            <button type="submit" class="btn btn-warning float-right" [disabled]="fcompanys.invalid">Salvar</button>
-                      </div>
+                        <button type="button" mat-dialog-close class="btn btn-secondary float-right">Cancelar</button>
+                        <button type="submit" class="btn btn-warning float-right" [disabled]="fcompanys.invalid">Salvar</button>
+                    </div>
+
 
               </form>
 
@@ -421,7 +429,7 @@
                 <button mat-dialog-close class="btn btn-secondary float-right">Cancelar</button>
                 <button type="submit" class="btn btn-warning float-right">Salvar</button>
               </div>
-              
+
             </form>
           </div>
         </div>

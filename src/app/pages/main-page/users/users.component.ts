@@ -220,7 +220,6 @@ import { Observable } from 'rxjs';
 
         }
 
-
 	/*=============================================
 	función para tomar la data de users, cias, branchs, projects
 	=============================================*/
@@ -238,7 +237,6 @@ import { Observable } from 'rxjs';
        this.infcompany = company;
 
       }
-
 
       infoBranch(branch: Ibranch) {
          // console.log(`Nombre: ${user.displayName}, Email: ${user.email}, Edad: ${user.age}`);
@@ -319,6 +317,7 @@ import { Observable } from 'rxjs';
                country        : resp[a].country,
                displayName    : resp[a].displayName,
                email          : resp[a].email,
+               namesmall      : resp[a].namesmall,
                formatrep      : resp[a].formatrep,
                phone          : resp[a].phone,
                picture        : resp[a].picture,
@@ -502,8 +501,6 @@ import { Observable } from 'rxjs';
 
           }
 
-
-
           editUsers(id:string, formType: string){
 
               const dialogRef = this.dialog.open(EditComponent,{
@@ -546,7 +543,7 @@ import { Observable } from 'rxjs';
                     this.getdataCompanys();
 
                   }})
-              }
+            }
 
           editBranchs(id: string, formType: string){
             const dialogRef = this.dialog.open(EditComponent, {
@@ -576,7 +573,7 @@ import { Observable } from 'rxjs';
               alerts.confirmAlert('Are you sure?', 'The information cannot be recovered!', 'warning', 'Yes, delete it!')
                 .then((result) => {
                   if (result.isConfirmed) {
-                    this.usersService.getFilterDataperm("email", mail)
+                     this.usersService.getFilterDataperm("email", mail)
                       .subscribe((resp: any) => {
                         if (Object.keys(resp).length > 0) {
                           alerts.basicAlert('error', "The category has related permission", "error");
@@ -609,8 +606,32 @@ import { Observable } from 'rxjs';
             }
 
             deleteCompanys(id: string){
+              alerts.confirmAlert('Are you sure?', 'The information cannot be recovered!', 'warning', 'Yes, delete it!')
+              .then((result) => {
 
+                if (result.isConfirmed) {
+
+                  this.branchService.getData(id)
+                  .subscribe((resp: any) => {
+
+                    if (Object.keys(resp).length > 0) {
+                      alerts.basicAlert('error', "The category has related permission, not can Delete", "error");
+                    } else {
+                         this.companyService.delete(id, localStorage.getItem('token'))
+                              .subscribe(() => {
+                                  alerts.basicAlert("Success", "The Company has been deleted", "success");
+                                  this.getdataCompanys();
+                               }
+                    )}
+
+                  })
+
+                }
+
+              })
             }
+
+
 
             deleteBranchs(id: string) {
 
@@ -768,19 +789,22 @@ import { Observable } from 'rxjs';
                 }
             }
 
-          async desasignProject(id: string, mail: string, idBranch: string, name: string) {
+          async desasignProject(id: string, mail: string, idBranch: string) {
                 try {
-                  const resp = await this.firebaseService.getpermxProject(id, mail, idBranch);
-
-                  if (resp) {
-                    const result = await alerts.confirmAlert('Are you sure?', 'Desasign Project for this user!', 'warning', 'Yes, Assign it!');
+                    const result = await alerts.confirmAlert('Are you sure?', 'Desasign Project for this user!', 'warning', 'Yes, Desassign it!');
 
                     if (result.isConfirmed) {
+                      const resp = await this.firebaseService.getpermxProject(id, mail, idBranch);
 
-                               await this.firebaseService.deleteProjects( id,mail, idBranch)
-                               alerts.basicAlert("Success", "The permission has been removed", "success");
+                      if (resp) {
 
-                            }
+                            await this.firebaseService.deleteProjects( id,mail, idBranch)
+                            alerts.basicAlert("Success", "The permission has been removed", "success");
+
+                      }
+                    else{
+                            alerts.basicAlert("error", "The permission have assign Projects", "error");
+                    }
                   } //termino el try
 
                   } catch (error) { }

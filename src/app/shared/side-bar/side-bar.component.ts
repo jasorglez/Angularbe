@@ -86,12 +86,16 @@ export class SideBarComponent implements OnInit {
        async navigateToTraining()  {
           this.trackingService.addLog(this.trackingService.getnameComp(), 'Eleccion del menu Training/Entrenamiento ', 'Menu Side Bar', '')
           this.router.navigate(['/training']);
-
         }
 
         navigateToEmployee() {
           this.trackingService.addLog(this.trackingService.getnameComp(), 'Eleccion del menu Employee/Empleados ', 'Menu Side Bar', '')
           this.router.navigate(['/employees']);
+        }
+
+        navigateToProviders()  {
+          this.trackingService.addLog(this.trackingService.getnameComp(), 'Eleccion del menu Providers/Proveedores', 'Menu Side Bar', '')
+          this.router.navigate(['/providers']);
         }
 
       	async ngOnInit()  {

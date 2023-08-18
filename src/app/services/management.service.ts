@@ -34,19 +34,7 @@ getDataManagement2(project: string): Observable<any> {
 getDataManagement(project: string): Observable<any> {
   try {
     const apiUrl = `${environment.urlFirebase}management/${project}.json`;
-    return this.http.get(apiUrl).pipe(
-      map(response => {
-        if(response && typeof response === 'object') {
-          return Object.values(response);
-        } else {
-          return [];
-        }
-      }),
-      catchError(error => {
-        console.error("Error Managment files", error);
-        return of([]); // return an Observable of an empty array
-      })
-    );
+    return this.http.get(apiUrl) ;
   } catch(error) {
     console.error("Error Managment files", error);
     return of([]); // return an Observable of an empty array

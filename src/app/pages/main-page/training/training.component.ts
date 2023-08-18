@@ -11,7 +11,7 @@ import { alerts } from 'src/app/helpers/alerts';
 
 import { Icourse } from 'src/app/interface/icourses';
 import { Iinstructors } from 'src/app/interface/iinstructors';
-import { Istudents } from 'src/app/interface/istudents';
+import { Istuxemp } from 'src/app/interface/istuxemp';
 
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
@@ -19,6 +19,8 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 
 import { NewcoinstComponent } from './newcoinst/newcoinst.component';
+import { EditcoinstComponent } from './editcoinst/editcoinst.component';
+
 
 
 @Component({
@@ -68,11 +70,11 @@ export class TrainingComponent implements OnInit {
 
  coursesDataSource!     : MatTableDataSource<Icourse> ;
  instructorsDataSource! : MatTableDataSource<Iinstructors> ;
- studentsDataSource!    : MatTableDataSource<Istudents> ;
+ studentsDataSource!    : MatTableDataSource<Istuxemp> ;
 
  training    : Icourse[]      = [] ;
  instructors : Iinstructors[] = [] ;
- students     : Istudents[]    = [] ;
+ students    : Istuxemp[]    = [] ;
 
  screenSizeSM = false;
 
@@ -92,7 +94,7 @@ export class TrainingComponent implements OnInit {
     'REs', 'Eva', 'actions'];
 
   displayedColstudents: string[] = [
-      'numberposition',  'name', 'mail', 'evaluation', 'constancy', 'actions'];
+      'numberposition',  'name', 'evaluation', 'constancy', 'actions'];
 
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -129,11 +131,7 @@ export class TrainingComponent implements OnInit {
 
 
   getdataCourses() {
-
     this.loadData = true;
-
-   // console.log("Project", localStorage.getItem('project'))
-
     this.trainingService.getTraining(localStorage.getItem('project'))
       .subscribe((resp: any) => {
         /*=============================================
@@ -142,26 +140,32 @@ export class TrainingComponent implements OnInit {
         let numberposition = 1;
 
         this.training = Object.keys(resp).map(
-          (a) =>
-            ({
-               id: a,
-               numberposition : numberposition++,
-               name           : resp[a].name,
-               dStart         : resp[a].dStart,
-               dEnd           : resp[a].dEnd,
-               description    : resp[a].description,
-               instructor     : resp[a].instructor,
-               id_project     : resp[a].id_project,
-               place          : resp[a].place,
-               schedule       : resp[a].schedule,
-               file1          : resp[a].file1,
-               file2          : resp[a].file2,
-               file3          : resp[a].file3,
-            } as Icourse)
+          (a) => {
+            let dStart = new Date(resp[a].dStart);
+            dStart.setMinutes(dStart.getMinutes() + dStart.getTimezoneOffset());
+            let dEnd = new Date(resp[a].dEnd);
+            dEnd.setMinutes(dEnd.getMinutes() + dEnd.getTimezoneOffset());
+
+            return {
+              id: a,
+              numberposition : numberposition++,
+              name           : resp[a].name,
+              dStart         : dStart,
+              dEnd           : dEnd,
+              description    : resp[a].description,
+              instructor     : resp[a].instructor,
+              id_project     : resp[a].id_project,
+              place          : resp[a].place,
+              schedule       : resp[a].schedule,
+              file1          : resp[a].file1,
+              file2          : resp[a].file2,
+              file3          : resp[a].file3,
+            } as Icourse
+          }
         );
 
-          // console.log("cOURSES", this.training) ;
-     //      this.profile = this.training[this.currentIndex]; // Tomamos el primer registro
+           console.log("COURSES", this.training) ;
+           this.profile = this.training[this.currentIndex]; // Tomamos el primer registro
            this.coursesDataSource = new MatTableDataSource(this.training)
            this.coursesDataSource.paginator = this.paginator ;
            this.coursesDataSource.sort = this.sort;
@@ -233,22 +237,13 @@ export class TrainingComponent implements OnInit {
               ({
                  id: a,
                  numberposition : numberposition++,
-                 active         : resp[a].active,
-                 age            : resp[a].age,
-                 address        : resp[a].address,
-                 description    : resp[a].description,
-                 email          : resp[a].email,
-                 file1          : resp[a].file1,
-                 file2          : resp[a].file2,
-                 id_project     : resp[a].id_project,
-                 id_instructor  : resp[a].id_instructor,
-                 id_course      : resp[a].id_course,
-                 id_company     : resp[a].id_company,
-                 name           : resp[a].name,
-                 phone          : resp[a].phone,
-                 rfc            : resp[a].rfc,
-                 qualification  : resp[a].qualification
-              } as Istudents)
+                 active        : resp[a].active,
+                 constance     : resp[a].constance,
+                 evaluation    : resp[a].evaluation,
+                 id_course     : resp[a].id_course,
+                 name          : resp[a].name,
+                 qualification : resp[a].qualification
+              } as Istuxemp)
           );
 
             // console.log("Students", this.students) ;
@@ -298,7 +293,8 @@ export class TrainingComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        alerts.confirmAlert('Se realizo el registro correctamente', 'Register new Ok', 'success', 'Ok').then((result) => {
+        alerts.confirmAlert('Se realizo el registro correctamente Estudiantes', 'Register new Ok', 'success', 'Ok').
+        then((result) => {
           this.getdataStudents();
         });
       }
@@ -307,16 +303,73 @@ export class TrainingComponent implements OnInit {
   }
 
 
-  editCourse(id: string) {
+  editCourse(id:string, formType: string){
 
+    const dialogRef = this.dialog.open(EditcoinstComponent,{
+
+      width:'55%',
+      data: {
+        id: id,
+        formType: formType},
+
+    })
+
+    dialogRef.afterClosed().subscribe(result =>{
+
+      if (result) {
+        alerts.confirmAlert('Se realizo el registro correctamente Course', 'Register new Ok', 'success', 'Ok').
+        then((result) => {
+          this.getdataCourses();
+        });
+      }
+    });
+    }
+
+
+
+
+  editInstructor(id:string, formType: string){
+
+    const dialogRef = this.dialog.open(EditcoinstComponent,{
+
+      width:'55%',
+      data: {
+        id: id,
+        formType: formType},
+    })
+
+    dialogRef.afterClosed().subscribe(result =>{
+
+      if (result) {
+        alerts.confirmAlert('Se realizo el registro correctamente Instructors', 'Register new Ok', 'success', 'Ok').
+        then((result) => {
+          this.getdataInstructors();
+        });
+      }
+    });
   }
 
-  editInstructor(id: string) {
 
-  }
+  editStudent(id:string, formType: string){
 
-  editStudent( id: string) {
+    const dialogRef = this.dialog.open(EditcoinstComponent,{
 
+      width:'55%',
+      data: {
+        id: id,
+        formType: formType},
+
+    })
+
+    dialogRef.afterClosed().subscribe(result =>{
+
+      if (result) {
+        alerts.confirmAlert('Se realizo el registro correctamente Student', 'Register new Ok', 'success', 'Ok').
+        then((result) => {
+          this.getdataStudents();
+        });
+      }
+    });
   }
 
 
@@ -356,7 +409,20 @@ export class TrainingComponent implements OnInit {
  }
 
  deleteStudent(id: string) {
+  alerts.confirmAlert('Are you sure?', 'The information cannot be recovered!', 'warning','Yes, delete it!')
+  .then((result) => {
 
+      if (result.isConfirmed) {
+
+        this.studentsService.deleteStudent(id, localStorage.getItem('token'))
+        .subscribe( () => {
+
+            alerts.basicAlert("Sucess", "The Student has been deleted", "success")
+
+            this.getdataInstructors() ;
+          })
+        }
+  })
  }
 
 

@@ -110,6 +110,7 @@ onTabSelected(tabName: string) {
     countryc      :  ['', [Validators.required]],
     displayNamec  :  ['', [Validators.required]],
     emailc        :  ['', [Validators.required, Validators.email]],
+    names         :  ['', [Validators.required]],
     formatrep     :  ['', [Validators.required]],
     phonec        :  ['',  [Validators.required, Validators.pattern(/^\d{10}$/)]],
     picturec      :  [''],
@@ -221,6 +222,7 @@ public fbranchs = this.formBuilder.group({
           cityc         : resp.city,
           countryc      : resp.country,
           displayNamec  : resp.displayName,
+          names         : resp.namesmall,
           emailc        : resp.email,
           formatrep     : resp.formatrep,
           phonec        : resp.phone,
@@ -378,10 +380,6 @@ uploadImage($event: any) {
 
     editCompanys(){
 
-        if (this.fcompanys.invalid) {
-          this.fcompanys.markAllAsTouched();
-        }
-
         this.loadData = true;
 
         this.formSubmitted = true;
@@ -392,6 +390,7 @@ uploadImage($event: any) {
                     country     : this.fcompanys.get('countryc').value,
                     displayName : this.fcompanys.get('displayNamec').value ,
                     email       : this.fcompanys.get('emailc')?.value ,
+                    namesmall   : this.fcompanys.get('names')?.value,
                     phone       : this.fcompanys.get('phonec')?.value,
                     picture     : this.fcompanys.get('picturec')?.value,
                     formatrep   : this.fcompanys.get('formatrep')?.value,

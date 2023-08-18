@@ -115,7 +115,7 @@ ngOnInit(): void {
     async(data) => {
       this.project = data;
       if (this.project.length === 0) {
-        this.createProject(project);
+      
         this.getManagement();
       } else {
         await this.getManagement();
@@ -167,7 +167,7 @@ createProject(project: string): void {
             } as Imanagement)
         );
 
-       // console.log(this.comunications)
+       //  console.log(this.management)
          this.profile = this.management[this.currentIndex]; // Tomamos el primer registro
          this.managDataSource = new MatTableDataSource(this.management); // Creamos el dataSource
          this.managDataSource.paginator = this.paginator;
@@ -184,6 +184,8 @@ createProject(project: string): void {
 
   this.managementService.getManfildet(this.profile.id)
     .subscribe((resp: any) => {
+
+     // console.log("profile.id", this.profile.id);
       /*=============================================
     Integrando respuesta de base de datos con la interfaz
     =============================================*/

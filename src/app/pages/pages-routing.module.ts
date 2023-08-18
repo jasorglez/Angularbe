@@ -6,6 +6,7 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { Error404Component } from './main-page/error404/error404.component';
 
 import { AuthGuard } from 'src/app/guards/auth.guard';
+import { ProvidersModule } from './main-page/providers/providers.module';
 
 const routes: Routes = [
   { path: 'login',  loadChildren: () => import('./login/login.module').then(m=>m.LoginModule)},
@@ -23,6 +24,7 @@ const routes: Routes = [
       { path: 'management', loadChildren: () => import('./main-page/management/management.module').then (m => m.ManagementModule)},
       { path: 'training', loadChildren: () => import ('./main-page/training/training.module'). then (m => m.TrainingModule )},
       { path: 'employees', loadChildren: () => import ('./main-page/employees/employees.module'). then (m => m.EmployeesModule )},
+      { path: 'providers', loadChildren: () => import ('./main-page/providers/providers.module').then (m => ProvidersModule)},
       { path: '**', component: Error404Component}
     ]}
 ];

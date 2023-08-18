@@ -5,6 +5,7 @@ import { TranslateModule } from '@ngx-translate/core'
 
 import { TrainingComponent } from './training.component';
 import { NewcoinstComponent } from './newcoinst/newcoinst.component';
+import { EditcoinstComponent } from './editcoinst/editcoinst.component';
 
 import { TrainingRoutingModule } from './training-routing.module';
 
@@ -21,10 +22,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
-
 @NgModule({
   providers:[DatePipe],
-  declarations: [TrainingComponent, NewcoinstComponent],
+  declarations: [TrainingComponent, NewcoinstComponent, EditcoinstComponent],
   imports: [
     CommonModule,
     TrainingRoutingModule,

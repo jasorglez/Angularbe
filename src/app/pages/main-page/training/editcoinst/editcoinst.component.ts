@@ -20,11 +20,11 @@ import { StudentsService } from '../../../../services/students.service';
 
 
 @Component({
-  selector: 'app-newcoinst',
-  templateUrl: './newcoinst.component.html',
-  styleUrls: ['./newcoinst.component.css']
+  selector: 'app-editcoinst',
+  templateUrl: './editcoinst.component.html',
+  styleUrls: ['./editcoinst.component.css']
 })
-export class NewcoinstComponent implements OnInit {
+export class EditcoinstComponent implements OnInit {
 
   instructorsList  : any[] = [];
   employeesList    : any[] = [] ;
@@ -35,6 +35,10 @@ export class NewcoinstComponent implements OnInit {
   selectedFile4: File;
   selectedFile5: File;
   selectedFile6: File;
+
+ file1: string;
+ file2: string;
+ file3: string;
 
   selectedFile8: File;
   selectedFile9: File;
@@ -87,15 +91,20 @@ public fstudents = this.formBuilder.group({
                private employeesService   : EmployeesService,
                private formBuilder: FormBuilder,
                private storageServ: StoragesService,
-               public dialogRef: MatDialogRef<NewcoinstComponent >,
+               public dialogRef: MatDialogRef<EditcoinstComponent >,
                @Inject(MAT_DIALOG_DATA) public data: any) { }
 
 
   ngOnInit() {
+    this.getcombInstr();
 
-    if (this.data.formType === 'fcourses')  { this.getInstructors();  }
+    if (this.data.formType === 'fcourses')  {
 
-    if (this.data.formType === 'fstudents')  { this.getEmployees();  }
+      this.getCourses() }
+
+    if (this.data.formType === 'finstructors')  { this.getcombInstr();  }
+
+    if (this.data.formType === 'fstudents')  { this.getcombEmps();  }
 
     this.setDates() ;
 
@@ -130,42 +139,7 @@ public fstudents = this.formBuilder.group({
     }
 
 
-  getInstructors() {
-    //aqui voy a pasar lo que tengo en los combo box de Instructors
-    this.instructorsService.getIns2fields(localStorage.getItem('company'))
-    .then(dataInstructors  => {
-       this.instructorsList = dataInstructors;
-      // console.log(this.instructorsList)
-    }, error => {
-      console.error('Error:', error);
-    });
-  }
-
-  getEmployees() {
-    //aqui voy a pasar lo que tengo en los combo box de Employees
-    this.employeesService.get2field(localStorage.getItem('company'))
-    .then(dataEmployees  => {
-       this.employeesList = dataEmployees;
-      // console.log(this.employeesList)
-    }, error => {
-      console.error('Error:', error);
-    });
-  }
-
-
-  onEmployeeChange(event: Event) {
-    const selectedName = (event.target as HTMLInputElement).value ;
-
-    const selectedEmployee = this.employeesList.find(employee => employee.name === selectedName);
-
-    if (selectedEmployee) {
-      this.fstudents.get('email').setValue(selectedEmployee.email);
-    }
-  }
-
-
-
-  getCourses() {
+   getcombCours() {
       //aqui voy a pasar lo que tengo en los combo box de Instructors
       this.trainingService.getCour2fields(localStorage.getItem('project'))
       .then(dataInstructors  => {
@@ -177,55 +151,120 @@ public fstudents = this.formBuilder.group({
    }
 
 
-   async saveCourses() {
+   getCourses() {
+      this.trainingService.getItem(this.data.id).subscribe(
+        (resp:any)=>{
 
-          this.loadData = true;
+          let date = new Date(resp.dStart);
+          let formattedStart = date.getUTCFullYear() + '-' + ('0' + (date.getUTCMonth() + 1)).slice(-2) + '-'
+            + ('0' + date.getUTCDate()).slice(-2);
 
-          this.formSubmitted = true;
+            let date2 = new Date(resp.dEnd);
+            let formattedEnd = date2.getUTCFullYear() + '-' + ('0' + (date2.getUTCMonth() + 1)).slice(-2) + '-'
+              + ('0' + date2.getUTCDate()).slice(-2);
 
-          await this.saveFilesCourses() ;
+          this.fcourses.patchValue({
+            name        : resp.name,
+            dates       : formattedStart,
+            datee       : formattedEnd,
+            instructor  : resp.instructor,
+            place       : resp.place,
+            schedule    : resp.schedule,
+            description : resp.description
+        });
 
-             const dataCourses: Icourse = {
-                    name          : this.fcourses.controls.name.value,
-                    dStart        : new Date(this.fcourses.get('dates').value),
-                    dEnd          : new Date(this.fcourses.get('datee').value),
-                    description   : this.fcourses.controls.description.value,
-                    file1         : this.url,
-                    file2         : this.url2,
-                    file3         : this.url3,
-                    instructor    : this.fcourses.controls.instructor.value ?? '',
-                    id_project    : this.trackingService.getProject(),
-                    place         : this.fcourses.controls.place.value ?? '',
-                    schedule      : this.fcourses.controls.schedule.value ?? '',
+           this.file1 = this.getFileName(resp.file1);
+           this.file2 = this.getFileName(resp.file2);
+           this.file3 = this.getFileName(resp.file3);
 
-               }
+           this.url  = this.getFileName(resp.file1);
+           this.url2 = this.getFileName(resp.file2);
+           this.url3 = this.getFileName(resp.file3);
 
-               this.loadData = false;
+      }
+      )
+   }
 
-               this.trainingService.post(dataCourses, localStorage.getItem('token')).subscribe(
-                (resp: any) => { // Indicar que la respuesta es de tipo 'any'
-
-                    this.dialogRef.close('save');
-                  },
-                      err=>{
-                             alerts.basicAlert("Error", 'User saving error', "error")
-                      }
-               );
-
+  getcombInstr() {
+    //aqui voy a pasar lo que tengo en los combo box de Instructors
+    this.instructorsService.getIns2fields(localStorage.getItem('company'))
+    .then(dataInstructors  => {
+       this.instructorsList = dataInstructors;
+      // console.log(this.instructorsList)
+    }, error => {
+      console.error('Error:', error);
+    });
   }
 
-  selectFile1(event : any) {
+  getcombEmps() {
+    //aqui voy a pasar lo que tengo en los combo box de Employees
+    this.employeesService.get2field(localStorage.getItem('company'))
+    .then(dataEmployees  => {
+       this.employeesList = dataEmployees;
+      // console.log(this.employeesList)
+    }, error => {
+      console.error('Error:', error);
+    });
+  }
+
+
+  async saveCourses() {
+
+    this.loadData = true;
+    this.formSubmitted = true;
+
+    await this.saveFilesCourses() ;
+
+       const dataCourses: Icourse = {
+              name          : this.fcourses.get('name')?.value,
+              dStart        : new Date(this.fcourses.get('dates').value),
+              dEnd          : new Date(this.fcourses.get('datee').value),
+              description   : this.fcourses.get('description')?.value,
+              file1         : this.url,
+              file2         : this.url2,
+              file3         : this.url3,
+              instructor    : this.fcourses.get('instructor')?.value,
+              id_project    : localStorage.getItem('project'),
+              place         : this.fcourses.get('place')?.value,
+              schedule      : this.fcourses.get('schedule')?.value
+         }
+
+         this.loadData = false;
+
+         this.trainingService.patch(this.data.id, dataCourses, localStorage.getItem('token')).subscribe(
+          (resp: any) => { // Indicar que la respuesta es de tipo 'any'
+
+              this.dialogRef.close('save');
+            },
+                err=>{
+                       alerts.basicAlert("Error", 'User saving error', "error")
+                }
+         );
+}
+
+
+selectFile1(event: any) {
 
     this.selectedFile1 = event.target.files[0];
-  }
 
-  selectFile2(event : any) {
-    this.selectedFile2 = event.target.files[0];
-  }
+    this.file1 = this.selectedFile1.name;
 
-  selectFile3(event : any) {
-    this.selectedFile3 = event.target.files[0];
-  }
+}
+
+selectFile2(event: any) {
+
+    this.selectedFile2 = event.target.files[0]; // Asignar el archivo seleccionado a la variable
+    this.file2 = this.selectedFile2.name;
+
+}
+
+selectFile3(event: any) {
+
+    this.selectedFile3 = event.target.files[0]; // Asignar el archivo seleccionado a la variable
+    this.file3 = this.selectedFile3.name;
+
+}
+
 
   async saveFilesCourses() {
     if (this.selectedFile1) {
@@ -305,7 +344,6 @@ public fstudents = this.formBuilder.group({
   }
 
 
-
   async saveInstructors() {
 
       this.loadData = true;
@@ -334,7 +372,7 @@ public fstudents = this.formBuilder.group({
 
            this.loadData = false;
 
-           this.instructorsService.post(dataInstructors, localStorage.getItem('token')).subscribe(
+           this.instructorsService.patch(this.data.id, dataInstructors, localStorage.getItem('token')).subscribe(
             (resp: any) => { // Indicar que la respuesta es de tipo 'any'
 
                 this.dialogRef.close('save');
@@ -380,7 +418,6 @@ async saveFilesStudents() {
 }
 
 
-
 async saveStudents() {
   this.loadData = true;
 
@@ -400,7 +437,7 @@ async saveStudents() {
 
        this.loadData = false;
 
-       this.studentsService.post(dataStudents, localStorage.getItem('token')).subscribe(
+       this.studentsService.patch(this.data.id, dataStudents, localStorage.getItem('token')).subscribe(
         (resp: any) => { // Indicar que la respuesta es de tipo 'any'
 
             this.dialogRef.close('save');
@@ -409,7 +446,39 @@ async saveStudents() {
                      alerts.basicAlert("Error", 'User saving error', "error")
               }
        );
+}
 
+
+getFileName(fileUrl) {
+  if (typeof fileUrl === 'string' && this.isValidUrl(fileUrl)) {
+    let url = new URL(fileUrl);
+    let pathname = url.pathname;
+    let filename = pathname.substring(pathname.lastIndexOf('/')+1);
+    return filename;
+  } else {
+    console.error('Invalid URL:', fileUrl);
+    return null;
+  }
+}
+
+isValidUrl(string) {
+  try {
+    new URL(string);
+    return true;
+  } catch (_) {
+    return false;
+  }
+}
+
+
+onEmployeeChange(event: Event) {
+  const selectedName = (event.target as HTMLInputElement).value ;
+
+  const selectedEmployee = this.employeesList.find(employee => employee.name === selectedName);
+
+  if (selectedEmployee) {
+    this.fstudents.get('email').setValue(selectedEmployee.email);
+  }
 }
 
 

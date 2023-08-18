@@ -10,7 +10,7 @@ export class InstructorsService {
 constructor(private http : HttpClient) { }
 
 
-getInstructors(company: string) {
+getIns2fields(company: string) {
   const apiUrl = `${environment.urlFirebase}instructors.json?orderBy="id_company"&equalTo="${company}"`;
   try {
     return this.http.get<any>(apiUrl).toPromise()
@@ -52,12 +52,23 @@ deleteInstructors(id:string, token: any){
 post(data: any, token:any){
   try{
    return this.http.post(`${environment.urlFirebase}instructors.json?auth=${token}`, data);
-  }catch(error) {                                   
+  }catch(error) {
    console.error("Error al guardar ", error ) ;
    return null ;
   }
 
 }
+
+patch(id:string, data: any, token:any){
+  try{
+    return this.http.patch(`${environment.urlFirebase}instructors/${id}.json?auth=${token}`, data);
+  }catch(error) {
+   console.error("Error al guardar ", error ) ;
+   return null ;
+  }
+
+}
+
 
 
 }

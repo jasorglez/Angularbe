@@ -174,12 +174,22 @@
                     <div class="col-md-12">
 
                       <div class="form-group mb-3">
-                        <input type="text" id="InputName" class="form-control" placeholder="{{ 'name' | translate }} {{ 'company' | translate }}" formControlName="displayNamec" [ngClass]="{ 'is-invalid': namefc.invalid && (namefc.dirty || namefc.touched) }" />
+                        <input type="text" id="InputName" class="form-control" placeholder="{{ 'name' | translate }} {{ 'company' | translate }}"
+                        formControlName="displayNamec" [ngClass]="{ 'is-invalid': namefc.invalid && (namefc.dirty || namefc.touched) }" />
                         <div *ngIf="namefc.invalid && (namefc.dirty || namefc.touched)" class="invalid-feedback">
                           <div *ngIf="namefc.errors['required']">
                             {{ 'req' | translate}}  {{ 'name' | translate }}
                           </div>
                         </div>
+
+
+                        <input type="text" class="form-control" placeholder="{{ 'name' | translate }} {{ 'small' | translate }}" formControlName="names" />
+                        <div *ngIf="fcompanys.get('names').invalid && (fcompanys.get('names').dirty || fcompanys.get('names').touched)" class="invalid-feedback">
+                          <div *ngIf="fcompanys.get('names').errors['required']">
+                            {{ 'small' | translate}}  {{ 'name' | translate }}
+                          </div>
+                        </div>
+
 
                         <input type="text" class="form-control" placeholder="{{ 'address' | translate }}" formControlName="addressc" />
 

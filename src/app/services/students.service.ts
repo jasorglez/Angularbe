@@ -12,7 +12,7 @@ constructor( private http : HttpClient) { }
 
 getStudents(course: string) {
   try {
-    const apiUrl = `${environment.urlFirebase}students.json?orderBy="id_course"&equalTo="${course}"`;
+    const apiUrl = `${environment.urlFirebase}studentsxemployees.json?orderBy="id_course"&equalTo="${course}"`;
     return this.http.get(apiUrl)
 
   }catch(error){
@@ -25,7 +25,17 @@ getStudents(course: string) {
 
 post(data: any, token:any){
   try{
-   return this.http.post(`${environment.urlFirebase}students.json?auth=${token}`, data);
+   return this.http.post(`${environment.urlFirebase}studentsxemployees.json?auth=${token}`, data);
+  }catch(error) {
+   console.error("Error al guardar ", error ) ;
+   return null ;
+  }
+
+}
+
+patch(id: string, data: any, token:any){
+  try{
+    return this.http.patch(`${environment.urlFirebase}studentsxemployees/${id}.json?auth=${token}`, data);
   }catch(error) {
    console.error("Error al guardar ", error ) ;
    return null ;
@@ -36,7 +46,7 @@ post(data: any, token:any){
 
 deleteStudent(id:string, token: any){
   try {
-    return this.http.delete(`${environment.urlFirebase}students/${id}.json?auth=${token}`);
+    return this.http.delete(`${environment.urlFirebase}studentsxemployees/${id}.json?auth=${token}`);
   }catch(error){
     console.error("Error al borrar", error) ;
     return null ;
