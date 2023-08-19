@@ -9,8 +9,8 @@ export const environment = {
     projectId: 'beapp-501d1',
     appId: '1:151993360357:web:127db5b6d20896fb84990c',
     //aqui juego con las base de datos
-   // databaseURL: 'https://beapp-501d1-default-rtdb.firebaseio.com',
-    databaseURL: 'https://beapp-testing-b89.firebaseio.com/',
+    databaseURL: 'https://beapp-501d1-default-rtdb.firebaseio.com',
+   // databaseURL: 'https://beapp-testing-b89.firebaseio.com/',
     storageBucket: 'beapp-501d1.appspot.com',
     locationId: 'us-central',
     apiKey: 'AIzaSyDxCBGKk8nT09hdW85-PyOkhw5_JPZLF1A',
@@ -20,8 +20,8 @@ export const environment = {
 
   production: false,
 //aqui juego con las base de datos
- // urlFirebase           : 'https://beapp-501d1-default-rtdb.firebaseio.com/',
-  urlFirebase           : 'https://beapp-testing-b89.firebaseio.com/',
+  urlFirebase           : 'https://beapp-501d1-default-rtdb.firebaseio.com/',
+ // urlFirebase           : 'https://beapp-testing-b89.firebaseio.com/',
 
   googleDriveCredentials:{ client_email: 'jsorglez@gmail.com',
                            private_key: '	9bb18cadc7bbafd5bd7fb4c2cea3ffb503b0900a',

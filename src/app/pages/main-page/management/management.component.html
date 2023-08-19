@@ -67,8 +67,8 @@
                   class="d-flex justify-content-xl-start justify-content-center d-inline text-nowrap"
                   style="font-size: 10px; font-weight: normal; color: #4f6d7a"
                 >
-                
-                
+
+
                 </div>
               </div>
             </div>
@@ -236,13 +236,15 @@
                       </button>
 
                       <button class="btn btn-sm btn-dark mr-1"
-                        (click)="editManag(element.id)">
+                        (click)="editManagdet(element.id)">
                         <i class="fas fa-pencil-alt"></i>
                       </button>
 
-                      <button
-                      class="btn btn-sm btn-danger">
-                      <i class="fas fa-trash"></i>
+                      <button matTooltip="{{ 'delete' | translate }} {{ 'details' | translate }}"
+                         class="btn btn-sm btn-danger"
+                         class="btn btn-sm btn-danger"
+                         (click)="deleteMandet(element.id, element.url)">
+                         <i class="fas fa-trash"></i>
                       </button>
                     </td>
                   </ng-container>

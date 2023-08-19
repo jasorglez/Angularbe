@@ -108,7 +108,15 @@ deleteManage(id:string, token: any){
     console.error("Error al borrar", error) ;
     return null ;
  }
+}
 
+ deleteDetails(id:string, token: any){
+  try {
+    return this.http.delete(`${environment.urlFirebase}management_filesdetails/${id}.json?auth=${token}`);
+  }catch(error){
+    console.error("Error al borrar", error) ;
+    return null ;
+ }
 }
 
 

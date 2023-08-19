@@ -7,6 +7,7 @@ import { Imanfildet } from 'src/app/interface/imanfildet';
 import { MatTableDataSource } from '@angular/material/table';
 import { ManagementService } from 'src/app/services/management.service';
 import { FirebaseService } from 'src/app/services/firebase.service';
+import { StoragesService } from 'src/app/services/storages.service';
 
 import { MatPaginator} from '@angular/material/paginator';
 import { MatSort} from '@angular/material/sort';
@@ -87,9 +88,10 @@ export class ManagementComponent {
  @ViewChild(MatSort) sort!: MatSort;
 
 
- constructor(public translateService: TraductorService,
-             private trackingService : TrackingService,
+ constructor(public translateService   : TraductorService,
+             private trackingService   : TrackingService,
              private managementService : ManagementService,
+             private storagesService   : StoragesService,
              private firebaseserv : FirebaseService,
              public dialog : MatDialog,) { }
 
@@ -115,7 +117,7 @@ ngOnInit(): void {
     async(data) => {
       this.project = data;
       if (this.project.length === 0) {
-      
+
         this.getManagement();
       } else {
         await this.getManagement();
@@ -243,12 +245,11 @@ newManagDet(id: string) {
 deleteMan( id: string){
 
   alerts.confirmAlert('Are you sure?', 'The information cannot be recovered!', 'warning','Yes, delete it!')
-  .then((result) => {
+  .then((result) =>
+   {
 
-if (result.isConfirmed) {
-      this.managementService.findSubdetails(id).
-
-        subscribe(
+       if (result.isConfirmed) {
+          this.managementService.findSubdetails(id).subscribe(
 
            (resp:any) => {
 
@@ -270,13 +271,37 @@ if (result.isConfirmed) {
 
          }
      )
-}
-})
+   }
+
+  })
 
 }
 
 
-editManag(id : string) {
+deleteMandet( id: string, file: string){
+
+  alerts.confirmAlert('Are you sure?', 'Are you sure Delete details record!', 'warning','Yes, delete it!')
+  .then((result) => {
+    if (result.isConfirmed) {
+      this.storagesService.deleteFile(file) ;
+      this.managementService.deleteDetails(id, localStorage.getItem('token'))
+
+      .subscribe(
+        () => {
+
+             alerts.basicAlert("Sucess", "The Detail management has been deleted", "success")
+             this.getDatadetails();
+          }
+      )
+    }
+
+    })  
+  }
+
+
+
+
+editManagdet(id : string) {
 
   const dialogRef = this.dialog.open(EditFileComponent,{
 
