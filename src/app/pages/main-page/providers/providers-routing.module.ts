@@ -8,9 +8,8 @@ const routes: Routes = [
   { path: '', component: ProvidersComponent }
 ];
 
-
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class ProviderRoutingModule { }
+export class ProvidersRoutingModule { }

@@ -67,109 +67,173 @@
           <div matListItemTitle class="item-content">PM</div>
         </mat-list-item>
       </mat-expansion-panel>
+
+       <!-- Menu Almacen -->
+ <mat-expansion-panel id="expMenu">
+  <mat-expansion-panel-header class="panel-header">
+       <mat-panel-title>
+         <mat-icon matListItemIcon class="brand-image">store</mat-icon>
+         <div matListItemTitle class="item-content-panel brand-text">ALMACEN</div>
+         </mat-panel-title>
+  </mat-expansion-panel-header>
+
+     <mat-list-item routerLink="#" (click)="navigateToMaterials()">
+       <mat-icon matListItemIcon>wysiwyg</mat-icon>
+       <div matListItemTitle class="item-content">Catalogo Materiales</div>
+     </mat-list-item>
+
+     <mat-list-item  routerLink="#" (click)="navigateToUsers">
+       <mat-icon matListItemIcon>engineering</mat-icon>
+       <div matListItemTitle class="item-content">Catalogo Proveedores</div>
+     </mat-list-item>
+
+     <mat-list-item routerLink="#" (click)="navigateToUsers()">
+      <mat-icon matListItemIcon>handyman</mat-icon>
+      <div matListItemTitle class="item-content">Entradas</div>
+    </mat-list-item>
+
+    <mat-list-item routerLink="#" (click)="navigateToUsers()">
+      <mat-icon matListItemIcon>handyman</mat-icon>
+      <div matListItemTitle class="item-content">Salidas</div>
+    </mat-list-item>
+
+     <mat-list-item routerLink="#" (click)="navigateToUsers()">
+       <mat-icon matListItemIcon>handyman</mat-icon>
+       <div matListItemTitle class="item-content">Kardex</div>
+     </mat-list-item>
+
+</mat-expansion-panel>
+
       <!-- Menu PMO -->
       <mat-expansion-panel id="expMenu">
-        <mat-expansion-panel-header class="panel-header">
-          <mat-panel-title>
-            <mat-icon matListItemIcon class="brand-image">apartment</mat-icon>
-            <div matListItemTitle class="item-content-panel brand-text">PMO</div>
-          </mat-panel-title>
-        </mat-expansion-panel-header>
-        <mat-list-item routerLink="#" (click)="navigateToInterested()">
-          <mat-icon matListItemIcon>badge</mat-icon>
-          <div matListItemTitle class="item-content">Interesados</div>
-        </mat-list-item>
-        <mat-list-item routerLink="#" (click)="navigateToCommunications()">
-          <mat-icon matListItemIcon>share</mat-icon>
-          <div matListItemTitle class="item-content">Comunicaciones</div>
-        </mat-list-item>
-        <mat-list-item routerLink="#">
-          <mat-icon matListItemIcon>query_stats</mat-icon>
-          <div matListItemTitle class="item-content">Riesgos</div>
-        </mat-list-item>
-        <mat-list-item routerLink="#" (click)="navigateToManagement()">
-          <mat-icon matListItemIcon>description</mat-icon>
-          <div matListItemTitle class="item-content">Gestion de Proyectos</div>
-        </mat-list-item>
-        <mat-list-item routerLink="#" (click)="navigateToLessons()">
-          <mat-icon matListItemIcon>task</mat-icon>
-          <div matListItemTitle class="item-content">Lecciones Aprendidas</div>
-        </mat-list-item>
-        <mat-list-item routerLink="#" (click)="navigateToTraining()">
-          <mat-icon matListItemIcon>history_edu</mat-icon>
-          <div matListItemTitle class="item-content">Gestion de Capacitaciones</div>
-        </mat-list-item>
+           <mat-expansion-panel-header class="panel-header">
+              <mat-panel-title>
+                <mat-icon matListItemIcon class="brand-image">apartment</mat-icon>
+                <div matListItemTitle class="item-content-panel brand-text">PMO</div>
+              </mat-panel-title>
+           </mat-expansion-panel-header>
+
+            <mat-list-item routerLink="#" (click)="navigateToInterested()">
+              <mat-icon matListItemIcon>badge</mat-icon>
+              <div matListItemTitle class="item-content">Interesados</div>
+            </mat-list-item>
+            <mat-list-item routerLink="#" (click)="navigateToCommunications()">
+              <mat-icon matListItemIcon>share</mat-icon>
+              <div matListItemTitle class="item-content">Comunicaciones</div>
+            </mat-list-item>
+            <mat-list-item routerLink="#">
+              <mat-icon matListItemIcon>query_stats</mat-icon>
+              <div matListItemTitle class="item-content">Riesgos</div>
+            </mat-list-item>
+            <mat-list-item routerLink="#" (click)="navigateToManagement()">
+              <mat-icon matListItemIcon>description</mat-icon>
+              <div matListItemTitle class="item-content">Gestion de Proyectos</div>
+            </mat-list-item>
+            <mat-list-item routerLink="#" (click)="navigateToLessons()">
+              <mat-icon matListItemIcon>task</mat-icon>
+              <div matListItemTitle class="item-content">Lecciones Aprendidas</div>
+            </mat-list-item>
+            <mat-list-item routerLink="#" (click)="navigateToTraining()">
+              <mat-icon matListItemIcon>history_edu</mat-icon>
+              <div matListItemTitle class="item-content">Gestion de Capacitaciones</div>
+            </mat-list-item>
       </mat-expansion-panel>
+
       <!-- Menu PM -->
       <mat-expansion-panel id="expMenu">
-        <mat-expansion-panel-header class="panel-header">
-          <mat-panel-title>
-            <mat-icon matListItemIcon class="brand-image">home_work</mat-icon>
-            <div matListItemTitle class="item-content-panel brand-text">PM</div>
-            </mat-panel-title>
-        </mat-expansion-panel-header>
+             <mat-expansion-panel-header class="panel-header">
+                  <mat-panel-title>
+                    <mat-icon matListItemIcon class="brand-image">home_work</mat-icon>
+                    <div matListItemTitle class="item-content-panel brand-text">PM</div>
+                    </mat-panel-title>
+             </mat-expansion-panel-header>
 
-        <mat-list-item routerLink="#" (click)="navigateToCatalog()">
-          <mat-icon matListItemIcon>wysiwyg</mat-icon>
-          <div matListItemTitle class="item-content">Catalogo de Conceptos</div>
-        </mat-list-item>
+                <mat-list-item routerLink="#" (click)="navigateToCatalog()">
+                  <mat-icon matListItemIcon>wysiwyg</mat-icon>
+                  <div matListItemTitle class="item-content">Catalogo de Conceptos</div>
+                </mat-list-item>
 
-        <mat-list-item  routerLink="#" (click)="navigateToUsers()">
-          <mat-icon matListItemIcon>engineering</mat-icon>
-          <div matListItemTitle class="item-content">Catalogo de Personal</div>
-        </mat-list-item>
+                <mat-list-item  routerLink="#" (click)="navigateToUsers()">
+                  <mat-icon matListItemIcon>engineering</mat-icon>
+                  <div matListItemTitle class="item-content">Catalogo de Personal</div>
+                </mat-list-item>
 
-        <mat-list-item routerLink="#" (click)="navigateToUsers()">
-          <mat-icon matListItemIcon>front_loader</mat-icon>
-          <div matListItemTitle class="item-content">Catalogo de Equipos</div>
-        </mat-list-item>
+                <mat-list-item routerLink="#" (click)="navigateToUsers()">
+                  <mat-icon matListItemIcon>front_loader</mat-icon>
+                  <div matListItemTitle class="item-content">Catalogo de Equipos</div>
+                </mat-list-item>
 
-        <mat-list-item routerLink="#" (click)="navigateToUsers()">
-          <mat-icon matListItemIcon>handyman</mat-icon>
-          <div matListItemTitle class="item-content">Catalogo de Herramientas</div>
-        </mat-list-item>
+                <mat-list-item routerLink="#" (click)="navigateToUsers()">
+                  <mat-icon matListItemIcon>handyman</mat-icon>
+                  <div matListItemTitle class="item-content">Catalogo de Herramientas</div>
+                </mat-list-item>
 
       </mat-expansion-panel>
+
+       <!-- Menu RECURSOS INHUMANOS -->
+ <mat-expansion-panel id="expMenu">
+  <mat-expansion-panel-header class="panel-header">
+       <mat-panel-title>
+         <mat-icon matListItemIcon class="brand-image">store</mat-icon>
+         <div matListItemTitle class="item-content-panel brand-text">REC. HUMANOS</div>
+         </mat-panel-title>
+  </mat-expansion-panel-header>
+
+     <mat-list-item routerLink="#" (click)="navigateToEmployees()">
+       <mat-icon matListItemIcon>wysiwyg</mat-icon>
+       <div matListItemTitle class="item-content">Empleados</div>
+     </mat-list-item>
+
+     <mat-list-item  routerLink="#" (click)="navigateToUsers">
+       <mat-icon matListItemIcon>engineering</mat-icon>
+       <div matListItemTitle class="item-content">Catalogo Proveedores</div>
+     </mat-list-item>
+
+</mat-expansion-panel>
+
+
+
+
       <!-- Menu Configuracion -->
       <mat-expansion-panel id="expMenu">
-        <mat-expansion-panel-header class="panel-header">
-          <mat-panel-title>
-            <mat-icon matListItemIcon class="brand-image">admin_panel_settings</mat-icon>
-            <div matListItemTitle class="item-content-panel brand-text">Configuración</div>
-            </mat-panel-title>
-        </mat-expansion-panel-header>
+            <mat-expansion-panel-header class="panel-header">
+              <mat-panel-title>
+                <mat-icon matListItemIcon class="brand-image">admin_panel_settings</mat-icon>
+                <div matListItemTitle class="item-content-panel brand-text">Configuración</div>
+                </mat-panel-title>
+            </mat-expansion-panel-header>
 
-        <mat-list-item routerLink="#" (click)="navigateToCompanys()">
-          <mat-icon matListItemIcon>apple</mat-icon>
-          <div matListItemTitle class="item-content">Empresas</div>
-        </mat-list-item>
+            <mat-list-item routerLink="#" (click)="navigateToCompanys()">
+              <mat-icon matListItemIcon>apple</mat-icon>
+              <div matListItemTitle class="item-content">Empresas</div>
+            </mat-list-item>
 
-        <mat-list-item routerLink="#" (click)="navigateToEmployee()">
-          <mat-icon matListItemIcon>apple</mat-icon>
-          <div matListItemTitle class="item-content">Empleados</div>
-        </mat-list-item>
+            <mat-list-item routerLink="#" (click)="navigateToEmployee()">
+              <mat-icon matListItemIcon>apple</mat-icon>
+              <div matListItemTitle class="item-content">Empleados</div>
+            </mat-list-item>
 
-        <mat-list-item  routerLink="#" (click)="navigateToUsers()">
-          <mat-icon matListItemIcon>person</mat-icon>
-          <div matListItemTitle class="item-content">Usuarios</div>
-        </mat-list-item>
+            <mat-list-item  routerLink="#" (click)="navigateToUsers()">
+              <mat-icon matListItemIcon>person</mat-icon>
+              <div matListItemTitle class="item-content">Usuarios</div>
+            </mat-list-item>
 
-        <mat-list-item routerLink="#">
-          <mat-icon matListItemIcon>android</mat-icon>
-          <div matListItemTitle class="item-content">Permisos</div>
-        </mat-list-item>
+            <mat-list-item routerLink="#">
+              <mat-icon matListItemIcon>android</mat-icon>
+              <div matListItemTitle class="item-content">Permisos</div>
+            </mat-list-item>
 
-        <mat-list-item routerLink="#" (click)="navigateToProviders()">
-          <mat-icon matListItemIcon>android</mat-icon>
-          <div matListItemTitle class="item-content">Proveedores</div>
-        </mat-list-item>
+            <mat-list-item routerLink="#" (click)="navigateToProviders()">
+              <mat-icon matListItemIcon>android</mat-icon>
+              <div matListItemTitle class="item-content">Proveedores</div>
+            </mat-list-item>
 
-        <mat-list-item routerLink="#" (click)="navigateToBranchs()">
-          <mat-icon matListItemIcon>android</mat-icon>
-          <div matListItemTitle class="item-content">Sucursales</div>
-        </mat-list-item>
-
+            <mat-list-item routerLink="#" (click)="navigateToBranchs()">
+              <mat-icon matListItemIcon>android</mat-icon>
+              <div matListItemTitle class="item-content">Sucursales</div>
+            </mat-list-item>
       </mat-expansion-panel>
+
       <mat-list-item routerLink="#" (click)="authService.logout()">
         <mat-icon matListItemIcon>logout</mat-icon>
         <div matListItemTitle class="item-content brand-text">Salir</div>

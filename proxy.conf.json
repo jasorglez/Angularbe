@@ -1,0 +1,6 @@
+{
+  "/api":{
+    "target":"https://weapi2024.azurewebsites.net/",
+    "secure":false
+  }
+}

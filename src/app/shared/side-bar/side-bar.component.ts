@@ -63,6 +63,11 @@ export class SideBarComponent implements OnInit {
           this.router.navigate(['/concepts']);
         }
 
+        navigateToMaterials()  {
+          this.trackingService.addLog(this.trackingService.getnameComp(), 'Eleccion del menu Catalog Materiales', 'Menu Side Bar', '')
+          this.router.navigate(['/materials']);
+        }
+
         async navigateToInterested()  {
           this.trackingService.addLog(this.trackingService.getnameComp(), 'Eleccion del menu Interested/Interesados', 'Menu Side Bar', '')
           this.router.navigate(['/interested']);
@@ -96,6 +101,11 @@ export class SideBarComponent implements OnInit {
         navigateToProviders()  {
           this.trackingService.addLog(this.trackingService.getnameComp(), 'Eleccion del menu Providers/Proveedores', 'Menu Side Bar', '')
           this.router.navigate(['/providers']);
+        }
+
+        navigateToEmployees()  {
+          this.trackingService.addLog(this.trackingService.getnameComp(), 'Eleccion del menu Employees/Empleados', 'Menu Side Bar', '')
+          this.router.navigate(['/employees']);
         }
 
       	async ngOnInit()  {

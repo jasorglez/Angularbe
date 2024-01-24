@@ -11,7 +11,10 @@ constructor(private http : HttpClient) { }
 
 getEmployees(company: string) {
   try {
-    const apiUrl = `${environment.urlFirebase}employees.json?orderBy="id_company"&equalTo="${company}"`;
+    //const apiUrl = `${environment.urlFirebase}employees.json?orderBy="id_company"&equalTo="${company}"`;
+    
+    const apiUrl = `${environment.urlAzure}api/Employees/id_company/${company}`;
+
     return this.http.get(apiUrl)
 
   }catch(error){
@@ -45,8 +48,11 @@ patch(id:string, data: any, token:any){
 
 
 post(data: any, token:any){
+ //console.log(data);
   try{
-   return this.http.post(`${environment.urlFirebase}employees.json?auth=${token}`, data);
+  // return this.http.post(`${environment.urlFirebase}employees.json?auth=${token}`, data);
+
+     return this.http.post(`${environment.urlAzure}api/Employees`, data);
   }catch(error) {
    console.error("Error al guardar ", error ) ;
    return null ;
@@ -57,7 +63,10 @@ post(data: any, token:any){
 
 delete(id:string, token: any){
   try {
-    return this.http.delete(`${environment.urlFirebase}employees/${id}.json?auth=${token}`);
+    //return this.http.delete(`${environment.urlFirebase}employees/${id}.json?auth=${token}`);
+    
+    return this.http.delete(`${environment.urlAzure}api/Employees/${id}`);
+
   }catch(error){
     console.error("Error al borrar", error) ;
     return null ;

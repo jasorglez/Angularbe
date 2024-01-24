@@ -53,9 +53,7 @@ export class ManagementComponent {
   }
 
 
-   /*=============================================
- Variable para nombrar las columnas de nuestra tabla en Angular Material
- =============================================*/
+   
  displayedColManag   : string[] = ['numberposition', 'name','actions'];
 
  displayedColdetails : string[] = ['numberposition', 'name','date', 'parent',
@@ -295,7 +293,7 @@ deleteMandet( id: string, file: string){
       )
     }
 
-    })  
+    })
   }
 
 

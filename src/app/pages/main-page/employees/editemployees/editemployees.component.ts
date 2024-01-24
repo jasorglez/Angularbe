@@ -43,6 +43,7 @@ export class EditemployeesComponent implements OnInit {
     cp           :  '',
     curp         :  ['', [Validators.required]],
     email        :  ['', [Validators.required, Validators.email]],
+    ident_emp     :  ['', [Validators.required]],
     name         :  ['', [Validators.required]],
     phone        :  ['',  [Validators.required, Validators.pattern('^[0-9]{10}$')]],
     picture      :  '',
@@ -62,18 +63,20 @@ export class EditemployeesComponent implements OnInit {
       (resp: any) => {
 
         this.femployees.patchValue( {
-          address  : resp.address,
-          age      : resp.age,
-          country  : resp.country,
-          colony   : resp.colony,
-          city     : resp.city,
-          cp       : resp.cp,
-          curp     : resp.curp,
-          email    : resp.email,
+          address   : resp.address,
+          age       : resp.age,
+          country   : resp.country,
+          colony    : resp.colony,
+          city      : resp.city,
+          cp        : resp.cp,
+          curp      : resp.curp,
+          email     : resp.email,
+          ident_emp : resp.identity,
           name     : resp.name,
           phone    : resp.phone,
           picture  : resp.picture,
           rfc      : resp.rfc
+          
         })
 
         this.imageUrl = resp.picture ;
@@ -93,7 +96,7 @@ export class EditemployeesComponent implements OnInit {
       this.formSubmitted = true;
 
       const dataEmployees: Iemployees = {
-          active       : 1,
+          salary       : 0,
           address      : this.femployees.get('address')?.value,
           age          : this.femployees.get('age')?.value,
           country      : this.femployees.get('country')?.value,
@@ -102,6 +105,7 @@ export class EditemployeesComponent implements OnInit {
           cp           : this.femployees.get('cp')?.value,
           curp         : this.femployees.get('curp')?.value,
           email        : this.femployees.get('email')?.value,
+          ident_emp    : this.femployees.get('identity')?.value,
           name         : this.femployees.get('name')?.value,
           phone        : this.femployees.get('phone').value,
           picture      : this.femployees.get('picture')?.value,

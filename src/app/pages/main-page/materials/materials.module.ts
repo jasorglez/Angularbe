@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ProvidersRoutingModule } from './providers-routing.module';
-import { ProvidersComponent } from './providers.component';
+import { MaterialsRoutingModule } from './materials-routing.module' ;
+import { MaterialsComponent } from './materials.component';
 
 //Angular Material
 import { MatTableModule } from '@angular/material/table';
@@ -17,11 +17,12 @@ import { MatSelectModule } from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
 
 
+
 @NgModule({
-  declarations: [ProvidersComponent],
+  declarations: [MaterialsComponent],
   imports: [
     CommonModule,
-    ProvidersRoutingModule,
+    MaterialsRoutingModule,
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
@@ -31,4 +32,4 @@ import { FormsModule } from '@angular/forms';
     FormsModule
   ]
 })
-export class ProvidersModule { }
+export class MaterialsModule { }

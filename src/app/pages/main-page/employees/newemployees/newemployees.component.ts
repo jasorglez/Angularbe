@@ -42,6 +42,7 @@ export class NewemployeesComponent implements OnInit {
      cp           :  '',
      curp         :  ['', [Validators.required]],
      name         :  ['', [Validators.required]],
+     identity     :  ['', ],
      email        :  ['', [Validators.required, Validators.email]],
      phone        :  ['',  [Validators.required, Validators.pattern('^[0-9]{10}$')]],
      picture      :  environment.urlProfile,
@@ -51,8 +52,6 @@ export class NewemployeesComponent implements OnInit {
 
    get city()      { return this.femployees.get('city')}
    get country()   { return this.femployees.get('country')}
-
-
 
 
 
@@ -72,21 +71,21 @@ export class NewemployeesComponent implements OnInit {
       this.formSubmitted = true;
 
       const dataEmployees: Iemployees = {
-          active       : 1,
           address      : this.femployees.get('address')?.value,
           age          : this.femployees.get('age')?.value,
-          country      : this.femployees.get('country')?.value,
-          colony       : this.femployees.get('colony')?.value,
           city         : this.femployees.get('city')?.value,
+          colony       : this.femployees.get('colony')?.value,
+          country      : this.femployees.get('country')?.value,
           cp           : this.femployees.get('cp')?.value,
           curp         : this.femployees.get('curp')?.value,
-          name         : this.femployees.get('name')?.value,
           email        : this.femployees.get('email')?.value,
+          ident_emp    : this.femployees.get('identity')?.value,
+          id_company   : localStorage.getItem('company'),
+          name         : this.femployees.get('name')?.value,
           phone        : this.femployees.get('phone').value,
           picture      : this.femployees.controls.picture.value,
           rfc          : this.femployees.controls.rfc.value,
-          id_company   : localStorage.getItem('company')
-
+          salary       : 0,
     }
 
            this.loadData = false;

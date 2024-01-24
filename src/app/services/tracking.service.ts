@@ -184,7 +184,7 @@ setContract(contract: string): void {
       idn: 0,
     };
 
-  //  console.log("Tracking", data)
+    //console.log("Tracking", data)
 
     try {
       const response: any = await this.http.get(`${environment.urlFirebase}tracking.json?orderBy="$key"&limitToLast=1`).toPromise();
@@ -193,13 +193,18 @@ setContract(contract: string): void {
 
       // Asignar el valor de "id" del último registro al nuevo registro
       data['idn'] = lastLog ? lastLog.idn + 1 : 1;
+      
       const postResponse = await this.http.post(`${environment.urlFirebase}tracking.json`, data).toPromise();
+
+      const postResponseSS = await this.http.post(`${environment.urlAzure}api/Trackings`, data).toPromise();
+
       // console.log('Log creado exitosamente:', postResponse);
     } catch (error) {
+
       console.error('Error al crear el log:', error);
+
     }
   }
-
 
 
 	getDataTracking(valoruser :string){

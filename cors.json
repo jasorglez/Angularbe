@@ -1,8 +1,8 @@
 
 [
   {
-    "origin": ["http://localhost:4200"],
-    "method": ["GET"],
+    "origin": ["https://weapi2024.azurewebsites.net/"],
+    "method": ["POST"],
     "maxAgeSeconds": 3600
   }
 ]
