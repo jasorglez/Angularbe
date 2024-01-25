@@ -9,7 +9,7 @@
             <div class="col-md-12">
 
               <div class="form-group mb-3">
-              
+
                 <input type="text" id="InputName" class="form-control" placeholder="{{ 'identity' | translate }} {{ 'employees' | translate }}"
                 formControlName="identity"  />
                 <div *ngIf="femployees.get('identity').invalid && (femployees.get('identity').dirty || femployees.get('identity').touched)" class="invalid-feedback">

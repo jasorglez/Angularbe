@@ -35,18 +35,18 @@ export class NewemployeesComponent implements OnInit {
   public femployees = this.formBuilder.group({
      active       :  1,
      address      : '',
-     age          :  [, [Validators.required, Validators.pattern('^(1[8-9]|[2-5][0-9]|6[0-9])$')]],
+     age          :  ['30', [Validators.required, Validators.pattern('^(1[8-9]|[2-5][0-9]|6[0-9])$')]],
      country      :  ['MX',],
      colony       : '',
-     city         : '',
+     city         : 'TX',
      cp           :  '',
-     curp         :  ['', [Validators.required]],
+     curp         :  ['CURP',],
      name         :  ['', [Validators.required]],
      identity     :  ['', ],
-     email        :  ['', [Validators.required, Validators.email]],
-     phone        :  ['',  [Validators.required, Validators.pattern('^[0-9]{10}$')]],
+     email        :  ['info@gmail.com', [Validators.required, Validators.email]],
+     phone        :  ['', ],
      picture      :  environment.urlProfile,
-     rfc          :  ['', [Validators.required]],
+     rfc          :  ['RFC'],
 
    } )
 

@@ -1,5 +1,5 @@
 export interface Iemployees {
-  id?        : number;
+  id         : number;
   address    : string;
   age        : string;
   city       : string;
@@ -9,11 +9,10 @@ export interface Iemployees {
   curp       : string;
   email      : string;
   ident_emp  : string;
-  id_company? : string;
+  id_company : string;
   name       : string;
   phone      : string;
   picture    : string;
   rfc        : string;
   salary     : number;
 }
-

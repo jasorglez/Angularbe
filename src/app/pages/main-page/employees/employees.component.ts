@@ -101,8 +101,6 @@ export class EmployeesComponent implements OnInit {
 
       this.loadData = true;
 
-      console.log(localStorage.getItem('company'))
-
       this.employeesServ.getEmployees(localStorage.getItem('company'))
         .subscribe((resp: any) => {
           /*=============================================
@@ -114,7 +112,7 @@ export class EmployeesComponent implements OnInit {
             (a) =>
               ({
                 id         :   resp[a].id,
-                address    :   resp[a]?.address,  
+                address    :   resp[a]?.address,
                 age        :   resp[a]?.age,
                 city       :   resp[a]?.city,
                 colony     :   resp[a]?.colony,

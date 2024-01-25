@@ -34,20 +34,20 @@ export class EditemployeesComponent implements OnInit {
 
 
   public femployees = this.formBuilder.group({
-    active       :  1,
+    id           :  0,
     address      : '',
     age          :  [, [Validators.required, Validators.pattern('^(1[8-9]|[2-5][0-9]|6[0-9])$')]],
     country      :  ['MX',],
     colony       : '',
     city         : '',
     cp           :  '',
-    curp         :  ['', [Validators.required]],
+    curp         :  ['', ],
     email        :  ['', [Validators.required, Validators.email]],
-    ident_emp     :  ['', [Validators.required]],
+    identity     :  ['', ],
     name         :  ['', [Validators.required]],
-    phone        :  ['',  [Validators.required, Validators.pattern('^[0-9]{10}$')]],
+    phone        :  [''],
     picture      :  '',
-    rfc          :  ['', [Validators.required]],
+    rfc          :  ['' ],
 
    } )
 
@@ -55,37 +55,39 @@ export class EditemployeesComponent implements OnInit {
    get country()   { return this.femployees.get('country')}
 
 
-  ngOnInit() {
-
-   // console.log("this.id", this.data.id)
+   ngOnInit() {
 
     this.employeesServ.getEmployeexid(this.data.id).subscribe(
       (resp: any) => {
+       // console.log('Response:', resp);
 
-        this.femployees.patchValue( {
-          address   : resp.address,
-          age       : resp.age,
-          country   : resp.country,
-          colony    : resp.colony,
-          city      : resp.city,
-          cp        : resp.cp,
-          curp      : resp.curp,
-          email     : resp.email,
-          ident_emp : resp.identity,
-          name     : resp.name,
-          phone    : resp.phone,
-          picture  : resp.picture,
-          rfc      : resp.rfc
-          
-        })
+        if (resp && typeof resp === 'object') {
+          this.imageUrl = resp.picture;
 
-        this.imageUrl = resp.picture ;
-       // console.log("Resp", resp)
-
-      })
-
-
-
+          // Set values for form controls
+          this.femployees.get('id')?.setValue(resp.id),
+          this.femployees.get('identity')?.setValue(resp.ident_Emp),
+          this.femployees.get('address')?.setValue(resp.address),
+          this.femployees.get('colony')?.setValue(resp.colony),
+          this.femployees.get('name')?.setValue(resp.name),
+          this.femployees.get('email')?.setValue(resp.email)
+          this.femployees.get('rfc')?.setValue(resp.rfc)
+          this.femployees.get('phone')?.setValue(resp.phone)
+          this.femployees.get('curp')?.setValue(resp.curp)
+          this.femployees.get('age')?.setValue(resp.age)
+          this.femployees.get('city')?.setValue(resp.city)
+          this.femployees.get('country')?.setValue(resp.country)
+        } else {
+          console.error('Unexpected response structure:', resp);
+        }
+      },
+      (error) => {
+        console.error('Error fetching employee details:', error);
+      },
+      () => {
+        console.log('Subscription completed');  // Log when the subscription is completed
+      }
+    );
   }
 
 
@@ -96,7 +98,6 @@ export class EditemployeesComponent implements OnInit {
       this.formSubmitted = true;
 
       const dataEmployees: Iemployees = {
-          salary       : 0,
           address      : this.femployees.get('address')?.value,
           age          : this.femployees.get('age')?.value,
           country      : this.femployees.get('country')?.value,
@@ -110,21 +111,23 @@ export class EditemployeesComponent implements OnInit {
           phone        : this.femployees.get('phone').value,
           picture      : this.femployees.get('picture')?.value,
           rfc          : this.femployees.get('rfc')?.value,
-          id_company   : localStorage.getItem('company')
-
+          salary       : 0
     }
 
            this.loadData = false;
 
            this.employeesServ.patch(this.data.id, dataEmployees, localStorage.getItem('token')).subscribe(
-            (resp: any) => { // Indicar que la respuesta es de tipo 'any'
+            (resp: any) => {
+              console.log('Response from server:', resp);
 
-                this.dialogRef.close('save');
-              },
-                  err=>{
-                         alerts.basicAlert("Error", 'User saving error', "error")
-                  }
-           );
+              this.dialogRef.close('save');
+              alerts.basicAlert("Success", 'User saved successfully', "success");
+            },
+            (error) => {
+              console.error('Error saving employee:', error);
+              alerts.basicAlert("Error", 'User saving error', "error");
+            }
+          );
 }
 
 

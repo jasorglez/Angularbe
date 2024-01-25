@@ -12,46 +12,45 @@ constructor(private http : HttpClient) { }
 getEmployees(company: string) {
   try {
     //const apiUrl = `${environment.urlFirebase}employees.json?orderBy="id_company"&equalTo="${company}"`;
-    
     const apiUrl = `${environment.urlAzure}api/Employees/id_company/${company}`;
-
     return this.http.get(apiUrl)
-
   }catch(error){
   console.error("Error Managment files", error) ;
   return null ;
-}
-
+ }
 }
 
 
 getEmployeexid(id : string){
   try {
-    const apiUrl = `${environment.urlFirebase}employees/${id}.json`;
+    //const apiUrl = `${environment.urlFirebase}employees/${id}.json`;
+    const apiUrl = `${environment.urlAzure}api/Employees/${id}`;
     return this.http.get(apiUrl)
   }catch(error){
-    console.error("Error Managmen details files", error) ;
+    console.error("Error Editar el Empleado", error) ;
     return null ;
   }
-
 }
 
-patch(id:string, data: any, token:any){
-  try{
-   return this.http.patch(`${environment.urlFirebase}employees/${id}.json?auth=${token}`, data);
-  }catch(error) {
-   console.error("Error al guardar ", error ) ;
-   return null ;
+
+
+patch(id: string, data: any, token: any) {
+  try {
+    const endpoint = `${environment.urlAzure}api/Employees/${id}`;
+    return this.http.put(endpoint, data);
+
+  } catch (error) {
+    console.error("Error in patch:", error);
+    return null;
   }
-
 }
+
 
 
 post(data: any, token:any){
  //console.log(data);
   try{
   // return this.http.post(`${environment.urlFirebase}employees.json?auth=${token}`, data);
-
      return this.http.post(`${environment.urlAzure}api/Employees`, data);
   }catch(error) {
    console.error("Error al guardar ", error ) ;
@@ -64,7 +63,7 @@ post(data: any, token:any){
 delete(id:string, token: any){
   try {
     //return this.http.delete(`${environment.urlFirebase}employees/${id}.json?auth=${token}`);
-    
+
     return this.http.delete(`${environment.urlAzure}api/Employees/${id}`);
 
   }catch(error){

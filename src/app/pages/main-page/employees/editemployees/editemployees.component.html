@@ -9,6 +9,15 @@
             <div class="col-md-12">
 
               <div class="form-group mb-3">
+
+                <input type="text" id="InputName" class="form-control" placeholder="{{ 'identity' | translate }} {{ 'employees' | translate }}"
+                formControlName="identity"  />
+                <div *ngIf="femployees.get('identity').invalid && (femployees.get('identity').dirty || femployees.get('identity').touched)" class="invalid-feedback">
+                  <div *ngIf="femployees.get('name').errors['required']">
+                    {{ 'req' | translate}}  {{ 'identity' | translate }}
+                  </div>
+                </div>
+
                 <input type="text" id="InputName" class="form-control" placeholder="{{ 'name' | translate }} {{ 'employees' | translate }}"
                 formControlName="name"  />
                 <div *ngIf="femployees.get('name').invalid && (femployees.get('name').dirty || femployees.get('name').touched)" class="invalid-feedback">
@@ -115,7 +124,7 @@
 
     <div class="card-footer">
       <button mat-dialog-close class="btn btn-secondary float-right">Cancelar</button>
-      <button type="submit" class="btn btn-warning float-right" [disabled]="femployees.invalid">Salvar</button>
+      <button type="submit" class="btn btn-warning float-right" [disabled]="femployees.invalid">SalvarEdit</button>
     </div>
 
   </form>
