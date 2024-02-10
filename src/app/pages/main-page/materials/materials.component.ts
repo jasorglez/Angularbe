@@ -117,9 +117,7 @@ export class MaterialsComponent implements OnInit {
             } as Imaterials)
         );
 
-       // console.log("Materiales",this.materials);
-
-           this.profile                       = this.materials[this.currentIndex]; // Tomamos el primer registro
+            this.profile                       = this.materials[this.currentIndex]; // Tomamos el primer registro
            this.materialsDataSource           = new MatTableDataSource(this.materials)
            this.materialsDataSource.paginator = this.paginator ;
            this.materialsDataSource.sort      = this.sort;
