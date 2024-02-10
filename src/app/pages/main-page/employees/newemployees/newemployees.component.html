@@ -10,7 +10,7 @@
 
               <div class="form-group mb-3">
 
-                <input type="text" id="InputName" class="form-control" placeholder="{{ 'identity' | translate }} {{ 'employees' | translate }}"
+                <input type="text" id="InputName" class="form-control" placeholder="{{ 'number' | translate }} {{ 'employees' | translate }}"
                 formControlName="identity"  />
                 <div *ngIf="femployees.get('identity').invalid && (femployees.get('identity').dirty || femployees.get('identity').touched)" class="invalid-feedback">
                   <div *ngIf="femployees.get('name').errors['required']">
@@ -30,6 +30,33 @@
 
                 <input type="text" class="form-control" placeholder="{{ 'colony' | translate }}" formControlName="colony" />
 
+                    <!-- SubFila 1.1.2 DbCombo Box Directions-->
+                    <div class="row mt-2">
+                      <div class="col-sm-12">
+                          <!-- Campo de Seleccion Directions -->
+                              <select name="format" id="format" (change)="onDirectionSelected($event)" class="form-control" >
+                                  <option selected disabled value="">{{ 'department' | translate }}</option>
+                                  <option *ngFor="let item of directions" [value]="item.id">
+                                    {{ item.description }}
+                                  </option>
+                              </select>
+                        </div>
+                    </div>
+
+                    <!-- SubFila 1.1.2 DbCombo Box Area-->
+                    <div class="row mt-2">
+                      <div class="col-sm-12">
+                          <!-- Campo de Seleccion Area -->
+                              <select name="format" id="format"  class="form-control" formControlName="area">
+                                  <option selected disabled value="">{{ 'area' | translate }}</option>
+                                  <option *ngFor="let item of areas" [value]="item.id">
+                                    {{ item.description }}
+                                  </option>
+                              </select>
+                        </div>
+                    </div>
+
+                    <input type="text" class="form-control" placeholder="{{ 'position' | translate }}" formControlName="position" />
 
                 <input type="name" id="InputEmail" class="form-control" placeholder="{{ 'email' | translate }}" autocomplete="on" formControlName="email" />
                 <div *ngIf="femployees.get('email').invalid && (femployees.get('email').dirty || femployees.get('email').touched)" class="invalid-feedback">
@@ -42,12 +69,6 @@
                 </div>
 
                 <input type="text" class="form-control" placeholder="{{ 'rfc' | translate }}" formControlName="rfc" />
-                <div *ngIf="femployees.get('rfc').invalid && (femployees.get('rfc').dirty || femployees.get('rfc').touched)" class="invalid-feedback">
-                  <div *ngIf="femployees.get('rfc').errors['required']">
-                    {{ 'req' | translate}}  {{ 'rfc' | translate }}
-                  </div>
-                </div>
-
 
                  <input type="text" class="form-control" placeholder="{{ 'phone' | translate }}" formControlName="phone" />
                  <div *ngIf="femployees.get('phone').invalid && (femployees.get('phone').dirty || femployees.get('phone').touched)" class="invalid-feedback">

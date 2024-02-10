@@ -89,12 +89,10 @@ export class NewInterestedComponent implements OnInit {
 
     this.getOrganizations();
 
-
-
   }
 
   onSelectOrganization(): void {
-    console.log('Id Company ->', this.selectedorganization);
+   // console.log('Id Company ->', this.selectedorganization);
     this.getOrganizations();
   }
 

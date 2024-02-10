@@ -1,0 +1,106 @@
+<div *ngIf="data.formType === 'fproviders'">
+  <form autocomplete="off" [formGroup]="fproviders" (ngSubmit)="saveProviders()">
+    <div class="card-body">
+      <ng-container *ngIf="!loadData">
+        <mat-dialog-actions>
+
+         <div class="row">
+
+            <div class="col-md-12">
+
+              <div class="form-group mb-3">
+
+                <input type="text" id="InputName" class="form-control" placeholder="{{ 'name' | translate }} {{ 'company' | translate }}"
+                formControlName="razonsocial"  />
+                <div *ngIf="fproviders.get('razonsocial').invalid && (fproviders.get('razonsocial').dirty || fproviders.get('razonsocial').touched)" class="invalid-feedback">
+                  <div *ngIf="fproviders.get('razonsocial').errors['required']">
+                    {{ 'req' | translate}}  {{ 'identity' | translate }}
+                  </div>
+                </div>
+
+                <input type="text" id="InputName" class="form-control" placeholder="{{ 'short' | translate }} {{ 'company' | translate }}"
+                formControlName="razoncorta"  />
+                <div *ngIf="fproviders.get('razoncorta').invalid && (fproviders.get('razoncorta').dirty || fproviders.get('razoncorta').touched)" class="invalid-feedback">
+                  <div *ngIf="fproviders.get('razoncorta').errors['required']">
+                    {{ 'short' | translate}}  {{ 'company' | translate }}
+                  </div>
+                </div>
+
+                <input type="text" class="form-control" placeholder="{{ 'address' | translate }}" formControlName="address" />
+
+                <input type="text" class="form-control" placeholder="{{ 'cp' | translate }}" formControlName="cp" />
+
+
+                <input type="name" id="InputEmail" class="form-control" placeholder="{{ 'email' | translate }}" autocomplete="on" formControlName="email" />
+                <div *ngIf="fproviders.get('email').invalid && (fproviders.get('email').dirty || fproviders.get('email').touched)" class="invalid-feedback">
+                  <div *ngIf="fproviders.get('email').errors['required']">
+                    {{ 'req' | translate}}  {{ 'email' | translate }}
+                  </div>
+                  <div *ngIf="fproviders.get('email').errors['email']">
+                    Please enter a valid email address.
+                  </div>
+                </div>
+
+                <input type="text" class="form-control" placeholder="{{ 'rfc' | translate }}" formControlName="rfc" />
+                <div *ngIf="fproviders.get('rfc').invalid && (fproviders.get('rfc').dirty || fproviders.get('rfc').touched)" class="invalid-feedback">
+                  <div *ngIf="fproviders.get('rfc').errors['required']">
+                    {{ 'req' | translate}}  {{ 'rfc' | translate }}
+                  </div>
+                </div>
+
+
+                 <input type="text" class="form-control" placeholder="{{ 'phone' | translate }}" formControlName="phone" />
+                 <div *ngIf="fproviders.get('phone').invalid && (fproviders.get('phone').dirty || fproviders.get('phone').touched)" class="invalid-feedback">
+                   <div *ngIf="fproviders.get('phone').errors['required']">
+                     {{ 'req' | translate}}  {{ 'phone' | translate }}
+                   </div>
+                   <div *ngIf="fproviders.get('phone').errors['pattern']">
+                     Number phone 10 digit.
+                   </div>
+                 </div>
+
+              </div>
+
+         </div>
+
+
+                <div class="row">
+
+                  <div class="col-md-12">
+
+                    <div class="form-group mb-3">
+
+                          <input type="text" class="form-control" placeholder="{{ 'city' | translate }}" formControlName="city"
+                            [ngClass]="{ 'is-invalid': city.invalid && (city.dirty || city.touched) }" />
+                          <div *ngIf="city.invalid && (city.dirty || city.touched)" class="invalid-feedback">
+                            <div *ngIf="city.errors['required']">
+                              {{ 'req' | translate}}  {{ 'city' | translate }}
+                            </div>
+                          </div>
+
+                        <input type="text" class="form-control" placeholder="{{ 'country' | translate }}" formControlName="country"
+                          [ngClass]="{ 'is-invalid': country.invalid && (country.dirty || country.touched) }" />
+                          <div *ngIf="country.invalid && (country.dirty || country.touched)" class="invalid-feedback">
+                            <div *ngIf="country.errors['required']">
+                              {{ 'req' | translate}}  {{ 'country' | translate }}
+                            </div>
+                          </div>
+
+                     </div>
+                  </div>
+                </div>
+
+          </div>
+
+        </mat-dialog-actions>
+      </ng-container>
+
+    </div>
+
+    <div class="card-footer">
+      <button mat-dialog-close class="btn btn-secondary float-right">Cancelar</button>
+      <button type="submit" class="btn btn-warning float-right"  [disabled]="!fproviders.valid" >Salvar</button>
+    </div>
+
+  </form>
+</div>

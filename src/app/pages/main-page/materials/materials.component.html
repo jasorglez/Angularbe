@@ -12,3 +12,175 @@
       </div>
     </div><!-- /.container-fluid -->
   </section>
+
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3">
+
+        <div class="card card-primary card-outline">
+          <div class="card-body box-profile">
+            <div class="text-center">
+              <img img src="{{profile.picture}}" class="" width="180"
+                   alt="User profile picture">
+            </div>
+
+            <div class="dropdown-divider mt-2 mb-4"></div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <p class="text-muted text-center" style="font-size: 14px">
+                  <strong> {{ 'description' | translate }} </strong>
+
+                </p>
+                <p class="text-muted text-center" style="font-size: 12px">
+                    {{ profile.description }}
+                </p>
+                <div class="dropdown-divider mt-2 mb-4"></div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <p class="text-muted text-center" style="font-size: 14px">
+                    <strong>{{ 'familys' | translate }}</strong>
+                </p>
+                <p class="text-muted text-center" style="font-size: 12px">
+                  {{ profile.family }}
+                </p>
+                <div class="dropdown-divider mt-2 mb-4"></div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <p class="text-muted text-center" style="font-size: 14px">
+                    <strong>{{ 'measures' | translate }}</strong>
+                </p>
+                <p class="text-muted text-center" style="font-size: 12px">
+                  {{ profile.measure }}
+                </p>
+                <div class="dropdown-divider mt-2 mb-4"></div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <p class="text-muted text-center" style="font-size: 14px">
+                    <strong>{{ 'ubications' | translate }}</strong>
+                </p>
+                <p class="text-muted text-center" style="font-size: 12px">
+                  {{ profile.ubication }}
+                </p>
+                <div class="dropdown-divider mt-2 mb-4"></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <!-- /.card -->
+      </div>
+
+      <div class="col-xxl-10 col-xl-8 col-lg-8 col-md-8">
+        <mat-card class="card">
+          <mat-card-header class="card-header p-2">
+            <mat-card-title>
+              <ul class="nav nav-pills">
+                <li class="nav-item tab-nav"><div class="nav-link active" data-toggle="tab" (click)="onTabSelected('supplies')">{{'materials' | translate }}</div></li>
+                <li class="nav-item tab-nav"><div class="nav-link" data-toggle="tab" (click)="onTabSelected('lends')">{{ 'orders' | translate }}</div></li>
+                <li class="nav-item tab-nav"><div class="nav-link" data-toggle="tab" (click)="onTabSelected('bills')">{{ 'pays' | translate }}</div></li>
+
+              </ul>
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+
+            <div class="tab-pane" [class.active]="selectedTab === 'supplies'" *ngIf="selectedTab === 'supplies'">
+              <mat-card class="card mt-3">
+                <mat-card-header class="card-header p-2">
+                  <mat-card-title-group class="card-title">
+                    <mat-card-title>
+                      <div class="row">
+                        <div class="col">
+                          <button class="btn btn-block bg-primary" type="button" (click)="newSupplies('fsupplies')">{{'new' | translate }}</button>
+                        </div>
+
+                      </div>
+
+                    </mat-card-title>
+                      <div class="col-xl-4 col-lg-4 col-md-4">
+                        <input class="form-control" placeholder="{{'search' | translate}}"
+                        (keyup)="applyFilter(materialsDataSource, $event)">
+                      </div>
+                  </mat-card-title-group>
+
+                </mat-card-header>
+                <div class="mat-table-container mat-elevation-z2 m-3">
+                  <table [hidden]="loadData" mat-table [dataSource]="materialsDataSource" matSort matSortStart="desc">
+
+                    <!-- No. Consecutivo Column -->
+                    <ng-container matColumnDef="numberposition">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header> No. </th>
+                      <td mat-cell *matCellDef="let element" class="text-nowrap"> {{element.numberposition}} </td>
+                    </ng-container>
+
+                       <!-- Name -->
+                       <ng-container *ngIf="!screenSizeSM" matColumnDef="insumo">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-nowrap"> {{'product' | translate}} </th>
+                        <td mat-cell *matCellDef="let element" class="text-nowrap"> {{element.insumo}} </td>
+                      </ng-container>
+
+                    <!-- Mail -->
+                    <ng-container *ngIf="!screenSizeSM" matColumnDef="description">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-nowrap"> {{'description' | translate}} </th>
+                      <td mat-cell *matCellDef="let element" class="multi-line-description"> {{ element.description }} </td>
+                    </ng-container>
+
+                     <!-- VentaMN -->
+                     <ng-container *ngIf="!screenSizeSM" matColumnDef="measure">
+                             <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-nowrap"> {{'measures' | translate}} </th>
+                             <td mat-cell *matCellDef="let element" class="text-nowrap"> {{element.measure}} </td>
+                      </ng-container>
+
+
+                    <!-- VentaMN -->
+                    <ng-container *ngIf="!screenSizeSM" matColumnDef="sale">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-nowrap"> {{'sale' | translate}} </th>
+                      <td mat-cell *matCellDef="let element" class="text-nowrap"> {{element.ventaMN}} </td>
+                    </ng-container>
+
+
+                    <!-- Actions Column -->
+                    <ng-container matColumnDef="actions">
+                      <th mat-header-cell *matHeaderCellDef> {{'actions' | translate}} </th>
+                      <td mat-cell *matCellDef="let element" class="text-nowrap">
+                        <button
+                          class="btn btn-sm btn-warning mr-1"
+                          (click)="showProfile(element)">
+                          <i class="fas fa-eye"></i>
+                        </button>
+                        <button
+                        class="btn btn-sm btn-dark mr-1"
+                        (click)="editSupplies(element.id)">
+                          <i class="fas fa-pencil-alt"></i>
+                        </button>
+                        <button
+                        class="btn btn-sm btn-danger"
+                        (click)="deleteSupplies(element.id)">
+                        <i class="fas fa-trash"></i>
+                        </button>
+                      </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedCol" class="header-tabla"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedCol;" class="fila-tabla element-row"></tr><!-- Row shown when there is no matching data. -->
+                  </table>
+                  <div *ngIf="loadData" class="text-center m-5">
+                    <div class="spinner-border"></div>
+                  </div>
+                </div>
+              </mat-card>
+              <div class="card-footer bg-white">
+                <mat-paginator [hidden]="loadData" [pageSizeOptions]="[15, 20, 25]" showFirstLastButtons  class="text-nowrap paginador"></mat-paginator>
+              </div>
+            </div>

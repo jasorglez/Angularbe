@@ -13,7 +13,7 @@ import { CompanysService } from 'src/app/services/companys.service';
 import { BranchsService } from 'src/app/services/branchs.service';
 import { ProjectService } from 'src/app/services/project.service';
 import { TrackingService } from 'src/app/services/tracking.service';
-import { TraductorService} from 'src/app/services/traductor.service';
+
 import { AuthService } from 'src/app/services/auth.service';
 import { FirebaseService } from 'src/app/services/firebase.service';
 import { StoragesService } from 'src/app/services/storages.service';
@@ -154,8 +154,7 @@ import { Observable } from 'rxjs';
 	@ViewChild(MatPaginator) paginator!: MatPaginator;
 	@ViewChild(MatSort) sort!: MatSort;
 
-  	constructor(public translateService: TraductorService,
-        private route: ActivatedRoute,
+  	constructor(public route: ActivatedRoute,
         private usersService: UsersService,
         private companyService: CompanysService,
         private firebaseService: FirebaseService,

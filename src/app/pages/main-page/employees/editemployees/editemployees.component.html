@@ -30,6 +30,32 @@
 
                 <input type="text" class="form-control" placeholder="{{ 'colony' | translate }}" formControlName="colony" />
 
+                  <!-- SubFila 1.1.2 DbCombo Box Directions-->
+                  <div class="row mt-2">
+                    <div class="col-sm-12">
+                        <!-- Campo de Seleccion Directions -->
+                        <select name="format" id="format" (change)="onDirectionSelected($event)" class="form-control" formControlName="direction" >
+                                <option selected disabled value="">{{ 'department' | translate }}</option>
+                                <option *ngFor="let item of directions" [value]="item.description">
+                                  {{ item.description }}
+                                </option>
+                            </select>
+                      </div>
+                  </div>
+
+                  <!-- SubFila 1.1.2 DbCombo Box Area-->
+                  <div class="row mt-2">
+                    <div class="col-sm-12">
+                        <!-- Campo de Seleccion Area -->
+                            <select name="format" id="format"  class="form-control" formControlName="area" >
+                                <option selected disabled value="">{{ 'area' | translate }}</option>
+                                <option *ngFor="let it of areas" [value]="it.description">
+                                  {{ it.description }}
+                                </option>
+                            </select>
+                      </div>
+                  </div>
+
 
                 <input type="name" id="InputEmail" class="form-control" placeholder="{{ 'email' | translate }}" autocomplete="on" formControlName="email" />
                 <div *ngIf="femployees.get('email').invalid && (femployees.get('email').dirty || femployees.get('email').touched)" class="invalid-feedback">

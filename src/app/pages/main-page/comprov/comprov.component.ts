@@ -1,41 +1,41 @@
 
 import { Component, OnInit, ViewChild } from '@angular/core';
-
-import { Imaterials } from 'src/app/interface/imaterials';
-
-import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 
+import { Iproviders } from 'src/app/interface/iproviders';
+import { ProvidersService } from 'src/app/services/providers.service';
+
 import { TrackingService } from 'src/app/services/tracking.service';
 import { alerts } from 'src/app/helpers/alerts';
+import { MatDialog } from '@angular/material/dialog';
 
-import { MaterialsService } from '../../../services/materials.service';
-import { NewMatComponent } from './newMat/newMat.component';
+import { NewProvComponent } from './newProv/newProv.component';
+import { EditProvComponent } from './editProv/editProv.component';
 
 @Component({
-  selector: 'app-materials',
-  templateUrl: './materials.component.html',
-  styleUrls: ['./materials.component.css']
+  selector: 'app-comprov',
+  templateUrl: './comprov.component.html',
+  styleUrls: ['./comprov.component.css']
 })
-export class MaterialsComponent implements OnInit {
+export class ComprovComponent implements OnInit {
 
-  selectedTab = 'supplies';
+  selectedTab = 'providers';
 
   profile: any = {};
 
   onTabSelected(tabName: string) {
     this.selectedTab = tabName;
 
-    if (tabName === 'supplies') {
+    if (tabName === 'providers') {
       this.trackingService.addLog(
          this.trackingService.getnameComp(),
-        'Click en la Pestaña Supplies',
+        'Click en la Pestaña Proveedores',
         'Employees',
         this.trackingService.getEmail()
       );
-      this.getDataSupplies();
+      this.getDataProviders();
     }
 
     if (tabName === 'instructors') {
@@ -61,113 +61,122 @@ export class MaterialsComponent implements OnInit {
   }
 
 
- materialsDataSource!  : MatTableDataSource<Imaterials> ;
+ providersDataSource!  : MatTableDataSource<Iproviders> ;
  currentIndex: number = 0;
 
  screenSizeSM = false;
 
- materials    : Imaterials[] = [] ;
+ providers    : Iproviders[] = [] ;
 
  loadData     = false;
 
- displayedCol: string[] = [
-  'numberposition',  'insumo', 'description', 'measure', 'sale', 'actions'];
+ displayedColproviders: string[] = [
+  'numberposition',  'name', 'mail',  'actions'];
 
 
 @ViewChild(MatPaginator) paginator: MatPaginator;
 @ViewChild(MatSort) sort!: MatSort;
 
+
   constructor(private trackingService: TrackingService,
-     private materialsSer : MaterialsService,
-     public dialog: MatDialog ) { }
+      private ProvidersService : ProvidersService,
+      public dialog: MatDialog ) { }
 
   ngOnInit() {
-    this.getDataSupplies() ;
+     this.getDataProviders();
   }
 
-  showProfile(course: Imaterials) {
+  showProfile(course: Iproviders) {
     // Actualizamos el currentIndex y el profile
     this.profile = course;
   }
 
-
-   getDataSupplies() {
+  getDataProviders() {
     this.loadData = true;
 
-    this.materialsSer.getSupplies(localStorage.getItem('company'))
+    this.ProvidersService.getProviders(localStorage.getItem('company'))
       .subscribe((resp: any) => {
         /*=============================================
       Integrando respuesta de base de datos con la interfaz
       =============================================*/
         let numberposition = 1;
 
-        this.materials = Object.keys(resp).map(
+        this.providers = Object.keys(resp).map(
           (a) =>
             ({
-              id           : resp[a].id,
-              insumo       : resp[a]?.insumo,
-              description  : resp[a]?.description,
-              measure      : resp[a]?.descMes,
-              family       : resp[a]?.descFam,
-              ubication    : resp[a]?.descUbic,
-              ventaMN      : resp[a]?.ventaMN,
-              picture      : resp[a]?.picture,
-              numberposition: numberposition++
-
-            } as Imaterials)
+                id          : resp[a].id,
+                razonsocial : resp[a]?.razonsocial,
+                razoncorta  : resp[a]?.razoncorta,
+                address     : resp[a]?.address,
+                id_company  : resp[a]?.id_company,
+                cp          : resp[a]?.cp,
+                city        : resp[a]?.city,
+                country     : resp[a].country,
+                rfc         : resp[a]?.rfc,
+                email       : resp[a]?.email,
+                phone       : resp[a]?.phone,
+                numberposition: numberposition++
+            } as Iproviders)
         );
 
-       // console.log("Materiales",this.materials);
-
-           this.profile                       = this.materials[this.currentIndex]; // Tomamos el primer registro
-           this.materialsDataSource           = new MatTableDataSource(this.materials)
-           this.materialsDataSource.paginator = this.paginator ;
-           this.materialsDataSource.sort      = this.sort;
+           this.profile = this.providers[this.currentIndex]; // Tomamos el primer registro
+           this.providersDataSource = new MatTableDataSource(this.providers)
+           this.providersDataSource.paginator = this.paginator ;
+           this.providersDataSource.sort = this.sort;
            this.loadData = false;
       });
-
-   }
-
-
-  newSupplies(formType: string) {
-    const dialogRef = this.dialog.open(NewMatComponent, {
-      width: '40%',
-       data: { formType: formType }
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        alerts.confirmAlert('Se realizo el registro correctamente', 'Register new Ok', 'success', 'Ok').then((result) => {
-          this.getDataSupplies() ;
-        });
-      }
-    });
-    };
-
-
-   editSupplies( id: string) {
-
 
   }
 
 
-  deleteSupplies(id: string) {
+  newProviders(formType : string){
+    const dialogRef = this.dialog.open(NewProvComponent,
+      { data: { formType: formType } });
 
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        alerts.confirmAlert('Se realizo el registro correctamente', 'Register new Ok', 'success', 'Ok').then((result) => {
+          this.getDataProviders() ;
+        });
+      }
+    });
+  }
+
+
+  editProviders (id : string){
+      const dialogRef = this.dialog.open(EditProvComponent, {
+
+        width:'28%',
+        data: { id: id	}
+      })
+
+
+      dialogRef.afterClosed().subscribe(result =>{
+
+        if(result){
+          this.getDataProviders();
+        }})
+
+  }
+
+
+  deleteProviders (id : string){
     alerts.confirmAlert('Are you sure?', 'The information cannot be recovered!', 'warning','Yes, delete it!')
     .then((result) => {
 
         if (result.isConfirmed) {
 
-          this.materialsSer.delete(id, localStorage.getItem('token'))
+          this.ProvidersService.delete(id, localStorage.getItem('token'))
           .subscribe( () => {
 
               alerts.basicAlert("Sucess", "The course has been deleted", "success")
 
-              this.getDataSupplies() ;
+              this.getDataProviders() ;
             })
           }
     })
   }
+
 
   applyFilter(dataSource: MatTableDataSource<any>, event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;

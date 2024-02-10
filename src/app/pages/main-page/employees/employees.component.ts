@@ -1,6 +1,4 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-
-import { TraductorService } from 'src/app/services/traductor.service';
 import { TrackingService } from 'src/app/services/tracking.service';
 
 import { Iemployees } from 'src/app/interface/iemployees';
@@ -15,6 +13,9 @@ import { MatSort } from '@angular/material/sort';
 
 import { NewemployeesComponent } from './newemployees/newemployees.component';
 import { EditemployeesComponent } from './editemployees/editemployees.component';
+import { ResguardsComponent } from './resguards/resguards.component';
+
+
 
 @Component({
   selector: 'app-employees',
@@ -40,16 +41,15 @@ export class EmployeesComponent implements OnInit {
       this.getDataEmployees();
     }
 
-    if (tabName === 'instructors') {
+    if (tabName === 'resguards') {
       this.trackingService.addLog(
         this.trackingService.getnameComp(),
-        'Click en la Pestaña Instructores',
-        'Training',
+        'Click en la Pestaña Resguardos',
+        'Employees',
         this.trackingService.getEmail()
-      );
 
+     );
     }
-
 
     if (tabName === 'students') {
       this.trackingService.addLog(
@@ -73,7 +73,7 @@ export class EmployeesComponent implements OnInit {
  loadData     = false;
 
  displayedColemployees: string[] = [
-  'numberposition',  'name', 'mail',  'rfc', 'actions'];
+  'numberposition',  'number', 'direct',  'actions'];
 
 
 @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -90,10 +90,12 @@ export class EmployeesComponent implements OnInit {
     this.getDataEmployees() ;
   }
 
+
+
   showProfile(course: Iemployees) {
     // Actualizamos el currentIndex y el profile
-    this.profile = course;
-
+     this.profile = course;
+     this.trackingService.setnombreEmp(this.profile.name) ;
   }
 
 
@@ -111,27 +113,19 @@ export class EmployeesComponent implements OnInit {
           this.employees = Object.keys(resp).map(
             (a) =>
               ({
-                id         :   resp[a].id,
-                address    :   resp[a]?.address,
-                age        :   resp[a]?.age,
-                city       :   resp[a]?.city,
-                colony     :   resp[a]?.colony,
-                country    :   resp[a]?.country,
-                cp         :   resp[a]?.cp,
-                curp       :   resp[a]?.curp,
-                email      :   resp[a]?.email,
-                ident_emp  : resp[a]?.identity,
-                id_company : resp[a]?.id_company,
-                name       : resp[a]?.name,
-                phone      : resp[a]?.phone,
-                picture    : resp[a]?.picture,
-                rfc        : resp[a]?.rfc,
-                salary     :   0,
+                id        : resp[a].id,
+                direction : resp[a]?.descDir,
+                area      : resp[a]?.descArea,
+                position  : resp[a]?.position,
+                ident_emp : resp[a]?.identEmp,
+                name      : resp[a]?.name,
+                picture   : resp[a]?.picture,
                 numberposition: numberposition++
 
               } as Iemployees)
           );
 
+             // console.log("Empleados", resp)
              this.profile = this.employees[this.currentIndex]; // Tomamos el primer registro
              this.employeesDataSource = new MatTableDataSource(this.employees)
              this.employeesDataSource.paginator = this.paginator ;
@@ -160,7 +154,7 @@ export class EmployeesComponent implements OnInit {
   editEmployees( id: string) {
     const dialogRef = this.dialog.open(EditemployeesComponent, {
 
-      width:'60%',
+      width:'40%',
       data: { id: id	}
     })
 

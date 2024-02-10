@@ -79,13 +79,18 @@
 
      <mat-list-item routerLink="#" (click)="navigateToMaterials()">
        <mat-icon matListItemIcon>wysiwyg</mat-icon>
-       <div matListItemTitle class="item-content">Catalogo Materiales</div>
+       <div matListItemTitle class="item-content">Materiales</div>
      </mat-list-item>
 
-     <mat-list-item  routerLink="#" (click)="navigateToUsers">
-       <mat-icon matListItemIcon>engineering</mat-icon>
-       <div matListItemTitle class="item-content">Catalogo Proveedores</div>
-     </mat-list-item>
+     <mat-list-item routerLink="#" (click)="navigateToProv()">
+      <mat-icon matListItemIcon>android</mat-icon>
+      <div matListItemTitle class="item-content">{{ 'providers' | translate }}</div>
+    </mat-list-item>
+
+    <mat-list-item routerLink="#" (click)="navigateToSG()">
+      <mat-icon matListItemIcon>android</mat-icon>
+      <div matListItemTitle class="item-content">{{ 'Safeguarding' | translate }}</div>
+    </mat-list-item>
 
      <mat-list-item routerLink="#" (click)="navigateToUsers()">
       <mat-icon matListItemIcon>handyman</mat-icon>
@@ -223,7 +228,7 @@
               <div matListItemTitle class="item-content">Permisos</div>
             </mat-list-item>
 
-            <mat-list-item routerLink="#" (click)="navigateToProviders()">
+            <mat-list-item routerLink="#" (click)="navigateToProv()">
               <mat-icon matListItemIcon>android</mat-icon>
               <div matListItemTitle class="item-content">Proveedores</div>
             </mat-list-item>

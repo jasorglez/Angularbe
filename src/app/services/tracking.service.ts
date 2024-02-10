@@ -32,6 +32,12 @@ export class TrackingService {
 
   public ultimaventana : string ;
 
+  public nombreEmp : string ;
+
+  setnombreEmp(ne : string) : void {
+    this.nombreEmp = ne;
+  }
+
   setultimaVentana(ultven : string): void {
     this.ultimaventana = ultven ;
   }
@@ -77,6 +83,9 @@ setContract(contract: string): void {
   this.endproject = end ;
  }
 
+ getnombreEmp() {
+     return this.nombreEmp ;
+ }
 
  getContract() {
    return this.contract ;
@@ -193,7 +202,7 @@ setContract(contract: string): void {
 
       // Asignar el valor de "id" del último registro al nuevo registro
       data['idn'] = lastLog ? lastLog.idn + 1 : 1;
-      
+
       const postResponse = await this.http.post(`${environment.urlFirebase}tracking.json`, data).toPromise();
 
       const postResponseSS = await this.http.post(`${environment.urlAzure}api/Trackings`, data).toPromise();

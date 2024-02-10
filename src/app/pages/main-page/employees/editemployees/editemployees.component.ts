@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 
 import { Iemployees } from 'src/app/interface/iemployees';
 import { EmployeesService } from 'src/app/services/employees.service';
+import { CatalogService } from 'src/app/services/catalog.service';
 
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { environment } from 'src/environments/environment';
@@ -23,12 +24,21 @@ export class EditemployeesComponent implements OnInit {
   formSubmitted = false;
 
   loadData = false;
+
+  paramid : number = 0;
+  directions  : any[] = [];
+  areas       : any[] = [] ;
+
+  selectedAreaId  : number ;
+
   url : string = '' ;
+
   imageUrl: string = '';
 
   constructor( private formBuilder: FormBuilder,
               private storageService: StoragesService,
               private employeesServ : EmployeesService,
+              private catalogService : CatalogService,
               public dialogRef: MatDialogRef<EditemployeesComponent>,
               @Inject(MAT_DIALOG_DATA) public data: any) { }
 
@@ -40,7 +50,9 @@ export class EditemployeesComponent implements OnInit {
     country      :  ['MX',],
     colony       : '',
     city         : '',
-    cp           :  '',
+    idArea       : 0,
+    area         : 0,
+    direction    : '',
     curp         :  ['', ],
     email        :  ['', [Validators.required, Validators.email]],
     identity     :  ['', ],
@@ -56,38 +68,85 @@ export class EditemployeesComponent implements OnInit {
 
 
    ngOnInit() {
+     this.llamarEmp();
+
+     this.getDirections( ) ;
+   }
+
+
+   llamarEmp() {
 
     this.employeesServ.getEmployeexid(this.data.id).subscribe(
       (resp: any) => {
-       // console.log('Response:', resp);
-
-        if (resp && typeof resp === 'object') {
-          this.imageUrl = resp.picture;
 
           // Set values for form controls
-          this.femployees.get('id')?.setValue(resp.id),
-          this.femployees.get('identity')?.setValue(resp.ident_Emp),
-          this.femployees.get('address')?.setValue(resp.address),
-          this.femployees.get('colony')?.setValue(resp.colony),
-          this.femployees.get('name')?.setValue(resp.name),
-          this.femployees.get('email')?.setValue(resp.email)
-          this.femployees.get('rfc')?.setValue(resp.rfc)
-          this.femployees.get('phone')?.setValue(resp.phone)
-          this.femployees.get('curp')?.setValue(resp.curp)
-          this.femployees.get('age')?.setValue(resp.age)
-          this.femployees.get('city')?.setValue(resp.city)
-          this.femployees.get('country')?.setValue(resp.country)
-        } else {
-          console.error('Unexpected response structure:', resp);
-        }
+          this.femployees.get('id')?.setValue(resp.id);
+          this.femployees.get('address')?.setValue(resp.address);
+          this.femployees.get('age')?.setValue(resp.age);
+          this.femployees.get('country')?.setValue(resp.country);
+          this.femployees.get('colony')?.setValue(resp.colony);
+          this.femployees.get('city')?.setValue(resp.city);
+
+          this.femployees.get('area')?.setValue(resp.descarea);
+          this.femployees.get('direction')?.setValue(resp.descdirection);
+
+          this.femployees.get('curp')?.setValue(resp.curp);
+          this.femployees.get('email')?.setValue(resp.email);
+          this.femployees.get('identity')?.setValue(resp.identEmp);
+          this.femployees.get('name')?.setValue(resp.name);
+          this.femployees.get('phone')?.setValue(resp.phone);
+          this.femployees.get('picture')?.setValue(resp.picture);
+          this.femployees.get('rfc')?.setValue(resp.rfc);
+          this.femployees.get('idArea')?.setValue(resp.idArea);
+
+          this.getpermissionxArea(resp.idArea,0);
+          console.log("DATA", resp)
       },
       (error) => {
         console.error('Error fetching employee details:', error);
       },
       () => {
-        console.log('Subscription completed');  // Log when the subscription is completed
-      }
-    );
+
+
+        });
+
+   }
+
+   getDirections()
+  {
+       this.catalogService.getdataDirections(localStorage.getItem('company')).subscribe((me) => {
+       this.directions = Object.values(me);
+      })
+  }
+
+
+  onDirectionSelected(event: Event): void {
+
+    let passvalue : number = 0
+
+    const target = event.target as HTMLSelectElement;
+
+    passvalue = parseInt(target.value, 10);
+
+    this.getpermissionxArea(passvalue,1);
+  }
+
+
+  getpermissionxArea(id: number, ban:number) {
+
+    console.log("Id", id)
+
+     this.catalogService.getPermissionxArea(id, ban).subscribe((areas) => {
+     this.areas = Object.values(areas);
+    if (this.areas.length > 0) {
+          this.selectedAreaId = areas[0].id;
+  //       console.log("ID Areas", this.selectedAreaId);
+
+    }else{
+       alerts.basicAlert("Error", "The user has not Areas asssigns", "error")
+    }
+  });
+
   }
 
 
@@ -106,9 +165,11 @@ export class EditemployeesComponent implements OnInit {
           cp           : this.femployees.get('cp')?.value,
           curp         : this.femployees.get('curp')?.value,
           email        : this.femployees.get('email')?.value,
-          ident_emp    : this.femployees.get('identity')?.value,
+          identEmp     : this.femployees.get('identity')?.value,
+          area: Number(this.femployees.get('area')?.value),
           name         : this.femployees.get('name')?.value,
           phone        : this.femployees.get('phone').value,
+          position     : this.femployees.get('position').value,
           picture      : this.femployees.get('picture')?.value,
           rfc          : this.femployees.get('rfc')?.value,
           salary       : 0
@@ -118,8 +179,7 @@ export class EditemployeesComponent implements OnInit {
 
            this.employeesServ.patch(this.data.id, dataEmployees, localStorage.getItem('token')).subscribe(
             (resp: any) => {
-              console.log('Response from server:', resp);
-
+              //console.log('Response from server:', resp);
               this.dialogRef.close('save');
               alerts.basicAlert("Success", 'User saved successfully', "success");
             },

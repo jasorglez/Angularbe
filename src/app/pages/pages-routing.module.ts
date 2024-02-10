@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 //componentes
 import { MainPageComponent } from './main-page/main-page.component';
+import { DialogCustomComponent } from './main-page/dialogCustom/dialogCustom.component';
 import { Error404Component } from './main-page/error404/error404.component';
 
 import { AuthGuard } from 'src/app/guards/auth.guard';
@@ -24,8 +25,9 @@ const routes: Routes = [
       { path: 'management', loadChildren: () => import('./main-page/management/management.module').then (m => m.ManagementModule)},
       { path: 'training', loadChildren: () => import ('./main-page/training/training.module'). then (m => m.TrainingModule )},
       { path: 'employees', loadChildren: () => import ('./main-page/employees/employees.module'). then (m => m.EmployeesModule )},
-      { path: 'providers', loadChildren: () => import ('./main-page/providers/providers.module').then (m => m.ProvidersModule)},
+      { path: 'comprov', loadChildren: () => import ('./main-page/comprov/comprov.module').then (m => m.ComprovModule)},
       { path: 'materials', loadChildren: () => import ('./main-page/materials/materials.module').then (m => m.MaterialsModule)},
+      { path: 'dialog-custom', component: DialogCustomComponent },
       { path: '**', component: Error404Component}
     ]}
 ];

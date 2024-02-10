@@ -1,8 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ProvidersRoutingModule } from './providers-routing.module';
-import { ProvidersComponent } from './providers.component';
+//requiero este modulo para evitar el error del translate asi realizar su declarion como en la linea 26
+import { TranslateModule } from '@ngx-translate/core'
+
+import { ComprovComponent } from './comprov.component';
+import { NewProvComponent } from './newProv/newProv.component';
+import { EditProvComponent } from './editProv/editProv.component';
+import { ComprovRoutingModule } from './comprov-routing.module';
 
 //Angular Material
 import { MatTableModule } from '@angular/material/table';
@@ -15,20 +20,25 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
-
+import { MatCardModule } from '@angular/material/card';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
-  declarations: [ProvidersComponent],
+  declarations: [ComprovComponent, NewProvComponent, EditProvComponent],
   imports: [
     CommonModule,
-    ProvidersRoutingModule,
+    TranslateModule,
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    MatCardModule,
     ReactiveFormsModule,
     MatFormFieldModule,
+    MatDialogModule,
     MatSelectModule,
-    FormsModule
+    FormsModule,
+    ComprovRoutingModule
+
   ]
 })
-export class ProvidersModule { }
+export class ComprovModule { }

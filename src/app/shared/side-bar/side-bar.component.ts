@@ -98,10 +98,16 @@ export class SideBarComponent implements OnInit {
           this.router.navigate(['/employees']);
         }
 
-        navigateToProviders()  {
+        navigateToProv()  {
           this.trackingService.addLog(this.trackingService.getnameComp(), 'Eleccion del menu Providers/Proveedores', 'Menu Side Bar', '')
-          this.router.navigate(['/providers']);
+          this.router.navigate(['/comprov']);
         }
+
+        navigateToSG()  {
+          this.trackingService.addLog(this.trackingService.getnameComp(), 'Eleccion del menu Safeguarding/Resguardos', 'Menu Side Bar', '')
+          this.router.navigate(['/resguards']);
+        }
+
 
         navigateToEmployees()  {
           this.trackingService.addLog(this.trackingService.getnameComp(), 'Eleccion del menu Employees/Empleados', 'Menu Side Bar', '')
