@@ -10,7 +10,10 @@ import { TrackingService } from 'src/app/services/tracking.service';
 import { InteresService } from './interes.service';
 import { LessonsService } from 'src/app/services/lessons.service';
 import { LessonslearnedService } from 'src/app/services/lessonslearned.service';
+import { ResguardService } from './resguard.service';
 import { FirebaseService } from './firebase.service';
+
+import { MatDialogRef } from '@angular/material/dialog';
 
 import { EMPTY, forkJoin, map, mergeMap, of, switchMap, tap } from 'rxjs';
 
@@ -37,6 +40,7 @@ constructor(public  trackingService       : TrackingService,
             private interesService        : InteresService,
             private lessonsService        : LessonsService,
             private lessonslearnedService : LessonslearnedService,
+            private resguardoServ         : ResguardService,
             private firebaseService       : FirebaseService,
             private http: HttpClient) { }
 
@@ -45,6 +49,7 @@ constructor(public  trackingService       : TrackingService,
 
     let dataRows : any
 
+    //definir cabecera DE LOS DETALLES
     const headerRow = [
       { text: 'ID', style: 'headerCellBlue' },
       {text: 'Nombre', style: 'headerCellBlue' },
@@ -58,15 +63,14 @@ constructor(public  trackingService       : TrackingService,
       {text: 'Ponderacion', style: 'headerCellBlue' },
       {text: 'Seguimiento', style: 'headerCellBlue' }];
 
-
       this.interesService
       .getDatacompInteres(this.trackingService.getProject(), this.trackingService.getformrepint())
       .subscribe(
         (data) => {
           const dataRows = data;
-          console.log("DataRows", dataRows);
+          console.log("DataRows infO", dataRows);
           const imagePath = this.trackingService.getpictureComp();
-          this.downloadAndProcessImage(imagePath, headerRow, dataRows, 2);
+          this.downloadAndProcessImageComp(imagePath, headerRow, dataRows, 2,'','','');
         },
         (error) => {
           console.error(error);
@@ -75,6 +79,63 @@ constructor(public  trackingService       : TrackingService,
 
   }
 
+
+ Resguardo(nam: string, posit: string, depa : string, numemp: string ) {
+  let dataRows : any
+
+    //definir cabecera
+    const headerRow = [
+
+      {text: 'Cant', style: 'headerCellBlue' },
+      {text: 'Unidad', style: 'headerCellBlue' },
+      {text: 'CC', style: 'headerCellBlue' },
+      {text: 'No. Ctrl', style: 'headerCellBlue' },
+      {text: 'Concepto', style: 'headerCellBlue' },
+      {text: 'P.U.', style: 'headerCellBlue' },
+      {text: 'IMPORTE', style: 'headerCellBlue' }];
+
+      this.resguardoServ
+      .getDataResg(numemp)
+      .subscribe(
+        (data) => {
+          const dataRows = data;
+        //  console.log("DataRows infO", dataRows);
+          const imagePath = this.trackingService.getpictureComp();
+          this.downloadAndProcessImage(imagePath, headerRow, dataRows, 2, nam, posit, depa, numemp);
+        },
+        (error) => {
+          console.error(error);
+        }
+      );
+}
+
+
+// Method to download and process the image
+private downloadAndProcessImage(imagePath: string, headerRow: any[], dataRows: any[], report: number, na: string, po: string, di: string, ne: string) {
+  this.http.get(imagePath, { responseType: 'blob' }).subscribe((imageBlob: Blob) => {
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      const imageDataUrl = reader.result as string;
+      const documentDefinition = this.generateDocumentPalacio(headerRow, dataRows, imageDataUrl, report, na, po, di, ne);
+      pdfMake.createPdf(documentDefinition).open();
+    };
+    reader.readAsDataURL(imageBlob);
+  });
+}
+
+
+// Method to download and process the image
+private downloadAndProcessImageComp(imagePath: string, headerRow: any[], dataRows: any[], report: number, na: string, po: string, di: string) {
+  this.http.get(imagePath, { responseType: 'blob' }).subscribe((imageBlob: Blob) => {
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      const imageDataUrl = reader.result as string;
+      const documentDefinition = this.generateDocumentDefinition(headerRow, dataRows, imageDataUrl, report);
+      pdfMake.createPdf(documentDefinition).open();
+    };
+    reader.readAsDataURL(imageBlob);
+  });
+}
 
 
 
@@ -115,14 +176,12 @@ lessonslearnedOne() {
         {text: 'Proceso', style: 'headerCellYellow' }
       ];
 
-      this.downloadAndProcessImage(imagePath, headerRow, this.combinedData$, 2)
+      this.downloadAndProcessImage(imagePath, headerRow, this.combinedData$, 2,'','','','')
 
 
     console.log("Combined Data", this.combinedData$);
   });
 }
-
-
 
 
   lessonslearnedAll() {
@@ -184,7 +243,7 @@ lessonslearnedOne() {
 
       ];
 
-      this.downloadAndProcessImage(imagePath, headerRow, combinedData, 2);
+      this.downloadAndProcessImage(imagePath, headerRow, combinedData, 2,'','','','');
     });}
 
 
@@ -197,20 +256,230 @@ lessonslearnedOne() {
   }
 
 
-// Method to download and process the image
+generateDocumentPalacio(headerRow : any[], dataRows: any[], imageDataUrl, report: number, name: string, pos: string, direc:string, ne:string) {
+  let tableBody: any[] = [];
 
-private downloadAndProcessImage(imagePath: string, headerRow: any[], dataRows: any[], report: number) {
-  this.http.get(imagePath, { responseType: 'blob' }).subscribe((imageBlob: Blob) => {
-    const reader = new FileReader();
-    reader.onloadend = () => {
-      const imageDataUrl = reader.result as string;
-      const documentDefinition = this.generateDocumentDefinition(headerRow, dataRows, imageDataUrl, report);
-      pdfMake.createPdf(documentDefinition).open();
-    };
-    reader.readAsDataURL(imageBlob);
-  });
+  if (report===1) {
+  tableBody= [
+    headerRow.map((text, index) => ({
+      text,
+      style: index < 7 ? 'headerCellBlue' : ('headerCellYellow' )
+    })),
+    ...dataRows
+  ];
 }
 
+if (report===2) {
+  tableBody= [headerRow, ...dataRows]
+}
+
+
+return {
+  content: [
+    {
+      width: 50,
+      image: imageDataUrl,
+      fit: [90, 90] // Ajusta el tamaño
+    },
+    {
+      text: `: ${this.trackingService.getnameComp()}`,
+      style: 'header',
+      fontSize: 8,
+      bold: false
+    },
+    {
+      alignment: 'right',
+      text    : 'CONTROL DE ACTIVOS FIJOS',
+      style: 'header',
+      fontSize: 9,
+      bold: false
+   },
+   {
+     alignment: 'right',
+     text    : 'Rev.-. 00',
+     style: 'header',
+     fontSize: 9,
+     bold: false
+  },
+
+  {
+    alignment: 'right',
+    text  : 'No. Documento:  ' + this.trackingService.getnumRes(),
+    style: 'header',
+    fontSize: 9,
+    bold: false
+ },
+
+  {
+    alignment: 'right',
+    text  : 'No. Empleado:  ' + ne,
+    style: 'header',
+    fontSize: 9,
+    bold: false
+  },
+
+    {
+      alignment: 'center',
+      text: 'RESGUARDOS',
+      style: 'header',
+
+    },
+
+    {
+      alignment: 'left',
+      text: `Ref.:`,
+      style: 'header',
+      fontSize: 9,
+      bold: false
+
+    },
+    {
+      alignment: 'left',
+      table: {
+        widths: ['50%'],
+        body: [
+          [{ text: `FECHA: ${this.trackingService.getFecha()}` ,style: 'headerText', }]
+        ]
+      },
+      layout: 'Borders'
+    },
+
+    {
+      alignment: 'left',
+      table: {
+        widths: ['50%'],
+        body: [
+          [{ text: `NOMBRE: ${name}`, style: 'headerText' }]
+        ]
+      },
+      layout: 'Borders'
+    },
+
+    {
+      alignment: 'left',
+      table: {
+        widths: ['50%'],
+        body: [
+          [{ text: `PUESTO: ${pos}`, style: 'headerText' }]
+        ]
+      },
+      layout: 'Borders'
+    },
+
+    {
+      alignment: 'left',
+      table: {
+        widths: ['50%'],
+        body: [
+          [{ text: `DEPARTAMENTO: ${direc}`, style: 'headerText' }]
+        ]
+      },
+      layout: 'Borders'
+    },
+
+    {
+      table: {
+        headerRows: 1,
+        widths: new Array(headerRow.length).fill('auto'),
+        body: tableBody
+      }
+    },
+
+    {
+      alignment: 'left',
+      text: `Nota: ${this.trackingService.getCom()}`,
+      style: 'header',
+      fontSize: 9,
+      bold: false
+    },
+
+    {
+        alignment: 'left',
+        text: 'OBSERVACIONES: LA PERSONA QUE FIRME EL PRESENTE RESGUARDO SE RESPONSABILIZA DEL (OS) OBJETO (S): RECIBIDO (S): EN CASO DE EXTRAVÍO. ' +
+              'DEBERÁ CUBRIR EL VALOR DE REPOSICIÓN  EN LA FECHA DE SU AVISO AL DEPARTAMENTO D E RECURSOS MATERIALES, ASI MISMO TODA PERMUTA DEBERÁ '+
+              'COMUNICARSE OPORTUNAMENTE; EN CASO DE OMITIR ESTE REQUISITO, LA RESPONSABILIDAD QUEDARÁ A CARGO DEL TITULAR DEL PRESENTE.',
+        style: 'header',
+        fontSize: 8,
+        bold: false
+    },
+
+  ],
+
+  footer: {
+
+    columns: [
+      {
+        alignment: 'center',
+      //  margin: [0, 5, 0, 0], // Add margin above the section
+          stack: [
+            { text: 'AUTORIZO', style: 'footerText' },
+            { text: 'LIC. LETICIA CASTRO GARCIA', style: 'footerText' },
+            { text: 'DIRECTORA DE ADMINISTRACION', style: 'footerText' },
+          ]
+      },
+      {
+        alignment: 'center',
+        stack: [
+          { text: 'FORMULO', style: 'footerText' },
+          { text: 'L.I. J. ANTONIO MARTINEZ FERNANDEZ', style: 'footerText' },
+          { text: 'COORDINADOR DE RECURSOS MATERIALES', style: 'footerText' }
+        ]
+      },
+      {
+        alignment: 'right',
+        stack: [
+          { text: 'RECIBI DE CONFORMIDAD', style: 'footerText' },
+          { text: name, style: 'footerText' },
+          { text: pos, style: 'footerText' }
+        ]
+      }
+    ],
+    layout: 'noBordersLine', // Use non-bordered line footer
+        margin: [20, 0, 20, 0] // Set footer margins
+  },
+  pageSize: {
+    //width: report === 1 ? 1414 : (report === 2 ? 1254 : 595),
+    width : 792,
+    height: 622
+  },
+
+  styles: {
+    header: {
+      fontSize: 15,
+      bold: true,
+      margin: [0, 0, 0, 10], // Margen inferior de 10 puntos
+     },
+     headerCell: {
+      fillColor: '#007bff',
+      color: '#fff',
+      bold: true
+     },
+     headerText: {
+      fontSize: 10,
+      bold: true,
+      margin: [0, 0, 0, 10], // Margen inferior de 10 puntos
+      border: [true, true, true, true], // Agrega el borde alrededor del texto
+      padding: [5, 5, 5, 5] // Añade un espacio de relleno dentro del borde
+    },
+    footerText: {
+      fontSize: 9,
+      bold: true,
+      margin: [0, 1, 0, 0]
+    },
+    headerCellBlue: {
+      fillColor: '#80bfff',
+      color: '#000',
+      bold: true
+    },
+    headerCellYellow: {
+      fillColor: '#ffc107',
+      color: '#000',
+      bold: true
+    }
+  }
+
+  }
+}
 
 
 
@@ -385,8 +654,6 @@ private downloadAndProcessImage(imagePath: string, headerRow: any[], dataRows: a
 
     ],
 
-
-
     footer: {
       columns: [
         {
@@ -514,7 +781,7 @@ generarReporte(detailscom2: any[], comunications: any[]) {
       });
 
        const imagePath = this.trackingService.getpictureComp();
-       this.downloadAndProcessImage(imagePath, headerRow, dataRows,1)
+       this.downloadAndProcessImage(imagePath, headerRow, dataRows,1,'','','', '')
  }
 
 
@@ -597,14 +864,4 @@ getDocumentDefinition(comunications: any[])
   };
 }
 
-
-
-
-
-
-
-
 }
-
-
-

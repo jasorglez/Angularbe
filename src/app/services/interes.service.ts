@@ -16,8 +16,6 @@ export class InteresService {
   constructor( public http:HttpClient) { }
 
 
-
-
   getDataInteres(valor: string): Observable<any> {
     try {
       const apiUrl = `${environment.urlFirebase}interested.json?orderBy="id_project"&equalTo="${valor}"`;

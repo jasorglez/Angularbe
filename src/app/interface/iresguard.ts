@@ -1,6 +1,8 @@
 export interface Iresguard {
-  id?: number,
-  id_company?: string,
-  date: Date,
-  numdoc?: string
+  id?          : number
+  idEmployee?  : number
+  date         : Date
+  numdocument? : string
+  comment      : string
+  isValidGetMaterials?: boolean;
 }

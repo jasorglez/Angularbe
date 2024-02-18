@@ -21,8 +21,8 @@ export const environment = {
   production: false,
 //aqui juego con las base de datos
   urlFirebase      : 'https://beapp-501d1-default-rtdb.firebaseio.com/',
- 
-  urlAzure         : 'https://weapi2024.azurewebsites.net/',
+
+  urlAzure         : 'https://weapi24.azurewebsites.net/',
 
   googleDriveCredentials:{ client_email: 'jsorglez@gmail.com',
                            private_key: '	9bb18cadc7bbafd5bd7fb4c2cea3ffb503b0900a',

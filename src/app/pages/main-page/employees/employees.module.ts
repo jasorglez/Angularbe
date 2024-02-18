@@ -12,6 +12,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule }  from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -19,7 +20,6 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSortModule } from '@angular/material/sort';
 import { MatCardModule } from '@angular/material/card';
-
 
 import { TranslateModule } from '@ngx-translate/core'
 import { EmployeesComponent } from './employees.component';
@@ -42,7 +42,8 @@ import { ResguardsComponent } from './resguards/resguards.component';
     MatInputModule,
     FormsModule,
     MatDialogModule,
-    
+    MatCheckboxModule,
+
     ReactiveFormsModule,
     MatPaginatorModule,
     MatSortModule,

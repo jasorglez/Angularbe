@@ -4,7 +4,6 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -23,6 +22,7 @@ getEmployees(company: string) {
   return null ;
  }
 }
+
 
 
 getEmployeexid(id : string){
@@ -63,7 +63,11 @@ post(data: any, token:any){
 }
 
 
-delete(id:string, token: any){
+
+
+
+
+deleteEmployee(id:string, token: any){
   try {
     //return this.http.delete(`${environment.urlFirebase}employees/${id}.json?auth=${token}`);
 

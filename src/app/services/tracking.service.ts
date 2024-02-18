@@ -32,10 +32,25 @@ export class TrackingService {
 
   public ultimaventana : string ;
 
-  public nombreEmp : string ;
+  public idEmp : number ;
 
-  setnombreEmp(ne : string) : void {
-    this.nombreEmp = ne;
+  private fecha   : Date ;
+  private numRes  : string ;
+  private comment : string ;
+
+  setfecha(fec : Date) : void{
+     this.fecha = fec;
+    }
+  setnumRes (nr : string) : void {
+    this.numRes = nr ;
+  }
+  setCommen (co : string) : void {
+    this.comment =  co ;
+  }
+
+
+  setidEmp(ne : number) : void {
+    this.idEmp = ne;
   }
 
   setultimaVentana(ultven : string): void {
@@ -83,8 +98,18 @@ setContract(contract: string): void {
   this.endproject = end ;
  }
 
- getnombreEmp() {
-     return this.nombreEmp ;
+ getFecha() {
+   return this.fecha ;
+ }
+ getnumRes () {
+  return this.numRes  ;
+}
+getCom() {
+  return this.comment ;
+}
+
+ getidEmp() {
+     return this.idEmp ;
  }
 
  getContract() {
@@ -106,6 +131,8 @@ setContract(contract: string): void {
  getEnd() {
   return this.endproject ;
  }
+
+
 
 
   setEmail(email: string): void {
@@ -210,7 +237,7 @@ setContract(contract: string): void {
       // console.log('Log creado exitosamente:', postResponse);
     } catch (error) {
 
-      console.error('Error al crear el log:', error);
+      console.error('Error al crear el log TRACKINGS:', error);
 
     }
   }

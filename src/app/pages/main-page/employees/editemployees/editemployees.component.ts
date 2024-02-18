@@ -35,11 +35,11 @@ export class EditemployeesComponent implements OnInit {
 
   imageUrl: string = '';
 
-  constructor( private formBuilder: FormBuilder,
-              private storageService: StoragesService,
-              private employeesServ : EmployeesService,
+  constructor( private formBuilder   : FormBuilder,
+              private storageService : StoragesService,
+              private employeesServ  : EmployeesService,
               private catalogService : CatalogService,
-              public dialogRef: MatDialogRef<EditemployeesComponent>,
+              public dialogRef       : MatDialogRef<EditemployeesComponent>,
               @Inject(MAT_DIALOG_DATA) public data: any) { }
 
 

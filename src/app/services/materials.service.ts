@@ -20,6 +20,17 @@ getSupplies(company: string) {
   }
 }
 
+getSupplies2f(company: string) {
+  try {
+    //const apiUrl = `${environment.urlFirebase}employees.json?orderBy="id_company"&equalTo="${company}"`;
+    const apiUrl = `${environment.urlAzure}api/Supplies?Company=${company}`;
+    return this.http.get(apiUrl)
+  }catch(error){
+  console.error("Error Managment files", error) ;
+  return null ;
+  }
+}
+
 getSuppliesxid(id : string){
   try {
     //const apiUrl = `${environment.urlFirebase}employees/${id}.json`;

@@ -130,13 +130,13 @@
                         <td mat-cell *matCellDef="let element" class="text-nowrap"> {{element.insumo}} </td>
                       </ng-container>
 
-                    <!-- Mail -->
-                    <ng-container *ngIf="!screenSizeSM" matColumnDef="description">
-                      <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-nowrap"> {{'description' | translate}} </th>
-                      <td mat-cell *matCellDef="let element" class="multi-line-description"> {{ element.description }} </td>
-                    </ng-container>
+                    <!-- Description -->
+                      <ng-container *ngIf="!screenSizeSM" matColumnDef="description">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-nowrap" style="width: 30%;"> {{'description' | translate}} </th>
+                        <td mat-cell *matCellDef="let element" class="multi-line-description" style="width: 30%;"> {{ element.description }} </td>
+                      </ng-container>
 
-                     <!-- VentaMN -->
+                    <!-- VentaMN -->
                      <ng-container *ngIf="!screenSizeSM" matColumnDef="measure">
                              <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-nowrap"> {{'measures' | translate}} </th>
                              <td mat-cell *matCellDef="let element" class="text-nowrap"> {{element.measure}} </td>

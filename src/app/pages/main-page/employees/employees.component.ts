@@ -3,6 +3,7 @@ import { TrackingService } from 'src/app/services/tracking.service';
 
 import { Iemployees } from 'src/app/interface/iemployees';
 import { EmployeesService } from 'src/app/services/employees.service';
+import { PrintreportsService } from 'src/app/services/printreports.service';
 
 import { alerts } from 'src/app/helpers/alerts';
 
@@ -81,6 +82,7 @@ export class EmployeesComponent implements OnInit {
 
 
   constructor(private trackingService: TrackingService,
+              public printReportsService : PrintreportsService,
               private employeesServ : EmployeesService,
               public dialog: MatDialog) { }
 
@@ -92,10 +94,11 @@ export class EmployeesComponent implements OnInit {
 
 
 
+
   showProfile(course: Iemployees) {
     // Actualizamos el currentIndex y el profile
      this.profile = course;
-     this.trackingService.setnombreEmp(this.profile.name) ;
+     this.trackingService.setidEmp(this.profile.id) ;
   }
 
 
@@ -124,9 +127,8 @@ export class EmployeesComponent implements OnInit {
 
               } as Iemployees)
           );
-
-             // console.log("Empleados", resp)
              this.profile = this.employees[this.currentIndex]; // Tomamos el primer registro
+             this.trackingService.setidEmp(this.profile.id) ;
              this.employeesDataSource = new MatTableDataSource(this.employees)
              this.employeesDataSource.paginator = this.paginator ;
              this.employeesDataSource.sort = this.sort;
@@ -175,7 +177,7 @@ export class EmployeesComponent implements OnInit {
 
         if (result.isConfirmed) {
 
-          this.employeesServ.delete(id, localStorage.getItem('token'))
+          this.employeesServ.deleteEmployee(id, localStorage.getItem('token'))
           .subscribe( () => {
 
               alerts.basicAlert("Sucess", "The course has been deleted", "success")
@@ -186,7 +188,9 @@ export class EmployeesComponent implements OnInit {
     })
   }
 
-
+  printResg() {
+     this.printReportsService.Resguardo(this.profile.name, this.profile.position, this.profile.direction, this.profile.ident_emp) ;
+  }
 
 
   applyFilter(dataSource: MatTableDataSource<any>, event: Event) {

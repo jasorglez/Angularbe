@@ -10,15 +10,7 @@
 
               <div class="form-group mb-3">
 
-                <input type="text" id="InputName" class="form-control" placeholder="{{ 'name' | translate }} {{ 'company' | translate }}"
-                formControlName="razonsocial"  />
-                <div *ngIf="fproviders.get('razonsocial').invalid && (fproviders.get('razonsocial').dirty || fproviders.get('razonsocial').touched)" class="invalid-feedback">
-                  <div *ngIf="fproviders.get('razonsocial').errors['required']">
-                    {{ 'req' | translate}}  {{ 'identity' | translate }}
-                  </div>
-                </div>
-
-                <input type="text" id="InputName" class="form-control" placeholder="{{ 'short' | translate }} {{ 'company' | translate }}"
+                <input type="text" id="InputName" class="form-control" placeholder="{{ 'short' | translate }} {{ 'provider' | translate }}"
                 formControlName="razoncorta"  />
                 <div *ngIf="fproviders.get('razoncorta').invalid && (fproviders.get('razoncorta').dirty || fproviders.get('razoncorta').touched)" class="invalid-feedback">
                   <div *ngIf="fproviders.get('razoncorta').errors['required']">
@@ -26,6 +18,15 @@
                   </div>
                 </div>
 
+                <input type="text" id="InputName" class="form-control" placeholder="{{ 'name' | translate }} {{ 'provider' | translate }}"
+                formControlName="razonsocial"  />
+                <div *ngIf="fproviders.get('razonsocial').invalid && (fproviders.get('razonsocial').dirty || fproviders.get('razonsocial').touched)" class="invalid-feedback">
+                  <div *ngIf="fproviders.get('razonsocial').errors['required']">
+                    {{ 'req' | translate}}  {{ 'identity' | translate }}
+                  </div>
+                </div>
+
+                
                 <input type="text" class="form-control" placeholder="{{ 'address' | translate }}" formControlName="address" />
 
                 <input type="text" class="form-control" placeholder="{{ 'cp' | translate }}" formControlName="cp" />

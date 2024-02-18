@@ -58,7 +58,7 @@ deleteCourse(id:string, token: any){
   try {
     return this.http.delete(`${environment.urlFirebase}courses/${id}.json?auth=${token}`);
   }catch(error){
-    console.error("Error al borrar", error) ;
+    console.error("Error al borrar Courses", error) ;
     return null ;
  }
 

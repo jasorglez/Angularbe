@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
 
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { environment } from 'src/environments/environment';
@@ -42,7 +42,7 @@ export class NewMatComponent implements OnInit {
   public fsupplies = this.formBuilder.group({
     insumos      :  ['', [Validators.required]],
     articulo     : '',
-    date         : '',
+    date: new FormControl(new Date().toISOString().substring(0, 10)), // Formato YYYY-MM-DD
     measure      : 0,
     family       : 0,
     ubication    : 0,
