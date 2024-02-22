@@ -10,8 +10,6 @@ import { AuthService } from 'src/app/services/auth.service';
 
 import { alerts } from 'src/app/helpers/alerts';
 
-import { get } from 'firebase/database';
-
 @Component({
   selector: 'app-side-bar',
   templateUrl: './side-bar.component.html',

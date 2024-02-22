@@ -7,6 +7,8 @@ import { TranslateModule } from '@ngx-translate/core'
 import { ComprovComponent } from './comprov.component';
 import { NewProvComponent } from './newProv/newProv.component';
 import { EditProvComponent } from './editProv/editProv.component';
+import { OcComponent } from './oc/oc.component';
+
 import { ComprovRoutingModule } from './comprov-routing.module';
 
 //Angular Material
@@ -24,7 +26,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
-  declarations: [ComprovComponent, NewProvComponent, EditProvComponent],
+  declarations: [ComprovComponent, NewProvComponent, EditProvComponent, OcComponent],
   imports: [
     CommonModule,
     TranslateModule,

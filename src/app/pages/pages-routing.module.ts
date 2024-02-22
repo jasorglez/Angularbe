@@ -8,7 +8,6 @@ import { Error404Component } from './main-page/error404/error404.component';
 
 import { AuthGuard } from 'src/app/guards/auth.guard';
 
-
 const routes: Routes = [
   { path: 'login',  loadChildren: () => import('./login/login.module').then(m=>m.LoginModule)},
   { path: '',
@@ -27,6 +26,7 @@ const routes: Routes = [
       { path: 'employees', loadChildren: () => import ('./main-page/employees/employees.module'). then (m => m.EmployeesModule )},
       { path: 'comprov', loadChildren: () => import ('./main-page/comprov/comprov.module').then (m => m.ComprovModule)},
       { path: 'materials', loadChildren: () => import ('./main-page/materials/materials.module').then (m => m.MaterialsModule)},
+  
       { path: 'dialog-custom', component: DialogCustomComponent },
       { path: '**', component: Error404Component}
     ]}

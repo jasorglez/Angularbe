@@ -2,27 +2,26 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-
-
 export const environment = {
   firebase: {
-    projectId: 'beapp-501d1',
-    appId: '1:151993360357:web:127db5b6d20896fb84990c',
-    //aqui juego con las base de datos
-    databaseURL: 'https://beapp-501d1-default-rtdb.firebaseio.com',
-   // databaseURL: 'https://beapp-testing-b89.firebaseio.com/',
-    storageBucket: 'beapp-501d1.appspot.com',
-    locationId: 'us-central',
-    apiKey: 'AIzaSyDxCBGKk8nT09hdW85-PyOkhw5_JPZLF1A',
-    authDomain: 'beapp-501d1.firebaseapp.com',
-    messagingSenderId: '151993360357',
+     projectId: 'beapp-501d1',
+     appId: '1:151993360357:web:127db5b6d20896fb84990c',
+     //aqui juego con las base de datos
+     databaseURL: 'https://beapp-501d1-default-rtdb.firebaseio.com',
+     // databaseURL: 'https://beapp-testing-b89.firebaseio.com/',
+     storageBucket: 'beapp-501d1.appspot.com',
+     locationId: 'us-central',
+     apiKey: 'AIzaSyDxCBGKk8nT09hdW85-PyOkhw5_JPZLF1A',
+     authDomain: 'beapp-501d1.firebaseapp.com',
+     messagingSenderId: '151993360357',
   },
 
   production: false,
 //aqui juego con las base de datos
-  urlFirebase      : 'https://beapp-501d1-default-rtdb.firebaseio.com/',
+  urlFirebase   : 'https://beapp-501d1-default-rtdb.firebaseio.com/',
 
-  urlAzure         : 'https://weapi24.azurewebsites.net/',
+  urlAzure    : 'https://weapi24.azurewebsites.net/',
+  //  urlAzure    : 'https://localhost:7089/',
 
   googleDriveCredentials:{ client_email: 'jsorglez@gmail.com',
                            private_key: '	9bb18cadc7bbafd5bd7fb4c2cea3ffb503b0900a',
@@ -42,7 +41,6 @@ export const environment = {
 
   urlRefreshToken: 'https://securetoken.googleapis.com/v1/token?key=AIzaSyDxCBGKk8nT09hdW85-PyOkhw5_JPZLF1A',
 };
-
 
 
 /*

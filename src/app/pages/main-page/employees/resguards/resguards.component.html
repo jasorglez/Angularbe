@@ -72,7 +72,7 @@
     </div>
   </div>
 
-        <!-- Form for document number, date, and comments -->
+     <!-- Form for document number, date, and comments -->
         <div  *ngIf="showNewResg">
           <div class="horizontal-form">
             <form [formGroup]="fresg">
@@ -90,7 +90,7 @@
           </div>
         </div>
 
-  <div div *ngIf="showGridMat" class="mat-table-container mat-elevation-z2 m-3">
+     <div div *ngIf="showGridMat" class="mat-table-container mat-elevation-z2 m-3">
     <!-- ... Existing table code ... -->
     <mat-card-header class="card-header p-2">
       <mat-card-title-group class="card-title">
@@ -156,11 +156,11 @@
     <div *ngIf="loadData" class="text-center m-5">
       <div class="spinner-border"></div>
     </div>
-  </div>
+     </div>
 
-
+     
      <!-- Form for document number, date, and comments -->
-<div *ngIf="showNewMat">
+       <div *ngIf="showNewMat">
   <div class="new-form-container">
     <form [formGroup]="fmat" class="horizontal-form">
       <!-- Your form fields go here -->
@@ -187,8 +187,7 @@
 
     </form>
   </div>
-</div>
-
+       </div>
 
 
 </mat-card>

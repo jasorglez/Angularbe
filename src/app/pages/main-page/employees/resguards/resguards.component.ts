@@ -5,7 +5,6 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { SelectionModel } from '@angular/cdk/collections';
 
-
 import { ResguardService } from 'src/app/services/resguard.service';
 import { TrackingService } from 'src/app/services/tracking.service';
 import { MaterialsService } from 'src/app/services/materials.service';
@@ -33,7 +32,6 @@ export class ResguardsComponent implements OnInit {
   showGridResg    : boolean = true ;
   showGridMat     : boolean = true ;
   isDataAvailable : boolean = false ;
-
 
   idResguardo : number = 0 ;
 

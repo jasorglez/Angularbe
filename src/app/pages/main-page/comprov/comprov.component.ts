@@ -4,6 +4,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 
+
 import { Iproviders } from 'src/app/interface/iproviders';
 import { ProvidersService } from 'src/app/services/providers.service';
 
@@ -13,6 +14,9 @@ import { MatDialog } from '@angular/material/dialog';
 
 import { NewProvComponent } from './newProv/newProv.component';
 import { EditProvComponent } from './editProv/editProv.component';
+
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-comprov',
@@ -38,26 +42,27 @@ export class ComprovComponent implements OnInit {
       this.getDataProviders();
     }
 
-    if (tabName === 'instructors') {
+    if (tabName === 'orders') {
       this.trackingService.addLog(
         this.trackingService.getnameComp(),
-        'Click en la Pestaña Instructores',
-        'Training',
+        'Click en la Pestaña Orders',
+        'Orders',
         this.trackingService.getEmail()
       );
 
     }
 
 
-    if (tabName === 'students') {
+    if (tabName === 'pays') {
       this.trackingService.addLog(
         this.trackingService.getnameComp(),
         'Click en la Pestaña Estudiantes',
         'Training',
         this.trackingService.getEmail()
       );
-
     }
+
+
   }
 
 
@@ -80,7 +85,8 @@ export class ComprovComponent implements OnInit {
 
   constructor(private trackingService: TrackingService,
       private ProvidersService : ProvidersService,
-      public dialog: MatDialog ) { }
+      public dialog: MatDialog,
+      private router: Router ) { }
 
   ngOnInit() {
      this.getDataProviders();
@@ -90,6 +96,7 @@ export class ComprovComponent implements OnInit {
     // Actualizamos el currentIndex y el profile
     this.profile = course;
   }
+
 
   getDataProviders() {
     this.loadData = true;

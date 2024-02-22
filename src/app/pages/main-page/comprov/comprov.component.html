@@ -73,9 +73,9 @@
           <mat-card-header class="card-header p-2">
             <mat-card-title>
               <ul class="nav nav-pills">
-                <li class="nav-item tab-nav"><div class="nav-link active" data-toggle="tab" (click)="onTabSelected('courses')">{{'providers' | translate }}</div></li>
-                <li class="nav-item tab-nav"><div class="nav-link" data-toggle="tab" (click)="onTabSelected('lends')">{{ 'orders' | translate }}</div></li>
-                <li class="nav-item tab-nav"><div class="nav-link" data-toggle="tab" (click)="onTabSelected('bills')">{{ 'pays' | translate }}</div></li>
+                 <li class="nav-item tab-nav"><div class="nav-link active" data-toggle="tab" (click)="onTabSelected('providers')">{{'providers' | translate }}</div></li>
+                 <li class="nav-item tab-nav"><div class="nav-link" data-toggle="tab" (click)="onTabSelected('orders')">{{ 'orders' | translate }}</div></li>
+                 <li class="nav-item tab-nav"><div class="nav-link" data-toggle="tab" (click)="onTabSelected('bills')">{{ 'pays' | translate }}</div></li>
 
               </ul>
             </mat-card-title>
@@ -91,10 +91,9 @@
                         <div class="col">
                           <button class="btn btn-block bg-primary" type="button" (click)="newProviders('fproviders')">{{'new' | translate }}</button>
                         </div>
-
                       </div>
-
                     </mat-card-title>
+
                       <div class="col-xl-4 col-lg-4 col-md-4">
                         <input class="form-control" placeholder="{{'search' | translate}}"
                         (keyup)="applyFilter(providersDataSource, $event)">
@@ -157,3 +156,11 @@
                 <mat-paginator [hidden]="loadData" [pageSizeOptions]="[15, 20, 25]" showFirstLastButtons  class="text-nowrap paginador"></mat-paginator>
               </div>
             </div>
+
+
+            <div *ngIf="selectedTab === 'orders'">
+              <app-oc></app-oc>
+           </div>
+
+
+
