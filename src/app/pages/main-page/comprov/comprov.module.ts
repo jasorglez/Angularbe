@@ -8,6 +8,7 @@ import { ComprovComponent } from './comprov.component';
 import { NewProvComponent } from './newProv/newProv.component';
 import { EditProvComponent } from './editProv/editProv.component';
 import { OcComponent } from './oc/oc.component';
+import { ReusableComponent } from '../reusable/reusable.component';
 
 import { ComprovRoutingModule } from './comprov-routing.module';
 
@@ -26,7 +27,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
-  declarations: [ComprovComponent, NewProvComponent, EditProvComponent, OcComponent],
+  declarations: [ComprovComponent, NewProvComponent, EditProvComponent, OcComponent, ReusableComponent],
   imports: [
     CommonModule,
     TranslateModule,

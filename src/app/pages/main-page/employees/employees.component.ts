@@ -93,8 +93,6 @@ export class EmployeesComponent implements OnInit {
   }
 
 
-
-
   showProfile(course: Iemployees) {
     // Actualizamos el currentIndex y el profile
      this.profile = course;

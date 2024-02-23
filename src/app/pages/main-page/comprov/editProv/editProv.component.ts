@@ -42,18 +42,16 @@ export class EditProvComponent implements OnInit {
     get city()      { return this.fproviders.get('city')}
     get country()    { return this.fproviders.get('country')}
 
-
-
   ngOnInit() {
 
      this.providersService.getProvidersxid(this.data.id).subscribe(
       (resp: any) => {
-       console.log('Response:', resp);
+   //    console.log('Response:', resp);
 
           // Set values for form controls
           this.fproviders.get('id')?.setValue(resp.id),
           this.fproviders.get('razonsocial')?.setValue(resp.razonsocial),
-          this.fproviders.get('razoncorta')?.setValue(resp.razoncorta),
+          this.fproviders.get('razoncorta')?.setValue(resp.numero),
           this.fproviders.get('address')?.setValue(resp.address),
           this.fproviders.get('cp')?.setValue(resp.cp)
           this.fproviders.get('city')?.setValue(resp.city)

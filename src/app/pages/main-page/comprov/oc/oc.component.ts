@@ -1,7 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Ipurchaseorder } from 'src/app/interface/purchaseorder';
-
+import { PoService } from 'src/app/services/po.service';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { TrackingService } from 'src/app/services/tracking.service';
+import { alerts } from 'src/app/helpers/alerts';
+import { MatDialog } from '@angular/material/dialog';
+import { ReusableComponent } from '../../reusable/reusable.component';
 
 @Component({
   selector: 'app-oc',
@@ -20,26 +26,34 @@ export class OcComponent implements OnInit {
   loadData     = false;
 
   displayedColOc: string[] = [
-    'numberposition',  'name', 'mail',  'actions'];
+     'number', 'date', 'currency', 'Status', 'actions'];
 
     oc : Ipurchaseorder[] = [];
 
+    @ViewChild(MatPaginator) paginator: MatPaginator;
+    @ViewChild(MatSort) sort!: MatSort;
 
-  constructor() { }
+
+  constructor( private ordersService : PoService,
+               private trackingServ  : TrackingService,
+               public dialog: MatDialog) { }
 
   ngOnInit() {
 
      this.getDataOc()
   }
 
+  showDetail(id : number) {
+
+  }
 
   getDataOc() {
     this.loadData = true;
 
-    this.resguardServ.getResg(this.trackingServ.getidEmp())
+    this.ordersService.getData(localStorage.getItem('company'), this.trackingServ.getnumpro())
       .subscribe((resp: any) => {
         /*=============================================
-      Integrando respuesta de base de datos con la interfaz
+      InteglocalStorage.getItem('company'), 1ando respuesta de base de datos con la interfaz
       =============================================*/
         let numberposition = 1;
 
@@ -47,20 +61,11 @@ export class OcComponent implements OnInit {
           (a) =>
             ({
                id             : resp[a].id,
-               numorder       : resp[a].num_orden,
+               numorder       : resp[a].numorder,
                date           : resp[a]?.date,
-               id_provider    : 0,
-               delivery       : resp[a]?.delivery,
-               deliverytime   : resp[a]?.comment,
-               datedelivery   : resp[a]?.comment,
-               id_pay         : 0,
-               id_currency    : 0,
+               status         : resp[a].status,
                conditions     : resp[a]?.conditions,
-               adressend      : '',
-               phonesend      : '',
-               id_request     : 0,
-               id_authorizes  : 0,
-               numberposition : numberposition++
+               desCurr        : resp[a]?.descCurr
              } as Ipurchaseorder)
         );
            this.ocDataSource           = new MatTableDataSource(this.oc)
@@ -68,12 +73,20 @@ export class OcComponent implements OnInit {
            this.ocDataSource.sort      = this.sort;
            this.loadData = false;
 
-
       });
 
   }
 
   newOc () {
+    const dialogRef = this.dialog.open(ReusableComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        alerts.confirmAlert('Se realizo el registro correctamente', 'Register new Ok', 'success', 'Ok').then((result) => {
+       //   this.getDataEmployees() ;
+        });
+      }
+    });
 
   }
 
@@ -87,8 +100,6 @@ export class OcComponent implements OnInit {
 
 
   }
-
-
 
   applyFilter(dataSource: MatTableDataSource<any>, event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;

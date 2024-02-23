@@ -4,7 +4,6 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 
-
 import { Iproviders } from 'src/app/interface/iproviders';
 import { ProvidersService } from 'src/app/services/providers.service';
 
@@ -14,8 +13,6 @@ import { MatDialog } from '@angular/material/dialog';
 
 import { NewProvComponent } from './newProv/newProv.component';
 import { EditProvComponent } from './editProv/editProv.component';
-
-import { Router } from '@angular/router';
 
 
 @Component({
@@ -62,7 +59,6 @@ export class ComprovComponent implements OnInit {
       );
     }
 
-
   }
 
 
@@ -86,7 +82,7 @@ export class ComprovComponent implements OnInit {
   constructor(private trackingService: TrackingService,
       private ProvidersService : ProvidersService,
       public dialog: MatDialog,
-      private router: Router ) { }
+       ) { }
 
   ngOnInit() {
      this.getDataProviders();
@@ -95,6 +91,7 @@ export class ComprovComponent implements OnInit {
   showProfile(course: Iproviders) {
     // Actualizamos el currentIndex y el profile
     this.profile = course;
+    this.trackingService.setnumpro(this.profile.id)
   }
 
 

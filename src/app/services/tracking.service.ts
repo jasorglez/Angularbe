@@ -38,6 +38,16 @@ export class TrackingService {
   private numRes  : string ;
   private comment : string ;
 
+
+  private numprov : number ;
+  setnumpro (n: number) {
+      this.numprov = n ;
+  }
+   getnumpro() {
+    return this.numprov ;
+}
+
+
   setfecha(fec : Date) : void{
      this.fecha = fec;
     }
@@ -56,6 +66,8 @@ export class TrackingService {
   setultimaVentana(ultven : string): void {
     this.ultimaventana = ultven ;
   }
+
+
 
   getultimaVentana() {
     return this.ultimaventana;
