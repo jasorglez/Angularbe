@@ -55,6 +55,27 @@ export class CatalogService {
     }
 }
 
+getdataPaymentmet(){
+  try {
+    return this.http.get(`${environment.urlAzure}api/Catalogo/Paymentmethod`);
+  }catch(error)
+  {
+    alerts.basicAlert('error', "Error query PaymentMethods in catalog service", "error");
+    return null;
+  }
+}
+
+
+getdataTypecurrency(){
+  try {
+    return this.http.get(`${environment.urlAzure}api/Catalogo/Typecurrency`);
+  }catch(error)
+  {
+    alerts.basicAlert('error', "Error query Type Currency in catalog service", "error");
+    return null;
+  }
+}
+
 
 getdataUbications(){
   try {

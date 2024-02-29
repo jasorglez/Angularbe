@@ -4,107 +4,107 @@
       <ng-container *ngIf="!loadData">
         <mat-dialog-actions>
 
-         <div class="row">
-
-            <div class="col-md-12">
-
-              <div class="form-group mb-3">
-
-                <input type="text" id="InputName" class="form-control" placeholder="{{ 'insumo' | translate }} {{ 'materials' | translate }}"
-                formControlName="insumos" />
-                <div *ngIf="fsupplies.get('insumos').invalid && (fsupplies.get('insumos').dirty || fsupplies.get('insumos').touched)" class="invalid-feedback">
-                  <div *ngIf="fsupplies.get('insumos').errors['required']">
-                    {{ 'req' | translate}}  {{ 'insumo' | translate }}
-                  </div>
-                </div>
-
-                <input type="text" id="InputName" class="form-control" placeholder="{{ 'articule' | translate }}" formControlName="articulo" />
-
-                <textarea class="form-control" placeholder="{{ 'description' | translate }}" formControlName="description" rows="4" style="width: 100%;"></textarea>
-
-                <input type="date" class="form-control" placeholder="{{ 'date' | translate }}" formControlName="date" />
-
-                <div>
-                  <label>Aplica Resguardo</label>
-                  <input type="checkbox" [checked]="estaActivo" (change)="toggleCheckbox()" />
-                </div>
-
-                  <!-- SubFila 1.1.2 DbCombo Box Measures-->
-                  <div class="row mt-2">
-                      <div class="col-sm-12">
-                          <!-- Campo de Seleccion Measures -->
-                              <select name="format" id="format" class="form-control" formControlName="measure">
-                                  <option selected disabled value="">{{ 'measures' | translate }}</option>
-                                  <option *ngFor="let item of measures" [value]="item.id">
-                                    {{ item.description }}
-                                  </option>
-                              </select>
-                      </div>
-                  </div>
-
-                      <!-- SubFila 1.1.2 DbCombo Box Familys-->
-                        <div class="row mt-2">
-                           <div class="col-sm-12">
-                            <!-- Campo de Seleccion Familys -->
-                              <select name="format" id="format" class="form-control" formControlName="family">
-                                  <option selected disabled value="">{{ 'familys' | translate }}</option>
-                                    <option *ngFor="let item of familys" [value]="item.id">
-                                    {{ item.description }}
-                                  </option>
-                              </select>
-                          </div>
+            <div class="container">
+                <div class="row">
+                 <div class="col-sm-6">
+                     <div class="row mt-2">
+                        <input type="text" id="InputName" class="form-control" placeholder="{{ 'insumo' | translate }} {{ 'materials' | translate }}"
+                            formControlName="insumos" />
+                            <div *ngIf="fsupplies.get('insumos').invalid && (fsupplies.get('insumos').dirty || fsupplies.get('insumos').touched)" class="invalid-feedback">
+                                <div *ngIf="fsupplies.get('insumos').errors['required']">
+                                  {{ 'req' | translate}}  {{ 'insumo' | translate }}
+                                 </div>
+                            </div>
                      </div>
 
-                     <!-- SubFila 1.1.2 Combo Box Ubications-->
                      <div class="row mt-2">
+                          <input type="text" id="InputName" class="form-control" placeholder="{{ 'articule' | translate }}" formControlName="articulo" />
+                     </div>
+
+                     <div class="row mt-2">
+                          <textarea class="form-control" placeholder="{{ 'description' | translate }}" formControlName="description"
+                          rows="4" style="width: 100%;"></textarea>
+                     </div>
+
+                     <div class="row mt-2">
+                            <input type="date" class="form-control" placeholder="{{ 'date' | translate }}" formControlName="date" />
+                     </div>
+
+                       <div class="row mt-2">
+                            <div>
+                               <label>Aplica Resguardo</label>
+                               <input type="checkbox" [checked]="estaActivo" (change)="toggleCheckbox()" />
+                            </div>
+                       </div>
+
+                        <!-- SubFila 1.1.2 DbCombo Box Measures-->
+                        <div class="row mt-2">
+                          <div class="col-sm-12">
+                              <!-- Campo de Seleccion Measures -->
+                                  <select name="format" id="format" class="form-control" formControlName="measure">
+                                      <option selected disabled value="">{{ 'measures' | translate }}</option>
+                                      <option *ngFor="let item of measures" [value]="item.id">
+                                        {{ item.description }}
+                                      </option>
+                                  </select>
+                          </div>
+                        </div>
+
+                        <!-- SubFila 1.1.2 DbCombo Box Familys-->
+                          <div class="row mt-2">
+                            <div class="col-sm-12">
+                              <!-- Campo de Seleccion Familys -->
+                                <select name="format" id="format" class="form-control" formControlName="family">
+                                    <option selected disabled value="">{{ 'familys' | translate }}</option>
+                                      <option *ngFor="let item of familys" [value]="item.id">
+                                      {{ item.description }}
+                                    </option>
+                                </select>
+                            </div>
+                      </div>
+
+                      <!-- SubFila 1.1.2 Combo Box Ubications-->
+                      <div class="row mt-2">
                       <div class="col-sm-12">
-                       <!-- Campo de Seleccion Ubications -->
-                            <select name="format" id="format" class="form-control" formControlName="ubication">
-                               <option selected disabled value="">{{ 'ubications' | translate }}</option>
-                                 <option *ngFor="let item of ubications" [value]="item.id">
-                                 {{ item.description }}
-                               </option>
-                            </select>
-                         </div>
-                    </div>
-
-              </div>
-
-            </div>
-
-            <div class="col-md-6">
-
-              <div class="form-group mb-3">
-                <div class="card card-primary card-img">
-                  <div class="text-center">
-                    <label for="pictureUpload" class="mb-3">
-                      <img [src]="imageUrl" width="100" height="100" *ngIf="imageUrl">
-                      {{ 'Avatar/Foto' | translate }}
-                    </label>
-                    <input type="file" id="pictureUpload" (change)="uploadImage($event)" style="display: none;">
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-            <div class="row">
-
-              <div class="col-md-12">
-
-                <div class="form-group mb-3">
-                    <label for="costoMN">{{ 'Costs' | translate }}</label>
-                      <input type="number" class="form-control" id="costoMN" formControlName="costoMN" title="{{ 'Enter cost in MN' | translate }}" />
-                      <input type="number" class="form-control" placeholder="{{ 'cost DLL' | translate }}" formControlName="costoDLL" />
-                    <label for="ventaMN">{{ 'Sales' | translate }}</label>
-                      <input type="number" class="form-control" placeholder="{{ 'sale MN' | translate }}" formControlName="ventaMN" />
-                      <input type="number" class="form-control" placeholder="{{ 'sale DLL' | translate }}" formControlName="ventaDLL" />
+                          <!-- Campo de Seleccion Ubications -->
+                      <select name="format" id="format" class="form-control" formControlName="ubication">
+                        <option selected disabled value="">{{ 'ubications' | translate }}</option>
+                          <option *ngFor="let item of ubications" [value]="item.id">
+                            {{ item.description }}
+                          </option>
+                        </select>
+                      </div>
+                      </div>
 
                  </div>
-              </div>
-            </div>
 
-          </div>
+                 <div class="col-sm-6">
+
+                              <div class="form-group mb-3">
+                                <div class="card card-primary card-img">
+                                  <div class="text-center">
+                                    <label for="pictureUpload" class="mb-3">
+                                      <img [src]="imageUrl" width="100" height="100" *ngIf="imageUrl">
+                                      {{ 'Avatar/Foto' | translate }}
+                                    </label>
+                                    <input type="file" id="pictureUpload" (change)="uploadImage($event)" style="display: none;">
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="form-group mb-3">
+                                 <label for="costoMN">{{ 'Costs' | translate }}</label>
+                                   <input type="number" class="form-control" id="costoMN" formControlName="costoMN" title="{{ 'Enter cost in MN' | translate }}" />
+                                   <input type="number" class="form-control" placeholder="{{ 'cost DLL' | translate }}" formControlName="costoDLL" />
+                                 <label for="ventaMN">{{ 'Sales' | translate }}</label>
+                                   <input type="number" class="form-control" placeholder="{{ 'sale MN' | translate }}" formControlName="ventaMN" />
+                                   <input type="number" class="form-control" placeholder="{{ 'sale DLL' | translate }}" formControlName="ventaDLL" />
+
+                        </div>
+                 </div>
+
+                </div>
+            </div>
 
         </mat-dialog-actions>
       </ng-container>

@@ -10,7 +10,7 @@ import { TrackingService } from 'src/app/services/tracking.service';
 import { MaterialsService } from 'src/app/services/materials.service';
 
 import { Iresguard } from 'src/app/interface/iresguard';
-import { Iitemsmat } from 'src/app/interface/iitemsmat';
+import { Imatxresg } from 'src/app/interface/imatxresguard';
 
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
@@ -29,25 +29,28 @@ export class ResguardsComponent implements OnInit {
 
   showNewResg     : boolean = false ;
   showNewMat      : boolean = false ;
+
   showGridResg    : boolean = true ;
   showGridMat     : boolean = true ;
+  
   isDataAvailable : boolean = false ;
 
   idResguardo : number = 0 ;
 
   resguardDataSource !: MatTableDataSource<Iresguard>;
-  itemsDataSource    !: MatTableDataSource<Iitemsmat>;
+  itemsDataSource    !: MatTableDataSource<Imatxresg>;
 
   screenSizeSM = false;
   resguards : Iresguard[] = [];
-  items     : Iitemsmat[] = [] ;
+  items     : Imatxresg[] = [] ;
   materials :  any[] = [] ;
 
   loadData      = false ;
   loadMaterials = false ;
 
   displayedColresguards : string[] = ['numberposition', 'number', 'date',  'actions'];
-  displayedColitems     : string[] = ['numberposition', 'material', 'quantity',  'actions'];
+   
+  displayedColitems     : string[] = ['material', 'quantity', 'sales', 'actions'];
 
 
 @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -168,11 +171,11 @@ export class ResguardsComponent implements OnInit {
                sales          : resp[a]?.sales,
                quantity       : resp[a]?.quantity,
                descmat        : resp[a]?.descmat,
-               numberposition : numberposition++
-
-            } as Iitemsmat)
+       
+            } as Imatxresg)
 
         );
+        
            this.itemsDataSource           = new MatTableDataSource(this.items)
            this.itemsDataSource.paginator = this.paginator ;
            this.itemsDataSource.sort      = this.sort;
@@ -185,18 +188,20 @@ export class ResguardsComponent implements OnInit {
   checkGetMaterialsValidity() {
     // Iterate through each record in resguards and check if getMaterials returns data
     for (const resguard of this.resguards) {
+
       this.resguardServ.getItems(resguard.id)
         .subscribe((resp: any) => {
           const items = Object.keys(resp).map(
             (a) =>
               ({
-                idResguardo   : resp[a].idResguardo,
+                idResguardo    : resp[a].idResguardo,
                 sales          : resp[a]?.sales,
                 quantity       : resp[a]?.quantity,
                 descmat        : resp[a]?.descmat,
-              } as Iitemsmat)
+              } as Imatxresg)
           );
 
+   //       console.log("ITEMs Validity", this.items)
           // Update the validity flag for each record
           resguard.isValidGetMaterials = items.length > 0;
         });
@@ -236,7 +241,7 @@ export class ResguardsComponent implements OnInit {
   }
 
 
-  saveRes() {
+  Save() {
     this.loadData = true;
 
      const dataResguard: Iresguard = {
@@ -264,7 +269,7 @@ export class ResguardsComponent implements OnInit {
 
   saveMat(){
 
-    const dataItems: Iitemsmat = {
+    const dataItems: Imatxresg = {
       //  id           : 0,
         cc           : this.fmat.get('cc')?.value,
         idResguardo  : this.idResguardo,

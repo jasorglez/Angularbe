@@ -73,8 +73,7 @@ export class EmployeesComponent implements OnInit {
 
  loadData     = false;
 
- displayedColemployees: string[] = [
-  'numberposition',  'number', 'direct',  'actions'];
+ displayedColemployees: string[] = ['number', 'direct',  'actions'];
 
 
 @ViewChild(MatPaginator) paginator: MatPaginator;

@@ -43,4 +43,55 @@ mat-dialog-content::-webkit-scrollbar-thumb{
 
 .cdk-overlay-container{
 	z-index:2000 !important;
+
+
+  .new-form-content {
+    padding: 20px;
+  }
+
+  /* ... Other styles ... */
+
+  .horizontal-form label,
+  .horizontal-form input,
+  .horizontal-form select {
+    display: inline-block;
+    margin-right: 10px;
+    width: auto; /* Set the width to auto to make the elements smaller */
+    padding: 5px; /* Adjust the padding as needed */
+  }
+
+  /* Apply a custom class to the specific fields and adjust their styles */
+  .horizontal-form .small-field {
+    width: 50px; /* Adjust the width as needed for small fields */
+    padding: 3px; /* Adjust the padding as needed for small fields */
+  }
+
+  .horizontal-form .large-field {
+    width : 51%; /* Set width to 100% for larger fields */
+    height: 100; /* Adjust padding as needed for larger fields */
+  }
+
+  .horizontal-form button {
+    display: inline-block;
+    margin-top: 10px;
+    width: auto;
+    padding: 5px;
+  }
+
+  .inline-block {
+    display: inline-block;
+    margin-right: 7px;
+  }
+
+  .horizontal-form .form-column {
+    display: inline-block;
+    margin-right: 20px;
+  }
+
+  .horizontal-form .form-row {
+    margin-bottom: 10px;
+  }
+
+
+
 }

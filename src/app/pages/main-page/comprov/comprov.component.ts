@@ -72,7 +72,7 @@ export class ComprovComponent implements OnInit {
  loadData     = false;
 
  displayedColproviders: string[] = [
-  'numberposition',  'name', 'mail',  'actions'];
+  'numberposition',  'name',  'actions'];
 
 
 @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -124,6 +124,7 @@ export class ComprovComponent implements OnInit {
         );
 
            this.profile = this.providers[this.currentIndex]; // Tomamos el primer registro
+           this.trackingService.setnumpro(this.profile.id)
            this.providersDataSource = new MatTableDataSource(this.providers)
            this.providersDataSource.paginator = this.paginator ;
            this.providersDataSource.sort = this.sort;

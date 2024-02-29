@@ -22,7 +22,29 @@ export class UsersService {
 
 constructor(private http:HttpClient ) { }
 
-  public async getEvents() {
+
+getdataUserAut(){
+  try {
+    return this.http.get(`${environment.urlAzure}api/Users/Aut`);
+  }catch(error)
+  {
+    alerts.basicAlert('error', "Error query Users in Users service", "error");
+    return null;
+  }
+}
+
+
+getdataUserNoAut(){
+  try {
+    return this.http.get(`${environment.urlAzure}api/Users/NoAut`);
+  }catch(error)
+  {
+    alerts.basicAlert('error', "Error query Users in Users service", "error");
+    return null;
+  }
+}
+
+public async getEvents() {
     try {
       const response = await axios.get(`${environment.urlFirebase}events.json`);
       return response.data;

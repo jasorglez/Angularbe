@@ -20,6 +20,17 @@ getProviders(company: string) {
   }
 }
 
+get2Prov(company: string) {
+  try {
+    const apiUrl = `${environment.urlAzure}api/Providers/2prov?idCompany=${company}`;
+    return this.http.get(apiUrl)
+  }catch(error){
+  console.error("Error Managment files", error) ;
+  return null ;
+  }
+}
+
+
 getProvidersxid(id : string){
   try {
     //const apiUrl = `${environment.urlFirebase}employees/${id}.json`;

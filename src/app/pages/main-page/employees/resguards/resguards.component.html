@@ -14,7 +14,7 @@
     </mat-card-title-group>
   </mat-card-header>
 
-  <div *ngIf="showGridResg" class="mat-table-container mat-elevation-z2 m-3">
+     <div *ngIf="showGridResg" class="mat-table-container mat-elevation-z2 m-3">
     <!-- ... Existing table code ... -->
 
     <table [hidden]="loadData" mat-table [dataSource]="resguardDataSource" matSort matSortStart="desc" style="font-size: 6px;" style="padding: 8px;">
@@ -63,6 +63,7 @@
       <tr mat-header-row *matHeaderRowDef="displayedColresguards"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColresguards;"></tr>
     </table>
+
     <div class="card-footer bg-white">
       <mat-paginator [hidden]="loadData" [pageSizeOptions]="[3, 6,9]" showFirstLastButtons  class="text-nowrap paginador"></mat-paginator>
     </div>
@@ -70,10 +71,10 @@
     <div *ngIf="loadData" class="text-center m-5">
       <div class="spinner-border"></div>
     </div>
-  </div>
+     </div>
 
      <!-- Form for document number, date, and comments -->
-        <div  *ngIf="showNewResg">
+     <div  *ngIf="showNewResg">
           <div class="horizontal-form">
             <form [formGroup]="fresg">
               <!-- Your form fields go here -->
@@ -84,11 +85,11 @@
 
               <input type="text" id="comment"  placeholder="{{ 'comment' | translate }}" formControlName="comment" class="large-field">
 
-              <button type="submit" (click)="saveRes()">Save</button>
+              <button type="submit" (click)="Save()">Save</button>
               <button type="cancel" (click)="Cancel()">Cancel</button>
             </form>
           </div>
-        </div>
+     </div>
 
      <div div *ngIf="showGridMat" class="mat-table-container mat-elevation-z2 m-3">
     <!-- ... Existing table code ... -->
@@ -109,23 +110,24 @@
 
     <table [hidden]="loadMaterials" mat-table [dataSource]="itemsDataSource" matSort matSortStart="desc">
 
-      <!-- No. Consecutivo Column -->
-      <ng-container matColumnDef="numberposition">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> No. </th>
-        <td mat-cell *matCellDef="let elem" class="text-nowrap">{{ elem.numberposition }}</td>
-      </ng-container>
-
+  
           <!-- Description -->
             <ng-container *ngIf="!screenSizeSM" matColumnDef="material">
                <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-nowrap" style="width: 30%;"> {{'description' | translate}} </th>
                <td mat-cell *matCellDef="let elem" class="multi-line-description" style="width: 30%;"> {{ elem.descmat }} </td>
             </ng-container>
 
-      <!-- Name -->
+      <!-- Quantity -->
       <ng-container *ngIf="!screenSizeSM" matColumnDef="quantity">
         <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-nowrap">{{ 'quantity' | translate }}</th>
         <td mat-cell *matCellDef="let elem" class="text-nowrap">{{ elem.quantity }}</td>
       </ng-container>
+
+      <!-- Price or Sales-->
+          <ng-container matColumnDef="sales">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'price' | translate }} </th>
+            <td mat-cell *matCellDef="let elem" class="text-nowrap">{{ '$ ' +elem.sales }}</td>
+          </ng-container>
 
       <!-- Actions Column -->
       <ng-container matColumnDef="actions">
@@ -158,36 +160,34 @@
     </div>
      </div>
 
-     
      <!-- Form for document number, date, and comments -->
-       <div *ngIf="showNewMat">
-  <div class="new-form-container">
-    <form [formGroup]="fmat" class="horizontal-form">
-      <!-- Your form fields go here -->
+      <div *ngIf="showNewMat">
+      <div class="new-form-container">
+        <form [formGroup]="fmat" class="horizontal-form">
+          <!-- Your form fields go here -->
 
-      <!-- SubFila 1.1.2 DbCombo Box Materials-->
-      <label class="inline-block">{{ 'materials' | translate }}:</label>
-      <select name="format" id="format" class="form-control inline-block" formControlName="mat">
-        <option selected disabled value="">{{ 'materials' | translate }}</option>
-        <option *ngFor="let item of materials" [value]="item.id">
-          {{ item.description }}
-        </option>
-      </select>
+          <!-- SubFila 1.1.2 DbCombo Box Materials-->
+          <label class="inline-block">{{ 'materials' | translate }}:</label>
+          <select name="format" id="format" class="form-control inline-block" formControlName="mat">
+            <option selected disabled value="">{{ 'materials' | translate }}</option>
+            <option *ngFor="let item of materials" [value]="item.id">
+              {{ item.description }}
+            </option>
+          </select>
 
-      <input type="number" id="quant" placeholder="{{ 'quantity' | translate }}"  formControlName="quantity" >
+          <input type="number" id="quant" placeholder="{{ 'quantity' | translate }}"  formControlName="quantity" >
 
-      <input type="text" id="cc" placeholder="{{ 'centercost' | translate }}" formControlName="cc">
+          <input type="text" id="cc" placeholder="{{ 'centercost' | translate }}" formControlName="cc">
 
-      <input type="text" id="nol" placeholder="{{ 'number' | translate }} {{ 'control' | translate }} " formControlName="numero" >
+          <input type="text" id="nol" placeholder="{{ 'number' | translate }} {{ 'control' | translate }} " formControlName="numero" >
 
-      <input type="number" id="sale" placeholder="{{ 'price' | translate }} {{ 'sale' | translate }}" formControlName="sale">
+          <input type="number" id="sale" placeholder="{{ 'price' | translate }} {{ 'sale' | translate }}" formControlName="sale">
 
-      <button type="submit" (click)="saveMat()" style="margin-top: 10px;">Save</button>
-      <button type="button" (click)="CancelMat()" style="margin-top: 10px;">Cancel</button>
+          <button type="submit" (click)="saveMat()" style="margin-top: 10px;">Save</button>
+          <button type="button" (click)="CancelMat()" style="margin-top: 10px;">Cancel</button>
 
-    </form>
-  </div>
-       </div>
-
+        </form>
+      </div>
+      </div>
 
 </mat-card>

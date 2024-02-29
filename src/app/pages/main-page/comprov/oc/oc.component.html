@@ -1,6 +1,4 @@
-
-            <div >
-              <mat-card class="card mt-3">
+    <mat-card class="card mt-3">
                 <mat-card-header class="card-header p-2">
                   <mat-card-title-group class="card-title">
                     <mat-card-title>
@@ -16,9 +14,10 @@
                         (keyup)="applyFilter(ocDataSource, $event)">
                       </div>
                   </mat-card-title-group>
-
                 </mat-card-header>
-                <div class="mat-table-container mat-elevation-z2 m-3">
+
+                <!-- Grid of OC-->
+                <div *ngIf="showGridOc" class="mat-table-container mat-elevation-z2 m-3">
                   <table [hidden]="loadData" mat-table [dataSource]="ocDataSource" matSort matSortStart="desc">
 
                     <!-- Number Order -->
@@ -52,17 +51,17 @@
                         <button
                           matTooltip="Choose Details"
                           class="btn btn-sm btn-warning mr-1"
-                          (click)="showDetail(element)">
+                          (click)="getMaterials(element.id)">
                           <i class="fas fa-file-alt mb-1"></i>
                         </button>
                         <button
                         class="btn btn-sm btn-dark mr-1"
-                        (click)="editOc(element.id)">
+                        (click)="edit(element.id)">
                           <i class="fas fa-pencil-alt"></i>
                         </button>
                         <button
-                        class="btn btn-sm btn-danger"
-                        (click)="deleteOc(element.id)">
+                        class="btn btn-sm btn-danger" [disabled]="!isDataAvailable || element.isValidGetMaterials"
+                        (click)="deletePo(element.id)">
                         <i class="fas fa-trash"></i>
                         </button>
                       </td>
@@ -71,12 +70,233 @@
                     <tr mat-header-row *matHeaderRowDef="displayedColOc" class="header-tabla"></tr>
                     <tr mat-row *matRowDef="let row; columns: displayedColOc;" class="fila-tabla element-row"></tr><!-- Row shown when there is no matching data. -->
                   </table>
+
+                    <div class="card-footer bg-white">
+                      <mat-paginator [hidden]="loadData" [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons  class="text-nowrap paginador"></mat-paginator>
+                    </div>
+
                   <div *ngIf="loadData" class="text-center m-5">
                     <div class="spinner-border"></div>
                   </div>
                 </div>
-              </mat-card>
-              <div class="card-footer bg-white">
-                <mat-paginator [hidden]="loadData" [pageSizeOptions]="[15, 20, 25]" showFirstLastButtons  class="text-nowrap paginador"></mat-paginator>
-              </div>
-            </div>
+
+                <!-- Form for New Oc -->
+               <div *ngIf="showNewOc">
+
+                 <form [formGroup]="fOc">
+
+                    <div class="row">
+
+                       <div class="col-sm-4">
+
+                            <div class="row mt-2">
+                                <label for="date">{{ 'date' | translate }} {{ 'capture' | translate }}</label>
+                                <input #dateInput type="date" id="date" placeholder="{{ 'date' | translate }} {{ 'capture' | translate }}"
+                                formControlName="date" class="form-control" >
+                            </div>
+
+                            <div class="row mt-2">
+                              <select name="format" id="format" class="form-control inline-block" formControlName="idTc" class="form-control">
+                                  <option selected disabled value="">{{ 'type' | translate }} {{ 'currency' | translate }}</option>
+                                  <option *ngFor="let tc of listCurrency" [value]="tc.id">
+                                      {{ tc.description }}
+                                  </option>
+                                </select>
+                            </div>
+
+                            <div class="row mt-2">
+                               <select name="format" id="format" class="form-control inline-block" formControlName="idMp" class="form-control">
+                                 <option selected disabled value="">{{ 'methods' | translate }} {{ 'pays' | translate }}</option>
+                                 <option *ngFor="let pm of listMoneys" [value]="pm.id">
+                                  {{ pm.description }}
+                                </option>
+                               </select>
+                            </div>
+
+                            <div class="row mt-2">
+                                <input type="text" id="numOrd" placeholder="{{ 'number' | translate }} {{ 'orders' | translate }}"
+                                formControlName="numoc" class="form-control">
+                            </div>
+
+                            <div class="row mt-2">
+                                <input type="text" id="del" placeholder="{{ 'place' | translate }} {{ 'delivery' | translate }}"
+                                formControlName="delivery" class="form-control">
+                            </div>
+
+                            <div class="row mt-2">
+                                <input type="text" id="dt" placeholder="{{ 'delivery' | translate }} {{ 'time' | translate }}"
+                                formControlName="delivtime" class="form-control">
+                            </div>
+
+                       </div>
+
+                       <div class="col-sm-4">
+
+                            <div class="row mt-2">
+                              <label for="date">{{ 'date' | translate }} {{ 'provision' | translate }}</label>
+                              <input type="date" id="fec" placeholder="{{ 'date' | translate }} {{ 'delivery' | translate }}"
+                              formControlName="dated" class="form-control">
+                            </div>
+
+                            <div class="row mt-2">
+                              <input type="text" id="cond" placeholder="{{ 'conditions' | translate }}" formControlName="conditions"
+                              class="form-control">
+                            </div>
+
+                            <div class="row mt-2">
+                                  <input type="text" id="as" placeholder="{{ 'address' | translate }} {{ 'send' | translate }}"
+                                  formControlName="adresssend" class="form-control">
+                            </div>
+
+                            <div class="row mt-2">
+                                  <input type="text" id="cs" placeholder="{{ 'city' | translate }} {{ 'send' | translate }}"
+                                  formControlName="citysend" class="form-control">
+                            </div>
+
+                            <div class="row mt-2">
+                                  <input type="text" id="ph" placeholder="{{ 'phone' | translate }} {{ 'send' | translate }}"
+                                  formControlName="phonesend" class="form-control">
+                            </div>
+
+                       </div>
+
+                       <div class="col-sm-4">
+
+                        <div class="row mt-2">
+                            <label for="req">{{ 'request' | translate }}</label>
+                            <select name="format" id="form" class="form-control" formControlName="req" class="form-control">
+                              <option selected disabled value="">{{ 'request' | translate }}</option>
+                              <option *ngFor=" let rq of listusuReq" [value]="rq.id">{{ rq.name }}</option>
+                            </select>
+                        </div>
+
+                        <div class="row mt-2">
+                            <select name="format" id="fo" class="form-control" formControlName="aut" class="form-control">
+                              <option selected disabled value="">{{ 'authorize' | translate }}</option>
+                              <option *ngFor="let au of listusuAuth" [value]="au.id">{{ au.name }}</option>
+                            </select>
+                        </div>
+
+                        <div class="row mt-2">
+                                <textarea id="com" placeholder="{{ 'comment' | translate }}"
+                                formControlName="comment" class="form-control"></textarea>
+                        </div>
+
+                        <div class="form-row">
+                            <button type="submit" mat-button class="btn btn-primary" (click)="SaveOc()">Save</button>
+                            <button type="cancel" mat-button class="btn btn-secondary" (click)="Cancel()">Cancel</button>
+                        </div>
+                       </div>
+
+                    </div>
+
+                   </form>
+               </div>
+
+                <!-- Grid for Details of materials x OC-->
+                <div *ngIf="showGridOcxMat" class="mat-table-container mat-elevation-z2 m-3">
+                      <!-- ... Existing table code ... -->
+                      <mat-card-header class="card-header p-2">
+                        <mat-card-title-group class="card-title">
+                          <mat-card-title>
+                                <div class="row">
+                                    <div class="col">
+                                        <button
+                                          class="btn btn-block bg-primary" type="button"
+                                          (click)="showDetMat()">{{'new' | translate }}
+                                        </button>
+                                    </div>
+                                </div>
+                          </mat-card-title>
+                        </mat-card-title-group>
+                      </mat-card-header>
+
+                      <table [hidden]="loadMaterials" mat-table [dataSource]="itemsDataSource" matSort matSortStart="desc">
+
+                       <!-- Description -->
+                        <ng-container *ngIf="!screenSizeSM" matColumnDef="material">
+                          <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-nowrap" style="width: 30%;"> {{'description' | translate}} </th>
+                          <td mat-cell *matCellDef="let elem" class="multi-line-description" style="width: 30%;"> {{ elem.descmat }} </td>
+                       </ng-container>
+
+                        <!-- Quantity -->
+                        <ng-container *ngIf="!screenSizeSM" matColumnDef="quantity">
+                          <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-nowrap">{{ 'quantity' | translate }}</th>
+                          <td mat-cell *matCellDef="let elem" class="text-nowrap">{{ elem.Quantity }}</td>
+                        </ng-container>
+
+                          <!-- Price or Sales-->
+                          <ng-container matColumnDef="sales">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'price' | translate }}</th>
+                            <td mat-cell *matCellDef="let elem" class="text-nowrap">{{ '$ ' + elem.Sales }}</td>
+                          </ng-container>
+
+
+                        <!-- Actions Column -->
+                        <ng-container matColumnDef="actions">
+                          <th mat-header-cell *matHeaderCellDef>{{ 'actions' | translate }}</th>
+                          <td mat-cell *matCellDef="let elem" class="text-nowrap">
+                            <div class="d-flex align-items-start"></div>
+                              <button
+                                  class="btn btn-sm btn-warning mr-1">
+                                  <i class="fas fa-file-alt mb-1"></i>
+                              </button>
+                              <button
+                                  class="btn btn-sm btn-dark mr-1">
+                                  <i class="fas fa-pencil-alt"></i>
+                              </button>
+                              <button class="btn btn-sm btn-danger"
+                                (click) ="deleteMat(elem.id)">
+                                <i class="fas fa-trash"></i>
+                              </button>
+
+                          </td>
+                        </ng-container>
+
+                        <tr mat-header-row *matHeaderRowDef="displayedColitems"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColitems;"></tr>
+
+                      </table>
+
+                      <div *ngIf="loadData" class="text-center m-5">
+                        <div class="spinner-border"></div>
+                      </div>
+                </div>
+
+                <!-- Form for new Oc x details materials -->
+                <div *ngIf="showNewMat">
+                      <form [formGroup]="fOcxmat">
+
+                        <div class="row">
+                          <div class="col-sm-12">
+
+                                <div class="row mt-2">
+                                     <select name="format" id="format" class="form-control inline-block" formControlName="idMat">
+                                          <option selected disabled value="">{{ 'material' | translate }} </option>
+                                          <option *ngFor="let lm of listmaterials" [value]="lm.id">
+                                             {{ lm.description }}
+                                          </option>
+                                      </select>
+
+                                      <input type="number" id="qu" placeholder="{{ 'quantity' | translate }}"
+                                      formControlName="quantity" >
+
+                                      <input type="number" id="pr" placeholder="{{ 'price'  | translate }} {{ 'sale' | translate }}"
+                                      formControlName="price" >
+
+                                      <input type="text" id="com" placeholder="{{ 'comment' | translate }} "
+                                      formControlName="comment" >
+
+                                      <div class="form-row">
+                                          <button type="submit" mat-button class="btn btn-primary" (click)="saveDet()">Save</button>
+                                         <button type="cancel" mat-button class="btn btn-secondary" (click)="cancelDet()">Cancel</button>
+                                      </div>
+                                </div>
+                           </div>
+                        </div>
+
+                      </form>
+
+                </div>
+
+    </mat-card>

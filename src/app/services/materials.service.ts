@@ -66,7 +66,6 @@ post(data: any, token:any){
 
 }
 
-
 delete(id:string, token: any){
   try {
     //return this.http.delete(`${environment.urlFirebase}employees/${id}.json?auth=${token}`);
@@ -79,4 +78,7 @@ delete(id:string, token: any){
  }
 
  }
+
+ 
+ 
 }

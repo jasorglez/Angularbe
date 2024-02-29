@@ -1,4 +1,4 @@
-export interface Iitemsmat {
+export interface Imatxresg {
    id?          : number;
    cc?          : string;
    idResguardo  : number;

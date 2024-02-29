@@ -1,19 +1,22 @@
 export interface Ipurchaseorder {
-  id?           : number;
-  numorder      : string;
-  date          : Date;
-  id_provider?  : number;
-  id_company?   : number;
-  delivery?     : string;
-  deliverytime? : string;
-  datedelivery? : Date;
-  id_pay?       : number ;
-  id_currency?  : number ;
+  id?           : number ;
+  numorder      : string ;
+  date          : Date   ;
+  idProvider   : number ;
+  idCompany    : string ;
+  delivery?     : string ;
+  deliverytime? : string ;
+  datedelivery? : Date   ;
+  idPay        : number ;
+  idCurrency   : number ;
   conditions?   : string ;
   adresssend?   : string ;
+  citysend      : string ;
   phonesend?    : string ;
-  id_request?   : number ;
-  id_authorizes?: number ;
+  idRequest?   : number ;
+  idAuthorizes?: number ;
   status        : string ;
   desCurr?      : string ;
+  comment?      : string ;
+  isValidGetMaterials?: boolean;
 }

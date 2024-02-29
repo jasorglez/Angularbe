@@ -71,7 +71,7 @@ export class MaterialsComponent implements OnInit {
  loadData     = false;
 
  displayedCol: string[] = [
-  'numberposition',  'insumo', 'description', 'measure', 'sale', 'actions'];
+  'numberposition',  'insumo', 'measure', 'sale', 'actions'];
 
 
 @ViewChild(MatPaginator) paginator: MatPaginator;
