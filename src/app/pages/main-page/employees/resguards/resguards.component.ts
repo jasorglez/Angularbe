@@ -32,7 +32,7 @@ export class ResguardsComponent implements OnInit {
 
   showGridResg    : boolean = true ;
   showGridMat     : boolean = true ;
-  
+
   isDataAvailable : boolean = false ;
 
   idResguardo : number = 0 ;
@@ -49,7 +49,7 @@ export class ResguardsComponent implements OnInit {
   loadMaterials = false ;
 
   displayedColresguards : string[] = ['numberposition', 'number', 'date',  'actions'];
-   
+
   displayedColitems     : string[] = ['material', 'quantity', 'sales', 'actions'];
 
 
@@ -77,7 +77,7 @@ export class ResguardsComponent implements OnInit {
     cc       : [''],
     numero   : [''],
     mat      : 0,
-    sale     : []
+    sale     : [0]
   });
 
 
@@ -104,6 +104,7 @@ export class ResguardsComponent implements OnInit {
     });
 
     this.getDataResguards() ;
+    this.getMaterials(this.idResguardo, '', new Date(), '') ;
   }
 
 
@@ -171,11 +172,12 @@ export class ResguardsComponent implements OnInit {
                sales          : resp[a]?.sales,
                quantity       : resp[a]?.quantity,
                descmat        : resp[a]?.descmat,
-       
+
             } as Imatxresg)
 
         );
-        
+       
+          // console.log("DATA", this.items) ;
            this.itemsDataSource           = new MatTableDataSource(this.items)
            this.itemsDataSource.paginator = this.paginator ;
            this.itemsDataSource.sort      = this.sort;

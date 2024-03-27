@@ -157,6 +157,26 @@ getpermissionsxProject(branch:string, mail:string): Observable<any>{
   }
 }
 
+getpermissionsxCprocess(branch:string, mail:string): Observable<any>{
+  try {
+     const apiUrl = `${environment.urlAzure}api/permission?email=${mail}`
+     return this.http.get(apiUrl)
+  }catch(error){
+   console.error("Error Managment files", error) ;
+   return null ;
+  }
+}
+getpermissionsxPlatform(id: number): Observable<any>{
+  //console.log('ID', id) ;
+   try {
+      const apiUrl = `${environment.urlAzure}api/permission/plat?id=${id}`
+      return this.http.get(apiUrl)
+   }catch(error){
+    console.error("Error get Platforms", error) ;
+    return null ;
+   }
+}
+
 getpermissionsxProject2(branch:string): Observable<any>{
   try {
     const apiUrl = `${environment.urlFirebase}permissionsxprojects.json?orderBy="id_branchs"&equalTo="${branch}"`

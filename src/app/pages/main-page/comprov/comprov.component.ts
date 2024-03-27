@@ -130,7 +130,6 @@ export class ComprovComponent implements OnInit {
            this.providersDataSource.sort = this.sort;
            this.loadData = false;
       });
-
   }
 
 

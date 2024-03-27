@@ -75,10 +75,8 @@ export class EmployeesComponent implements OnInit {
 
  displayedColemployees: string[] = ['number', 'direct',  'actions'];
 
-
 @ViewChild(MatPaginator) paginator: MatPaginator;
 @ViewChild(MatSort) sort!: MatSort;
-
 
   constructor(private trackingService: TrackingService,
               public printReportsService : PrintreportsService,

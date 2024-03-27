@@ -26,7 +26,10 @@ const routes: Routes = [
       { path: 'employees', loadChildren: () => import ('./main-page/employees/employees.module'). then (m => m.EmployeesModule )},
       { path: 'comprov', loadChildren: () => import ('./main-page/comprov/comprov.module').then (m => m.ComprovModule)},
       { path: 'materials', loadChildren: () => import ('./main-page/materials/materials.module').then (m => m.MaterialsModule)},
-  
+      { path: 'manometro', loadChildren: () => import ('./main-page/manometro/manometro.module').then (m => m.ManometroModule)},
+      { path: 'sapequipos', loadChildren: () => import ('./main-page/sapequipos/sapequipos.module').then(m => m.SapequiposModule)},
+      { path: 'inspections', loadChildren: () => import ('./main-page/inspections/inspections.module').then(m => m.InspectionsModule)},
+
       { path: 'dialog-custom', component: DialogCustomComponent },
       { path: '**', component: Error404Component}
     ]}

@@ -38,6 +38,39 @@ export class TrackingService {
   private numRes  : string ;
   private comment : string ;
 
+  private cpser : number ;
+  setCp(cp: number) : void {
+    this.cpser = cp ;
+   }
+   getCp() {
+      return this.cpser ;
+   }
+
+  private platformser : number ;
+  setPlatform(pl: number) : void {
+    this.platformser = pl ;
+   }
+   getPlat() {
+      return this.platformser ;
+   }
+
+   private plataforma:string ;
+   setPlataforma(p2: string) : void {
+    this.plataforma = p2 ;
+   }
+   getPlataforma() {
+      return this.plataforma ;
+   }
+
+   private platform : number ;
+   setIdPlatform(p2: number) : void {
+    this.platform = p2 ;
+   }
+   getIdPlatform() {
+      return this.platform ;
+   }
+
+
 
   private numprov : number ;
   setnumpro (n: number) {
@@ -45,7 +78,7 @@ export class TrackingService {
   }
    getnumpro() {
     return this.numprov ;
-}
+   }
 
 
   setfecha(fec : Date) : void{
@@ -68,27 +101,25 @@ export class TrackingService {
   }
 
 
-
   getultimaVentana() {
     return this.ultimaventana;
   }
 
-setnameUser(name: string) : void{
- this.nameuser = name ;
-}
+  setnameUser(name: string) : void{
+    this.nameuser = name ;
+  }
 
-setpictureUser(picture : string) : void {
-  this.pictureuser = picture
-}
+  setpictureUser(picture : string) : void {
+    this.pictureuser = picture
+  }
 
-getnameUser() {
-  return this.nameuser ;
-}
+  getnameUser() {
+    return this.nameuser ;
+  }
 
 getpictureUser(){
   return this.pictureuser ;
 }
-
 
 setContract(contract: string): void {
   this.contract = contract ;
@@ -143,8 +174,6 @@ getCom() {
  getEnd() {
   return this.endproject ;
  }
-
-
 
 
   setEmail(email: string): void {

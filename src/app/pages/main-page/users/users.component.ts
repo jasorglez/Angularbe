@@ -217,7 +217,7 @@ import { Observable } from 'rxjs';
           this.trackingService.addLog(localStorage.getItem('company'), 'Click en la Pestaña Settings/Seguimiento del menu Usuarios', 'Settings', '')
           this.getdataTracking() }
 
-        }
+     }
 
 	/*=============================================
 	función para tomar la data de users, cias, branchs, projects
@@ -295,7 +295,6 @@ import { Observable } from 'rxjs';
 
   	     }
 
-
         getdataCompanys()
          {
            this.loadData2 = true;
@@ -335,7 +334,6 @@ import { Observable } from 'rxjs';
            })
 
         }
-
 
          getdataBranchs(){
              this.branchService.getData(this.infcompany.id).subscribe((resp:any)=>{
@@ -630,8 +628,6 @@ import { Observable } from 'rxjs';
               })
             }
 
-
-
             deleteBranchs(id: string) {
 
               alerts.confirmAlert('Are you sure?', 'The information cannot be recovered!', 'warning', 'Yes, delete it!')
@@ -652,7 +648,6 @@ import { Observable } from 'rxjs';
               })
             }
 
-
             deleteProjects(id: string) {
 
               alerts.confirmAlert('Are you sure?', 'The information cannot be recovered!', 'warning', 'Yes, delete it!')
@@ -672,7 +667,6 @@ import { Observable } from 'rxjs';
 
               })
             }
-
 
             async assigncomp(id: string, mail: string, name: string) {
             try {

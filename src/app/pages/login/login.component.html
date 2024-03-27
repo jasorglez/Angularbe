@@ -1,14 +1,16 @@
-<div class="hold-transition login-page">
-	<div class="login-box">
+
+  
+
+  <div class="hold-transition login-page" [style.backgroundImage]="'url(' + randomImage + ')'" style="background-size: cover;">
+
+  <div class="login-box">
 	  <div class="login-logo">
-	    <img src="../../../assets/img/template/belogo.png">
+	    <img src="../../../assets/img/template/bi2.png">
 	  </div>
 	  <!-- /.login-logo -->
 	  <div class="card" >
 	    <div class="card-body login-card-body">
 	      <p class="login-box-msg" > {{ 'titlelogin' | translate}} </p>
-
-
 
 	      <form
 	      	autocomplete="off"
@@ -51,7 +53,6 @@
 					</div>
 				</div>
 
-
 	           <div class="invalid-feedback">Please fill out this field correctly.</div>
 
 	        <div class="row">
@@ -70,4 +71,4 @@
 	</div>
 	<!-- /.login-box -->
 
-</div>
+  </div>

@@ -26,7 +26,7 @@ getResg(idEmpleado: number) {
 getItems(id: number) {
   try {
 
-    const apiUrl = `${environment.urlAzure}api/ItemxResg?id=${id}`;
+    const apiUrl = `${environment.urlAzure}api/Matresg?idResg=${id}`;
     return this.http.get(apiUrl)
   }catch(error){
   console.error("Error get items", error) ;
@@ -50,7 +50,7 @@ postRes(data: any, token:any){
  postItem(data: any, token:any){
   //console.log(data);
    try{
-      return this.http.post(`${environment.urlAzure}api/ItemxResg/`, data);
+      return this.http.post(`${environment.urlAzure}api/MatResg/`, data);
 
    }catch(error) {
     console.error("Error al guardar ", error ) ;
@@ -76,7 +76,7 @@ postRes(data: any, token:any){
 deleteItem(id:number, token: any){
   try {
 
-    return this.http.delete(`${environment.urlAzure}api/ItemxResg/${id}`);
+    return this.http.delete(`${environment.urlAzure}api/MatResg/${id}`);
 
   }catch(error){
     console.error("Error al borrar", error) ;

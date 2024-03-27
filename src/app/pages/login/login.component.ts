@@ -28,6 +28,19 @@ export class LoginComponent implements OnInit{
 
   displayName : string = '' ;
   picture     : string = '' ;
+  images      : string[] = [
+    '../../../assets/img/p1.png',
+    '../../../assets/img/p2.jpg',
+    '../../../assets/img/p3.jpg',
+    '../../../assets/img/p4.jpg',
+    '../../../assets/img/p5.jpg',
+    '../../../assets/img/p6.jpeg',
+    '../../../assets/img/p7.jpg',
+    '../../../assets/img/p8.jpg',
+    '../../../assets/img/p9.jpg'
+  ] ;
+
+  randomImage : string ;
 
  /*=============================================
 	Creamos grupo de controles
@@ -48,14 +61,13 @@ export class LoginComponent implements OnInit{
 
   valorcapturado = '' ;
 
-
-
   constructor( public translateService: TraductorService,  private loginService: LoginService,
     private companysService : CompanysService, private trackingService : TrackingService, private userService: UsersService, private auth: AuthService,
     private formBuilder: FormBuilder, private router: Router) { }
 
 
   ngOnInit(): void {
+    this.randomImage = this.images[Math.floor(Math.random() * this.images.length)];
 
   }
 
@@ -115,10 +127,10 @@ export class LoginComponent implements OnInit{
                       if (datauser) {
                         const displayName = datauser.displayName;
                         const picture     = datauser.picture;
-                        
+
                         this.trackingService.setnameUser(displayName);
                         this.trackingService.setpictureUser(picture);
-                        
+
                       }
                     },
                     (error) => {

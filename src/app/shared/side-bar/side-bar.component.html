@@ -22,7 +22,7 @@
     <div class="user-panel mt-4 pb-2 mb-2 brand-image">
 
       <select
-        id="company" (change)="onCompanysSelected($event)"  class="form-control select-side"      >
+        id="company" (change)="onCompanysSelected($event)"  class="form-control select-side" title="Select Compañia" >
         <!--   <option selected disabled value="">   {{ 'company'| translate }}     </option> -->
 
         <option *ngFor="let item of companyData" [value]="item.id_company">
@@ -30,20 +30,35 @@
         </option>
       </select>
 
-      <select id="branchs" (change)="onBranchsSelected($event)" class="form-control select-side">
+      <select id="branchs" (change)="onBranchsSelected($event)" class="form-control select-side" title="Select Sucursal">
         <!--      <option selected disabled value=""> Sucursales    </option> -->
         <option *ngFor="let item of branchData" [value]="item.id_branchs">
             {{ item.branchs }}
         </option>
       </select>
 
-      <select id="projects" (change)="onProjectSelected($event)" class="form-control select-side">
+      <select id="cp" (change)="onCpSelected($event)" class="form-control select-side" title="Select Centro Proceso">
+        <!--       <option value="">Seleccione Centro Proceso</option> -->
+        <option *ngFor="let item of centerprocessData" [value]="item.id">
+          {{ item.c2 }}
+        </option>
+      </select>
+
+      <select id="platform" (change)="onPlataformSelected($event)" class="form-control select-side" title="Select Plataforma">
+        <!--       <option value="">Seleccione Plataforma</option> -->
+        <option *ngFor="let item of platformData" [value]="item.description">
+          {{ item.description }}
+        </option>
+      </select>
+
+      <select id="projects" (change)="onProjectSelected($event)" class="form-control select-side"  hidden>
         <!--       <option value="">Seleccione un proyecto</option> -->
         <option *ngFor="let item of projectData" [value]="item.id_projects">
           {{ item.projects }}
         </option>
       </select>
     </div>
+
 
 
     <!-- Sidebar Menu -->
@@ -196,7 +211,62 @@
 
 </mat-expansion-panel>
 
+       <!-- Menu Mantenimiento -->
+       <mat-expansion-panel id="expMenu">
+        <mat-expansion-panel-header class="panel-header">
+             <mat-panel-title>
+               <mat-icon matListItemIcon class="brand-image">store</mat-icon>
+               <div matListItemTitle class="item-content-panel brand-text">MANTENIMIENTO</div>
+               </mat-panel-title>
+        </mat-expansion-panel-header>
 
+        <mat-list-item routerLink="#" (click)="navigateToInspections()">
+          <mat-icon matListItemIcon>contact_mail</mat-icon>
+          <div matListItemTitle class="item-content">Inspecciones</div>
+       </mat-list-item>
+
+        <mat-list-item routerLink="#" (click)="navigateToManometro()">
+          <mat-icon matListItemIcon>wysiwyg</mat-icon>
+          <div matListItemTitle class="item-content">PsV</div>
+        </mat-list-item>
+
+         <mat-list-item  routerLink="#" (click)="navigateToSapequipos()">
+            <mat-icon matListItemIcon> local_library</mat-icon>
+            <div matListItemTitle class="item-content"> SAP Equipos</div>
+          </mat-list-item>
+
+          <mat-list-item routerLink="#" (click)="navigateToManometro()">
+             <mat-icon matListItemIcon>wysiwyg</mat-icon>
+             <div matListItemTitle class="item-content">PsV</div>
+          </mat-list-item>
+
+           <mat-list-item  routerLink="#" (click)="navigateToManometro()">
+            <mat-icon matListItemIcon> cast_connected</mat-icon>
+            <div matListItemTitle class="item-content"> Manometros</div>
+          </mat-list-item>
+
+          <mat-list-item  routerLink="#" (click)="navigateToManometro()">
+            <mat-icon matListItemIcon> flip</mat-icon>
+            <div matListItemTitle class="item-content"> Bridas Entradas</div>
+          </mat-list-item>
+
+          <mat-list-item  routerLink="#" (click)="navigateToManometro()">
+            <mat-icon matListItemIcon> business_center</mat-icon>
+            <div matListItemTitle class="item-content"> Bridas Salidas</div>
+          </mat-list-item>
+
+          <mat-list-item  routerLink="#" (click)="navigateToManometro()">
+            <mat-icon matListItemIcon> vignette</mat-icon>
+            <div matListItemTitle class="item-content"> Valvulas</div>
+          </mat-list-item>
+
+          <mat-list-item  routerLink="#" (click)="navigateToManometro()">
+            <mat-icon matListItemIcon> keyboard_hide</mat-icon>
+            <div matListItemTitle class="item-content"> Periodos</div>
+          </mat-list-item>
+
+
+      </mat-expansion-panel>
 
 
       <!-- Menu Configuracion -->

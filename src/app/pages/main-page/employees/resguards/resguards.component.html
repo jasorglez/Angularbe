@@ -161,33 +161,37 @@
      </div>
 
      <!-- Form for document number, date, and comments -->
-      <div *ngIf="showNewMat">
-      <div class="new-form-container">
-        <form [formGroup]="fmat" class="horizontal-form">
-          <!-- Your form fields go here -->
+     <div *ngIf="showNewMat">
+         <form [formGroup]="fmat" >   
 
-          <!-- SubFila 1.1.2 DbCombo Box Materials-->
-          <label class="inline-block">{{ 'materials' | translate }}:</label>
-          <select name="format" id="format" class="form-control inline-block" formControlName="mat">
-            <option selected disabled value="">{{ 'materials' | translate }}</option>
-            <option *ngFor="let item of materials" [value]="item.id">
-              {{ item.description }}
-            </option>
-          </select>
+          <div class="row">
+            <div class="col-sm-12">
 
-          <input type="number" id="quant" placeholder="{{ 'quantity' | translate }}"  formControlName="quantity" >
+               <div class="row mt-2">
+                  <!-- Fila 1: Combo Box Materials -->
+                  <select name="format" id="format" class="form-control" formControlName="mat" title="{{ 'Lista Materiales'}}">
+                    <option selected disabled value="">{{ 'materials' | translate }}</option>
+                    <option *ngFor="let item of materials" [value]="item.id">
+                      {{ item.description }}
+                    </option>
+                  </select>
+          
+                  <input type="number" id="quant" placeholder="{{ 'quantity' | translate }}" formControlName="quantity" title="{{'Cantidad'}}">
+                  <input type="number" id="sale" placeholder="{{ 'price' | translate }} {{ 'sale' | translate }}" formControlName="sale" title="{{'Precio Ventas'}}">       
+                  <input type="text" id="cc" placeholder="{{ 'centercost' | translate }}" formControlName="cc" >
+                  <input type="text" id="nol" placeholder="{{ 'number' | translate }} {{ 'control' | translate }}" formControlName="numero" >
 
-          <input type="text" id="cc" placeholder="{{ 'centercost' | translate }}" formControlName="cc">
-
-          <input type="text" id="nol" placeholder="{{ 'number' | translate }} {{ 'control' | translate }} " formControlName="numero" >
-
-          <input type="number" id="sale" placeholder="{{ 'price' | translate }} {{ 'sale' | translate }}" formControlName="sale">
-
-          <button type="submit" (click)="saveMat()" style="margin-top: 10px;">Save</button>
-          <button type="button" (click)="CancelMat()" style="margin-top: 10px;">Cancel</button>
+             
+                  <div class="form-row">
+                     <button type="submit" (click)="saveMat()" class="btn btn-primary">Save</button>
+                     <button type="button" (click)="CancelMat()" class="btn btn-secondary">Cancel</button>
+                  </div>
+               </div>
+            </div>
+          </div>
 
         </form>
       </div>
-      </div>
-
+   
+   
 </mat-card>

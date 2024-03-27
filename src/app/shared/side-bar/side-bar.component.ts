@@ -17,17 +17,21 @@ import { alerts } from 'src/app/helpers/alerts';
 })
 export class SideBarComponent implements OnInit {
 
-   companyData     : any[]  = [] ;
-   branchData      : any[]  = [] ;
-   projectData     : any[]  = [] ;
+   companyData      : any[]  = [] ;
+   branchData       : any[]  = [] ;
+   projectData      : any[]  = [] ;
+   centerprocessData: any[]  = [] ;
+   platformData     : any[]  = [] ;
 
    valorultven    : string = '' ;
 
    infcompany : any = {} ;
 
-   selectedCompany   : string = '';
-   selectedProjectId : string ;
-   selectedBranchId  : string ;
+   selectedCompany    : string = '';
+   selectedProjectId  : string ;
+   selectedBranchId   : string ;
+   selectedCProcessId : number ;
+   selectedPlatformId : number ;
 
   constructor(public translateService: TraductorService, public trackingService : TrackingService,
               public companysService : CompanysService, public authService : AuthService,
@@ -106,15 +110,30 @@ export class SideBarComponent implements OnInit {
           this.router.navigate(['/resguards']);
         }
 
-
         navigateToEmployees()  {
           this.trackingService.addLog(this.trackingService.getnameComp(), 'Eleccion del menu Employees/Empleados', 'Menu Side Bar', '')
           this.router.navigate(['/employees']);
         }
 
+        navigateToManometro()  {
+          this.trackingService.addLog(this.trackingService.getnameComp(), 'Eleccion del menu Pressure gauges/Manometros', 'Menu Side Bar', '')
+          this.router.navigate(['/manometro']);
+        }
+
+        navigateToSapequipos()  {
+          this.trackingService.addLog(this.trackingService.getnameComp(), 'Eleccion del menu Pressure SAP Equipment', 'Menu Side Bar', '')
+          this.router.navigate(['/sapequipos']);
+        }
+
+        navigateToInspections()  {
+          this.trackingService.addLog(this.trackingService.getnameComp(), 'Eleccion del menu Inspections PVS', 'Menu Side Bar', '')
+          this.router.navigate(['/inspections']);
+        }
+
       	async ngOnInit()  {
 
              await this.getpermissionxCompanys() ;
+             this.getPermissionxCprocess() ;
          }
 
 
@@ -191,7 +210,7 @@ export class SideBarComponent implements OnInit {
         onBranchsSelected(event: Event): void {
           const target = event.target as HTMLSelectElement;
           this.selectedBranchId = target.value;
-          this.getpermissionxProjects();
+          this.getpermissionxProjects() ;
         }
 
 
@@ -235,6 +254,108 @@ export class SideBarComponent implements OnInit {
 
         }
 
+        getPermissionxCprocess() {
+           this.companysService.getpermissionsxCprocess(localStorage.getItem('branch'),localStorage.getItem("mail")).subscribe((data) => {
+
+             this.centerprocessData = Object.values(data);
+           //  console.log("cProcessData", this.centerprocessData)
+             if (this.centerprocessData.length > 0) {
+                this.selectedCProcessId = this.centerprocessData[0].id ;
+                this.trackingService.setCp(this.selectedCProcessId) ;
+                this.getPermissionxPlataform(this.selectedCProcessId) ;
+             }
+             else
+             {
+               alerts.basicAlert("Error", "No existen Centro de Procesos para este usuario.", "error");
+             }
+           });
+        }
+
+        async onCpSelected(event: Event) {
+
+          const target = event.target as HTMLSelectElement;
+
+          this.trackingService.setPlatform(parseInt(target.value)) ;
+
+          this.selectedCProcessId = parseInt(target.value, 10);
+
+          await this.home();
+
+          this.valorultven = this.trackingService.getultimaVentana()
+          await this.getPermissionxPlataform(this.selectedCProcessId) ;
+
+          if (this.valorultven === 'PSV') {
+           await this.navigateToSapequipos()
+          }
+      }
+
+      getPermissionxPlataform(id: number) {
+        this.companysService.getpermissionsxPlatform(id).subscribe((data) => {
+
+          this.platformData = Object.values(data);
+       //   console.log("platformData", this.platformData)
+          if (this.platformData.length > 0) {
+             this.selectedPlatformId = this.platformData[0].id ;
+             this.trackingService.setPlatform(this.selectedPlatformId) ;
+
+          }
+          else
+          {
+            alerts.basicAlert("Error", "No existen Plataformas para este usuario.", "error");
+          }
+        });
+     }
+
+
+        async onPlataformSelected(event: Event) {
+
+            const target = event.target as HTMLSelectElement;
+
+            //this.trackingService.setPlatform(parseInt(target.value)) ;
+            this.trackingService.setPlataforma(target.value) ;
+            //console.log(target.value)
+
+            this.selectedPlatformId = parseInt(target.value, 10);
+            this.trackingService.setPlatform(this.selectedPlatformId) ;
+
+            await this.home();
+
+            this.valorultven = this.trackingService.getultimaVentana()
+
+            await this.navigateToSapequipos()
+
+        }
+
+
+        getHeadersPlatform(){
+
+          this.projectsService.getDataprojectsheader(this.selectedProjectId).subscribe(
+            (data: any) => {
+              if (data) {
+                // Datos obtenidos correctamente
+
+                this.trackingService.setContract(data.contract)
+
+                this.trackingService.setnameProject(data.description);
+
+                this.trackingService.setubicationProject(data.ubication) ;
+
+                this.trackingService.setStart(data.dStart)
+
+                this.trackingService.setEnd(data.dEnd)
+
+              } else {
+                // Error al obtener los datos
+                console.error('Error al obtener los datos del proyecto');
+              }
+            },
+            (error: any) => {
+              console.error('Error en la llamada al servicio:', error);
+            }
+          );
+
+        }
+
 
         getHeadersProjects(){
 
@@ -262,7 +383,6 @@ export class SideBarComponent implements OnInit {
               console.error('Error en la llamada al servicio:', error);
             }
           );
-
 
         }
 
